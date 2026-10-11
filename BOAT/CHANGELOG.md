@@ -336,3 +336,11 @@ All entries should describe actual work and results. Do not record planned work 
 
 
 - **Next step:** add deterministic report fixtures/golden tests and stable report behavior while retaining every dissenting record; no automatic adjudication.
+
+
+## 2026-10-11 — Review-set golden fixtures and permutation tests
+
+- Added synthetic review-set fixtures for duplicate IDs, independent disagreement, same-reviewer repeats/disagreement, and invalid records.
+- Added golden report projections and permutation tests to ensure semantic findings remain stable regardless of input ordering while the output's source-record array preserves the supplied order and all dissenting verdicts remain visible.
+- Asserted that aggregate verdict remains null and automatic adjudication stays false. The report remains diagnostic-only; no majority vote, latest-wins, or canonical-record selection was added.
+- Added fixture/test paths to the offline BOAT workflow filters. CI result pending inspection. No provider calls, publishing, article mutation, main-branch changes, or PR merge.
