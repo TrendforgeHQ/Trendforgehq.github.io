@@ -337,3 +337,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Compare reviews only when their exact workflow/artifact bundle, proposal, claim, replacement, source, and passage match. Invalid records and colliding IDs cannot establish agreement or disagreement.
 - Different verdicts from distinct reviewers require human resolution; same-reviewer repeats are not independent evidence. Matching verdicts are descriptive agreement only. Never majority-vote, average, choose latest, or synthesize an aggregate verdict.
 - The read-only review-set audit emits a SHA-256 subject fingerprint instead of repeating raw claim/passage text. Validation: branch-head offline CI [run 38122117534](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122117534) passed 106/106, 0 failed, 0 skipped. Next: add deterministic report fixtures and output-stability tests.
+
+
+## L-047 — Deterministic summaries must not reorder source records or erase dissent
+
+- Golden tests cover duplicate IDs, independent disagreement, same-reviewer disagreement/repeats, and invalid records.
+- For permutation stability, compare canonicalized order-insensitive findings and verdict summaries, but preserve the original source order in the report's `records` array. Do not sort or drop raw records just to make reports look identical.
+- Keep all distinct verdicts visible, `aggregateVerdict: null`, and `automaticAdjudication: false`; the audit is descriptive and does not decide truth.
+- Added fixture and golden-test paths to offline CI. Branch-head validation is pending inspection; no provider or publishing workflow was run.
