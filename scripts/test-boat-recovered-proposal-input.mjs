@@ -1,5 +1,6 @@
 import test from 'node:test';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import os from 'node:os';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -10,6 +11,7 @@ import { buildRecoveredProposalInputs } from './boat-recovered-proposal-input.mj
 import { buildReviewReport } from './boat-recovered-proposal-review-report.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
+const sha256 = value => createHash('sha256').update(value).digest('hex');
 
 function syntheticFixture() {
   const articleRaw = '---\ntitle: "Recovered Article"\n---\n\nA verified fixture claim is stated here.\n';
@@ -40,7 +42,8 @@ function adapt(f) {
     articleRaw: f.articleRaw,
     claimReportRaw: f.claimReportRaw,
     articleBriefRaw: f.articleBriefRaw,
-    evidencePackRaw: f.evidencePackRaw
+    evidencePackRaw: f.evidencePackRaw,
+    runMetadataRaw: f.blockedMetadataRaw
   });
 }
 
@@ -53,12 +56,46 @@ test('synthetic exact-lineage claim becomes an input only, never a generated pro
   assert.equal(result.claims[0].passage.mappingIsSuggestionOnly, true);
   assert.equal(result.replacementTextGenerated, false);
   assert.equal(result.proposalEngineHandoff.allowed, false);
+  assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, true);
   assert.equal(result.proposalEngineHandoff.status, 'blocked');
   assert.match(result.proposalEngineHandoff.reason, /generation-time hashes are absent/);
   assert.equal(result.approvalRequired, true);
   assert.equal(result.automaticApplication, false);
   assert.equal(result.semanticSupport, 'not_verified');
   assert.equal(result.hashes.recordedAtGeneration, false);
+});
+
+test('proposal engine handoff is allowed only with matching original hashes bound to same-run metadata', () => {
+  const f = syntheticFixture();
+  const metadata = JSON.parse(f.blockedMetadataRaw);
+  metadata.hashesRecordedAtGeneration = true;
+  metadata.articleSha256 = sha256(f.articleRaw);
+  metadata.claimReportSha256 = sha256(f.claimReportRaw);
+  metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
+  f.blockedMetadataRaw = JSON.stringify(metadata);
+  f.recoveryAudit = auditRecoveredRunArtifacts(f);
+  const result = adapt(f);
+  assert.equal(result.proposalEngineHandoff.status, 'ready');
+  assert.equal(result.proposalEngineHandoff.allowed, true);
+  assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, true);
+  assert.equal(result.proposalEngineHandoff.checks.hashesRecordedAtGeneration, true);
+  assert.equal(result.proposalEngineHandoff.checks.runIdMatches, true);
+  assert.equal(result.proposalEngineHandoff.checks.workflowShaMatches, true);
+  assert.equal(result.proposalEngineHandoff.checks.artifactHashesMatch, true);
+});
+
+test('tampered run metadata blocks proposal engine handoff', () => {
+  const f = syntheticFixture();
+  const metadata = JSON.parse(f.blockedMetadataRaw);
+  metadata.hashesRecordedAtGeneration = true;
+  metadata.articleSha256 = sha256(f.articleRaw);
+  metadata.claimReportSha256 = sha256(f.claimReportRaw);
+  metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
+  f.recoveryAudit = auditRecoveredRunArtifacts(f);
+  f.blockedMetadataRaw = JSON.stringify(metadata);
+  const result = adapt(f);
+  assert.equal(result.proposalEngineHandoff.allowed, false);
+  assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, false);
 });
 
 test('recovery hash mismatch blocks the bundle', () => {
