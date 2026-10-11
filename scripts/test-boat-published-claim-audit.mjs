@@ -14,6 +14,7 @@ try {
   fs.mkdirSync(current, { recursive: true });
   fs.writeFileSync(path.join(current, 'alpha.md'), '---\ntitle: "Alpha"\n---\nA supported sentence.\n');
   fs.writeFileSync(path.join(current, 'beta.md'), '---\ntitle: "Beta"\n---\nCurrent wording differs from archived claim text.\n');
+  fs.writeFileSync(path.join(current, 'gamma.md'), '---\ntitle: "Gamma"\n---\nNo archived verifier report exists for this article.\n');
   const reportA = {
     articlePath: 'content/articles/alpha.md', articleTitle: 'Alpha', pass: false, claimCount: 2,
     sources: [{ id: 'S1', title: 'Example source', url: 'https://example.com/report' }],
