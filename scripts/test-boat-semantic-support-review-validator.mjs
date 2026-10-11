@@ -85,8 +85,18 @@ test('CLI rejects malformed JSON and missing input without writing review files'
   assert.equal(missing.status, 1); assert.equal(JSON.parse(missing.stdout).valid, false);
   assert.deepEqual(fs.readdirSync(dir).sort(), ['review.json']);
 });
-test('validator implements the review schema keywords without network dependencies', () => {
-  const serialized = fs.readFileSync(cli, 'utf8');
-  for (const keyword of ['required', 'additionalProperties', 'pattern', 'format', 'minLength', 'minItems', 'minimum', 'const', 'enum']) assert.ok(serialized.includes(keyword), 'validator missing schema keyword ' + keyword);
+test('validator explicitly supports every keyword used by the schema', () => {
+  const supported = new Set(['$schema', 'title', 'description', 'type', 'required', 'properties', 'additionalProperties', 'const', 'enum', 'minLength', 'pattern', 'format', 'minimum', 'minItems', 'items']);
+  const found = new Set();
+  function visit(node) {
+    for (const [key, value] of Object.entries(node)) {
+      found.add(key);
+      if (key === 'properties') for (const child of Object.values(value)) visit(child);
+      else if (key === 'items') visit(value);
+    }
+  }
+  visit(schema);
+  const unsupported = [...found].filter(keyword => !supported.has(keyword));
+  assert.deepEqual(unsupported, [], 'schema added keywords not handled by the dependency-free validator');
   assert.equal(schema.properties.safety.properties.automaticApplication.const, false);
 });
