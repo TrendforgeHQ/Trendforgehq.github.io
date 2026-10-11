@@ -557,3 +557,9 @@ All entries should describe actual work and results. Do not record planned work 
 - At output commit `f91f00e722b2946bb876c574363177000c9f2e4d`, root and archived attempt pack share blob SHA `23b5b53069351539853d02be1a1f4e08c44b017a`. One candidate matches the archived brief title and both source URLs match the 10-claim report.
 - Offline run [38130433463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130433463) passed 135/135 tests and ran the live read-only audit: 10/10 source IDs and URLs matched; 9 passage IDs resolved; 0 unresolved passage IDs.
 - Remaining issue is `unknown-report-run-binding`: historical run `38106429274` has no lineage manifest recording the claim-report hash. The old production workflow lacked the capture step; the current BOAT branch has a non-blocking capture step for future runs. No production run was dispatched and `main` was not changed.
+
+## 2026-10-11 — Latest BOAT validation checkpoint
+
+- Offline run [38130573836](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573836) passed 136/136 tests and executed the read-only root lineage audit.
+- Control Center QA [38130573818](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573818) passed deterministic tests and production build.
+- Live audit continues to classify report/run binding as UNKNOWN while showing 10/10 source IDs and URLs matched, 9 passage IDs resolved, and 0 unresolved passage IDs. Structural traceability is not semantic verification.
