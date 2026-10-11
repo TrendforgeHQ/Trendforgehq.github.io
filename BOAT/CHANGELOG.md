@@ -401,3 +401,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Fixed the missing offline CI path trigger for `scripts/test-boat-semantic-support-review.mjs`.
 - Offline CI run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed **127/127**, 0 failed, 0 skipped.
 - Reviewed quarantine hash capture and confirmed the publication step still removes claim-blocked article output. No provider or publishing workflow was executed; PR remains draft/unmerged.
+
+### Product-first scope realignment — 2026-10-11
+
+- Reconciled the current implementation against the original BOAT goal. Recent schema/lineage work is foundation only; Control Center chat/task execution, complete published-article claim/evidence audit, public-web editorial benchmarking, secure approval gateway, controlled execution, and the full learning loop remain incomplete.
+- Reprioritized the next step to the existing Control Center and a secure, read-only end-to-end vertical slice, then catalogue-wide article audits, public-web benchmarking, proposal/approval UX, controlled execution, and measured learning.
+- No production behavior or gates changed in this documentation realignment. PR #35 remains draft/unmerged; no provider/publishing run; main untouched.
