@@ -551,3 +551,9 @@ Verified current baseline:
 - Priority is triage only: high for duplicate identity, conflicting/blocked history, or stale lineage; medium for structural findings or unknown coverage; normal only when available structural/provenance checks show no gap. Even normal priority remains human-review-required and is not a factual correctness verdict.
 - Output is deterministic JSON with summary counts, per-article source signals, limitations, and suggested actions. No external web requests, repairs, article writes, or publication decisions are performed.
 - New offline test covers synthetic priority/status cases and validates CLI output against the real catalogue. CI verification pending.
+
+## Claim-level published audit — implementation status (2026-10-11)
+
+- New read-only audit emits per-claim archived verifier signals for every article in the canonical published catalogue. It joins saved claim report source fields and passage/excerpt references, retains all archived outcomes, records metadata run/SHA when present, and checks whether normalized claim text is found in current Markdown.
+- These are traceability signals, not fresh factual checks. The current text comparison is intentionally diagnostic; a non-match can arise from version drift or segmentation. Source URL reachability/freshness, canonical evidence-pack passage resolution, and semantic claim support are not independently checked here.
+- Missing reports and incomplete source context stay UNKNOWN; contradictory historical outcomes stay explicit. No auto repair, article mutation, provider call, or publication decision. New offline tests and workflow filters added; CI pending.
