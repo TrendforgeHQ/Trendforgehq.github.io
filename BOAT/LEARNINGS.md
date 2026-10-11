@@ -201,3 +201,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - In the 10x Research archived run, 4/7 claim strings are present in the article and 4/7 have unique passage matches, but only 2 claims meet both conditions. Do not infer eligibility by using either count alone.
 - The new stdout-only report lists every claim's status and reason codes; it does not assert factual support or modify content.
 - CI validation of the report is pending inspection.
+
+
+
+## L-016 — Keep CLI entry-point imports explicit in modules imported by tests
+
+- The first eligibility-report CI run failed because the report's CLI guard referenced `pathToFileURL` without importing it. The test runner imports the module directly, so the failure surfaced before the report assertions.
+- Added the missing named import. This is a module initialization defect, not a data or eligibility failure.
+- Failed run: [38118890184](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118890184). Validation of the corrected branch is pending.
