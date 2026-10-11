@@ -345,3 +345,9 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added `scripts/test-boat-semantic-support-review-set-golden.mjs` with expected report projections, input-permutation stability checks, source-order preservation checks, dissent retention, and no-winner assertions.
 - Golden projection normalizes only order-insensitive summaries; source `records` order remains exactly as supplied, and all verdicts remain preserved. This is deterministic audit/reporting only, not semantic truth validation.
 - Added the fixture and test paths to `.github/workflows/boat-offline-tests.yml`. Branch-head CI result is pending inspection. No provider/publishing run; main untouched; PR #35 remains draft/unmerged.
+
+
+### Golden-test CI correction
+
+- First golden-test CI [run 38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) ran 113 tests with 111 pass and 2 failures. The failures were in the test expectations: the invalid safety fixture correctly produced two validation errors, and the permutation comparison accidentally treated source-order records as order-insensitive.
+- Corrected the expected error count and split the permutation assertion into a canonical summary comparison plus explicit source-order preservation checks. Revalidation is pending. No production review logic or safety gates were changed.
