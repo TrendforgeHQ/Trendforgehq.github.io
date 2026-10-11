@@ -407,3 +407,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Reconciled the current implementation against the original BOAT goal. Recent schema/lineage work is foundation only; Control Center chat/task execution, complete published-article claim/evidence audit, public-web editorial benchmarking, secure approval gateway, controlled execution, and the full learning loop remain incomplete.
 - Reprioritized the next step to the existing Control Center and a secure, read-only end-to-end vertical slice, then catalogue-wide article audits, public-web benchmarking, proposal/approval UX, controlled execution, and measured learning.
 - No production behavior or gates changed in this documentation realignment. PR #35 remains draft/unmerged; no provider/publishing run; main untouched.
+
+
+### 2026-10-11 — First user-visible BOAT catalogue slice
+
+- Added `scripts/boat-published-catalogue-audit.mjs` as a read-only scanner for the full Markdown article directory; it identifies structural signals only and preserves explicit limits around factual verification.
+- Added the Published Article Audit section to `app/control-center/page.tsx`, with article inventory, counts, flagged findings, and an explicit build-time snapshot / not-fact-checked note.
+- Added responsive styling, type declaration for the helper, deterministic fixture tests, and BOAT workflow path filters for the new test.
+- No article mutation, claim/evidence gate change, provider call, publish workflow run, or main-branch edit. CI and static build result still need inspection.
