@@ -40,8 +40,8 @@ function fixture() {
       { id: 'S2', url: 'https://example.com/source-2' }
     ],
     claims: [
-      { index: 1, claim: 'A verified fixture claim is stated here.', sourceId: 'S1', bestPassageId: 'S1-FF1' },
-      { index: 2, claim: 'A report-only claim not present in the article.', sourceId: 'S2', bestPassageId: 'S2-BODY' }
+      { index: 1, claim: 'A verified fixture claim is stated here.', sourceId: 'S1', bestPassageId: 'S1-FF1', bestPassage: 'The source passage supports the fixture claim.' },
+      { index: 2, claim: 'A report-only claim not present in the article.', sourceId: 'S2', bestPassageId: 'S2-BODY', bestPassage: 'A second source passage.' }
     ]
   };
   const claimReportRaw = JSON.stringify(claimReport);
@@ -199,4 +199,49 @@ test('all three real archived attempts recover the exact same-run canonical pack
       assert.ok(result.findings.some(item => item.code === 'BR-CLAIMS_NOT_ALL_IN_ARTICLE'));
     }
   }
+});
+
+
+test('legacy passage resolver maps only one exact normalized source passage', () => {
+  const result = auditRecoveredRunArtifacts(fixture());
+  const first = result.passageResolution.claims.find(item => item.claimIndex === 1);
+  assert.equal(first.status, 'resolved_unique');
+  assert.equal(first.canonicalPassageId, 'S1-P1');
+  assert.equal(first.method, 'exact-normalized-text');
+  assert.equal(result.passageResolution.appliedToClaimReport, false);
+});
+
+test('legacy passage resolver collapses only an identical repeated sentence before exact match', () => {
+  const input = fixture();
+  const report = JSON.parse(input.claimReportRaw);
+  report.claims[0].bestPassage = 'The source passage supports the fixture claim. The source passage supports the fixture claim.';
+  input.claimReportRaw = JSON.stringify(report);
+  const result = auditRecoveredRunArtifacts(input);
+  const first = result.passageResolution.claims.find(item => item.claimIndex === 1);
+  assert.equal(first.status, 'resolved_unique');
+  assert.equal(first.canonicalPassageId, 'S1-P1');
+  assert.equal(first.method, 'exact-after-collapsing-identical-repeated-sentences');
+});
+
+test('legacy passage resolver leaves duplicate matching passages ambiguous', () => {
+  const input = fixture();
+  const root = JSON.parse(input.evidencePackRaw);
+  root.candidates[0].sources[0].passages.push(root.candidates[0].sources[0].passages[0]);
+  input.evidencePackRaw = JSON.stringify(root);
+  const result = auditRecoveredRunArtifacts(input);
+  const first = result.passageResolution.claims.find(item => item.claimIndex === 1);
+  assert.equal(first.status, 'ambiguous');
+  assert.deepEqual(first.matchingPassageIds, ['S1-P1', 'S1-P2']);
+  assert.equal(first.canonicalPassageId, null);
+});
+
+test('legacy passage resolver does not infer a passage from a source ID alone', () => {
+  const input = fixture();
+  const report = JSON.parse(input.claimReportRaw);
+  report.claims[0].bestPassage = 'This text is not in any saved source passage.';
+  input.claimReportRaw = JSON.stringify(report);
+  const result = auditRecoveredRunArtifacts(input);
+  const first = result.passageResolution.claims.find(item => item.claimIndex === 1);
+  assert.equal(first.status, 'unresolved');
+  assert.equal(first.canonicalPassageId, null);
 });
