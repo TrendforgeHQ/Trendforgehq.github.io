@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.1  
 **Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Read-only evaluator and regression tests are committed on the dedicated branch; execution results are pending verification.
+**Status:** Offline Article Doctor CI passed 7/7 at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`; draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -23,7 +23,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Runtime: not implemented.
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
-- Article Doctor: offline read-only CLI implemented in `scripts/boat-article-doctor.mjs`; its regression suite exists in `scripts/test-boat-article-doctor.mjs`, but tests must not be called passing until a real run is inspected.
+- Article Doctor: offline read-only CLI and 7-test regression suite implemented; CI run 38110482104 passed. Independent source re-checking is not implemented.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
@@ -44,7 +44,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — implementation and tests added; CI result pending |
+| 1 | Read-only artifact collection and Article Doctor report | In progress — offline evaluator and 7/7 CI tests pass; clean/partial fixtures and structural checks next |
 | 2 | Claim/source audit and editorial benchmark evaluation | Not started |
 | 3 | Fixture-backed repair proposals and regression harness | Not started |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
@@ -57,7 +57,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Eleven documentation files added/updated in the blueprint PR.
 - No production code, articles, provider routing, publishing workflow, or quality gates changed.
 - No paid provider calls were made.
-- An isolated BOAT-only CI workflow was added to run the offline Article Doctor regression suite; its current run status must be checked before claiming success.
+- Isolated BOAT workflow [38110482104](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110482104) passed 7/7 tests at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`.
 - Manual source inspection was performed; Markdown rendering/build validation remains pending.
 
 ## Repository record
@@ -65,7 +65,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Draft PR: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35
 - Initial documentation commit: `0a0dde3ea372013f605d12effaadbc0abdb77d31`
 - PR state at last check: open, draft, not merged.
-- Current PR check state at last check: no check runs reported; build/test result unknown.
+- BOAT offline regression CI is green; full site build/deploy validation has not been run as part of this isolated test.
 
 ## Next task
 Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 documentation is reviewed and the read-only interface map is completed.
@@ -74,23 +74,23 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 ## Phase 0.2 update
 - Artifact interface map added to BASELINE_AUDIT.md.
 - Three saved failed claim reports indexed as regression seeds; no evaluator replay has been run.
-- Report schema and offline test plan files added. Schema/path validation remains pending.
+- Report schema is now detailed; a dependency-free smoke test checks generated output against key contract fields. A full external JSON Schema validator remains unrun.
 - No production workflow/article/provider/gate changes; no paid provider or image generation calls.
-- CI status remains unknown until checks are reported.
+- BOAT test status is verified green for the recorded commit; later commits still require their own CI results.
 
 
 ## Validation update
 - JSON parsing: pass for the report schema and fixture index.
 - Fixture index contains 3 records; all 9 referenced archive paths exist on main.
-- This checks syntax and path existence only. No evaluator replay, formal schema-validator run, build, or workflow run has been performed.
+- Article Doctor regression suite: 7 passed, 0 failed, 0 skipped in run 38110482104. No full site build or publishing workflow was run.
 
 
 ## Phase 1 implementation record — 2026-10-11
 - Added `scripts/boat-article-doctor.mjs`: read-only extraction of saved verifier signals, title/run integrity checks, artifact SHA-256 hashes, and explicit limitations. It does not fetch sources, call providers, edit articles, or dispatch workflows.
-- Added `scripts/test-boat-article-doctor.mjs`: deterministic fixture, finding-category, mismatch, CLI failure, and no-input-mutation tests. **The suite is not yet verified as passing.** A local clone attempt failed because this environment could not resolve `github.com`; that is an environment limitation, not a test result.
+- Added `scripts/test-boat-article-doctor.mjs`: deterministic fixture, finding-category, mismatch, CLI failure, and no-input-mutation tests. **The suite passed 7/7** in run 38110482104. A prior local clone attempt failed due to DNS, but a separate isolated Node run later passed.
 - Added `.github/workflows/boat-offline-tests.yml`, scoped to the dedicated BOAT branch and BOAT-related pull-request paths. It runs only Node built-in tests and does not run publishing, image generation, or paid providers.
 - Related independent reliability investigation: Run [38062572123](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38062572123) failed because the Run 405 calibration test tried to download expired artifact `10713098432` (HTTP 410). PR #34's previous successful run treated this as an explicit skip; that was not a calibration pass.
-- The archived Run 405 article and brief are still committed, but its archived `authoritative-evidence-pack.json` is empty. A new test attempt on PR #34 reconstructs a labelled evidence pack from the saved brief passages; this is **not** an exact replay of the original historical pack. Calibration outcome remains pending until its actual job log is inspected.
+- The archived Run 405 article and brief are still committed, but its archived `authoritative-evidence-pack.json` is empty. A new test attempt on PR #34 reconstructs a labelled evidence pack from the saved brief passages; this is **not** an exact replay of the original historical pack. Calibration reconstruction result is now verified: run 38110223968 passed the 9/3/3 reconstructed baseline; the historical 11/2/2 target remains unverified.
 - BOAT branch: `docs/boat-blueprint-phase0-2026-10-11`; draft PR #35 remains open and unmerged. No direct `main` changes, paid provider calls, image-generation calls, publishing runs, or gate/threshold changes were made for this work.
 
 
@@ -98,4 +98,14 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Inspected PR #34 reliability run [38110101089](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110101089). Its reconstructed verifier output was **9 supported / 3 partial / 3 unsupported** (15 factual claims; average confidence 60; verifier correctly blocked), not the historical target 11/2/2. This attempt failed because the test still asserted the unavailable historical distribution against a reconstructed pack.
 - Updated the test to treat 9/3/3 as the deterministic baseline for the reconstructed archived-brief fixture, require the verifier to block, and print each claim plus an explicit caveat. This does **not** establish the historical 11/2/2 result; the original evidence pack is unavailable.
 - New PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) is in progress at this record update. Do not mark calibration complete until its final logs are inspected.
-- BOAT offline workflow run [38110190967](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110190967) is pending at this record update. Article Doctor tests remain unverified until jobs/logs show their actual result.
+- BOAT offline workflow run [38110482104](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110482104) completed successfully: 7 passed, 0 failed, 0 skipped.
+
+
+## Phase 1 validation result — 2026-10-11
+- **PASS:** [BOAT Offline Article Doctor Tests run 38110482104](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110482104), tested commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f): 7 tests passed, 0 failed, 0 skipped. Logs confirm archived fixture existence, deterministic read-only report output, claim-warning categories, title/run mismatch handling, CLI error behavior, input immutability, and the report-schema contract smoke test.
+- The same seven tests passed in an isolated Node environment at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`, exit code 0; working tree was clean. The GitHub Actions run is the authoritative CI result.
+- Expanded `BOAT/schemas/article-doctor-report.schema.json` to describe nested subject, summary, finding, evidence pointer, provenance, check, and limitation fields. The test verifies the generated report against key schema contract fields; **a full external JSON Schema validator has not been run**.
+- A first attempt to implement a custom schema-subset validator introduced syntax errors; that helper was discarded and replaced by a smaller dependency-free contract smoke test. Final test suite is 7/7 green.
+- **Separate calibration:** PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed. Its durable reconstructed Run 405 regression pins 9 supported / 3 partial / 3 unsupported and confirms the verifier blocks. The historical 11/2/2 target remains unverified because the original evidence pack is unavailable.
+- BOAT draft PR #35 remains open and unmerged. No direct `main` changes, provider calls, image generation, publishing runs, or gate/threshold changes were made.
+- Next: add clean and partial-only regression fixtures, then deterministic read-only article-structure findings (empty headings/repeated sentences) without changing publication gates.
