@@ -422,3 +422,6 @@ All entries should describe actual work and results. Do not record planned work 
 - BOAT Offline Tests [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757) passed **128/128**, including the new scanner fixture suite; Control Center contract suite passed **33/33**.
 - Control Center QA [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747) passed the production static build. Existing non-fatal webpack cache/CSS warnings remain.
 - This validates the code path and build, not semantic truth, freshness, full claim-to-evidence coverage, or live chat. No providers or publishing workflows were called.
+
+
+- Corrected a build-time type error after changing the inventory to the canonical article index: the table now keys/displays by article slug. Follow-up CI is pending.
