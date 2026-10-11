@@ -75,7 +75,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       text(claim?.coreFactMatch?.factId),
       ...(Array.isArray(claim?.provenanceFactMatches) ? claim.provenanceFactMatches.map(f => text(f?.factId)) : [])
     ].filter((v, j, all) => v && all.indexOf(v) === j);
-    const facts = candidate?.evidenceBrief?.storyFactMap?.facts ?? [];
+    const facts = candidate?.evidenceBrief?.storyFactMap?.coreFacts ?? candidate?.evidenceBrief?.storyFactMap?.facts ?? [];
     const passageRows = ids.map(id => {
       if (!usableCandidate || !source) return { id, status: 'unknown-pack-binding', resolvedPassageId: null };
       if (id === sourceId + '-BODY') return { id, status: text(source.body) ? 'source-body-anchor-present-not-a-passage' : 'unknown-source-body-missing', resolvedPassageId: null };
