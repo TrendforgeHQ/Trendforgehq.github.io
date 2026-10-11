@@ -60,7 +60,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       && record?.hashes?.articleBriefSha256 === currentHashes.articleBriefSha256
       && text(manifest.workflowRun) !== '' && /^[0-9]+$/.test(text(manifest.workflowRun))));
   // The attempt archive binds the pack to a run; only an exact manifest hash match binds the report too.
-  const packArticleRunBindingProven = Boolean(archiveMatch || manifestMatch);
+  const packArchiveRunBindingProven = Boolean(archiveMatch || manifestMatch);
   const reportRunBindingProven = Boolean(manifestMatch);
   const rows = claims.map((claim, i) => {
     const sourceId = text(claim?.sourceId ?? claim?.coreFactMatch?.sourceId);
@@ -116,7 +116,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
   const status = !reportParsed.valid || !Array.isArray(report?.claims) ? 'unknown-report-invalid-or-missing'
     : !packParsed.valid || !Array.isArray(pack?.candidates) ? 'unknown-canonical-pack-invalid-or-missing'
     : !candidateTitle || titleMatches.length !== 1 ? 'unknown-canonical-candidate-match'
-    : !packArticleRunBindingProven ? 'unknown-pack-article-run-binding'
+    : !packArchiveRunBindingProven ? 'unknown-pack-article-run-binding'
     : !reportRunBindingProven ? 'unknown-report-run-binding'
     : rows.some(r => r.sourceResolution.startsWith('unknown-') || r.passageResolution.some(p => p.status.startsWith('unknown-'))) ? 'attention-unresolved-identifiers'
     : 'identifiers-resolved-semantic-support-unknown';
@@ -135,7 +135,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       articlePath: articlePath || null,
       articleTitle: articleTitle || null,
       articleTitleMatchesClaimReport: Boolean(articleTitle && text(report?.articleTitle) === articleTitle),
-      packArticleRunBindingProven,
+      packArchiveRunBindingProven,
       matchedWorkflowRun: manifestMatch ? text(manifestMatch.workflowRun) : archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
       matchedWorkflowSha: manifestMatch ? text(manifestMatch.workflowSha) : archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
       matchedLineageManifest: Boolean(manifestMatch),
