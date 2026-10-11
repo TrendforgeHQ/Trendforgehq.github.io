@@ -24,12 +24,16 @@ function parse(raw, label, findings) {
   }
 }
 
-export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimReportRaw, articleBriefRaw, evidencePackRaw, generatedAt = '2000-01-01T00:00:00.000Z' } = {}) {
+export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimReportRaw, articleBriefRaw, evidencePackRaw, runMetadataRaw = null, generatedAt = '2000-01-01T00:00:00.000Z' } = {}) {
   const findings = [];
   const add = (code, severity, message, details = {}) => findings.push(finding(code, severity, message, details));
   const report = parse(claimReportRaw, 'claimReport', findings);
   const brief = parse(articleBriefRaw, 'articleBrief', findings);
   const packRoot = parse(evidencePackRaw, 'evidencePack', findings);
+  const handoffFindings = [];
+  const runMetadata = typeof runMetadataRaw === 'string'
+    ? parse(runMetadataRaw, 'runMetadata', handoffFindings)
+    : null;
 
   if (!obj(recoveryAudit)) add('BPI-RECOVERY-AUDIT-MISSING', 'unknown', 'A structured recovery audit is required.');
   if (typeof articleRaw !== 'string') add('BPI-ARTICLE-MISSING', 'unknown', 'Exact recovered article bytes are required.');
@@ -185,6 +189,17 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
   const unknowns = findings.some(item => item.severity === 'unknown');
   const eligible = claims.filter(item => item.status === 'ready_for_human_proposal').length;
   const status = hardErrors ? 'blocked' : unknowns ? 'unknown' : eligible ? 'ready_with_restrictions' : 'no_eligible_claims';
+  const expectedOriginalHashes = {
+    articleSha256: typeof articleRaw === 'string' ? hash(articleRaw) : '',
+    claimReportSha256: typeof claimReportRaw === 'string' ? hash(claimReportRaw) : '',
+    evidencePackSha256: typeof evidencePackRaw === 'string' ? hash(evidencePackRaw) : ''
+  };
+  const runIdMatches = !!runMetadata && s(runMetadata.workflowRun) === s(recoveryAudit?.artifact?.runId);
+  const workflowShaMatches = !!runMetadata && s(runMetadata.workflowSha) === s(recoveryAudit?.artifact?.workflowSha);
+  const originalHashesMatch = !!runMetadata &&
+    runMetadata.hashesRecordedAtGeneration === true &&
+    Object.entries(expectedOriginalHashes).every(([key, actual]) => !!actual && !!s(runMetadata[key]) && s(runMetadata[key]) === actual);
+  const handoffAllowed = runIdMatches && workflowShaMatches && originalHashesMatch && handoffFindings.length === 0;
   return {
     schemaVersion: '1.0',
     engine: 'BOAT Recovered Proposal-Input Adapter',
@@ -220,9 +235,19 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
     semanticSupport: 'not_verified',
     replacementTextGenerated: false,
     proposalEngineHandoff: {
-      status: 'blocked',
-      allowed: false,
-      reason: 'Original generation-time hashes are absent; recovery-time hashes cannot satisfy the factual proposal engine lineage contract.'
+      status: handoffAllowed ? 'ready' : 'blocked',
+      allowed: handoffAllowed,
+      reason: handoffAllowed
+        ? 'Original workflow metadata contains matching article/report/evidence-pack hashes and matching run/SHA identifiers.'
+        : 'Original generation-time hash fields and matching same-run metadata are absent or do not match; recovery-time hashes cannot substitute.',
+      checks: {
+        metadataPresent: !!runMetadata,
+        hashesRecordedAtGeneration: runMetadata?.hashesRecordedAtGeneration === true,
+        runIdMatches,
+        workflowShaMatches,
+        artifactHashesMatch: originalHashesMatch,
+        metadataParseValid: handoffFindings.length === 0
+      }
     },
     limitations: [
       'This adapter emits validated inputs only; it does not author replacement text or create/apply a factual correction.',
@@ -243,13 +268,14 @@ function main(argv) {
     args[key.slice(2)] = value;
   }
   for (const key of ['recovery-audit', 'article', 'claim-report', 'brief', 'pack', 'output']) if (!args[key]) throw new Error('Missing required --' + key);
-  const inputs = ['recovery-audit', 'article', 'claim-report', 'brief', 'pack'].map(key => path.resolve(args[key]));
+  const inputs = ['recovery-audit', 'article', 'claim-report', 'brief', 'pack', 'run-metadata'].filter(key => args[key]).map(key => path.resolve(args[key]));
   const output = path.resolve(args.output);
   if (inputs.includes(output) || fs.existsSync(output)) throw new Error('Output must be a new path and must not overwrite an input.');
   const result = buildRecoveredProposalInputs({
     recoveryAudit: JSON.parse(read(args['recovery-audit'])),
     articleRaw: read(args.article), claimReportRaw: read(args['claim-report']),
-    articleBriefRaw: read(args.brief), evidencePackRaw: read(args.pack)
+    articleBriefRaw: read(args.brief), evidencePackRaw: read(args.pack),
+    runMetadataRaw: args['run-metadata'] ? read(args['run-metadata']) : null
   });
   fs.mkdirSync(path.dirname(output), { recursive: true });
   fs.writeFileSync(output, JSON.stringify(result, null, 2) + '\n', { flag: 'wx' });
