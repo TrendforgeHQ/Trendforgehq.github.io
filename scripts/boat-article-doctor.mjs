@@ -54,7 +54,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
       }));
     }
   }
-  const prose = articleBody.replace(/^\s{0,3}#{1,6}\s+.*$/gm, '').replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '').replace(/\s+/g, ' ');
+  const prose = articleBody.replace(/^\s{0,3}#{1,6}\s+.*$/gm, '').replace(/^\s{0,3}#{1,6}\s*$/gm, '').replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '').replace(/\s+/g, ' ');
   const candidates = prose.split(/(?<=[.!?])\s+(?=[A-Z0-9"“$])/).map(s => s.trim()).filter(s => s.length >= 50 && s.split(/\s+/).length >= 8);
   const repeated = new Map();
   for (const sentence of candidates) {
