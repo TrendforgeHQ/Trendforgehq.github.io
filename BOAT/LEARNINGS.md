@@ -510,3 +510,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Combine the existing three audits into a read-only triage report. Preserve `unknown`, stale manifests, historical blocks, conflicting outcomes, and duplicate slug ambiguity. Priority is only work ordering; every item remains `needs-human-review`, including articles with a current-byte manifest match.
 - **Guardrail:** No public-web fetch, article mutation, repair execution, or publishing decision. Exact-byte lineage is provenance only; archived PASS is not current verification.
 - **Validation:** Added synthetic status/priority assertions and a CLI integration test against the real canonical article index. Branch-head CI must be inspected before this learning is marked verified.
+
+## L-068 — Claim-level history must retain artifact uncertainty
+
+- **Need:** A published-article triage queue must expose individual claim/source/passage records instead of only article-level counts.
+- **Decision:** Read archived verifier reports and preserve all attempts, claim outcomes, source identifiers/URLs/roles, passage IDs, excerpts, run metadata, and current-text match diagnostics. Do not infer missing source context or choose the latest report as the truth.
+- **Limits:** Historical PASS is not current verification; source fields and passage IDs are saved metadata until independently resolved; text non-match is not proof of a false or absent claim. This tool does not fetch web sources, run providers, generate repairs, or mutate articles.
+- **Validation:** Added synthetic conflict/unknown cases and an integration test against the canonical published catalogue. Wait for branch-head offline and Control Center CI before marking the implementation verified.
