@@ -163,6 +163,41 @@ test('expected workflow run mismatch is an integrity finding', () => {
   assert.ok(output.findings.some(item => item.findingId === 'AD-ARTIFACT-RUN-001'));
 });
 
+test('missing claims array is unknown and cannot be a clean pass', () => {
+  const output = analyzeArticle({
+    articleText: '---\ntitle: "Integrity Article"\n---\nA valid article body.',
+    articlePath: 'integrity.md', report: { articleTitle: 'Integrity Article', pass: true },
+    reportPath: 'report-without-claims.json', generatedAt: fixedTime
+  });
+  assert.equal(output.summary.status, 'unknown');
+  assert.ok(output.findings.some(item => item.findingId === 'AD-ARTIFACT-CLAIMS-001'));
+});
+
+test('missing article title yields unknown rather than clear', () => {
+  const output = analyzeArticle({
+    articleText: 'Body without frontmatter title.',
+    articlePath: 'missing-title.md', report: { articleTitle: 'Expected Title', pass: true, claims: [] },
+    reportPath: 'report.json', generatedAt: fixedTime
+  });
+  assert.equal(output.summary.status, 'unknown');
+  assert.ok(output.findings.some(item => item.category === 'artifact_integrity'));
+});
+
+test('CLI rejects malformed report JSON without emitting a report', () => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-article-doctor-malformed-'));
+  try {
+    const article = path.join(temp, 'article.md');
+    const report = path.join(temp, 'report.json');
+    fs.writeFileSync(article, '---\ntitle: "Malformed Report Test"\n---\nBody.');
+    fs.writeFileSync(report, '{"broken":');
+    const result = spawnSync(process.execPath, [path.join(root, 'scripts/boat-article-doctor.mjs'), '--article', article, '--report', report], { encoding: 'utf8' });
+    assert.equal(result.status, 2);
+    assert.match(result.stderr, /Invalid JSON/);
+    assert.equal(result.stdout, '');
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
 test('CLI rejects a missing input without writing a report file', () => {
   const result = spawnSync(process.execPath, [
     path.join(root, 'scripts/boat-article-doctor.mjs'),
