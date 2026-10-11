@@ -208,3 +208,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Added a read-only stdout report with per-claim status, source/passage mapping, and eligibility reason codes for the three recovered attempts.
 - Added integration assertions for 40 claims: expected 26 eligible, 3 blocked, 11 unknown; eligible counts per run 12/15, 12/18, 2/7.
 - The report does not claim semantic support, create replacement text, or write article files. CI result is pending inspection.
+
+
+
+## 2026-10-11 — Eligibility report verified
+
+- Report CLI import defect found in [run 38118890184](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118890184) and fixed by explicitly importing pathToFileURL.
+- Added a direct CLI test proving the report emits parseable JSON to stdout and writes no report file.
+- Corrected branch-head suite [run 38118989732](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118989732) passed **69/69**, 0 failed, 0 skipped.
+- Verified 40 claims total: 26 eligible, 3 blocked, 11 unknown; run-level eligible counts 12/15, 12/18, 2/7. Eligibility does not mean semantic support is verified.
