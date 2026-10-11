@@ -48,7 +48,7 @@ assert.equal(boundAttempt.status, 'identifiers-resolved-semantic-support-unknown
 assert.equal(boundAttempt.artifacts.reportRunBindingProven, true);
 assert.equal(boundAttempt.artifacts.matchedFinalizedAttemptBundle, true);
 const badAttempt = { ...finalizedAttempt, metadata: { ...finalizedAttempt.metadata, claimReportSha256: '0'.repeat(64) } };
-const unboundAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords: [...attemptRecords, badAttempt] });
+const unboundAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords: [badAttempt] });
 assert.equal(unboundAttempt.artifacts.reportRunBindingProven, false);
 
 const wrongManifest = { ...manifest, records: [{ ...manifest.records[0], hashes: { ...manifest.records[0].hashes, claimReportSha256: '0'.repeat(64) } }] };
