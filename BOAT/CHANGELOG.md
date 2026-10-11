@@ -444,3 +444,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added synthetic contract tests in `scripts/test-boat-published-lineage-manifest.mjs` and explicit BOAT offline workflow path filters.
 - CI verification is pending. The helper is not yet integrated into the production publishing workflow or Control Center. No provider/publishing workflow, article mutation, or `main` edit was performed.
 - Next: inspect branch-head offline CI and confirm real workflow artifact shapes before wiring manifest generation into publishing.
+
+
+### Published lineage manifest builder — offline CI verified (2026-10-11)
+- BOAT Offline Tests [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, 0 failed, 0 skipped; logs confirm the new lineage manifest contract test passed.
+- Control Center deterministic suite passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); production build was still in progress at the last check.
+- No provider/publishing workflow was run. The helper remains offline-only and is not yet wired into `publish.yml`.
