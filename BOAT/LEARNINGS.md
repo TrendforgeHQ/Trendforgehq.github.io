@@ -233,3 +233,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - The eligibility report schema explicitly requires recovery-time checksum provenance, not generation-time provenance; it also locks semantic support to not_verified and automatic application to false.
 - Schema-contract CI: [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348), 70 passed, 0 failed, 0 skipped.
+
+
+
+## L-020 — Reconcile report totals from leaf records
+
+- Do not trust summary counters without recomputing them from the underlying per-claim statuses.
+- The report now checks per-run claim counts against the adapter and verifies aggregate counts against per-run totals. Mismatches fail closed.
+- CI: [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899), 70 passed, 0 failed, 0 skipped.
