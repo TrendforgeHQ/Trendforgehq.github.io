@@ -591,3 +591,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Confirmed runtime canonical pack is valid, 3,470,280 bytes, 24 candidates; the current brief maps to exactly one candidate with 2 sources.
 - The same run-scoped artifact contains a 10-claim saved PASS report with matching `articlePath`; archived metadata still lacks exact article/report/pack hashes.
 - Runtime evidence-pack generation succeeded in this observed run. The empty root snapshot is a separate persistence/snapshot issue, not proof the generator failed.
+
+## 2026-10-11 — Bind verifier report to exact attempt lineage
+
+- Added a fail-closed binder that records SHA-256 for article, claim report and canonical evidence pack against the workflow run/SHA in the article-attempt archive.
+- Wired the binder after the claim-verification gate; it copies the exact verifier report into the matching archive, but never restores quarantined articles to the publish set.
+- Root lineage audit now proves report/run binding only when the archived report bytes and recorded report hash match the inspected report exactly.
+- Added isolated fixture coverage for exact binding, changed-pack mismatch, quarantined article handling and no-article skip. Latest CI verification pending.
