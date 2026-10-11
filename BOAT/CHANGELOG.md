@@ -314,3 +314,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/test-boat-semantic-support-review.mjs` for schema-contract and rubric regressions. Tests assert exact 64-hex artifact hashes, component-level review, advisory-only recommendations, and immutable safety constants: `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, `existingGatesStillRequired: true`.
 - This contract records human judgment; it is not a truth oracle, does not auto-apply edits, and does not bypass current claim/editorial/publication gates. The first CI run found one overly strict wording assertion in the test, now corrected; rerun status pending.
 - Next: implement a read-only validator/CLI with fail-closed record checks; no providers, publish run, or `main` changes.
+
+
+## 2026-10-11 — Validator edge-case hardening
+
+- Tightened date-time validation to reject impossible calendar dates and out-of-range hour/minute/second fields instead of relying on permissive date parsing.
+- Aligned URI validation with absolute URI format semantics rather than requiring every URI to have a hostname.
+- Replaced the weak keyword-string assertion with a recursive inventory test that fails if the checked-in schema adds a keyword not explicitly supported by the dependency-free validator.
+- Branch-head offline suite [run 38121773355](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121773355) passed **94/94**, 0 failed, 0 skipped. Revalidation after the test-contract update [run 38121806369](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121806369) also passed **94/94**.
+- No providers, publishing, article changes, or main-branch changes. Next: define duplicate review-ID and conflicting-review handling; preserve independent dissent records.
