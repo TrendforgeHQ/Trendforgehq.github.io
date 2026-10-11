@@ -622,3 +622,11 @@ Downloaded and inspected run `38106429274`'s retained artifact ZIP (`trendforge-
 Implemented on the isolated PR branch: the pipeline output-commit step now logs the canonical evidence-pack worktree byte count, SHA-256 and Git blob ID before the first output commit; it then logs the committed blob ID/size, the post-transfer staged file bytes/hash/blob ID, and an explicit exact-match/mismatch/unknown result. These diagnostics are warnings/logs only and do not create a new publication gate. The observed artifact-vs-Git persistence discrepancy is still not explained; this change is intended to locate the exact stage in a naturally occurring scheduled run, not claim the fix is proven. No production run was dispatched.
 
 Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression test to the BOAT offline workflow path filters, and expanded the workflow-contract regression test to assert both persistence checkpoints and those path filters. Latest-head offline CI and Control Center build are pending.
+
+## 2026-10-11 — Persistence transfer diagnostics and CI verification
+
+- Added non-blocking evidence-pack byte count, SHA-256 and Git blob diagnostics before output commit, inside the output commit, and after the reset/transfer staging step.
+- Added explicit exact-match/mismatch/unknown transfer log outcomes without adding a publication gate.
+- Added numeric-claim coverage audit implementation and test to the BOAT offline workflow path filters.
+- Workflow-contract test now checks persistence checkpoints and runs `bash -n` against the output-commit shell block.
+- Verified implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`: offline tests 137/137 and Control Center production build passed. Real production persistence remains unverified; no production workflow was dispatched.
