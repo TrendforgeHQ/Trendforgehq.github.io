@@ -209,3 +209,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The first eligibility-report CI run failed because the report's CLI guard referenced `pathToFileURL` without importing it. The test runner imports the module directly, so the failure surfaced before the report assertions.
 - Added the missing named import. This is a module initialization defect, not a data or eligibility failure.
 - Failed run: [38118890184](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118890184). Validation of the corrected branch is pending.
+
+
+
+## L-017 — A read-only report needs an actual CLI test, not just an imported function
+
+- Import-based tests did not exercise the report's command-line entry point. The first report suite caught a missing pathToFileURL import at module initialization.
+- Added the explicit import and a direct child-process test that parses stdout JSON and asserts no report file is written.
+- Corrected branch-head CI: [run 38118989732](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118989732), 69 passed, 0 failed, 0 skipped.
+- Verified report counts: 40 total, 26 eligible, 3 blocked, 11 unknown. Eligibility remains traceability-only, not semantic support.
