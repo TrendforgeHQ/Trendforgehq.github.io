@@ -156,7 +156,13 @@
                 "artifactPath",
                 "jsonPointer",
                 "workflowRun",
-                "detail"
+                "detail",
+                "sourceUrl",
+                "sourceTitle",
+                "sourceId",
+                "sourceRole",
+                "passageIds",
+                "sourceExcerpt"
               ],
               "properties": {
                 "artifactPath": {
@@ -177,6 +183,43 @@
                 },
                 "detail": {
                   "type": "string"
+                },
+                "sourceUrl": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceTitle": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceRole": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "passageIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sourceExcerpt": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 500
                 }
               },
               "additionalProperties": false

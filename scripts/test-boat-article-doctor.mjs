@@ -98,6 +98,26 @@ test('maps attribution, numeric mismatch, contradiction and scope warnings indep
   assert.equal(output.summary.status, 'blocked');
 });
 
+test('claim findings preserve source URL, source title, and passage lineage', () => {
+  const fixture = loadFixture(fixtureIndex.fixtures[0]);
+  const targetClaim = fixture.report.claims.find(item => item.status === 'unsupported' && item.bestUrl);
+  assert.ok(targetClaim, 'fixture should include an unsupported claim with a source URL');
+  const output = analyzeArticle({
+    articleText: fixture.articleText, articlePath: fixture.articlePath,
+    report: fixture.report, reportPath: fixture.reportPath,
+    metadata: fixture.metadata, metadataPath: fixture.metadataPath,
+    expectedWorkflowRun: fixtureIndex.fixtures[0].workflowRun, generatedAt: fixedTime
+  });
+  const finding = output.findings.find(item => item.category === 'unsupported_claim' && item.affectedText === targetClaim.claim);
+  assert.ok(finding, 'unsupported claim should produce a finding');
+  const evidence = finding.evidence[0];
+  assert.equal(evidence.sourceUrl, targetClaim.bestUrl);
+  assert.equal(evidence.sourceTitle, targetClaim.bestSource);
+  assert.equal(evidence.sourceId, targetClaim.sourceId);
+  assert.ok(evidence.passageIds.length > 0);
+  assert.ok(evidence.sourceExcerpt.length <= 500);
+  assert.equal(evidence.jsonPointer, '/claims/' + fixture.report.claims.indexOf(targetClaim));
+});
 test('clean supported report yields clear without claiming independent source re-check', () => {
   const output = analyzeArticle({
     articleText: '---\ntitle: "Clean Article"\n---\nA clean article with one supported factual statement.',

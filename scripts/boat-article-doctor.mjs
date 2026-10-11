@@ -25,13 +25,28 @@ function bodyFromMarkdown(text) {
 }
 
 
-function makeFinding({ id, category, severity, title, description, claim, reportPath, index, workflowRun, recommendation }) {
+function makeFinding({ id, category, severity, title, description, claim, reportPath, index, workflowRun, recommendation, sourceUrl = null, sourceTitle = null, sourceId = null, sourceRole = null, passageIds = [], sourceExcerpt = null }) {
   return {
     findingId: id, category, severity, status: 'confirmed', title, description,
     affectedText: claim ?? null, confidence: 100,
-    evidence: [{ artifactPath: reportPath, jsonPointer: index == null ? null : `/claims/${index}`, workflowRun: workflowRun ?? null, detail: description }],
+    evidence: [{ artifactPath: reportPath, jsonPointer: index == null ? null : `/claims/${index}`, workflowRun: workflowRun ?? null, detail: description, sourceUrl, sourceTitle, sourceId, sourceRole, passageIds, sourceExcerpt }],
     recommendation, requiresApproval: true,
     validationPlan: ['Review the exact archived article and evidence passages.', 'If a repair is proposed, rerun the existing claim verifier before any publication decision.']
+  };
+}
+
+
+function sourceEvidenceFields(claim = {}) {
+  const passageIds = Array.isArray(claim.matchedPassages) ? claim.matchedPassages : String(claim.bestPassageId ?? '').split(',');
+  const excerpt = String(claim.evidence ?? claim.bestPassage ?? '').trim();
+  const valueOrNull = value => typeof value === 'string' && value.trim() ? value.trim() : null;
+  return {
+    sourceUrl: valueOrNull(claim.bestUrl),
+    sourceTitle: valueOrNull(claim.bestSource),
+    sourceId: valueOrNull(claim.sourceId),
+    sourceRole: valueOrNull(claim.sourceRole),
+    passageIds: passageIds.map(String).map(value => value.trim()).filter(Boolean),
+    sourceExcerpt: excerpt ? excerpt.slice(0, 500) : null
   };
 }
 
@@ -109,12 +124,13 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
       const index = Number.isInteger(claim.index) ? claim.index : i + 1;
       const jsonIndex = i;
       const sourceIndex = jsonIndex;
+      const sourceFields = sourceEvidenceFields(claim);
       if (claim.status === 'unsupported' || String(claim.classification ?? '').startsWith('unsupported')) {
         findings.push(makeFinding({
           id: `AD-UNSUPPORTED-${index}`, category: 'unsupported_claim', severity: 'high',
           title: 'Claim verifier marked a claim unsupported',
           description: `Saved verifier status is "${claim.status ?? 'missing'}"; confidence ${claim.confidence ?? 'unknown'}.`,
-          claim: text, reportPath, index: sourceIndex, workflowRun,
+          claim: text, reportPath, index: sourceIndex, workflowRun, ...sourceFields,
           recommendation: 'Inspect the cited passage and remove, qualify, or repair the claim only after evidence review.'
         }));
       }
@@ -123,7 +139,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
           id: `AD-CONTRADICTED-${index}`, category: 'contradicted_claim', severity: 'critical',
           title: 'Claim verifier detected a contradiction',
           description: 'The saved verifier report marks this claim as contradicted.',
-          claim: text, reportPath, index: sourceIndex, workflowRun,
+          claim: text, reportPath, index: sourceIndex, workflowRun, ...sourceFields,
           recommendation: 'Quarantine this claim for editorial review; any repair must be re-verified.'
         }));
       }
@@ -132,7 +148,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
           id: `AD-NUMERIC-${index}`, category: 'numeric_mismatch', severity: 'critical',
           title: 'Claim verifier detected a numeric mismatch',
           description: 'The saved verifier report marks a quantitative mismatch.',
-          claim: text, reportPath, index: sourceIndex, workflowRun,
+          claim: text, reportPath, index: sourceIndex, workflowRun, ...sourceFields,
           recommendation: 'Compare every number and unit with the cited evidence; do not infer or silently normalize values.'
         }));
       }
@@ -142,7 +158,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
           id: `AD-ATTRIBUTION-${index}`, category: 'attribution', severity: attribution.blocked ? 'high' : 'medium',
           title: 'Claim has an attribution or certainty warning',
           description: `Attribution diagnostics: blocked=${Boolean(attribution.blocked)}, certaintyEscalation=${Boolean(attribution.certaintyEscalation)}, attributionDropped=${Boolean(attribution.attributionDropped)}.`,
-          claim: text, reportPath, index: sourceIndex, workflowRun,
+          claim: text, reportPath, index: sourceIndex, workflowRun, ...sourceFields,
           recommendation: 'Preserve the source attribution and uncertainty level; check the exact source wording before editing.'
         }));
       }
@@ -151,7 +167,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
           id: `AD-SCOPE-${index}`, category: 'temporal_context', severity: 'medium',
           title: 'Claim has a scope or temporal warning',
           description: `Verifier scope warnings: ${claim.scopeWarnings.map(String).join('; ')}.`,
-          claim: text, reportPath, index: sourceIndex, workflowRun,
+          claim: text, reportPath, index: sourceIndex, workflowRun, ...sourceFields,
           recommendation: 'Check the claim scope and time period against the source; avoid universal wording unless the evidence supports it.'
         }));
       }
