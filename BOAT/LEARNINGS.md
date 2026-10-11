@@ -226,3 +226,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Downstream report consumers need an explicit contract for per-claim statuses and reason codes, not just a successful JSON parse.
 - Added a report schema and tests that preserve the review-only constraints: recovery-time hashes, semantic support not verified, and automatic application disabled.
 - Branch-head CI validation is pending inspection.
+
+
+
+## L-019 — Report contracts must preserve provenance caveats
+
+- The eligibility report schema explicitly requires recovery-time checksum provenance, not generation-time provenance; it also locks semantic support to not_verified and automatic application to false.
+- Schema-contract CI: [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348), 70 passed, 0 failed, 0 skipped.
