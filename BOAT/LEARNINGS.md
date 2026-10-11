@@ -469,3 +469,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Persistence:** The manifest sits under `data/published-lineage/`, which is included by the existing `git add data` step. It will only be committed if later build/output commit steps succeed.
 - **Validation status:** Writer, CLI tests, and workflow wiring have been added; branch-head CI is pending. Earlier test failure was a test-expectation mismatch and was corrected. No publishing workflow/provider call/article mutation/`main` change occurred.
 - **Next:** verify offline tests and Control Center build; review exact diff before treating the integration as complete.
+
+
+## L-063 — Update paired TypeScript declarations when extending an MJS module
+- **Observed:** The JavaScript lineage-audit export existed and its offline tests passed, but the Next.js production build failed with “no exported member” because the paired `.d.mts` declaration did not expose the new function at that commit.
+- **Fix:** Add the public function and return-state types to `scripts/boat-published-catalogue-audit.d.mts` alongside the MJS implementation.
+- **Validation:** 130/130 offline tests passed before the declaration change. The new branch-head offline and Control Center QA runs are pending; do not mark complete until production build is green.
+- **Next:** inspect both latest CI runs and then review the end-to-end manifest persistence/dash state.
