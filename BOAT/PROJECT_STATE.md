@@ -1,6 +1,9 @@
 # BOAT — Canonical Project State
 
-**Last updated:** 2026-10-11  \n**State version:** 0.1.2  \n**Current phase:** Phase 1 — Offline audit + sandbox repair foundations  \n**Status:** Article Doctor baseline passed 17/17 in run `38111154726`; new Evidence Auditor and Repair Engine are committed on the BOAT branch and awaiting their own CI result.n run `38111102258`; draft PR remains unmerged.
+**Last updated:** 2026-10-11  
+**State version:** 0.1.2  
+**Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
+**Status:** Article Doctor baseline passed 17/17 in run 38111154726; Evidence Auditor and Repair Engine are committed on the BOAT branch, with their CI run in progress.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
