@@ -38,6 +38,18 @@ const bound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, 
 assert.equal(bound.status, 'identifiers-resolved-semantic-support-unknown');
 assert.equal(bound.artifacts.reportRunBindingProven, true);
 assert.equal(bound.artifacts.matchedLineageManifest, true);
+const finalizedAttempt = {
+  metadata: { lineageBindingVersion: 1, articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40), articleSha256: hash(articleRaw), evidencePackSha256: hash(packRaw), claimReportSha256: hash(reportRaw) },
+  articleRaw, packRaw, reportRaw
+};
+const boundAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords: [...attemptRecords, finalizedAttempt] });
+assert.equal(boundAttempt.status, 'identifiers-resolved-semantic-support-unknown');
+assert.equal(boundAttempt.artifacts.reportRunBindingProven, true);
+assert.equal(boundAttempt.artifacts.matchedFinalizedAttemptBundle, true);
+const badAttempt = { ...finalizedAttempt, metadata: { ...finalizedAttempt.metadata, claimReportSha256: '0'.repeat(64) } };
+const unboundAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords: [...attemptRecords, badAttempt] });
+assert.equal(unboundAttempt.artifacts.reportRunBindingProven, false);
+
 const wrongManifest = { ...manifest, records: [{ ...manifest.records[0], hashes: { ...manifest.records[0].hashes, claimReportSha256: '0'.repeat(64) } }] };
 const wrongBound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests: [wrongManifest] });
 assert.equal(wrongBound.artifacts.reportRunBindingProven, false);
@@ -65,6 +77,15 @@ try {
   fs.writeFileSync(path.join(attemptDir, 'metadata.json'), JSON.stringify({ articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40) }));
   fs.writeFileSync(path.join(attemptDir, 'article.md'), articleRaw);
   fs.writeFileSync(path.join(attemptDir, 'authoritative-evidence-pack.json'), packRaw);
+  const finalizedDir = path.join(tempRoot, 'data', 'article-attempts', 'fixture-run-finalized');
+  fs.mkdirSync(finalizedDir);
+  fs.writeFileSync(path.join(finalizedDir, 'article.md'), articleRaw);
+  fs.writeFileSync(path.join(finalizedDir, 'authoritative-evidence-pack.json'), packRaw);
+  fs.writeFileSync(path.join(finalizedDir, 'claim-verification.json'), reportRaw);
+  fs.writeFileSync(path.join(finalizedDir, 'metadata.json'), JSON.stringify({
+    articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40), lineageBindingVersion: 1,
+    articleSha256: hash(articleRaw), evidencePackSha256: hash(packRaw), claimReportSha256: hash(reportRaw)
+  }));
   const live = spawnSync(process.execPath, ['scripts/boat-root-claim-lineage-audit.mjs'], {
     encoding: 'utf8',
     env: { ...process.env, BOAT_AUDIT_ROOT: tempRoot }
@@ -75,8 +96,9 @@ try {
   assert.equal(output.artifacts.evidencePackCandidateCount, 1);
   assert.equal(output.artifacts.candidateMatchCount, 1);
   assert.equal(output.artifacts.packArchiveRunBindingProven, true);
-  assert.equal(output.artifacts.reportRunBindingProven, false);
-  assert.equal(output.status, 'unknown-report-run-binding');
+  assert.equal(output.artifacts.reportRunBindingProven, true);
+  assert.equal(output.artifacts.matchedFinalizedAttemptBundle, true);
+  assert.equal(output.status, 'identifiers-resolved-semantic-support-unknown');
   assert.equal(output.summary.claims, 1);
   assert.equal(output.claims[0].factualSupport, 'not_assessed');
 } finally {
