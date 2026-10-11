@@ -213,10 +213,11 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
   const metadataBytesMatch = typeof runMetadataRaw === 'string' && !!s(recoveryAudit?.hashes?.blockedMetadataSha256) && hash(runMetadataRaw) === s(recoveryAudit.hashes.blockedMetadataSha256);
   const runIdMatches = !!runMetadata && s(runMetadata.workflowRun) === s(recoveryAudit?.artifact?.runId);
   const workflowShaMatches = !!runMetadata && s(runMetadata.workflowSha) === s(recoveryAudit?.artifact?.workflowSha);
+  const metadataStatusEligible = !!runMetadata && runMetadata.status === 'claim-verification-blocked';
   const originalHashesMatch = !!runMetadata &&
     runMetadata.hashesRecordedInWorkflow === true &&
     Object.entries(expectedOriginalHashes).every(([key, actual]) => !!actual && !!s(runMetadata[key]) && s(runMetadata[key]) === actual);
-  const handoffAllowed = metadataBytesMatch && runIdMatches && workflowShaMatches && originalHashesMatch && proposalEnginePackCompatible && handoffFindings.length === 0;
+  const handoffAllowed = metadataBytesMatch && metadataStatusEligible && runIdMatches && workflowShaMatches && originalHashesMatch && proposalEnginePackCompatible && handoffFindings.length === 0;
   return {
     schemaVersion: '1.0',
     engine: 'BOAT Recovered Proposal-Input Adapter',
