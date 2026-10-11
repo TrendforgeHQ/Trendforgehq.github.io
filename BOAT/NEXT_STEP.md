@@ -248,3 +248,11 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Added a JSON Schema for the review-set audit report and contract tests covering its envelope, indices, dissent, and no-winner fields.
 - Offline CI run 38122850780 passed 120/120 tests with zero failures or skips.
 - Next: inspect the PR diff and reconcile the final project records. Keep PR #35 draft/unmerged; do not touch main or run provider/publishing workflows.
+
+
+## Structural report validation — verified (2026-10-11)
+
+- Added executable structural checks in `scripts/test-boat-semantic-support-review-set-report-schema.mjs` for the checked-in report schema keywords: types, required fields, enums/constants, additional properties, minimums, patterns, and array items.
+- Validated generated audit reports for golden review sets and invalid input; negative tests reject malformed fingerprints, unknown finding types, extra properties, and unsafe winner fields. Malformed source identity types are represented safely as null in report identity fields while the record remains ineligible and validation errors remain visible.
+- Branch-head CI [run 38123099695](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123099695) passed **123/123**, 0 failed, 0 skipped.
+- **Next:** review the entire PR diff for scope and schema/output compatibility, then record a final branch-head verification. Keep PR #35 draft/unmerged; do not touch `main`, call providers, or run publishing.
