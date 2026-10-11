@@ -532,3 +532,10 @@ Verified current baseline:
 - Code inspection confirms the article generator creates the run marker, lineage capture is after SEO validation and before build, and the generated manifest is eligible for transfer through the existing `data/` output path. Production persistence is still unverified by design.
 - Base divergence review: PR head is 5 commits behind `main`; the five main-only commits are generated intelligence-data refreshes (TrendForge intelligence, performance, experimentation, self-learning, memory). The 454 ahead count reflects branch history since the old merge base, not a count of newly authored BOAT changes. PR #35 remains draft/open/unmerged; no rebase/merge and no `main` write.
 - Exact-byte lineage remains provenance only; it is not a fresh semantic fact-check or source-freshness result. No publishing run, paid provider call, or article mutation was performed.
+
+
+## Verification update — 2026-10-11 (path-specific contract hardened)
+- Expanded workflow contract coverage to require the exact `data/published-lineage/` directory, `manifest-<runId>.json` naming, and data transfer allowlist.
+- A first test edit had invalid regex escaping and failed offline CI; the issue was in the test itself, corrected without changing production workflow behavior. Corrected branch-head offline suite [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) both passed at `5e24de25e22ca77a1e399b985d2c291fbeffb2a8`.
+- Production manifest creation/persistence is still not verified against a real publish run; that workflow remains undispatched. PR #35 remains draft/open/unmerged; `main` untouched.
+- Next: complete final changed-file intersection/conflict review for the five main-only generated-data commits. No blind merge/rebase, provider calls, or production publish.
