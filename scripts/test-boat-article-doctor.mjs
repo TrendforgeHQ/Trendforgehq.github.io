@@ -126,6 +126,21 @@ test('partial-only certainty warning yields attention, not clear or blocked', ()
   assert.equal(output.findings[0].category, 'attribution');
   assert.equal(output.findings[0].severity, 'medium');
 });
+test('empty headings and repeated sentences are read-only findings', () => {
+  const repeated = 'This sentence is intentionally repeated in the article so the doctor can detect redundant editorial prose.';
+  const articleText = '---\ntitle: "Structure Article"\n---\n## Introduction\n' + repeated + '\n\n##\n' + repeated + '\n';
+  const output = analyzeArticle({
+    articleText, articlePath: 'structure.md',
+    report: { articleTitle: 'Structure Article', pass: true, claims: [] },
+    reportPath: 'structure-report.json', generatedAt: fixedTime
+  });
+  const categories = output.findings.map(item => item.category);
+  assert.ok(categories.includes('empty_heading'));
+  assert.ok(categories.includes('repeated_sentence'));
+  assert.equal(output.summary.status, 'attention');
+  assert.ok(output.findings.every(item => item.evidence[0].artifactPath === 'structure.md'));
+  assert.ok(output.findings.every(item => item.evidence[0].jsonPointer === null));
+});
 test('mismatched article title yields unknown status, never a clean pass', () => {
   const output = analyzeArticle({
     articleText: '---\ntitle: "Wrong Article"\n---\nBody.',
