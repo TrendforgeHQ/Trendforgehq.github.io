@@ -8,7 +8,7 @@
 
 **Scope boundary:** this is an offline manifest builder, not yet integrated into `.github/workflows/publish.yml` or Control Center. Hashes prove byte identity/provenance, not semantic truth or source freshness. No provider/publishing workflow was run; no article was changed; `main` remains untouched; PR #35 remains draft/unmerged.
 
-**Immediate next action:** verify the new branch-head offline CI and Control Center build for the non-blocking publish-time lineage writer. The integration is wired but is not yet verified. If green, review the final diff and confirm that the run-specific manifest is captured only for a same-run generated article with a PASS claim report and valid canonical evidence pack. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
+**Immediate next action:** inspect branch-head CI at 8fc20d44eccb269ef530e7f57b939cfa171a6686. The TypeScript declaration fix is committed; offline tests and production build must both pass before this step is verified. If green, review the full PR diff and confirm publish-time manifest persistence and Control Center states. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
@@ -362,3 +362,12 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - The schema-correction run exposed one incorrect test expectation (the helper reported the more specific “has no sources” failure); corrected the assertion. The latest branch-head offline/Control Center CI is pending; do not call the publish-time integration verified until it finishes.
 - No publishing workflow was executed, no provider call was made, no article was edited, `main` remains untouched, and PR #35 remains draft/unmerged.
 - Next: inspect branch-head BOAT offline tests and Control Center build. If both pass, review the exact diff and verify the writer remains non-blocking and the manifest output path is included by the existing `git add data` commit path.
+
+
+## 2026-10-11 — Control Center lineage type declaration fix (CI pending)
+
+- Current-byte lineage audit and UI were added on the BOAT branch. The first production build failed because the new export was missing from `scripts/boat-published-catalogue-audit.d.mts` at the failing commit; the JavaScript implementation existed, but TypeScript resolves the paired declaration file.
+- Added the missing exported type/function declaration. Earlier parser/guard issues were also corrected: manifest filenames and article paths now use straightforward safe parsing; offline coverage tests passed 130/130 at run 38127571372 before the type-declaration fix.
+- New branch-head CI is running at commit `8fc20d44eccb269ef530e7f57b939cfa171a6686`: BOAT Offline Tests run 38127662468 and Control Center QA run 38127662461. Do not mark the integration complete until both finish successfully, especially the production build.
+- No main-branch changes, merge, publishing workflow dispatch, article mutation, or provider calls were made.
+- Next: inspect both branch-head CI results. If the production build passes, review the full PR diff and confirm publish-time manifest persistence and Control Center states. Then continue toward the original BOAT target: a read-only audit of every published article, including evidence/claim/source lineage, with UNKNOWN preserved wherever proof is absent.
