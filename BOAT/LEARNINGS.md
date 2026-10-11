@@ -329,3 +329,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - A schema validator can silently drift if the schema gains keywords that its custom implementation ignores. Recursively inventory the checked-in schema's keywords and fail tests for any unsupported keyword.
 - Date parsing alone may normalize impossible calendar dates; validate calendar components and clock ranges explicitly. URI-format validation should check absolute URI syntax rather than impose an undocumented hostname rule.
 - Validation: offline CI [run 38121806369](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121806369) passed 94/94, 0 failed, 0 skipped.
+
+
+## L-046 — Review disagreement needs identity rules, not an automatic winner
+
+- Repeated `reviewId` values are blocking even if records look identical; do not silently deduplicate or pick a canonical record. If the same ID has different contents, preserve both and resolve identity explicitly.
+- Compare reviews only when their exact workflow/artifact bundle, proposal, claim, replacement, source, and passage match. Invalid records and colliding IDs cannot establish agreement or disagreement.
+- Different verdicts from distinct reviewers require human resolution; same-reviewer repeats are not independent evidence. Matching verdicts are descriptive agreement only. Never majority-vote, average, choose latest, or synthesize an aggregate verdict.
+- The read-only review-set audit emits a SHA-256 subject fingerprint instead of repeating raw claim/passage text. Prior CI [run 38122064796](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122064796) passed 104/104; subsequent fingerprint tests await CI.
