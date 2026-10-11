@@ -84,6 +84,7 @@ test('proposal engine handoff is allowed only with matching original hashes boun
   assert.equal(result.proposalEngineHandoff.checks.runIdMatches, true);
   assert.equal(result.proposalEngineHandoff.checks.workflowShaMatches, true);
   assert.equal(result.proposalEngineHandoff.checks.artifactHashesMatch, true);
+  assert.equal(result.proposalEngineHandoff.checks.proposalEnginePackCompatible, true);
 });
 
 test('tampered run metadata blocks proposal engine handoff', () => {
@@ -235,6 +236,7 @@ test('output schema preserves review-only and recovery-hash constraints', () => 
   assert.deepEqual(schema.properties.proposalEngineHandoff.properties.status.enum, ['ready', 'blocked']);
   assert.equal(schema.properties.proposalEngineHandoff.properties.allowed.type, 'boolean');
   assert.equal(schema.properties.proposalEngineHandoff.properties.checks.properties.metadataBytesMatch.type, 'boolean');
+  assert.equal(schema.properties.proposalEngineHandoff.properties.checks.properties.proposalEnginePackCompatible.type, 'boolean');
   assert.equal(schema.properties.hashes.properties.recordedAtGeneration.const, false);
 });
 
@@ -309,6 +311,7 @@ test('read-only eligibility report summarizes per-claim reasons across all archi
   assert.equal(report.summary.recoveryHashesRecordedAtGeneration, false);
   assert.equal(report.summary.automaticApplication, false);
   assert.equal(report.summary.proposalEngineHandoffAllowed, false);
+  assert.ok(report.runs.every(run => run.proposalEngineHandoffAllowed === false));
   assert.equal(report.summary.semanticSupport, 'not_verified');
   assert.equal(report.summary.proposalEngineHandoffAllowed, false);
   assert.equal(report.summary.countsReconciled, true);
