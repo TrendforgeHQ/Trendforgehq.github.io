@@ -124,7 +124,7 @@ export function buildReviewReport() {
       recoveryHashesRecordedAtGeneration: false,
       semanticSupport: 'not_verified',
       automaticApplication: false,
-      proposalEngineHandoffAllowed: false
+      proposalEngineHandoffAllowed: runs.every(run => run.proposalEngineHandoffAllowed)
     },
     runs,
     limitations: [
