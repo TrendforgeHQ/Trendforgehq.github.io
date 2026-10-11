@@ -22,7 +22,7 @@ const attemptRecords = [{ metadata: { articlePath: report.articlePath, workflowR
 
 const resolved = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords });
 assert.equal(resolved.status, 'unknown-report-run-binding');
-assert.equal(resolved.artifacts.packArticleRunBindingProven, true);
+assert.equal(resolved.artifacts.packArchiveRunBindingProven, true);
 assert.equal(resolved.artifacts.reportRunBindingProven, false);
 assert.equal(resolved.artifacts.candidateMatchCount, 1);
 assert.equal(resolved.summary.sourceResolved, 1);
@@ -44,7 +44,7 @@ assert.equal(wrongBound.artifacts.reportRunBindingProven, false);
 
 const mismatched = auditRootClaimLineage({ reportRaw, packRaw: JSON.stringify({ ...pack, generatedAt: 'different-bytes' }), briefRaw, articleRaw, attemptRecords });
 assert.equal(mismatched.status, 'unknown-pack-article-run-binding');
-assert.equal(mismatched.artifacts.packArticleRunBindingProven, false);
+assert.equal(mismatched.artifacts.packArchiveRunBindingProven, false);
 
 const invalid = auditRootClaimLineage({ reportRaw, packRaw: '{not json', briefRaw, articleRaw });
 assert.equal(invalid.status, 'unknown-canonical-pack-invalid-or-missing');
@@ -74,7 +74,7 @@ try {
   assert.equal(output.reportType, 'boat-root-claim-evidence-lineage');
   assert.equal(output.artifacts.evidencePackCandidateCount, 1);
   assert.equal(output.artifacts.candidateMatchCount, 1);
-  assert.equal(output.artifacts.packArticleRunBindingProven, true);
+  assert.equal(output.artifacts.packArchiveRunBindingProven, true);
   assert.equal(output.artifacts.reportRunBindingProven, false);
   assert.equal(output.status, 'unknown-report-run-binding');
   assert.equal(output.summary.claims, 1);
