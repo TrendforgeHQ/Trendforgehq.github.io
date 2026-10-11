@@ -23,4 +23,8 @@ const writer = fs.readFileSync('scripts/write-boat-published-lineage-manifest.mj
 assert.match(writer, /flag:\s*'wx'/, 'manifest writer must refuse overwriting a run manifest');
 assert.match(writer, /Published lineage capture skipped: this workflow run generated no article/, 'no-article run must be a no-op');
 assert.match(writer, /Published lineage capture failed closed; no PASS manifest was written/, 'invalid inputs must fail closed');
+assert.match(writer, /const outputDir = 'data\\/published-lineage'/, 'manifest must be written under the published-lineage data directory');
+assert.match(writer, /manifest-\\$\\{workflowRun\\}\\.json/, 'manifest filename must be scoped to the current workflow run');
+assert.match(outputBlock, /git diff-tree[\\s\\S]*-- data lib\\/articles\\.ts public\\/images\\/articles content\\/articles/, 'generated-file transfer allowlist must include data/');
+
 console.log('BOAT lineage workflow persistence contract: PASS');
