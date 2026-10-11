@@ -52,7 +52,7 @@ const unboundAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, art
 assert.equal(unboundAttempt.artifacts.reportRunBindingProven, false);
 
 const wrongManifest = { ...manifest, records: [{ ...manifest.records[0], hashes: { ...manifest.records[0].hashes, claimReportSha256: '0'.repeat(64) } }] };
-const wrongBound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests: [wrongManifest] });
+const wrongBound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords: [], lineageManifests: [wrongManifest] });
 assert.equal(wrongBound.artifacts.reportRunBindingProven, false);
 
 const mismatched = auditRootClaimLineage({ reportRaw, packRaw: JSON.stringify({ ...pack, generatedAt: 'different-bytes' }), briefRaw, articleRaw, attemptRecords });
