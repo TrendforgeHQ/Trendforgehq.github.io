@@ -485,3 +485,10 @@ All entries should describe actual work and results. Do not record planned work 
 - New branch-head CI is running at commit `8fc20d44eccb269ef530e7f57b939cfa171a6686`: BOAT Offline Tests run 38127662468 and Control Center QA run 38127662461. Do not mark the integration complete until both finish successfully, especially the production build.
 - No main-branch changes, merge, publishing workflow dispatch, article mutation, or provider calls were made.
 - Next: inspect both branch-head CI results. If the production build passes, review the full PR diff and confirm publish-time manifest persistence and Control Center states. Then continue toward the original BOAT target: a read-only audit of every published article, including evidence/claim/source lineage, with UNKNOWN preserved wherever proof is absent.
+
+
+## 2026-10-11 — Published lineage integration review
+- Branch-head offline tests and Control Center production build both passed: runs 38127688568 and 38127688585.
+- Inspected publish workflow ordering and output staging: lineage writer runs after SEO validation and before build, with continue-on-error enabled; manifest is under data/ and staged by the output commit path if the workflow reaches that step. Real publish-time persistence remains untested by design.
+- PR #35 is still draft/open/unmerged; compare shows 5 commits behind main. No production publish, provider calls, article changes, merge, or main-branch writes.
+- Next focus: offline/synthetic test for persistence and skip/failure cases, then inspect base divergence and complete PR diff before any merge recommendation.
