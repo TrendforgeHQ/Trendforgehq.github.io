@@ -429,3 +429,6 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The new structural catalogue scanner fixture suite passed as part of offline CI [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757): 128/128 tests passed; Control Center contract checks passed 33/33.
 - Dedicated Control Center QA [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747) passed the Next.js static production build despite existing non-fatal webpack cache/CSS warnings.
 - These tests/build prove implementation and compilation only, not semantic fact-checking or a live BOAT backend.
+
+
+- When switching the catalogue scanner from raw Markdown files to the canonical published article index, CI caught a stale `file` property reference. Fix the UI to use the canonical article `slug` and rerun the production build before marking it complete.
