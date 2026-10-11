@@ -40,7 +40,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw }) {
       status: !usablePack ? 'unknown-pack-binding'
         : !sourceId || !matches.length ? 'unknown-source-not-resolved'
         : matches.length > 1 ? 'unknown-duplicate-source-id'
-        : Array.isArray(matches[0].passages) && /^S\\d+-P\\d+$/.test(id) && id.startsWith(sourceId + '-P')
+        : Array.isArray(matches[0].passages) && /^S\d+-P\d+$/.test(id) && id.startsWith(sourceId + '-P')
           ? (Number(id.slice(id.lastIndexOf('-P') + 2)) <= matches[0].passages.length ? 'passage-id-resolved-fields-only' : 'unknown-passage-not-found')
           : (Array.isArray(pack?.evidenceBrief?.relevantPassages) && pack.evidenceBrief.relevantPassages.some(p => text(p?.sourceId) === sourceId && text(p?.passageId ?? p?.id) === id) ? 'passage-id-resolved-fields-only' : 'unknown-passage-not-found')
     }));
