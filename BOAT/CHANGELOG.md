@@ -305,3 +305,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Strengthened the existing offline workflow-contract test to require the default-false marker, all-three-hash condition, dynamic metadata field, and absence of the unconditional `true` literal.
 - Branch-head offline suite [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875) passed **77/77**, 0 failed, 0 skipped. Publishing was not run; PR #35 remains draft/unmerged and `main` is untouched.
 - Next: design a human-reviewed claim-to-passage semantic-support benchmark; lineage and exact text mapping alone must not upgrade `semanticSupport: not_verified`.
+
+
+## 2026-10-11 — Human semantic-support review contract v1
+
+- Added `BOAT/schemas/semantic-support-review.schema.json` to capture a single human review against one exact workflow/article/claim-report/evidence-pack/proposal bundle.
+- Added `BOAT/SEMANTIC_SUPPORT_REVIEW.md` with conservative verdict rules (`supported`, `partially_supported`, `unsupported`, `unclear`), component-by-component assessment, scope/time/attribution/uncertainty checks, reviewer independence disclosure, disagreement handling, and limitations.
+- Added `scripts/test-boat-semantic-support-review.mjs` for schema-contract and rubric regressions. Tests assert exact 64-hex artifact hashes, component-level review, advisory-only recommendations, and immutable safety constants: `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, `existingGatesStillRequired: true`.
+- This contract records human judgment; it is not a truth oracle, does not auto-apply edits, and does not bypass current claim/editorial/publication gates. The first CI run found one overly strict wording assertion in the test, now corrected; rerun status pending.
+- Next: implement a read-only validator/CLI with fail-closed record checks; no providers, publish run, or `main` changes.
