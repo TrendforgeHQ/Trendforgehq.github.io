@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { spawnSync } from 'node:child_process';
 
 const workflow = fs.readFileSync('.github/workflows/publish.yml', 'utf8');
 const binderStep = workflow.indexOf('name: Bind final claim report to exact attempt bytes');
@@ -35,6 +36,17 @@ assert.match(outputBlock, /git add data(?:\s|$)/, 'normal output commit must sta
 assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\/images\/articles content\/articles/, 'generated-file transfer allowlist must include data/');
 assert.match(outputBlock, /git checkout "\$output_commit" -- "\$path"/, 'generated data must be transferred from the pipeline output commit');
 assert.match(outputBlock, /git push origin HEAD:main/, 'existing output publishing path must remain explicit');
+
+const commitRunMarker = outputBlock.indexOf('        run: |\\n');
+assert.ok(commitRunMarker >= 0, 'output commit step must retain its shell run block');
+const commitShell = outputBlock.slice(commitRunMarker + '        run: |\\n'.length)
+  .split('\\n      - name: ')[0]
+  .split('\\n')
+  .map(line => line.startsWith('          ') ? line.slice(10) : line)
+  .join('\\n');
+const shellSyntax = spawnSync('bash', ['-n', '-c', commitShell], { encoding: 'utf8' });
+assert.equal(shellSyntax.status, 0, 'output commit shell must pass bash -n: ' + shellSyntax.stderr);
+
 
 const writer = fs.readFileSync('scripts/write-boat-published-lineage-manifest.mjs', 'utf8');
 assert.match(writer, /flag:\s*'wx'/, 'manifest writer must refuse overwriting a run manifest');
