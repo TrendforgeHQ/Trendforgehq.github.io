@@ -491,3 +491,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Limit:** the new regression test statically checks workflow wiring. Because production publishing was not run, no claim can be made that a real manifest was created or persisted to the deployed branch.
 - **Divergence:** main has five generated-intelligence data refresh commits beyond the merge base. The PR branch's 454-commit ahead count includes old history and must not be interpreted as 454 new BOAT changes. Do not merge/rebase blindly.
 - **Rule:** distinguish static workflow contract, offline CLI behavior, and actual production persistence as three separate evidence levels. Exact-byte lineage is not semantic verification.
+
+
+## L-065 — Keep workflow-contract regexes valid and narrow
+- **Observed:** The first path-specific test assertions failed because regex escaping produced an invalid regex literal; the failure was isolated to the test file, not the publishing workflow.
+- **Correction:** Normalized regex literals and reran CI. BOAT Offline Tests [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) both passed.
+- **Rule:** Keep test assertions path-specific but validate the test itself through CI; do not infer production persistence from static assertions alone.
+- **Next:** Final changed-file intersection review; keep PR draft/unmerged until deliberate integration review is complete.
