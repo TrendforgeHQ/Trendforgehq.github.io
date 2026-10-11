@@ -19,8 +19,11 @@ function checkType(value, type) {
 
 function formatValid(value, format) {
   if (format === 'uri') {
-    try { const parsed = new URL(value); return Boolean(parsed.protocol); }
-    catch { return false; }
+    try {
+      const parsed = new URL(value);
+      // Review source links must be web URLs, not executable or local-resource schemes.
+      return parsed.protocol === 'https:' || parsed.protocol === 'http:';
+    } catch { return false; }
   }
   if (format === 'date-time') {
     const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(Z|[+-](\d{2}):(\d{2}))$/.exec(value);
