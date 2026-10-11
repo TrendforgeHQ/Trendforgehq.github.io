@@ -563,3 +563,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Offline run [38130573836](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573836) passed 136/136 tests and executed the read-only root lineage audit.
 - Control Center QA [38130573818](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573818) passed deterministic tests and production build.
 - Live audit continues to classify report/run binding as UNKNOWN while showing 10/10 source IDs and URLs matched, 9 passage IDs resolved, and 0 unresolved passage IDs. Structural traceability is not semantic verification.
+
+## 2026-10-11 — Bind final claim report to exact attempt bytes
+
+- Added a post-verification workflow step and offline-tested binder that creates an immutable finalized archive containing the final article, canonical evidence pack, claim report and SHA-256 hashes with workflow run/SHA metadata.
+- Preserves pre-repair attempt records, does not overwrite conflicting finalized bundles, and is idempotent. The workflow step is non-blocking and runs before attempt diagnostics are uploaded.
+- Root lineage audit can recognize finalized bundles or exact-hash lineage manifests; historical reports without a matching manifest/bundle remain UNKNOWN.
+- Offline run [38130627939](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130627939): 136/136 tests passed. A follow-up tightened workflow-SHA matching; latest-head CI remains pending.
