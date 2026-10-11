@@ -322,3 +322,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The review schema defines the record shape, but the CLI also independently pins `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and `existingGatesStillRequired: true`.
 - The validator is read-only, prints a JSON result, and returns non-zero on invalid records; it does not write reviews or article bytes. Its tests cover malformed bundle hashes, reviewer/timestamp fields, passage evidence, extra properties, and unsafe constants.
 - Validation: branch-head offline CI [run 38121699251](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121699251) passed 92/92, 0 failed, 0 skipped. The next audit should scrutinize timestamp edge cases and the scope of supported schema keywords.
+
+
+## L-045 — Keep the validator honest about schema coverage and timestamp validity
+
+- A schema validator can silently drift if the schema gains keywords that its custom implementation ignores. Recursively inventory the checked-in schema's keywords and fail tests for any unsupported keyword.
+- Date parsing alone may normalize impossible calendar dates; validate calendar components and clock ranges explicitly. URI-format validation should check absolute URI syntax rather than impose an undocumented hostname rule.
+- Validation: offline CI [run 38121806369](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121806369) passed 94/94, 0 failed, 0 skipped.
