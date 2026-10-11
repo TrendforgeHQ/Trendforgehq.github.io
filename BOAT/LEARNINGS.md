@@ -315,3 +315,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The v1 review record binds reviewer, workflow run/SHA, article/report/evidence-pack hashes, proposal ID, claim/replacement and passage text. It records component assessments and checks scope, timing, attribution, and uncertainty.
 - This remains advisory human judgment. Keep `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and all existing gates mandatory. Preserve separate records for disagreements.
 - Offline contract tests are in `scripts/test-boat-semantic-support-review.mjs`; validator/CLI is the next step.
+
+
+## L-044 — A review-record validator must enforce safety at the consumer boundary
+
+- The review schema defines the record shape, but the CLI also independently pins `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and `existingGatesStillRequired: true`.
+- The validator is read-only, prints a JSON result, and returns non-zero on invalid records; it does not write reviews or article bytes. Its tests cover malformed bundle hashes, reviewer/timestamp fields, passage evidence, extra properties, and unsafe constants.
+- CI for the validator commit is pending inspection. Do not treat the implementation as verified until the branch-head offline test logs pass.
