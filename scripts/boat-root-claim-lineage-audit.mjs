@@ -42,11 +42,10 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     const meta = item?.metadata;
     return text(meta?.articlePath).replace(/^\.\//, '') === articlePath
       && text(meta?.workflowRun) !== ''
-      && typeof item.articleRaw === 'string' && typeof articleRaw === 'string'
-      && sha256(item.articleRaw) === sha256(articleRaw)
       && typeof item.packRaw === 'string' && typeof packRaw === 'string'
       && sha256(item.packRaw) === sha256(packRaw);
   }) ?? null;
+  const archivedArticleBytesMatchCurrent = Boolean(archiveMatch && typeof archiveMatch.articleRaw === 'string' && typeof articleRaw === 'string' && sha256(archiveMatch.articleRaw) === sha256(articleRaw));
   // The archived article and pack are run-bound, but no claim-report hash is present in that archive metadata.
   const packArticleRunBindingProven = Boolean(archiveMatch);
   const reportRunBindingProven = false;
@@ -126,7 +125,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       packArticleRunBindingProven,
       matchedWorkflowRun: archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
       matchedWorkflowSha: archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
-      archivedArticleBytesMatchCurrent: packArticleRunBindingProven,
+      archivedArticleBytesMatchCurrent,
       archivedPackBytesMatchCurrent: packArticleRunBindingProven,
       reportRunBindingProven,
       savedReportPass: typeof report?.pass === 'boolean' ? report.pass : null,
