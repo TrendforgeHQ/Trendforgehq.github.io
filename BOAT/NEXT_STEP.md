@@ -116,3 +116,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - The suite confirms the report JSON contract includes per-claim statuses/reason codes and retains recovery-time-only hashes, human approval required, automatic application false, and semantic support not verified.
 - Current validated baseline: 40 archived claims, 26 eligible for a later human-reviewed proposal, 3 blocked, 11 unknown. No factual-support upgrade is implied.
 - Next safe task: add cross-checks ensuring summary counts always equal the sum of per-run counts and per-claim statuses, then rerun offline CI. PR remains draft/unmerged.
+
+
+
+## Count reconciliation — verified
+
+- Report generation now derives counts from individual claim statuses, cross-checks each run against the proposal-input adapter counts, and cross-checks aggregate counts against the per-run totals. Any discrepancy throws and the CLI fails closed.
+- Report schema now requires countsReconciled=true at summary and run levels.
+- Branch-head CI [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899) passed **70/70**, 0 failed, 0 skipped, including the schema, CLI, per-claim, and archived-run tests.
+- Current totals remain 40 claims, 26 eligible, 3 blocked, 11 unknown; per-run eligible 12, 12, 2.
+- Next safe step: audit whether the proposal engine can consume eligible inputs without treating recovery-time hashes as original lineage. Do not connect or invoke it until that boundary is proven by tests; no publishing/provider runs.
