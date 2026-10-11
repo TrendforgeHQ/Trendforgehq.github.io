@@ -264,3 +264,14 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Negative tests reject bad fingerprints, unknown finding types, extra properties, and unsafe winner fields. Malformed identity values are normalized in typed report fields while errors remain visible.
 - CI run 38123099695 passed 123/123 tests, 0 failures, 0 skipped.
 - Next: review the full PR diff and verify branch-head CI after documentation. PR #35 remains draft and unmerged.
+
+
+## Safety-sensitive PR review — handoff status guard added (2026-10-11)
+
+- Reviewed the claim-verification quarantine diff, recovered proposal-input handoff predicate, factual proposal boundary, semantic review schema/validator, review-set audit contract, and offline workflow scope.
+- Confirmed the publishing workflow diff adds hashes only to the claim-verification-blocked quarantine metadata; it continues removing the blocked article from the publication set and does not turn the claim gate into a pass. No publishing/provider workflow was run.
+- Found a defense-in-depth gap: the recovered proposal-input adapter verified metadata bytes, run/SHA, hash marker, exact artifact hashes, and pack compatibility, but did not explicitly require metadata status `claim-verification-blocked` before allowing proposal-engine handoff.
+- Fixed `scripts/boat-recovered-proposal-input.mjs` to require that exact status and added a regression where all hashes and identities match but status is `generated-pending-verification`; handoff must remain blocked.
+- Regression CI run [38123444976](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123444976) was queued on head `e5f3a61a4c12c67af5a2abd239645bf050330544` at the time of this record; inspect its final conclusion before marking the fix verified.
+- Review status: this is a defensive hardening, not evidence of an exploitable production bypass under the current workflow. No other gate bypass was identified in the inspected paths. Full PR review remains in progress.
+- Keep PR #35 draft/unmerged; do not touch `main`, run paid providers, or run publishing workflows.
