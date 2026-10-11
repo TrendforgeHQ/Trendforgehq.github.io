@@ -160,3 +160,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Validation:** [run 38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698), 57 passed, 0 failed, 0 skipped, including all three real archived attempts and synthetic ambiguity/no-match cases.
 - **Debugging record:** CI first caught a repeated-sentence whitespace-splitting defect; after fixing it, another run caught passage-coverage assertions placed in a synthetic test where fixture counters were not in scope. Both were corrected before the green branch-head run.
 - **Safety:** Resolver output is a suggestion only. It does not alter the claim report, article, factual status, or publication gates; semantic support remains unverified.
+
+## L-013 — Recovery-time hashes must not be promoted into original provenance
+
+- **Decision:** The recovered proposal-input adapter verifies the audit's computed checksums against current bytes but never copies those checksums into original workflow metadata or calls them generation-time hashes.
+- **Decision:** A claim is eligible only when exact claim text occurs in the recovered article, claim/report/pack source IDs and URLs align, and the recovery resolver reports one canonical exact-text passage from that same source.
+- **Fail-closed behavior:** Missing or ambiguous passage is `unknown`; missing article claim or source-lineage mismatch is `blocked`. Human approval remains required; semantic support is not verified; no replacement text is generated or applied.
+- **Validation status:** Synthetic and three-real-attempt integration tests added; CI result pending inspection.
