@@ -453,3 +453,6 @@ Verified current baseline:
 
 
 - Follow-up build fix: canonical article audit records use `slug`, not a Markdown `file` field. Fixed table row identity/display and updated the Control Center contract test. Follow-up CI verification pending.
+
+
+- Follow-up verification completed: [BOAT Offline Tests run 38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855) passed 128/128, and [Control Center QA run 38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938) passed the production build after the slug-field fix.
