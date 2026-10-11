@@ -430,3 +430,9 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 **Next:** wait for offline CI, inspect the resulting JSON/test logs, then trace why the canonical evidence pack is empty at generation/storage time. Do not manufacture a pack from the claim report, re-run paid providers, repair the article, or publish. Restore the pack only from a verified original artifact with matching run metadata and hashes.
 
 **Validation correction (2026-10-11):** first offline run of the new CLI test failed because the CLI appended a literal backslash-n sequence rather than a real newline, making captured stdout invalid JSON. Fixed in commit `b70032893c8f9108f8d523e44f917ba8f1be2b37`. The failed run was against an earlier commit, before this correction. Verify the next offline run on the latest branch head before proceeding.
+
+## Verification checkpoint — root lineage audit (2026-10-11)
+
+Offline regression run [38129695590](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38129695590) passed **135/135 tests** at commit `e1146ef18c67be057f4d73893df395b9fdc5fedf`; its log includes `BOAT root claim/evidence lineage audit: PASS`. The new audit intentionally keeps status `unknown-pack-binding` because this root snapshot has no metadata input to prove exact report/evidence-pack pairing. Local source/passage ID matches are labelled diagnostics only; factual support remains `not_assessed`. The latest follow-up only changes the test's success-message wording (`9b0fd123c11811aceb5b9017f2ea3239dd99b3ef`), so verify its run before declaring the current HEAD fully green.
+
+**Next action:** verify offline tests and Control Center QA at the newest branch head. Then investigate the zero-byte canonical evidence pack's production/storage path; do not reconstruct it from the verifier report. Keep PR #35 draft/unmerged and leave `main` untouched.
