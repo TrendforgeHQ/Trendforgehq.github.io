@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { auditRecoveredRunArtifacts } from './boat-run-artifact-recovery.mjs';
 import { buildRecoveredProposalInputs } from './boat-recovered-proposal-input.mjs';
 import { buildReviewReport } from './boat-recovered-proposal-review-report.mjs';
+import { createFactualRepairProposal } from './boat-factual-repair-proposal.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const sha256 = value => createHash('sha256').update(value).digest('hex');
@@ -88,6 +89,49 @@ test('proposal engine handoff is allowed only with matching original hashes boun
   assert.equal(result.proposalEngineHandoff.checks.workflowShaMatches, true);
   assert.equal(result.proposalEngineHandoff.checks.artifactHashesMatch, true);
   assert.equal(result.proposalEngineHandoff.checks.proposalEnginePackCompatible, true);
+});
+
+test('validated candidate-envelope inputs reach proposal-only engine without applying changes', () => {
+  const f = syntheticFixture();
+  const pack = JSON.parse(f.evidencePackRaw);
+  delete pack.sources;
+  pack.workflowRun = '123456789';
+  f.evidencePackRaw = JSON.stringify(pack);
+  const metadata = JSON.parse(f.blockedMetadataRaw);
+  metadata.hashesRecordedInWorkflow = true;
+  metadata.articleSha256 = sha256(f.articleRaw);
+  metadata.claimReportSha256 = sha256(f.claimReportRaw);
+  metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
+  f.blockedMetadataRaw = JSON.stringify(metadata);
+  f.recoveryAudit = auditRecoveredRunArtifacts(f);
+  const inputs = adapt(f);
+  assert.equal(inputs.proposalEngineHandoff.allowed, true);
+  assert.equal(inputs.claims[0].status, 'ready_for_human_proposal');
+
+  const proposal = createFactualRepairProposal({
+    articleRaw: f.articleRaw,
+    claimReport: JSON.parse(f.claimReportRaw),
+    claimReportRaw: f.claimReportRaw,
+    evidencePack: JSON.parse(f.evidencePackRaw),
+    evidencePackRaw: f.evidencePackRaw,
+    metadata,
+    proposal: {
+      claimIndex: inputs.claims[0].claimIndex,
+      replacementText: 'A reviewed replacement sentence based on the selected source.',
+      rationale: 'Human review should check that this replacement is fully supported.',
+      sourceId: inputs.claims[0].source.sourceId,
+      passageId: inputs.claims[0].passage.canonicalPassageId,
+      candidateTitle: inputs.candidate.title,
+      candidateLink: inputs.candidate.link
+    }
+  });
+  assert.equal(proposal.status, 'review_required');
+  assert.equal(proposal.approvalRequired, true);
+  assert.equal(proposal.automaticApplication, false);
+  assert.equal(proposal.semanticSupport, 'not_verified');
+  assert.equal(proposal.proposal.candidateTitle, inputs.candidate.title);
+  assert.equal(proposal.proposal.passageId, inputs.claims[0].passage.canonicalPassageId);
+  assert.equal(f.articleRaw.includes('A reviewed replacement sentence based on the selected source.'), false);
 });
 
 test('tampered run metadata blocks proposal engine handoff', () => {
