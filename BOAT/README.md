@@ -50,6 +50,7 @@ The repository already contains a static-export Control Center, a Supervisor in 
 - `scripts/boat-article-doctor.mjs` — read-only article diagnostics.
 - `scripts/boat-evidence-auditor.mjs` — offline artifact/claim lineage audit.
 - `scripts/boat-repair-engine.mjs` — bounded structural repair proposal; never edits input files.
+- `scripts/boat-factual-repair-proposal.mjs` — evidence-bound factual correction proposal; requires human review and never applies edits.
 - `scripts/boat-factual-repair-proposal.mjs` — evidence-lineage-bound factual repair proposal; human review required, never applies changes.
 
 ## Definition of done for Phase 0

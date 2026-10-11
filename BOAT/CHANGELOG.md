@@ -122,3 +122,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/boat-factual-repair-proposal.mjs` and `BOAT/schemas/factual-repair-proposal.schema.json`. Proposal binds exact article, claim report, evidence pack, workflow run, claim/source/passage IDs and target claim text.
 - Proposal output is never auto-applied and explicitly marks semantic support as not verified; human review and existing verifiers remain mandatory.
 - Added five synthetic tests for exact bundle, article-hash mismatch, source/passage mismatch, claim-text mismatch, and CLI output/input immutability. Current CI validation is pending.
+
+
+## 2026-10-11 — Factual Repair Proposal engine added
+- Added `scripts/boat-factual-repair-proposal.mjs`, an offline proposal-only module bound to article/report/evidence-pack hashes and workflow-run metadata.
+- Proposal validates claim/source/passage lineage and exact target-claim text. Output explicitly marks semantic support as not verified, requires approval, and never modifies the article.
+- Added five synthetic regressions for valid bundle, hash mismatch, source/passage mismatch, missing claim text, and CLI input/output safety. CI pending.

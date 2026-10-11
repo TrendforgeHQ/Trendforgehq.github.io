@@ -1,26 +1,26 @@
 # BOAT Next Step
 
-## Current task: validate factual repair proposals
+## Current task: validate factual repair proposal engine
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Verified immediately before this task
-- [BOAT offline run 38112229842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112229842): **34 passed, 0 failed, 0 skipped**.
-- Four CLI integration tests passed: same-run/hash-bound bundle returns exit 0; blocked lineage returns exit 1; missing hashes returns unknown/2; malformed JSON returns 2 without emitting a report.
+### Last verified baseline
+- [BOAT Offline Tests run 38112229842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112229842): **34 passed, 0 failed, 0 skipped**.
+- Four Evidence Auditor CLI tests covered valid same-run bundle, blocked lineage, missing hashes, and malformed JSON.
 
-### Added in the current iteration; CI pending
-- `scripts/boat-factual-repair-proposal.mjs`: creates a factual-repair proposal bound to exact article, claim-report, evidence-pack hashes and workflow run metadata.
-- Requires proposal source ID to match the target claim source, resolves canonical passage ID against the evidence pack, and checks the claim text is present in the original article.
-- Output is `review_required`, `blocked`, or `unknown`; it always sets `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
+### New implementation in this commit; CI pending
+- Added `scripts/boat-factual-repair-proposal.mjs`: generates a review artifact tied to the exact article, claim-report, evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID.
+- Rejects missing/mismatched hashes, wrong source/passage lineage, unresolved passages, and claim text not found in the article.
+- Output statuses are `review_required`, `blocked`, or `unknown`; it always sets `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
 - CLI writes a separate JSON report and refuses to overwrite input files or an existing output.
-- Synthetic tests cover matching bundle, hash mismatch, source/passage mismatch, missing claim text, output safety, and article immutability.
+- Five new synthetic tests cover bundle binding, hash mismatch, source/passage mismatch, missing claim text, and CLI output safety.
 
 ### Validation to complete
-1. Confirm the current BOAT Offline Tests run passes and record the exact commit/run.
-2. If any test fails, fix the module/test and rerun before proceeding.
-3. After a pass, add an explicit human-review checklist to the proposal report and test report-schema contract.
-4. Do not apply a factual proposal to a real article until existing claim-verification and all required editorial/safety/build gates have been run on the proposed copy.
+1. Confirm this branch-head BOAT Offline Tests run passes; fix any failures before recording a pass.
+2. Add a human-review checklist to the proposal report and validate it against the JSON schema.
+3. Only after a proposed copy is reviewed may it be tested with existing claim verification and all required editorial/safety/build gates.
+4. No real article is changed or published by this module.
 
 ### Guardrails
 - No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
-- Do not change `main`; keep PR #35 draft/unmerged unless separately asked and all checks/review are complete.
+- Do not change `main`; keep PR #35 draft/unmerged unless separately asked and review/checks are complete.
 - Existing evidence, claim-verification, editorial, image-safety, and build gates remain authoritative.

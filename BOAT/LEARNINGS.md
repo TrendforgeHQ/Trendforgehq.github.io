@@ -108,3 +108,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Bind a proposed replacement to exact raw article/report/evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID. Refuse missing or mismatched lineage.
 - **Boundary:** Even a lineage-matched passage does not establish semantic support. Proposal output always marks `semanticSupport: not_verified`, requires approval, and never edits the article.
 - **Validation:** Five synthetic tests added; current CI pending.
+
+
+## L-018 — Factual repair needs exact lineage and must never auto-apply
+- **Decision:** Bind a proposed replacement to exact article/report/evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID; refuse missing or mismatched lineage.
+- **Boundary:** A matching passage ID does not establish semantic support. Output always marks support as not verified, requires human approval, and never edits the article.
+- **Validation:** Five synthetic tests added; CI pending.
