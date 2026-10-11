@@ -280,3 +280,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Audited the existing factual repair proposal engine. It requires exact artifact hashes stored in run metadata and a workflow run ID; recovery-time checksums do not satisfy that provenance contract.
 - Added proposalEngineHandoff {status: blocked, allowed: false} to recovered proposal-input manifests and exposed the blocked flag in the eligibility report and both schemas.
 - Added tests to ensure the handoff remains blocked. Validation is pending branch-head CI inspection.
+
+
+
+## Proposal-engine handoff boundary — verified (2026-10-11)
+
+- Explicit blocked handoff is present in the recovered proposal-input manifest and report.
+- Branch-head CI [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350): **70 passed, 0 failed, 0 skipped**.
+- Direct connection to the factual proposal engine remains intentionally disabled because recovered hashes were computed after generation, not recorded in original run metadata.
