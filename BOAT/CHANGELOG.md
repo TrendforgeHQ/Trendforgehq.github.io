@@ -523,3 +523,8 @@ All entries should describe actual work and results. Do not record planned work 
 - Added a read-only claim-level report over archived verifier attempts matched to current published articles by canonical `articlePath`.
 - Report rows retain claim outcome, source identifiers/URLs/titles/roles, passage IDs and bounded excerpt, run metadata, current article text-match diagnostics, and all historical attempts including conflicts. Missing proof remains unknown; no latest-attempt winner is selected.
 - Added synthetic and real-catalogue CLI tests and explicit offline workflow trigger paths. Verification pending.
+
+### Claim-level audit source correction — 2026-10-11
+
+- Included the root `data/claim-verification.json` snapshot in claim-level review when its canonical article path matches a published slug, labelled separately from archived attempts and without claiming exact-byte provenance.
+- Fixed a regression-test fixture that lacked the current article Markdown file; expected missing-report state is now tested independently from missing-article state. Branch-head CI pending.
