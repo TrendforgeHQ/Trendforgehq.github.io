@@ -498,3 +498,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Correction:** Normalized regex literals and reran CI. BOAT Offline Tests [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) both passed.
 - **Rule:** Keep test assertions path-specific but validate the test itself through CI; do not infer production persistence from static assertions alone.
 - **Next:** Final changed-file intersection review; keep PR draft/unmerged until deliberate integration review is complete.
+
+
+## L-066 — Test the auditor against the real published catalogue
+- **Change:** Added an offline CLI and integration test over `lib/articles.ts`, not only synthetic fixtures. The report includes per-article structural findings, duplicate slugs, consistent counts, and limitations.
+- **Failure caught:** The first CI run detected a literal backslash-n appended after JSON, which made stdout invalid JSON. The CLI was corrected to append an actual newline; latest offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed.
+- **Boundary:** This improves structural inventory coverage; it is not semantic claim verification and does not prove source freshness/reachability. No article changes, publishing workflow, or paid-provider calls.
