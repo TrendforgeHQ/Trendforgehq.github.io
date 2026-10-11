@@ -506,3 +506,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Strengthened `scripts/test-boat-published-lineage-workflow.mjs` to check the explicit `data/published-lineage/` directory, run-scoped manifest filename, and generated-output transfer allowlist.
 - Initial regex escaping caused a test-only CI failure; corrected source passed BOAT Offline Tests [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) at `5e24de25e22ca77a1e399b985d2c291fbeffb2a8`.
 - No production workflow was dispatched; actual persisted manifest remains unverified. Next: final changed-file intersection review against main's generated-intelligence refresh commits.
+
+
+## 2026-10-11 — Read-only audit of the actual published catalogue
+- Added `scripts/boat-audit-published-catalogue.mjs` to inventory the canonical article catalogue and emit JSON findings and duplicate slugs, without modifying articles.
+- Added `scripts/test-boat-audit-published-catalogue.mjs` to compare report inventory against actual `lib/articles.ts`, validate summary counts, and preserve the explicit non-semantic-audit limitations. Wired both paths into BOAT Offline Tests.
+- Corrected CLI JSON newline after CI exposed a malformed output stream. Offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed. Control Center QA [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was pending at last poll.
