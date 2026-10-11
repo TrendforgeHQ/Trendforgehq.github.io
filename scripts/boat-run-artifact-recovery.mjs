@@ -6,6 +6,36 @@ import { pathToFileURL } from 'node:url';
 
 const sha256 = raw => createHash('sha256').update(raw).digest('hex');
 const text = value => typeof value === 'string' ? value.trim() : '';
+const normalizePassage = value => text(value).normalize('NFC').replace(/\\s+/g, ' ').trim();
+function collapseRepeatedPassage(value) {
+  const normalized = normalizePassage(value);
+  const parts = normalized.split(/(?<=[.!?])\\s+/).filter(Boolean);
+  if (parts.length >= 2 && parts.every(part => part === parts[0])) return parts[0];
+  return null;
+}
+function resolveLegacyPassage(claim, packSources) {
+  const sourceId = text(claim?.sourceId);
+  const originalId = text(claim?.bestPassageId);
+  const source = packSources.find(item => text(item?.id) === sourceId);
+  const bestPassage = normalizePassage(claim?.bestPassage);
+  const base = { claimIndex: Number.isFinite(Number(claim?.index)) ? Number(claim.index) : null, sourceId: sourceId || null, legacyPassageId: originalId || null, canonicalPassageId: null, method: null, status: 'unresolved' };
+  if (!source || !bestPassage || !Array.isArray(source.passages)) return base;
+  const find = candidate => source.passages
+    .map((passage, index) => ({ passageId: sourceId + '-P' + (index + 1), text: normalizePassage(passage) }))
+    .filter(item => item.text === candidate);
+  let matches = find(bestPassage);
+  let method = 'exact-normalized-text';
+  if (!matches.length) {
+    const collapsed = collapseRepeatedPassage(bestPassage);
+    if (collapsed) {
+      matches = find(collapsed);
+      method = 'exact-after-collapsing-identical-repeated-sentences';
+    }
+  }
+  if (matches.length === 1) return { ...base, canonicalPassageId: matches[0].passageId, method, status: 'resolved_unique' };
+  if (matches.length > 1) return { ...base, method, status: 'ambiguous', matchingPassageIds: matches.map(item => item.passageId) };
+  return base;
+}
 const finding = (code, severity, message, details = {}) => ({ code, severity, message, details });
 
 export function auditRecoveredRunArtifacts({
@@ -178,10 +208,30 @@ export function auditRecoveredRunArtifacts({
     }
   }
 
+  const candidateSources = selectedPack?.sources || [];
+  const passageRows = report && Array.isArray(report.claims)
+    ? report.claims.map(claim => resolveLegacyPassage(claim, candidateSources))
+    : [];
+  const passageResolution = {
+    totalClaims: passageRows.length,
+    resolvedUnique: passageRows.filter(item => item.status === 'resolved_unique').length,
+    ambiguous: passageRows.filter(item => item.status === 'ambiguous').length,
+    unresolved: passageRows.filter(item => item.status === 'unresolved').length,
+    resolvedPassagesAreSuggestionsOnly: true,
+    appliedToClaimReport: false,
+    claims: passageRows
+  };
+  if (passageResolution.ambiguous || passageResolution.unresolved) {
+    add('BR-PASSAGE-RESOLUTION-PARTIAL', 'medium', 'Only unique exact-text passage matches are reported; ambiguous or missing matches remain unresolved and are not rewritten.', {
+      totalClaims: passageResolution.totalClaims,
+      resolvedUnique: passageResolution.resolvedUnique,
+      ambiguous: passageResolution.ambiguous,
+      unresolved: passageResolution.unresolved
+    });
+  }
   const missingRequired = unknowns.length > 0;
   const status = hardErrors.length ? 'blocked' : missingRequired ? 'unknown' : warnings.length ? 'recovered_with_warnings' : 'recovered';
   const rawHash = raw => typeof raw === 'string' ? sha256(raw) : null;
-  const candidateSources = selectedPack?.sources || [];
   return {
     schemaVersion: '1.0',
     engine: 'BOAT Run Artifact Recovery Audit',
@@ -219,6 +269,7 @@ export function auditRecoveredRunArtifacts({
       noncanonicalCount: noncanonicalPassageIds.length,
       valuesPreserved: true
     },
+    passageResolution,
     hashes: {
       method: 'computed-from-recovered-bytes',
       hashesRecordedAtGeneration: false,
