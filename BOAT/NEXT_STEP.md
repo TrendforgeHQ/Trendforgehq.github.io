@@ -8,7 +8,9 @@
 
 **Documentation reconciliation completed:** the four project-memory files now use the latest 77/77 baseline; learning IDs are unique and historical pending labels are explicitly identified as point-in-time records.
 
-**Next technical task:** define an offline human-review benchmark contract for claim-to-passage semantic support. Start with a schema and review rubric, keep `semanticSupport: not_verified` until a reviewer records a decision, and do not invoke providers, change articles, weaken gates, merge PR #35, or touch `main`.
+**Completed this step:** added `BOAT/schemas/semantic-support-review.schema.json`, the human-review rubric `BOAT/SEMANTIC_SUPPORT_REVIEW.md`, and `scripts/test-boat-semantic-support-review.mjs`. The contract captures reviewer identity/role/conflict disclosure, exact workflow + three artifact hashes, claim/replacement/source/passage, component-level support, scope/time/attribution/uncertainty, verdict, risk flags, rationale, and advisory recommendation. It hard-locks `semanticSupport: not_verified`, approval required, automatic application false, and existing gates required.
+
+**Next technical task:** implement a read-only review-record validator/CLI that validates records against this schema and rejects missing/malformed bundle hashes, reviewer fields, passage evidence, or safety invariants. It must not modify proposal output or article bytes. First run the offline regression suite and inspect CI. Do not invoke providers, run publishing, weaken gates, merge PR #35, or touch `main`.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
