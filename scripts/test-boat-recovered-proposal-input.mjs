@@ -87,7 +87,7 @@ test('proposal engine handoff is allowed only with matching original hashes boun
 test('tampered run metadata blocks proposal engine handoff', () => {
   const f = syntheticFixture();
   const metadata = JSON.parse(f.blockedMetadataRaw);
-  metadata.hashesRecordedAtGeneration = true;
+  metadata.hashesRecordedInWorkflow = true;
   metadata.articleSha256 = sha256(f.articleRaw);
   metadata.claimReportSha256 = sha256(f.claimReportRaw);
   metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
