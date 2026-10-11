@@ -45,10 +45,10 @@ assert.match(writer, /manifest-\$\{workflowRun\}\.json/, 'manifest filename must
 assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\/images\/articles content\/articles/, 'generated-file transfer allowlist must include data/');
 
 assert.match(outputBlock, /log_pack_worktree\(\)/, 'pipeline must record exact evidence-pack bytes and hashes at transfer checkpoints');
-assert.match(outputBlock, /EVIDENCE_PACK_PERSISTENCE stage=pre-output-commit/, 'log evidence-pack state before the first output commit');
+assert.ok(outputBlock.includes('log_pack_worktree "pre-output-commit"'), 'log evidence-pack state before the first output commit');
 assert.match(outputBlock, /EVIDENCE_PACK_PERSISTENCE stage=output-commit/, 'record evidence-pack Git blob and byte size in the first output commit');
 assert.match(outputBlock, /git cat-file -s/, 'measure the persisted blob size rather than relying only on the worktree file');
-assert.match(outputBlock, /EVIDENCE_PACK_PERSISTENCE stage=post-transfer-staging/, 'record evidence-pack bytes after transfer to the main-based worktree');
+assert.ok(outputBlock.includes('log_pack_worktree "post-transfer-staging"'), 'record evidence-pack bytes after transfer to the main-based worktree');
 assert.match(outputBlock, /git ls-files -s -- data\/authoritative-evidence-pack\.json/, 'inspect the staged transfer blob');
 assert.match(outputBlock, /transfer-mismatch/, 'surface transfer mismatch explicitly in logs');
 assert.match(outputBlock, /transfer=unknown/, 'report missing blob bindings as unknown');
