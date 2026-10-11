@@ -21,12 +21,11 @@ Risk: low. Provider cost: none. Production behavior change: none.
 - CLI writes a separate JSON report and refuses to overwrite input files or an existing output.
 - Five new synthetic tests cover bundle binding, hash mismatch, source/passage mismatch, missing claim text, and CLI output safety.
 
-### Validation to complete
-1. Confirm this branch-head BOAT Offline Tests run passes; fix any failures before recording a pass.
+### Next implementation
 1. Build a read-only adapter that maps actual saved pipeline artifact shapes into the proposal inputs; use checked-in or downloaded historical artifacts only, with no provider run.
 2. Add a schema-contract test for the review checklist and statuses.
-3. Only after a proposed copy is reviewed may it be tested with existing claim verification and all required editorial/safety/build gates.
-4. No real article is changed or published by this module.
+3. Keep factual proposals review-only; any future human-approved copy must pass existing claim verification and all required editorial/safety/build gates.
+4. Do not change or publish any real article in this phase.
 
 ### Guardrails
 - No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
