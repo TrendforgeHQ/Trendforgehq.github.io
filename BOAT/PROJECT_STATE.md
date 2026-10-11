@@ -207,5 +207,5 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added `scripts/boat-recovered-proposal-input.mjs`, a read-only adapter that consumes the recovery audit and exact recovered article, claim report, brief, and canonical pack bytes.
 - Adapter verifies current bytes against recovery-time hashes, requires exact unique candidate selection, checks report/claim source IDs and URLs against the selected pack, and only marks a claim eligible when its exact text is present in the article and its source passage maps uniquely to canonical `Sx-Pn`.
 - Missing/ambiguous passage mappings remain `unknown`; absent claim text and source-lineage mismatches are `blocked`. No replacement text is generated. Human approval remains mandatory; semantic support remains unverified.
-- Added synthetic and three-real-archive integration tests and wired them into the offline PR workflow. Validation is pending CI; no pass count is claimed yet.
+- Added synthetic and three-real-archive integration tests and wired them into the offline PR workflow. Branch-head CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped.
 - `main` remains untouched, PR #35 remains draft/unmerged, and no provider, publishing, or site-build run was requested.
