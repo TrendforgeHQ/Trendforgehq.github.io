@@ -305,3 +305,21 @@ test('eligibility report CLI emits parseable JSON to stdout without writing repo
   assert.equal(report.summary.semanticSupport, 'not_verified');
   assert.equal(fs.existsSync(path.join(root, 'boat-recovered-proposal-review-report.json')), false);
 });
+
+
+test('publish quarantine archives exact evidence pack and records same-bundle hashes', () => {
+  const workflow = fs.readFileSync(path.join(root, '.github/workflows/publish.yml'), 'utf8');
+  const start = workflow.indexOf('- name: Claim verification gate');
+  const end = workflow.indexOf('- name: Claim verification gate status', start);
+  assert.ok(start >= 0 && end > start, 'claim verification gate section must exist');
+  const gate = workflow.slice(start, end);
+  assert.match(gate, /cp data\/authoritative-evidence-pack\.json "\$quarantine\/authoritative-evidence-pack\.json"/);
+  assert.match(gate, /sha256sum "\$quarantine\/article\.md"/);
+  assert.match(gate, /sha256sum "\$quarantine\/claim-verification\.json"/);
+  assert.match(gate, /sha256sum "\$quarantine\/authoritative-evidence-pack\.json"/);
+  assert.match(gate, /"articleSha256":"\$article_sha256"/);
+  assert.match(gate, /"claimReportSha256":"\$claim_report_sha256"/);
+  assert.match(gate, /"evidencePackSha256":"\$evidence_pack_sha256"/);
+  assert.match(gate, /"workflowRun":"\$\{GITHUB_RUN_ID:-unknown\}"/);
+  assert.match(gate, /"workflowSha":"\$\{GITHUB_SHA:-unknown\}"/);
+});
