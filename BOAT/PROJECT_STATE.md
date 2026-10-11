@@ -456,3 +456,12 @@ Verified current baseline:
 
 
 - Follow-up verification completed: [BOAT Offline Tests run 38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855) passed 128/128, and [Control Center QA run 38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938) passed the production build after the slug-field fix.
+
+
+## Published claim-report coverage — 2026-10-11
+
+- Added `auditPublishedEvidenceCoverage` to scan archived attempt folders and map historical claim reports to each canonical published article using `articlePath`.
+- Control Center shows reports found, historical PASS/block/conflicting outcomes, aggregate archived claim records, and evidence-pack file availability.
+- Safety semantics: historical PASS is not current verification; missing records are UNKNOWN; conflicting outcomes are preserved; counts across multiple attempts may repeat the same claim.
+- Verification: [run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) — 128/128 tests, 37/37 Control Center checks; [run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739) — production build passed.
+- Remaining blocker for current claim auditing: no exact manifest binding the currently published article hash to the claim-report and evidence-pack hashes. Next step is to create and consume that lineage manifest during publishing; do not call path matches exact verification.
