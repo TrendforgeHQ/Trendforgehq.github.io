@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-10T21:57:49.455Z",
+  "updatedAt": "2026-10-11T06:22:53.245Z",
   "policy": {
     "recordsOperationalHistory": true,
     "influencesDecisions": false,
@@ -8638,149 +8638,109 @@
           "inCooldown": false
         }
       }
+    },
+    {
+      "recordedAt": "2026-10-11T06:22:53.245Z",
+      "workflowRun": "38117858244",
+      "workflowSha": "c67a9c5abf2d64cb883dea16fb12265ef8a3354e",
+      "decisions": {
+        "total": 230,
+        "publishCandidates": 0,
+        "review": 11,
+        "hold": 219,
+        "reject": 0,
+        "strongEvidenceReady": 21,
+        "singleSourceVerifiedReady": 69
+      },
+      "evidence": {
+        "candidates": 230,
+        "passed": 53,
+        "blocked": 11,
+        "strong": 11,
+        "singleSource": 42
+      },
+      "claims": {
+        "title": "Amazon Eyes $8 B Nvidia Chip Financing to Lighten AI Capital Load",
+        "claimCount": 10,
+        "verified": 7,
+        "partial": 3,
+        "unsupported": 0,
+        "averageConfidence": 84,
+        "pass": true
+      },
+      "editorial": {
+        "status": "pass",
+        "articleCount": 48,
+        "averageScore": 76
+      },
+      "lifecycle": {
+        "articles": 48,
+        "refreshCandidates": 20,
+        "watch": 18,
+        "fresh": 10,
+        "stale": 0,
+        "duplicateClusters": 0
+      },
+      "growth": {
+        "totalArticles": 48,
+        "averageEditorialScore": 76,
+        "editorialReviewCount": 35,
+        "refreshCandidates": 20
+      },
+      "distribution": {
+        "articlesPlanned": 20,
+        "externalPostingPerformed": false
+      },
+      "monetization": {
+        "readyForAdSenseFoundation": false
+      },
+      "providers": {
+        "Groq": {
+          "failures": 130,
+          "successes": 169,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        },
+        "Gemini": {
+          "failures": 80,
+          "successes": 2,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        },
+        "OpenAI": {
+          "failures": 3,
+          "successes": 0,
+          "lastStatus": 429,
+          "lastClass": "quota",
+          "inCooldown": false
+        },
+        "Cerebras": {
+          "failures": 7,
+          "successes": 0,
+          "lastStatus": 402,
+          "lastClass": "error",
+          "inCooldown": false
+        },
+        "OpenRouter": {
+          "failures": 114,
+          "successes": 2,
+          "lastStatus": 429,
+          "lastClass": "rate_limit",
+          "inCooldown": false
+        },
+        "Cohere": {
+          "failures": 143,
+          "successes": 16,
+          "lastStatus": 200,
+          "lastClass": "error",
+          "inCooldown": false
+        }
+      }
     }
   ],
   "topics": [
-    {
-      "key": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1IdXhBb19NY2pEc2xDRVJHemRtQ1lSV010RTFVTWpHNlB5S0R1VUNkOGZsb3NiMUd4WmJlVnNvOWtXUFpaNkx4UkpIU00yd2R0LWMtWWQ4c296bkk5SW14aHJVbWRUOWhYZVhqekVqbUYtUFRPZkNjWXZuNU5YaFk?oc=5",
-      "title": "Citigroup raises one year Bitcoin forecast to $113,000 - fortune.com",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-01T22:52:53.092Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRVowYXRzVWYyZ1BUdHZLZy05UmMtcGdSVkItdmF4WmxZUzVSQkVpbE5PTG9sS2w1QnpHQmdTWTZvS2s5Z19ILXpZcFVFd29fYkdlNlYyajQ1X3NGUC1Md1BJb3VReHM0eTB5eGg0NzBfZThpTjVpRzRWTXdnemdyUllSdTlPbGp1dE9SVmJzc096cVdDRktBWFM0d2wydWZma1huNE9R?oc=5",
-      "title": "Why bitcoin could be in the early stages of a major comeback - CNBC",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-01T22:52:53.092Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 90,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUkdhZGNReVpJcWxxUzVmZjljcURHdm5oc3ZjMzFWZ3lTd08zUUVISno0QU5LUklld1JSVGc2LVprclc2REVPZW1LN1hveWNpNXhncTlJZjgwMUtvRlJCWHBRUXFLWGVjcXNnNl9mQ0k3VTh0SnBiTmowOFVVZEhseVZLbzM3dkdjaWJNaTZ2aFY2ZmlrTHhscEN6WEpZUlUyVVctWXh5d3hQd9IBrwFBVV95cUxQYVJadHZIVjJjd1dIQUR3cHZiWTZUNzhSMkxVdzV4czFEWDVCajdVNEFPR1ExaERiZE5UbERZNFlwOEoxQkRnMVpfOU1TbTFHcUpGQjNyZHljdWd4aTJTX0lMelRZdUJFSkhYLWlYdk9BdjVfZ21WYzlGN1lYNWJ5Wk1Ud3dFYVRsZ0dGWlVlcW9fckhVcG5teG5JU0RHYzVGNE5NSEkxOHFCT2NlNmFj?oc=5",
-      "title": "SpaceX launches Google AI chips into orbit in push toward space-based data centers - CNBC",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 82,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWWFtWW9YMHUyWmxwTUs1VmZnOHZNdnJBNzB6azNFSG84M0FtS2x1SE50TDZMS0ZNS25zQ1lEZnFRdnd3UFhDRXMwLUVXaDZWRW9RZHdfQXdhNjFBdEJSd243SHlselowdWpIZ3RycmRSdUhlaTlDLUVGNjV1a3UwY2llSXpiV0dvVDN2VU1tS3NmbmQzVFNXV2FZcDJzWEI5b05NRW4zRXFPOV9NZnZUMmE5M2sycEtKVUdpNjRkLW90bGtiZnY0LWtvTHRDQQ?oc=5",
-      "title": "Nvidia's bet that its chips can finance the AI boom gets a Wall Street reality check - Reuters",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-04T12:49:16.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 74,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://techcrunch.com/2026/10/01/kevin-mandias-new-agent-swarm-security-startup-armadin-raises-255-5m-at-2-5b-valuation/",
-      "title": "Kevin Mandia&#8217;s new &#8216;agent swarm&#8217; security startup Armadin raises $255.5M at $2.5B valuation",
-      "category": "AI",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 74,
-      "confidence": 90,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://arstechnica.com/space/2026/10/spacex-describes-surgical-intervention-before-launch-of-latest-crew-mission/",
-      "title": "SpaceX describes surgical intervention before launch of latest crew mission",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-02T22:31:22.818Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 87,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS1M3dFdnaHdFNGh3VzJJOXd4TTd1WThPdzNvVGl4WVZpVDVEOFNody0talNRN0pMZ1pMMURTOFdSZ0lwSXRHckdOSTlBclJvS0twMFFXLU5xdWlhTGxfMlpVd2hEQXZJTkhLdFRod3gyejJHTWRiVnFmblg1bTZPWXZXVjl0V1FnQ3hOZDZ1c0h0LWJuRkdmQkV6TmdJWV9Pa3RzU2tTbGdpT3BWbTdpSlNsRHhhOHJNalY4M2tDaEwwNEV1cTF1cHFR?oc=5",
-      "title": "SEC maps out crypto custody in new proposal that furthers its digital assets agenda - CoinDesk",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPLU1HVTdBaUNwamwwdFB3ZDlFS0FEbG1VRExYeU5vU2k3QzRLNWdpYzFNVjE3LTl3TTZNSXlmUDM3MGVxTVB2RUd3Yzd0M0hTSlpNQmhwdHozUTBlMGdhcVhjZF9pX2RKQ2N5al9OQzVkN2Y5UFFfd0txVGtGbFpFTGVxaklmQlhmUk9TTm9ZZFdFSFZPY05tRE9SSmk2b0hiVG1r?oc=5",
-      "title": "Artificial Intelligence — Here’s What Christian’s Need to Know - Focus on the Family",
-      "category": "AI",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 71,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZHFFdWVGQTl4bU50bUVzdzFoTWxtd0g2QVJwUVdrR2JlNFFVVHpHeWlSa2owVmhCRzc1ZkdDUFZab2RUX0c2NWVSamwwRWtINmJWT3Vid2tSTjNpM01MX1VyNEU0NmVMU1pqUUNMNllqQXRlTXNfSTZuZ19KRlUteGk4Zk4xdS1wM1ZFM3NPU09VTENpeWhsUXB6TGQyVjJfU1h3S2Y4ZmctRjAtTEhjbmpsY013NlNkdUtmTlZ2V3B0ZWc?oc=5",
-      "title": "NASA SmallSats Launch to Advance Science, Technology, Orbital Operations - NASA (.gov)",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVjNNenUtUjhHVU12U04tU28tUVhrbzRnOE1Kczkwd1ItWno1WE1hYVFUMWVIeTFTal9EbFNIR1g1UFJWM0xzR1RmM3dEMlA2VXZzaWRuVzZjX2FJdlpwT0otNnIwYzlSN1JKZWNsSExUTllmMzM1NHQ5bXF5bGpVVzNsaFg?oc=5",
-      "title": "SEC Chair Paul Atkins unveils major crypto proposal for U.S. investors - Yahoo Finance Singapore",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNMVlESi1NRUJxaF9LNmoyMHNlWnl3cWwxUEdraFBJQTUwX0FxejhhbjB3ZHBrSEJkZFgwQXlVMGFlLWU4SmF5OWhNMnl0RU82TmJuZV9DV3dqVXRkZFlPc2N1ZG5oSmRuSVU4ZlR4ZU9neElqUWJLR2Flb0tPTjRhVThyVWljS29oRnR5cm5JSXpZX1hpYUVNZkViMnVWRk9pdVZKSlNMdVdwelhtd0lCWDJKTDF4aWJVWFgycmE2UGZnMHpaQlgyeGtPaFg0TjhOSUE?oc=5",
-      "title": "AI agents hacked the hackers, stealing email addresses from security research org - The Register",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTTdMWlZBV0lla3ZBSGJ3WUl0OFRxc3pnV2hJeFBGcDh0T0ktaGlwSTBCRzV1MnJ3bC13V2sxcWE2WHRMWjJxVk1nRVdfZ2xoM01LY21UNFdCeU1RSE1JWHVQcGxRb0lhUEtJX3JkeWhxdS1HcktPSzhhckhVLVJYcGdNMkVHc0hVTVhIYWUwYnNDUm1QUGp4bC0wWGlBYW94eHFvbEx4dG1JWDRQ?oc=5",
-      "title": "SEC Safeguards Interests of Crypto Industry Rather than Investors’ Assets - Better Markets",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://www.theverge.com/tech/1003877/apple-security-camera-no-video",
-      "title": "Apple’s reportedly developing a smart home camera that doesn’t record video",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzU3NnV4NFhNazRXQzVkeTV6VVNBSzUyUE0yM25SWGQtaFM1YkU4Y1htNWMtYXBPcU9pRDZfZUhSQnZyYnpvWWJ5ZGE4T3ZPOEZrN3IzeHBxMURHQlZySUhfQTBrb0FPdUxFSHRjVEd2ZFh2VGVuMjluVDhxYmhDa2hHc3hnV1p6c1hxaDJaa0VCQXQ3NmhackVWSVBJRlpXMzJXQ3Q2UHlhVXFaMDNN?oc=5",
-      "title": "EXCLUSIVE: Broadcom to lend Anthropic up to $42 billion to lease its chips, filing says - Reuters",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-02T06:07:11.379Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
     {
       "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQLUN5SkgzcDVVbFpXMF9pOGwyVmFjMWdBQXhSQjV2N3U0SHBQYUIxWkVmamQ3OWQ5VWdubnZnUVVWQWt6bkl1WGdtQWZURFBOUHZHQTI0Yk5qVU1FSDdSdGdNVFcxQXdocmlwNDVDNEg3YXVKOVdYdXN6cmVJM2pHRTczN1I2V0RaZHhzYk5TQkhkaWtrU1VkM1BfSFpBWG9xNzVYb0R3UHBVS2lnZUM3OXBNZw?oc=5",
       "title": "Security Council Programme of Work for October 2026 : What's In Blue - UN Security Council Report",
@@ -9615,7 +9575,7 @@
       "key": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWF9ydjNUVE54eS1wSUNDdVphNl9reDBUUzI4YnNjamRDYU1mUEVUUk8zRGk3b3p3aXZIck5UTUwtSlUtNzhvMERDTTVQWUZtU3Zqd255OC0xa19XQm0xN0V2bXpYT3pHZnVfd2k1NGVhRFVrakEySVhwTFRJR0JqLUhkTVdaNEgwUk13RG5KajdCRXlEc0Nub3pwY0F2YUEzS3g1S3VKX3RuZXM3R0N1UXQwRG1iQjZvZDJ3RWtSdmlNaTjSAcMBQVVfeXFMUFhfcnYzVFROeHktcElDQ3VaYTZfa3gwVFMyOGJzY2pkQ2FNZlBFVFJPM0RpN296d2l2SHJOVE1MLUpVLTc4bzBEQ001UFlGbVN2andueTgtMWtfV0JtMTdFdm16WE96R2Z1X3dpNTRlYURVa2pBMklYcExUSUdCai1IZE1XWjRIMFJNd0RuSmo3QkV5RHNDbm96cGNBdmFBM0t4NUt1Sl90bmVzN0dDdVF0MERtYkI2b2Qyd0VrUnZpTWk4?oc=5",
       "title": "Palo Alto Networks joins UAH Invention to Innovation Center as Corporate Innovation Partner | Newswise - Newswise",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 58,
@@ -9635,7 +9595,7 @@
       "key": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMW9tNXJZd0JQaVM1d0lCTHFNUHBkZFlKRE8wRFYzQjFfdElLLUFUS0ZicmtPRE4xQTNyLVdldkotY2lRWWp2cUxvTFRZcWg2czVnSEQteTRBNzZaLUM0bVRXNV9oenB0TW9nZVdaZHh4dFFyU2thcXBYQjZyMUtvMzBhbm83VU5maURqcndFaU5QYlRZbVN5enFKSGVVXy1LUmpQRjlvQkVwZnNyQTV5Q9IBtwFBVV95cUxOVkczaVBUTW52WEZDdUZQTkdnMmFUSzE1OVJTYWVQbmpvVXRCNXo2SW5QWmxYRFpWSVN3ZTRkOXBmU0tZOUlhbGVJR0F3ei15Ty02ZEEzUTlrcnJhTWtmSlBJRTZWRnltdVdGZnpWTWFQZDNISjRHaWFLUFNvTEp4WU9EMVo1SUpGQktzQjQwdXg2WmtsbFBIaXZxdlpwMzlpcDRzajRfc3lzMS1ucFB5VWVnWm42bVU?oc=5",
       "title": "India’s next challenge — from invention to global scale - The Hindu",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T12:59:56.861Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 55,
       "confidence": 58,
@@ -9955,7 +9915,7 @@
       "key": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNZzFQYW1lME1SMUdLMnZWZWtQR3ZmcGRiLXpScW4zLURFQ2U1RElkUkFoWjZfamlHTklHMlRlVFFHZkJRc3hvdUl6WmV5NlZSbWMzWGxVekg1SDVkcEE3Mm5seEtrY3JnSDFDWTJQV05CVUFNU3RvZlZZQ0tKSDJQcFJzQ3FZY24wUW9PbWE5S2ZPOGl0X3dtNHRHb09zYXdHbzVuSkVUcUhUUzczblBtWEl2TEt3dTd0OGdCV29rUmZmY19JRWRXUlpGSzRFYTlNNmRPcjhHZFQ0OXVVdHg3eS1POW1xNkhjck4wLWloZkdiZTJaczBNSGJxQlFGRHduY3E0aE1DYXV0SzRYTzFibVRCZzFadHp0YUl2c09GS00zdw?oc=5",
       "title": "iQIYI Reaches New Heights: 880 Invention Patents Filed in 2025, Over Half Driven by AI Innovation, Further Building Up Its AIGC Leadership - PR Newswire",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 59,
@@ -9995,7 +9955,7 @@
       "key": "https://news.google.com/rss/articles/CBMickFVX3lxTE1aTkhGdkFRcFlGa1BzZU9NbnV1aFVYT0FoVU5LREVTanViY2swbWRmWXEyeGZ6amR4OTBSUGJBcGRDUnZtY2RwbW9xaW1Wc3BDMW05LW9pTWJNNnBXbG5sQzZTRGxaZ3NHTl90OWVORHNwdw?oc=5",
       "title": "China has invented a whole new way to do innovation - Noahpinion",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 56,
       "confidence": 60,
@@ -10005,7 +9965,7 @@
       "key": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9OTENGRkVmRTlJdFdVVnJrWTVmWXNfOGhxXzc2cW9OSFJMWHhYQ0hLdkFLaTVaMFRfS2I0S2F2UDhxemFmUUF6dEtiRi1hMlJ6WmI0QW1xMUhjc0RNRlJVdw?oc=5",
       "title": "The 50 greatest innovations of 2025 - Popular Science",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 55,
       "confidence": 60,
@@ -10045,7 +10005,7 @@
       "key": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR08yYzN5SDdENWJmT1BXQUZYU3RwdDBydGt1OFdZNE9PaUx3bVg1eGtZbGRlVktRdlQ3bFFFbFc2TmoySW5YQ2tMTzluWnZJeENIWkRYdGQ0MDlxbDdUNG9oWTBkSEhNMFZnUlQtNEVZNjFqbEttMEhQdWtRNE5Kd2pOOGdCbmN4WEdlZTAwaTh6eUw3UXZnWFMwTFA?oc=5",
       "title": "The Netherlands take a step towards establishing a Dutch Darpa - Science|Business",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 52,
       "confidence": 60,
@@ -10055,7 +10015,7 @@
       "key": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTkNRT05yUV9hTHdob2EzUzNfZEVjb1dnWWdHcjJVdGc2VzhYSkQ2eXZsTGFuTzhKQzlMZ0gybEJZaHFoYVBMOWZ0UlNxZGRkRHBpWHRNaVBBZHhLR2gteExEbjVvSjFsWDJlaERGcDJkc251NVduZjFIM3E4bVZTMl90MUx6ZlZHem92RTR3WU52OVRIaTRjZExIY19DeU1zY05aaUtCbTEzb1dlTjdKaV9CV18xeXFFY3I2aURXSjA1VWc?oc=5",
       "title": "Innovative nurses, sisters invent new device for heart patients - Sanford Health News",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 52,
       "confidence": 60,
@@ -12045,7 +12005,7 @@
       "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQVVNzbDZ0MFJxOE5lM2RGaVI2YVNabjAtTHpXQjBqbllLQXFnUWt2NTNKVV8taDY0ajh0bVR5aG1Mb2lBSEFhRFhtNmh5MDEyX09RY01LakRwQXk2WnVtdEltZ1lMSTlTQlBSXzR2ZWt1MjRDQk9jVXFkM2dyNGNGWVFfa3lLRWIwazJIbFhKX2Vjd29qc1lsSA?oc=5",
       "title": "Innovation, Invention and Impact: NJIT Undergrads Present Summer Research - NJIT News",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 62,
       "confidence": 60,
@@ -12055,7 +12015,7 @@
       "key": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZ2RFUmVmRTktYzJ2U1JfSDZkbUlrWGZINklMTFFreWRBeGRXcndDRjlIeUg1QmE0RTFlRWpEVnp4ZlgtN0gtLVNxUjU3aFc5Ung1d19XcHB6dUJ5SlRBcEt2UTgzWGo1bkpYRmFKV1VvTzlKS0ItQTVCMUhabkpYOXlQa2xydkEzWnBQS2ZpajA?oc=5",
       "title": "A History of Invention and Innovation - Boston University",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -12065,7 +12025,7 @@
       "key": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQUM4WGNTX0syZ01wenpzWmZCRmVtckdYSV9ZTk1PVnNTZE5seUFKSHJTNEFPR09GY2dyU3hZUmxBdjVQZTd0ZjhRZ2JYbXB4c2FvQlQtdnEtQlYzY20tVVV1Z0NhOVROdlQySHNIbGlLZlNkOFFCODhGeVVmeFppUm5JcHl0T2dKZ3Zv?oc=5",
       "title": "Opinion: Why Canada’s health Innovation bottleneck is adoption, not invention - University of Waterloo",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -12075,7 +12035,7 @@
       "key": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5FbS1YRWluaTQ3NDY0VlZCazcxZ2RVOWRYdUt3S1JkQndoQ1U3blFHQVotcW8wNWk5TEZlSDQ4V3lua2huckVPM0FINzd3M2UxMEVFQUI3ejc3ZEk4WkFfeA?oc=5",
       "title": "From Edison’s Invention Factory to the new architecture of innovation - Science | AAAS",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 58,
@@ -12085,7 +12045,7 @@
       "key": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRjdLeWRoN2RzaTRZVUJWQmxwNFdOMmx3aDZNWTVqc3cwZjVtWm1XLW9mY08xcHNNU2NHaUxoMWFYcFJRd253U2NiNEZSUlI2NGZjUjBUUnRLQ3JrQlo0QXJRR1JqOFA3NUZod3hXX05FRURBbXZNbUo5ZFYtTUFaSnR5b3ZmaGN0bEprWk1xQ2ZDYXFTZE1KUldn?oc=5",
       "title": "Apple will launch 7+ new products in October, here’s what’s coming - 9to5Mac",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 55,
       "confidence": 64,
@@ -12335,7 +12295,7 @@
       "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeGNzcmIteUo2YXdxbHlGS1k0YTlQRThCNXFpQUFZYkowNUZsamdReWQ4WmYxSVU2RXd6UUhXLWNUZUxkdW1SUFdiUlhIUzVlMF9UMWx2ZUJuWl9hdk1uU2tYck1uaVp1WlFkRmNuOFpFQTRfalpnYWZxbjN0RW5WLTZXZ3lPN3VmTlRla1Q0d0pJVWVINVVkcWdzQ2xISWhMc2tHWGVNc2xZM0NCbzVZ?oc=5",
       "title": "Innovation beyond invention will bring novel medicines to Europe’s patients - pharmaphorum",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 58,
@@ -12355,7 +12315,7 @@
       "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOTBGUXpac3JGbGhmY1pTczMwRmdIQjRUYWJlZG9hTWlaQ2R3YldmN3dQZmZObnY3SXVoenoxZVNSa3ZQQ3JscEN2alJXUGxpRHA0RkNkNW1CNHVGckUyWkttdHZmVHdtWGVKZVp3ajdRUkdsNnFfc3BJeHF6OEtpeWVtMWFlYXJfVFA4aVB0UjV5UHVZN1pldzVWU05WbVR3QVNvaWpic0Q?oc=5",
       "title": "America's true innovation advantage: we don't just invent technologies — we reinvent how innovation works - Fortune",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 57,
       "confidence": 60,
@@ -12495,9 +12455,9 @@
       "key": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOaWlLQndiYXEzcWRjNnFRaDl1QUlMOFh6MWp2R21WX1dkZkV5RzE5enNTRm9FSmpxVGhfdEtiMU9Xd05FWEFBbm9QLVZGbGRyYlBVWXdhMG05R0dvaGZyZUtQcFNKdmRUdEFQcWcyOGFkckozNURNa2lhU3E4VlltOHI1aExtOXhxb19GNlE5S0dfNi1rQ1QtVFhMSG1WWEtXWVB2cllYa3gzVlZPaVI4OWpuYnlYRzJaUUVFSzFIZlJMR1lnVWgxLW1TZWw3dzFzNVRZbi1NV0NQWVNDbHlvc0tScmhWVWZ0SlMwRHU1N0NQVGxyN1hHb1RSTTI5V2Jl?oc=5",
       "title": "From invention to impact: Hong Kong Science Fair gives young innovators a wider stage - South China Morning Post",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
-      "score": 55,
+      "score": 56,
       "confidence": 59,
       "evidenceLevel": "none"
     },
@@ -12505,7 +12465,7 @@
       "key": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1UcXBRMG1HdXZXLUoxeGxwNlgyYVRiMTc4V3dxZGpOUUpQVHpwWHZRamxnRFNKS0VuUHFMeHM5V091RlZCSmxpS2dkTlVBTGRJMWN2LUYyMkJ2cG9FQWlxMGEwQ0c?oc=5",
       "title": "Software-defined vehicles: the OEM guide - Cubic3",
       "category": "How-To",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 59,
       "confidence": 69,
@@ -12585,7 +12545,7 @@
       "key": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2ZIZm96WTJEd0VmOHpDRlh5NXhvNjRwSVhQTHR2U3JIRjJ6QVdqRjgtYkxMaFRvVzRVTkxDMDcxV1FOOXpYeDhaMGU1M3h6NlBUR2p2Y054d1I5enVQR1JwbnRVN3RHSHJRVVFWcjNfcFNqTU9OWmFyajNRWWM3XzJyb1hCNm10dFVTRGdxaUMtd19lZVc3SURLMGZMQVRILUdfbUVXZVRNUdIBrwFBVV95cUxNWlJjSHhpMkszQWNyRHFMMlRjTEU3eDZBSEoycDczVjZKbEpnRmJGdGNHTGVSVzNnZVVOcUdPdThUY1Z4UzNnTDc0VzFDbjlqS1RKNjQ4Y01OMDhnUGxFRlBnUWpSbXRWcFFLWmdOeE5RRlFJVVRIUXo0dVdIVlFTUXZDQ3RHeEdQUWI4dXFuakhkSmZBZ0c2ZHZKa2pWaHI1VjNkcTZxLTZVOGFaakpN?oc=5",
       "title": "Army invention identifies bio-materials for future military technology - Army.mil",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 52,
       "confidence": 57,
@@ -12745,7 +12705,7 @@
       "key": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWlFEeGZad0JTSzliMHJSdTllN3VaR08zVFFfRHMxTkpJOWR1TC1jT2dqQW1Hci1XTkRaQ3VvbzduMlJac0Q1VEkzbFN5NzAyVDdFWFU3bGRZVTZpUWkwWTdmSEJmYUpRYWhLWmRhei1tRUNCb0FSdkFqVV8wRndpRHp1bzFMSUpkU3loMGJUTjR5akwyenBQMkYxV3hzWW1tOU1PVHpR?oc=5",
       "title": "NLR Battery Innovation Awarded NASA’s Invention of the Year - nlr.gov",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 58,
@@ -12795,7 +12755,7 @@
       "key": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1fRUJyZ0NsNFhsOHN5Z2J5YkZoVUVIU1hQY0RFZFFzTHY1eWxNVFFhY0NjeExuYzVKQ1oybHVEX0hzS2FiTVlKb3NFeDIxcmJySjNEWU1OUjNXTno3VXRXSTZodHV0dm5jUERDTUJB?oc=5",
       "title": "Apple's October 13 Launch: What's Coming - MacRumors",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 55,
       "confidence": 63,
@@ -12805,7 +12765,7 @@
       "key": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQeWM5OTVhUUlXakFRZEpQekVOZUZMYTVlTEJIaGdUNGdlTm9fVnZMWlctZFMxNVBzSnpKaVNKZ09fSXE3ZUg2WVNIZ1NJSVdBaEtnMXlPZ2ZYa0g4bWEtd3VaaXJUaXNCUjFzLXhBUVJORER6Z2NrVzBlVmd3clJzX3RfWkVBZw?oc=5",
       "title": "Apple to Announce 10 New Products This Month - MacRumors",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 66,
@@ -12835,7 +12795,7 @@
       "key": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IWlhtTWdOZG5QSUtfcjZHLWNIX29ITlQza3B1LTVJWHdaUWJtR3BLRVZsclBpczRMb2lsUHYwYnNLaVZZOEhMLXFabU1LVmFrNDlFR2Z0R0ZVVXlNNFVSaTIxMjh2RExOQVkzRURKZ3pIcmlWN0JkU1hXUm5GUQ?oc=5",
       "title": "Patent push aimed at improving innovation - China Daily",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 56,
       "confidence": 60,
@@ -12845,7 +12805,7 @@
       "key": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4ybjJ3VC01ZXljQ0htQUdGcFdmWUJiSG5EMVNvT3lwbXlpcmNHcW1id0cxdlhwbk90d2NpZTFQTHo4eTRGUjEtamJiVlJtZ3pkU3QyeGVoUWZPV25hcjNraWxrX2xxMHRvMkRQZ0FsR3RrZm43SUoxVQ?oc=5",
       "title": "Apple Product Launch Announced for October 13: 'Welcome Home' - MacRumors",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 56,
       "confidence": 61,
@@ -12875,11 +12835,11 @@
       "key": "https://arstechnica.com/science/2026/10/r-i-p-margaret-hamilton-whose-code-saved-the-apollo-11-moon-landing/",
       "title": "RIP Margaret Hamilton, whose code saved the Apollo 11 Moon landing",
       "category": "Technology",
-      "lastSeenAt": "2026-10-09T18:29:37.641Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 87,
-      "evidenceLevel": "strong"
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVTVQcllXSi1ZR0NLcmFYWjhlc2VIVWZVb2ZKV0d0ckMxZENZdlItemRDNVRhejVySWJUVEJ3dnQxX1k1elBkelI0b2VXZmMzQUlqSVN0Si02ZWNJTFZYV2dlcTVxdWJrSHRublJKLWc1cU5XUVQyWE9wZ0JsUUZrYkhVWC05and4N2c?oc=5",
@@ -12975,7 +12935,7 @@
       "key": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdEduR01nZ3VlaU9VWnR0YW1vMVNBeGVNbC0tRk1ZSE5UWjhWLWlZYnFjX3pBdkQyRUJUSy1ETU45aW44VWNScG04NjJOQnloQlRhMjZySWpaeFBHMk53Nkc0aEhhc09iNjN5RHh3Y2ZNQnlUS291RGVZb2JsV3VCR094YzRNcmdXUkpfajhIU09ZUmgwaVU2Y2VuQS10ajF5U3BaZTBraHlkSmh5N1JjSHRGX0wzd01odkVWM3U3S3Z5VzNDNHVOQ29KSldUVi1OZERmeQ?oc=5",
       "title": "Securitize Launches Global Onchain Trading of U.S. Stocks with Security Entitlements - PR Newswire",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 58,
       "confidence": 67,
@@ -13015,7 +12975,7 @@
       "key": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMENfMjlBQ2RaRzZ2anFzZmtuZzdHLVViN2dlanlyMzFyYjYwNU9hU3BmdkxtZ09LYWlJd3g1eWZsNEtWQVg3V2w4VWVESVpCUFk2dlVPVFlFUG1xUjhyTGJScXZfY2hEYjZxbnFpVHdnLXcyeDMtQUNJSFRzLVMxZUdNMzdjUFZteGlWMzhxeVVDczJENEtGd1hZQXJwNWJP?oc=5",
       "title": "Challenges of protecting innovation in an artificial (intelligence) world - McAfee & Taft",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 52,
       "confidence": 57,
@@ -13135,7 +13095,7 @@
       "key": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE91ZGkxbFU5bkFVZmVsWkd6blNoWW52Q2dubV9VXzZNUlZHZy1HUEVuaklGb3BOb0dBVDVSUm1hOUlTN1hNd3BUNldQM21obHhEZG9v?oc=5",
       "title": "Apple Official Smart Home Event Announcement: Debuting the First Screen-Equipped Central Control Hub with Full Siri Smart Home Device Integration - 36Kr",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 59,
       "confidence": 67,
@@ -13145,47 +13105,47 @@
       "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVUdPS1ZSX3I2OG4zdVNISmtQdWJDN1VmR1lSemRhS1dwUzVVU1ZZRV9UN0lyc2lEbE96WkgxX0J2TjI2U1l0cGRnX3BsNFhudE5oWUh3VUh1bDgxTk1ITmdJOFMxaFFTVXBJSE5tNXlVV0Nqb2VEek9rLTB0TE1YWGtMa3M1dmxhME1PWE9UbFVrS2dERHotazRzLWJza21seElQQmlFcUJZckZfTzQw0gG0AUFVX3lxTE1RSW5Xb2ZQQjNFYlpBVXllWTVUbmlpQWN0NGNPdzAxNEFqMEE1T196dHZNYXAwQTRTc3J6UVpGNkFOMEo4c2tialBna3MtQ24xbDJ5QTdxcUxXWEJUYmlKVFJXNXJMeFJjM2p3T3dpd2d2WjA1bmFpUEhhdzA1QmQwa0tMRm53U25RaGxVSlFReHdwWGdiSS1Sd2ZqcV9KZXE0al9VNUc1aXNOSjNDOTNFUmxpSg?oc=5",
       "title": "Anthropic AI model submitted false tip about unsolved murder, Philadelphia police say - 6abc Philadelphia",
       "category": "AI",
-      "lastSeenAt": "2026-10-10T06:20:21.005Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "review",
-      "score": 78,
-      "confidence": 95,
+      "score": 66,
+      "confidence": 79,
       "evidenceLevel": "strong"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY0N5OUtIcEtlOWpOYlo1cnZnTXNYbEdpUnBZUDlSeE5IdXRBcXBmNlJBZ010QjFKOUxVYUNRclkzSGNreWV4Tkd0VUpRT2dzUE9OWUwybjdqYlkxaFBiUVRZUHgtbXh1a18zeE1BX3VKU1c5bHAzaXJ4a2tsTW5MbGM3dVNNejBGeHlTNWFEUjZiNVJFOGtueQ?oc=5",
       "title": "AI coding agents generate more code, but not more software - Ars Technica",
       "category": "Technology",
-      "lastSeenAt": "2026-10-10T12:59:56.861Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 88,
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 73,
       "evidenceLevel": "strong"
     },
     {
       "key": "https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/",
       "title": "An Anthropic AI model sent a false homicide tip to Philadelphia police",
       "category": "AI",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
-      "score": 63,
-      "confidence": 74,
+      "score": 64,
+      "confidence": 77,
       "evidenceLevel": "strong"
     },
     {
       "key": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
       "title": "AI coding agents generate more code, but not more software",
       "category": "Technology",
-      "lastSeenAt": "2026-10-10T12:59:56.861Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 83,
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 77,
       "evidenceLevel": "strong"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQT0Q2OWJjRkhxV1MtVkNZXzc0eVpVTlpHSF9ady1TWmdkRjJ5RGZPNkw0TTI5NTlwTUNlU1FCRGh6Qy1tcEl1QjJ4LTJ0SGFGZmg2R3F2dGpCNHRnbGVCZi1nZktqeUhqZ3ViUUwyc1NXQ2xwZzdUNUFXbXBzV2tVLVhMTlQ?oc=5",
       "title": "6 recent scientific breakthroughs and discoveries | The Week US - The Week",
       "category": "Innovation",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 55,
       "confidence": 60,
@@ -13435,10 +13395,10 @@
       "key": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
       "title": "Anthropic can&#8217;t reliably control its AI agents. It&#8217;s cutting off its internal evals from the live internet instead",
       "category": "AI",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "review",
-      "score": 69,
-      "confidence": 88,
+      "score": 70,
+      "confidence": 81,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -13495,10 +13455,10 @@
       "key": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVEt0d0lnWWFtSUZjTUlKaEd4UEpQT2pHbWNmbjBhUFhabzBELXBteHBlZWduMFJWSy1WZk5jT2huRGxBSmVKNHdmRjB1eHRZWi1ya0FMTC1hdUhRSmZWUkQ1VElMTVM1Y3Zfbkpvak1IWXF0QmZrbkZMQUZEc2VYRzlSNFdZZlJTSXg5Z241YWJsSi0wdDBvaWxpb2Jwb2U5azk2eXkzZlFrbUJGUzhZN01ickRmTUI1NDNYWFJXRldzTG5zb280MklVYXhDQdIBzAFBVV95cUxNT19BNm5KZjlybVM4bU5IblFvcW9FOWtOYU5WblY2ZVQ1WEVJckFrUDlvcnVNVmdZWVprMHNZbE5fR2lBWmFPaHVYaHlKSkhMeUVheE9mVnZwb0NVMXNWQTF5UUFPVEFONkw5NTF1WU9ZYjJSMGlHeGdIZHVMbHg2WTBCbGhyYnBjUW5yTW9IUUtDLW5RRTNoTHl1bUlWNlB2aHRBQUE5QkxTejRfZUVPeE5lZ1dlX0hnbjhBOG02OVBXeWFCUVBncDdRank?oc=5",
       "title": "Leading AI companies are preparing for the possibility of artificial intelligence getting out of control — media - Українські Національні Новини (УНН)",
       "category": "AI",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 80,
       "evidenceLevel": "none"
     },
     {
@@ -13535,7 +13495,7 @@
       "key": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYmIzMHlZNHh0ckRrOUZSYmRHUXFuSWVaWGdNSV9rbmRNcnhRMFJjOXlPdmlrOVlFRVB0eV9BbFNseXJuekJqcHU4VXNUc1VOelVnaWJOX1AtOW8waXp6UUJJX1BmUEIyWXd4RHlpV0pDeFpaVUE1RDZjcGt3dl80RWdtRnhxWm12c0d1T3dDdVl2V1gyeWVxUEpkcU9DWk02ZlEzSFJR0gGmAUFVX3lxTE9iYjMweVk0eHRyRGs5RlJiZEdRcW5JZVpYZ01JX2tuZE1yeFEwUmM5eU92aWs5WUVFUHR5X0FsU2x5cm56QmpwdThVc1RzVU56VWdpYk5fUC05bzBpenpRQklfUGZQQjJZd3hEeWlXSkN4WlpVQTVENmNwa3d2XzRFZ21GeHFabXZzR3VPd0N1WXZXWDJ5ZXFQSmRxT0NaTTZmUTNIUlE?oc=5",
       "title": "Apple Officially Announces October 13 Product Launch: ‘Welcome Home’ - MacTrast",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 56,
       "confidence": 61,
@@ -13545,9 +13505,9 @@
       "key": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPNWxkRTRReHFDcTdObGs2a1pINXlvSXMtTV9LZTNiMWlrSG1tT2c0ZXlCMDktS3pjeDc1TTVjNFNJaFUtdVBtdHJJeWwtUmpOOG5ZcG9renF5WTI4bGlaSy15TE1hc1YyLUt1cnRtWHkwUFJKNEU1WkVyNWxha2htZVloRUhiQnJ4M2ZBU3dLOGhoamk3TVlmUWZ3Rlo3UERYa1Q5dktkY0xRd1UyZ05Xd2hYbU9iUElQNHBkM1lJTHFBRXRyWTVVbDU3cXNOUlJ4MWZPR0lXYjBkTElXeGxIS3BqT29UWU9zdS1XWUVVQ3hjdHBFLXdmN2g1Q0JVakIxUXBxaDNkUEtnR1FaTWVaS3A3b2FVLWJhMDN1ajdmWF9UckU1VUdrUlJSbzRuRTBxN3RPcjdKV0tQUQ?oc=5",
       "title": "Atomic Machines Emerges from Stealth with $250 Million to Launch the Matter Compiler, an AI-Native Manufacturing System That Builds Micro-Machines from Code - Business Wire",
       "category": "Product Launches",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
-      "score": 56,
+      "score": 55,
       "confidence": 63,
       "evidenceLevel": "none"
     },
@@ -13575,7 +13535,7 @@
       "key": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
       "title": "Here are the top AI agents that can live in your text messages",
       "category": "AI",
-      "lastSeenAt": "2026-10-10T21:57:49.455Z",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
       "decision": "hold",
       "score": 63,
       "confidence": 86,
@@ -13640,6 +13600,146 @@
       "score": 62,
       "confidence": 86,
       "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEpsSmd5ZERsaHRqS0pKV0JiRS1OTkJtSS1pbVlGZGV0a1dSaTBDM0R2R09kQkpfSlN4V1ZVZ3U1OW1JMFVFVGtvU1hFN1RZeWdjcFI2UUZZbEpWVlgwTGxDQVdEblB4NV9EZGdRc0gzcTdabWNzNFFSdUlRODRvcXF2cTdjVnZvcDVQNmVYVlViUHkyZ2Z6SzJqbVJmZFVDYi1YNXZoUi03bHAz0gGyAUFVX3lxTE9yWGVHRGJ2WW1Dcl9mWG14VVRLR0lHcE5aZlZsR0RiNXpPa2o0WVZ5b3ZzTHMzeTdMQ1g5REkxN3g0QlR0UUNOMlk3UkItUHBuLTk2STVkSU8zZWVzb01hSGFpOGliMUhKSmNuUXhEOEM3TFFYWU5qTEdjaXN2ZVZudEkzRXhrOHlVOEVKeUtSNkVaX2t4ZlhmblBkRjdYMlVsNFBCRFpOV1hMd201MTlFeEE?oc=5",
+      "title": "Anthropic's Claude AI submits a false tip on a Philadelphia unsolved homicide case - ABC7 New York",
+      "category": "AI",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "review",
+      "score": 68,
+      "confidence": 81,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNSW45eVowQUtrRDU1czZqQ25KNW1UU0VLc201dkpjOEpJR2NFYUNmTnhITG94WnB6WlNsVkFfRzV5ZU1MeUJpY0NqX19lNVcyN3NLdXpSYk1xb0twRl85Z1RLRVllUVpNQTFPal9FaWp1SnNoNk8tbnN1a1ZpN1MxNVhR?oc=5",
+      "title": "Anthropic Agents Tried to Fill Out Visa Forms on State Dept. Website - The New York Times",
+      "category": "AI",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "review",
+      "score": 68,
+      "confidence": 81,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNeUVfUEpNOHJvWFo1NUhJWjJTcnE0NXZ3VS13SFExeG1hWjY5a3d0WFZ0X1ZrTTM1TUVUUDVvNzMya1ZzZEtwWkhmejljWjgyekVMU2tMRjdWMjgwNDdNSDVlWmVjTHl0SUlTX2QyMDA5THJwekFEaktwNkl2djMzZThaMl81SmV4M01ERndRdkRzSHhqcHoxeUNzcmhSRzVwc2VhZXljMXVRSDZseExHbmo5MHU2QVZiOGpnbTM0UzM0TjVlLXhQQnRIVUdIMGJPazNCTlM5WXFzNUNDdVE?oc=5",
+      "title": "UAH | News - The University of Alabama in Huntsville",
+      "category": "Innovation",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 60,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "category": "AI",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 84,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPU1kyZ2tfd25GSzZFZDhyQ3ozMmNYV2I4OTRtR05KcXFDR3kwYkp0djRwNEtyallTcXJrbmt6S2d4bWRBOWZ4YVVKM0UyX2VjUFkxZWVlMXg5V0NFTjJiUXROU1h5NmNOWUY3aVd6Q2tZSkJtTktqRHF4RDhtWERrTHlvQTFTQXpsWTk4alFNbngyZmtQNk0xZEg4QU9YVjFo?oc=5",
+      "title": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 93,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOemJjRTlUc3NleElOYWZRdmF2UkZRWm1UWU9jOXRtYkJiZnJvVkROSG9ZRlpmc0lsaHZtdEJvRVVNZnREVnA2ZVplal9xMUtGOEFPQ0pNa1lpdVhRbFRFUnljZDZBVlh2eGI5b2s2RUk1blg1MzNyOVZfYzg2UWI5ZExR?oc=5",
+      "title": "Apple's All-New Home Hub Will Be Revealed October 13: What to Expect - MacRumors",
+      "category": "Product Launches",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 58,
+      "confidence": 69,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM0pUZTJETzlvSVgyZjNWQ2ZWbUVvbExNX0NraDA4dnlLOXY5LURFM1JrX0JFWDQxekx6N2Y0THdYMXVTWFBCcm1JVmd3cVFsZkFHd0FWc0J4bHhwbzctZ3ktdURSdHJsZEdGck8yWWFfQXl2VjNXazlwWEU0cWhhTy1aTHZncFJzeU50TEhuZE9sQWNVajJhaDRRMk5zUQ?oc=5",
+      "title": "Women's Soccer plays to scoreless draw against Union - Rochester Institute of Technology Athletics",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 85,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQY2xpeGh3TWxyQkc3QUNNQlVCTEIzYmpnZTlJNVRGZVRWX0h5dHRoeFoxS29QMnF5Q3A1cjM2VFl0TUl3MzNXc182Wlc3RHJBSzRzSGVyQUV1RndHRWZpOUJVS1B3QjZ4OEdXQm9TUU81LUJiMWFuN1RlRkVOMHV1dFNkY2VkN1hOR3hhY3FYLTNwaXRmOS1maXJ3RkVYZ3d6enNLa1ROVWp4MVVDS0HSAcIBQVVfeXFMUGY4Wk9aRmtNcGREMVpXcXc0MmF3bk5vMzQzVmlEYXlyZWVDMzNjdk0xaF90aHpxX0FXLWdVSVhOU3NGbWdRUlNuaWpIWkdoZEZqSDNXS3NMOHZfYnN2dmxCWVZYaGE4eVcxZmM2b2JHWV9OUFpraVdLajV2MUxoOC1PSVVNR0JuaVVDUEZQT0NUd2oxQ0s0V1lEV2lrSUJYcEZobG1Kamt0RVY4M2gxSnBLQWVPdDRKRzVkeklHcWZyRVE?oc=5",
+      "title": "MillikinWORKS, Decatur Regional Chamber of Commerce to host AI for Business workshops - WAND",
+      "category": "AI",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 87,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPV1ZyTm9Xd3R2X0xqNlJVVURvTXJVT1NWN05jWmdsM3hGTDJ1OVpFbFRGWktJTTZZeDc3OVg0QWZUUHhmRTRUN0h5UFVDcVg4TksxenIxcjh1VWtmTG54emw0Znd2and1dzN2NzNLMHQxR2NXVnplZHU4b096RlhkZTFoa3FuVVdk0gGOAUFVX3lxTE1RUWlOMzFIQ0wxcFJ1eHZNSFJkUHpWWjE5RDNGS1JQT0lBT2E2WXJwSkNHQlpJNVlHSFF6YUtoOW95M2FOZFByLWppNWJiZmRQeGh1NjRxMFhCcFA3YUx6Qmt4N1J5a2thS1hpeGxCVWRiNlZTLXBpVGVsaFhHNVlhQzFoNFRmQms3TG9EQmc?oc=5",
+      "title": "UTEP researchers using NASA technology to track floods - KTSM 9 News",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObUtHanJaUGxVSllnNTdmSEVmemlwYnhrTG8wRXg4a1NnVHo4d3dRLUI3OHJaaU5wcVVwVmQ2WjRqRUkyd1NZTVBnSGhCNVctbFEtWXc1ck1iYjVxUmo4UmVGRF9KRWlVMHJuYm9wb3dqZzZhdGlBbVVnbnFRdUVpM2FyeHNOZjdjMi1XaDJDYjEyZ3N2aXY4WVdMOEFFbmRUeVpwVFpOTTJsd2ZJSDRfa3h3Y2U3MXpQU2VyOEJQRHZDZ2o0U2IwVNIB3AFBVV95cUxQTVJOVVIxcS1VTkVQVmQyanctQWY4TUYxWnBzcElLSjVRMFhUaEZ6Wm5NUHdWdEhKaTdURFpkTGV6eUljZThsYmNKVG9lXzlwbDJ4NTV5QnJFZlhrVzJHLWhDVlMyWDItSWo4d245YlVLdzRQYnB6aE5JbXFabDZDandqUTMxZXVuNVJ1VHNRVERUSGxqWi1iRUZzMWd5U2ctdFZBbW1ydXJHX2FOcjJKTE1VbFlwZXVzT1F4SnRld2lNNC02S0ZMeF80ZDQ5MkZKUUhNcDd2SDJYeEZW?oc=5",
+      "title": "Pittsburgh Regional Transit plans temporary technology systems outage - WPXI",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbmJ6dzVNRkNWWU0wS0x4V2gyYmNRaUM4RUowX3ZxcGFjX1lkU3lCOTJvbzdTVVZURW5IZzZmSG50N1llY2p5TFNGdGR6Skd3RXJBdEg4VkxrVlRQLTlBQ19qV3FMNW5vQ3oyUXpHSnpYZllkd1dJNVQ0c210OTV0amtKOE41TV9kcFpQdC1yYThuUnRFVUVMdTE5VnA3T0NPTkhMLUVCc2ticjc3MWJaRVBBN3hSZzTSAbwBQVVfeXFMUERUWk4wZXUwVVZWbjlraWM5NXZBUnItMUxrSnNfTkRFdDhFYlpyYzJWTDFieGR5eS01TmFmNkpIMkgxT2t0OXliQ05nNTRSZWJXVkdGRnNWb21aZzFSWjk5M0tkWWZ0RmN2Mk1pd1J2U3RqRWY0VU1FLWtGeXhNaTlZMENTYThmY1lCS1FSZXNNdFpRU2RCYWU0Y2lZNFgtVGs0cnNEQkNieVgtRHVHVUtjMlRsanZpSWxZY1Q?oc=5",
+      "title": "QuIC Whitepaper Calls for Industrial Scale-Up Infrastructure in EU Chips Act 2.0 - Quantum Computing Report",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPaExZQ25OdGFpNEJEbnNtZUJOV093eUdvYmhwNVlEdC0zeEhOd1FWQ3liZnZFeGJYN2tIdTlwcERjakdCY0hJbUVLX0RKeWZoZ2J0RVRtNFRFWmx3Y2NSY3hWM0pQRHAzY0MwR2pCME5KOUE5Z0JvNWlUWFF4aXlaWWR3?oc=5",
+      "title": "Safety prompts can help AI models make safer clinical choices - Medical Xpress",
+      "category": "AI",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 81,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOaDhubTctZXVnYjRXYkVVbzhDeGFGb3RUME1iVUFWMGNiVmJGQVFjZzJoOFE1eDlEUF8yc0d5OFdpUXdIZnF4WUFGaWluVDdSVVN5MXQxVmJZQkFpd1o5S050bktUc3ROM1VNd2xsRWdfZUNRQktzYTRnN2p2SVpyeUFVeGs4cHlRXy1waU5DWkstanNDTDhySzcycHVXNk5EZHU2V0UtTWQ5b0dfQ0hlS2ZVbHUtdw?oc=5",
+      "title": "Better Artificial Intelligence Stock: Arm vs. Marvell Technology - The Motley Fool",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPQkdiYy1LX1gxV3c3QlY0R0paMkZtcHFJLWFNV1hfX05IMlVib0J0eGVFc3JZWUdINEtkNy1HSnFMR0MwTXQ1bUtua2R4Vnc3TXhfUFU2UmpTV0R1bW9kUm5KVm81Q2ZuSHNnMTJ4M3BnTkoxUW45X3BQWXFycVd5QzhiQ3ZTaEsyZzhJQWJ1QjU0Vzg4NDVfVlF1MFl6VDkxZXlicERnTzVXbkkyTHpkanRlQzVnUEdJejN1ZmxXdWtMOTdFTDVnYmxENmJWYjVjeEJ4NXY3eHVCQWM1bXNEd0NGUTVqRVBIcVZiY2l2Q09ielYzY1E4MXVONjZ1RE5iQ3F6VA?oc=5",
+      "title": "Students attending Engineering Technology Career Fair connect with industry professionals - The Vidette",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-11T06:22:53.245Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 83,
+      "evidenceLevel": "none"
     }
   ],
   "articles": [
@@ -13672,6 +13772,12 @@
       "title": "Aligning Public Finance With Technology Readiness in Clean Energy",
       "category": "Technology",
       "publishedAt": "2026-09-21T07:49:33.878Z"
+    },
+    {
+      "file": "amazon-eyes-8-b-nvidia-chip-financing-to-lighten-ai-capital-load.md",
+      "title": "Amazon Eyes $8 B Nvidia Chip Financing to Lighten AI Capital Load",
+      "category": "Technology",
+      "publishedAt": "2026-10-11T02:54:03.385Z"
     },
     {
       "file": "anjuna-security-wins-data-privacy-solution-of-the-year-at-cybersecurity-breakthrough-award.md",
@@ -13928,7 +14034,7 @@
   ],
   "categories": {
     "AI": 15,
-    "Technology": 7,
+    "Technology": 8,
     "Digital Life": 11,
     "Product Launches": 1,
     "Crypto": 9,
@@ -13937,13 +14043,13 @@
   },
   "sources": {
     "evidenceCandidates": 230,
-    "passed": 58,
-    "blocked": 16,
-    "strong": 15,
-    "singleSource": 43
+    "passed": 53,
+    "blocked": 11,
+    "strong": 11,
+    "singleSource": 42
   },
   "decisionMemory": {
     "records": 200,
-    "updatedAt": "2026-10-10T20:55:32.122Z"
+    "updatedAt": "2026-10-11T02:54:01.478Z"
   }
 }
