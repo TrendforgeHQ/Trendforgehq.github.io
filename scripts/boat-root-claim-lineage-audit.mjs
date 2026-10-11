@@ -95,6 +95,6 @@ function main() {
   const packPath = path.join(root, 'data', 'authoritative-evidence-pack.json');
   const reportRaw = fs.existsSync(reportPath) ? fs.readFileSync(reportPath, 'utf8') : null;
   const packRaw = fs.existsSync(packPath) ? fs.readFileSync(packPath, 'utf8') : null;
-  process.stdout.write(JSON.stringify(auditRootClaimLineage({ reportRaw, packRaw }), null, 2) + '\\n');
+  process.stdout.write(JSON.stringify(auditRootClaimLineage({ reportRaw, packRaw }), null, 2) + String.fromCharCode(10));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) main();
