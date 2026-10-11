@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { auditReviewSet } from './boat-semantic-support-review-set.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const cli = path.join(root, 'scripts/boat-semantic-support-review-set.mjs');
+const cli = path.join(root, 'scripts/boat-semantic-support-review-set-cli.mjs');
 
 function review({ id = 'SSR-TEST-001', reviewer = 'reviewer-a', verdict = 'supported', replacement = 'The company announced the product on Monday.', run = '12345' } = {}) {
   return {
@@ -73,7 +73,8 @@ test('invalid records are reported and excluded from review comparison', () => {
   const report = auditReviewSet([bad, good]);
   assert.equal(report.valid, false);
   assert.ok(report.findings.some(f => f.type === 'invalid_review_record'));
-  assert.equal(report.subjectGroups.length, 0);
+  assert.equal(report.subjectGroups.length, 1);
+  assert.deepEqual(report.subjectGroups[0].recordIndices, [1]);
 });
 test('CLI emits JSON, exits non-zero for duplicate IDs, and leaves input file unchanged', t => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-set-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
