@@ -414,3 +414,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Review found that `scripts/test-boat-semantic-support-review.mjs` was included in the offline test glob but omitted from the workflow's PR path filters. Added its explicit path so edits to this test reliably trigger the offline suite.
 - This is test-coverage orchestration only. It does not change semantic-support decisions, proposal handoff, publication eligibility, or production behavior.
 - Final branch-head CI and remaining full-diff review are still pending. PR #35 remains draft/unmerged; `main` untouched; no provider or publishing workflow run.
+
+## Final diff-review checkpoint — 2026-10-11
+
+- Offline workflow trigger coverage fixed for `scripts/test-boat-semantic-support-review.mjs`; all changed `scripts/test-boat-*.mjs` files are now represented by explicit PR path filters.
+- Offline CI run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) succeeded: **127/127 passed**, 0 failed, 0 skipped. Review-set schema and CLI tests plus HTTP/HTTPS URL validation are included.
+- Publishing quarantine diff reviewed: blocked articles remain removed from the publication set; exact quarantined artifact hashes are recorded only when article, report, and evidence pack are all available. No publishing workflow was run.
+- PR #35 remains open/draft/unmerged; `main` is untouched. This is not approval to merge or evidence of semantic truth.
