@@ -150,7 +150,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
 }
 
 function main() {
-  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const root = path.resolve(process.env.BOAT_AUDIT_ROOT || path.join(path.dirname(fileURLToPath(import.meta.url)), '..'));
   const dataDir = path.join(root, 'data');
   const reportRaw = readIfExists(path.join(dataDir, 'claim-verification.json'));
   const packRaw = readIfExists(path.join(dataDir, 'authoritative-evidence-pack.json'));
