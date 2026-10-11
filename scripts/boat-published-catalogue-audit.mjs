@@ -119,3 +119,85 @@ export function auditPublishedEvidenceCoverage(articles, attemptsDirectory) {
     return rank(a.status) - rank(b.status) || a.title.localeCompare(b.title);
   });
 }
+
+
+const sha256Text = value => crypto.createHash('sha256').update(value).digest('hex');
+const isHash = value => typeof value === 'string' && /^[a-f0-9]{64}$/i.test(value);
+const isRunId = value => /^[0-9]+$/.test(String(value ?? ''));
+const isSha = value => /^[a-f0-9]{40}$/i.test(String(value ?? ''));
+
+/**
+ * Match immutable run manifests to the exact currently published Markdown bytes.
+ * A match establishes recorded byte lineage and a historical verifier PASS only;
+ * it does not independently re-run semantic verification or source-freshness checks.
+ * @param {Array<{slug?:string,title?:string}>} articles
+ * @param {string} articlesDirectory directory containing canonical article Markdown files
+ * @param {string} lineageDirectory directory containing manifest-<runId>.json files
+ */
+export function auditPublishedLineageCoverage(articles, articlesDirectory, lineageDirectory) {
+  if (!Array.isArray(articles)) return [];
+  const recordsByPath = new Map();
+  let manifestFiles = [];
+  try {
+    manifestFiles = fs.readdirSync(lineageDirectory, { withFileTypes: true })
+      .filter(entry => entry.isFile() && /^manifest-[0-9]+\\.json$/.test(entry.name));
+  } catch {
+    manifestFiles = [];
+  }
+
+  for (const file of manifestFiles) {
+    const manifest = readJson(path.join(lineageDirectory, file.name));
+    if (!manifest || manifest.schemaVersion !== 1 || !isRunId(manifest.workflowRun) || !isSha(manifest.workflowSha) || !Array.isArray(manifest.records)) continue;
+    for (const record of manifest.records) {
+      const articlePath = String(record?.articlePath ?? '');
+      const match = articlePath.match(/^content\\/articles\\/([A-Za-z0-9._-]+)\\.md$/);
+      if (!match || articlePath.includes('..')) continue;
+      const hashes = record?.hashes ?? {};
+      const hashKeys = ['articleSha256', 'claimReportSha256', 'evidencePackSha256', 'articleBriefSha256', 'currentRunMarkerSha256'];
+      const structurallyValid = record.schemaVersion === 1
+        && record.slug === match[1]
+        && record.workflowRun === manifest.workflowRun
+        && record.workflowSha === manifest.workflowSha
+        && isRunId(record.workflowRun)
+        && isSha(record.workflowSha)
+        && hashKeys.every(key => isHash(hashes[key]))
+        && record.claimVerification?.status === 'pass'
+        && Number(record.claimVerification?.claimCount) > 0
+        && record.evidencePack?.evidencePackStatus === 'authoritative'
+        && Number(record.evidencePack?.sourceCount) > 0;
+      if (!recordsByPath.has(articlePath)) recordsByPath.set(articlePath, []);
+      recordsByPath.get(articlePath).push({ record, structurallyValid, manifestFile: file.name });
+    }
+  }
+
+  return articles.map(article => {
+    const slug = String(article?.slug ?? '');
+    const title = String(article?.title ?? slug ?? 'Untitled article');
+    const articlePath = `content/articles/${slug}.md`;
+    let currentHash = null;
+    try { currentHash = sha256Text(fs.readFileSync(path.join(articlesDirectory, `${slug}.md`), 'utf8')); } catch {}
+    const matches = recordsByPath.get(articlePath) ?? [];
+    const exact = currentHash ? matches.filter(item => item.structurallyValid && item.record.hashes.articleSha256 === currentHash) : [];
+    let status = 'unknown';
+    let note = 'No valid lineage manifest matches this article; current claim/evidence lineage is unknown, not a pass.';
+    if (!currentHash) {
+      note = 'Current canonical Markdown file is missing or unreadable; exact-byte lineage cannot be checked.';
+    } else if (exact.length) {
+      status = 'current-byte-match';
+      note = 'A run manifest matches the exact current Markdown SHA-256 and records a claim-verification PASS. This is provenance, not a fresh semantic fact-check or source-freshness result.';
+      if (exact.length > 1) note += ` ${exact.length} matching run records exist for these same bytes.`;
+    } else if (matches.length) {
+      status = matches.some(item => !item.structurallyValid) ? 'unknown' : 'stale-manifest';
+      note = status === 'stale-manifest'
+        ? 'A valid manifest exists for this article path, but its article hash differs from the current published Markdown bytes; historical PASS is not current verification.'
+        : 'A manifest record exists but fails lineage-schema validation; current status remains unknown.';
+    }
+    return {
+      slug, title, articlePath, currentArticleSha256: currentHash,
+      manifestRecords: matches.length, matchingRecords: exact.length, status, note,
+    };
+  }).sort((a, b) => {
+    const rank = value => value === 'stale-manifest' ? 0 : value === 'unknown' ? 1 : 2;
+    return rank(a.status) - rank(b.status) || a.title.localeCompare(b.title);
+  });
+}
