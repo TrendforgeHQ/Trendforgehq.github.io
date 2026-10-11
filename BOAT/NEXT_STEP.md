@@ -218,3 +218,6 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Constraints unchanged: diagnostic-only; no provider calls, publishing runs, main-branch edits, or PR merge. PR #35 stays draft/unmerged.
 
 **Next step after CI:** fix any fixture/test issues without weakening contracts, rerun the branch-head offline suite, record the verified run, and then inspect PR status.
+
+
+**CI correction note:** first run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) ran 113 tests: 111 passed, 2 failed. One golden expectation underestimated validator error count for the deliberately unsafe fixture; the permutation test incorrectly compared source-order records as if they should be sorted. Updated the expected error count and now compare order-insensitive summaries separately while explicitly asserting the records array preserves each supplied order. Re-run branch-head CI before marking this step verified.
