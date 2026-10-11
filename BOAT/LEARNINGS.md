@@ -559,3 +559,9 @@ Offline run [38130627939](https://github.com/TrendforgeHQ/Trendforgehq.github.io
 ## 2026-10-11 — Test regex escaping can mimic a workflow regression
 
 When a source file is generated or edited through API strings, regex literals can accidentally retain two backslashes. `/\\s/` matches a literal backslash plus `s`, while `/\s/` matches whitespace. Inspect the actual checked-in source and failing assertion before changing a workflow that may already be correct. The lineage binder remains non-blocking; do not weaken the publication gate to compensate for a broken test. Latest run emitted `fail 0`, awaiting terminal status.
+
+## 2026-10-11 — Bind the final report, not just the pre-verification draft
+
+The attempt archive is created before claim verification/repair, so its article bytes can legitimately differ from the final published article. A pack-only archive match is not enough to prove which report was verified. Added a non-blocking finalization step that stores the final article, canonical pack, and final claim report together with exact SHA-256 hashes and workflow run/SHA metadata in a separate immutable attempt bundle. The root auditor now accepts report/run binding only when these exact hashes and bytes match, or when an equivalent lineage manifest matches.
+
+**Safety:** identical bundles are idempotent; mismatched existing bundles are preserved; no article is repaired or publication blocked by the binder. Offline run [38130780216](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130780216) passed 136/136 tests. Historical run `38106429274` predates the binder, so its report/run binding remains UNKNOWN; do not backfill from inference.
