@@ -118,6 +118,33 @@ test('claim findings preserve source URL, source title, and passage lineage', ()
   assert.ok(evidence.sourceExcerpt.length <= 500);
   assert.equal(evidence.jsonPointer, '/claims/' + fixture.report.claims.indexOf(targetClaim));
 });
+test('missing source metadata stays explicit and is never invented', () => {
+  const output = analyzeArticle({
+    articleText: '---\ntitle: "No Source Metadata"\n---\nBody.', articlePath: 'no-source.md',
+    report: { articleTitle: 'No Source Metadata', pass: false, claims: [{ index: 1, claim: 'An unsupported statement with no saved source metadata.', status: 'unsupported', classification: 'unsupported' }] },
+    reportPath: 'no-source-report.json', generatedAt: fixedTime
+  });
+  const finding = output.findings.find(item => item.category === 'unsupported_claim');
+  assert.ok(finding);
+  assert.equal(finding.evidence[0].sourceUrl, null);
+  assert.equal(finding.evidence[0].sourceTitle, null);
+  assert.equal(finding.evidence[0].sourceId, null);
+  assert.equal(finding.evidence[0].sourceRole, null);
+  assert.deepEqual(finding.evidence[0].passageIds, []);
+  assert.equal(finding.evidence[0].sourceExcerpt, null);
+  assert.equal(output.summary.status, 'blocked');
+});
+
+test('source excerpt is capped at 500 characters', () => {
+  const longExcerpt = 'E'.repeat(800);
+  const output = analyzeArticle({
+    articleText: '---\ntitle: "Long Excerpt"\n---\nBody.', articlePath: 'long-excerpt.md',
+    report: { articleTitle: 'Long Excerpt', pass: false, claims: [{ index: 1, claim: 'Unsupported statement.', status: 'unsupported', classification: 'unsupported', bestUrl: 'https://example.com/source', bestSource: 'Example Source', sourceId: 'S1', sourceRole: 'DIRECT', matchedPassages: ['S1-P1'], evidence: longExcerpt }] },
+    reportPath: 'long-excerpt-report.json', generatedAt: fixedTime
+  });
+  const finding = output.findings.find(item => item.category === 'unsupported_claim');
+  assert.equal(finding.evidence[0].sourceExcerpt.length, 500);
+});
 test('clean supported report yields clear without claiming independent source re-check', () => {
   const output = analyzeArticle({
     articleText: '---\ntitle: "Clean Article"\n---\nA clean article with one supported factual statement.',
