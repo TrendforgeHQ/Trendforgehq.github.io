@@ -576,3 +576,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Fixed double-escaped regex tokens in `scripts/test-boat-published-lineage-workflow.mjs` that made the contract test reject a valid non-blocking binder step.
 - Confirmed the failure was test-only; prior Control Center QA and production build passed.
 - Latest offline run `38130780216` emitted `fail 0`; final job conclusion and latest-head QA remain to be confirmed.
+
+## 2026-10-11 — Immutable final-attempt lineage binding
+
+- Added `scripts/boat-bind-attempt-lineage.mjs` to archive the final article, canonical evidence pack, and claim-verification report together with exact SHA-256 hashes and workflow run/SHA metadata.
+- Added idempotency and conflict-preservation tests; finalized bundle is separate from the original pre-verification attempt archive.
+- Wired a non-blocking binder step into `publish.yml` after final claim verification and before attempt diagnostics are uploaded. It does not add a publication gate.
+- Updated the root lineage audit to recognize finalized bundles only when report/article/pack bytes and hashes match. Historical run `38106429274` remains UNKNOWN because it predates the binder and has no report-hash manifest.
+- Offline run [38130780216](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130780216) passed 136/136 tests. Latest Control Center production build was still running at this checkpoint.
