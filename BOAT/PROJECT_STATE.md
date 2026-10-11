@@ -401,3 +401,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 
 
 **Verification:** Branch-head BOAT Offline Tests [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed **124/124**, 0 failed, 0 skipped on `48dd22c7a2e7b00e2ddbb52f98b5294112658db6`. The regression proving non-blocked metadata cannot authorize handoff passed. Full PR review remains in progress; no production workflow was run.
+
+
+## Safety review — second pass (2026-10-11)
+
+- Recovery audit now requires expected lifecycle statuses for both metadata records: `claim-verification-blocked` and `generated-pending-verification`. Regression tests verify wrong status blocks recovery even when other identifiers remain available. CI run [38123747483](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123747483): **126/126 passed**.
+- Semantic review validator now accepts only HTTP/HTTPS source URLs; negative tests cover `javascript:`, `file:`, and `ftp:`. CI run [38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630): **127/127 passed**.
+- The publishing quarantine path still removes claim-blocked article output from the publication set. No confirmed production gate bypass was identified in the inspected paths. Review is not final until post-documentation CI and PR state are checked. PR #35 remains draft/unmerged.
