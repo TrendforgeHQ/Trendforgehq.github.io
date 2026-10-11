@@ -160,7 +160,7 @@ jobs:
               fi
             fi
             cat > "$quarantine/metadata.json" <<EOF
-          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","articleSha256":"$article_sha256","claimReportSha256":"$claim_report_sha256","evidencePackSha256":"$evidence_pack_sha256","hashesRecordedAtGeneration":true,"reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
+          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","articleSha256":"$article_sha256","claimReportSha256":"$claim_report_sha256","evidencePackSha256":"$evidence_pack_sha256","hashesRecordedInWorkflow":true,"reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
           EOF
             rm -f "$article"
             echo "Claim verification: generated article quarantined and removed from publication set: $quarantine"
