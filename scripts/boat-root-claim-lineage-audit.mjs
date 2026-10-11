@@ -140,7 +140,8 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       matchedWorkflowSha: manifestMatch ? text(manifestMatch.workflowSha) : archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
       matchedLineageManifest: Boolean(manifestMatch),
       archivedArticleBytesMatchCurrent,
-      archivedPackBytesMatchCurrent: packArticleRunBindingProven,
+      archivedPackBytesMatchCurrent: Boolean(archiveMatch),
+      manifestBytesMatchCurrent: Boolean(manifestMatch),
       reportRunBindingProven,
       savedReportPass: typeof report?.pass === 'boolean' ? report.pass : null,
       savedClaimCount: Number.isFinite(Number(report?.claimCount)) ? Number(report.claimCount) : claims.length
