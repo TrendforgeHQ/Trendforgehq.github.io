@@ -436,3 +436,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Added visibility into archived PASS/block/conflicting history, evidence-pack file presence, and claim-count records.
 - Explicitly labels this as historical-only because current published bytes are not hash-linked to archived artifacts; missing evidence stays UNKNOWN and conflicting outcomes are not adjudicated.
 - CI: [38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) passed 128/128 tests and 37/37 Control Center checks; [38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739) passed production build.
+
+
+## 2026-10-11 — Published lineage manifest builder (CI pending)
+- Added `scripts/boat-published-lineage-manifest.mjs` for exact-byte SHA-256 records binding article, claim report, authoritative evidence pack, article brief, and current-run marker to the workflow run/SHA and canonical article path.
+- Fail-closed conditions cover mismatched workflow run, invalid/unsafe article path, non-PASS or wrong-path report, empty claim list, invalid JSON, missing/ambiguous evidence-pack candidate, missing sources, duplicate article paths, and invalid timestamps.
+- Added synthetic contract tests in `scripts/test-boat-published-lineage-manifest.mjs` and explicit BOAT offline workflow path filters.
+- CI verification is pending. The helper is not yet integrated into the production publishing workflow or Control Center. No provider/publishing workflow, article mutation, or `main` edit was performed.
+- Next: inspect branch-head offline CI and confirm real workflow artifact shapes before wiring manifest generation into publishing.
