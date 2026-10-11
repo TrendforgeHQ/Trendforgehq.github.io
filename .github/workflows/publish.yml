@@ -269,20 +269,47 @@ jobs:
           rm -f data/current-run-article.json
           git restore --worktree --staged next-env.d.ts package-lock.json 2>/dev/null || true
           rm -rf .next out node_modules
+          log_pack_worktree() {
+            local stage="$1"
+            local file="data/authoritative-evidence-pack.json"
+            if [ -f "$file" ]; then
+              echo "EVIDENCE_PACK_PERSISTENCE stage=$stage bytes=$(wc -c < "$file" | tr -d ' ') sha256=$(sha256sum "$file" | awk '{print $1}') git_blob=$(git hash-object "$file")"
+            else
+              echo "EVIDENCE_PACK_PERSISTENCE stage=$stage state=missing"
+            fi
+          }
           git add data lib/articles.ts public/images/articles
           if [ -d content/articles ]; then git add content/articles; fi
+          log_pack_worktree "pre-output-commit"
           echo '--- staged changes ---'
           git status --short
           if git diff --cached --quiet; then echo 'No pipeline output changes to commit.'; exit 0; fi
           git commit -m 'chore: update TrendForge content pipeline'
           if ! git diff --quiet || ! git diff --cached --quiet; then git reset --hard HEAD; fi
           output_commit="$(git rev-parse HEAD)"
+          output_pack_blob="$(git rev-parse "$output_commit:data/authoritative-evidence-pack.json" 2>/dev/null || true)"
+          if [ -n "$output_pack_blob" ]; then
+            echo "EVIDENCE_PACK_PERSISTENCE stage=output-commit commit=$output_commit blob=$output_pack_blob bytes=$(git cat-file -s "$output_pack_blob")"
+          else
+            echo "EVIDENCE_PACK_PERSISTENCE stage=output-commit state=path-absent commit=$output_commit"
+          fi
           git fetch origin main
           git reset --hard origin/main
           generated_files="$(git diff-tree --no-commit-id --diff-filter=ACMRT --name-only -r "$output_commit" -- data lib/articles.ts public/images/articles content/articles 2>/dev/null || true)"
-          if [ -z "$generated_files" ]; then echo 'No generated output paths found in pipeline commit.'; exit 0; fi
+          if [ -z "$generated_files" ]; then echo 'No pipeline output changes found in pipeline commit.'; exit 0; fi
           while IFS= read -r path; do [ -z "$path" ] && continue; git checkout "$output_commit" -- "$path"; done <<< "$generated_files"
           git add $generated_files
+          log_pack_worktree "post-transfer-staging"
+          transferred_pack_blob="$(git ls-files -s -- data/authoritative-evidence-pack.json | awk 'NR==1 {print $2}')"
+          if [ -n "$output_pack_blob" ] && [ -n "$transferred_pack_blob" ]; then
+            if [ "$output_pack_blob" = "$transferred_pack_blob" ]; then
+              echo "EVIDENCE_PACK_PERSISTENCE transfer=exact-match blob=$transferred_pack_blob"
+            else
+              echo "WARNING: EVIDENCE_PACK_PERSISTENCE transfer-mismatch output_blob=$output_pack_blob staged_blob=$transferred_pack_blob"
+            fi
+          else
+            echo "EVIDENCE_PACK_PERSISTENCE transfer=unknown output_blob=${output_pack_blob:-missing} staged_blob=${transferred_pack_blob:-missing}"
+          fi
           if git diff --cached --quiet; then echo 'Generated output is already present on main.'; exit 0; fi
           git commit -m 'chore: update TrendForge content pipeline'
           git push origin HEAD:main
