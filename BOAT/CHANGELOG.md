@@ -602,3 +602,7 @@ All entries should describe actual work and results. Do not record planned work 
 ## 2026-10-11 — CI verification of report lineage binder
 
 Latest code head `494764f5788aa17877e48e7a15b51390d7fc099f`: BOAT Offline Tests **136/136 pass**; Control Center deterministic suite and production build **pass**. Links: [offline tests](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38132111529), [Control Center QA](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38132111445). This validates isolated tests only; no production publishing run was dispatched, and the real generated archive still needs observation.
+
+## Evidence artifact retention — 2026-10-11
+
+Updated the pipeline's downloadable diagnostics: the article-attempt artifact now explicitly includes `data/authoritative-evidence-pack.json`, and a separate run-scoped artifact uploads `data/published-lineage/manifest-${GITHUB_RUN_ID}.json` immediately after lineage capture and before the site build. Both uploads are non-blocking and warn when no file exists; this does not alter publication gating or claim factual correctness. Added workflow-contract assertions for the exact pack path, manifest run ID path, step order, and no-manifest behavior. PR CI is the validation target; production publishing was not dispatched. Next: verify latest offline suite and Control Center build, then inspect a real run's retained artifact once one is naturally produced.
