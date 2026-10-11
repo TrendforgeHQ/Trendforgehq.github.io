@@ -366,3 +366,9 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Made findings and subject groups deterministic across input permutations while preserving caller-order records and input-relative indices.
 - Added a report JSON Schema and contract tests for record references, dissent retention, invalid-input handling, and no automatic winner. CI run 38122850780 passed 120/120 tests.
+
+
+### Executable report-schema validation — 2026-10-11
+
+- Added structural validation tests for real audit reports and invalid-input output, including negative cases for malformed fingerprints, unknown finding types, extra properties, and fixed safety fields.
+- Malformed source identity types are normalized in report identity fields while validation errors remain available. CI run 38123099695 passed 123/123 tests, no failures or skips.
