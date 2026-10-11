@@ -34,6 +34,12 @@ try {
   assert.equal(metadata.hashesRecordedInWorkflow, true);
   assert.deepEqual(fs.readFileSync(path.join(attempt, 'claim-verification.json')), reportBytes);
 
+  // A claim-blocked article may already be removed from the publication set; its archived bytes still bind safely.
+  fs.rmSync(path.join(root, articlePath));
+  const quarantined = bindAttemptLineage({ root, runId, workflowSha });
+  assert.equal(quarantined.status, 'bound');
+  assert.equal(quarantined.articlePresentInPublicationSet, false);
+
   fs.writeFileSync(path.join(root, 'data/authoritative-evidence-pack.json'), Buffer.from('changed pack bytes'));
   assert.throws(() => bindAttemptLineage({ root, runId, workflowSha }), /expected exactly one same-run archive/);
 
