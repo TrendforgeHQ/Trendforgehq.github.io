@@ -31,6 +31,12 @@ const checks = [
   ['no missing monetization file dependency', !page.includes("readJson('trendforge-monetization-intelligence.json')")],
   ['provider responsive layout', css.includes('.cc-provider-grid')],
   ['audit responsive layout', css.includes('.cc-audit-row')],
+  ['published catalogue audit section', page.includes('Published article audit')],
+  ['catalogue scanner import', page.includes("auditPublishedCatalogue(path.join(process.cwd(), 'content', 'articles'))")],
+  ['catalogue audit limitation is explicit', page.includes('Claim-to-passage support, source freshness, attribution accuracy, and public-web verification are not yet run')],
+  ['missing catalogue is not a pass', page.includes('This is an inventory failure/unknown state, not a clean audit')],
+  ['catalogue findings table', page.includes('cc-catalogue-table')],
+  ['catalogue responsive styles', css.includes('.cc-catalogue-stats')],
 ];
 
 let passed = 0;
