@@ -545,3 +545,9 @@ Verified current baseline:
 - Added a read-only CLI over the canonical `lib/articles.ts` published catalogue. It emits a deterministic JSON report including audited article count, per-article structural findings, duplicate slugs, and explicit limitations. It does not claim semantic fact verification or source freshness and does not mutate article files.
 - Added an offline integration test and workflow path filters. The first test run exposed a CLI output formatting bug (literal `\\n` appended after JSON); corrected it to output a real newline. Latest BOAT Offline Tests [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed at `aca78e9aa46f61e0e570241b1429799b8452abd1`.
 - Control Center QA / production build [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was pending at last poll. Production publishing remains undispatched; no paid providers or article mutations used.
+## Published review queue — implementation status (2026-10-11)
+
+- New read-only review queue combines structural inventory, historical claim/evidence report coverage, and current-byte lineage coverage for the canonical published article index.
+- Priority is triage only: high for duplicate identity, conflicting/blocked history, or stale lineage; medium for structural findings or unknown coverage; normal only when available structural/provenance checks show no gap. Even normal priority remains human-review-required and is not a factual correctness verdict.
+- Output is deterministic JSON with summary counts, per-article source signals, limitations, and suggested actions. No external web requests, repairs, article writes, or publication decisions are performed.
+- New offline test covers synthetic priority/status cases and validates CLI output against the real catalogue. CI verification pending.
