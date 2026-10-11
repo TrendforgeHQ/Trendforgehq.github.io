@@ -390,3 +390,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 **Verification update for L-052:** Offline CI [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed 124/124 tests, 0 failures, 0 skips, including the negative non-blocked-status handoff regression.
+
+
+## L-053 — Validate artifact lifecycle state as well as identity
+
+- Matching run IDs and workflow SHAs are not sufficient if recovered artifact metadata claims the wrong lifecycle state. Require both the expected generated-pending and claim-verification-blocked statuses; test each mismatch independently. CI run [38123747483](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123747483) passed 126/126.
+
+## L-054 — Evidence URLs should use explicit web schemes
+
+- An absolute URI is not necessarily a safe web source URL. For semantic-support review records, accept only HTTP/HTTPS source links and reject executable/local/other schemes. CI run [38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630) passed 127/127.
