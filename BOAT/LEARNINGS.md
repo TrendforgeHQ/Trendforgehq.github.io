@@ -476,3 +476,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Fix:** Add the public function and return-state types to `scripts/boat-published-catalogue-audit.d.mts` alongside the MJS implementation.
 - **Validation:** 130/130 offline tests passed before the declaration change. The new branch-head offline and Control Center QA runs are pending; do not mark complete until production build is green.
 - **Next:** inspect both latest CI runs and then review the end-to-end manifest persistence/dash state.
+
+
+## 2026-10-11 — CI and workflow review lesson
+- The latest branch-head BOAT offline suite and Control Center QA/production build passed (runs 38127688568 and 38127688585).
+- A passing build does not prove a publishing workflow actually writes a manifest. Code inspection shows the lineage writer is non-blocking and the data/ directory is staged by the output commit step, but production persistence has not been exercised. Test this contract offline rather than spending provider/image quota or dispatching production publishing.
+- Exact-byte lineage is provenance, not semantic support or source freshness. Keep UI wording narrow and unknown/stale states visible.
+- GitHub compare reports the PR branch is 5 commits behind main; avoid blind merge/rebase. Inspect divergence and diff before declaring merge readiness.
