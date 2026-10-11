@@ -255,3 +255,11 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Branch-head offline suite [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350) passed **70/70**, 0 failed, 0 skipped.
 - Confirmed direct factual-proposal-engine handoff remains blocked without original workflow-bound hashes. No provider, publishing, article edit, or merge.
+
+
+
+## 2026-10-11 — Workflow-recorded quarantine hash manifest
+
+- Updated the claim-verification quarantine step to preserve the authoritative evidence pack and record hashes of the exact quarantined article, claim report, and evidence pack in same-run metadata.
+- Adapter handoff now requires the metadata bytes to match the recovery audit, workflow-recorded hash provenance, all artifact hashes, run ID, and workflow SHA.
+- CI [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395) passed **73/73**, 0 failed, 0 skipped. No production publishing workflow was run.
