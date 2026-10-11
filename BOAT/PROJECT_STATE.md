@@ -433,3 +433,12 @@ Verified current baseline:
 - Current offline suite passing proves offline regression contracts only; it does not mean the overall BOAT product is complete.
 
 **Priority correction:** next work must be a Control Center + secure task/chat boundary audit and a concrete read-only vertical slice, followed by full published-article coverage and source/claim review. Stop adding isolated schemas unless needed by a user-visible capability. Keep human approval for consequential changes, isolated branches, existing verification/editorial/image/build gates, quota protection, and complete audit records. PR #35 remains draft/unmerged; main untouched.
+
+
+## Product vertical slice update — 2026-10-11
+
+- Added a read-only catalogue scanner `scripts/boat-published-catalogue-audit.mjs` and connected it to the existing static Control Center.
+- It inventories `content/articles/*.md` at build time and reports title, approximate word count, HTTP(S) URL count, Sources/References heading presence, empty headings, repeated paragraphs, and structural findings. The page states the scope limitation prominently and does not label structural cleanliness as factual correctness.
+- Added deterministic fixture tests for clean/flagged files, Markdown filtering, repeated paragraphs, empty headings, links/source heading, and missing directory. Added test/helper paths to the BOAT offline workflow trigger filters.
+- The static export architecture remains unchanged. No live chat/backend, public-web source verification, claim-level audit, approvals, or privileged actions are claimed as implemented. No article bytes, publishing behavior, gates, or main branch changed. No paid provider/publishing workflow was invoked.
+- CI/build verification is pending; do not mark the slice verified until results are inspected.
