@@ -287,3 +287,9 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Found and fixed a source-URL scheme validation gap: the semantic-review validator previously accepted any absolute URI scheme. Review source URLs are now restricted to HTTP/HTTPS; tests reject `javascript:`, `file:`, and `ftp:`. CI [run 38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630) passed **127/127**, 0 failures, 0 skips.
 - These are input-validation/defense-in-depth fixes. They do not establish semantic truth, do not change publication eligibility, and do not bypass or weaken any existing gate.
 - Remaining review focus: verify final branch-head CI after records are updated and complete a final diff/status check. PR #35 remains draft/unmerged; no providers or publishing workflows run.
+
+## Offline CI path-filter review — 2026-10-11
+
+- Found one test-trigger omission: `scripts/test-boat-semantic-support-review.mjs` was executed by the broad Node test command but absent from the workflow `pull_request.paths` allowlist. An isolated future change to that test could therefore fail to trigger the offline suite.
+- Added the missing path entry in `.github/workflows/boat-offline-tests.yml`. This changes test triggering only; no runtime/publishing behavior or gate changed.
+- Next: verify CI on the final docs/head commit, then finish reviewing the remaining diff and confirm PR #35 is still draft/unmerged. No provider or publishing workflow runs.
