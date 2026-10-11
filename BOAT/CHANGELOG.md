@@ -183,3 +183,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Added the read-only recovery audit and offline tests; recorded artifact IDs, expiry dates, pack checksums, source mapping, and claim/article coverage in `BOAT/ARTIFACT_RECOVERY.md`.
 - Recovery-time hashes are explicitly distinguished from original generation-time hashes. Legacy passage IDs are not converted. Run 37696062759 has only 4/7 claim strings present in the final quarantined article and is marked partial for claim-specific use.
 - Final recovery + passage resolver suite passed **57/57** in [run 38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698), 0 failed, 0 skipped. The real-fixture test validates unique exact-text matches of 12/15, 12/18, and 4/7 claims, and confirms the source report is never rewritten.
+
+## 2026-10-11 — Recovered proposal-input adapter
+
+- Added `scripts/boat-recovered-proposal-input.mjs` as a separate offline adapter from recovery audit to human-review inputs; it does not generate replacement text or call the factual proposal engine with manufactured generation-time hashes.
+- Rechecks recovery-time hashes against current article/report/brief/pack bytes, exact candidate selection, report/claim source URL lineage, article claim presence, and unique passage resolution.
+- Added synthetic guard tests and real archived-run tests for 38085367295, 37996683799, and 37696062759; wired both new files into `.github/workflows/boat-offline-tests.yml` path filters.
+- CI validation pending; no pass count recorded until logs are inspected. No production behavior, publishing workflow, article, or `main` changes.
