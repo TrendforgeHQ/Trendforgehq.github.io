@@ -256,3 +256,11 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Validated generated audit reports for golden review sets and invalid input; negative tests reject malformed fingerprints, unknown finding types, extra properties, and unsafe winner fields. Malformed source identity types are represented safely as null in report identity fields while the record remains ineligible and validation errors remain visible.
 - Branch-head CI [run 38123099695](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123099695) passed **123/123**, 0 failed, 0 skipped.
 - **Next:** review the entire PR diff for scope and schema/output compatibility, then record a final branch-head verification. Keep PR #35 draft/unmerged; do not touch `main`, call providers, or run publishing.
+
+
+## Structural report validation — verified
+
+- Added executable validation of generated audit reports against the checked-in schema, including invalid input.
+- Negative tests reject bad fingerprints, unknown finding types, extra properties, and unsafe winner fields. Malformed identity values are normalized in typed report fields while errors remain visible.
+- CI run 38123099695 passed 123/123 tests, 0 failures, 0 skipped.
+- Next: review the full PR diff and verify branch-head CI after documentation. PR #35 remains draft and unmerged.
