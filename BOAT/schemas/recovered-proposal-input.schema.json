@@ -61,9 +61,10 @@
         "reason": { "type": "string", "minLength": 1 },
         "checks": {
           "type": "object",
-          "required": ["metadataPresent", "hashesRecordedAtGeneration", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
+          "required": ["metadataPresent", "metadataBytesMatch", "hashesRecordedAtGeneration", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
           "properties": {
             "metadataPresent": { "type": "boolean" },
+            "metadataBytesMatch": { "type": "boolean" },
             "hashesRecordedAtGeneration": { "type": "boolean" },
             "runIdMatches": { "type": "boolean" },
             "workflowShaMatches": { "type": "boolean" },
