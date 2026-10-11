@@ -543,3 +543,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Offline run [38129695590](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38129695590) passed 135/135 tests, including the new root claim/evidence lineage audit.
 - Corrected the test harness to require UNKNOWN whenever exact report-pack binding is unavailable, even if local IDs happen to match. This avoids promoting unbound artifacts to a resolved lineage status.
 - Corrected the CLI test's success text to say the root snapshot is unbound rather than assuming the pack is empty during concurrent tests. That wording-only follow-up is pending latest-head CI.
+
+## 2026-10-11 — Isolated root lineage CLI regression
+
+- Added `BOAT_AUDIT_ROOT` to run the read-only audit against an isolated fixture root.
+- Replaced assertions tied to the checked-in mutable root pack (previously expected 24 candidates despite the tracked file being empty) with deterministic synthetic CLI coverage.
+- Aligned candidate selection and fact-anchor resolution with the real canonical envelope: `candidates[]`, `evidenceBrief.relevantPassages`, and `storyFactMap.coreFacts`.
+- Exact report/run binding remains UNKNOWN because metadata does not currently bind the claim-report hash. CI for the latest changes is pending.
