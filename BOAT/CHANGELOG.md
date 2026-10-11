@@ -383,3 +383,10 @@ All entries should describe actual work and results. Do not record planned work 
 
 
 - Verification complete: branch-head offline CI [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed **124/124**, 0 failed, 0 skipped; the new handoff-status regression passed. This verifies offline tests only, not semantic truth or publication readiness.
+
+
+### Second safety-review pass — 2026-10-11
+
+- Recovery audit fails closed when either archived metadata lifecycle status does not match the expected generated/blocked state; added two regression tests. CI run 38123747483 passed **126/126**.
+- Semantic-review source URLs now require HTTP/HTTPS schemes; regression tests reject javascript, file, and FTP URLs. CI run 38123791630 passed **127/127**.
+- These changes strengthen input validation without altering semantic-support state, proposal-only behavior, or publication gates.
