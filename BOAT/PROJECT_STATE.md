@@ -229,3 +229,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Latest branch-head CI [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771): **67 passed, 0 failed, 0 skipped**. The actual job log shows all three new schema/CLI tests passing.
 - Historical adapter result: 12/15, 12/18, and 2/7 claims eligible for later human-authored proposals. Run 37696062759 has 3 report claims absent from article and 2 further claims unresolved; its 4/7 article coverage and 4/7 passage coverage overlap only for 2 claims.
 - No provider calls, publication workflow, article edits, or merge. `main` remains untouched.
+
+
+
+## Read-only proposal eligibility report (2026-10-11)
+
+- Added a stdout-only report module `scripts/boat-recovered-proposal-review-report.mjs` for per-claim status/reason codes across the three recovered attempts.
+- Regression expectation: 40 claims total, 26 eligible for a later human-authored proposal, 3 blocked because the saved claim text is absent from the article, and 11 unknown because passage mappings remain unresolved. Per-run eligible counts: 12, 12, 2.
+- These are lineage/passage eligibility counts only; semantic support remains `not_verified`, recovery hashes were not generated at original workflow time, and automatic application remains false.
+- Branch-head CI for this report is pending inspection. No production/publishing behavior was changed.
