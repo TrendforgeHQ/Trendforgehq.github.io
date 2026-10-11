@@ -244,7 +244,8 @@ test('eligibility report schema requires counts and review-only guardrails', () 
   assert.deepEqual(schema.properties.summary.properties.automaticApplication, { const: false });
   assert.ok(schema.required.includes('runs'));
   assert.ok(schema.properties.runs.items.required.includes('claims'));
-  assert.deepEqual(schema.properties.runs.items.properties.countsReconciled, { const: true });\n  assert.deepEqual(schema.properties.runs.items.properties.recordedAtGeneration, { const: false });
+  assert.deepEqual(schema.properties.runs.items.properties.countsReconciled, { const: true });
+  assert.deepEqual(schema.properties.runs.items.properties.recordedAtGeneration, { const: false });
   assert.deepEqual(schema.properties.runs.items.properties.approvalRequired, { const: true });
   assert.deepEqual(schema.properties.runs.items.properties.automaticApplication, { const: false });
   assert.deepEqual(schema.properties.runs.items.properties.semanticSupport, { const: 'not_verified' });
