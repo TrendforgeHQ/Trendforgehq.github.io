@@ -1,8 +1,9 @@
+import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { auditPublishedCatalogue, auditPublishedEvidenceCoverage } from './boat-published-catalogue-audit.mjs';
+import { auditPublishedCatalogue, auditPublishedEvidenceCoverage, auditPublishedLineageCoverage } from './boat-published-catalogue-audit.mjs';
 
 // Structural catalogue scan: every canonical published article is inventoried.
 const articles = [
@@ -74,4 +75,45 @@ try {
   console.log('BOAT published catalogue and evidence coverage tests: PASS');
 } finally {
   fs.rmSync(root, { recursive: true, force: true });
+}
+
+
+// Current-byte lineage is distinguished from historical articlePath-only coverage.
+const lineageRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-lineage-coverage-'));
+try {
+  const articleDir = path.join(lineageRoot, 'content/articles');
+  const lineageDir = path.join(lineageRoot, 'data/published-lineage');
+  fs.mkdirSync(articleDir, { recursive: true });
+  fs.mkdirSync(lineageDir, { recursive: true });
+  const alphaBytes = '---\\ntitle: "Alpha"\\n---\\nCurrent published alpha bytes.\\n';
+  const betaCurrentBytes = '---\\ntitle: "Beta"\\n---\\nCurrent beta bytes changed after an older manifest.\\n';
+  fs.writeFileSync(path.join(articleDir, 'alpha.md'), alphaBytes);
+  fs.writeFileSync(path.join(articleDir, 'beta.md'), betaCurrentBytes);
+  const hash = value => crypto.createHash('sha256').update(value).digest('hex');
+  const makeRecord = (slug, bytes) => ({
+    schemaVersion: 1, slug, articlePath: `content/articles/${slug}.md`,
+    workflowRun: '38126000003', workflowSha: 'c'.repeat(40),
+    hashes: { articleSha256: hash(bytes), claimReportSha256: '1'.repeat(64), evidencePackSha256: '2'.repeat(64), articleBriefSha256: '3'.repeat(64), currentRunMarkerSha256: '4'.repeat(64) },
+    claimVerification: { status: 'pass', claimCount: 1 },
+    evidencePack: { evidencePackStatus: 'authoritative', sourceCount: 1 },
+  });
+  fs.writeFileSync(path.join(lineageDir, 'manifest-38126000003.json'), JSON.stringify({
+    schemaVersion: 1, workflowRun: '38126000003', workflowSha: 'c'.repeat(40),
+    records: [makeRecord('alpha', alphaBytes), makeRecord('beta', '---\\ntitle: "Beta"\\n---\\nOld beta bytes.\\n')],
+  }));
+  const current = auditPublishedLineageCoverage([
+    { slug: 'alpha', title: 'Alpha' }, { slug: 'beta', title: 'Beta' }, { slug: 'gamma', title: 'Gamma' }, { slug: 'missing', title: 'Missing file' },
+  ], articleDir, lineageDir);
+  assert.equal(current.find(item => item.slug === 'alpha').status, 'current-byte-match');
+  assert.equal(current.find(item => item.slug === 'beta').status, 'stale-manifest');
+  assert.equal(current.find(item => item.slug === 'gamma').status, 'unknown');
+  assert.equal(current.find(item => item.slug === 'missing').status, 'unknown');
+  const invalidRoot = path.join(lineageDir, 'manifest-38126000004.json');
+  fs.writeFileSync(invalidRoot, JSON.stringify({ schemaVersion: 1, workflowRun: '38126000004', workflowSha: 'd'.repeat(40), records: [{ ...makeRecord('alpha', alphaBytes), hashes: { articleSha256: 'bad' } }] }));
+  const invalid = auditPublishedLineageCoverage([{ slug: 'alpha', title: 'Alpha' }], articleDir, lineageDir)[0];
+  assert.equal(invalid.status, 'current-byte-match', 'one valid matching manifest remains valid despite a separate malformed record');
+  assert.equal(auditPublishedLineageCoverage(null, articleDir, lineageDir).length, 0);
+  console.log('BOAT published current-byte lineage coverage tests: PASS');
+} finally {
+  fs.rmSync(lineageRoot, { recursive: true, force: true });
 }
