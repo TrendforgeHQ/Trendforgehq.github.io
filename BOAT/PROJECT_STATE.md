@@ -361,3 +361,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 
 
 - **Final branch-head recheck:** [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254) passed **113/113**, 0 failed, 0 skipped on commit `9153fc66d0e37f31f0320a4ac3848670ee745f76`, after fixture cleanup. All golden and permutation/dissent tests passed.
+
+
+## Stable review-set report ordering — verified
+
+- Findings and subject groups now have deterministic collection ordering independent of review input order. Subject groups sort by opaque SHA-256 fingerprint; findings sort by stable fields excluding input-relative record indices. Reviewer iteration and verdict arrays are normalized deterministically.
+- The report's source `records` array and input-relative indices are not canonicalized or rewritten. Tests check multi-subject permutation stability, original record order, retained dissent, and no automatic winner.
+- Offline CI [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610) passed **114/114**, 0 failed, 0 skipped. This is diagnostic/report-contract validation only.
