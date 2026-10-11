@@ -357,6 +357,7 @@ test('publish quarantine archives exact evidence pack and records same-bundle ha
   assert.match(gate, /"articleSha256":"\$article_sha256"/);
   assert.match(gate, /"claimReportSha256":"\$claim_report_sha256"/);
   assert.match(gate, /"evidencePackSha256":"\$evidence_pack_sha256"/);
+  assert.match(gate, /"hashesRecordedAtGeneration":true/);
   assert.match(gate, /"workflowRun":"\$\{GITHUB_RUN_ID:-unknown\}"/);
   assert.match(gate, /"workflowSha":"\$\{GITHUB_SHA:-unknown\}"/);
 });
