@@ -153,3 +153,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - This confirms the handoff blocker is based on actual saved metadata, not a theoretical concern. Recovery-time checksums cannot be treated as original hashes.
 - Latest docs/head CI [run 38119678517](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119678517) passed **70/70**, 0 failed, 0 skipped.
 - No production code, provider, publishing, or article changes. Continue blocking proposal-engine handoff until original hash provenance is recovered from a trustworthy record.
+
+
+
+## Workflow-recorded quarantine hashes — validated
+
+- Updated the claim-verification quarantine step in .github/workflows/publish.yml to copy the canonical authoritative evidence pack into the quarantine bundle and record SHA-256 fields for the exact quarantined article, claim report, and evidence pack alongside the same workflowRun/workflowSha.
+- The adapter now accepts handoff only when the run metadata bytes match the recovery audit, the metadata says hashes were recorded by the workflow, all three artifact hashes match the exact supplied bytes, and run ID/workflow SHA match.
+- Synthetic tests prove a valid same-run metadata bundle can pass the handoff boundary and tampering blocks it. Existing archived runs remain blocked because their original metadata lacks the fields.
+- CI [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395) passed **73/73**, 0 failed, 0 skipped, including workflow-contract tests.
+- No publishing workflow was run. The workflow edit is on PR #35 only; main remains untouched.
