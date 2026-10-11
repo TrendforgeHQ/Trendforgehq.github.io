@@ -531,3 +531,5 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 **Rule:** never reconstruct the missing canonical evidence pack from claim-verifier output. The report and pack are distinct artifacts; exact pairing needs verified run metadata and matching raw-file hashes. Source/passage ID matches, when possible, are structural traceability only and do not establish semantic support. Empty/invalid/missing pack => `unknown-pack-binding`; no automatic repair or publication decision.
 
 **Validation:** added deterministic test cases for empty and invalid packs, matching IDs, and absent source IDs. Await CI for the committed revision before marking the tests verified.
+
+**Test harness lesson (2026-10-11):** when generating source through a string template, newline escaping can accidentally write the two characters `\\` and `n` into a CLI output expression. Test the real CLI stdout as JSON in CI; do not count module-level assertions alone as end-to-end validation. Fix commit: `b70032893c8f9108f8d523e44f917ba8f1be2b37`; latest-head CI is still required.
