@@ -399,3 +399,8 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 ## L-054 — Evidence URLs should use explicit web schemes
 
 - An absolute URI is not necessarily a safe web source URL. For semantic-support review records, accept only HTTP/HTTPS source links and reject executable/local/other schemes. CI run [38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630) passed 127/127.
+
+## L-055 — Every test in the test glob also needs a CI trigger path
+
+- A test being included in `node --test scripts/test-boat-*.mjs` does not guarantee its edits trigger the workflow; the `pull_request.paths` filter must also cover it.
+- Cross-check changed test filenames against explicit path filters. Added `scripts/test-boat-semantic-support-review.mjs` to the workflow allowlist; verify final branch-head CI before closing review.
