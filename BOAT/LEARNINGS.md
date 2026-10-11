@@ -241,3 +241,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Do not trust summary counters without recomputing them from the underlying per-claim statuses.
 - The report now checks per-run claim counts against the adapter and verifies aggregate counts against per-run totals. Mismatches fail closed.
 - CI: [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899), 70 passed, 0 failed, 0 skipped.
+
+
+
+## L-021 — Never substitute recovery-time hashes for original workflow hashes
+
+- The factual proposal engine requires exact hashes bound to run metadata. Hashes computed now from recovered artifacts do not prove which bytes the original workflow hashed.
+- The recovered proposal-input adapter now marks direct handoff to the factual proposal engine blocked until original generation-time provenance is available.
+- Regression tests and schemas enforce allowed=false. CI validation is pending.
