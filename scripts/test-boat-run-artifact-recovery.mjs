@@ -70,6 +70,10 @@ test('recovers exact brief candidate and validates same-run metadata/source URLs
   assert.deepEqual(result.candidate.sourceIds, ['S1', 'S2']);
   assert.ok(!result.findings.some(item => item.severity === 'high'));
   assert.equal(result.hashes.hashesRecordedAtGeneration, false);
+    assert.equal(result.passageResolution.resolvedUnique, f.expectedResolved, f.runId + ': unique exact passage resolution count');
+    assert.equal(result.passageResolution.ambiguous, 0, f.runId + ': ambiguous passage resolution count');
+    assert.equal(result.passageResolution.unresolved, f.expectedClaims - f.expectedResolved, f.runId + ': unresolved passage resolution count');
+    assert.equal(result.passageResolution.appliedToClaimReport, false);
   assert.equal(result.hashes.method, 'computed-from-recovered-bytes');
   assert.equal(result.automaticApplication, false);
 });
@@ -140,19 +144,19 @@ test('all three real archived attempts recover the exact same-run canonical pack
       runId: '38085367295', artifactId: '11682276860', artifactName: 'trendforge-article-attempt-492',
       generatedDir: 'data/article-attempts/20261010-205544-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police',
       blockedDir: 'data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked',
-      expectedClaims: 15, expectedPresent: 15, expectedSources: 4
+      expectedClaims: 15, expectedPresent: 15, expectedSources: 4, expectedResolved: 12
     },
     {
       runId: '37996683799', artifactId: '11647766077', artifactName: 'trendforge-article-attempt-488',
       generatedDir: 'data/article-attempts/20261009-220306-ai-generated-code-blooms-but-software-shipments-stay-flat',
       blockedDir: 'data/article-attempts/20261009-220410-ai-generated-code-blooms-but-software-shipments-stay-flat-claim-blocked',
-      expectedClaims: 18, expectedPresent: 18, expectedSources: 4
+      expectedClaims: 18, expectedPresent: 18, expectedSources: 4, expectedResolved: 12
     },
     {
       runId: '37696062759', artifactId: '11515936671', artifactName: 'trendforge-article-attempt-478',
       generatedDir: 'data/article-attempts/20261007-223019-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal',
       blockedDir: 'data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked',
-      expectedClaims: 7, expectedPresent: 4, expectedSources: 2
+      expectedClaims: 7, expectedPresent: 4, expectedSources: 2, expectedResolved: 4
     }
   ];
 
