@@ -1,4 +1,6 @@
 import test from 'node:test';
+import { spawnSync } from 'node:child_process';
+import os from 'node:os';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -173,4 +175,61 @@ test('all three recovered archived attempts only expose exact, unique claim inpu
       assert.ok(result.claims.filter(c => c.status === 'blocked').every(c => c.findings.some(x => x.code === 'BPI-CLAIM-NOT-IN-ARTICLE')));
     }
   }
+});
+
+
+test('output schema preserves review-only and recovery-hash constraints', () => {
+  const schema = JSON.parse(fs.readFileSync(path.join(root, 'BOAT/schemas/recovered-proposal-input.schema.json'), 'utf8'));
+  const required = new Set(schema.required);
+  for (const key of ['status', 'artifact', 'hashes', 'counts', 'claims', 'approvalRequired', 'automaticApplication', 'semanticSupport', 'replacementTextGenerated']) {
+    assert.ok(required.has(key), 'schema must require ' + key);
+  }
+  assert.deepEqual(schema.properties.status.enum, ['ready_with_restrictions', 'no_eligible_claims', 'blocked', 'unknown']);
+  assert.equal(schema.properties.approvalRequired.const, true);
+  assert.equal(schema.properties.automaticApplication.const, false);
+  assert.equal(schema.properties.semanticSupport.const, 'not_verified');
+  assert.equal(schema.properties.replacementTextGenerated.const, false);
+  assert.equal(schema.properties.hashes.properties.recordedAtGeneration.const, false);
+});
+
+test('CLI writes a separate manifest and refuses to overwrite it', () => {
+  const f = syntheticFixture();
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-proposal-input-'));
+  try {
+    const inputs = {
+      audit: JSON.stringify(f.recoveryAudit),
+      article: f.articleRaw,
+      report: f.claimReportRaw,
+      brief: f.articleBriefRaw,
+      pack: f.evidencePackRaw
+    };
+    const files = {};
+    for (const [key, value] of Object.entries(inputs)) {
+      files[key] = path.join(dir, key + (key === 'article' ? '.md' : '.json'));
+      fs.writeFileSync(files[key], value, { flag: 'wx' });
+    }
+    const output = path.join(dir, 'proposal-input.json');
+    const cli = path.join(root, 'scripts/boat-recovered-proposal-input.mjs');
+    const args = ['--recovery-audit', files.audit, '--article', files.article, '--claim-report', files.report, '--brief', files.brief, '--pack', files.pack, '--output', output];
+    const first = spawnSync(process.execPath, [cli, ...args], { encoding: 'utf8' });
+    assert.equal(first.status, 0, first.stderr || first.stdout);
+    const manifest = JSON.parse(fs.readFileSync(output, 'utf8'));
+    assert.equal(manifest.status, 'ready_with_restrictions');
+    assert.equal(manifest.approvalRequired, true);
+    assert.equal(manifest.automaticApplication, false);
+    const before = fs.readFileSync(output, 'utf8');
+    const second = spawnSync(process.execPath, [cli, ...args], { encoding: 'utf8' });
+    assert.equal(second.status, 2);
+    assert.match(second.stderr, /must be a new path/);
+    assert.equal(fs.readFileSync(output, 'utf8'), before, 'existing output must remain byte-identical');
+    assert.equal(fs.readFileSync(files.article, 'utf8'), f.articleRaw, 'article input must remain unchanged');
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('CLI rejects an incomplete argument list without writing output', () => {
+  const result = spawnSync(process.execPath, [path.join(root, 'scripts/boat-recovered-proposal-input.mjs'), '--article', 'missing.md'], { encoding: 'utf8' });
+  assert.equal(result.status, 2);
+  assert.match(result.stderr, /Missing required --recovery-audit/);
 });
