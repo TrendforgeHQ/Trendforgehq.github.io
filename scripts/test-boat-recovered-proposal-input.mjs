@@ -260,6 +260,14 @@ test('read-only eligibility report summarizes per-claim reasons across all archi
   assert.equal(report.summary.recoveryHashesRecordedAtGeneration, false);
   assert.equal(report.summary.automaticApplication, false);
   assert.equal(report.summary.semanticSupport, 'not_verified');
+  assert.equal(report.summary.countsReconciled, true);
+  for (const run of report.runs) {
+    assert.equal(run.countsReconciled, true);
+    assert.equal(run.totalClaims, run.claims.length);
+    assert.equal(run.eligible, run.claims.filter(claim => claim.status === 'ready_for_human_proposal').length);
+    assert.equal(run.blocked, run.claims.filter(claim => claim.status === 'blocked').length);
+    assert.equal(run.unknown, run.claims.filter(claim => claim.status === 'unknown').length);
+  }
   assert.deepEqual(report.runs.map(run => run.eligible), [12, 12, 2]);
   const third = report.runs.find(run => run.runId === '37696062759');
   assert.equal(third.totalClaims, 7);
