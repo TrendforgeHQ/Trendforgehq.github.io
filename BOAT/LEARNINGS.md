@@ -96,3 +96,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** Empty headings and exact duplicate paragraphs can be removed without generating new factual content, while changing a claim or citation requires evidence and re-verification.
 - **Decision:** Initial Repair Engine is limited to those structural changes, writes only to a new output file, and refuses overwrite/in-place edits. Factual repairs remain gated on evidence and existing verifiers.
 - **Validation:** Synthetic tests cover protected sections, input immutability, output-path guards, and a post-repair Article Doctor check; CI pending.
+
+
+## L-016 — CLI behavior needs independent end-to-end coverage
+- **Observed:** Function-level tests do not verify process exit codes, filesystem inputs, JSON parsing failures, or stdout/stderr behavior at the actual command-line boundary.
+- **Decision:** Exercise the CLI against temporary same-run fixture files. Keep the exit contract explicit: clear=0, blocked=1, unknown/input error=2.
+- **Validation:** Four CLI tests added; awaiting the matching GitHub Actions result.

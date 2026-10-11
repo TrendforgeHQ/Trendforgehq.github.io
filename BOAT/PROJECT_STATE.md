@@ -1,9 +1,9 @@
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
-**State version:** 0.1.2  
+**State version:** 0.1.3  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Article Doctor passed 17/17 in run 38111154726. Evidence Auditor + Repair Engine passed 30/30 offline tests in runs 38111515276 and 38111608536; latest recorded pass was at commit `df2231e49e1a72b071b8421d68277187403db91b`.
+**Status:** Previous BOAT suite passed 30/30 in run 38111661629. Four new Evidence Auditor CLI integration tests have been committed; current branch-head CI is pending.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -24,8 +24,8 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
 - Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.
-- Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Synthetic regression passed 13/13 new tests as part of the 30-test suite in run 38111608536.
-- Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused. Synthetic repair regressions passed in run 38111608536.
+- Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Prior synthetic regression passed 13/13 in the 30-test suite; four new CLI integration tests are awaiting CI.
+- Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused. Prior synthetic repair regressions passed; current suite includes new CLI tests.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.

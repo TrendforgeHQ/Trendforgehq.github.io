@@ -180,3 +180,60 @@ test('repair CLI refuses in-place edits and output overwrites', () => {
     assert.equal(fs.readFileSync(output, 'utf8'), 'existing');
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+function runAuditorCliCase(data, mutateFiles = () => {}) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-evidence-cli-'));
+  try {
+    const reportPath = path.join(dir, 'claim-report.json');
+    const packPath = path.join(dir, 'evidence-pack.json');
+    const metadataPath = path.join(dir, 'run-metadata.json');
+    fs.writeFileSync(reportPath, data.reportRaw);
+    fs.writeFileSync(packPath, data.packRaw);
+    fs.writeFileSync(metadataPath, JSON.stringify(data.metadata, null, 2) + '\n');
+    mutateFiles({ reportPath, packPath, metadataPath, data });
+    const script = path.resolve('scripts/boat-evidence-auditor.mjs');
+    const result = spawnSync(process.execPath, [
+      script, '--report', reportPath, '--pack', packPath, '--metadata', metadataPath
+    ], { encoding: 'utf8' });
+    let report = null;
+    try { report = JSON.parse(result.stdout); } catch {}
+    return { result, report };
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+test('Evidence Auditor CLI accepts an exact same-run, hash-bound bundle', () => {
+  const { result, report } = runAuditorCliCase(makeCase());
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(report.status, 'clear');
+  assert.equal(report.artifacts.workflowRun, 'run-123');
+  assert.equal(report.summary.claimCount, 2);
+});
+
+test('Evidence Auditor CLI exits 1 and emits findings for a blocked claim lineage', () => {
+  const data = makeCase();
+  data.report.claims[0].sourceId = '';
+  data.reportRaw = JSON.stringify(data.report, null, 2) + '\n';
+  data.metadata.claimReportSha256 = hash(data.reportRaw);
+  const { result, report } = runAuditorCliCase(data);
+  assert.equal(result.status, 1, result.stderr);
+  assert.equal(report.status, 'blocked');
+  assert.ok(report.findings.some(item => item.code === 'EA-CLAIM-SOURCE-ID-MISSING'));
+});
+
+test('Evidence Auditor CLI exits 2 and reports unknown when exact artifact hashes are absent', () => {
+  const data = makeCase({ metadata: { evidencePackSha256: '', claimReportSha256: '' } });
+  const { result, report } = runAuditorCliCase(data);
+  assert.equal(result.status, 2, result.stderr);
+  assert.equal(report.status, 'unknown');
+  assert.ok(report.findings.some(item => item.code === 'EA-LINEAGE-HASH-MISSING'));
+});
+
+test('Evidence Auditor CLI rejects malformed JSON without emitting a report', () => {
+  const data = makeCase();
+  const { result } = runAuditorCliCase(data, ({ reportPath }) => fs.writeFileSync(reportPath, '{bad json'));
+  assert.equal(result.status, 2);
+  assert.match(result.stderr, /Invalid JSON in claim report/);
+  assert.equal(result.stdout, '');
+});

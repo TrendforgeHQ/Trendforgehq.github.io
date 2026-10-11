@@ -109,3 +109,9 @@ All entries should describe actual work and results. Do not record planned work 
 ## 2026-10-11 — Latest branch-head validation
 - The docs-only correction commit `df2231e49e1a72b071b8421d68277187403db91b` was validated by [BOAT Offline Tests run 38111608536](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111608536): **30 passed, 0 failed, 0 skipped**.
 - This confirms the latest recorded branch head at this point; no full site build or publishing workflow was run.
+
+
+## 2026-10-11 — Evidence Auditor CLI integration tests added
+- Added end-to-end CLI tests that write a synthetic same-run claim report, evidence pack, and hash metadata to temporary files and invoke the real Node CLI process.
+- Covered exit contract: clear returns 0; blocked lineage returns 1; missing exact hashes returns unknown/2; malformed report JSON returns 2 without a report.
+- CI validation for these four new tests is pending. No production pipeline or paid provider was invoked.

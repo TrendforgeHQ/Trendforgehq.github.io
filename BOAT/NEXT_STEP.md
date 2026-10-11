@@ -1,35 +1,31 @@
 # BOAT Next Step
 
-## Current task: verify the new audit + sandbox repair loop
+## Current task: validate the Evidence Auditor CLI end-to-end
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Implemented in this iteration
-- `scripts/boat-evidence-auditor.mjs`: offline claim/source/passage lineage checks.
-- `scripts/boat-repair-engine.mjs`: bounded structural repair proposals written only to a separate output path.
-- `scripts/test-boat-evidence-repair.mjs`: synthetic lineage, hash/run mismatch, conflicting source, and repair-isolation regressions.
-- `BOAT/schemas/evidence-audit-report.schema.json`: report contract.
-- `.github/workflows/boat-offline-tests.yml`: runs all BOAT offline tests; no provider, image, site build, or publishing call.
-
-### Repair boundary
-1. BOAT may remove empty Markdown headings and exact duplicate plain-text paragraphs outside frontmatter, code blocks, lists, and Sources/References sections.
-2. Repair Engine refuses in-place edits and refuses to overwrite an existing output file.
-3. It does not rewrite factual claims, citations, source lists, headings with text, metadata, or publication gates.
-4. Every candidate output must be re-audited; a green structural check is not proof of factual accuracy.
-5. Unsupported/contradicted claims remain diagnosis-only until an evidence-backed repair proposal can be validated and the existing verifier passes. No fabricated facts or gate weakening.
-
-### Lineage contract
-- The auditor requires metadata hashes for the exact raw claim report and evidence pack, plus a workflow run ID. Missing hash/run metadata returns `unknown`.
-- It checks source IDs, URLs, roles, duplicate/conflicting source metadata, matched passage IDs, and canonical best-passage IDs where possible.
-- Legacy/non-canonical IDs are reported as unmapped rather than guessed. Matching IDs do not prove semantic support or factual truth.
-- Synthetic fixtures are used because the archived blocked attempts do not currently provide a verified same-run evidence-pack/hash bundle. Do not claim the archived attempts passed this new auditor until that bundle exists.
+### Implemented
+- Offline Article Doctor and Evidence Auditor.
+- Structural Repair Engine that writes proposals to a separate file and refuses in-place edits/overwrites.
+- Synthetic source/passage/hash/run mismatch tests and protected-region repair tests.
+- Added CLI integration regressions that create a same-run report/evidence-pack/metadata bundle in a temporary directory and exercise process exit codes:
+  - `clear` → exit 0
+  - `blocked` → exit 1
+  - `unknown` or malformed input → exit 2
+- These new CLI tests are committed but their CI run is pending; do not claim them passed until Actions confirms it.
 
 ### Validation result and next task
-- **CI PASS:** [run 38111608536](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111608536), commit `df2231e49e1a72b071b8421d68277187403db91b`: **30 passed, 0 failed, 0 skipped**. The earlier implementation run [38111515276](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111515276) also passed 30/30.
-- Next: add a CLI-level test for the Evidence Auditor and a synthetic same-run artifact bundle; do not claim any legacy archive is auditable until exact pack/report hashes are available.
-- Then design factual repair proposals that preserve evidence and re-run existing claim verification. Keep unsupported/contradicted claims blocked when no evidence-backed repair exists.
-- Keep PR #35 draft/unmerged; no changes to `main`, publishing workflow, provider routing, or production gates.
+- Previous baseline: [run 38111661629](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111661629), 30 passed, 0 failed, 0 skipped before these CLI-level additions.
+- Current task: verify the new branch-head Actions run; fix failures before recording a pass.
+- After a pass, next implementation is an evidence-backed factual repair proposal contract: input claim + exact source passage + proposed replacement + rationale + before/after hashes; no automatic application. Candidate must be rerun through existing claim verification and Article Doctor. If evidence is missing or contradictory, no replacement is proposed.
+- Archived blocked attempts still cannot be called valid same-run audit cases without an exact evidence-pack/report hash bundle.
+
+### Repair and lineage boundaries
+1. Structural repairs only remove empty headings and exact duplicate plain-text paragraphs outside frontmatter, code blocks, lists, and Sources/References.
+2. Repair output must use a new path; never overwrite or edit the original input.
+3. Factual repair is proposal-only and requires authoritative evidence plus mandatory existing verifiers.
+4. Missing/mismatched hashes or workflow-run metadata returns `unknown`. Identifier matching does not establish factual truth or semantic support.
 
 ### Guardrails
 - No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
-- Do not change `main`; do not merge PR #34 or #35 without reviewing exact diffs and required checks.
+- Do not change `main`; keep PR #35 draft/unmerged unless separately asked and all checks/review are complete.
 - Existing evidence, claim-verification, editorial, image-safety, and build gates remain authoritative.
