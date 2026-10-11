@@ -275,3 +275,6 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Regression CI run [38123444976](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123444976) was queued on head `e5f3a61a4c12c67af5a2abd239645bf050330544` at the time of this record; inspect its final conclusion before marking the fix verified.
 - Review status: this is a defensive hardening, not evidence of an exploitable production bypass under the current workflow. No other gate bypass was identified in the inspected paths. Full PR review remains in progress.
 - Keep PR #35 draft/unmerged; do not touch `main`, run paid providers, or run publishing workflows.
+
+
+**Verification update:** Branch-head offline CI [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed **124/124**, 0 failed, 0 skipped on head `48dd22c7a2e7b00e2ddbb52f98b5294112658db6`. The new non-blocked-metadata regression passed. Continue the remaining full-diff review; keep PR #35 draft/unmerged and production workflows untouched.
