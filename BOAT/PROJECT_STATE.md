@@ -288,3 +288,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Explicit blocked handoff is present in the recovered proposal-input manifest and report.
 - Branch-head CI [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350): **70 passed, 0 failed, 0 skipped**.
 - Direct connection to the factual proposal engine remains intentionally disabled because recovered hashes were computed after generation, not recorded in original run metadata.
+
+
+
+## Original metadata hash audit — verified (2026-10-11)
+
+- Audited six generated/claim-blocked metadata files for runs 38085367295, 37996683799, and 37696062759.
+- Run ID and workflow SHA agree within all three pairs, but 0/6 metadata files contain article/report/evidence-pack SHA-256 fields. Existing metadata cannot satisfy the factual proposal engine's hash contract.
+- Recovery-time hashes are not substituted. The adapter/report explicitly set proposal-engine handoff to blocked.
+- Latest docs/head CI [run 38119678517](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119678517): 70 passed, 0 failed, 0 skipped.
