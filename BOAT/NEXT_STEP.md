@@ -8,7 +8,7 @@
 
 **Scope boundary:** this is an offline manifest builder, not yet integrated into `.github/workflows/publish.yml` or Control Center. Hashes prove byte identity/provenance, not semantic truth or source freshness. No provider/publishing workflow was run; no article was changed; `main` remains untouched; PR #35 remains draft/unmerged.
 
-**Immediate next action:** verify the corrected manifest contract against branch-head offline CI. Actual schema inspection found and fixed a contract gap; the latest correction's CI is pending. Only after green tests should we design the smallest safe publish-time integration. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
+**Immediate next action:** verify the new branch-head offline CI and Control Center build for the non-blocking publish-time lineage writer. The integration is wired but is not yet verified. If green, review the final diff and confirm that the run-specific manifest is captured only for a same-run generated article with a PASS claim report and valid canonical evidence pack. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
@@ -351,3 +351,14 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - Found a contract gap in the first manifest implementation: it looked for candidate entries but did not enforce the real envelope schema, validate the canonical candidate pack, cross-check marker `briefTitle`, or bind the report's `articleTitle` and `claimCount`. Corrected the builder and synthetic tests to validate these contracts and to reject duplicate/ambiguous candidates and invalid canonical packs.
 - No production publishing workflow, provider call, article edit, or `main` change was made. CI for the schema correction is pending; do not mark the correction verified until the new branch-head run passes.
 - Next: inspect the offline test and Control Center QA results for the new head. If green, design a separate, testable publish-time integration that captures the lineage record before run-scoped files are removed, without weakening any existing gate.
+
+
+## 2026-10-11 — Non-blocking publish-time lineage capture added (CI pending)
+
+- Added `scripts/write-boat-published-lineage-manifest.mjs`. It reads exact current-run marker/article/claim-report/evidence-pack/brief bytes, verifies the current run/SHA and all schema/identity contracts through the manifest builder, then writes one immutable `data/published-lineage/manifest-<runId>.json` record. Existing output cannot be overwritten.
+- Expected no-article runs are a clean no-op and write no manifest. Missing/mismatched evidence or a non-PASS report fails closed (no PASS manifest).
+- Wired the writer into `.github/workflows/publish.yml` after SEO validation and before site build with `continue-on-error: true`; it is diagnostic only and cannot weaken or replace existing publication gates. A manifest is persisted by the existing output commit only if the subsequent build/commit path succeeds.
+- Added `scripts/test-boat-published-lineage-cli.mjs` for successful capture, no-overwrite, no-article no-op, and non-PASS rejection; added writer/test/validator paths to BOAT offline CI filters.
+- The schema-correction run exposed one incorrect test expectation (the helper reported the more specific “has no sources” failure); corrected the assertion. The latest branch-head offline/Control Center CI is pending; do not call the publish-time integration verified until it finishes.
+- No publishing workflow was executed, no provider call was made, no article was edited, `main` remains untouched, and PR #35 remains draft/unmerged.
+- Next: inspect branch-head BOAT offline tests and Control Center build. If both pass, review the exact diff and verify the writer remains non-blocking and the manifest output path is included by the existing `git add data` commit path.
