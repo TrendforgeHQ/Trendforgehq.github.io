@@ -219,3 +219,13 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Expected real-fixture coverage: 12/15, 12/18, and 2/7 eligible claim inputs. The third sample has 4/7 article-text matches and 4/7 passage matches, but those sets overlap for only 2 claims; 3 claims absent from the article are blocked. Unresolved passages are not eligible.
 - Output is an input manifest only; it does not generate replacement copy or edit content. Human approval is required, automatic application is false, and semantic support remains not verified.
 - Offline CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped. Latest docs/head recheck [run 38117465699](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117465699) also passed 64/64.
+
+
+
+## Proposal-input schema and CLI validation (2026-10-11)
+
+- Added `BOAT/schemas/recovered-proposal-input.schema.json` and schema-contract tests.
+- Added CLI-boundary tests proving successful output creation at a new path, refusal to overwrite an existing output, article byte immutability, and rejection of incomplete arguments.
+- Latest branch-head CI [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771): **67 passed, 0 failed, 0 skipped**. The actual job log shows all three new schema/CLI tests passing.
+- Historical adapter result: 12/15, 12/18, and 2/7 claims eligible for later human-authored proposals. Run 37696062759 has 3 report claims absent from article and 2 further claims unresolved; its 4/7 article coverage and 4/7 passage coverage overlap only for 2 claims.
+- No provider calls, publication workflow, article edits, or merge. `main` remains untouched.
