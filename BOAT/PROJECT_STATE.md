@@ -442,3 +442,11 @@ Verified current baseline:
 - Added deterministic fixture tests for clean/flagged files, Markdown filtering, repeated paragraphs, empty headings, links/source heading, and missing directory. Added test/helper paths to the BOAT offline workflow trigger filters.
 - The static export architecture remains unchanged. No live chat/backend, public-web source verification, claim-level audit, approvals, or privileged actions are claimed as implemented. No article bytes, publishing behavior, gates, or main branch changed. No paid provider/publishing workflow was invoked.
 - CI/build verification is pending; do not mark the slice verified until results are inspected.
+
+
+### Verification update — catalogue vertical slice
+
+- BOAT Offline Tests run [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757): **128/128 passed**, 0 failed, 0 skipped; the new catalogue helper fixture test passed.
+- Control Center deterministic suite: **33/33 checks passed** in the same run.
+- Control Center QA run [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747): success, including `npm run build` / Next.js static export compilation. Existing webpack cache/CSS warnings appeared, but the build completed.
+- Scope remains structural and build-time. No end-to-end live inventory was independently inspected from deployed HTML; no live chat, public-web claim verification, or backend was implemented.
