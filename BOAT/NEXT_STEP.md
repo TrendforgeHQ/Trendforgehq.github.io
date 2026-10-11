@@ -16,7 +16,7 @@ Risk: low. Provider cost: none. Production behavior change: none.
 1. Add tests for malformed JSON reports, missing `claims`, missing article title/frontmatter, and mismatched article/report inputs; require `unknown` for integrity gaps rather than `clear`.
 2. Keep clean, partial-only, blocked, and unknown status cases covered; ensure a medium structural finding yields `attention`, not a hard block.
 3. Preserve the no-mutation guarantee and verify hashes before/after when running the CLI against a real archived fixture.
-4. Review the latest GitHub Actions run and record its final result before further code changes.
+4. Review the recorded green run 38110774506 before further code changes; keep this evidence linked in the project state.
 5. Once these edge cases are stable, move toward source-to-claim evidence mapping and later human-article benchmarking. Do not jump to repair/autonomy yet.
 
 ### Separate Run 405 record

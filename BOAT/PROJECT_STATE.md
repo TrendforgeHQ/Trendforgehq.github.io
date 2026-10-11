@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.1  
 **Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Article Doctor code now has 10/10 passing isolated Node tests at commit `966b3311615e77def02699e6861d5020eee447bb`; the matching GitHub Actions run is pending at last check. Draft PR remains unmerged.
+**Status:** Article Doctor CI passed 10/10 at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3` in run `38110774506`; draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -44,7 +44,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — clean/partial states and structural diagnostics implemented; 10/10 isolated tests pass; latest CI pending |
+| 1 | Read-only artifact collection and Article Doctor report | In progress — 10/10 CI tests pass; artifact-integrity edge cases next |
 | 2 | Claim/source audit and editorial benchmark evaluation | Not started |
 | 3 | Fixture-backed repair proposals and regression harness | Not started |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
@@ -125,3 +125,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added a regression assertion so the three archived fixtures remain free of structural false positives.
 - Isolated Node test at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: **10 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0. GitHub Actions run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) was in progress at the time of this record.
 - CI workflow correction: push and pull_request triggers had shared one concurrency group, causing run [38110662190](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110662190) to be cancelled. Removed the duplicate push trigger and unnecessary concurrency lock; the latest pull-request run is now [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506).
+
+
+## Final result for this iteration — 2026-10-11
+- **CI PASS:** [run 38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506), tested commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: **10 passed, 0 failed, 0 skipped**. Logs confirm schema-contract smoke test, archived fixture checks, deterministic output, claim warning categories, clean/partial status handling, structural diagnostics, artifact mismatch handling, and CLI failure behavior.
+- Isolated Node run at the same commit also passed 10/10 (exit code 0, Node v20.9.0).
+- Structural diagnostics were run against AD-FX-001..003. None produced empty-heading or repeated-sentence findings; regression tests now guard against false positives on those three archived samples.
+- The BOAT-only workflow now uses a targeted pull-request trigger without the duplicate push trigger or unnecessary concurrency lock; run 38110774506 completed successfully.
+- The historical Run 405 11/2/2 calibration remains unverified; the reconstructed 9/3/3 regression passed separately in run 38110223968.
+- Next task: harden malformed/missing report and frontmatter cases, preserving `unknown` for artifact-integrity gaps.

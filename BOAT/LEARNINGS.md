@@ -71,4 +71,4 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 ## L-011 — One pull-request test trigger avoids self-cancellation
 - **Observed:** The isolated BOAT workflow originally ran on both `push` and `pull_request` with the same concurrency group. A run was cancelled as commits arrived, and queued runs showed no job yet.
 - **Fix:** Keep the targeted `pull_request` trigger and remove the duplicate branch-push trigger and unnecessary concurrency lock for this short, read-only test job.
-- **Validation:** The latest run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) is pending/in progress at this record update; do not claim CI success until inspected.
+- **Validation:** [Run 38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) completed successfully: 10 passed, 0 failed, 0 skipped.

@@ -67,3 +67,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Latest isolated Node result at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: **10/10 passed**, exit code 0, Node v20.9.0. GitHub Actions run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) was in progress at the time of this entry.
 - Observed that simultaneous push and pull_request triggers with one concurrency group cancelled the previous run; removed the push trigger and the unnecessary concurrency lock. Latest PR-triggered run is 38110774506.
 - No production workflow, articles, providers, gates, thresholds, or publication behavior changed.
+
+
+## 2026-10-11 — Latest Article Doctor CI pass
+- Inspected [BOAT offline test run 38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506): **10 passed, 0 failed, 0 skipped** at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`.
+- Confirmed the final logs include the schema-contract test, archived failure fixtures, clean/partial/unknown status tests, empty-heading/repeated-sentence diagnostics, and CLI error behavior.
+- The archived real-article review found no empty-heading or repeated-sentence signals in AD-FX-001..003; tests now ensure those three samples do not receive structural false positives.
+- Corrected the isolated workflow to avoid simultaneous push and pull_request runs cancelling each other. The latest PR-triggered run completed successfully.
+- No production publishing workflow, article, provider routing, evidence/claim gates, or safety thresholds were changed.
