@@ -1,6 +1,6 @@
 # BOAT Next Step
 
-## Current task: validate Article Doctor on archived real articles
+## Current task: harden artifact-integrity edge cases
 Risk: low. Provider cost: none. Production behavior change: none.
 
 ### Verified implementation
@@ -8,15 +8,16 @@ Risk: low. Provider cost: none. Production behavior change: none.
 - Regression suite: `scripts/test-boat-article-doctor.mjs`.
 - Report contract: `BOAT/schemas/article-doctor-report.schema.json`.
 - Isolated workflow: `.github/workflows/boat-offline-tests.yml`.
-- At commit `966b3311615e77def02699e6861d5020eee447bb`, isolated Node tests passed 10/10 (exit code 0). The matching GitHub Actions run was pending at last check.
+- Isolated Node tests at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: 10/10 passed. GitHub Actions run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) was still in progress at last check.
+- Archived structural audit: AD-FX-001..003 produced no empty-heading/repeated-sentence false positives; this is only a three-article sample.
 - Draft PR #35: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
 
 ### Next implementation
-1. Inspect the three archived article attempts (AD-FX-001..003) with the new structural diagnostics; record whether they produce expected findings or false positives. Do not change the source articles.
-2. Add a real-world structural regression fixture only if a specific finding can be grounded in the saved Markdown.
-3. Add malformed report / missing-claims and malformed frontmatter cases; preserve `unknown` for integrity problems.
-4. Keep the report contract smoke test distinct from full JSON Schema validation; do not claim formal schema validation without a reviewed validator.
-5. Record exact commit, command, exit code, Actions run ID, and unresolved issues before moving to the human-article benchmark lab.
+1. Add tests for malformed JSON reports, missing `claims`, missing article title/frontmatter, and mismatched article/report inputs; require `unknown` for integrity gaps rather than `clear`.
+2. Keep clean, partial-only, blocked, and unknown status cases covered; ensure a medium structural finding yields `attention`, not a hard block.
+3. Preserve the no-mutation guarantee and verify hashes before/after when running the CLI against a real archived fixture.
+4. Review the latest GitHub Actions run and record its final result before further code changes.
+5. Once these edge cases are stable, move toward source-to-claim evidence mapping and later human-article benchmarking. Do not jump to repair/autonomy yet.
 
 ### Separate Run 405 record
 - PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed a durable reconstructed baseline: 9 supported / 3 partial / 3 unsupported; verifier blocks as expected.

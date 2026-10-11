@@ -58,3 +58,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Initial run failed because a whitespace regex crossed line boundaries and prevented repeated-sentence detection. Restricted heading/list matching to horizontal whitespace; the regression then passed.
 - Isolated Node test at commit `966b3311615e77def02699e6861d5020eee447bb`: **10/10 passed**, exit code 0, Node v20.9.0. GitHub Actions run for that commit was pending at the time of the record.
 - No paid providers, source fetches, article edits, image generation, publishing runs, or production gate changes.
+
+
+## 2026-10-11 — Archived article structural review and CI trigger correction
+- Ran Article Doctor against all three archived fixture sets. They retained only the expected claim/attribution/scope diagnostics: AD-FX-001 = 2 findings, AD-FX-002 = 2, AD-FX-003 = 3. None produced empty-heading or repeated-sentence findings.
+- Added a regression assertion guarding these archived samples against structural false positives. This sample is failure-biased and too small to estimate overall false-positive rate.
+- Updated limitations to clarify that structural checks use exact normalized sentence matching/simple Markdown patterns and can miss paraphrased repetition.
+- Latest isolated Node result at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: **10/10 passed**, exit code 0, Node v20.9.0. GitHub Actions run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) was in progress at the time of this entry.
+- Observed that simultaneous push and pull_request triggers with one concurrency group cancelled the previous run; removed the push trigger and the unnecessary concurrency lock. Latest PR-triggered run is 38110774506.
+- No production workflow, articles, providers, gates, thresholds, or publication behavior changed.

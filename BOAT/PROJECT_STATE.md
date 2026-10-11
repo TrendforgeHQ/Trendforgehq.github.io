@@ -117,3 +117,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - The first structural test failed because the empty-heading regex used `\s*`, which can cross line boundaries and consume neighboring prose during normalization. The scan was corrected to use horizontal whitespace for heading/list-line matching.
 - Isolated Node test result at commit `966b3311615e77def02699e6861d5020eee447bb`: **10 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0. The GitHub Actions run for this commit was pending at the time of this record; inspect its logs before claiming CI green.
 - Next: audit the three archived real article attempts with these structural checks, review any false positives, and only then add further deterministic checks. No repair or publication action is enabled.
+
+
+## Archived-article structural validation — 2026-10-11
+- Ran the updated Article Doctor against AD-FX-001..003 using saved article/report/metadata files only. Outcomes remained `blocked` with 2, 2, and 3 mapped claim/attribution/scope findings respectively.
+- None of the three archived articles triggered `empty_heading` or `repeated_sentence`; the structural scan produced no false positives on these three samples. This is a small, failure-biased sample, not a general false-positive-rate estimate.
+- Added a regression assertion so the three archived fixtures remain free of structural false positives.
+- Isolated Node test at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3`: **10 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0. GitHub Actions run [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) was in progress at the time of this record.
+- CI workflow correction: push and pull_request triggers had shared one concurrency group, causing run [38110662190](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110662190) to be cancelled. Removed the duplicate push trigger and unnecessary concurrency lock; the latest pull-request run is now [38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506).
