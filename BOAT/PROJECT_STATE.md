@@ -382,3 +382,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - The review-set report test now performs executable schema validation of real auditor output, including invalid-input reports and malformed source identity types. Negative tests prove that extra properties, bad fingerprints, unknown finding types, and unsafe winner fields fail validation.
 - Invalid source identity values are not copied into the typed report identity fields; the record remains ineligible and validator errors are retained.
 - Offline CI [run 38123099695](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123099695) passed **123/123**, 0 failed, 0 skipped. The report remains diagnostic-only; no semantic truth or publication approval is implied.
+
+
+## Report schema validation — verified
+
+- Tests now structurally validate generated review-set reports and invalid-input output against the checked-in schema.
+- Negative cases cover invalid fingerprints, unknown finding types, extra properties, and fixed report safety fields.
+- Offline CI run 38123099695 passed 123/123 tests, with no failures or skips. This is report-contract validation only.
