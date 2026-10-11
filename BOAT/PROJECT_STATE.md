@@ -263,3 +263,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Schema contract tests passed in [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348): **70 passed, 0 failed, 0 skipped**.
 - The report contract preserves review-only semantics and explicit provenance caveats.
 - Verified current report counts: 40 total claims, 26 eligible, 3 blocked, 11 unknown. The counts reflect traceability and passage mapping only.
+
+
+
+## Count reconciliation — verified (2026-10-11)
+
+- Eligibility report now derives counts from per-claim statuses and verifies them against adapter counts and per-run aggregates. A mismatch throws rather than producing a misleading report.
+- The report schema requires countsReconciled=true for both summary and each run.
+- Latest branch-head CI [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899): **70 passed, 0 failed, 0 skipped**.
+- Verified report totals: 40 claims; 26 eligible, 3 blocked, 11 unknown. Per-run eligible counts: 12, 12, 2.
