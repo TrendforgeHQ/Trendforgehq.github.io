@@ -584,3 +584,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Wired a non-blocking binder step into `publish.yml` after final claim verification and before attempt diagnostics are uploaded. It does not add a publication gate.
 - Updated the root lineage audit to recognize finalized bundles only when report/article/pack bytes and hashes match. Historical run `38106429274` remains UNKNOWN because it predates the binder and has no report-hash manifest.
 - Offline run [38130780216](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130780216) passed 136/136 tests. Latest Control Center production build was still running at this checkpoint.
+
+## 2026-10-11 — Read-only production artifact trace
+
+- Inspected successful production run 493 artifact `trendforge-article-attempt-493`.
+- Confirmed runtime canonical pack is valid, 3,470,280 bytes, 24 candidates; the current brief maps to exactly one candidate with 2 sources.
+- The same run-scoped artifact contains a 10-claim saved PASS report with matching `articlePath`; archived metadata still lacks exact article/report/pack hashes.
+- Runtime evidence-pack generation succeeded in this observed run. The empty root snapshot is a separate persistence/snapshot issue, not proof the generator failed.
