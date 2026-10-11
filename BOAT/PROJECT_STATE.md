@@ -323,3 +323,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added synthetic tests: a valid original-hash-bound same-run fixture satisfies the predicate; tampered run metadata blocks it.
 - Latest branch-head CI [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418): **73 passed, 0 failed, 0 skipped**.
 - None of the three recovered production samples has the original hash provenance needed for handoff. No factual replacement was generated and no article was modified.
+
+
+
+## Candidate-envelope proposal handoff — verified (2026-10-11)
+
+- Factual proposal engine now supports canonical candidates[] packs with exact candidateTitle and candidateLink; missing or ambiguous candidate identity is blocked.
+- Added an end-to-end synthetic handoff test from recovered input adapter to factual proposal engine. It reaches review_required only, keeps semantic support unverified, requires approval, disables automatic application, and leaves article bytes untouched.
+- CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568): **77 passed, 0 failed, 0 skipped**.
+- Existing three archived runs remain handoff-blocked because the saved original metadata lacks hash fields. This does not retroactively upgrade them.
