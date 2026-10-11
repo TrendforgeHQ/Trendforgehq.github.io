@@ -30,7 +30,7 @@ assert.equal(resolved.claims[0].factualSupport, 'not_assessed');
 
 const wrong = { sources: [{ id: 'S2', passages: ['Different source'] }] };
 const unresolved = auditRootClaimLineage({ reportRaw, packRaw: JSON.stringify(wrong) });
-assert.equal(unresolved.status, 'attention-unresolved-identifiers');
+assert.equal(unresolved.status, 'unknown-pack-binding');
 assert.equal(unresolved.claims[0].sourceResolution, 'unknown-pack-binding');
 assert.equal(unresolved.claims[0].localPackSourceIdMatch, false);
 assert.equal(unresolved.claims[0].passageResolution[0].status, 'unknown-pack-binding');
