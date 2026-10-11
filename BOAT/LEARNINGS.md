@@ -358,3 +358,6 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - Follow-up CI [run 38122442789](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122442789) passed **113/113**, 0 failed, 0 skipped.
 - Golden cases verify duplicate-ID collisions, independent reviewer dissent, same-reviewer repeats/disagreement, invalid-record exclusion, source order, and absence of automatic winners. This confirms the tested offline contract only; semantic support remains unverified and existing gates remain mandatory.
+
+
+- Final branch-head validation after fixture cleanup: [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254) passed **113/113**, 0 failed, 0 skipped. The same-reviewer and independent-dissent distinctions, invalid-record handling, source order, and no-winner boundary remain covered.
