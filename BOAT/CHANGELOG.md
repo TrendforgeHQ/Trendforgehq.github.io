@@ -372,3 +372,11 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Added structural validation tests for real audit reports and invalid-input output, including negative cases for malformed fingerprints, unknown finding types, extra properties, and fixed safety fields.
 - Malformed source identity types are normalized in report identity fields while validation errors remain available. CI run 38123099695 passed 123/123 tests, no failures or skips.
+
+
+### Handoff metadata status guard — review finding (2026-10-11)
+
+- Safety review found the recovered proposal-input handoff predicate did not explicitly require `status=claim-verification-blocked`, despite checking exact metadata bytes, run/SHA, recorded-hash marker, artifact hashes, and pack compatibility.
+- Updated the predicate to require the exact blocked status and added a negative regression with otherwise matching hashes/identities but `generated-pending-verification` status.
+- CI run [38123444976](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123444976) was queued at record time; do not mark verified until its result is inspected.
+- No evidence of a current production bypass was found in the inspected workflow path; the change is defense-in-depth. No publishing/provider workflow was run.
