@@ -328,3 +328,14 @@ The new helper has fixture tests for clean and flagged articles, non-Markdown ex
 
 
 **Verification complete (2026-10-11):** follow-up run [38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855) passed **128/128 BOAT tests**, 0 failed; Control Center checks passed **33/33**. Run [38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938) passed the Control Center QA production build (Next.js compiled successfully). The earlier type failure was caught, fixed, and verified by these green follow-up runs.
+
+
+## Published claim-report coverage slice — verified 2026-10-11
+
+The Control Center now checks every canonical published article against archived `data/article-attempts/*/claim-verification.json` records using the report's canonical `articlePath`. It shows archive report coverage, historical PASS/block/conflicting outcomes, archived claim-count signals, and whether an evidence-pack file was present. Conflicting history is retained rather than selecting a preferred report.
+
+**Critical limit:** this is historical coverage matched by path only. The published article index does not yet carry the exact published article SHA-256 plus paired claim-report/evidence-pack hashes, so a historical PASS is not represented as current verification. Missing reports are UNKNOWN, never PASS. This is a useful visibility bridge, not the final claim-level audit engine.
+
+Verification: [BOAT Offline Tests run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) passed **128/128** tests; Control Center contract suite passed **37/37**. [Control Center QA run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739) passed the production static build.
+
+**Next implementation:** create a lineage manifest during publishing that binds the exact published article bytes to the exact claim report and evidence pack, then use that immutable binding for a real current-version audit. Do not infer exactness from title/path. Keep the static Control Center honest; live chat/actions still require a separately deployed authenticated backend.
