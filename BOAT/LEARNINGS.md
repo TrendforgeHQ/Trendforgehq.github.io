@@ -549,3 +549,9 @@ A live CLI test and GitHub file-content fetch misleadingly suggested the root ev
 ## 2026-10-11 — Latest verification
 
 At head `53e856e41751c44bc3f65d59ccca7ceb781740f7`, offline run [38130573836](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573836) passed 136/136 tests; Control Center QA [38130573818](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573818) passed the production build. The live root audit resolves source IDs and URLs but keeps report/run pairing UNKNOWN without a same-run claim-report hash manifest. Do not turn structural matches into factual-support PASS.
+
+## 2026-10-11 — Archive the final verification, not just the generated draft
+
+The existing archive step runs immediately after article generation, before claim verification and any repair. It therefore captures the initial draft and pack but not the final claim report, leaving report/run pairing unproven. The remedy is an additional post-verification immutable finalized bundle containing the final article bytes, canonical pack bytes, claim report bytes, all three hashes, and workflow run/SHA. Keep the original attempt for repair history; never overwrite conflicts; keep the step non-blocking and leave UNKNOWN when exact matching fails.
+
+Offline run [38130627939](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130627939) passed 136/136 tests. Historical run 493 cannot be retroactively bound from the archive alone; the next normal production run is the first real end-to-end validation of the new persistence path. Exact workflow SHA matching was tightened afterward and needs latest-head CI.
