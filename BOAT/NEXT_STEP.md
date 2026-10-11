@@ -232,3 +232,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 
 
 **Branch-head recheck after fixture cleanup:** [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254) passed **113/113**, 0 failed, 0 skipped on head `9153fc66d0e37f31f0320a4ac3848670ee745f76`. The fixture is now minimal; all four golden scenarios and permutation/dissent checks pass. Final next action remains PR diff review and choosing the next safe offline BOAT task.
+
+
+## Stable review-set report ordering — verified (2026-10-11)
+
+- Updated the review-set auditor to sort reviewer iteration, verdict arrays, subject groups by opaque subject fingerprint, and findings by stable content while excluding input-relative `recordIndices` from sort keys.
+- The original `records` array remains in caller order and indices still refer to that order. No source records are dropped or rewritten; all dissent remains visible; aggregate verdict stays null and automatic adjudication stays false.
+- Added a multi-subject permutation test for stable findings/group order and input-relative record indices.
+- CI [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610) passed **114/114**, 0 failed, 0 skipped.
+- **Next:** add a formal JSON Schema/contract test for the review-set audit report envelope, including findings, subject groups, indices, and no-winner invariants. Keep PR #35 draft/unmerged; no provider/publishing runs and no `main` changes.
