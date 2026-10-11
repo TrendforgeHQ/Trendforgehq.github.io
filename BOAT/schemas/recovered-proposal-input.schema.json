@@ -54,11 +54,24 @@
     "replacementTextGenerated": { "const": false },
     "proposalEngineHandoff": {
       "type": "object",
-      "required": ["status", "allowed", "reason"],
+      "required": ["status", "allowed", "reason", "checks"],
       "properties": {
-        "status": { "const": "blocked" },
-        "allowed": { "const": false },
-        "reason": { "type": "string", "minLength": 1 }
+        "status": { "enum": ["ready", "blocked"] },
+        "allowed": { "type": "boolean" },
+        "reason": { "type": "string", "minLength": 1 },
+        "checks": {
+          "type": "object",
+          "required": ["metadataPresent", "hashesRecordedAtGeneration", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
+          "properties": {
+            "metadataPresent": { "type": "boolean" },
+            "hashesRecordedAtGeneration": { "type": "boolean" },
+            "runIdMatches": { "type": "boolean" },
+            "workflowShaMatches": { "type": "boolean" },
+            "artifactHashesMatch": { "type": "boolean" },
+            "metadataParseValid": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        }
       },
       "additionalProperties": false
     },
