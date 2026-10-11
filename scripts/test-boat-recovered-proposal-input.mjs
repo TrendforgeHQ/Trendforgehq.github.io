@@ -68,7 +68,7 @@ test('synthetic exact-lineage claim becomes an input only, never a generated pro
 test('proposal engine handoff is allowed only with matching original hashes bound to same-run metadata', () => {
   const f = syntheticFixture();
   const metadata = JSON.parse(f.blockedMetadataRaw);
-  metadata.hashesRecordedAtGeneration = true;
+  metadata.hashesRecordedInWorkflow = true;
   metadata.articleSha256 = sha256(f.articleRaw);
   metadata.claimReportSha256 = sha256(f.claimReportRaw);
   metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
@@ -78,7 +78,7 @@ test('proposal engine handoff is allowed only with matching original hashes boun
   assert.equal(result.proposalEngineHandoff.status, 'ready');
   assert.equal(result.proposalEngineHandoff.allowed, true);
   assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, true);
-  assert.equal(result.proposalEngineHandoff.checks.hashesRecordedAtGeneration, true);
+  assert.equal(result.proposalEngineHandoff.checks.hashesRecordedInWorkflow, true);
   assert.equal(result.proposalEngineHandoff.checks.runIdMatches, true);
   assert.equal(result.proposalEngineHandoff.checks.workflowShaMatches, true);
   assert.equal(result.proposalEngineHandoff.checks.artifactHashesMatch, true);
@@ -358,7 +358,7 @@ test('publish quarantine archives exact evidence pack and records same-bundle ha
   assert.match(gate, /"articleSha256":"\$article_sha256"/);
   assert.match(gate, /"claimReportSha256":"\$claim_report_sha256"/);
   assert.match(gate, /"evidencePackSha256":"\$evidence_pack_sha256"/);
-  assert.match(gate, /"hashesRecordedAtGeneration":true/);
+  assert.match(gate, /"hashesRecordedInWorkflow":true/);
   assert.match(gate, /"workflowRun":"\$\{GITHUB_RUN_ID:-unknown\}"/);
   assert.match(gate, /"workflowSha":"\$\{GITHUB_SHA:-unknown\}"/);
 });
