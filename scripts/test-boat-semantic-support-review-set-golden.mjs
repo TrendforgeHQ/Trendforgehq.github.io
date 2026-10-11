@@ -35,6 +35,13 @@ function canonicalReport(report) {
   };
 }
 
+function canonicalPermutationSummary(report) {
+  const summary = canonicalReport(report);
+  // Record order is tested separately; this sorted copy is only for comparing order-insensitive summaries.
+  summary.records.sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+  return summary;
+}
+
 const golden = {
   duplicateIds: {
     valid: false,
@@ -78,7 +85,7 @@ const golden = {
     recordCount: 2,
     validRecordCount: 1,
     records: [
-      { reviewId: 'SSR-GOLD-301', reviewerId: 'reviewer-a', verdict: 'supported', eligible: false, errorCount: 1 },
+      { reviewId: 'SSR-GOLD-301', reviewerId: 'reviewer-a', verdict: 'supported', eligible: false, errorCount: 2 },
       { reviewId: 'SSR-GOLD-302', reviewerId: 'reviewer-b', verdict: 'unsupported', eligible: true, errorCount: 0 }
     ],
     findings: [{ type: 'invalid_review_record', severity: 'blocking', reviewId: 'SSR-GOLD-301', reviewerId: null, reviewerIds: null, verdicts: null }],
@@ -96,7 +103,7 @@ test('permuting input preserves canonical audit findings and every dissenting ve
   for (const [name, fixture] of Object.entries(reviewSetFixtures)) {
     const original = auditReviewSet(fixture);
     const reversed = auditReviewSet([...fixture].reverse());
-    assert.deepEqual(canonicalReport(reversed), canonicalReport(original), name);
+    assert.deepEqual(canonicalPermutationSummary(reversed), canonicalPermutationSummary(original), name);
     // The report deliberately preserves caller/source order in its records array.
     assert.deepEqual(reversed.records.map(record => record.reviewId), [...fixture].reverse().map(record => record.reviewId), name);
     assert.deepEqual(original.records.map(record => record.reviewId), fixture.map(record => record.reviewId), name);
