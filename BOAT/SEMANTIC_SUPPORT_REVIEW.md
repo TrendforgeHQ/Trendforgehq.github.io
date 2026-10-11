@@ -34,7 +34,7 @@ Record relevant risk flags: unsupported detail, overstated certainty, scope drif
 
 ## Independence and disagreement
 
-Identify the reviewer by a stable internal identifier and role. Disclose relevant conflicts or lack of independence. For consequential or disputed claims, prefer a second reviewer. Store disagreements as separate immutable review records; do not overwrite the first reviewer. This v1 contract does not define adjudication or a numeric confidence score.
+Identify the reviewer by a stable internal identifier and role. Disclose relevant conflicts or lack of independence. For consequential or disputed claims, prefer a second reviewer. Store disagreements as separate immutable review records; do not overwrite the first reviewer. The review-set policy treats repeated review IDs as blocking identity issues, excludes invalid or ID-colliding records from comparisons, distinguishes same-reviewer repeats from independent reviews, and reports differing verdicts from independent reviewers as requiring human resolution. It never majority-votes, averages, picks the latest, or selects a winner. Matching verdicts are descriptive agreement only. See [REVIEW_SET_POLICY.md](REVIEW_SET_POLICY.md). This contract does not define numeric confidence or automated adjudication.
 
 ## What this benchmark does not prove
 
