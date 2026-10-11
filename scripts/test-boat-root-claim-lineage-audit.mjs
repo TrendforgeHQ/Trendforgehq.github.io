@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -30,6 +31,16 @@ assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-P1').st
 assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-BODY').status, 'source-body-anchor-present-not-a-passage');
 assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-FF1').status, 'fact-anchor-resolved-fields-only');
 assert.equal(resolved.claims[0].factualSupport, 'not_assessed');
+
+const hash = value => createHash('sha256').update(value).digest('hex');
+const manifest = { workflowRun: '12345', workflowSha: 'a'.repeat(40), records: [{ articlePath: report.articlePath, hashes: { articleSha256: hash(articleRaw), claimReportSha256: hash(reportRaw), evidencePackSha256: hash(packRaw), articleBriefSha256: hash(briefRaw) } }] };
+const bound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests: [manifest] });
+assert.equal(bound.status, 'identifiers-resolved-semantic-support-unknown');
+assert.equal(bound.artifacts.reportRunBindingProven, true);
+assert.equal(bound.artifacts.matchedLineageManifest, true);
+const wrongManifest = { ...manifest, records: [{ ...manifest.records[0], hashes: { ...manifest.records[0].hashes, claimReportSha256: '0'.repeat(64) } }] };
+const wrongBound = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests: [wrongManifest] });
+assert.equal(wrongBound.artifacts.reportRunBindingProven, false);
 
 const mismatched = auditRootClaimLineage({ reportRaw, packRaw: JSON.stringify({ ...pack, generatedAt: 'different-bytes' }), briefRaw, articleRaw, attemptRecords });
 assert.equal(mismatched.status, 'unknown-pack-article-run-binding');
