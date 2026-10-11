@@ -241,3 +241,10 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Added a multi-subject permutation test for stable findings/group order and input-relative record indices.
 - CI [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610) passed **114/114**, 0 failed, 0 skipped.
 - **Next:** add a formal JSON Schema/contract test for the review-set audit report envelope, including findings, subject groups, indices, and no-winner invariants. Keep PR #35 draft/unmerged; no provider/publishing runs and no `main` changes.
+
+
+## Review-set report schema — verified
+
+- Added a JSON Schema for the review-set audit report and contract tests covering its envelope, indices, dissent, and no-winner fields.
+- Offline CI run 38122850780 passed 120/120 tests with zero failures or skips.
+- Next: inspect the PR diff and reconcile the final project records. Keep PR #35 draft/unmerged; do not touch main or run provider/publishing workflows.
