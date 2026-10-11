@@ -52,3 +52,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Implication:** Pin the reconstructed 9/3/3 result as a separate reproducible regression and retain 11/2/2 as an unresolved historical target. Never modify evidence inputs or verifier thresholds just to force counts to match.
 - **Confidence:** High for the observed reconstruction output; the exact historical distribution remains unverified.
 - **Validation status:** One failing test run established the mismatch; follow-up run is pending at the time of this entry.
+
+
+## L-009 — Report schemas must match emitted runtime fields
+- **Observed:** The initial Article Doctor schema was too shallow and omitted emitted fields including `reportId`, `generatedAt`, and `checks`. The schema was expanded and a report-contract smoke test added.
+- **Observed:** A first custom recursive schema-subset test implementation introduced syntax errors; it was removed rather than allowed to weaken or destabilize the existing tests. The simpler contract test then passed with the complete suite.
+- **Implication:** Keep the runtime report, schema, and tests in sync. Clearly distinguish a contract smoke test from full JSON Schema validation.
+- **Confidence:** High; verified by source diff and CI run 38110482104 (7 passed, 0 failed).
+- **Validation status:** Key contract fields verified; full formal schema validation remains open.
