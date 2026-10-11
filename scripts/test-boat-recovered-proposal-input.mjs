@@ -58,7 +58,7 @@ test('synthetic exact-lineage claim becomes an input only, never a generated pro
   assert.equal(result.proposalEngineHandoff.allowed, false);
   assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, true);
   assert.equal(result.proposalEngineHandoff.status, 'blocked');
-  assert.match(result.proposalEngineHandoff.reason, /generation-time hashes are absent/);
+  assert.match(result.proposalEngineHandoff.reason, /recovery-time hashes cannot substitute/);
   assert.equal(result.approvalRequired, true);
   assert.equal(result.automaticApplication, false);
   assert.equal(result.semanticSupport, 'not_verified');
