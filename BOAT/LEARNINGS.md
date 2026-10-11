@@ -256,3 +256,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - Even if recovered source and passage mapping is exact, the existing factual proposal engine's metadata hash contract cannot be satisfied by checksums computed after the original run.
 - The adapter now explicitly sets proposalEngineHandoff.allowed=false. Regression suite passed [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350), 70 passed, 0 failed, 0 skipped.
+
+
+
+## L-023 — Archived metadata proves the original hash contract is unavailable
+
+- Inspected all six generated and claim-blocked metadata files across the three recovered attempts.
+- All 3 pairs agree on run ID and workflow SHA, but none includes article/report/evidence-pack SHA-256 fields.
+- This is why the existing factual proposal engine cannot safely consume these recovered artifacts. Do not reconstruct the original hash fields from hashes computed during recovery.
+- Verified on the same branch as [run 38119678517](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119678517), 70 passed, 0 failed, 0 skipped.
