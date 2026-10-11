@@ -407,3 +407,10 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - The report ranks review priority, preserves `unknown`, stale lineage, historical blocks, conflicting outcomes, and duplicate-slug ambiguity, and suggests next human review actions. Every article remains `needs-human-review`; no result is a factual PASS, and the queue cannot edit or publish articles.
 - Added synthetic triage assertions plus an integration test that runs the CLI over the real `lib/articles.ts` catalogue; added explicit offline workflow path filters for the module, CLI, and test.
 - **Verification pending:** inspect branch-head BOAT Offline Tests and Control Center QA before marking this step complete. No production publishing, provider calls, article edits, merge, or `main` changes.
+
+## Claim-level published audit — implementation in progress (2026-10-11)
+
+- Added `scripts/boat-published-claim-audit.mjs` and `scripts/boat-audit-published-claims.mjs` to scan saved `claim-verification.json` reports under `data/article-attempts` and map them to the canonical published catalogue by exact canonical `articlePath` slug.
+- Each archived claim row preserves verifier status/classification, source ID/title/URL/role, passage IDs, a capped evidence excerpt, context completeness, current-article exact-text diagnostic, run/SHA metadata when available, and the original report outcome. All historical attempts are retained; conflicting PASS/block history is not collapsed into a latest winner.
+- Missing reports remain UNKNOWN. Historical PASS is not current verification; exact-text non-match is only a version/segmentation signal. This step does not fetch sources, independently re-run the verifier, edit articles, generate repair text, or publish.
+- Added synthetic regression tests and a real-catalogue CLI integration test; added explicit offline workflow path filters. **Branch-head CI verification is pending**; inspect both BOAT Offline Tests and Control Center QA before marking verified.
