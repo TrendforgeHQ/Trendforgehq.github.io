@@ -209,3 +209,13 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Missing/ambiguous passage mappings remain `unknown`; absent claim text and source-lineage mismatches are `blocked`. No replacement text is generated. Human approval remains mandatory; semantic support remains unverified.
 - Added synthetic and three-real-archive integration tests and wired them into the offline PR workflow. Branch-head CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped.
 - `main` remains untouched, PR #35 remains draft/unmerged, and no provider, publishing, or site-build run was requested.
+
+
+
+## Recovered proposal-input adapter (2026-10-11)
+
+- Added `scripts/boat-recovered-proposal-input.mjs` and regression coverage in `scripts/test-boat-recovered-proposal-input.mjs`.
+- Adapter verifies recovered-byte hashes against the audit manifest, exact candidate identity, report/pack source ID+URL mapping, claim/source URL mapping, exact claim text in the recovered article, and unique same-source canonical passage mapping.
+- Expected real-fixture coverage: 12/15, 12/18, and 4/7 eligible claim inputs. The three claims absent from the third article remain blocked. Unresolved passages are not eligible.
+- Output is an input manifest only; it does not generate replacement copy or edit content. Human approval is required, automatic application is false, and semantic support remains not verified.
+- CI status for this adapter is pending inspection; do not record a pass until the run logs confirm it.
