@@ -190,3 +190,13 @@ All entries should describe actual work and results. Do not record planned work 
 - Rechecks recovery-time hashes against current article/report/brief/pack bytes, exact candidate selection, report/claim source URL lineage, article claim presence, and unique passage resolution.
 - Added synthetic guard tests and real archived-run tests for 38085367295, 37996683799, and 37696062759; wired both new files into `.github/workflows/boat-offline-tests.yml` path filters.
 - Branch-head offline CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped. The first run exposed a bad estimate for the third archive; per-claim intersection was corrected to 2/7. No production behavior, publishing workflow, article, or `main` changes.
+
+
+
+## 2026-10-11 — Recovered proposal-input schema and CLI validation
+
+- Added the recovered proposal-input manifest schema and tests for its required fields and fail-closed review-only constants.
+- Added CLI tests for a successful separate output file, overwrite refusal, article input immutability, and missing-argument rejection.
+- Branch-head offline suite [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771) passed **67/67**, 0 failed, 0 skipped.
+- Archived eligibility intersection is 12/15, 12/18, and 2/7. The last run's 3 absent claims and 2 unresolved claims remain ineligible.
+- No publishing/provider runs, article changes, production behavior changes, or merge.
