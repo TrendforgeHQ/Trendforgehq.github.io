@@ -557,3 +557,8 @@ Verified current baseline:
 - New read-only audit emits per-claim archived verifier signals for every article in the canonical published catalogue. It joins saved claim report source fields and passage/excerpt references, retains all archived outcomes, records metadata run/SHA when present, and checks whether normalized claim text is found in current Markdown.
 - These are traceability signals, not fresh factual checks. The current text comparison is intentionally diagnostic; a non-match can arise from version drift or segmentation. Source URL reachability/freshness, canonical evidence-pack passage resolution, and semantic claim support are not independently checked here.
 - Missing reports and incomplete source context stay UNKNOWN; contradictory historical outcomes stay explicit. No auto repair, article mutation, provider call, or publication decision. New offline tests and workflow filters added; CI pending.
+
+### Claim-audit source correction (2026-10-11)
+
+- The claim-level CLI now includes `data/claim-verification.json` as a separately labelled root workflow snapshot when its `articlePath` maps to a canonical published slug. It does not assume this report is hash-bound to the current Markdown or evidence pack.
+- The first CI run caught an incorrect synthetic fixture expectation for a missing Markdown file; added the fixture file so the test specifically exercises missing-report UNKNOWN. Latest branch-head validation is pending.
