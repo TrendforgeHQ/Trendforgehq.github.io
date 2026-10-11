@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { validateSemanticSupportReview } from './boat-semantic-support-review-validator.mjs';
 
 function stableJson(value) {
@@ -10,7 +11,7 @@ function stableJson(value) {
 
 function subjectKey(review) {
   const { subject, claim } = review;
-  return stableJson({
+  const identity = stableJson({
     workflowRun: subject.workflowRun,
     workflowSha: subject.workflowSha,
     articleSha256: subject.articleSha256,
@@ -25,6 +26,7 @@ function subjectKey(review) {
     sourceUrl: claim.sourceUrl,
     passageText: claim.passageText
   });
+  return createHash('sha256').update(identity).digest('hex');
 }
 
 export function auditReviewSet(input) {
@@ -103,6 +105,7 @@ export function auditReviewSet(input) {
       } else independent.push(reviewerEntries[0]);
     }
     const verdicts = [...new Set(independent.map(entry => entry.verdict))];
+    const allVerdicts = [...new Set(entries.map(entry => entry.verdict))];
     let status = 'single_or_non_independent_review';
     if (independent.length >= 2 && verdicts.length > 1) status = 'conflicting_independent_reviews';
     else if (independent.length >= 2 && verdicts.length === 1) status = 'independent_agreement';
@@ -126,10 +129,11 @@ export function auditReviewSet(input) {
       });
     }
     subjectGroups.push({
-      subjectKey: key,
+      subjectFingerprint: key,
       recordIndices: entries.map(entry => entry.index),
       independentReviewCount: independent.length,
       verdicts,
+      allVerdicts,
       status,
       aggregateVerdict: null,
       automaticAdjudication: false
