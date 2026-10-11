@@ -453,3 +453,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 - **Final branch-head verification:** offline suite [run 38126992293](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992293) passed 129/129; Control Center QA [run 38126992154](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992154) passed 37/37 and production build/export succeeded. The publishing workflow was not run.
+
+
+## L-061 — Validate provenance helpers against production data contracts, not invented fixtures
+- **Observed:** The current-run marker is written by `scripts/generate-article-adaptive.mjs`; the claim verifier writes a v18 report with `articlePath`, `articleTitle`, `claimCount`, `pass`, and `claims`; the evidence artifact envelope is assembled by `scripts/pre-writer-pipeline.mjs` as `{version:1,status:'authoritative',candidates:[...]}`.
+- **Failure found:** The initial lineage builder did not fully validate the envelope/canonical pack shape and did not compare marker brief title and report article title/count to the exact article/brief bytes.
+- **Decision:** Use the repository's `validateAuthoritativeEvidencePack` validator and require consistent marker, article frontmatter, brief, claim report, and evidence-pack candidate identity. Synthetic tests must represent the real schema and test malformed envelopes, duplicate candidates, and invalid packs.
+- **Validation status:** Corrected code/tests are on the BOAT branch; latest CI pending. Earlier 129/129 tests validated the earlier contract, not this new correction. No publishing/provider run, article mutation, or `main` edit occurred.
+- **Next:** inspect new offline CI and Control Center QA; only then consider a separately tested publish-time integration.
