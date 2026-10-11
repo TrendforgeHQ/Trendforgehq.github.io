@@ -361,3 +361,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 - Final branch-head validation after fixture cleanup: [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254) passed **113/113**, 0 failed, 0 skipped. The same-reviewer and independent-dissent distinctions, invalid-record handling, source order, and no-winner boundary remain covered.
+
+
+## L-049 — Stable audit ordering and source order
+
+- Sort report-level findings and subject groups by stable content/opaque fingerprints, and sort verdict arrays. Do not reorder the source `records` array to achieve deterministic output.
+- Input-relative indices necessarily vary when input order changes. Exclude indices from the permutation comparison key but retain them in actual output so findings still refer to the caller's positions.
+- Multi-subject permutation coverage passed in [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610): **114/114 passed**, 0 failed, 0 skipped. Dissent remains visible and no aggregate winner is produced.
