@@ -70,11 +70,6 @@ export function auditReviewSet(input) {
   }
 
   const groups = new Map();
-  for (const review of input) {
-    // A record is eligible only if its schema/safety validation passed and its ID is unique.
-    const index = input.indexOf(review);
-    void index;
-  }
   input.forEach((review, index) => {
     if (!records[index].eligible || collidedIndices.has(index)) return;
     const key = subjectKey(review);
