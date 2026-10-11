@@ -114,3 +114,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Bind a proposed replacement to exact article/report/evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID; refuse missing or mismatched lineage.
 - **Boundary:** A matching passage ID does not establish semantic support. Output always marks support as not verified, requires human approval, and never edits the article.
 - **Validation:** Five synthetic tests added; CI pending.
+
+
+## L-019 — A factual proposal needs a visible human review checklist
+- **Decision:** Make semantic support, changed factual details, source suitability, existing verifier results, and recorded human decision explicit checklist items.
+- **Boundary:** Passing lineage tests alone never authorizes applying the proposal.
+- **Validation:** Checklist output and schema assertions added; current CI pending.

@@ -128,3 +128,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/boat-factual-repair-proposal.mjs`, an offline proposal-only module bound to article/report/evidence-pack hashes and workflow-run metadata.
 - Proposal validates claim/source/passage lineage and exact target-claim text. Output explicitly marks semantic support as not verified, requires approval, and never modifies the article.
 - Added five synthetic regressions for valid bundle, hash mismatch, source/passage mismatch, missing claim text, and CLI input/output safety. CI pending.
+
+
+## 2026-10-11 — Factual repair proposal regression passed
+- [BOAT Offline Tests run 38112644061](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112644061) passed **39/39**, 0 failed, 0 skipped at commit `b9a7d4ff3c4f87aaa224d87b0bd1d3e26a3a6cbb`.
+- This validates the CLI and five factual-repair proposal tests: exact bundle, hash mismatch, source/passage mismatch, missing claim text, and separate-output/input immutability.
+- A separate explicit reviewer checklist is being added; its tests are not yet counted in that 39-test result.

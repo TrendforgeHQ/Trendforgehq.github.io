@@ -280,6 +280,8 @@ test('Factual Repair Proposal binds replacement to exact same-run artifacts but 
   assert.equal(result.approvalRequired, true);
   assert.equal(result.automaticApplication, false);
   assert.equal(result.semanticSupport, 'not_verified');
+  assert.equal(result.reviewChecklist.length, 6);
+  assert.ok(result.reviewChecklist.some(item => item.includes('semantically supports')));
   assert.equal(result.proposal.passageId, 'S1-P1');
   assert.equal(result.proposal.passageText, 'First passage.');
   assert.equal(result.artifacts.articleSha256, hash(data.articleRaw));

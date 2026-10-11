@@ -1,9 +1,9 @@
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
-**State version:** 0.1.5  
+**State version:** 0.1.6  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Evidence Auditor CLI integration passed 34/34 in run 38112229842. Factual Repair Proposal module and five new regression tests are now committed in the current iteration; their CI validation is pending.
+**Status:** Factual Repair Proposal implementation passed 39/39 in run 38112644061 at commit `b9a7d4ff3c4f87aaa224d87b0bd1d3e26a3a6cbb`. Reviewer checklist update is now in progress; its CI is pending.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.

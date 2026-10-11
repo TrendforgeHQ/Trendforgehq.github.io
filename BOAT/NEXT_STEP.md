@@ -7,7 +7,10 @@ Risk: low. Provider cost: none. Production behavior change: none.
 - [BOAT Offline Tests run 38112229842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112229842): **34 passed, 0 failed, 0 skipped**.
 - Four Evidence Auditor CLI tests covered valid same-run bundle, blocked lineage, missing hashes, and malformed JSON.
 
-### New implementation in this commit; CI pending
+### Verified implementation
+- [BOAT Offline Tests run 38112644061](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112644061): **39 passed, 0 failed, 0 skipped** at commit `b9a7d4ff3c4f87aaa224d87b0bd1d3e26a3a6cbb`.
+
+### Current task: add explicit review checklist; CI pending
 - Added `scripts/boat-factual-repair-proposal.mjs`: generates a review artifact tied to the exact article, claim-report, evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID.
 - Rejects missing/mismatched hashes, wrong source/passage lineage, unresolved passages, and claim text not found in the article.
 - Output statuses are `review_required`, `blocked`, or `unknown`; it always sets `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
