@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-11T02:54:05.488Z",
-  "articlePath": "content/articles/amazon-eyes-8-b-nvidia-chip-financing-to-lighten-ai-capital-load.md",
-  "articleTitle": "Amazon Eyes $8 B Nvidia Chip Financing to Lighten AI Capital Load",
+  "generatedAt": "2026-10-11T11:50:50.855Z",
+  "articlePath": "content/articles/microsoft-ceo-satya-nadella-calls-for-ai-emergency-brake-and-human-control.md",
+  "articleTitle": "Microsoft CEO Satya Nadella Calls for AI 'Emergency Brake' and Human Control",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 2,
-  "usableSourceCount": 2,
+  "sourceCount": 4,
+  "usableSourceCount": 4,
   "claimCount": 10,
   "editorialCount": 1,
   "verified": 7,
   "partial": 3,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 84,
+  "averageConfidence": 80,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,33 +45,49 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "domain": "finance.yahoo.com",
-      "passageCount": 29,
-      "articleBodyLength": 3765
+      "title": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "url": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "domain": "cnbc.com",
+      "passageCount": 4,
+      "articleBodyLength": 909
     },
     {
       "id": "S2",
-      "title": "Amazon Is Spending $200 Billion on AI Infrastructure. Here's What It Means for Investors. - The Motley Fool",
-      "url": "https://www.fool.com/investing/2026/05/24/amazon-spending-200-billion-on-ai-infrastructure/",
-      "domain": "fool.com",
-      "passageCount": 7,
-      "articleBodyLength": 701
+      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "domain": "techcrunch.com",
+      "passageCount": 1,
+      "articleBodyLength": 118
+    },
+    {
+      "id": "S3",
+      "title": "Satya Nadella Says Advanced AI Models Need an Emergency Brake",
+      "url": "https://www.analyticsinsight.net/news/satya-nadella-says-advanced-ai-models-need-an-emergency-brake",
+      "domain": "analyticsinsight.net",
+      "passageCount": 1,
+      "articleBodyLength": 643
+    },
+    {
+      "id": "S4",
+      "title": "Microsoft CEO Satya Nadella calls for AI ‘emergency brake,’ human control over advanced models - Moneycontrol.com",
+      "url": "https://www.moneycontrol.com/world/microsoft-ceo-satya-nadella-calls-for-ai-emergency-brake-human-control-over-advanced-models-article-14049308.html",
+      "domain": "moneycontrol.com",
+      "passageCount": 5,
+      "articleBodyLength": 824
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Amazon has announced a plan to have outside investors finance about $8 billion of Nvidia Grace Blackwell chips, after which the company would lease the hardware back.",
+      "claim": "Microsoft Chairman and CEO Satya Nadella has called for an \"emergency brake\" for advanced artificial intelligence (AI) systems, emphasizing the need for human control and oversight.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 86,
+      "confidence": 91,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
@@ -86,43 +102,55 @@
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
           "score": 86,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F7",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 86,
           "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF1",
-      "evidence": "Amazon.com, Inc. (NASDAQ:AMZN) is reportedly considering moving roughly $8 billion of Nvidia Grace Blackwell chips into a special-purpose vehicle financed by outside investors, then leasing the hardware back.",
-      "bestPassage": "Amazon.com, Inc. (NASDAQ:AMZN) is reportedly considering moving roughly $8 billion of Nvidia Grace Blackwell chips into a special-purpose vehicle financed by outside investors, then leasing the hardware back.",
+      "bestPassageId": "S1-FF1,S4-FF7",
+      "evidence": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Microsoft CEO Satya Nadella has called for an “emergency brake” for advanced artificial intelligence systems, urging companies to assume that powerful AI models could be compromised and ensure humans can intervene or shut them down while they are performing tasks.",
+      "bestPassage": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Microsoft CEO Satya Nadella has called for an “emergency brake” for advanced artificial intelligence systems, urging companies to assume that powerful AI models could be compromised and ensure humans can intervene or shut them down while they are performing tasks.",
       "matchedPassages": [
         "S1-BODY",
         "S1-P1"
       ],
       "sharedTerms": [
-        "amazon",
-        "outside",
-        "invest",
-        "billion",
-        "nvidia",
-        "grace",
-        "blackwell",
-        "chip",
-        "the",
-        "hardware",
-        "back"
+        "microsoft",
+        "chairman",
+        "and",
+        "ceo",
+        "satya",
+        "nadella",
+        "has",
+        "call",
+        "for",
+        "emergency",
+        "brake",
+        "advanc",
+        "system",
+        "human",
+        "control"
       ],
       "entityShared": [
-        "amazon",
-        "nvidia",
-        "grace",
-        "blackwell"
+        "microsoft",
+        "chairman",
+        "ceo",
+        "satya",
+        "nadella"
       ],
       "topicShared": [
-        "amazon",
-        "invest",
-        "finance",
-        "billion",
-        "nvidia",
-        "chip"
+        "microsoft",
+        "satya",
+        "nadella",
+        "emergency",
+        "brake",
+        "need"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -132,167 +160,191 @@
         "evidenceUncertain": true,
         "claimUncertain": false,
         "evidenceAttributed": false,
-        "claimAttributed": true,
+        "claimAttributed": false,
         "certaintyEscalation": true,
         "attributionDropped": false,
         "blocked": true
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
       "index": 2,
-      "claim": "The structure would make part of Amazon’s AI buildout more asset‑light at a time when its capital spending is expected to reach $220 billion this year.",
+      "claim": "In a post on social media platform X, Nadella outlined his vision for building AI systems with containment, independent controls, and the ability to pause or shut down models mid-task.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 94,
+      "confidence": 83,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 94
+        "score": 71
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
+          "score": 71,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F6",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 67,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 62,
           "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF2",
-      "evidence": "The proposed structure would make part of Amazon's enormous AI buildout more asset-light at a time when its capital spending is expected to reach $220 billion this year.",
-      "bestPassage": "The proposed structure would make part of Amazon's enormous AI buildout more asset-light at a time when its capital spending is expected to reach $220 billion this year.",
+      "bestPassageId": "S1-FF1,S3-FF6,S1-FF3",
+      "evidence": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions. \"We need to surround non-deterministic models with strong, deterministic system design, human controls, and reliable operating procedures, and establish industry standards where existing ones are insufficient,\" Nadella wrote in a post on social media platform X.",
+      "bestPassage": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions. \"We need to surround non-deterministic models with strong, deterministic system design, human controls, and reliable operating procedures, and establish industry standards where existing ones are insufficient,\" Nadella wrote in a post on social media platform X.",
       "matchedPassages": [
-        "S1-P2",
-        "S1-BODY"
+        "S1-BODY",
+        "S1-P1"
       ],
       "sharedTerms": [
+        "post",
+        "social",
+        "media",
+        "platform",
+        "nadella",
+        "for",
+        "system",
+        "containment",
+        "independent",
+        "control",
+        "and",
         "the",
-        "structure",
-        "part",
-        "amazon",
-        "buildout",
-        "asset",
-        "light",
-        "time",
-        "its",
-        "capital",
-        "spend",
-        "expect",
-        "reach",
-        "220",
-        "billion",
-        "year"
+        "pause",
+        "shut",
+        "down",
+        "models",
+        "mid",
+        "task"
       ],
       "entityShared": [
-        "amazon"
+        "nadella"
       ],
       "topicShared": [
-        "amazon",
-        "spend",
-        "billion"
+        "nadella",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
       "index": 3,
-      "claim": "The proposal comes as Amazon’s second‑quarter 2026 results included $53.4 billion in non‑operating pretax income, largely from its Anthropic investment, making reported earnings a less reliable gauge of returns from AI infrastructure.",
+      "claim": "Nadella's proposal comes amid growing concerns from top tech executives and researchers, including Microsoft co-founder Bill Gates, Anthropic CEO Dario Amodei, OpenAI CEO Sam Altman, and SpaceX CEO Elon Musk.",
       "status": "verified",
       "classification": "supported",
       "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F4",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 75
+        "score": 94
       },
       "provenanceFactMatches": [
         {
           "factId": "F4",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 75,
-          "passageIndex": 9
+          "score": 94,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "However, headline EPS growth requires caution because Amazon's second-quarter 2026 results included $53.4 billion in non-operating pretax income, primarily related to its Anthropic investment.",
-      "bestPassage": "However, headline EPS growth requires caution because Amazon's second-quarter 2026 results included $53.4 billion in non-operating pretax income, primarily related to its Anthropic investment.",
+      "bestPassageId": "S1-P4",
+      "evidence": "Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
+      "bestPassage": "Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P4"
+        "S1-P4",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "proposal",
-        "com",
-        "amazon",
-        "second",
-        "quarter",
-        "2026",
-        "result",
+        "nadella",
+        "amid",
+        "top",
+        "executiv",
+        "and",
+        "researcher",
         "includ",
-        "billion",
-        "non",
-        "operat",
-        "pretax",
-        "income",
-        "its",
+        "microsoft",
+        "founder",
+        "bill",
+        "gat",
         "anthropic",
-        "invest",
-        "mak",
-        "report",
-        "earning",
-        "reliable",
-        "return",
-        "infrastructure"
+        "ceo",
+        "dario",
+        "amodei",
+        "openai",
+        "sam",
+        "altman",
+        "spacex",
+        "elon",
+        "musk"
       ],
       "entityShared": [
-        "amazon",
-        "anthropic"
+        "nadella",
+        "microsoft",
+        "bill",
+        "gat",
+        "anthropic",
+        "ceo",
+        "dario",
+        "amodei",
+        "openai",
+        "sam",
+        "altman",
+        "spacex",
+        "elon",
+        "musk"
       ],
       "topicShared": [
-        "amazon",
-        "billion",
-        "invest"
+        "nadella",
+        "microsoft"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -302,78 +354,62 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
-        "claimAttributed": true,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 4,
-      "claim": "Outside investors would need confidence that the Nvidia chips retain economic value beyond their first technological cycle.",
+      "claim": "They have warned about insufficient AI safety protocols and the rapid pace of AI development.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 98,
+      "confidence": 66,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
+        "factId": "F4",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 90
+        "score": 63
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
+          "factId": "F4",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 90,
-          "passageIndex": 13
+          "score": 63,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Outside investors financing those assets therefore need confidence that the chips retain economic value beyond their first technological cycle.",
-      "bestPassage": "Outside investors financing those assets therefore need confidence that the chips retain economic value beyond their first technological cycle.",
+      "bestPassageId": "S1-P4",
+      "evidence": "Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
+      "bestPassage": "Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P14"
+        "S1-P4",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "outside",
-        "invest",
-        "need",
-        "confidence",
-        "the",
-        "nvidia",
-        "chip",
-        "retain",
-        "economic",
-        "value",
-        "beyond",
-        "first",
-        "technological",
-        "cycle"
+        "insufficient",
+        "safety",
+        "protocol",
+        "and",
+        "the"
       ],
-      "entityShared": [
-        "outside",
-        "nvidia"
-      ],
-      "topicShared": [
-        "invest",
-        "nvidia",
-        "chip"
-      ],
+      "entityShared": [],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -395,134 +431,63 @@
     },
     {
       "index": 5,
-      "claim": "The proposal also introduces questions about residual chip value once the lease ends.",
+      "claim": "Nadella's key recommendation is to ensure that an authorized person can intervene when an AI model is performing a task, comparing this mechanism to an emergency brake.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 80,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Satya Nadella Says Advanced AI Models Need an Emergency Brake",
+      "bestUrl": "https://www.analyticsinsight.net/news/satya-nadella-says-advanced-ai-models-need-an-emergency-brake",
+      "bestDomain": "analyticsinsight.net",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F13",
-        "sourceId": "S1",
+        "factId": "F6",
+        "sourceId": "S3",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 56
+        "score": 87
       },
       "provenanceFactMatches": [
         {
-          "factId": "F13",
-          "sourceId": "S1",
+          "factId": "F6",
+          "sourceId": "S3",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 56,
-          "passageIndex": 13
+          "score": 87,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The structure also introduces another question: residual chip value.",
-      "bestPassage": "The structure also introduces another question: residual chip value.",
+      "bestPassageId": "S3-P1",
+      "evidence": "Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions.",
+      "bestPassage": "Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P13"
+        "S3-P1",
+        "S3-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "proposal",
-        "introduc",
-        "question",
-        "residual",
-        "chip",
-        "value",
-        "once"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 6,
-      "claim": "Amazon’s CEO Andy Jassy has said the company still lacks enough capacity to satisfy demand even after increasing planned capital spending.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 99,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 95
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 95,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "CEO Andy Jassy said Amazon still lacks enough capacity to satisfy demand even after increasing planned capital spending.",
-      "bestPassage": "CEO Andy Jassy said Amazon still lacks enough capacity to satisfy demand even after increasing planned capital spending.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P11"
-      ],
-      "sharedTerms": [
-        "amazon",
-        "ceo",
-        "andy",
-        "jassy",
-        "the",
-        "lack",
-        "enough",
-        "capacity",
-        "satisfy",
-        "demand",
-        "rise",
-        "plann",
-        "capital",
-        "spend"
+        "nadella",
+        "key",
+        "recommendation",
+        "authoriz",
+        "person",
+        "intervene",
+        "models",
+        "perform",
+        "task",
+        "compar",
+        "mechanism",
+        "emergency",
+        "brake"
       ],
       "entityShared": [
-        "amazon",
-        "ceo",
-        "andy",
-        "jassy"
+        "nadella"
       ],
       "topicShared": [
-        "amazon",
-        "spend"
+        "nadella",
+        "models",
+        "emergency",
+        "brake"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -530,9 +495,9 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": false,
+        "claimUncertain": true,
         "evidenceAttributed": true,
-        "claimAttributed": true,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -545,56 +510,61 @@
     },
     {
       "index": 7,
-      "claim": "The financing move could signal a shift in how Amazon balances heavy AI investment with cash‑flow considerations.",
+      "claim": "He advocates for a framework centered around observability, model diversity, human oversight, continuous testing, independent controls, containment, and incident disclosure.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 62,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Microsoft CEO Satya Nadella calls for AI ‘emergency brake,’ human control over advanced models - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/microsoft-ceo-satya-nadella-calls-for-ai-emergency-brake-human-control-over-advanced-models-article-14049308.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S1",
+        "factId": "F10",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 45
+        "score": 84
       },
       "provenanceFactMatches": [
         {
-          "factId": "F16",
-          "sourceId": "S1",
+          "factId": "F10",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 45,
-          "passageIndex": 16
+          "score": 84,
+          "passageIndex": 10
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The valuation test is whether revenue and eventually free cash flow accelerate quickly enough that Amazon needs fewer financing innovations, rather than increasingly more of them.",
-      "bestPassage": "The valuation test is whether revenue and eventually free cash flow accelerate quickly enough that Amazon needs fewer financing innovations, rather than increasingly more of them.",
+      "bestPassageId": "S4-BODY",
+      "evidence": "In his latest post, Nadella advocated a framework built around observability, model diversity, human oversight, continuous testing, independent controls, containment and incident disclosure.",
+      "bestPassage": "In his latest post, Nadella advocated a framework built around observability, model diversity, human oversight, continuous testing, independent controls, containment and incident disclosure.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P16"
+        "S4-BODY",
+        "S4-P4"
       ],
       "sharedTerms": [
-        "the",
-        "financ",
-        "signal",
-        "amazon",
-        "invest",
-        "cash",
-        "flow"
+        "advocat",
+        "for",
+        "framework",
+        "observability",
+        "models",
+        "diversity",
+        "human",
+        "oversight",
+        "continuou",
+        "test",
+        "independent",
+        "control",
+        "containment",
+        "and",
+        "incident",
+        "disclosure"
       ],
-      "entityShared": [
-        "amazon"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "amazon",
-        "heavy",
-        "invest"
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -602,7 +572,7 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -616,129 +586,71 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 9,
-      "claim": "Amazon is considering an $8 billion financing of Nvidia chips to reduce its capital burden.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 88,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 62
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 62,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Amazon.com, Inc. (NASDAQ:AMZN) is reportedly considering moving roughly $8 billion of Nvidia Grace Blackwell chips into a special-purpose vehicle financed by outside investors, then leasing the hardware back.",
-      "bestPassage": "Amazon.com, Inc. (NASDAQ:AMZN) is reportedly considering moving roughly $8 billion of Nvidia Grace Blackwell chips into a special-purpose vehicle financed by outside investors, then leasing the hardware back.",
-      "matchedPassages": [
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "amazon",
-        "consider",
-        "billion",
-        "financ",
-        "nvidia",
-        "chip",
-        "its",
-        "capital"
-      ],
-      "entityShared": [
-        "amazon",
-        "nvidia"
-      ],
-      "topicShared": [
-        "amazon",
-        "billion",
-        "nvidia",
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": false,
-        "blocked": true
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 10,
-      "claim": "The plan arrives amid a $220 billion cap‑ex push and raises concerns about earnings reliability and residual chip value.",
+      "index": 8,
+      "claim": "This aligns with Microsoft's previously outlined principles for developing advanced AI models, which include guidelines to prevent AI systems from evading human control, deceiving users, or acquiring rights or legal personhood.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 62,
+      "confidence": 80,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Microsoft CEO Satya Nadella calls for AI ‘emergency brake,’ human control over advanced models - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/microsoft-ceo-satya-nadella-calls-for-ai-emergency-brake-human-control-over-advanced-models-article-14049308.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S1",
+        "factId": "F9",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 25
+        "score": 57
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
-          "sourceId": "S1",
+          "factId": "F9",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 25,
-          "passageIndex": 16
+          "score": 57,
+          "passageIndex": 9
+        },
+        {
+          "factId": "F8",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 51,
+          "passageIndex": 9
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "AWS growth and backlog currently provide the economic argument for spending $220 billion.",
-      "bestPassage": "AWS growth and backlog currently provide the economic argument for spending $220 billion.",
+      "bestPassageId": "S4-FF9,S4-FF8",
+      "evidence": "The guidelines state that such systems should not be designed to evade human control, deceive users or acquire rights or legal personhood. Microsoft had outlined principles for developing its most advanced AI models on September 14.",
+      "bestPassage": "The guidelines state that such systems should not be designed to evade human control, deceive users or acquire rights or legal personhood. Microsoft had outlined principles for developing its most advanced AI models on September 14.",
       "matchedPassages": [
-        "S1-BODY"
+        "S4-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "220",
-        "billion",
-        "and",
-        "rais",
-        "earning",
-        "residual",
-        "chip",
-        "value"
+        "microsoft",
+        "outlin",
+        "principl",
+        "for",
+        "develop",
+        "advanc",
+        "models",
+        "guidelin",
+        "system",
+        "human",
+        "control",
+        "user",
+        "acquire",
+        "right",
+        "legal",
+        "personhood"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "microsoft"
+      ],
       "topicShared": [
-        "billion",
-        "chip"
+        "microsoft",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -754,63 +666,86 @@
         "blocked": false
       },
       "factCoverage": 2,
-      "multiFactSupported": false,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 11,
-      "claim": "Investors will watch how the lease structure and investor confidence shape Amazon’s AI spending trajectory.",
+      "index": 9,
+      "claim": "Microsoft's CEO, Satya Nadella, has proposed an 'emergency brake' mechanism for advanced AI systems, allowing authorized personnel to pause or shut down models mid-task.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 77,
+      "confidence": 92,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Amazon (AMZN) Wants Investors to Finance $8 Billion of Nvidia Chips. Is AI Spending Getting Too Heavy? - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-wants-investors-finance-221126922.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 35
+        "score": 90
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
+          "score": 90,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F7",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 85,
           "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The proposed structure would make part of Amazon's enormous AI buildout more asset-light at a time when its capital spending is expected to reach $220 billion this year.",
-      "bestPassage": "The proposed structure would make part of Amazon's enormous AI buildout more asset-light at a time when its capital spending is expected to reach $220 billion this year.",
+      "bestPassageId": "S1-FF1,S4-FF7",
+      "evidence": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Microsoft CEO Satya Nadella has called for an “emergency brake” for advanced artificial intelligence systems, urging companies to assume that powerful AI models could be compromised and ensure humans can intervene or shut them down while they are performing tasks.",
+      "bestPassage": "Microsoft Chairman and CEO Satya Nadella on Saturday called for advanced artificial intelligence systems to be built with containment, independent controls and an \"emergency brake\" that lets authorized people pause or shut a model down mid-task. Microsoft CEO Satya Nadella has called for an “emergency brake” for advanced artificial intelligence systems, urging companies to assume that powerful AI models could be compromised and ensure humans can intervene or shut them down while they are performing tasks.",
       "matchedPassages": [
+        "S1-P1",
         "S1-BODY"
       ],
       "sharedTerms": [
-        "invest",
-        "the",
-        "structure",
-        "and",
-        "confidence",
-        "amazon",
-        "spend",
-        "trajectory"
+        "microsoft",
+        "ceo",
+        "satya",
+        "nadella",
+        "has",
+        "emergency",
+        "brake",
+        "for",
+        "advanc",
+        "system",
+        "authoriz",
+        "pause",
+        "shut",
+        "down",
+        "models",
+        "mid",
+        "task"
       ],
       "entityShared": [
-        "amazon"
+        "microsoft",
+        "ceo",
+        "satya",
+        "nadella"
       ],
       "topicShared": [
-        "invest",
-        "amazon",
-        "spend"
+        "microsoft",
+        "satya",
+        "nadella",
+        "emergency",
+        "brake",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -825,18 +760,165 @@
         "attributionDropped": false,
         "blocked": true
       },
-      "factCoverage": 3,
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 10,
+      "claim": "This proposal is part of a broader framework advocating for observability, human oversight, and industry standards to ensure AI safety.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 59,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft CEO Satya Nadella calls for AI ‘emergency brake,’ human control over advanced models - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/microsoft-ceo-satya-nadella-calls-for-ai-emergency-brake-human-control-over-advanced-models-article-14049308.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 44
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 44,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "In his latest post, Nadella advocated a framework built around observability, model diversity, human oversight, continuous testing, independent controls, containment and incident disclosure.",
+      "bestPassage": "In his latest post, Nadella advocated a framework built around observability, model diversity, human oversight, continuous testing, independent controls, containment and incident disclosure.",
+      "matchedPassages": [
+        "S4-BODY",
+        "S4-P4"
+      ],
+      "sharedTerms": [
+        "framework",
+        "advocat",
+        "for",
+        "observability",
+        "human",
+        "oversight",
+        "and",
+        "ensure"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "Nadella's call for action comes in response to concerns raised by prominent tech figures about the pace of AI development and the need for stronger safety protocols.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 62,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft's Nadella says AI needs an ‘emergency brake’ that humans control - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/10/microsoft-satya-nadella-ai-emergency-brake-safety.html",
+      "bestDomain": "cnbc.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 45
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 45,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 42,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF6,S1-FF4",
+      "evidence": "Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions. Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
+      "bestPassage": "Such records, he said, would help make AI systems more transparent and their actions easier to examine..Why Nadella Wants an 'Emergency Brake'.One of Nadella's key recommendations is that an authorized person must always be able to intervene when an AI model is performing a task.He called for systems that allow a human operator “to pause or shut down a model mid-task”, comparing the mechanism to an emergency brake.“We must assume a model is compromised and contain it from the start,” Nadella wrote.The proposal comes from a larger issue of implementing artificial intelligence models capable of acting instead of just answering questions. Nadella's comments come amid warnings from top tech executives and researchers — including Microsoft co-founder Bill Gates , Anthropic CEO Dario Amodei , OpenAI CEO Sam Altman and SpaceX CEO Elon Musk — about insufficient AI safety protocols and claims that the technology is moving too fast.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P4"
+      ],
+      "sharedTerms": [
+        "nadella",
+        "call",
+        "for",
+        "action",
+        "com",
+        "the",
+        "and",
+        "safety",
+        "protocol"
+      ],
+      "entityShared": [
+        "nadella"
+      ],
+      "topicShared": [
+        "nadella",
+        "need"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
     }
   ],
   "editorial": [
     {
-      "index": 8,
-      "claim": "Investors should monitor how the lease terms and residual values are structured and whether the deal materially changes Amazon’s capital allocation or earnings volatility.",
-      "type": "editorial-recommendation",
+      "index": 6,
+      "claim": "Nadella's post on October 10, 2026, highlights the need for businesses deploying advanced AI to not solely rely on assurances from model developers.",
+      "type": "editorial-analysis",
       "status": "editorial-excluded"
     }
   ]

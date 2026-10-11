@@ -328,18 +328,12 @@
       }
     },
     "Gemini": {
-      "failures": 80,
-      "quotaBlockedUntil": 0,
-      "lastStatus": 200,
-      "lastError": null,
-      "lastClass": "success",
+      "failures": 81,
+      "quotaBlockedUntil": 1791719546116,
+      "lastStatus": 503,
+      "lastError": "503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "lastClass": "server",
       "history": [
-        {
-          "at": 1791113591099,
-          "ok": false,
-          "class": "transient",
-          "status": 200
-        },
         {
           "at": 1791130313121,
           "ok": false,
@@ -479,6 +473,12 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1791719426116,
+          "ok": false,
+          "class": "server",
+          "status": 503
         }
       ],
       "lastLatencyMs": 9838,
@@ -644,19 +644,13 @@
     },
     "Cohere": {
       "failures": 143,
-      "quotaBlockedUntil": 1791632257087,
+      "quotaBlockedUntil": 0,
       "lastStatus": 200,
-      "lastError": "Invalid repair structured output",
-      "lastClass": "error",
-      "successes": 16,
-      "lastSuccessAt": "2026-10-07T22:30:44.471Z",
+      "lastError": null,
+      "lastClass": "success",
+      "successes": 17,
+      "lastSuccessAt": "2026-10-11T11:50:49.979Z",
       "history": [
-        {
-          "at": 1791084316400,
-          "ok": false,
-          "class": "error",
-          "status": 200
-        },
         {
           "at": 1791113599370,
           "ok": false,
@@ -782,22 +776,40 @@
           "ok": false,
           "class": "error",
           "status": 200
+        },
+        {
+          "at": 1791719449979,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 23490,
+          "usage": {
+            "billed_units": {
+              "input_tokens": 5073,
+              "output_tokens": 484
+            },
+            "tokens": {
+              "input_tokens": 5243,
+              "output_tokens": 485
+            },
+            "cached_tokens": 144
+          }
         }
       ],
-      "lastLatencyMs": 601,
+      "lastLatencyMs": 23490,
       "lastUsage": {
         "billed_units": {
-          "input_tokens": 974,
-          "output_tokens": 61
+          "input_tokens": 5073,
+          "output_tokens": 484
         },
         "tokens": {
-          "input_tokens": 1102,
-          "output_tokens": 64
+          "input_tokens": 5243,
+          "output_tokens": 485
         },
-        "cached_tokens": 16
+        "cached_tokens": 144
       }
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-11T02:54:05.187Z"
+  "updatedAt": "2026-10-11T11:50:49.979Z"
 }
