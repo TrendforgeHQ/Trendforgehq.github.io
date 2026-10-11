@@ -368,3 +368,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Findings and subject groups now have deterministic collection ordering independent of review input order. Subject groups sort by opaque SHA-256 fingerprint; findings sort by stable fields excluding input-relative record indices. Reviewer iteration and verdict arrays are normalized deterministically.
 - The report's source `records` array and input-relative indices are not canonicalized or rewritten. Tests check multi-subject permutation stability, original record order, retained dissent, and no automatic winner.
 - Offline CI [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610) passed **114/114**, 0 failed, 0 skipped. This is diagnostic/report-contract validation only.
+
+
+## Review-set report schema — verified
+
+- Added `BOAT/schemas/semantic-support-review-set-report.schema.json` and schema contract tests. The envelope covers source records, findings, subject groups, fingerprints, verdicts, and record indices.
+- The schema explicitly requires `aggregateVerdict: null` and `automaticAdjudication: false` for subject groups. Tests also confirm invalid-input handling and that indices resolve to caller-order records.
+- Offline CI run [38122850780](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122850780) passed **120/120**, 0 failed, 0 skipped.
