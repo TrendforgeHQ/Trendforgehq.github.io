@@ -163,3 +163,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Synthetic tests prove a valid same-run metadata bundle can pass the handoff boundary and tampering blocks it. Existing archived runs remain blocked because their original metadata lacks the fields.
 - CI [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395) passed **73/73**, 0 failed, 0 skipped, including workflow-contract tests.
 - No publishing workflow was run. The workflow edit is on PR #35 only; main remains untouched.
+
+
+
+## Pack-shape handoff guard — verified
+
+- The factual proposal engine currently looks for root-level evidencePack.sources. The recovered authoritative pack envelope stores sources under a uniquely selected candidates[] entry. Even when hashes exist, those two shapes must not be treated as interchangeable.
+- The adapter's handoff check now requires both original workflow-recorded hash metadata and a pack shape the proposal engine can consume without changing the hashed bytes. Current candidate-envelope packs remain blocked.
+- Synthetic tests cover valid matching metadata, metadata tampering, and the pack compatibility guard. Latest branch-head CI [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152) passed **73/73**, 0 failed, 0 skipped.
+- Next: teach the factual proposal engine to resolve one candidate only when proposal candidate title/link exactly match the recovered audit, with regression tests for missing/ambiguous candidate identity. Until then, keep direct handoff blocked.
