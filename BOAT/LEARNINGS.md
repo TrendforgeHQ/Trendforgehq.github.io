@@ -290,3 +290,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Keep “eligible to prepare a review input” distinct from “safe to invoke the factual proposal engine.” The latter requires original workflow-recorded hashes and same-run/workflow-SHA verification.
 - Recovery-time hashes document current recovered bytes only; they cannot retroactively prove original artifact integrity.
 - Synthetic handoff positive/negative tests passed in [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418), 73 passed, 0 failed, 0 skipped.
+
+
+
+## L-026 — Candidate envelopes need exact candidate identity at the consumer boundary
+
+- The proposal engine previously required root-level sources and could not consume the authoritative candidates[] envelope. Supporting the envelope must not mean choosing the first candidate or guessing from source ID alone.
+- It now requires exact candidateTitle and candidateLink with one unique match; missing/ambiguous identity blocks.
+- End-to-end synthetic handoff remains proposal-only and non-mutating. CI: [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), 77 passed, 0 failed, 0 skipped.
