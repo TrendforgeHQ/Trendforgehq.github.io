@@ -528,3 +528,10 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Included the root `data/claim-verification.json` snapshot in claim-level review when its canonical article path matches a published slug, labelled separately from archived attempts and without claiming exact-byte provenance.
 - Fixed a regression-test fixture that lacked the current article Markdown file; expected missing-report state is now tested independently from missing-article state. Branch-head CI pending.
+
+## 2026-10-11 — Root claim/evidence-pack lineage audit
+
+- Added an offline, read-only root snapshot audit that reports saved claim outcomes, source IDs, passage IDs, and structural resolution independently from semantic factual support.
+- Added deterministic regression coverage for empty/invalid packs, resolvable IDs, and missing source IDs; included both new paths in the offline workflow filters.
+- Repository inspection found the root claim report has 10 claims and saved `pass: true`, while `data/authoritative-evidence-pack.json` is zero bytes on both the BOAT branch and `main`. The auditor preserves this as UNKNOWN and does not synthesize evidence or change article content.
+- CI verification for these latest commits is pending; no claim is made that the new tests have passed until the workflow result is checked.
