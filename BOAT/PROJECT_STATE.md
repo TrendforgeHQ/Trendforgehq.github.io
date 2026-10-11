@@ -375,3 +375,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added `BOAT/schemas/semantic-support-review-set-report.schema.json` and schema contract tests. The envelope covers source records, findings, subject groups, fingerprints, verdicts, and record indices.
 - The schema explicitly requires `aggregateVerdict: null` and `automaticAdjudication: false` for subject groups. Tests also confirm invalid-input handling and that indices resolve to caller-order records.
 - Offline CI run [38122850780](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122850780) passed **120/120**, 0 failed, 0 skipped.
+
+
+## Structural report validation — verified
+
+- The review-set report test now performs executable schema validation of real auditor output, including invalid-input reports and malformed source identity types. Negative tests prove that extra properties, bad fingerprints, unknown finding types, and unsafe winner fields fail validation.
+- Invalid source identity values are not copied into the typed report identity fields; the record remains ineligible and validator errors are retained.
+- Offline CI [run 38123099695](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123099695) passed **123/123**, 0 failed, 0 skipped. The report remains diagnostic-only; no semantic truth or publication approval is implied.
