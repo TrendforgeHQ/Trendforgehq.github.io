@@ -500,3 +500,9 @@ All entries should describe actual work and results. Do not record planned work 
 - The static contract test verifies lineage capture ordering, non-blocking configuration, environment wiring, immutable run-scoped output, no-article no-op/fail-closed safeguards, and the existing `data/` staging/transfer path. It does not prove actual production persistence.
 - Reviewed branch divergence: five main-only commits since the merge base are generated intelligence-data refreshes; PR #35 remains draft/unmerged and main untouched. No production workflow dispatch or provider call.
 - Next: make the path-specific manifest persistence assertion more explicit and finish changed-file/conflict review before any merge recommendation.
+
+
+### Exact lineage manifest path assertions
+- Strengthened `scripts/test-boat-published-lineage-workflow.mjs` to check the explicit `data/published-lineage/` directory, run-scoped manifest filename, and generated-output transfer allowlist.
+- Initial regex escaping caused a test-only CI failure; corrected source passed BOAT Offline Tests [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) at `5e24de25e22ca77a1e399b985d2c291fbeffb2a8`.
+- No production workflow was dispatched; actual persisted manifest remains unverified. Next: final changed-file intersection review against main's generated-intelligence refresh commits.
