@@ -545,3 +545,7 @@ A live CLI test and GitHub file-content fetch misleadingly suggested the root ev
 ## 2026-10-11 — Large-file retrieval versus missing lineage
 
 **Correction:** an empty `content` field from a GitHub file-content wrapper is not proof that a large JSON blob is empty. Check commit diff statistics and retrieve the Git blob directly before diagnosing storage failure. In the Amazon/Nvidia run, the canonical pack was generated and archived; the root and archived pack blobs matched exactly. The actual gap is that the historical workflow did not persist a same-run lineage manifest containing the claim-report hash. Structural ID/URL resolution is useful traceability, not semantic proof.
+
+## 2026-10-11 — Latest verification
+
+At head `53e856e41751c44bc3f65d59ccca7ceb781740f7`, offline run [38130573836](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573836) passed 136/136 tests; Control Center QA [38130573818](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130573818) passed the production build. The live root audit resolves source IDs and URLs but keeps report/run pairing UNKNOWN without a same-run claim-report hash manifest. Do not turn structural matches into factual-support PASS.
