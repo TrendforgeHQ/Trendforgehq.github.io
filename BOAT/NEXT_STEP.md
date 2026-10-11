@@ -172,3 +172,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - The adapter's handoff check now requires both original workflow-recorded hash metadata and a pack shape the proposal engine can consume without changing the hashed bytes. Current candidate-envelope packs remain blocked.
 - Synthetic tests cover valid matching metadata, metadata tampering, and the pack compatibility guard. Latest branch-head CI [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152) passed **73/73**, 0 failed, 0 skipped.
 - Next: teach the factual proposal engine to resolve one candidate only when proposal candidate title/link exactly match the recovered audit, with regression tests for missing/ambiguous candidate identity. Until then, keep direct handoff blocked.
+
+
+
+## Proposal-engine handoff gate — verified
+
+- Hardened the recovered proposal-input adapter so the factual proposal engine is not eligible for handoff just because recovery-time hashes exist. Handoff requires original generation-time hashes, an explicit original-workflow hash marker, matching artifact bytes, and matching run/workflow-SHA metadata.
+- Added tests proving a properly hash-bound same-run fixture can pass the handoff predicate, while tampered metadata fails closed.
+- Latest branch-head offline CI [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418): **73/73 passed**, 0 failed, 0 skipped.
+- The three archived examples still cannot be handed off to the factual proposal engine because original generation-time hashes are absent. The 26 “eligible” claims are only eligible for proposal-input preparation; semantic support remains unverified.
+- Next: test a complete proposal-engine handoff using a controlled synthetic bundle, without generating factual replacement text or changing article artifacts. Keep PR draft/unmerged; no publishing/provider calls.
