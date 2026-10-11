@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.2  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Article Doctor baseline passed 17/17 in run 38111154726; Evidence Auditor and Repair Engine are committed on the BOAT branch, with their CI run in progress.
+**Status:** Article Doctor baseline passed 17/17 in run 38111154726. Evidence Auditor + Repair Engine passed 30/30 offline tests in run 38111515276 at code commit `7c422befd7f7bc5064d4e1774220a6763151f62a`; a docs-only follow-up commit is awaiting its own check.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -23,7 +23,9 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Runtime: not implemented.
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
-- Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.\n- Evidence Auditor: offline identifier/lineage checker added; requires exact artifact hashes and workflow run metadata, with synthetic fixtures. New CI validation pending at commit time.\n- Repair Engine: bounded structural repair proposal module added; can remove empty headings and exact duplicate plain-text paragraphs in a separate output file. In-place edits and overwrite are refused. New CI validation pending at commit time.
+- Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.
+- Evidence Auditor: offline identifier/lineage checker added; requires exact artifact hashes and workflow run metadata, with synthetic fixtures. New CI validation pending at commit time.
+- Repair Engine: bounded structural repair proposal module added; can remove empty headings and exact duplicate plain-text paragraphs in a separate output file. In-place edits and overwrite are refused. New CI validation pending at commit time.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.

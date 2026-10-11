@@ -2,7 +2,7 @@
 
 Roadmap items are proposals until their implementation and verification are recorded in [PROJECT_STATE.md](PROJECT_STATE.md).
 
-## Phase 0 — Foundation and baseline (current)
+## Phase 0 — Foundation and baseline (documented; PR review pending)
 - [x] Inspect repository metadata and existing Control Center/Supervisor/Self-Learning/publish workflow.
 - [x] Record current architecture limits and safety constraints.
 - [ ] Review and merge the documentation PR.

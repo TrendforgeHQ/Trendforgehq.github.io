@@ -98,3 +98,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added synthetic offline tests and a report schema; CI result is pending and is not yet claimed as passed.
 - Expanded the BOAT offline workflow to run all `scripts/test-boat-*.mjs` suites. No provider/image generation or publishing workflow was triggered.
 - Updated NEXT_STEP, PROJECT_STATE, and LEARNINGS with repair boundaries and the distinction between identifier lineage and semantic/factual support.
+
+
+## 2026-10-11 — Offline audit/repair regression result
+- GitHub Actions [run 38111515276](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111515276) passed **30/30** tests at code commit `7c422befd7f7bc5064d4e1774220a6763151f62a`: 17 Article Doctor tests and 13 Evidence Auditor/Repair Engine tests; 0 failed, 0 skipped.
+- Tests cover exact report/pack hashes, wrong run, missing source/passage IDs, URL mismatch, conflicting source metadata, protected Markdown regions, separate-output behavior, refusal of in-place edits/overwrites, and post-repair Article Doctor checks.
+- A later docs-only formatting correction is committed separately; its own CI check must be confirmed before describing the current branch head as green.

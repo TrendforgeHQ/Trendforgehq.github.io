@@ -23,11 +23,11 @@ Risk: low. Provider cost: none. Production behavior change: none.
 - Legacy/non-canonical IDs are reported as unmapped rather than guessed. Matching IDs do not prove semantic support or factual truth.
 - Synthetic fixtures are used because the archived blocked attempts do not currently provide a verified same-run evidence-pack/hash bundle. Do not claim the archived attempts passed this new auditor until that bundle exists.
 
-### Validation to complete
-1. Review CI run for the commit containing these modules.
-2. Fix any failed offline tests and re-run them.
-3. Update the PR body only with verified run results.
-4. Keep PR #35 draft/unmerged; no changes to `main`, publishing workflow, provider routing, or production gates.
+### Validation result and next task
+- **CI PASS:** [run 38111515276](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111515276), code commit `7c422befd7f7bc5064d4e1774220a6763151f62a`: **30 passed, 0 failed, 0 skipped**. This run tested the implementation commit before the subsequent docs-only formatting correction.
+- Next: add a CLI-level test for the Evidence Auditor and a synthetic same-run artifact bundle; do not claim any legacy archive is auditable until exact pack/report hashes are available.
+- Then design factual repair proposals that preserve evidence and re-run existing claim verification. Keep unsupported/contradicted claims blocked when no evidence-backed repair exists.
+- Keep PR #35 draft/unmerged; no changes to `main`, publishing workflow, provider routing, or production gates.
 
 ### Guardrails
 - No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
