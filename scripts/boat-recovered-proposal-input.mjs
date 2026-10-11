@@ -219,6 +219,11 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
     automaticApplication: false,
     semanticSupport: 'not_verified',
     replacementTextGenerated: false,
+    proposalEngineHandoff: {
+      status: 'blocked',
+      allowed: false,
+      reason: 'Original generation-time hashes are absent; recovery-time hashes cannot satisfy the factual proposal engine lineage contract.'
+    },
     limitations: [
       'This adapter emits validated inputs only; it does not author replacement text or create/apply a factual correction.',
       'Checksums are computed from recovered bytes and were not recorded by the original workflow at generation time.',
