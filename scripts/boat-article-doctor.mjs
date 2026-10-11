@@ -50,6 +50,25 @@ function sourceEvidenceFields(claim = {}) {
   };
 }
 
+function sourceCoverageFromReport(report) {
+  if (!Array.isArray(report?.claims)) {
+    return { status: 'unknown', claimCount: null, claimsWithUrl: null, claimsWithSourceId: null, claimsWithPassageIds: null, claimsWithExcerpt: null, claimsMissingAnyContext: null, note: 'No claims array was available; source-context coverage is unknown.' };
+  }
+  const claims = report.claims;
+  const hasUrl = claim => typeof claim.bestUrl === 'string' && Boolean(claim.bestUrl.trim());
+  const hasSourceId = claim => typeof claim.sourceId === 'string' && Boolean(claim.sourceId.trim());
+  const hasPassages = claim => (Array.isArray(claim.matchedPassages) && claim.matchedPassages.some(value => String(value).trim())) || Boolean(String(claim.bestPassageId ?? '').trim());
+  const hasExcerpt = claim => Boolean(String(claim.evidence || claim.bestPassage || '').trim());
+  const count = predicate => claims.filter(predicate).length;
+  return {
+    status: 'measured', claimCount: claims.length,
+    claimsWithUrl: count(hasUrl), claimsWithSourceId: count(hasSourceId),
+    claimsWithPassageIds: count(hasPassages), claimsWithExcerpt: count(hasExcerpt),
+    claimsMissingAnyContext: count(claim => !hasUrl(claim) || !hasSourceId(claim) || !hasPassages(claim) || !hasExcerpt(claim)),
+    note: 'Counts metadata present in the saved claim report only; this does not verify URL reachability or source support.'
+  };
+}
+
 export function analyzeArticle({ articleText, articlePath, report, reportPath, metadata = null, metadataPath = null, expectedWorkflowRun = null, generatedAt = '1970-01-01T00:00:00.000Z' }) {
   const actualTitle = titleFromMarkdown(articleText);
   const reportTitle = String(report?.articleTitle ?? '');
@@ -189,6 +208,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
       message: findings.length ? `Found ${findings.length} diagnostic finding(s) from saved artifacts.` : status === 'clear' ? 'No mapped warning signals were found in the supplied verifier report.' : 'The available artifacts are insufficient to determine a clean status.'
     },
     findings,
+    sourceCoverage: sourceCoverageFromReport(report),
     provenance: inputs.map(input => ({
       artifactPath: input.artifactPath, sha256: hash(input.text),
       workflowRun, workflowSha

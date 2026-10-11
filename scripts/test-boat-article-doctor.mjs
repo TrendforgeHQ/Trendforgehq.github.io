@@ -98,6 +98,19 @@ test('maps attribution, numeric mismatch, contradiction and scope warnings indep
   assert.equal(output.summary.status, 'blocked');
 });
 
+test('source coverage summary counts saved provenance fields without claiming verification', () => {
+  const fixture = loadFixture(fixtureIndex.fixtures[0]);
+  const output = analyzeArticle({
+    articleText: fixture.articleText, articlePath: fixture.articlePath, report: fixture.report,
+    reportPath: fixture.reportPath, metadata: fixture.metadata, metadataPath: fixture.metadataPath,
+    expectedWorkflowRun: fixtureIndex.fixtures[0].workflowRun, generatedAt: fixedTime
+  });
+  assert.deepEqual(output.sourceCoverage, {
+    status: 'measured', claimCount: 15, claimsWithUrl: 15, claimsWithSourceId: 15,
+    claimsWithPassageIds: 15, claimsWithExcerpt: 15, claimsMissingAnyContext: 0,
+    note: 'Counts metadata present in the saved claim report only; this does not verify URL reachability or source support.'
+  });
+});
 test('claim findings preserve source URL, source title, and passage lineage', () => {
   const fixture = loadFixture(fixtureIndex.fixtures[0]);
   const targetClaim = fixture.report.claims.find(item => item.status === 'unsupported' && item.bestUrl);
@@ -133,6 +146,7 @@ test('missing source metadata stays explicit and is never invented', () => {
   assert.deepEqual(finding.evidence[0].passageIds, []);
   assert.equal(finding.evidence[0].sourceExcerpt, null);
   assert.equal(output.summary.status, 'blocked');
+  assert.equal(output.sourceCoverage.claimsMissingAnyContext, 1);
 });
 
 test('source excerpt is capped at 500 characters', () => {
@@ -218,6 +232,8 @@ test('missing claims array is unknown and cannot be a clean pass', () => {
   });
   assert.equal(output.summary.status, 'unknown');
   assert.ok(output.findings.some(item => item.findingId === 'AD-ARTIFACT-CLAIMS-001'));
+  assert.equal(output.sourceCoverage.status, 'unknown');
+  assert.equal(output.sourceCoverage.claimCount, null);
 });
 
 test('missing article title yields unknown rather than clear', () => {
