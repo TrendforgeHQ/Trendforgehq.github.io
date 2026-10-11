@@ -351,3 +351,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 
 - First golden-test CI [run 38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) ran 113 tests with 111 pass and 2 failures. The failures were in the test expectations: the invalid safety fixture correctly produced two validation errors, and the permutation comparison accidentally treated source-order records as order-insensitive.
 - Corrected the expected error count and split the permutation assertion into a canonical summary comparison plus explicit source-order preservation checks. Revalidation is pending. No production review logic or safety gates were changed.
+
+
+## Review-set deterministic golden tests — verified (2026-10-11)
+
+- Offline CI [run 38122442789](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122442789): **113 passed, 0 failed, 0 skipped**.
+- Golden report tests passed for duplicate IDs, independent disagreement, same-reviewer disagreement/repeats, and invalid records. Permutation tests compare order-insensitive summaries and independently prove the source `records` array retains caller order and every dissenting verdict survives.
+- The initial 111/113 test-harness failure and correction are documented in the changelog/learnings. No production audit behavior or safety invariant was relaxed. This is offline contract evidence, not proof of factual truth or production readiness.
