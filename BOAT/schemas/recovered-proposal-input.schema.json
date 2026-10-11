@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Recovered Proposal-Input Manifest",
+  "type": "object",
+  "required": [
+    "schemaVersion", "engine", "mode", "status", "generatedAt", "artifact",
+    "hashes", "counts", "claims", "findings", "approvalRequired",
+    "automaticApplication", "semanticSupport", "replacementTextGenerated", "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "engine": { "const": "BOAT Recovered Proposal-Input Adapter" },
+    "mode": { "const": "offline-read-only" },
+    "status": { "enum": ["ready_with_restrictions", "no_eligible_claims", "blocked", "unknown"] },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "artifact": {
+      "type": "object",
+      "required": ["runId", "artifactId", "artifactName", "recoveryAuditStatus", "membershipVerification"],
+      "properties": {
+        "runId": { "type": ["string", "null"] },
+        "artifactId": { "type": ["string", "null"] },
+        "artifactName": { "type": ["string", "null"] },
+        "recoveryAuditStatus": { "type": "string" },
+        "membershipVerification": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "hashes": {
+      "type": "object",
+      "required": ["provenance", "recordedAtGeneration", "articleSha256", "claimReportSha256", "articleBriefSha256", "evidencePackEnvelopeSha256", "verifiedAgainstCurrentBytes"],
+      "properties": {
+        "provenance": { "const": "recovery-time-computed-checksums" },
+        "recordedAtGeneration": { "const": false },
+        "verifiedAgainstCurrentBytes": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "counts": {
+      "type": "object",
+      "required": ["totalClaims", "eligible", "blocked", "unknown"],
+      "properties": {
+        "totalClaims": { "type": "integer", "minimum": 0 },
+        "eligible": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 },
+        "unknown": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "claims": { "type": "array", "items": { "type": "object" } },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "approvalRequired": { "const": true },
+    "automaticApplication": { "const": false },
+    "semanticSupport": { "const": "not_verified" },
+    "replacementTextGenerated": { "const": false },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
