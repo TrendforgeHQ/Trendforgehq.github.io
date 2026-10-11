@@ -256,3 +256,19 @@ test('read-only eligibility report summarizes per-claim reasons across all archi
   assert.ok(third.claims.filter(claim => claim.status === 'blocked').every(claim => claim.reasonCodes.includes('BPI-CLAIM-NOT-IN-ARTICLE')));
   assert.ok(report.runs.flatMap(run => run.claims).filter(claim => claim.status === 'ready_for_human_proposal').every(claim => claim.passageId && claim.sourceId));
 });
+
+
+test('eligibility report CLI emits parseable JSON to stdout without writing report files', () => {
+  const cli = path.join(root, 'scripts/boat-recovered-proposal-review-report.mjs');
+  const result = spawnSync(process.execPath, [cli], { encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+  const report = JSON.parse(result.stdout);
+  assert.equal(report.engine, 'BOAT Recovered Proposal Eligibility Report');
+  assert.equal(report.summary.claims, 40);
+  assert.equal(report.summary.eligible, 26);
+  assert.equal(report.summary.blocked, 3);
+  assert.equal(report.summary.unknown, 11);
+  assert.equal(report.summary.automaticApplication, false);
+  assert.equal(report.summary.semanticSupport, 'not_verified');
+  assert.equal(fs.existsSync(path.join(root, 'boat-recovered-proposal-review-report.json')), false);
+});
