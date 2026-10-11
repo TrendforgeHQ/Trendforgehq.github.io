@@ -17,7 +17,7 @@ const titleOfMarkdown = raw => {
 };
 const readIfExists = file => fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
 
-export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, articleRaw = null, attemptRecords = [] }) {
+export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, articleRaw = null, attemptRecords = [], lineageManifests = [] }) {
   const reportParsed = typeof reportRaw === 'string' ? parse(reportRaw) : { value: null, valid: false };
   const packPresent = typeof packRaw === 'string';
   const packParsed = packPresent && packRaw.length > 0 ? parse(packRaw) : { value: null, valid: false };
@@ -46,9 +46,22 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       && sha256(item.packRaw) === sha256(packRaw);
   }) ?? null;
   const archivedArticleBytesMatchCurrent = Boolean(archiveMatch && typeof archiveMatch.articleRaw === 'string' && typeof articleRaw === 'string' && sha256(archiveMatch.articleRaw) === sha256(articleRaw));
-  // The archived article and pack are run-bound, but no claim-report hash is present in that archive metadata.
-  const packArticleRunBindingProven = Boolean(archiveMatch);
-  const reportRunBindingProven = false;
+  const currentHashes = {
+    articleSha256: typeof articleRaw === 'string' ? sha256(articleRaw) : null,
+    claimReportSha256: typeof reportRaw === 'string' ? sha256(reportRaw) : null,
+    evidencePackSha256: typeof packRaw === 'string' ? sha256(packRaw) : null,
+    articleBriefSha256: typeof briefRaw === 'string' ? sha256(briefRaw) : null
+  };
+  const manifestMatch = lineageManifests.find(manifest => Array.isArray(manifest?.records)
+    && manifest.records.some(record => text(record?.articlePath).replace(/^\\.\\//, '') === articlePath
+      && record?.hashes?.articleSha256 === currentHashes.articleSha256
+      && record?.hashes?.claimReportSha256 === currentHashes.claimReportSha256
+      && record?.hashes?.evidencePackSha256 === currentHashes.evidencePackSha256
+      && record?.hashes?.articleBriefSha256 === currentHashes.articleBriefSha256
+      && text(manifest.workflowRun) !== '' && /^[0-9]+$/.test(text(manifest.workflowRun))));
+  // The attempt archive binds the pack to a run; only an exact manifest hash match binds the report too.
+  const packArticleRunBindingProven = Boolean(archiveMatch || manifestMatch);
+  const reportRunBindingProven = Boolean(manifestMatch);
   const rows = claims.map((claim, i) => {
     const sourceId = text(claim?.sourceId ?? claim?.coreFactMatch?.sourceId);
     const ids = [
@@ -123,8 +136,9 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       articleTitle: articleTitle || null,
       articleTitleMatchesClaimReport: Boolean(articleTitle && text(report?.articleTitle) === articleTitle),
       packArticleRunBindingProven,
-      matchedWorkflowRun: archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
-      matchedWorkflowSha: archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
+      matchedWorkflowRun: manifestMatch ? text(manifestMatch.workflowRun) : archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
+      matchedWorkflowSha: manifestMatch ? text(manifestMatch.workflowSha) : archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
+      matchedLineageManifest: Boolean(manifestMatch),
       archivedArticleBytesMatchCurrent,
       archivedPackBytesMatchCurrent: packArticleRunBindingProven,
       reportRunBindingProven,
@@ -142,7 +156,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     },
     claims: rows,
     limitations: [
-      'The archived metadata binds the exact article and evidence-pack bytes to a workflow run, but it does not contain the claim-report hash; report-to-run pairing remains UNKNOWN.',
+      'Attempt metadata binds the archived evidence pack to a workflow run; only a lineage manifest with matching article, report, pack, and brief hashes proves report-to-run pairing.',
       'Source/passage/fact identifiers and URLs are structural traceability only; they do not prove semantic support or source freshness.',
       'No source URLs are fetched, no model/provider is called, and no article or publication state is changed.'
     ]
@@ -161,6 +175,12 @@ function main() {
     ? readIfExists(path.join(root, articlePath)) : null;
   const attemptsDir = path.join(dataDir, 'article-attempts');
   const attemptRecords = [];
+  const lineageDir = path.join(dataDir, 'published-lineage');
+  const lineageManifests = [];
+  if (fs.existsSync(lineageDir)) for (const file of fs.readdirSync(lineageDir).filter(name => /^manifest-[0-9]+\\.json$/.test(name))) {
+    const manifest = parse(readIfExists(path.join(lineageDir, file)) ?? '').value;
+    if (manifest) lineageManifests.push(manifest);
+  }
   if (fs.existsSync(attemptsDir)) for (const dir of fs.readdirSync(attemptsDir, { withFileTypes: true }).filter(x => x.isDirectory())) {
     const base = path.join(attemptsDir, dir.name);
     const metadataRaw = readIfExists(path.join(base, 'metadata.json'));
@@ -172,6 +192,6 @@ function main() {
       packRaw: readIfExists(path.join(base, 'authoritative-evidence-pack.json'))
     });
   }
-  process.stdout.write(JSON.stringify(auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords }), null, 2) + String.fromCharCode(10));
+  process.stdout.write(JSON.stringify(auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests }), null, 2) + String.fromCharCode(10));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) main();
