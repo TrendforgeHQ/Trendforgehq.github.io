@@ -374,3 +374,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - A review-set report schema should describe both the normal audit and invalid-input envelope, preserve caller-order record indices, and list all diagnostic finding types without implying a truth verdict.
 - Lock `aggregateVerdict` to null and `automaticAdjudication` to false in subject groups. Schema contract tests passed in offline CI run 38122850780: 120/120, 0 failures, 0 skips.
+
+
+## L-051 — Validate emitted reports, not only schema declarations
+
+- Property-presence checks are insufficient. Validate generated output structurally and test invalid types, required fields, enums, patterns, extra fields, and fixed safety constants.
+- Malformed source identity types should not leak into typed report fields; keep the record ineligible and retain validation errors. CI run 38123099695 passed 123/123 tests, no failures or skips.
