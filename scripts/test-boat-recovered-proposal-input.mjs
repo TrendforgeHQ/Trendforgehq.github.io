@@ -91,6 +91,27 @@ test('proposal engine handoff is allowed only with matching original hashes boun
   assert.equal(result.proposalEngineHandoff.checks.proposalEnginePackCompatible, true);
 });
 
+test('proposal handoff rejects non-blocked metadata even when hashes and run identity match', () => {
+  const f = syntheticFixture();
+  const pack = JSON.parse(f.evidencePackRaw);
+  delete pack.sources;
+  f.evidencePackRaw = JSON.stringify(pack);
+  const metadata = JSON.parse(f.blockedMetadataRaw);
+  metadata.status = 'generated-pending-verification';
+  metadata.hashesRecordedInWorkflow = true;
+  metadata.articleSha256 = sha256(f.articleRaw);
+  metadata.claimReportSha256 = sha256(f.claimReportRaw);
+  metadata.evidencePackSha256 = sha256(f.evidencePackRaw);
+  f.blockedMetadataRaw = JSON.stringify(metadata);
+  f.recoveryAudit = auditRecoveredRunArtifacts(f);
+  const result = adapt(f);
+  assert.equal(result.proposalEngineHandoff.checks.metadataBytesMatch, true);
+  assert.equal(result.proposalEngineHandoff.checks.hashesRecordedInWorkflow, true);
+  assert.equal(result.proposalEngineHandoff.checks.artifactHashesMatch, true);
+  assert.equal(result.proposalEngineHandoff.allowed, false);
+  assert.equal(result.proposalEngineHandoff.status, 'blocked');
+});
+
 test('validated candidate-envelope inputs reach proposal-only engine without applying changes', () => {
   const f = syntheticFixture();
   const pack = JSON.parse(f.evidencePackRaw);
