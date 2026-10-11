@@ -16,14 +16,16 @@ const sha256 = value => createHash('sha256').update(value).digest('hex');
 function syntheticFixture() {
   const articleRaw = '---\ntitle: "Recovered Article"\n---\n\nA verified fixture claim is stated here.\n';
   const articleBriefRaw = JSON.stringify({ brief: { title: 'Canonical Source Story - Publisher' } });
-  const evidencePackRaw = JSON.stringify({
+  const evidencePack = {
     version: 1, status: 'authoritative',
     candidates: [{
       version: 1, status: 'authoritative',
       candidate: { title: 'Canonical Source Story - Publisher', link: 'https://example.com/story' },
       sources: [{ id: 'S1', url: 'https://example.com/source-1', title: 'Source One', passages: ['The source passage supports the fixture claim.'] }]
     }]
-  });
+  };
+  evidencePack.sources = evidencePack.candidates[0].sources;
+  const evidencePackRaw = JSON.stringify(evidencePack);
   const claimReportRaw = JSON.stringify({
     articleTitle: 'Recovered Article', articlePath: 'content/articles/recovered-article.md',
     sources: [{ id: 'S1', url: 'https://example.com/source-1' }],
