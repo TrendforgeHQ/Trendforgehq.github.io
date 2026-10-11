@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import './control-center.css';
-import { auditPublishedCatalogue } from '../../scripts/boat-published-catalogue-audit.mjs';
+import { auditPublishedCatalogue, auditPublishedEvidenceCoverage } from '../../scripts/boat-published-catalogue-audit.mjs';
 import { articles as publishedArticles } from '../../lib/articles';
 
 export const dynamic = 'force-static';
@@ -47,6 +47,13 @@ const catalogueMissingSources = publishedCatalogue.filter((article) => !article.
 const catalogueEmptyHeadings = publishedCatalogue.reduce((sum, article) => sum + article.emptyHeadings, 0);
 const catalogueRepeatedParagraphs = publishedCatalogue.reduce((sum, article) => sum + article.repeatedParagraphs, 0);
 
+const publishedEvidenceCoverage = auditPublishedEvidenceCoverage(publishedArticles, path.join(process.cwd(), 'data', 'article-attempts'));
+const evidenceCoverageWithReports = publishedEvidenceCoverage.filter((article) => article.reportCount > 0);
+const evidenceCoverageUnknown = publishedEvidenceCoverage.filter((article) => article.status === 'unknown').length;
+const evidenceCoverageBlocked = publishedEvidenceCoverage.filter((article) => article.status === 'historical-block' || article.status === 'conflicting-history').length;
+const evidenceCoverageHistoricalPass = publishedEvidenceCoverage.filter((article) => article.status === 'historical-pass').length;
+const evidenceCoverageUnsupported = publishedEvidenceCoverage.reduce((sum, article) => sum + (article.unsupported ?? 0), 0);
+
 function Card({label, value, help}: {label:string; value:any; help:string}) {
   return <div className="cc-card"><div className="cc-label">{label}</div><div className="cc-value">{fmt(value)}</div><div className="cc-help">{help}</div></div>;
 }
@@ -81,6 +88,21 @@ export default function ControlCenterPage() {
       {publishedCatalogue.length ? <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Article</th><th>Words</th><th>Links</th><th>Structural findings</th></tr></thead><tbody>
         {publishedCatalogue.slice(0, 20).map((article) => <tr key={article.slug}><td><strong>{article.title}</strong><small>{article.slug}</small></td><td>{article.words}</td><td>{article.urls}</td><td>{article.findings.length ? article.findings.join(' • ') : 'No structural flags detected'}</td></tr>)}
       </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} published articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No published articles were available in the canonical article index during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
+    </Section>
+
+
+    <Section eyebrow="BOAT • HISTORICAL EVIDENCE" title="Published articles: claim-report coverage" help="Matches archived claim-verification reports to published article paths. This shows historical workflow records only; it does not prove the saved report belongs to the exact bytes currently published.">
+      <div className="cc-catalogue-note"><strong>Lineage warning</strong><p>Archived reports are matched by articlePath. The published article index does not carry the archived article SHA-256, claim-report hash, and evidence-pack hash needed to prove exact version lineage. A historical PASS is therefore not current verification. Missing reports remain unknown, and conflicting historical outcomes are shown rather than selecting a winner.</p><small>Read-only build-time snapshot • {publishedEvidenceCoverage.length} published article(s) checked against archived attempts</small></div>
+      <div className="cc-catalogue-stats">
+        <div><b>{evidenceCoverageWithReports.length}</b><span>With archived claim reports</span></div>
+        <div><b>{evidenceCoverageHistoricalPass}</b><span>Historical PASS only</span></div>
+        <div><b>{evidenceCoverageBlocked}</b><span>Historical block / conflicting history</span></div>
+        <div><b>{evidenceCoverageUnknown}</b><span>Unknown / no report</span></div>
+      </div>
+      <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Published article</th><th>Archive reports</th><th>Historical outcome</th><th>Claim counts across archived attempts</th></tr></thead><tbody>
+        {publishedEvidenceCoverage.slice(0, 20).map((article) => <tr key={article.slug}><td><strong>{article.title}</strong><small>{article.slug}</small></td><td>{article.reportCount}{article.evidencePackReports ? <small>{article.evidencePackReports} with evidence-pack file</small> : null}</td><td>{article.status === 'historical-pass' ? 'Historical PASS (not current)' : article.status === 'historical-block' ? 'Historical block' : article.status === 'conflicting-history' ? 'Conflicting outcomes' : 'UNKNOWN — no matched report'}<small>{article.passReports} pass • {article.blockedReports} blocked • {article.unknownReports} unknown</small></td><td>{article.claimCount === null ? '—' : `${article.claimCount} total claim records`}<small>{article.unsupported === null ? 'Unsupported: unknown' : `Unsupported records: ${article.unsupported}`}</small></td></tr>)}
+      </tbody></table>{publishedEvidenceCoverage.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedEvidenceCoverage.length} articles, ordered by conflicting history, historical blocks, and unknown coverage first.</p>}</div>
+      <p className="cc-catalogue-more">Unsupported claim records across matched historical attempts: {evidenceCoverageUnsupported}. Attempts may repeat the same claims; this is not a count of unique currently published unsupported claims.</p>
     </Section>
 
     <Section eyebrow="01 • OVERVIEW" title="Today at a glance" help="The latest recorded publishing run, translated into plain language.">
