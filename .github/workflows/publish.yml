@@ -183,6 +183,13 @@ jobs:
           else
             echo "Claim verification: PASS — a bounded claim-verification attempt completed successfully (initial=${{ steps.claim_verification.outcome }} reverify1=${{ steps.claim_reverification_1.outcome }} final=${{ steps.claim_verification_final.outcome }})."
           fi
+      - name: Bind final claim report to exact attempt bytes
+        if: always() && !cancelled()
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/boat-bind-attempt-lineage.mjs
       - name: Upload article attempt diagnostics
         if: ${{ !cancelled() }}
         continue-on-error: true
