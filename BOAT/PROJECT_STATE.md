@@ -255,3 +255,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added BOAT/schemas/recovered-proposal-eligibility-report.schema.json and tests for the report's required fields and fail-closed guardrails.
 - Schema requires per-run and per-claim status/reason codes, records hashes as recovery-time only, and fixes semanticSupport to not_verified and automaticApplication to false.
 - Validation is pending branch-head CI inspection.
+
+
+
+## Eligibility report schema — verified (2026-10-11)
+
+- Schema contract tests passed in [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348): **70 passed, 0 failed, 0 skipped**.
+- The report contract preserves review-only semantics and explicit provenance caveats.
+- Verified current report counts: 40 total claims, 26 eligible, 3 blocked, 11 unknown. The counts reflect traceability and passage mapping only.
