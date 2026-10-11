@@ -409,3 +409,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - The final offline suite run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed 127/127 tests with no failures or skips. This proves the current offline regression suite passes; it does not prove article claims are semantically true or publication is safe for every future run.
 - Review the quarantine hash-recording patch separately from running it: the workflow records all-three-artifact hash provenance only when the article, claim report, and evidence pack are present, then removes the blocked article from the publication set. No production publishing workflow was run.
+
+## L-057 — Foundation tests are not product completion
+
+- Passing offline schemas and validators proves those contracts, not that a user can chat with BOAT, audit every published article, browse public sources, approve changes, or observe learning outcomes.
+- Track progress against end-user acceptance criteria and a working vertical slice, not only the number of validation modules or passing tests.
+- When foundation work starts to crowd out product capabilities, stop adding adjacent validators and build the smallest safe end-to-end user workflow next.
