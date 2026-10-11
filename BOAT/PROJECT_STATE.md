@@ -337,3 +337,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added an end-to-end synthetic handoff test from recovered input adapter to factual proposal engine. It reaches review_required only, keeps semantic support unverified, requires approval, disables automatic application, and leaves article bytes untouched.
 - CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568): **77 passed, 0 failed, 0 skipped**.
 - Existing three archived runs remain handoff-blocked because the saved original metadata lacks hash fields. This does not retroactively upgrade them.
+
+
+## Review-set deterministic golden tests (2026-10-11; CI pending)
+
+- Added `scripts/fixtures/boat-semantic-support-review-set-fixtures.mjs` with synthetic cases for duplicate IDs, independent reviewer disagreement, same-reviewer disagreement, and invalid-record exclusion.
+- Added `scripts/test-boat-semantic-support-review-set-golden.mjs` with expected report projections, input-permutation stability checks, source-order preservation checks, dissent retention, and no-winner assertions.
+- Golden projection normalizes only order-insensitive summaries; source `records` order remains exactly as supplied, and all verdicts remain preserved. This is deterministic audit/reporting only, not semantic truth validation.
+- Added the fixture and test paths to `.github/workflows/boat-offline-tests.yml`. Branch-head CI result is pending inspection. No provider/publishing run; main untouched; PR #35 remains draft/unmerged.
