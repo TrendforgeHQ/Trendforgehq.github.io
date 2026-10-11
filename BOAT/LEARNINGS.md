@@ -300,3 +300,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The proposal engine previously required root-level sources and could not consume the authoritative candidates[] envelope. Supporting the envelope must not mean choosing the first candidate or guessing from source ID alone.
 - It now requires exact candidateTitle and candidateLink with one unique match; missing/ambiguous identity blocks.
 - End-to-end synthetic handoff remains proposal-only and non-mutating. CI: [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), 77 passed, 0 failed, 0 skipped.
+
+
+## L-042 — A provenance-completeness marker must reflect the actual bundle
+
+- **Observed:** The quarantine workflow previously wrote `hashesRecordedInWorkflow: true` even if the claim report or canonical evidence pack was missing, leaving an empty hash value. The adapter failed closed, but the metadata marker overstated completeness.
+- **Decision:** Default the marker to `false`; set it to `true` only when article, report, and evidence-pack hashes are all non-empty. Keep downstream byte/hash/run/SHA checks mandatory.
+- **Validation:** Offline contract test [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875) passed 77/77, 0 failed, 0 skipped. Publishing was not run.
