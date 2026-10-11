@@ -1,5 +1,11 @@
+export type PublishedCatalogueArticleInput = {
+  slug?: string;
+  title?: string;
+  content?: string[];
+  sources?: Array<{ title?: string; url?: string }>;
+};
 export type PublishedCatalogueArticle = {
-  file: string;
+  slug: string;
   title: string;
   words: number;
   urls: number;
@@ -8,4 +14,4 @@ export type PublishedCatalogueArticle = {
   repeatedParagraphs: number;
   findings: string[];
 };
-export function auditPublishedCatalogue(articleDirectory: string): PublishedCatalogueArticle[];
+export function auditPublishedCatalogue(articles: PublishedCatalogueArticleInput[] | unknown): PublishedCatalogueArticle[];
