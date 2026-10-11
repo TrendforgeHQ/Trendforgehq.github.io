@@ -435,3 +435,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 - The canonical article-index fix was verified by CI: 128/128 offline tests and 33/33 Control Center checks passed in [run 38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855); the production build compiled successfully in [run 38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938).
+
+
+### L-059 — Historical claim report coverage is not current-version verification
+
+- Path matching can reveal which published articles have archived claim-verification history, but it cannot prove that the report belongs to the exact bytes currently published.
+- Keep historical PASS, historical block, conflicting history, and unknown as separate states; never select a winner from conflicting attempts or call missing data clean.
+- Exact current audit requires a publish-time manifest with article SHA-256, claim-report SHA-256, evidence-pack SHA-256, workflow run/SHA, and a verifiable binding to the published slug. Tests/build passed in runs [38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) and [38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739).
