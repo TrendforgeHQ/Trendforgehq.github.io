@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Factual Repair Proposal baseline passed **39/39** in [run 38112892985](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112892985). Read-only pipeline artifact adapter and schema-contract tests are implemented on the branch; their CI result is pending.
+**Status:** Factual Repair Proposal baseline passed **39/39** in [run 38112892985](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112892985). Read-only pipeline artifact adapter and schema-contract tests passed **44/44** in [run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567), 0 failed, 0 skipped.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -28,7 +28,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused.
 - Factual Repair Proposal: offline module binds a proposed replacement to exact article/report/evidence-pack hashes, workflow run, claim/source/passage lineage and target text. Never applies changes; outputs review-required or blocked/unknown. CI pending.
 - Factual Repair Proposal: offline proposal-only module binds a proposed replacement to article/report/evidence-pack hashes, run ID, claim/source/passage lineage, and target text. It cannot apply changes; output is always review-required or blocked/unknown. Previous branch-head CI passed 39/39.
-- Pipeline Artifact Adapter: added `scripts/boat-artifact-adapter.mjs` to preserve actual saved claim-report fields and legacy passage IDs, trust only recorded hashes, and fail closed when canonical evidence-pack lineage is absent. Added `scripts/test-boat-artifact-adapter.mjs` for adapter behavior and proposal schema-contract checks; latest CI is pending.
+- Pipeline Artifact Adapter: added `scripts/boat-artifact-adapter.mjs` to preserve actual saved claim-report fields and legacy passage IDs, trust only recorded hashes, and fail closed when canonical evidence-pack lineage is absent. Added `scripts/test-boat-artifact-adapter.mjs` for adapter behavior and proposal schema-contract checks; branch-head CI passed 44/44 in run 38114116567.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
