@@ -2,9 +2,18 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
 const workflow = fs.readFileSync('.github/workflows/publish.yml', 'utf8');
+const binderStep = workflow.indexOf('name: Bind final claim report to exact attempt bytes');
+const uploadStep = workflow.indexOf('name: Upload article attempt diagnostics');
 const writerStep = workflow.indexOf('name: Capture published article lineage (diagnostic, non-blocking)');
 const buildStep = workflow.indexOf('name: Build site', writerStep);
 const outputCommitStep = workflow.indexOf('name: Commit pipeline output', buildStep);
+assert.ok(binderStep >= 0, 'publish workflow must bind final report bytes to the run archive');
+assert.ok(uploadStep > binderStep, 'finalized attempt bundle must be created before attempt diagnostics are uploaded');
+const binderBlock = workflow.slice(binderStep, uploadStep);
+assert.match(binderBlock, /continue-on-error:\\s*true/, 'attempt lineage binding must not add a new publication gate');
+assert.match(binderBlock, /GITHUB_RUN_ID:\\s*\\$\\{\\{ github\\.run_id \\}\\}/);
+assert.match(binderBlock, /GITHUB_SHA:\\s*\\$\\{\\{ github\\.sha \\}\\}/);
+assert.match(binderBlock, /node scripts\\/boat-bind-attempt-lineage\\.mjs/);
 assert.ok(writerStep >= 0, 'publish workflow must include lineage capture');
 assert.ok(buildStep > writerStep, 'lineage capture must happen before site build');
 assert.ok(outputCommitStep > buildStep, 'lineage output must be committed after build');
