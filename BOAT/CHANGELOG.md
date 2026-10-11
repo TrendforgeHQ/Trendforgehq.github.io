@@ -547,7 +547,7 @@ All entries should describe actual work and results. Do not record planned work 
 ## 2026-10-11 — Isolated root lineage CLI regression
 
 - Added `BOAT_AUDIT_ROOT` to run the read-only audit against an isolated fixture root.
-- Replaced assertions tied to the checked-in mutable root pack (previously expected 24 candidates despite the tracked file being empty) with deterministic synthetic CLI coverage.
+- Replaced assertions tied to mutable repository root data with deterministic synthetic CLI coverage through `BOAT_AUDIT_ROOT`; the prior empty-file reading was a tool-response limitation, not the actual pack contents. Added a separate read-only live-audit step so current candidate/source/passage diagnostics are visible in CI.
 - Aligned candidate selection and fact-anchor resolution with the real canonical envelope: `candidates[]`, `evidenceBrief.relevantPassages`, and `storyFactMap.coreFacts`.
 - Exact report/run binding remains UNKNOWN because metadata does not currently bind the claim-report hash. CI for the latest changes is pending.
 
