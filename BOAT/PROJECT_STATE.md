@@ -3,11 +3,11 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Current verified status:** Candidate-envelope proposal-engine handoff regression passed **77/77** in [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), 0 failed, 0 skipped. This is an offline regression result, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes.
+**Current verified status:** Candidate-envelope proposal-engine and quarantine-hash metadata regression passed **77/77** in [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875), 0 failed, 0 skipped. This is offline validation only, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes. The quarantine metadata now marks workflow-recorded hashes `true` only when all three artifact hashes are present.
 
 ## Current boundary and next task
 - The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
-- Next: statically validate the publish quarantine-hash workflow contract and fail-closed missing-artifact cases without running publishing or invoking providers.
+- Next: define an offline human-review benchmark contract for claim-to-passage semantic support. Until reviewer decisions exist, keep semantic support `not_verified`; do not invoke providers or run publishing.
 - Historical validation entries in this file are retained as dated records; the current status above takes precedence where old pending/count summaries conflict.
 
 ## Mission
