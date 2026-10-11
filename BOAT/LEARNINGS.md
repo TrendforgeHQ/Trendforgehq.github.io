@@ -415,3 +415,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Passing offline schemas and validators proves those contracts, not that a user can chat with BOAT, audit every published article, browse public sources, approve changes, or observe learning outcomes.
 - Track progress against end-user acceptance criteria and a working vertical slice, not only the number of validation modules or passing tests.
 - When foundation work starts to crowd out product capabilities, stop adding adjacent validators and build the smallest safe end-to-end user workflow next.
+
+
+## L-058 — A useful Control Center slice must show real data and its limits
+
+- Static-export constraints make browser-only privileged actions inappropriate; do not label a mock chat as a working BOAT runtime.
+- A build-time article inventory is a concrete first user-facing capability if the UI clearly distinguishes structural signals from semantic claim verification and calls out missing inputs as unknown.
+- Keep scanner behavior deterministic and read-only, test it with synthetic clean/flagged articles, and make changes to the offline workflow path filters so tests actually trigger. CI/build verification remains pending until the branch result is inspected.
