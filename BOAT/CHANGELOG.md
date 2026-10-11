@@ -288,3 +288,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Factual proposal engine now resolves canonical candidates[] packs only when proposal candidate title/link match exactly one candidate. Missing or duplicate identity fails closed.
 - Added end-to-end adapter-to-proposal-engine regression; output remains review_required, human approval required, automatic application false, semantic support not verified, and article unchanged.
 - CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped.
+
+
+## 2026-10-11 — BOAT project-memory reconciliation
+
+- Updated `NEXT_STEP.md` so the current task reflects the verified candidate-envelope handoff baseline and the next safe, offline workflow-contract audit; retained the earlier recovery work as historical implementation record.
+- Updated `PROJECT_STATE.md` to lead with the latest **77/77** branch-head offline result, current proposal-only safety boundary, archived-attempt limitation, and next task. Removed duplicate stale factual-proposal summary text.
+- Renumbered learning headings uniquely in document order without removing learning content; added a note explaining that old `pending` labels are historical point-in-time records.
+- Validation baseline referenced: [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), **77/77 passed**, 0 failed, 0 skipped. Documentation-change CI result is to be checked after this commit. No provider or publishing workflow was run; PR #35 remains draft/unmerged and `main` untouched.
