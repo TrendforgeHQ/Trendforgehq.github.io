@@ -73,3 +73,5 @@ jobs:
           package-manager-cache: false
       - name: Run offline BOAT regression tests
         run: node --test scripts/test-boat-*.mjs && node scripts/test-control-center.mjs
+      - name: Run read-only published root lineage audit
+        run: node scripts/boat-root-claim-lineage-audit.mjs
