@@ -225,3 +225,17 @@ test('structural validator rejects missing required fields and unknown finding t
   assert.ok(errors.some(error => error.includes('findings[0].message: required')));
   assert.ok(errors.some(error => error.includes('findings[0].type: enum mismatch')));
 });
+
+test('malformed source identity types are reported as invalid without corrupting report envelope', () => {
+  const bad = structuredClone(reviewSetFixtures.invalidRecord[0]);
+  bad.reviewId = 42;
+  bad.reviewer.reviewerId = { unexpected: true };
+  bad.assessment.verdict = 'automatic_approval';
+  const report = auditReviewSet([bad]);
+  assert.equal(report.valid, false);
+  assert.equal(report.records[0].reviewId, null);
+  assert.equal(report.records[0].reviewerId, null);
+  assert.equal(report.records[0].verdict, null);
+  assert.ok(report.records[0].errors.length > 0);
+  assert.deepEqual(schemaErrors(report, schema), []);
+});
