@@ -278,3 +278,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 
 
 **Verification update:** Branch-head offline CI [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed **124/124**, 0 failed, 0 skipped on head `48dd22c7a2e7b00e2ddbb52f98b5294112658db6`. The new non-blocked-metadata regression passed. Continue the remaining full-diff review; keep PR #35 draft/unmerged and production workflows untouched.
+
+
+## Second safety-review pass — recovery state and source URI hardening (2026-10-11)
+
+- Reviewed the artifact-recovery audit, recovered proposal adapter, factual-proposal boundary, semantic-review validator, review-set report logic, CLI output boundaries, and publishing quarantine path.
+- Found and fixed a recovery-state validation gap: the recovery audit now blocks unless the blocked metadata status is exactly `claim-verification-blocked` and generated-attempt metadata status is exactly `generated-pending-verification`. Added separate negative tests for both mismatches. CI [run 38123747483](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123747483) passed **126/126**, 0 failures, 0 skips.
+- Found and fixed a source-URL scheme validation gap: the semantic-review validator previously accepted any absolute URI scheme. Review source URLs are now restricted to HTTP/HTTPS; tests reject `javascript:`, `file:`, and `ftp:`. CI [run 38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630) passed **127/127**, 0 failures, 0 skips.
+- These are input-validation/defense-in-depth fixes. They do not establish semantic truth, do not change publication eligibility, and do not bypass or weaken any existing gate.
+- Remaining review focus: verify final branch-head CI after records are updated and complete a final diff/status check. PR #35 remains draft/unmerged; no providers or publishing workflows run.
