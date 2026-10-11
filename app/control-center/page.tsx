@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import './control-center.css';
-import { auditPublishedCatalogue, auditPublishedEvidenceCoverage } from '../../scripts/boat-published-catalogue-audit.mjs';
+import { auditPublishedCatalogue, auditPublishedEvidenceCoverage, auditPublishedLineageCoverage } from '../../scripts/boat-published-catalogue-audit.mjs';
 import { articles as publishedArticles } from '../../lib/articles';
 
 export const dynamic = 'force-static';
@@ -54,6 +54,16 @@ const evidenceCoverageBlocked = publishedEvidenceCoverage.filter((article) => ar
 const evidenceCoverageHistoricalPass = publishedEvidenceCoverage.filter((article) => article.status === 'historical-pass').length;
 const evidenceCoverageUnsupported = publishedEvidenceCoverage.reduce((sum, article) => sum + (article.unsupported ?? 0), 0);
 
+const publishedLineageCoverage = auditPublishedLineageCoverage(
+  publishedArticles,
+  path.join(process.cwd(), 'content', 'articles'),
+  path.join(process.cwd(), 'data', 'published-lineage'),
+);
+const lineageCurrent = publishedLineageCoverage.filter((article) => article.status === 'current-byte-match').length;
+const lineageStale = publishedLineageCoverage.filter((article) => article.status === 'stale-manifest').length;
+const lineageUnknown = publishedLineageCoverage.filter((article) => article.status === 'unknown').length;
+const lineageWithManifest = publishedLineageCoverage.filter((article) => article.manifestRecords > 0).length;
+
 function Card({label, value, help}: {label:string; value:any; help:string}) {
   return <div className="cc-card"><div className="cc-label">{label}</div><div className="cc-value">{fmt(value)}</div><div className="cc-help">{help}</div></div>;
 }
@@ -103,6 +113,19 @@ export default function ControlCenterPage() {
         {publishedEvidenceCoverage.slice(0, 20).map((article) => <tr key={article.slug}><td><strong>{article.title}</strong><small>{article.slug}</small></td><td>{article.reportCount}{article.evidencePackReports ? <small>{article.evidencePackReports} with evidence-pack file</small> : null}</td><td>{article.status === 'historical-pass' ? 'Historical PASS (not current)' : article.status === 'historical-block' ? 'Historical block' : article.status === 'conflicting-history' ? 'Conflicting outcomes' : 'UNKNOWN — no matched report'}<small>{article.passReports} pass • {article.blockedReports} blocked • {article.unknownReports} unknown</small></td><td>{article.claimCount === null ? '—' : `${article.claimCount} total claim records`}<small>{article.unsupported === null ? 'Unsupported: unknown' : `Unsupported records: ${article.unsupported}`}</small></td></tr>)}
       </tbody></table>{publishedEvidenceCoverage.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedEvidenceCoverage.length} articles, ordered by conflicting history, historical blocks, and unknown coverage first.</p>}</div>
       <p className="cc-catalogue-more">Unsupported claim records across matched historical attempts: {evidenceCoverageUnsupported}. Attempts may repeat the same claims; this is not a count of unique currently published unsupported claims.</p>
+    </Section>
+
+    <Section eyebrow="BOAT • CURRENT BYTE LINEAGE" title="Published articles: exact-version lineage" help="Compares each canonical published Markdown file's SHA-256 with saved run manifests. A matching record means the exact bytes have a recorded claim-verification PASS; it is not a fresh semantic fact-check.">
+      <div className="cc-catalogue-note"><strong>What this proves — and what it does not</strong><p>A current-byte match confirms that a saved run manifest references the exact Markdown bytes now in the repository and records a claim-verification PASS for that run. It does not independently re-run claim verification, prove every claim true, or confirm that sources remain reachable or current. Missing manifests and mismatched hashes stay visible as UNKNOWN or STALE.</p><small>Read-only build-time snapshot • {publishedLineageCoverage.length} published article(s) checked against saved lineage manifests</small></div>
+      <div className="cc-catalogue-stats">
+        <div><b>{lineageWithManifest}</b><span>With lineage records</span></div>
+        <div><b>{lineageCurrent}</b><span>Exact current-byte match</span></div>
+        <div><b>{lineageStale}</b><span>Manifest hash is stale</span></div>
+        <div><b>{lineageUnknown}</b><span>Unknown / no valid match</span></div>
+      </div>
+      {publishedLineageCoverage.length ? <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Published article</th><th>Lineage records</th><th>Current-version status</th><th>Interpretation</th></tr></thead><tbody>
+        {publishedLineageCoverage.slice(0, 20).map((article) => <tr key={article.slug}><td><strong>{article.title}</strong><small>{article.slug}</small></td><td>{article.manifestRecords}<small>{article.matchingRecords} exact hash match(es)</small></td><td>{article.status === 'current-byte-match' ? 'Current bytes match recorded PASS' : article.status === 'stale-manifest' ? 'STALE — bytes differ' : 'UNKNOWN — no valid match'}</td><td>{article.note}</td></tr>)}
+      </tbody></table>{publishedLineageCoverage.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedLineageCoverage.length} articles; stale and unknown states are listed first.</p>}</div> : <div className="cc-empty">No published articles were available for the lineage scan. This is an inventory failure/unknown state, not a clean audit.</div>}
     </Section>
 
     <Section eyebrow="01 • OVERVIEW" title="Today at a glance" help="The latest recorded publishing run, translated into plain language.">
