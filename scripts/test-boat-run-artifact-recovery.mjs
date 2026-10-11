@@ -70,10 +70,6 @@ test('recovers exact brief candidate and validates same-run metadata/source URLs
   assert.deepEqual(result.candidate.sourceIds, ['S1', 'S2']);
   assert.ok(!result.findings.some(item => item.severity === 'high'));
   assert.equal(result.hashes.hashesRecordedAtGeneration, false);
-    assert.equal(result.passageResolution.resolvedUnique, f.expectedResolved, f.runId + ': unique exact passage resolution count');
-    assert.equal(result.passageResolution.ambiguous, 0, f.runId + ': ambiguous passage resolution count');
-    assert.equal(result.passageResolution.unresolved, f.expectedClaims - f.expectedResolved, f.runId + ': unresolved passage resolution count');
-    assert.equal(result.passageResolution.appliedToClaimReport, false);
   assert.equal(result.hashes.method, 'computed-from-recovered-bytes');
   assert.equal(result.automaticApplication, false);
 });
@@ -194,6 +190,10 @@ test('all three real archived attempts recover the exact same-run canonical pack
     assert.equal(result.report.claimTextCoverage.total, f.expectedClaims);
     assert.equal(result.report.claimTextCoverage.exactTextFoundInArticle, f.expectedPresent);
     assert.equal(result.hashes.hashesRecordedAtGeneration, false);
+    assert.equal(result.passageResolution.resolvedUnique, f.expectedResolved, f.runId + ': unique exact passage resolution count');
+    assert.equal(result.passageResolution.ambiguous, 0, f.runId + ': ambiguous passage resolution count');
+    assert.equal(result.passageResolution.unresolved, f.expectedClaims - f.expectedResolved, f.runId + ': unresolved passage resolution count');
+    assert.equal(result.passageResolution.appliedToClaimReport, false);
     assert.equal(result.semanticSupport, 'not_verified');
     assert.equal(result.automaticApplication, false);
     assert.equal(result.passageIdAudit.valuesPreserved, true);
