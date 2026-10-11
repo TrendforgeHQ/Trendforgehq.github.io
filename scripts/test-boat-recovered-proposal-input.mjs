@@ -231,7 +231,8 @@ test('output schema preserves review-only and recovery-hash constraints', () => 
   assert.equal(schema.properties.semanticSupport.const, 'not_verified');
   assert.equal(schema.properties.replacementTextGenerated.const, false);
   assert.equal(schema.properties.proposalEngineHandoff.properties.status.const, 'blocked');
-  assert.equal(schema.properties.proposalEngineHandoff.properties.allowed.const, false);
+  assert.equal(schema.properties.proposalEngineHandoff.properties.allowed.type, 'boolean');
+  assert.equal(schema.properties.proposalEngineHandoff.properties.checks.properties.metadataBytesMatch.type, 'boolean');
   assert.equal(schema.properties.hashes.properties.recordedAtGeneration.const, false);
 });
 
@@ -284,7 +285,7 @@ test('eligibility report schema requires counts and review-only guardrails', () 
   assert.deepEqual(schema.properties.summary.properties.recoveryHashesRecordedAtGeneration, { const: false });
   assert.deepEqual(schema.properties.summary.properties.semanticSupport, { const: 'not_verified' });
   assert.deepEqual(schema.properties.summary.properties.automaticApplication, { const: false });
-  assert.deepEqual(schema.properties.summary.properties.proposalEngineHandoffAllowed, { const: false });
+  assert.deepEqual(schema.properties.summary.properties.proposalEngineHandoffAllowed, { type: 'boolean' });
   assert.ok(schema.required.includes('runs'));
   assert.ok(schema.properties.runs.items.required.includes('claims'));
   assert.deepEqual(schema.properties.runs.items.properties.countsReconciled, { const: true });
@@ -292,7 +293,7 @@ test('eligibility report schema requires counts and review-only guardrails', () 
   assert.deepEqual(schema.properties.runs.items.properties.approvalRequired, { const: true });
   assert.deepEqual(schema.properties.runs.items.properties.automaticApplication, { const: false });
   assert.deepEqual(schema.properties.runs.items.properties.semanticSupport, { const: 'not_verified' });
-  assert.deepEqual(schema.properties.runs.items.properties.proposalEngineHandoffAllowed, { const: false });
+  assert.deepEqual(schema.properties.runs.items.properties.proposalEngineHandoffAllowed, { type: 'boolean' });
 });
 
 test('read-only eligibility report summarizes per-claim reasons across all archived runs', () => {
