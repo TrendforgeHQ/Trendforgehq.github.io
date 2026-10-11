@@ -61,11 +61,11 @@
         "reason": { "type": "string", "minLength": 1 },
         "checks": {
           "type": "object",
-          "required": ["metadataPresent", "metadataBytesMatch", "hashesRecordedAtGeneration", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
+          "required": ["metadataPresent", "metadataBytesMatch", "hashesRecordedInWorkflow", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
           "properties": {
             "metadataPresent": { "type": "boolean" },
             "metadataBytesMatch": { "type": "boolean" },
-            "hashesRecordedAtGeneration": { "type": "boolean" },
+            "hashesRecordedInWorkflow": { "type": "boolean" },
             "runIdMatches": { "type": "boolean" },
             "workflowShaMatches": { "type": "boolean" },
             "artifactHashesMatch": { "type": "boolean" },
