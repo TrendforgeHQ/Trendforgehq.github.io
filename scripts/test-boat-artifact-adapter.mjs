@@ -1,5 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { adaptPipelineArtifacts, createProposalFromPipelineArtifacts } from './boat-artifact-adapter.mjs';
 
@@ -87,4 +91,44 @@ test('malformed saved JSON is flagged rather than silently normalized', () => {
   const adapted = adaptPipelineArtifacts({ ...f, claimReportRaw: '{not json' });
   assert.ok(adapted.findings.some(item => item.code === 'BA-ARTIFACT-INVALID-JSON' && item.artifact === 'claimReport'));
   assert.equal(adapted.inputs.claimReport, null);
+});
+
+
+test('real archived blocked attempt CLI stays unknown without evidence pack and preserves inputs', () => {
+  const root = process.cwd();
+  const fixtureDir = path.join(root, 'data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked');
+  const articlePath = path.join(fixtureDir, 'article.md');
+  const reportPath = path.join(fixtureDir, 'claim-verification.json');
+  const metadataPath = path.join(fixtureDir, 'metadata.json');
+  for (const file of [articlePath, reportPath, metadataPath]) assert.equal(fs.existsSync(file), true, 'missing archived fixture: ' + file);
+  const before = new Map([articlePath, reportPath, metadataPath].map(file => [file, fs.readFileSync(file, 'utf8')]));
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-adapter-real-archive-'));
+  const outputPath = path.join(temp, 'proposal.json');
+  try {
+    const run = spawnSync(process.execPath, [
+      path.join(root, 'scripts/boat-artifact-adapter.mjs'),
+      '--article', articlePath,
+      '--claim-report', reportPath,
+      '--evidence-pack', '-',
+      '--metadata', metadataPath,
+      '--output', outputPath,
+      '--claim-index', '1',
+      '--replacement-text', 'A human-reviewed correction proposal.',
+      '--rationale', 'Integration fixture only.',
+      '--source-id', 'S1',
+      '--passage-id', 'S1-P1'
+    ], { encoding: 'utf8' });
+    assert.equal(run.status, 1, run.stderr || run.stdout);
+    assert.equal(fs.existsSync(outputPath), true);
+    const report = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+    assert.equal(report.status, 'unknown');
+    assert.equal(report.approvalRequired, true);
+    assert.equal(report.automaticApplication, false);
+    assert.equal(report.semanticSupport, 'not_verified');
+    assert.ok(report.adapter.findings.some(item => item.code === 'BA-EVIDENCE-PACK-MISSING'));
+    assert.ok(report.adapter.findings.some(item => item.code === 'BA-RECORDED-HASHES-MISSING'));
+    for (const [file, raw] of before) assert.equal(fs.readFileSync(file, 'utf8'), raw, 'input artifact was modified: ' + file);
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
 });
