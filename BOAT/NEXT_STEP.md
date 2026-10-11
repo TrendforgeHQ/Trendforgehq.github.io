@@ -182,3 +182,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Latest branch-head offline CI [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418): **73/73 passed**, 0 failed, 0 skipped.
 - The three archived examples still cannot be handed off to the factual proposal engine because original generation-time hashes are absent. The 26 “eligible” claims are only eligible for proposal-input preparation; semantic support remains unverified.
 - Next: test a complete proposal-engine handoff using a controlled synthetic bundle, without generating factual replacement text or changing article artifacts. Keep PR draft/unmerged; no publishing/provider calls.
+
+
+
+## Candidate-envelope proposal handoff — verified
+
+- Updated the factual proposal engine to accept either the legacy flat sources array or the canonical candidates[] envelope. For candidate envelopes, it requires exact candidateTitle + candidateLink and exactly one matching candidate; missing or duplicate identity blocks the proposal.
+- Adapter handoff compatibility now recognizes the canonical candidate envelope only when the recovery audit's selected title/link and authoritative source mapping agree. Candidate title/link are exposed in the input manifest for the human-authored proposal.
+- Added end-to-end offline test: valid workflow-bound metadata + exact candidate envelope -> proposal engine returns review_required; semanticSupport stays not_verified, approvalRequired=true, automaticApplication=false, and article bytes remain untouched.
+- CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped. Missing and ambiguous candidate identity tests also pass.
+- Existing archived runs remain blocked for direct handoff because their metadata lacks the required original workflow-recorded hashes. No publishing/provider workflow was run.
