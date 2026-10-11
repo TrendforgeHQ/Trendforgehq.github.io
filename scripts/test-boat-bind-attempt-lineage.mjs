@@ -42,12 +42,11 @@ try {
   assert.equal(idempotent.bound, 1);
   assert.equal(idempotent.findings[0].reason.includes('idempotent no-op'), true);
 
-  const conflictDir = path.join(data, 'article-attempts', '20261011-example-finalized-finalized');
-  fs.mkdirSync(conflictDir);
-  fs.writeFileSync(path.join(conflictDir, 'article.md'), 'different');
-  fs.writeFileSync(path.join(conflictDir, 'authoritative-evidence-pack.json'), packRaw);
-  fs.writeFileSync(path.join(conflictDir, 'claim-verification.json'), JSON.stringify({ pass: false }));
-  fs.writeFileSync(path.join(conflictDir, 'metadata.json'), JSON.stringify({ articlePath: 'content/articles/example.md', workflowRun: '12345', workflowSha: 'a'.repeat(40) }));
+  fs.writeFileSync(path.join(finalDir, 'article.md'), 'conflicting bytes');
+  const conflict = bindAttemptLineage({ root: tempRoot, runId: '12345', workflowSha: 'a'.repeat(40), boundAt: '2026-10-11T03:10:00.000Z' });
+  assert.equal(conflict.conflicts, 1);
+  assert.equal(fs.readFileSync(path.join(finalDir, 'article.md'), 'utf8'), 'conflicting bytes', 'existing final bundle must never be overwritten');
+
   const noMatch = bindAttemptLineage({ root: tempRoot, runId: '99999' });
   assert.equal(noMatch.bound, 0);
   assert.equal(noMatch.status, 'no-run-matched-attempt');
