@@ -201,3 +201,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Results from recovered bytes: pack recovery 3/3; source-ID/URL mapping 10/10. Exact claim text is present in final article for 15/15, 18/18, and 4/7 claims respectively. The third run remains partial and is not safe for claim-specific proposals until reconciled.
 - The computed hashes were not recorded at generation time; the manifest states this limitation. No semantic support is asserted.
 - Final recovery + passage resolver suite passed **57/57** in [run 38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698), 0 failed, 0 skipped. Real fixture assertions confirm unique passage matches of 12/15, 12/18, and 4/7; unresolved passage IDs are not guessed. No providers, publishing, site build, or article edits.
+
+## 2026-10-11 — Recovered proposal-input adapter (validation pending)
+
+- Added `scripts/boat-recovered-proposal-input.mjs`, a read-only adapter that consumes the recovery audit and exact recovered article, claim report, brief, and canonical pack bytes.
+- Adapter verifies current bytes against recovery-time hashes, requires exact unique candidate selection, checks report/claim source IDs and URLs against the selected pack, and only marks a claim eligible when its exact text is present in the article and its source passage maps uniquely to canonical `Sx-Pn`.
+- Missing/ambiguous passage mappings remain `unknown`; absent claim text and source-lineage mismatches are `blocked`. No replacement text is generated. Human approval remains mandatory; semantic support remains unverified.
+- Added synthetic and three-real-archive integration tests and wired them into the offline PR workflow. Validation is pending CI; no pass count is claimed yet.
+- `main` remains untouched, PR #35 remains draft/unmerged, and no provider, publishing, or site-build run was requested.
