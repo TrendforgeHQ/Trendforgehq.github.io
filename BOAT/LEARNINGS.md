@@ -569,3 +569,7 @@ The attempt archive is created before claim verification/repair, so its article 
 ## 2026-10-11 — Distinguish runtime generation from persisted root snapshots
 
 A zero-byte tracked `data/authoritative-evidence-pack.json` does not prove the generator failed. Successful production run 493's uploaded run-scoped artifact contained a valid 3.47 MB pack with 24 candidates, and the same artifact contained the 10-claim saved PASS report. The missing invariant is exact immutable binding in attempt metadata (article SHA, report SHA and pack SHA), which the branch binder is intended to add. Inspect run-scoped artifacts before diagnosing runtime generation; never copy an artifact from another run into root data or treat saved `pass: true` as independent proof of factual correctness.
+
+## 2026-10-11 — Bind all three bytes, not just article and evidence pack
+
+An article and evidence-pack hash bound to a run still cannot prove which verifier report belongs to that run. Archive the exact claim-report bytes and record `claimReportSha256` with `articleSha256`, `evidencePackSha256`, `workflowRun`, and `workflowSha`. Require exact same-run matching; fail closed on duplicate/missing/mismatched archives. If a failed article is quarantined before metadata binding, read the archived article bytes only—never restore it into the publication set. Even complete byte lineage proves provenance, not semantic claim support or source freshness.
