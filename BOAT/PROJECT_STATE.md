@@ -562,3 +562,9 @@ Verified current baseline:
 
 - The claim-level CLI now includes `data/claim-verification.json` as a separately labelled root workflow snapshot when its `articlePath` maps to a canonical published slug. It does not assume this report is hash-bound to the current Markdown or evidence pack.
 - The first CI run caught an incorrect synthetic fixture expectation for a missing Markdown file; added the fixture file so the test specifically exercises missing-report UNKNOWN. Latest branch-head validation is pending.
+
+## 2026-10-11 — Root claim/evidence lineage status
+
+A read-only root-snapshot lineage audit and deterministic tests have been added on the dedicated BOAT branch; CI result is pending at the time of this record. It reports claim source IDs and passage IDs separately from factual support and never upgrades saved statuses.
+
+Verified input condition: `data/claim-verification.json` parses, points to the Amazon/Nvidia article, records `pass: true`, and contains 10 claims. `data/authoritative-evidence-pack.json` is zero bytes on both the working branch and `main`; therefore it is invalid JSON and cannot resolve source IDs, passage IDs, or exact artifact pairing. Current lineage state is **UNKNOWN**, not PASS and not evidence that the article is false. The article has not been modified. No providers, source fetching, repair, publication, or main-branch writes were used.
