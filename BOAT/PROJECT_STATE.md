@@ -1,9 +1,9 @@
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
-**State version:** 0.1.8  
+**State version:** 0.1.9  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Current branch head `31957b4631dd41bbf3d69854d15e6ed21181f323` passed BOAT Offline Tests in run 38112777860; underlying suite is 39/39 with 0 failures. Read-only pipeline artifact adapter and schema-contract tests remain next.
+**Status:** Factual Repair Proposal + six-item reviewer checklist passed **39/39** in [run 38112833259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112833259), with 0 failures and 0 skipped. Read-only pipeline artifact adapter and explicit schema-contract tests remain next.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
