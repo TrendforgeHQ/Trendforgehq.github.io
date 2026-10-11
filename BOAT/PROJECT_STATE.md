@@ -568,3 +568,5 @@ Verified current baseline:
 A read-only root-snapshot lineage audit and deterministic tests have been added on the dedicated BOAT branch; CI result is pending at the time of this record. It reports claim source IDs and passage IDs separately from factual support and never upgrades saved statuses.
 
 Verified input condition: `data/claim-verification.json` parses, points to the Amazon/Nvidia article, records `pass: true`, and contains 10 claims. `data/authoritative-evidence-pack.json` is zero bytes on both the working branch and `main`; therefore it is invalid JSON and cannot resolve source IDs, passage IDs, or exact artifact pairing. Current lineage state is **UNKNOWN**, not PASS and not evidence that the article is false. The article has not been modified. No providers, source fetching, repair, publication, or main-branch writes were used.
+
+**Validation note (2026-10-11):** the first CI run of the new root lineage test failed at parsing CLI stdout; the CLI emitted a literal `\\n` suffix. This was corrected in `b70032893c8f9108f8d523e44f917ba8f1be2b37`. That failure predates the correction; latest-head CI remains the deciding verification.
