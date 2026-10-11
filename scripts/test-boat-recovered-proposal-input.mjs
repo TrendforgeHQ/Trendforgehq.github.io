@@ -245,6 +245,7 @@ test('eligibility report schema requires counts and review-only guardrails', () 
   assert.deepEqual(schema.properties.summary.properties.recoveryHashesRecordedAtGeneration, { const: false });
   assert.deepEqual(schema.properties.summary.properties.semanticSupport, { const: 'not_verified' });
   assert.deepEqual(schema.properties.summary.properties.automaticApplication, { const: false });
+  assert.deepEqual(schema.properties.summary.properties.proposalEngineHandoffAllowed, { const: false });
   assert.ok(schema.required.includes('runs'));
   assert.ok(schema.properties.runs.items.required.includes('claims'));
   assert.deepEqual(schema.properties.runs.items.properties.countsReconciled, { const: true });
@@ -252,6 +253,7 @@ test('eligibility report schema requires counts and review-only guardrails', () 
   assert.deepEqual(schema.properties.runs.items.properties.approvalRequired, { const: true });
   assert.deepEqual(schema.properties.runs.items.properties.automaticApplication, { const: false });
   assert.deepEqual(schema.properties.runs.items.properties.semanticSupport, { const: 'not_verified' });
+  assert.deepEqual(schema.properties.runs.items.properties.proposalEngineHandoffAllowed, { const: false });
 });
 
 test('read-only eligibility report summarizes per-claim reasons across all archived runs', () => {
@@ -264,10 +266,13 @@ test('read-only eligibility report summarizes per-claim reasons across all archi
   assert.equal(report.summary.unknown, 11);
   assert.equal(report.summary.recoveryHashesRecordedAtGeneration, false);
   assert.equal(report.summary.automaticApplication, false);
+  assert.equal(report.summary.proposalEngineHandoffAllowed, false);
   assert.equal(report.summary.semanticSupport, 'not_verified');
+  assert.equal(report.summary.proposalEngineHandoffAllowed, false);
   assert.equal(report.summary.countsReconciled, true);
   for (const run of report.runs) {
     assert.equal(run.countsReconciled, true);
+    assert.equal(run.proposalEngineHandoffAllowed, false);
     assert.equal(run.totalClaims, run.claims.length);
     assert.equal(run.eligible, run.claims.filter(claim => claim.status === 'ready_for_human_proposal').length);
     assert.equal(run.blocked, run.claims.filter(claim => claim.status === 'blocked').length);
