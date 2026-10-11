@@ -44,3 +44,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Implication:** A skipped historical test is not a passed calibration. A reconstructed pack can support a repeatable regression, but must be labelled as reconstructed and cannot be called an exact historical replay.
 - **Confidence:** High for the artifact response and repository file state; reconstructed verifier output remains unverified until CI logs are inspected.
 - **Validation status:** Failure root cause verified; new durable reconstruction test pending.
+
+
+## L-008 — Reconstructed evidence inputs need their own baseline
+- **Observed:** The archived Run 405 article brief retains grounding passages and a story fact map, but its committed evidence-pack file is empty. Rebuilding a valid pack from the brief's saved grounding passages yields 15 factual claims: 9 supported, 3 partial, 3 unsupported, average confidence 60; the verifier blocks.
+- **Observed:** The previous historical expectation was 11 supported / 2 partial / 2 unsupported, but that expected distribution came from an expired artifact whose exact evidence pack cannot currently be retrieved.
+- **Implication:** Pin the reconstructed 9/3/3 result as a separate reproducible regression and retain 11/2/2 as an unresolved historical target. Never modify evidence inputs or verifier thresholds just to force counts to match.
+- **Confidence:** High for the observed reconstruction output; the exact historical distribution remains unverified.
+- **Validation status:** One failing test run established the mismatch; follow-up run is pending at the time of this entry.
