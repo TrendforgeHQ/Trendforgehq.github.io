@@ -79,7 +79,7 @@ test('distinct-subject report order is stable and indices still resolve to sourc
     const report = auditReviewSet(input);
     assert.deepEqual(report.subjectGroups.map(group => group.subjectFingerprint), [...report.subjectGroups.map(group => group.subjectFingerprint)].sort());
     for (const group of report.subjectGroups) {
-      assert.equal(input[group.recordIndices[0]].subject.proposalId, group.subjectFingerprint === report.subjectGroups.find(g => g.subjectFingerprint === group.subjectFingerprint).subjectFingerprint ? input[group.recordIndices[0]].subject.proposalId : null);
+      assert.equal(report.records[group.recordIndices[0]].reviewId, input[group.recordIndices[0]].reviewId);
     }
   }
 });
