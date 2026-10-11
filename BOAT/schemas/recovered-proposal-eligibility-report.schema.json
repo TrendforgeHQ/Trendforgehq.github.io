@@ -10,13 +10,14 @@
     "generatedAt": { "type": "string", "format": "date-time" },
     "summary": {
       "type": "object",
-      "required": ["runs", "claims", "eligible", "blocked", "unknown", "recoveryHashesRecordedAtGeneration", "semanticSupport", "automaticApplication"],
+      "required": ["runs", "claims", "eligible", "blocked", "unknown", "countsReconciled", "recoveryHashesRecordedAtGeneration", "semanticSupport", "automaticApplication"],
       "properties": {
         "runs": { "type": "integer", "minimum": 0 },
         "claims": { "type": "integer", "minimum": 0 },
         "eligible": { "type": "integer", "minimum": 0 },
         "blocked": { "type": "integer", "minimum": 0 },
         "unknown": { "type": "integer", "minimum": 0 },
+        "countsReconciled": { "const": true },
         "recoveryHashesRecordedAtGeneration": { "const": false },
         "semanticSupport": { "const": "not_verified" },
         "automaticApplication": { "const": false }
@@ -27,7 +28,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["runId", "artifactId", "artifactName", "recoveryStatus", "bundleStatus", "totalClaims", "eligible", "blocked", "unknown", "hashProvenance", "recordedAtGeneration", "claims", "findings", "approvalRequired", "automaticApplication", "semanticSupport"],
+        "required": ["runId", "artifactId", "artifactName", "recoveryStatus", "bundleStatus", "totalClaims", "eligible", "blocked", "unknown", "hashProvenance", "recordedAtGeneration", "countsReconciled", "claims", "findings", "approvalRequired", "automaticApplication", "semanticSupport"],
         "properties": {
           "runId": { "type": "string", "pattern": "^[0-9]+$" },
           "artifactId": { "type": "string", "pattern": "^[0-9]+$" },
@@ -40,6 +41,7 @@
           "unknown": { "type": "integer", "minimum": 0 },
           "hashProvenance": { "const": "recovery-time-computed-checksums" },
           "recordedAtGeneration": { "const": false },
+          "countsReconciled": { "const": true },
           "claims": {
             "type": "array",
             "items": {
