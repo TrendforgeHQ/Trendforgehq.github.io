@@ -25,7 +25,7 @@ const samples = [
 ];
 
 function read(relative) { return fs.readFileSync(path.join(root, relative), 'utf8'); }
-function buildSample(sample) {
+function countStatuses(claims) {\n  return {\n    totalClaims: claims.length,\n    eligible: claims.filter(claim => claim.status === 'ready_for_human_proposal').length,\n    blocked: claims.filter(claim => claim.status === 'blocked').length,\n    unknown: claims.filter(claim => claim.status === 'unknown').length\n  };\n}\n\nfunction buildSample(sample) {
   const input = {
     articleRaw: read(path.join(sample.blockedDir, 'article.md')),
     claimReportRaw: read(path.join(sample.blockedDir, 'claim-verification.json')),
