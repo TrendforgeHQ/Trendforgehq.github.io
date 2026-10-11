@@ -90,3 +90,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Added regression coverage for the summary, missing source metadata, and the 500-character excerpt cap.
 - CI [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258) passed **17/17**, 0 failures.
 - Next: a separate offline Evidence Auditor should cross-check claim-to-source lineage against the saved authoritative evidence pack; no external fetch or provider call is needed.
+
+
+## 2026-10-11 — Evidence Auditor and bounded Repair Engine
+- Added an offline Evidence Auditor for exact report/pack hash binding, workflow-run consistency, source IDs/URLs/roles, passage identifiers, and duplicate/conflicting source metadata.
+- Added a bounded Repair Engine for empty headings and exact duplicate plain-text paragraphs. It only produces a separate proposed output; it refuses in-place edits and overwrites and protects frontmatter, code blocks, lists, and source sections.
+- Added synthetic offline tests and a report schema; CI result is pending and is not yet claimed as passed.
+- Expanded the BOAT offline workflow to run all `scripts/test-boat-*.mjs` suites. No provider/image generation or publishing workflow was triggered.
+- Updated NEXT_STEP, PROJECT_STATE, and LEARNINGS with repair boundaries and the distinction between identifier lineage and semantic/factual support.

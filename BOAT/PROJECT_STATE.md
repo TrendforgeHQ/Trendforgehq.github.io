@@ -1,9 +1,6 @@
 # BOAT — Canonical Project State
 
-**Last updated:** 2026-10-11  
-**State version:** 0.1.1  
-**Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Article Doctor CI passed 17/17 at commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae` in run `38111102258`; draft PR remains unmerged.
+**Last updated:** 2026-10-11  \n**State version:** 0.1.2  \n**Current phase:** Phase 1 — Offline audit + sandbox repair foundations  \n**Status:** Article Doctor baseline passed 17/17 in run `38111154726`; new Evidence Auditor and Repair Engine are committed on the BOAT branch and awaiting their own CI result.n run `38111102258`; draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -23,7 +20,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Runtime: not implemented.
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
-- Article Doctor: offline read-only CLI and 7-test regression suite implemented; CI run 38110482104 passed. Independent source re-checking is not implemented.
+- Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.\n- Evidence Auditor: offline identifier/lineage checker added; requires exact artifact hashes and workflow run metadata, with synthetic fixtures. New CI validation pending at commit time.\n- Repair Engine: bounded structural repair proposal module added; can remove empty headings and exact duplicate plain-text paragraphs in a separate output file. In-place edits and overwrite are refused. New CI validation pending at commit time.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
@@ -44,9 +41,9 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — 17/17 CI tests pass; source-context coverage metrics added |
-| 2 | Claim/source audit and editorial benchmark evaluation | Not started |
-| 3 | Fixture-backed repair proposals and regression harness | Not started |
+| 1 | Offline artifact audit and bounded repair proposal | In progress — Article Doctor 17/17 passed; Evidence Auditor/Repair Engine CI pending |
+| 2 | Claim/source lineage audit and editorial benchmark evaluation | In progress — lineage auditor added; semantic source support and human benchmark not started |
+| 3 | Fixture-backed repair sandbox and regression harness | Started — safe structural-only proposal mode; factual repair remains diagnosis/proposal-only |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
 | 5 | Quota-aware priority queue and targeted workflow dispatch | Not started |
 | 6 | Limited, measured, approval-bounded autonomy | Not started |
@@ -152,3 +149,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added tests for no source metadata and for capping source excerpts at 500 characters.
 - **CI PASS:** [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258), commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae`: **17 passed, 0 failed, 0 skipped**.
 - Next: implement an offline Evidence Auditor that cross-checks claim source IDs and passage IDs against a saved authoritative evidence pack, while distinguishing lineage consistency from factual support.
+
+
+## 2026-10-11 — Evidence Auditor and bounded repair implementation
+- Added `scripts/boat-evidence-auditor.mjs` to cross-check claim source IDs, URLs, roles, passage IDs, duplicate/conflicting source records, and artifact identity.
+- Exact artifact pairing requires `evidencePackSha256`, `claimReportSha256`, and a workflow run ID in metadata. Missing or mismatched lineage fails closed to `unknown`; a matching ID never proves factual truth or semantic support.
+- Added `scripts/boat-repair-engine.mjs` for low-risk structural fixes only: empty headings and exact duplicate plain-text paragraphs outside protected sections. It writes to a new output path, refuses in-place changes and output overwrites, and leaves claims/sources/policy untouched.
+- Added synthetic regression tests and an evidence-audit report schema. CI validation is pending; do not call this implementation tested until the run completes.
+- No provider calls, source fetching, image generation, site build, publishing run, main-branch change, merge, or production gate modification.

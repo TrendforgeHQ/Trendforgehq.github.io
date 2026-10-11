@@ -32,3 +32,10 @@ BOAT begins in read-only mode. Every proposed action must state scope, risk, exp
 
 ## Kill switch and budget
 Before any operational automation is enabled, define a kill switch, maximum actions per window, provider/image budget, concurrency cap, duplicate suppression, timeout, and cancellation behavior. Exact numeric limits are **TBD** and must be set from measured usage before enabling automation.
+
+
+## Initial sandbox repair scope
+- Allowed without production mutation: generate a separate proposed Markdown file that removes empty headings and exact duplicate plain-text paragraphs outside frontmatter, code blocks, lists, and source/reference sections.
+- The Repair Engine must refuse output paths equal to the input and refuse to overwrite existing files.
+- Unsupported, contradicted, numeric, attribution, and source-lineage findings are diagnosis-only until a specific evidence-backed repair is proposed and validated through existing verifiers.
+- No automatic article commit, merge, publish, gate change, secret change, or provider dispatch is authorized by the sandbox repair capability.

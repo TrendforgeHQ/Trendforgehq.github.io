@@ -1,29 +1,35 @@
 # BOAT Next Step
 
-## Current task: offline Evidence Auditor — lineage consistency
+## Current task: verify the new audit + sandbox repair loop
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Verified implementation
-- Offline read-only Article Doctor: `scripts/boat-article-doctor.mjs`.
-- Report contract: `BOAT/schemas/article-doctor-report.schema.json`.
-- Isolated regression workflow: `.github/workflows/boat-offline-tests.yml`.
-- Latest CI [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258) passed 17/17 at commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae`.
-- Source context and report-level coverage are preserved from saved verifier artifacts. The report clearly distinguishes metadata presence from actual source verification.
-- PR #35 remains draft and unmerged: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
+### Implemented in this iteration
+- `scripts/boat-evidence-auditor.mjs`: offline claim/source/passage lineage checks.
+- `scripts/boat-repair-engine.mjs`: bounded structural repair proposals written only to a separate output path.
+- `scripts/test-boat-evidence-repair.mjs`: synthetic lineage, hash/run mismatch, conflicting source, and repair-isolation regressions.
+- `BOAT/schemas/evidence-audit-report.schema.json`: report contract.
+- `.github/workflows/boat-offline-tests.yml`: runs all BOAT offline tests; no provider, image, site build, or publishing call.
 
-### Next implementation
-1. Add a separate offline Evidence Auditor module that accepts an article claim report and the exact saved authoritative evidence pack from the same workflow attempt.
-2. Cross-check each claim's `sourceId`, `matchedPassages` / `bestPassageId`, source URL, and role against the pack's source IDs and passage IDs. Report mismatches, missing IDs, and stale/mismatched artifact lineage.
-3. Treat missing or mismatched pack inputs as `unknown`; do not treat matching IDs as proof that a claim is true or the passage semantically supports it.
-4. Add synthetic fixtures for valid lineage, missing source ID, missing passage ID, wrong workflow/run, and duplicate/conflicting source metadata. Keep all tests offline.
-5. After lineage checks pass, separately design source relevance/support review; do not fetch the web or call paid providers in this phase.
+### Repair boundary
+1. BOAT may remove empty Markdown headings and exact duplicate plain-text paragraphs outside frontmatter, code blocks, lists, and Sources/References sections.
+2. Repair Engine refuses in-place edits and refuses to overwrite an existing output file.
+3. It does not rewrite factual claims, citations, source lists, headings with text, metadata, or publication gates.
+4. Every candidate output must be re-audited; a green structural check is not proof of factual accuracy.
+5. Unsupported/contradicted claims remain diagnosis-only until an evidence-backed repair proposal can be validated and the existing verifier passes. No fabricated facts or gate weakening.
 
-### Separate Run 405 record
-- PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed a durable reconstructed baseline: 9 supported / 3 partial / 3 unsupported; verifier blocks as expected.
-- Historical target 11/2/2 remains unverified because the original artifact expired and the committed archived evidence-pack file is empty. Do not call the reconstructed fixture an exact replay or change expected counts to force a match.
+### Lineage contract
+- The auditor requires metadata hashes for the exact raw claim report and evidence pack, plus a workflow run ID. Missing hash/run metadata returns `unknown`.
+- It checks source IDs, URLs, roles, duplicate/conflicting source metadata, matched passage IDs, and canonical best-passage IDs where possible.
+- Legacy/non-canonical IDs are reported as unmapped rather than guessed. Matching IDs do not prove semantic support or factual truth.
+- Synthetic fixtures are used because the archived blocked attempts do not currently provide a verified same-run evidence-pack/hash bundle. Do not claim the archived attempts passed this new auditor until that bundle exists.
+
+### Validation to complete
+1. Review CI run for the commit containing these modules.
+2. Fix any failed offline tests and re-run them.
+3. Update the PR body only with verified run results.
+4. Keep PR #35 draft/unmerged; no changes to `main`, publishing workflow, provider routing, or production gates.
 
 ### Guardrails
-- No paid providers, external source fetches, article edits, publishing workflow runs, image generation, or production gate changes for this phase.
-- Do not change `main`; do not merge PR #34 or #35 without reviewing their exact diffs and required checks.
+- No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
+- Do not change `main`; do not merge PR #34 or #35 without reviewing exact diffs and required checks.
 - Existing evidence, claim-verification, editorial, image-safety, and build gates remain authoritative.
-- BOAT remains read-only. No repair, publish, merge, secret, or policy-threshold action is authorized.

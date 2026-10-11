@@ -22,7 +22,7 @@ Roadmap items are proposals until their implementation and verification are reco
 **Exit gate:** deterministic tests pass; missing evidence never passes silently; no provider call is required for core fixtures.
 
 ## Phase 2 — Claim audit and editorial benchmark
-- Build a claim-to-source matrix using existing evidence and verification outputs.
+- Build a claim-to-source matrix using existing evidence and verification outputs.\n- Verify exact artifact identity with hashes and workflow-run metadata before trusting lineage.
 - Support statuses for supported, contradicted, insufficient, stale, misattributed, and uncertain.
 - Add human-written reference rubric and provenance tracking.
 - Compare dimensions such as accuracy, depth, context, attribution, specificity, clarity, and reader value.
@@ -32,10 +32,10 @@ Roadmap items are proposals until their implementation and verification are reco
 **Exit gate:** benchmark results are reproducible and distinguish observed scores from subjective judgments.
 
 ## Phase 3 — Repair sandbox and regression harness
-- Propose minimal repairs in isolated copies/branches.
-- Re-run claim verification and all relevant editorial/safety/build checks after repairs.
+- Propose minimal repairs in isolated copies/branches.\n- Initial allowed repair scope: empty headings and exact duplicate plain-text paragraphs; write only to a new output path.
+- Re-run Article Doctor after structural proposals; factual changes must additionally pass existing claim verification and all relevant editorial/safety/build checks.
 - Add regressions for known unit/scale errors, unsupported facts, misleading certainty, empty headings, repetition, and attribution drift.
-- Keep failed repairs blocked and report the remaining problem.
+- Keep failed repairs blocked and report the remaining problem.\n- Never remove unsupported claims merely to make a gate pass; factual repairs require authoritative evidence and re-verification.
 - No automatic production article edits.
 
 **Exit gate:** every accepted repair passes required validators and retains a traceable before/after diff.

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Evidence Auditor Report",
+  "type": "object",
+  "required": ["schemaVersion", "auditor", "mode", "generatedAt", "status", "summary", "artifacts", "findings", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "auditor": { "const": "BOAT Evidence Auditor" },
+    "mode": { "const": "offline-read-only" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["clear", "attention", "blocked", "unknown"] },
+    "summary": {
+      "type": "object",
+      "required": ["claimCount", "findingCount", "integrityFindingCount"],
+      "properties": {
+        "claimCount": { "type": ["integer", "null"], "minimum": 0 },
+        "findingCount": { "type": "integer", "minimum": 0 },
+        "integrityFindingCount": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "artifacts": { "type": "object" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "claimIndex", "details"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "enum": ["low", "medium", "high"] },
+          "message": { "type": "string" },
+          "claimIndex": { "type": ["integer", "null"] },
+          "details": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

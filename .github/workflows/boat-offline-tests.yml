@@ -1,4 +1,4 @@
-name: BOAT Offline Article Doctor Tests
+name: BOAT Offline Tests
 
 on:
   pull_request:
@@ -7,13 +7,16 @@ on:
       - "BOAT/**"
       - "scripts/boat-article-doctor.mjs"
       - "scripts/test-boat-article-doctor.mjs"
+      - "scripts/boat-evidence-auditor.mjs"
+      - "scripts/boat-repair-engine.mjs"
+      - "scripts/test-boat-evidence-repair.mjs"
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  article-doctor:
+  boat-offline-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -26,5 +29,5 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
-      - name: Run offline Article Doctor regression tests
-        run: node --test scripts/test-boat-article-doctor.mjs
+      - name: Run offline BOAT regression tests
+        run: node --test scripts/test-boat-*.mjs

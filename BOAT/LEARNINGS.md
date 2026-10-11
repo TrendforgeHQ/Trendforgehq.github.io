@@ -85,3 +85,14 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** The three archived claim reports have complete source-context metadata for their claims: AD-FX-001 15/15, AD-FX-002 18/18, AD-FX-003 7/7 have URL, source ID, passage IDs, and excerpt.
 - **Implication:** High metadata coverage is useful for auditability but does not prove the cited source is reachable, current, relevant, or semantically supportive. A future Evidence Auditor must cross-check identifiers against the exact evidence pack and still label factual support separately.
 - **Validation:** Source-coverage regression and full CI run 38111102258 passed 17 tests.
+
+
+## L-014 — Exact artifact identity is a prerequisite for lineage checks
+- **Observed:** The claim report and evidence pack are mutable root snapshots in the production pipeline, and legacy archived metadata does not necessarily contain hashes for both artifacts.
+- **Implication:** A lineage auditor must require exact raw-file hashes and a workflow run identifier. Missing pairing data is `unknown`, not a pass. Synthetic tests do not substitute for validating a real same-run artifact bundle.
+- **Validation:** New offline regression added; CI pending.
+
+## L-015 — Start repairs with deterministic, reversible editorial changes
+- **Observed:** Empty headings and exact duplicate paragraphs can be removed without generating new factual content, while changing a claim or citation requires evidence and re-verification.
+- **Decision:** Initial Repair Engine is limited to those structural changes, writes only to a new output file, and refuses overwrite/in-place edits. Factual repairs remain gated on evidence and existing verifiers.
+- **Validation:** Synthetic tests cover protected sections, input immutability, output-path guards, and a post-repair Article Doctor check; CI pending.

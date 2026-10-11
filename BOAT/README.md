@@ -46,7 +46,7 @@ The repository already contains a static-export Control Center, a Supervisor in 
 - [LEARNINGS.md](LEARNINGS.md) — verified observations versus hypotheses.
 - [PERMISSIONS.md](PERMISSIONS.md) — action classes and approval rules.
 - [BASELINE_AUDIT.md](BASELINE_AUDIT.md) — initial repository inspection.
-- [NEXT_STEP.md](NEXT_STEP.md) — one clearly defined next task.
+- [NEXT_STEP.md](NEXT_STEP.md) — one clearly defined next task.\n- `scripts/boat-article-doctor.mjs` — read-only article diagnostics.\n- `scripts/boat-evidence-auditor.mjs` — offline artifact/claim lineage audit.\n- `scripts/boat-repair-engine.mjs` — bounded structural repair proposal; never edits input files.
 
 ## Definition of done for Phase 0
 
