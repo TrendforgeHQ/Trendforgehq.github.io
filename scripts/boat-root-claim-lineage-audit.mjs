@@ -43,7 +43,10 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     return text(meta?.articlePath).replace(/^\.\//, '') === articlePath
       && text(meta?.workflowRun) !== ''
       && typeof item.packRaw === 'string' && typeof packRaw === 'string'
-      && sha256(item.packRaw) === sha256(packRaw);
+      && sha256(item.packRaw) === sha256(packRaw)
+      && typeof item.reportRaw === 'string' && typeof reportRaw === 'string'
+      && sha256(item.reportRaw) === sha256(reportRaw)
+      && text(meta?.claimReportSha256) === sha256(reportRaw);
   }) ?? null;
   const archivedArticleBytesMatchCurrent = Boolean(archiveMatch && typeof archiveMatch.articleRaw === 'string' && typeof articleRaw === 'string' && sha256(archiveMatch.articleRaw) === sha256(articleRaw));
   const currentHashes = {
