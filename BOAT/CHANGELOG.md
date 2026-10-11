@@ -331,5 +331,8 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/boat-semantic-support-review-set.mjs` and `scripts/boat-semantic-support-review-set-cli.mjs` for read-only review-set auditing. The report never chooses an aggregate verdict or changes source records. Exact review subject identity includes workflow/bundle hashes, proposal, claim, replacement, source and passage.
 - Added `scripts/test-boat-semantic-support-review-set.mjs` for duplicate IDs, ID collisions, independent disagreement/agreement, same-reviewer repeats, invalid records, exact-subject separation, CLI behavior, and input immutability. Added CLI paths to offline workflow filters and clarified the review rubric.
 - Initial runs found three test-harness issues (two incorrect assertions/CLI target and one empty-stdout symptom from invoking the module instead of the CLI). Corrected these; [run 38122064796](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122064796) passed **104/104**.
-- Follow-up hardening hashes the subject identity for compact reports and avoids echoing claim/passage text in the fingerprint; adds tests for replacement separation and fingerprint privacy. CI for these final commits is pending at this entry.
+- Follow-up hardening hashes the subject identity for compact reports and avoids echoing claim/passage text in the fingerprint; adds tests for replacement separation and fingerprint privacy. Branch-head CI [run 38122117534](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122117534) passed **106/106**, 0 failed, 0 skipped.
 - No provider calls, publishing, article mutation, or main-branch changes. PR #35 remains draft/unmerged.
+
+
+- **Next step:** add deterministic report fixtures/golden tests and stable report behavior while retaining every dissenting record; no automatic adjudication.
