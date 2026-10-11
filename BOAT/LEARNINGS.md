@@ -533,3 +533,7 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 **Validation:** added deterministic test cases for empty and invalid packs, matching IDs, and absent source IDs. Await CI for the committed revision before marking the tests verified.
 
 **Test harness lesson (2026-10-11):** when generating source through a string template, newline escaping can accidentally write the two characters `\\` and `n` into a CLI output expression. Test the real CLI stdout as JSON in CI; do not count module-level assertions alone as end-to-end validation. Fix commit: `b70032893c8f9108f8d523e44f917ba8f1be2b37`; latest-head CI is still required.
+
+## 2026-10-11 — Exact artifact pairing outranks local ID resemblance
+
+Offline run [38129695590](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38129695590) passed 135/135 tests at `e1146ef18c67be057f4d73893df395b9fdc5fedf`. Even when a supplied pack contains matching local source/passage IDs, the root-snapshot audit must not mark lineage resolved unless report-pack pairing is proven with exact metadata/hash binding. Record local matches as diagnostics, keep `unknown-pack-binding`, and leave semantic support `not_assessed`. Also avoid tests whose assertions assume a shared root artifact cannot be temporarily rewritten by another concurrently running test; use synthetic inputs for deterministic assertions. The latest test-message-only commit is pending CI.
