@@ -44,7 +44,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
   const articleBody = bodyFromMarkdown(articleText);
   const bodyLines = articleBody.split('\n');
   for (let i = 0; i < bodyLines.length; i++) {
-    if (/^\s{0,3}#{1,6}\s*$/.test(bodyLines[i])) {
+    if (/^[ \t]{0,3}#{1,6}[ \t]*$/.test(bodyLines[i])) {
       findings.push(makeFinding({
         id: 'AD-EMPTY-HEADING-' + (i + 1), category: 'empty_heading', severity: 'medium',
         title: 'Empty Markdown heading',
@@ -54,7 +54,7 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
       }));
     }
   }
-  const prose = articleBody.replace(/^\s{0,3}#{1,6}\s+.*$/gm, '').replace(/^\s{0,3}#{1,6}\s*$/gm, '').replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '').replace(/\s+/g, ' ');
+  const prose = articleBody.replace(/^[ \t]{0,3}#{1,6}[ \t]+.*$/gm, '').replace(/^[ \t]{0,3}#{1,6}[ \t]*$/gm, '').replace(/^[ \t]*(?:[-*+]|\d+[.)])[ \t]+/gm, '').replace(/[ \t\r\n]+/g, ' ');
   const candidates = prose.split(/(?<=[.!?])\s+(?=[A-Z0-9"“$])/).map(s => s.trim()).filter(s => s.length >= 50 && s.split(/\s+/).length >= 8);
   const repeated = new Map();
   for (const sentence of candidates) {
