@@ -230,7 +230,7 @@ test('output schema preserves review-only and recovery-hash constraints', () => 
   assert.equal(schema.properties.automaticApplication.const, false);
   assert.equal(schema.properties.semanticSupport.const, 'not_verified');
   assert.equal(schema.properties.replacementTextGenerated.const, false);
-  assert.equal(schema.properties.proposalEngineHandoff.properties.status.const, 'blocked');
+  assert.deepEqual(schema.properties.proposalEngineHandoff.properties.status.enum, ['ready', 'blocked']);
   assert.equal(schema.properties.proposalEngineHandoff.properties.allowed.type, 'boolean');
   assert.equal(schema.properties.proposalEngineHandoff.properties.checks.properties.metadataBytesMatch.type, 'boolean');
   assert.equal(schema.properties.hashes.properties.recordedAtGeneration.const, false);
