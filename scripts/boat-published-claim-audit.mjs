@@ -15,7 +15,7 @@ const safePassages = claim => {
   return values.map(str).filter(Boolean);
 };
 
-export function auditPublishedClaims({ articles, attemptsDirectory, articlesDirectory }) {
+export function auditPublishedClaims({ articles, attemptsDirectory, articlesDirectory, rootReportPath = null, rootMetadataPath = null }) {
   if (!Array.isArray(articles)) return {
     schemaVersion: 1, reportType: 'published-claim-level-audit', readOnly: true,
     summary: { articles: 0, articlesWithReports: 0, articlesWithoutReports: 0, archivedReports: 0, claims: 0, unsupported: 0, contradicted: 0, numericMismatch: 0, unknownClaims: 0 },
@@ -30,18 +30,20 @@ export function auditPublishedClaims({ articles, attemptsDirectory, articlesDire
   }
   const reportsBySlug = new Map();
   let attemptDirs = [];
-  try { attemptDirs = fs.readdirSync(attemptsDirectory, { withFileTypes: true }).filter(entry => entry.isDirectory()); } catch {}
+  try { attemptDirs = fs.readdirSync(attemptsDirectory, { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => ({ name: entry.name, dir: path.join(attemptsDirectory, entry.name), sourceKind: 'archived-attempt' })); } catch {}
+  if (rootReportPath && fs.existsSync(rootReportPath)) attemptDirs.push({ name: 'root-current-snapshot', dir: path.dirname(rootReportPath), reportPath: rootReportPath, metadataPath: rootMetadataPath, sourceKind: 'root-workflow-snapshot' });
   let archivedReports = 0;
   for (const dirent of attemptDirs) {
-    const dir = path.join(attemptsDirectory, dirent.name);
-    const reportPath = path.join(dir, 'claim-verification.json');
+    const dir = dirent.dir ?? path.join(attemptsDirectory, dirent.name);
+    const reportPath = dirent.reportPath ?? path.join(dir, 'claim-verification.json');
     if (!fs.existsSync(reportPath)) continue;
     const report = readJson(reportPath);
     const articlePath = str(report?.articlePath).replace(/^\.\//, '');
     const match = /^content\/articles\/([A-Za-z0-9._-]+)\.md$/.exec(articlePath);
     if (!match || match[1].includes('..') || !publishedBySlug.has(match[1])) continue;
     const slug = match[1];
-    const metadata = readJson(path.join(dir, 'metadata.json'));
+    const metadataPath = dirent.metadataPath ?? path.join(dir, 'metadata.json');
+    const metadata = readJson(metadataPath);
     const reportRaw = (() => { try { return fs.readFileSync(reportPath, 'utf8'); } catch { return ''; } })();
     const sourceById = new Map();
     for (const source of Array.isArray(report.sources) ? report.sources : []) {
@@ -83,7 +85,8 @@ export function auditPublishedClaims({ articles, attemptsDirectory, articlesDire
       attemptId: dirent.name,
       articlePath,
       reportPath: path.relative(process.cwd(), reportPath).split(path.sep).join('/'),
-      metadataPath: fs.existsSync(path.join(dir, 'metadata.json')) ? path.relative(process.cwd(), path.join(dir, 'metadata.json')).split(path.sep).join('/') : null,
+      metadataPath: fs.existsSync(metadataPath) ? path.relative(process.cwd(), metadataPath).split(path.sep).join('/') : null,
+      sourceKind: dirent.sourceKind ?? 'archived-attempt',
       workflowRun: str(metadata?.workflowRun) || null,
       workflowSha: str(metadata?.workflowSha) || null,
       lifecycleStatus: str(metadata?.status) || 'unknown',
@@ -93,7 +96,7 @@ export function auditPublishedClaims({ articles, attemptsDirectory, articlesDire
       reportSha256: reportRaw ? sha256(reportRaw) : null,
       reportShapeStatus: hasClaims ? 'claims-array-present' : 'unknown-missing-claims-array',
       claims: claimRows,
-      note: 'Archived attempt is retained as history. It is not assumed to describe the exact current published bytes.'
+      note: dirent.sourceKind === 'root-workflow-snapshot' ? 'Root workflow snapshot is retained, but absent exact article/report/evidence hashes mean it is not proven to match the current published bytes.' : 'Archived attempt is retained as history. It is not assumed to describe the exact current published bytes.'
     };
     if (!reportsBySlug.has(slug)) reportsBySlug.set(slug, []);
     reportsBySlug.get(slug).push(record);
