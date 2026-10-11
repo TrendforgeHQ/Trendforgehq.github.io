@@ -3,12 +3,12 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Current verified status:** The semantic-support review validator/CLI and full BOAT offline suite passed **92/92** in branch-head [run 38121699251](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121699251), 0 failed, 0 skipped. This is offline contract validation only, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes. The quarantine metadata now marks workflow-recorded hashes `true` only when all three artifact hashes are present.
+**Current verified status:** The semantic-support review validator/CLI, timestamp edge cases, schema-keyword inventory guard, and full BOAT offline suite passed **94/94** in [run 38121806369](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121806369), 0 failed, 0 skipped. This is offline contract validation only, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes. The quarantine metadata now marks workflow-recorded hashes `true` only when all three artifact hashes are present.
 
 ## Current boundary and next task
 - The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
 - Added the v1 human semantic-support review schema, review rubric, and offline contract tests. The record requires exact bundle hashes, reviewer identity, component-level evidence assessment, rationale, and explicit safety invariants. It does not upgrade proposal semantic status or approve publication.
-- Added a read-only review-record validator/CLI and fail-closed tests; branch-head CI passed 92/92. Next audit schema/CLI edge cases. Until a review is validated and existing gates independently pass, keep proposal semantic support `not_verified`; do not invoke providers or run publishing.
+- Added a read-only review-record validator/CLI, strict timestamp edge checks, and a schema-keyword inventory guard; branch-head CI passed 94/94. Next: define duplicate-ID/conflicting-review policy without discarding disagreement. Until a review is validated and existing gates independently pass, keep proposal semantic support `not_verified`; do not invoke providers or run publishing.
 - Historical validation entries in this file are retained as dated records; the current status above takes precedence where old pending/count summaries conflict.
 
 ## Mission
