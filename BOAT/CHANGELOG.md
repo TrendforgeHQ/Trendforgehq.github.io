@@ -232,3 +232,11 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Branch-head offline CI [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348) passed **70/70**, 0 failed, 0 skipped, including the report schema-contract test.
 - Report status remains 40 claims total: 26 eligible, 3 blocked, 11 unknown; semantic support is not verified.
+
+
+
+## 2026-10-11 — Eligibility count reconciliation
+
+- Eligibility report now derives counts from claim statuses, checks each run against adapter counts, and verifies aggregate/per-run totals agree; mismatches fail closed.
+- Report schema requires countsReconciled=true at summary and run levels.
+- Branch-head offline CI [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899) passed **70/70**, 0 failed, 0 skipped.
