@@ -3,13 +3,14 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Current verified status:** The latest recorded published-catalogue/evidence-coverage suite passed **128/128** and Control Center checks passed **37/37** in [run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728); Control Center production build passed in [run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739). This verifies offline contracts/build only, not current-version factual truth. The exact published-byte lineage manifest is the next implementation target.
+**Current verified status:** BOAT Offline Tests [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, including the new published-lineage-manifest contract tests. Control Center checks passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); its production build was pending at the last check. This verifies offline contracts only, not semantic truth or publishing readiness.
 
 ## Current boundary and next task
-- The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
-- Added the v1 human semantic-support review schema, review rubric, and offline contract tests. The record requires exact bundle hashes, reviewer identity, component-level evidence assessment, rationale, and explicit safety invariants. It does not upgrade proposal semantic status or approve publication.
-- Added a read-only review-record validator/CLI, strict timestamp edge checks, and a schema-keyword inventory guard; branch-head CI passed 94/94. Added a review-set policy and audit CLI to detect duplicate IDs and conflicting human reviews without adjudication; branch-head full-suite CI passed 106/106. Next: deterministic report fixtures and output-stability tests. Until a review is validated and existing gates independently pass, keep proposal semantic support `not_verified`; do not invoke providers or run publishing.
-- Historical validation entries in this file are retained as dated records; the current status above takes precedence where old pending/count summaries conflict.
+- Added the offline published-lineage manifest builder and synthetic contract tests; branch-head offline suite [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed 129/129.
+- The builder records SHA-256 hashes for exact article, claim-report, evidence-pack, article-brief, and current-run-marker bytes, bound to workflow run/SHA and canonical article path. It fails closed on missing generation marker, wrong run/path, non-PASS report, missing claims, invalid/ambiguous candidate envelope, or missing sources.
+- Control Center deterministic checks passed 37/37 in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); production build was still in progress at last status check.
+- The builder is **not yet integrated** into the publishing workflow or Control Center. Exact-byte hashes are provenance, not semantic-support verification or source-freshness checks.
+- Next: confirm the build result, inspect actual current-run marker/report/evidence-pack shapes, then add an end-to-end synthetic integration contract before any publishing workflow wiring. Do not run provider/publishing workflows, edit articles, weaken gates, merge PR #35, or touch `main`.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -474,3 +475,10 @@ Verified current baseline:
 - Added synthetic regression coverage in `scripts/test-boat-published-lineage-manifest.mjs` and explicit offline CI path filters. **CI result pending**; no test pass is claimed yet.
 - Important scope limit: this is an offline helper only. It is not yet integrated into `publish.yml` or the Control Center, and it does not establish semantic support or source freshness. No provider/publishing run, article edit, or `main` change was made.
 - Next: inspect the offline CI result; then validate the contract against actual current-run marker/report/pack shapes before any workflow integration.
+
+
+## Published lineage manifest builder — verification update (2026-10-11)
+
+- Offline CI [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, 0 failures, 0 skips. Logs explicitly show `BOAT published lineage manifest contract tests: PASS`.
+- Control Center deterministic suite passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); production build status was still in progress at last check.
+- No publishing/provider workflow ran. The helper is not integrated into publishing; no article bytes or `main` changed.
