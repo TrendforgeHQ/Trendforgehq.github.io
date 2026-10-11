@@ -99,3 +99,11 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Verified totals: **40 claims, 26 eligible, 3 blocked, 11 unknown**. Eligible counts per run: **12/15, 12/18, 2/7**. Eligibility means exact article text + matching source lineage + unique same-source passage mapping only.
 - Earlier report run [38118890184](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118890184) exposed a missing pathToFileURL import; fixed and recorded in L-016. The corrected suite is green.
 - Next: add a formal JSON Schema and schema-contract test for the report envelope so downstream tools can consume it safely. Keep the PR draft/unmerged; no provider or publishing runs.
+
+
+
+## Eligibility report schema
+
+- Added BOAT/schemas/recovered-proposal-eligibility-report.schema.json for the stdout report envelope, summary counts, per-run records, and per-claim reason codes.
+- Schema-contract tests explicitly lock recovery-time-only hashes, semanticSupport=not_verified, approvalRequired=true, and automaticApplication=false.
+- CI for the schema addition is pending inspection. Next: verify the full offline suite and, if green, record the new total. No production changes.
