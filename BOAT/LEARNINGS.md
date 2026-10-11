@@ -173,3 +173,13 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** For archived run 37696062759, 4/7 report claim strings are present in the article and 4/7 claims have unique passage mappings, but only 2 claims satisfy both conditions simultaneously.
 - **Decision:** Proposal eligibility must be computed per claim from the intersection of exact article-text presence, same-source URL lineage, and unique canonical passage mapping; independent aggregate counts cannot be multiplied or assumed to overlap.
 - **Validation:** First CI run exposed the mistaken expected count of 4; regression now expects 2 eligible claims for this run. [Run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64 tests.
+
+
+
+## L-013 — Proposal inputs must be narrower than recovered artifacts
+
+- A recovered evidence pack does not automatically make every saved claim safe to repair.
+- Eligibility requires exact claim text in the final article, source ID/URL agreement across claim/report/selected pack, and a unique exact-text passage mapping from that same source.
+- Recovery-time hashes protect the recovered files from subsequent accidental changes but are not original workflow hashes; never represent them as generation-time provenance.
+- The adapter emits inputs only. Human review and the existing verifier/editorial gates remain mandatory; semantic support is not verified.
+- Synthetic and all-three-real-run regression coverage added; CI result pending inspection.
