@@ -14,7 +14,7 @@ const briefRaw = JSON.stringify({ brief: { title: 'Example source story' } });
 const pack = { version: 1, generatedAt: '2026-10-11T00:00:00.000Z', status: 'authoritative', candidates: [{
   candidate: { title: 'Example source story' },
   sources: [{ id: 'S1', url: 'https://example.com/story', body: 'Example full source body.', passages: ['Example passage.'] }],
-  evidenceBrief: { relevantPassages: [{ sourceId: 'S1', passageId: 'P1', text: 'Example passage.' }], storyFactMap: { facts: [{ factId: 'F1', sourceId: 'S1', passageId: 'S1-P1' }] } }
+  evidenceBrief: { relevantPassages: [{ sourceId: 'S1', passageId: 'P1', text: 'Example passage.' }], storyFactMap: { coreFacts: [{ factId: 'F1', sourceId: 'S1', passageId: 'S1-P1' }] } }
 }] };
 const packRaw = JSON.stringify(pack);
 const attemptRecords = [{ metadata: { articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40) }, articleRaw, packRaw }];
