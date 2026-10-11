@@ -535,3 +535,5 @@ All entries should describe actual work and results. Do not record planned work 
 - Added deterministic regression coverage for empty/invalid packs, resolvable IDs, and missing source IDs; included both new paths in the offline workflow filters.
 - Repository inspection found the root claim report has 10 claims and saved `pass: true`, while `data/authoritative-evidence-pack.json` is zero bytes on both the BOAT branch and `main`. The auditor preserves this as UNKNOWN and does not synthesize evidence or change article content.
 - CI verification for these latest commits is pending; no claim is made that the new tests have passed until the workflow result is checked.
+
+- Follow-up correction: initial regression run exposed malformed CLI stdout caused by a literal `\\n` suffix. Replaced it with a real newline using `String.fromCharCode(10)` in `b70032893c8f9108f8d523e44f917ba8f1be2b37`; verify latest-head CI before calling the feature green.
