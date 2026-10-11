@@ -360,3 +360,9 @@ All entries should describe actual work and results. Do not record planned work 
 
 
 - Final branch-head recheck after trimming the fixture helper: [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254), **113/113 passed**, 0 failed, 0 skipped, commit `9153fc66d0e37f31f0320a4ac3848670ee745f76`.
+
+
+### Review-set ordering and report schema — 2026-10-11
+
+- Made findings and subject groups deterministic across input permutations while preserving caller-order records and input-relative indices.
+- Added a report JSON Schema and contract tests for record references, dissent retention, invalid-input handling, and no automatic winner. CI run 38122850780 passed 120/120 tests.
