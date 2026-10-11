@@ -141,7 +141,7 @@ export function auditPublishedLineageCoverage(articles, articlesDirectory, linea
   let manifestFiles = [];
   try {
     manifestFiles = fs.readdirSync(lineageDirectory, { withFileTypes: true })
-      .filter(entry => entry.isFile() && /^manifest-[0-9]+\\.json$/.test(entry.name));
+      .filter(entry => entry.isFile() && /^manifest-[0-9]+\.json$/.test(entry.name));
   } catch {
     manifestFiles = [];
   }
@@ -151,7 +151,7 @@ export function auditPublishedLineageCoverage(articles, articlesDirectory, linea
     if (!manifest || manifest.schemaVersion !== 1 || !isRunId(manifest.workflowRun) || !isSha(manifest.workflowSha) || !Array.isArray(manifest.records)) continue;
     for (const record of manifest.records) {
       const articlePath = String(record?.articlePath ?? '');
-      const match = articlePath.match(/^content\\/articles\\/([A-Za-z0-9._-]+)\\.md$/);
+      const match = articlePath.match(/^content\/articles\/([A-Za-z0-9._-]+)\.md$/);
       if (!match || articlePath.includes('..')) continue;
       const hashes = record?.hashes ?? {};
       const hashKeys = ['articleSha256', 'claimReportSha256', 'evidencePackSha256', 'articleBriefSha256', 'currentRunMarkerSha256'];
