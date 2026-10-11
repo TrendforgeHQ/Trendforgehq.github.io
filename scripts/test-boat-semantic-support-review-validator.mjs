@@ -46,6 +46,19 @@ test('CLI rejects missing reviewer identity and malformed timestamp', t => {
   const result = runCli(dir, record); assert.equal(result.status, 1);
   assert.ok(result.output.errors.some(error => error.includes('reviewerId'))); assert.ok(result.output.errors.some(error => error.includes('date-time')));
 });
+test('CLI rejects impossible calendar dates and out-of-range clock fields', t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-datetime-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const record = validReview(); record.reviewer.reviewedAt = '2026-02-31T25:70:80Z';
+  const result = runCli(dir, record); assert.equal(result.status, 1);
+  assert.ok(result.output.errors.some(error => error.includes('date-time')));
+});
+test('CLI enforces schema enums and numeric minima', t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-enum-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const record = validReview(); record.reviewer.role = 'robot'; record.claim.claimIndex = 0;
+  const result = runCli(dir, record); assert.equal(result.status, 1);
+  assert.ok(result.output.errors.some(error => error.includes('reviewer.role')));
+  assert.ok(result.output.errors.some(error => error.includes('claimIndex')));
+});
 test('CLI rejects invalid passage IDs, empty passage evidence, and invalid URI', t => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-passage-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
   const record = validReview(); record.claim.passageId = 'S1-FF1'; record.claim.passageText = ''; record.claim.sourceUrl = 'not a url';
