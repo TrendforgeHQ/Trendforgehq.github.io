@@ -2,7 +2,7 @@
 
 Keep verified observations separate from hypotheses. Each entry should include evidence and a validation status.
 
-**ID integrity note (2026-10-11):** Historical entries had reused identifiers, which made references ambiguous. Headings have been renumbered uniquely in document order; the learning text and historical evidence are preserved. Validation labels such as “pending” describe the state at the time each entry was written, not the current branch-wide status. Current aggregate offline status is **77/77 passed** in [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568). This does not prove semantic support or production readiness.
+**ID integrity note (2026-10-11):** Historical entries had reused identifiers, which made references ambiguous. Headings have been renumbered uniquely in document order; the learning text and historical evidence are preserved. Validation labels such as “pending” describe the state at the time each entry was written, not the current branch-wide status. The latest recorded published-catalogue/evidence-coverage suite passed **128/128** in [run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728), with Control Center checks 37/37 and production build success in [run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739). This does not prove semantic support or production readiness.
 
 ## L-001 — Existing learning is not yet a complete editorial learning loop
 - **Observed:** `scripts/trendforge-self-learning.mjs` aggregates run-level decision/evidence/claim/provider metrics and produces shadow-mode signals.
@@ -442,3 +442,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Path matching can reveal which published articles have archived claim-verification history, but it cannot prove that the report belongs to the exact bytes currently published.
 - Keep historical PASS, historical block, conflicting history, and unknown as separate states; never select a winner from conflicting attempts or call missing data clean.
 - Exact current audit requires a publish-time manifest with article SHA-256, claim-report SHA-256, evidence-pack SHA-256, workflow run/SHA, and a verifiable binding to the published slug. Tests/build passed in runs [38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) and [38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739).
+
+
+## L-060 — A lineage manifest must bind exact bytes and current-run identity
+- **Observed:** Historical claim-report coverage currently matches reports to published articles by `articlePath`; this cannot prove the report belongs to the exact current published bytes. The current workflow already uses `data/current-run-article.json` to distinguish an article generated in the current run, and the claim verifier writes an `articlePath`-scoped report.
+- **Decision:** A lineage record must hash the exact article, report, evidence-pack, brief, and current-run marker bytes; bind the canonical article path to the same workflow run/SHA; require claim-verification PASS and a unique evidence-pack candidate matching the current brief; and fail closed on missing/ambiguous inputs.
+- **Safety limit:** Hash binding establishes byte identity/provenance, not semantic support, source freshness, or universal factual correctness. Do not call a historical PASS current verification without a matching manifest.
+- **Implementation status:** Offline manifest builder and synthetic tests added on the BOAT branch; CI pending. It is not yet connected to the production publishing workflow. No provider/publishing run or article mutation occurred.
+- **Next validation:** inspect branch-head offline CI and compare the contract against actual workflow output shapes before integration.
