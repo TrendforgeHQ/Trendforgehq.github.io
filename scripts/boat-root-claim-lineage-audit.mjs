@@ -79,8 +79,8 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
   }) ?? null;
   // A finalized immutable attempt bundle can bind all three exact bytes to one run;
   // the older attempt archive binds only the evidence pack, and a manifest is another valid binder.
-  const packArchiveRunBindingProven = Boolean(archiveMatch || manifestMatch || finalizedAttemptMatch);
-  const reportRunBindingProven = Boolean(manifestMatch || finalizedAttemptMatch);
+  const packArchiveRunBindingProven = Boolean((archiveMatch && archivedArticleBytesMatchCurrent) || manifestMatch || finalizedAttemptMatch);
+  const reportRunBindingProven = Boolean((archiveMatch && archivedArticleBytesMatchCurrent) || manifestMatch || finalizedAttemptMatch);
   const rows = claims.map((claim, i) => {
     const sourceId = text(claim?.sourceId ?? claim?.coreFactMatch?.sourceId);
     const ids = [
@@ -178,7 +178,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     },
     claims: rows,
     limitations: [
-      'Exact report/run pairing is proven only by a finalized immutable attempt bundle or a lineage manifest whose article, report, pack, and brief hashes match current bytes.',
+      'Exact report/run pairing is proven only by a same-run archive or finalized immutable attempt bundle/lineage manifest whose required article, report, pack, and (where recorded) brief hashes match current bytes.',
       'Source/passage/fact identifiers and URLs are structural traceability only; they do not prove semantic support or source freshness.',
       'No source URLs are fetched, no model/provider is called, and no article or publication state is changed.'
     ]
