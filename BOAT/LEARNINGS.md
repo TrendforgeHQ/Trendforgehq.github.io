@@ -282,3 +282,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - A hash-bound bundle can still be incompatible with the consumer's data contract. The factual proposal engine expects root-level sources; recovered authoritative packs place sources inside candidates[].
 - The adapter therefore requires a compatible pack shape before allowing handoff. Candidate-envelope support must select by exact candidate title/link and fail closed on missing or ambiguous identity.
 - Validation: [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152), 73 passed, 0 failed, 0 skipped.
+
+
+
+## L-021 — Claim eligibility does not authorize proposal-engine handoff
+
+- Keep “eligible to prepare a review input” distinct from “safe to invoke the factual proposal engine.” The latter requires original workflow-recorded hashes and same-run/workflow-SHA verification.
+- Recovery-time hashes document current recovered bytes only; they cannot retroactively prove original artifact integrity.
+- Synthetic handoff positive/negative tests passed in [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418), 73 passed, 0 failed, 0 skipped.
