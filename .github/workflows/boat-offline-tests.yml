@@ -12,10 +12,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: boat-offline-tests
-  cancel-in-progress: true
-
 jobs:
   article-doctor:
     runs-on: ubuntu-latest
