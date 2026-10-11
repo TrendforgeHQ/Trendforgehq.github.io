@@ -151,12 +151,15 @@ export function auditPublishedLineageCoverage(articles, articlesDirectory, linea
     if (!manifest || manifest.schemaVersion !== 1 || !isRunId(manifest.workflowRun) || !isSha(manifest.workflowSha) || !Array.isArray(manifest.records)) continue;
     for (const record of manifest.records) {
       const articlePath = String(record?.articlePath ?? '');
-      const match = articlePath.match(/^content\/articles\/([A-Za-z0-9._-]+)\.md$/);
+      const prefix = 'content/articles/';
+      if (!articlePath.startsWith(prefix) || !articlePath.endsWith('.md')) continue;
+      const articleSlug = articlePath.slice(prefix.length, -3);
+      if (!/^[A-Za-z0-9._-]+$/.test(articleSlug) || articleSlug.includes('..')) continue;
       if (!match || articlePath.includes('..')) continue;
       const hashes = record?.hashes ?? {};
       const hashKeys = ['articleSha256', 'claimReportSha256', 'evidencePackSha256', 'articleBriefSha256', 'currentRunMarkerSha256'];
       const structurallyValid = record.schemaVersion === 1
-        && record.slug === match[1]
+        && record.slug === articleSlug
         && record.workflowRun === manifest.workflowRun
         && record.workflowSha === manifest.workflowSha
         && isRunId(record.workflowRun)
