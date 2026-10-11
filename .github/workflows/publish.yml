@@ -210,6 +210,7 @@ jobs:
             data/article-brief.json
             data/article-contract.json
             data/claim-verification.json
+            data/authoritative-evidence-pack.json
             data/grounding-repair.json
             data/evidence-integrity.json
             data/current-article-rejected.json
@@ -247,6 +248,15 @@ jobs:
           GITHUB_RUN_ID: ${{ github.run_id }}
           GITHUB_SHA: ${{ github.sha }}
         run: node scripts/write-boat-published-lineage-manifest.mjs
+      - name: Upload exact published lineage manifest
+        if: always() && !cancelled()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: trendforge-lineage-${{ github.run_number }}
+          path: data/published-lineage/manifest-${{ github.run_id }}.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Build site
         run: npm run build
       - name: Commit pipeline output
