@@ -307,3 +307,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** The quarantine workflow previously wrote `hashesRecordedInWorkflow: true` even if the claim report or canonical evidence pack was missing, leaving an empty hash value. The adapter failed closed, but the metadata marker overstated completeness.
 - **Decision:** Default the marker to `false`; set it to `true` only when article, report, and evidence-pack hashes are all non-empty. Keep downstream byte/hash/run/SHA checks mandatory.
 - **Validation:** Offline contract test [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875) passed 77/77, 0 failed, 0 skipped. Publishing was not run.
+
+
+## L-043 — Review evidence must be component-level and bundle-bound
+
+- Exact artifact lineage and a passage ID establish traceability, not semantic support for every factual part of a replacement.
+- The v1 review record binds reviewer, workflow run/SHA, article/report/evidence-pack hashes, proposal ID, claim/replacement and passage text. It records component assessments and checks scope, timing, attribution, and uncertainty.
+- This remains advisory human judgment. Keep `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and all existing gates mandatory. Preserve separate records for disagreements.
+- Offline contract tests are in `scripts/test-boat-semantic-support-review.mjs`; validator/CLI is the next step.
