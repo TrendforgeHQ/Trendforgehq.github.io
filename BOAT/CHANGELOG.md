@@ -415,3 +415,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Added the Published Article Audit section to `app/control-center/page.tsx`, with article inventory, counts, flagged findings, and an explicit build-time snapshot / not-fact-checked note.
 - Added responsive styling, type declaration for the helper, deterministic fixture tests, and BOAT workflow path filters for the new test.
 - No article mutation, claim/evidence gate change, provider call, publish workflow run, or main-branch edit. CI and static build result still need inspection.
+
+
+### Catalogue audit verification — 2026-10-11
+
+- BOAT Offline Tests [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757) passed **128/128**, including the new scanner fixture suite; Control Center contract suite passed **33/33**.
+- Control Center QA [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747) passed the production static build. Existing non-fatal webpack cache/CSS warnings remain.
+- This validates the code path and build, not semantic truth, freshness, full claim-to-evidence coverage, or live chat. No providers or publishing workflows were called.
