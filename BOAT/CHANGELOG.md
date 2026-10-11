@@ -168,3 +168,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Added a CLI integration regression against the actual AD-FX-001 saved `article.md`, `claim-verification.json`, and `metadata.json`.
 - Verified that absent canonical evidence-pack/hash lineage yields `unknown`; the command exits nonzero, keeps the proposal review-only, and does not modify the original input bytes.
 - Latest run [38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407): **45 passed, 0 failed, 0 skipped**.
+
+
+## 2026-10-11 — Cross-check archived artifact retention
+- Inspected archived attempts for runs `37996683799` and `37696062759`; both have the same four-file shape as run `38085367295` and lack a canonical evidence-pack JSON file.
+- All three archived metadata files record run ID and workflow SHA but no recorded artifact SHA-256 hashes. Legacy passage IDs include `S1-FF1,S2-FF6`, `S2-BODY`, and `S1-BODY`; no automatic conversion was added.
+- Latest branch-head offline test run before this documentation record: [38114305258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114305258), **45 passed, 0 failed, 0 skipped**.
+- Next: inspect the evidence-pack producer and workflow artifact retention to determine whether exact same-run packs exist elsewhere.

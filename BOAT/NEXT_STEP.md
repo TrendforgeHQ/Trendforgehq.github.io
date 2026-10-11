@@ -35,8 +35,9 @@ Inspected the archived claim-blocked attempt:
 - No claim is made that the archived historical attempt has valid same-run evidence lineage.
 
 ### Next action after green tests
-1. Inspect the other archived attempts for the actual retained evidence-pack shape and recorded lineage metadata. Extend the adapter only for observed fields; if canonical packs are missing, keep the result `unknown` and record the limitation.
-2. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
+1. All three archived blocked attempts have now been inspected: each stores `article.md`, `article-brief.json`, `claim-verification.json`, and `metadata.json`, but no canonical evidence-pack JSON or recorded artifact SHA-256 hashes. Their legacy passage labels vary (`S1-FF1`, `S2-BODY`, `S1-BODY`), so do not map them into `Sx-Pn` by guesswork.
+2. Next, inspect the live producer/consumer code for the authoritative evidence-pack schema and determine whether an exact same-run pack can be recovered from existing committed artifacts or workflow artifacts. If it cannot, retain `unknown` and document the retention gap; do not reconstruct historical provenance from briefs.
+3. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails
 - Do not change `main`; do not merge PR #35 automatically.

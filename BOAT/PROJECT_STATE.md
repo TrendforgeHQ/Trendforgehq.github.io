@@ -181,3 +181,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - The test deliberately supplies no evidence pack and confirms the CLI exits nonzero with proposal status `unknown`, retains `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`, and leaves all three tracked input files byte-identical.
 - Latest branch-head CI: [run 38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407), **45 passed, 0 failed, 0 skipped**.
 - This is an integration test of fail-closed behavior; it does not establish semantic claim support or historical evidence-pack lineage.
+
+
+## Phase 1.3 — Compare all archived blocked attempts (2026-10-11)
+- Inspected the remaining two archived attempts, runs `37996683799` and `37696062759`, alongside AD-FX-001/run `38085367295`.
+- All three directories contain `article.md`, `article-brief.json`, `claim-verification.json`, and `metadata.json`; none contains a canonical evidence-pack JSON file.
+- All three metadata files record `workflowRun` and `workflowSha`, but not exact article/report/evidence-pack SHA-256 hashes.
+- Legacy passage identifiers vary (observed examples: `S1-FF1,S2-FF6`, `S2-BODY`, `S1-BODY`). These cannot safely be rewritten as canonical `Sx-Pn` identifiers.
+- The branch-head offline suite passed **45/45** in [run 38114305258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114305258), 0 failures, 0 skipped, including the real archived-attempt CLI integration.
+- Next audit target: inspect the authoritative evidence-pack producer and workflow artifact retention paths to determine whether exact same-run packs can be recovered; do not infer missing historical lineage from article briefs.

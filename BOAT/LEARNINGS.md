@@ -133,3 +133,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Evidence:** Inspected the saved AD-FX-001 files in `data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/`.
 - **Confidence:** High for the inspected archived attempt only; not a claim that every pipeline run uses this exact shape.
 - **Validation status:** Adapter/schema-contract tests and the real archived-attempt CLI integration passed in [run 38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407), 45 passed, 0 failed, 0 skipped. The archived attempt still has unproven lineage.
+
+
+## L-010 — Three archived blocked attempts share a provenance-retention gap
+- **Observed:** Three archived blocked attempts (runs `38085367295`, `37996683799`, and `37696062759`) each contain article, brief, claim-verification report, and metadata, but no canonical evidence-pack JSON. Metadata records `workflowRun`/`workflowSha` but not exact artifact SHA-256 hashes.
+- **Observed:** Saved passage labels vary across legacy formats, including `S1-FF1`, `S2-BODY`, and `S1-BODY`; these do not establish a canonical `Sx-Pn` mapping.
+- **Implication:** Do not claim the new factual proposal engine can validate same-run lineage for these archived attempts. Inspect producer/retention code for a recoverable exact pack; otherwise keep the result unknown.
+- **Evidence:** Directory listings and parsed metadata/claim-report fields for all three archived attempts.
+- **Confidence:** High for these three checked directories only; not a claim that every historical run has the same retention pattern.
+- **Validation status:** The fail-closed integration test passed in run 38114305258 (45/45 offline tests); historical lineage remains unverified.
