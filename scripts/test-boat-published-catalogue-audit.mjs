@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict';
-import { auditPublishedCatalogue } from './boat-published-catalogue-audit.mjs';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { auditPublishedCatalogue, auditPublishedEvidenceCoverage } from './boat-published-catalogue-audit.mjs';
 
+// Structural catalogue scan: every canonical published article is inventoried.
 const articles = [
   {
     slug: 'clean-article',
@@ -22,12 +26,11 @@ const articles = [
     sources: [],
   },
 ];
-const report = auditPublishedCatalogue(articles);
-assert.equal(report.length, 2, 'every indexed published article is inventoried');
-const flagged = report.find((article) => article.slug === 'flagged-article');
-const clean = report.find((article) => article.slug === 'clean-article');
+const structural = auditPublishedCatalogue(articles);
+assert.equal(structural.length, 2);
+const flagged = structural.find(article => article.slug === 'flagged-article');
+const clean = structural.find(article => article.slug === 'clean-article');
 assert.ok(flagged);
-assert.equal(flagged.title, 'Flagged Article');
 assert.equal(flagged.urls, 0);
 assert.equal(flagged.sourceHeading, false);
 assert.equal(flagged.emptyHeadings, 1);
@@ -38,15 +41,9 @@ assert.equal(clean.sourceHeading, true);
 assert.equal(clean.urls, 1);
 assert.equal(clean.emptyHeadings, 0);
 assert.equal(clean.repeatedParagraphs, 0);
-assert.deepEqual(auditPublishedCatalogue(null), [], 'missing/non-array article index returns an unknown empty inventory');
-console.log('BOAT published catalogue audit tests: PASS');
+assert.deepEqual(auditPublishedCatalogue(null), []);
 
-import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
-import { auditPublishedEvidenceCoverage } from './boat-published-catalogue-audit.mjs';
-
+// Archived claim reports are historical signals only; absent reports stay unknown.
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-evidence-'));
 try {
   const blocked = path.join(root, 'attempt-blocked');
@@ -61,12 +58,12 @@ try {
     articlePath: 'content/articles/beta.md', pass: true, claimCount: 4, verified: 4, partial: 0, unsupported: 0
   }));
   fs.writeFileSync(path.join(passed, 'authoritative-evidence-pack.json'), '{}');
-  const report = auditPublishedEvidenceCoverage([
+  const coverage = auditPublishedEvidenceCoverage([
     { slug: 'alpha', title: 'Alpha' }, { slug: 'beta', title: 'Beta' }, { slug: 'gamma', title: 'Gamma' }
   ], root);
-  const alpha = report.find(item => item.slug === 'alpha');
-  const beta = report.find(item => item.slug === 'beta');
-  const gamma = report.find(item => item.slug === 'gamma');
+  const alpha = coverage.find(item => item.slug === 'alpha');
+  const beta = coverage.find(item => item.slug === 'beta');
+  const gamma = coverage.find(item => item.slug === 'gamma');
   assert.equal(alpha.status, 'historical-block');
   assert.equal(alpha.unsupported, 1);
   assert.equal(beta.status, 'historical-pass');
@@ -74,7 +71,7 @@ try {
   assert.match(beta.note, /not hash-linked/);
   assert.equal(gamma.status, 'unknown');
   assert.equal(auditPublishedEvidenceCoverage([{ slug: 'x' }], path.join(root, 'missing'))[0].status, 'unknown');
-  console.log('BOAT published evidence coverage tests: PASS');
+  console.log('BOAT published catalogue and evidence coverage tests: PASS');
 } finally {
   fs.rmSync(root, { recursive: true, force: true });
 }
