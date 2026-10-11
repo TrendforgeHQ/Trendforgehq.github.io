@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Current verified status:** The read-only review-set policy/CLI, subject fingerprint hardening, and full BOAT offline suite passed **106/106** in branch-head [run 38122117534](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122117534), 0 failed, 0 skipped. All checks are offline contracts only, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes. The quarantine metadata now marks workflow-recorded hashes `true` only when all three artifact hashes are present.
+**Current verified status:** The latest recorded published-catalogue/evidence-coverage suite passed **128/128** and Control Center checks passed **37/37** in [run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728); Control Center production build passed in [run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739). This verifies offline contracts/build only, not current-version factual truth. The exact published-byte lineage manifest is the next implementation target.
 
 ## Current boundary and next task
 - The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
@@ -465,3 +465,12 @@ Verified current baseline:
 - Safety semantics: historical PASS is not current verification; missing records are UNKNOWN; conflicting outcomes are preserved; counts across multiple attempts may repeat the same claim.
 - Verification: [run 38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) — 128/128 tests, 37/37 Control Center checks; [run 38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739) — production build passed.
 - Remaining blocker for current claim auditing: no exact manifest binding the currently published article hash to the claim-report and evidence-pack hashes. Next step is to create and consume that lineage manifest during publishing; do not call path matches exact verification.
+
+
+## Published lineage manifest builder — implementation in progress (2026-10-11)
+
+- Added `scripts/boat-published-lineage-manifest.mjs` to build a one-run manifest record that hashes exact article, claim report, evidence pack, article brief, and current-run marker bytes and records workflow run/SHA, article slug/path, verifier status, candidate identity, and explicit limits.
+- The builder requires the current-run marker to confirm generation in the same workflow run, a PASS claim report for the same canonical article path with non-empty claim rows, and exactly one evidence-pack candidate matching the current brief title with source records. Invalid/missing/mismatched inputs fail closed.
+- Added synthetic regression coverage in `scripts/test-boat-published-lineage-manifest.mjs` and explicit offline CI path filters. **CI result pending**; no test pass is claimed yet.
+- Important scope limit: this is an offline helper only. It is not yet integrated into `publish.yml` or the Control Center, and it does not establish semantic support or source freshness. No provider/publishing run, article edit, or `main` change was made.
+- Next: inspect the offline CI result; then validate the contract against actual current-run marker/report/pack shapes before any workflow integration.
