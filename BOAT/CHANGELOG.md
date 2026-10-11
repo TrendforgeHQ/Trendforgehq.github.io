@@ -82,3 +82,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Expanded the report schema and added a regression verifying source metadata and the exact claim pointer for an archived unsupported claim.
 - Final isolated Node run at commit `d532a48b78cd25d687dd55b3f59a40713431dddf`: **14/14 passed**. GitHub Actions [run 38110939177](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110939177) also passed 14/14.
 - This is provenance reuse, not independent source verification: BOAT makes no external requests and does not assert that the cited page currently supports the claim.
+
+
+## 2026-10-11 — Source-context coverage summary
+- Added top-level `sourceCoverage` metrics to the Article Doctor report. The summary counts metadata fields in the saved claim report and reports `unknown`/null counts when no claims array exists.
+- Audited saved fixtures: AD-FX-001 15/15, AD-FX-002 18/18, AD-FX-003 7/7 claims had URL, source ID, passage IDs, and excerpt; zero claims were missing any of those context fields. This is metadata completeness, not proof of source relevance or truth.
+- Added regression coverage for the summary, missing source metadata, and the 500-character excerpt cap.
+- CI [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258) passed **17/17**, 0 failures.
+- Next: a separate offline Evidence Auditor should cross-check claim-to-source lineage against the saved authoritative evidence pack; no external fetch or provider call is needed.

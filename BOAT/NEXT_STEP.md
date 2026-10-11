@@ -1,22 +1,22 @@
 # BOAT Next Step
 
-## Current task: audit source-context coverage
+## Current task: offline Evidence Auditor — lineage consistency
 Risk: low. Provider cost: none. Production behavior change: none.
 
 ### Verified implementation
-- Offline read-only evaluator: `scripts/boat-article-doctor.mjs`.
+- Offline read-only Article Doctor: `scripts/boat-article-doctor.mjs`.
 - Report contract: `BOAT/schemas/article-doctor-report.schema.json`.
 - Isolated regression workflow: `.github/workflows/boat-offline-tests.yml`.
-- Latest CI [run 38110939177](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110939177) passed 14/14 at commit `d532a48b78cd25d687dd55b3f59a40713431dddf`.
-- Findings now retain source URL/title, source ID/role, passage IDs, bounded excerpt, and the claim report JSON pointer when that information exists in the saved verifier report.
+- Latest CI [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258) passed 17/17 at commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae`.
+- Source context and report-level coverage are preserved from saved verifier artifacts. The report clearly distinguishes metadata presence from actual source verification.
 - PR #35 remains draft and unmerged: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
 
 ### Next implementation
-1. Audit source-context coverage across AD-FX-001..003: count claim findings with a URL, source ID, passage IDs, or excerpt; report missing fields as missing, never infer them.
-2. Add tests for a claim with no source metadata and a very long evidence excerpt; confirm null/empty defaults and the 500-character cap.
-3. Keep the limitation explicit: these URLs and excerpts are copied from the saved verifier output; BOAT does not fetch or independently validate sources yet.
-4. After source-context coverage is stable, build an offline Evidence Auditor summary with claim-to-source coverage and gaps. Do not call providers or change publication gates.
-5. Human-article benchmarking comes after evidence audit; repairs, publishing, merges, and autonomy remain out of scope.
+1. Add a separate offline Evidence Auditor module that accepts an article claim report and the exact saved authoritative evidence pack from the same workflow attempt.
+2. Cross-check each claim's `sourceId`, `matchedPassages` / `bestPassageId`, source URL, and role against the pack's source IDs and passage IDs. Report mismatches, missing IDs, and stale/mismatched artifact lineage.
+3. Treat missing or mismatched pack inputs as `unknown`; do not treat matching IDs as proof that a claim is true or the passage semantically supports it.
+4. Add synthetic fixtures for valid lineage, missing source ID, missing passage ID, wrong workflow/run, and duplicate/conflicting source metadata. Keep all tests offline.
+5. After lineage checks pass, separately design source relevance/support review; do not fetch the web or call paid providers in this phase.
 
 ### Separate Run 405 record
 - PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed a durable reconstructed baseline: 9 supported / 3 partial / 3 unsupported; verifier blocks as expected.

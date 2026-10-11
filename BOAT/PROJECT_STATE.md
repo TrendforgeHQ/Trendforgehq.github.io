@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.1  
 **Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Article Doctor CI passed 14/14 at commit `d532a48b78cd25d687dd55b3f59a40713431dddf` in run `38110939177`; draft PR remains unmerged.
+**Status:** Article Doctor CI passed 17/17 at commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae` in run `38111102258`; draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -44,7 +44,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — 14/14 CI tests pass; claim findings now retain source/passage provenance |
+| 1 | Read-only artifact collection and Article Doctor report | In progress — 17/17 CI tests pass; source-context coverage metrics added |
 | 2 | Claim/source audit and editorial benchmark evaluation | Not started |
 | 3 | Fixture-backed repair proposals and regression harness | Not started |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
@@ -143,3 +143,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Isolated Node tests at commit `d532a48b78cd25d687dd55b3f59a40713431dddf`: **14 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0.
 - **CI PASS:** [run 38110939177](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110939177): 14 passed, 0 failed, 0 skipped.
 - Next: audit source-context coverage across all archived fixtures, including claims whose saved verifier output lacks URL/passage details, and keep missing context explicit rather than inventing it.
+
+
+## Source-context coverage metrics — 2026-10-11
+- Added a report-level `sourceCoverage` summary based only on fields in the saved claim-verification report: claim count, claims with URL, source ID, passage IDs, excerpt, and claims missing any of those context fields.
+- If the claims array is absent, coverage status is `unknown` and counts are null—not zero. Missing source metadata remains null/empty and is never invented.
+- Audited all three archived fixtures offline: AD-FX-001 = 15/15 claims with URL/source ID/passage IDs/excerpt; AD-FX-002 = 18/18; AD-FX-003 = 7/7. All had zero claims missing any context fields. This measures metadata presence only; it does not establish that sources are reachable or substantively support claims.
+- Added tests for no source metadata and for capping source excerpts at 500 characters.
+- **CI PASS:** [run 38111102258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111102258), commit `aab68b728f443d9ea9fa4892657e7f61fc42fcae`: **17 passed, 0 failed, 0 skipped**.
+- Next: implement an offline Evidence Auditor that cross-checks claim source IDs and passage IDs against a saved authoritative evidence pack, while distinguishing lineage consistency from factual support.

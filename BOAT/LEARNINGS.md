@@ -79,3 +79,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Fix:** Preserve these fields as copied provenance, cap excerpt length, and explicitly state that no network fetch or independent source re-check occurred.
 - **Implication:** A source URL or passage ID improves traceability but does not, by itself, prove that the cited passage supports the claim. Future Evidence Auditor work must measure missing context and verify source support separately.
 - **Validation:** CI run 38110939177 passed 14 tests, including the source-lineage regression.
+
+
+## L-013 — Source-context coverage is not factual support
+- **Observed:** The three archived claim reports have complete source-context metadata for their claims: AD-FX-001 15/15, AD-FX-002 18/18, AD-FX-003 7/7 have URL, source ID, passage IDs, and excerpt.
+- **Implication:** High metadata coverage is useful for auditability but does not prove the cited source is reachable, current, relevant, or semantically supportive. A future Evidence Auditor must cross-check identifiers against the exact evidence pack and still label factual support separately.
+- **Validation:** Source-coverage regression and full CI run 38111102258 passed 17 tests.
