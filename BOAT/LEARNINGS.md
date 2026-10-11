@@ -523,3 +523,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - CI exposed that the synthetic “no archived report” case also lacked the current Markdown file, correctly causing the stronger `unknown-current-article-missing` state. Add the article fixture rather than weakening the implementation's UNKNOWN precedence.
 - Inspecting the actual root data revealed a single root claim-verification snapshot mapped to a published slug. Include it as a distinct `root-workflow-snapshot`, but do not treat it as exact-current-byte verification without hash-bound lineage.
 - The corrected fixture and root-snapshot coverage are pending branch-head CI.
+
+## 2026-10-11 — Empty evidence-pack files must remain UNKNOWN
+
+**Observed:** the root claim report parses and lists 10 claims, but the canonical evidence-pack file is zero bytes on both the working branch and `main`. A positive saved report-level `pass` does not supply the missing evidence pack or prove current published bytes.
+
+**Rule:** never reconstruct the missing canonical evidence pack from claim-verifier output. The report and pack are distinct artifacts; exact pairing needs verified run metadata and matching raw-file hashes. Source/passage ID matches, when possible, are structural traceability only and do not establish semantic support. Empty/invalid/missing pack => `unknown-pack-binding`; no automatic repair or publication decision.
+
+**Validation:** added deterministic test cases for empty and invalid packs, matching IDs, and absent source IDs. Await CI for the committed revision before marking the tests verified.
