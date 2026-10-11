@@ -10,9 +10,9 @@ const outputCommitStep = workflow.indexOf('name: Commit pipeline output', buildS
 assert.ok(binderStep >= 0, 'publish workflow must bind final report bytes to the run archive');
 assert.ok(uploadStep > binderStep, 'finalized attempt bundle must be created before attempt diagnostics are uploaded');
 const binderBlock = workflow.slice(binderStep, uploadStep);
-assert.match(binderBlock, /continue-on-error:\s*true/, 'attempt lineage binding must not add a new publication gate');
-assert.match(binderBlock, /GITHUB_RUN_ID:\s*\$\{\{ github\.run_id \}\}/);
-assert.match(binderBlock, /GITHUB_SHA:\s*\$\{\{ github\.sha \}\}/);
+assert.ok(binderBlock.includes('continue-on-error: true'), 'attempt lineage binding must not add a new publication gate');
+assert.ok(binderBlock.includes('GITHUB_RUN_ID: ${{ github.run_id }}'));
+assert.ok(binderBlock.includes('GITHUB_SHA: ${{ github.sha }}'));
 assert.ok(binderBlock.includes('node scripts/boat-bind-attempt-lineage.mjs'), 'binder step must invoke the attempt-lineage script');
 assert.ok(writerStep >= 0, 'publish workflow must include lineage capture');
 assert.ok(buildStep > writerStep, 'lineage capture must happen before site build');
