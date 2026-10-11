@@ -450,3 +450,6 @@ Verified current baseline:
 - Control Center deterministic suite: **33/33 checks passed** in the same run.
 - Control Center QA run [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747): success, including `npm run build` / Next.js static export compilation. Existing webpack cache/CSS warnings appeared, but the build completed.
 - Scope remains structural and build-time. No end-to-end live inventory was independently inspected from deployed HTML; no live chat, public-web claim verification, or backend was implemented.
+
+
+- Follow-up build fix: canonical article audit records use `slug`, not a Markdown `file` field. Fixed table row identity/display and updated the Control Center contract test. Follow-up CI verification pending.
