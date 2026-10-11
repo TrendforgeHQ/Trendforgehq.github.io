@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Current verified status:** BOAT Offline Tests [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, including the new published-lineage-manifest contract tests. Control Center checks passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); its production build was pending at the last check. This verifies offline contracts only, not semantic truth or publishing readiness.
+**Current verified status:** BOAT Offline Tests [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, including the new published-lineage-manifest contract tests. Control Center checks passed **37/37** and the production build passed in [run 38126992154](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992154). This verifies offline contracts only, not semantic truth or publishing readiness.
 
 ## Current boundary and next task
 - Added the offline published-lineage manifest builder and synthetic contract tests; branch-head offline suite [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed 129/129.
@@ -482,3 +482,9 @@ Verified current baseline:
 - Offline CI [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, 0 failures, 0 skips. Logs explicitly show `BOAT published lineage manifest contract tests: PASS`.
 - Control Center deterministic suite passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); production build status was still in progress at last check.
 - No publishing/provider workflow ran. The helper is not integrated into publishing; no article bytes or `main` changed.
+
+
+### Control Center QA verification — 2026-10-11
+- Final documentation-head Control Center QA [run 38126992154](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992154) passed; logs confirm Next.js compilation, static page generation (100/100), and export (2/2).
+- Combined with offline suite [run 38126992293](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992293), the current recorded results are 129/129 offline tests and 37/37 Control Center checks with successful production build.
+- These runs do not exercise the production publishing workflow or prove semantic factual support. The manifest builder remains offline-only.
