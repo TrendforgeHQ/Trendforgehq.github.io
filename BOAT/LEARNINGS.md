@@ -125,3 +125,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 ## L-020 — Human review should be operationalized, not merely implied
 - **Decision:** Proposal reports include a six-item checklist for semantic support, preservation of qualifications, factual details, source suitability, required verifier results, and reviewer identity/decision.
 - **Validation:** Run 38112722176 passed 39/39 after checklist implementation. Actual pipeline artifact adapter and schema-contract coverage remain outstanding.
+
+
+## L-009 — Saved artifact shapes cannot be assumed to match the proposal engine
+- **Observed:** The archived claim-verification report stores source-linked claims and legacy `bestPassageId` values such as `S1-FF1,S2-FF6`; its metadata stores `workflowRun`/`workflowSha` but not the exact article/report/evidence-pack hashes; the archived attempt folder lacks a canonical evidence-pack file.
+- **Implication:** An adapter must preserve original identifiers and distinguish artifact availability from proof of same-run lineage. It must not derive hashes and then present them as recorded provenance, or substitute an article brief for the evidence pack.
+- **Evidence:** Inspected the saved AD-FX-001 files in `data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/`.
+- **Confidence:** High for the inspected archived attempt only; not a claim that every pipeline run uses this exact shape.
+- **Validation status:** Code and offline regression tests added; branch-head CI is pending.
