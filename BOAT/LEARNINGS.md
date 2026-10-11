@@ -274,3 +274,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The claim-verification quarantine step now copies the exact final article, claim report, and authoritative evidence pack, then records their hashes together with the run ID/SHA.
 - The adapter requires metadata-byte integrity and exact hash/run/SHA matches before permitting a future proposal-engine handoff. Old archived runs without these fields remain blocked.
 - Validation: [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395), 73 passed, 0 failed, 0 skipped. Publishing was not run.
+
+
+
+## L-025 — Hash integrity is necessary but not sufficient for handoff
+
+- A hash-bound bundle can still be incompatible with the consumer's data contract. The factual proposal engine expects root-level sources; recovered authoritative packs place sources inside candidates[].
+- The adapter therefore requires a compatible pack shape before allowing handoff. Candidate-envelope support must select by exact candidate title/link and fail closed on missing or ambiguous identity.
+- Validation: [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152), 73 passed, 0 failed, 0 skipped.
