@@ -216,6 +216,6 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 
 - Added `scripts/boat-recovered-proposal-input.mjs` and regression coverage in `scripts/test-boat-recovered-proposal-input.mjs`.
 - Adapter verifies recovered-byte hashes against the audit manifest, exact candidate identity, report/pack source ID+URL mapping, claim/source URL mapping, exact claim text in the recovered article, and unique same-source canonical passage mapping.
-- Expected real-fixture coverage: 12/15, 12/18, and 4/7 eligible claim inputs. The three claims absent from the third article remain blocked. Unresolved passages are not eligible.
+- Expected real-fixture coverage: 12/15, 12/18, and 2/7 eligible claim inputs. The third sample has 4/7 article-text matches and 4/7 passage matches, but those sets overlap for only 2 claims; 3 claims absent from the article are blocked. Unresolved passages are not eligible.
 - Output is an input manifest only; it does not generate replacement copy or edit content. Human approval is required, automatic application is false, and semantic support remains not verified.
-- CI status for this adapter is pending inspection; do not record a pass until the run logs confirm it.
+- Offline CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped. Latest docs/head recheck [run 38117465699](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117465699) also passed 64/64.
