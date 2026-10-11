@@ -154,5 +154,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/boat-artifact-adapter.mjs`. It preserves source claim fields/legacy IDs, does not manufacture provenance hashes, and forces proposal status to `unknown` when evidence-pack or recorded hash lineage is missing.
 - Added `scripts/test-boat-artifact-adapter.mjs` covering mapping, legacy ID preservation, missing lineage, malformed JSON, and schema-contract invariants.
 - Updated `BOAT/NEXT_STEP.md` and `BOAT/PROJECT_STATE.md` with the actual findings and pending-validation status.
-- Validation for the new adapter suite is **pending**; the latest known green run predates these changes. Do not report a pass until the branch-head CI logs are inspected.
+- Validation for the new adapter suite: [run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567) passed **44 tests, 0 failed, 0 skipped**. Logs explicitly confirm all five adapter/schema-contract tests passed.
 - No provider calls, external-source fetches, image generation, site build, publishing workflow, article modification, or production-gate changes.
+
+
+## 2026-10-11 — Phase 1.1 adapter verification
+- Inspected [BOAT Offline Tests run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567) and its job logs after the adapter/test commits.
+- Result: **44 passed, 0 failed, 0 skipped**. The five new tests passed: valid mapping, legacy passage-ID preservation, missing lineage remains unknown, proposal schema contract, and malformed JSON handling.
+- Updated canonical state and next-step records with the verified result. This confirms offline contract behavior, not semantic truth of the archived article or same-run lineage for the missing historical evidence pack.
