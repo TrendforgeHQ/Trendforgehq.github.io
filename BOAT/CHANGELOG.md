@@ -146,3 +146,13 @@ All entries should describe actual work and results. Do not record planned work 
 ## 2026-10-11 — Latest BOAT branch-head check
 - Current branch head `31957b4631dd41bbf3d69854d15e6ed21181f323` passed [BOAT Offline Tests run 38112777860](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112777860), **39 passed, 0 failed, 0 skipped**.
 - Corrected NEXT_STEP so the next implementation is a read-only adapter for real saved pipeline artifacts plus explicit schema-contract tests. No production/provider run is needed for that work.
+
+
+## 2026-10-11 — Phase 1.1 read-only pipeline artifact adapter
+- Inspected the saved AD-FX-001 attempt files: `article.md`, `claim-verification.json`, `article-brief.json`, and `metadata.json`.
+- Verified the saved claim report uses `bestPassageId` values such as `S1-FF1,S2-FF6`; metadata records run ID/SHA but not article/report/evidence-pack hashes; the attempt directory contains no canonical evidence-pack JSON.
+- Added `scripts/boat-artifact-adapter.mjs`. It preserves source claim fields/legacy IDs, does not manufacture provenance hashes, and forces proposal status to `unknown` when evidence-pack or recorded hash lineage is missing.
+- Added `scripts/test-boat-artifact-adapter.mjs` covering mapping, legacy ID preservation, missing lineage, malformed JSON, and schema-contract invariants.
+- Updated `BOAT/NEXT_STEP.md` and `BOAT/PROJECT_STATE.md` with the actual findings and pending-validation status.
+- Validation for the new adapter suite is **pending**; the latest known green run predates these changes. Do not report a pass until the branch-head CI logs are inspected.
+- No provider calls, external-source fetches, image generation, site build, publishing workflow, article modification, or production-gate changes.
