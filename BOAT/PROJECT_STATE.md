@@ -247,3 +247,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Latest branch-head CI [run 38118989732](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118989732): **69 passed, 0 failed, 0 skipped**. Both the report integration test and direct CLI JSON-output test passed.
 - Archived bundle totals: 40 claims; 26 eligible for later human-reviewed proposal inputs; 3 blocked because exact claim text is absent from the final article; 11 unknown due to unresolved passage mapping. Run-level eligible counts: 12, 12, 2.
 - These are traceability/passage eligibility results, not semantic-support or truth determinations. Hashes are recovery-time only. PR #35 remains draft/unmerged; main untouched.
+
+
+
+## Eligibility report schema (2026-10-11)
+
+- Added BOAT/schemas/recovered-proposal-eligibility-report.schema.json and tests for the report's required fields and fail-closed guardrails.
+- Schema requires per-run and per-claim status/reason codes, records hashes as recovery-time only, and fixes semanticSupport to not_verified and automaticApplication to false.
+- Validation is pending branch-head CI inspection.
