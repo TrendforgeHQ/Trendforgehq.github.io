@@ -87,7 +87,8 @@ function buildSample(sample) {
     findings: result.findings.map(item => ({ code: item.code, severity: item.severity })),
     approvalRequired: result.approvalRequired,
     automaticApplication: result.automaticApplication,
-    semanticSupport: result.semanticSupport
+    semanticSupport: result.semanticSupport,
+    proposalEngineHandoffAllowed: result.proposalEngineHandoff.allowed
   };
 }
 
@@ -121,7 +122,8 @@ export function buildReviewReport() {
       countsReconciled: true,
       recoveryHashesRecordedAtGeneration: false,
       semanticSupport: 'not_verified',
-      automaticApplication: false
+      automaticApplication: false,
+      proposalEngineHandoffAllowed: false
     },
     runs,
     limitations: [
