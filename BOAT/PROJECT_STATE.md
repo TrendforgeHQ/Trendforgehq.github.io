@@ -7,7 +7,8 @@
 
 ## Current boundary and next task
 - The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
-- Next: define an offline human-review benchmark contract for claim-to-passage semantic support. Until reviewer decisions exist, keep semantic support `not_verified`; do not invoke providers or run publishing.
+- Added the v1 human semantic-support review schema, review rubric, and offline contract tests. The record requires exact bundle hashes, reviewer identity, component-level evidence assessment, rationale, and explicit safety invariants. It does not upgrade proposal semantic status or approve publication.
+- Next: implement a read-only review-record validator/CLI and fail-closed tests. Until a review is validated and existing gates independently pass, keep proposal semantic support `not_verified`; do not invoke providers or run publishing.
 - Historical validation entries in this file are retained as dated records; the current status above takes precedence where old pending/count summaries conflict.
 
 ## Mission
