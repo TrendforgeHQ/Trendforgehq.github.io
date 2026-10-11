@@ -31,7 +31,7 @@ These hashes were computed from the recovered pack bytes during this audit. They
 - Exact article-brief title selected one candidate: “Rogue Anthropic AI agent gave police fake tip in unsolved murder case - BBC”
 - Claim report source IDs and URLs matched selected pack sources: **4/4**
 - Claims: **15**; exact claim strings present in the final quarantined article: **15/15**
-- Legacy/noncanonical bestPassageId values: **13/15** claims. Values preserved; no automatic conversion.
+- Legacy/noncanonical bestPassageId values: **13/15** claims. Conservative exact-text resolver found **12/15** unique canonical passage matches; 3 remain unresolved, 0 ambiguous. Original IDs are preserved; no automatic conversion.
 - Generated and blocked metadata share workflow run 38085367295 and SHA 181d8e5181f2e79da77f496898a33fe27ccef092.
 - Generated metadata's articlePath matches the claim report's articlePath.
 
@@ -47,7 +47,7 @@ Other recovered-byte hashes:
 - Exact article-brief title selected one candidate: “AI coding agents generate more code, but not more software”
 - Claim report source IDs and URLs matched selected pack sources: **4/4**
 - Claims: **18**; exact claim strings present in the final quarantined article: **18/18**
-- Legacy/noncanonical bestPassageId values: **17/18** claims. Values preserved; no automatic conversion.
+- Legacy/noncanonical bestPassageId values: **17/18** claims. Conservative exact-text resolver found **12/18** unique canonical passage matches; 6 remain unresolved, 0 ambiguous. Original IDs are preserved; no automatic conversion.
 - Generated and blocked metadata share workflow run 37996683799 and SHA 1d260ec59446b0710a646d405ff3eea5a195973d.
 - Generated metadata's articlePath matches the claim report's articlePath.
 
@@ -64,7 +64,7 @@ Other recovered-byte hashes:
 - Claim report source IDs and URLs matched selected pack sources: **2/2**
 - Claims: **7**; exact claim strings present in the final quarantined article: **4/7**
 - **Important warning:** three saved claim strings do not appear exactly in the final quarantined article. Pack recovery is successful, but claim-report-to-final-article binding is only partial; do not use this run for claim-specific repair proposals without further reconciliation.
-- Legacy/noncanonical bestPassageId values: **6/7** claims. Values preserved; no automatic conversion.
+- Legacy/noncanonical bestPassageId values: **6/7** claims. Conservative exact-text resolver found **4/7** unique canonical passage matches; 3 remain unresolved, 0 ambiguous. Original IDs are preserved; no automatic conversion.
 - Generated and blocked metadata share workflow run 37696062759 and SHA 6608297eb504f57b9483749247e8bd239b0d6de8.
 - Generated metadata's articlePath matches the claim report's articlePath.
 
@@ -80,7 +80,7 @@ Other recovered-byte hashes:
 3. **Source mapping: 10/10.** All report source IDs/URLs matched the selected candidate's sources for these three runs.
 4. **Run metadata: 3/3.** Generated-attempt and blocked metadata agree on run ID and workflow SHA; generated metadata's article path matches the claim report's article path.
 5. **Claim/report binding: 2 complete, 1 partial.** The 10x Research run has only 4/7 exact claim strings present in the final article.
-6. **Passage mapping remains unresolved.** Legacy IDs such as S1-FF1, S2-BODY, and combinations like S1-FF1,S2-FF6 are not converted into Sx-Pn. A separate exact-text passage resolver and regression tests are needed before using these packs for claim-specific repair proposals.
+6. **Passage mapping is partial, not assumed.** The exact-text resolver uniquely matched 28/40 claim passages across these runs (12/15, 12/18, 4/7); 12 remain unresolved and 0 were ambiguous in this sample. It only reports canonical IDs when the saved bestPassage matches exactly one passage from that claim's source, optionally after collapsing an identical repeated sentence. It never rewrites the original report. This is a mapping aid, not proof of semantic support.
 7. **Hashes are recovery-time checksums, not original generation-time hashes.** They protect the recovered bundle from accidental later changes, but do not retroactively prove what bytes were hashed by the original pipeline.
 8. **No factual claim is upgraded to supported by this audit.** Matching artifact lineage is not semantic support.
 
@@ -94,6 +94,13 @@ In .github/workflows/publish.yml:
 ## Next safe step
 
 - Extend the recovery audit's regression fixtures with these observed pack-envelope and metadata shapes. A real-fixture integration test now reads all three checked-in article/report/brief/pack combinations.
-- Add an exact-text resolver that can map a legacy best-passage label only when the saved passage text matches a unique canonical pack passage; otherwise leave it unresolved.
+- Next, build a separate proposal-input adapter that consumes this recovery audit and allows only uniquely mapped passages; unresolved claims remain blocked/unknown. Preserve the human review checklist and do not apply any proposal automatically.
 - Add the recovered run/artifact ID and computed checksums to project memory.
 - Keep the PR draft and unmerged. Do not change main, call providers, run publishing, or apply article repairs.
+
+
+## Passage resolver validation
+- The exact-text resolver returns a suggestion only when the saved bestPassage uniquely matches a passage in the same source's canonical pack. It can collapse a sequence only when every sentence is an identical duplicate.
+- Regression coverage includes unique exact match, repeated duplicate text, ambiguous duplicate source passages, no-match behavior, and all three real archived attempts.
+- Latest branch-head run [38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698): **57 passed, 0 failed, 0 skipped**.
+- Original claim reports and articles remain unchanged; semantic support is still not verified.

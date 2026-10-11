@@ -151,3 +151,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Caveat:** Recovered-byte hashes are computed now, not recorded by the original workflow. Matching IDs/URLs does not establish semantic support. The 4/7 run remains partial.
 - **Code:** `scripts/boat-run-artifact-recovery.mjs`; tests: `scripts/test-boat-run-artifact-recovery.mjs`; detailed checksums: `BOAT/ARTIFACT_RECOVERY.md`.
 - **Validation status:** Synthetic recovery audit tests passed as part of 52/52 in run 38115164158. A real-fixture integration test across all three actual attempts has since been added; its branch-head CI result is pending inspection.
+
+
+## L-012 — Passage-ID migration must be exact-text based and non-mutating
+- **Observed:** Legacy verifier labels include Sx-FFn, Sx-BODY, and multi-source lists. They do not directly encode the canonical Sx-Pn list index.
+- **Change:** Added a conservative resolver that searches only the saved claim's own source passages. It reports a canonical ID only for one exact normalized text match; it may collapse an identical sentence repeated verbatim, but does not use lexical similarity or the legacy ID as evidence.
+- **Real sample result:** 12/15 unique matches for run 38085367295; 12/18 for 37996683799; 4/7 for 37696062759. Remaining claims stay unresolved; 0 ambiguous matches in this sample.
+- **Validation:** [run 38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698), 57 passed, 0 failed, 0 skipped, including all three real archived attempts and synthetic ambiguity/no-match cases.
+- **Debugging record:** CI first caught a repeated-sentence whitespace-splitting defect; after fixing it, another run caught passage-coverage assertions placed in a synthetic test where fixture counters were not in scope. Both were corrected before the green branch-head run.
+- **Safety:** Resolver output is a suggestion only. It does not alter the claim report, article, factual status, or publication gates; semantic support remains unverified.
