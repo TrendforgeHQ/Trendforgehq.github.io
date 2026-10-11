@@ -25,7 +25,17 @@ const samples = [
 ];
 
 function read(relative) { return fs.readFileSync(path.join(root, relative), 'utf8'); }
-function countStatuses(claims) {\n  return {\n    totalClaims: claims.length,\n    eligible: claims.filter(claim => claim.status === 'ready_for_human_proposal').length,\n    blocked: claims.filter(claim => claim.status === 'blocked').length,\n    unknown: claims.filter(claim => claim.status === 'unknown').length\n  };\n}\n\nfunction buildSample(sample) {
+
+function countStatuses(claims) {
+  return {
+    totalClaims: claims.length,
+    eligible: claims.filter(claim => claim.status === 'ready_for_human_proposal').length,
+    blocked: claims.filter(claim => claim.status === 'blocked').length,
+    unknown: claims.filter(claim => claim.status === 'unknown').length
+  };
+}
+
+function buildSample(sample) {
   const input = {
     articleRaw: read(path.join(sample.blockedDir, 'article.md')),
     claimReportRaw: read(path.join(sample.blockedDir, 'claim-verification.json')),
@@ -45,25 +55,35 @@ function countStatuses(claims) {\n  return {\n    totalClaims: claims.length,\n 
     articleBriefRaw: input.articleBriefRaw,
     evidencePackRaw: input.evidencePackRaw
   });
+  const claims = result.claims.map(claim => ({
+    claimIndex: claim.claimIndex,
+    status: claim.status,
+    sourceId: claim.source?.sourceId ?? null,
+    passageId: claim.passage?.canonicalPassageId ?? null,
+    reasonCodes: claim.findings.map(item => item.code)
+  }));
+  const computed = countStatuses(claims);
+  if (computed.totalClaims !== result.counts.totalClaims ||
+      computed.eligible !== result.counts.eligible ||
+      computed.blocked !== result.counts.blocked ||
+      computed.unknown !== result.counts.unknown) {
+    throw new Error('Adapter count mismatch for run ' + sample.runId +
+      ': adapter=' + JSON.stringify(result.counts) + ', claim-derived=' + JSON.stringify(computed));
+  }
   return {
     runId: sample.runId,
     artifactId: sample.artifactId,
     artifactName: sample.artifactName,
     recoveryStatus: audit.status,
     bundleStatus: result.status,
-    totalClaims: result.counts.totalClaims,
-    eligible: result.counts.eligible,
-    blocked: result.counts.blocked,
-    unknown: result.counts.unknown,
+    totalClaims: computed.totalClaims,
+    eligible: computed.eligible,
+    blocked: computed.blocked,
+    unknown: computed.unknown,
+    countsReconciled: true,
     hashProvenance: result.hashes.provenance,
     recordedAtGeneration: result.hashes.recordedAtGeneration,
-    claims: result.claims.map(claim => ({
-      claimIndex: claim.claimIndex,
-      status: claim.status,
-      sourceId: claim.source?.sourceId ?? null,
-      passageId: claim.passage?.canonicalPassageId ?? null,
-      reasonCodes: claim.findings.map(item => item.code)
-    })),
+    claims,
     findings: result.findings.map(item => ({ code: item.code, severity: item.severity })),
     approvalRequired: result.approvalRequired,
     automaticApplication: result.automaticApplication,
@@ -73,6 +93,20 @@ function countStatuses(claims) {\n  return {\n    totalClaims: claims.length,\n 
 
 export function buildReviewReport() {
   const runs = samples.map(buildSample);
+  const allClaims = runs.flatMap(run => run.claims);
+  const computed = countStatuses(allClaims);
+  const runTotals = runs.reduce((sum, run) => ({
+    totalClaims: sum.totalClaims + run.totalClaims,
+    eligible: sum.eligible + run.eligible,
+    blocked: sum.blocked + run.blocked,
+    unknown: sum.unknown + run.unknown
+  }), { totalClaims: 0, eligible: 0, blocked: 0, unknown: 0 });
+  if (computed.totalClaims !== runTotals.totalClaims ||
+      computed.eligible !== runTotals.eligible ||
+      computed.blocked !== runTotals.blocked ||
+      computed.unknown !== runTotals.unknown) {
+    throw new Error('Aggregate report counts do not reconcile with per-run claim statuses.');
+  }
   return {
     schemaVersion: '1.0',
     engine: 'BOAT Recovered Proposal Eligibility Report',
@@ -80,10 +114,11 @@ export function buildReviewReport() {
     generatedAt: new Date().toISOString(),
     summary: {
       runs: runs.length,
-      claims: runs.reduce((sum, run) => sum + run.totalClaims, 0),
-      eligible: runs.reduce((sum, run) => sum + run.eligible, 0),
-      blocked: runs.reduce((sum, run) => sum + run.blocked, 0),
-      unknown: runs.reduce((sum, run) => sum + run.unknown, 0),
+      claims: computed.totalClaims,
+      eligible: computed.eligible,
+      blocked: computed.blocked,
+      unknown: computed.unknown,
+      countsReconciled: true,
       recoveryHashesRecordedAtGeneration: false,
       semanticSupport: 'not_verified',
       automaticApplication: false
