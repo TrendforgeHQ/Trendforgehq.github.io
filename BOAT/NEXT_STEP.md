@@ -79,3 +79,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Branch-head CI [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771) passed **67/67**, 0 failed, 0 skipped. Job log explicitly confirms both CLI tests and the schema contract test passed.
 - Actual archived eligibility remains 12/15, 12/18, and 2/7; the last sample's eligible set is the intersection of article-text presence and unique passage mapping, not either count alone.
 - Next safe step: add a read-only report summarizing per-claim eligibility and reasons across the three runs, then review its output. Keep PR draft/unmerged and do not run publishing/provider calls.
+
+
+
+## Read-only proposal eligibility report
+
+- Added `scripts/boat-recovered-proposal-review-report.mjs`, which reads the three checked-in recovered article/report/brief/pack bundles and prints a per-run, per-claim JSON eligibility report to stdout. It does not write files.
+- The report carries each claim's status, source ID, canonical passage ID if uniquely mapped, and reason codes. It explicitly labels semantic support as unverified and hashes as recovery-time only.
+- Added integration assertions for all 40 archived claims: expected totals are **26 eligible, 3 blocked, 11 unknown** across the three samples; per-run eligible counts are 12, 12, and 2. This is eligibility for a later human-authored proposal only, not a claim-truth result.
+- New report/tests and workflow path filters are committed on the draft branch. CI result is pending inspection; do not treat it as passing until logs confirm.
+- No publishing, providers, article edits, or merge. Next: inspect branch-head CI, correct any failing assertions, then record the verified report counts.
