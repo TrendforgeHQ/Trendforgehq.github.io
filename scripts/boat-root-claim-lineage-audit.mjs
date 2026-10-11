@@ -53,7 +53,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     articleBriefSha256: typeof briefRaw === 'string' ? sha256(briefRaw) : null
   };
   const manifestMatch = lineageManifests.find(manifest => Array.isArray(manifest?.records)
-    && manifest.records.some(record => text(record?.articlePath).replace(/^\\.\\//, '') === articlePath
+    && manifest.records.some(record => text(record?.articlePath).replace(/^\.\//, '') === articlePath
       && record?.hashes?.articleSha256 === currentHashes.articleSha256
       && record?.hashes?.claimReportSha256 === currentHashes.claimReportSha256
       && record?.hashes?.evidencePackSha256 === currentHashes.evidencePackSha256
@@ -177,7 +177,7 @@ function main() {
   const attemptRecords = [];
   const lineageDir = path.join(dataDir, 'published-lineage');
   const lineageManifests = [];
-  if (fs.existsSync(lineageDir)) for (const file of fs.readdirSync(lineageDir).filter(name => /^manifest-[0-9]+\\.json$/.test(name))) {
+  if (fs.existsSync(lineageDir)) for (const file of fs.readdirSync(lineageDir).filter(name => /^manifest-[0-9]+\.json$/.test(name))) {
     const manifest = parse(readIfExists(path.join(lineageDir, file)) ?? '').value;
     if (manifest) lineageManifests.push(manifest);
   }
