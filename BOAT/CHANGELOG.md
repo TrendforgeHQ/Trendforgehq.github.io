@@ -390,3 +390,8 @@ All entries should describe actual work and results. Do not record planned work 
 - Recovery audit fails closed when either archived metadata lifecycle status does not match the expected generated/blocked state; added two regression tests. CI run 38123747483 passed **126/126**.
 - Semantic-review source URLs now require HTTP/HTTPS schemes; regression tests reject javascript, file, and FTP URLs. CI run 38123791630 passed **127/127**.
 - These changes strengthen input validation without altering semantic-support state, proposal-only behavior, or publication gates.
+
+### Offline CI path-filter fix — 2026-10-11
+
+- Added `scripts/test-boat-semantic-support-review.mjs` to the BOAT Offline Tests workflow path filters. The test was already covered by `node --test scripts/test-boat-*.mjs`, but changes to that file alone would not reliably trigger this workflow.
+- Test-triggering fix only; no production runtime, publishing logic, or safety threshold changed. Awaiting final branch-head CI.
