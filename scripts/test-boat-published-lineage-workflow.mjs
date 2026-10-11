@@ -15,7 +15,7 @@ assert.match(captureBlock, /GITHUB_SHA:\s*\$\{\{ github\.sha \}\}/);
 assert.match(captureBlock, /node scripts\/write-boat-published-lineage-manifest\.mjs/);
 const outputBlock = workflow.slice(outputCommitStep);
 assert.match(outputBlock, /git add data(?:\s|$)/, 'normal output commit must stage lineage manifests under data/');
-assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\/images\/articles content\/articles/, 'output transfer must include data paths');
+assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\/images\/articles content\/articles/, 'generated-file transfer allowlist must include data/');
 assert.match(outputBlock, /git checkout "\$output_commit" -- "\$path"/, 'generated data must be transferred from the pipeline output commit');
 assert.match(outputBlock, /git push origin HEAD:main/, 'existing output publishing path must remain explicit');
 
@@ -23,8 +23,8 @@ const writer = fs.readFileSync('scripts/write-boat-published-lineage-manifest.mj
 assert.match(writer, /flag:\s*'wx'/, 'manifest writer must refuse overwriting a run manifest');
 assert.match(writer, /Published lineage capture skipped: this workflow run generated no article/, 'no-article run must be a no-op');
 assert.match(writer, /Published lineage capture failed closed; no PASS manifest was written/, 'invalid inputs must fail closed');
-assert.match(writer, /const outputDir = 'data\\/published-lineage'/, 'manifest must be written under the published-lineage data directory');
-assert.match(writer, /manifest-\\$\\{workflowRun\\}\\.json/, 'manifest filename must be scoped to the current workflow run');
-assert.match(outputBlock, /git diff-tree[\\s\\S]*-- data lib\\/articles\\.ts public\\/images\\/articles content\\/articles/, 'generated-file transfer allowlist must include data/');
+assert.match(writer, /const outputDir = 'data\/published-lineage'/, 'manifest must be written under the published-lineage data directory');
+assert.match(writer, /manifest-\$\{workflowRun\}\.json/, 'manifest filename must be scoped to the current workflow run');
+assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\/images\/articles content\/articles/, 'generated-file transfer allowlist must include data/');
 
 console.log('BOAT lineage workflow persistence contract: PASS');
