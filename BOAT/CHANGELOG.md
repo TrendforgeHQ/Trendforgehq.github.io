@@ -200,3 +200,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Branch-head offline suite [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771) passed **67/67**, 0 failed, 0 skipped.
 - Archived eligibility intersection is 12/15, 12/18, and 2/7. The last run's 3 absent claims and 2 unresolved claims remain ineligible.
 - No publishing/provider runs, article changes, production behavior changes, or merge.
+
+
+
+## 2026-10-11 — Read-only proposal eligibility report
+
+- Added a read-only stdout report with per-claim status, source/passage mapping, and eligibility reason codes for the three recovered attempts.
+- Added integration assertions for 40 claims: expected 26 eligible, 3 blocked, 11 unknown; eligible counts per run 12/15, 12/18, 2/7.
+- The report does not claim semantic support, create replacement text, or write article files. CI result is pending inspection.
