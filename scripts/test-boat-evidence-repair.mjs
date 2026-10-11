@@ -6,6 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { auditEvidenceLineage } from './boat-evidence-auditor.mjs';
+import { createFactualRepairProposal } from './boat-factual-repair-proposal.mjs';
 import { proposeStructuralRepairs } from './boat-repair-engine.mjs';
 import { analyzeArticle } from './boat-article-doctor.mjs';
 
@@ -236,4 +237,116 @@ test('Evidence Auditor CLI rejects malformed JSON without emitting a report', ()
   assert.equal(result.status, 2);
   assert.match(result.stderr, /Invalid JSON in claim report/);
   assert.equal(result.stdout, '');
+});
+
+function makeRepairCase() {
+  const data = makeCase();
+  const articleRaw = '# Repair fixture\n\nA verified fixture claim.\n\nA second fixture claim.\n';
+  data.metadata.articleSha256 = hash(articleRaw);
+  return {
+    ...data,
+    articleRaw,
+    proposal: {
+      claimIndex: 1,
+      replacementText: 'The first source passage reports a fixture detail.',
+      rationale: 'Replace the unsupported wording with a source-grounded statement for review.',
+      sourceId: 'S1',
+      passageId: 'S1-P1'
+    }
+  };
+}
+function createRepairProposal(data, overrides = {}) {
+  return createFactualRepairProposal({
+    articleRaw: data.articleRaw,
+    claimReport: data.report,
+    claimReportRaw: data.reportRaw,
+    evidencePack: data.pack,
+    evidencePackRaw: data.packRaw,
+    metadata: data.metadata,
+    proposal: data.proposal,
+    articlePath: 'article.md',
+    claimReportPath: 'claim.json',
+    evidencePackPath: 'pack.json',
+    metadataPath: 'metadata.json',
+    generatedAt: fixedTime,
+    ...overrides
+  });
+}
+
+test('Factual Repair Proposal binds replacement to exact same-run artifacts but requires review', () => {
+  const data = makeRepairCase();
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'review_required');
+  assert.equal(result.approvalRequired, true);
+  assert.equal(result.automaticApplication, false);
+  assert.equal(result.semanticSupport, 'not_verified');
+  assert.equal(result.proposal.passageId, 'S1-P1');
+  assert.equal(result.proposal.passageText, 'First passage.');
+  assert.equal(result.artifacts.articleSha256, hash(data.articleRaw));
+  assert.match(result.limitations.join(' '), /does not prove the passage semantically supports/);
+  assert.equal(data.articleRaw.includes(data.proposal.replacementText), false, 'proposal does not mutate article text');
+});
+
+test('Factual Repair Proposal fails closed when article hash is mismatched', () => {
+  const data = makeRepairCase();
+  data.metadata.articleSha256 = hash('different article');
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'unknown');
+  assert.ok(result.findings.some(item => item.code === 'FR-HASH-MISMATCH' && item.details.key === 'articleSha256'));
+});
+
+test('Factual Repair Proposal blocks a source or passage that does not match the claim lineage', () => {
+  const data = makeRepairCase();
+  data.proposal.sourceId = 'S2';
+  const sourceMismatch = createRepairProposal(data);
+  assert.equal(sourceMismatch.status, 'blocked');
+  assert.ok(sourceMismatch.findings.some(item => item.code === 'FR-SOURCE-CLAIM-MISMATCH'));
+  data.proposal.sourceId = 'S1';
+  data.proposal.passageId = 'S1-P99';
+  const passageMismatch = createRepairProposal(data);
+  assert.equal(passageMismatch.status, 'blocked');
+  assert.ok(passageMismatch.findings.some(item => item.code === 'FR-PASSAGE-NOT-IN-PACK'));
+});
+
+test('Factual Repair Proposal blocks when saved claim text is not found in original article', () => {
+  const data = makeRepairCase();
+  data.articleRaw = '# Different article\n\nNothing matches the saved claim.\n';
+  data.metadata.articleSha256 = hash(data.articleRaw);
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'blocked');
+  assert.ok(result.findings.some(item => item.code === 'FR-CLAIM-NOT-FOUND-IN-ARTICLE'));
+});
+
+test('Factual Repair Proposal CLI writes a separate review artifact and preserves article bytes', () => {
+  const data = makeRepairCase();
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-factual-proposal-cli-'));
+  try {
+    const article = path.join(dir, 'article.md');
+    const report = path.join(dir, 'claim.json');
+    const pack = path.join(dir, 'pack.json');
+    const metadata = path.join(dir, 'metadata.json');
+    const proposal = path.join(dir, 'proposal.json');
+    const output = path.join(dir, 'proposal-report.json');
+    fs.writeFileSync(article, data.articleRaw);
+    fs.writeFileSync(report, data.reportRaw);
+    fs.writeFileSync(pack, data.packRaw);
+    fs.writeFileSync(metadata, JSON.stringify(data.metadata, null, 2) + '\n');
+    fs.writeFileSync(proposal, JSON.stringify(data.proposal, null, 2) + '\n');
+    const script = path.resolve('scripts/boat-factual-repair-proposal.mjs');
+    const result = spawnSync(process.execPath, [
+      script, '--article', article, '--report', report, '--pack', pack,
+      '--metadata', metadata, '--proposal', proposal, '--output', output
+    ], { encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+    const outputReport = JSON.parse(fs.readFileSync(output, 'utf8'));
+    assert.equal(outputReport.status, 'review_required');
+    assert.equal(outputReport.automaticApplication, false);
+    assert.equal(fs.readFileSync(article, 'utf8'), data.articleRaw);
+    const overwrite = spawnSync(process.execPath, [
+      script, '--article', article, '--report', report, '--pack', pack,
+      '--metadata', metadata, '--proposal', proposal, '--output', output
+    ], { encoding: 'utf8' });
+    assert.equal(overwrite.status, 2);
+    assert.match(overwrite.stderr, /Refusing to overwrite/);
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });

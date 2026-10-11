@@ -1,9 +1,9 @@
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
-**State version:** 0.1.3  
+**State version:** 0.1.4  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Previous BOAT suite passed 30/30 in run 38111661629. Four new Evidence Auditor CLI integration tests have been committed; current branch-head CI is pending.
+**Status:** Evidence Auditor CLI integration passed 34/34 in run 38112229842. Factual Repair Proposal module and five new regression tests are now committed; current CI is pending.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -25,7 +25,8 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Approval gateway/button: not implemented.
 - Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.
 - Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Prior synthetic regression passed 13/13 in the 30-test suite; four new CLI integration tests are awaiting CI.
-- Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused. Prior synthetic repair regressions passed; current suite includes new CLI tests.
+- Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused.
+- Factual Repair Proposal: added an offline proposal-only module that binds a proposed replacement to article/report/evidence-pack hashes, run ID, claim/source/passage lineage, and target text. It cannot apply changes; output is always review-required or blocked/unknown. New CI validation pending.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.

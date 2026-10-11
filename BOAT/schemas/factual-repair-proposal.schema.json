@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Factual Repair Proposal",
+  "type": "object",
+  "required": ["schemaVersion", "engine", "mode", "status", "generatedAt", "approvalRequired", "automaticApplication", "semanticSupport", "claim", "proposal", "artifacts", "findings", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "engine": { "const": "BOAT Factual Repair Proposal" },
+    "mode": { "const": "offline-proposal-only" },
+    "status": { "enum": ["review_required", "blocked", "unknown"] },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "approvalRequired": { "const": true },
+    "automaticApplication": { "const": false },
+    "semanticSupport": { "const": "not_verified" },
+    "claim": { "type": ["object", "null"] },
+    "proposal": {
+      "type": "object",
+      "required": ["replacementText", "rationale", "sourceId", "passageId", "sourceUrl", "sourceTitle", "sourceRole", "passageText"],
+      "properties": {
+        "replacementText": { "type": ["string", "null"] },
+        "rationale": { "type": ["string", "null"] },
+        "sourceId": { "type": ["string", "null"] },
+        "passageId": { "type": ["string", "null"] },
+        "sourceUrl": { "type": ["string", "null"] },
+        "sourceTitle": { "type": ["string", "null"] },
+        "sourceRole": { "type": ["string", "null"] },
+        "passageText": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "artifacts": { "type": "object" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "message", "details"],
+        "properties": {
+          "code": { "type": "string" },
+          "severity": { "enum": ["low", "medium", "high"] },
+          "message": { "type": "string" },
+          "details": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

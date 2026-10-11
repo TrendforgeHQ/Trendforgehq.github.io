@@ -102,3 +102,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** Function-level tests do not verify process exit codes, filesystem inputs, JSON parsing failures, or stdout/stderr behavior at the actual command-line boundary.
 - **Decision:** Exercise the CLI against temporary same-run fixture files. Keep the exit contract explicit: clear=0, blocked=1, unknown/input error=2.
 - **Validation:** Four CLI tests added; awaiting the matching GitHub Actions result.
+
+
+## L-017 — Factual repair must be a review artifact, not an edit
+- **Decision:** Bind a proposed replacement to exact raw article/report/evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID. Refuse missing or mismatched lineage.
+- **Boundary:** Even a lineage-matched passage does not establish semantic support. Proposal output always marks `semanticSupport: not_verified`, requires approval, and never edits the article.
+- **Validation:** Five synthetic tests added; current CI pending.

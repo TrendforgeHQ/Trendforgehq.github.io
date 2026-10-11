@@ -115,3 +115,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Added end-to-end CLI tests that write a synthetic same-run claim report, evidence pack, and hash metadata to temporary files and invoke the real Node CLI process.
 - Covered exit contract: clear returns 0; blocked lineage returns 1; missing exact hashes returns unknown/2; malformed report JSON returns 2 without a report.
 - CI validation for these four new tests is pending. No production pipeline or paid provider was invoked.
+
+
+## 2026-10-11 — CLI integration passed; factual repair proposal added
+- [BOAT Offline Tests run 38112229842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112229842) passed **34/34**, 0 failed, 0 skipped, including four Evidence Auditor CLI tests.
+- Added `scripts/boat-factual-repair-proposal.mjs` and `BOAT/schemas/factual-repair-proposal.schema.json`. Proposal binds exact article, claim report, evidence pack, workflow run, claim/source/passage IDs and target claim text.
+- Proposal output is never auto-applied and explicitly marks semantic support as not verified; human review and existing verifiers remain mandatory.
+- Added five synthetic tests for exact bundle, article-hash mismatch, source/passage mismatch, claim-text mismatch, and CLI output/input immutability. Current CI validation is pending.
