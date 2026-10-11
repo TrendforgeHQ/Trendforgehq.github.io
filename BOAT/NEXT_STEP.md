@@ -1,6 +1,14 @@
 # BOAT Next Step
 
-## Current task: historical evidence-pack recovery and passage-ID reconciliation
+## Current status and next action — 2026-10-11
+
+**Current verified baseline:** candidate-envelope factual-proposal handoff is implemented for synthetic fixtures. Branch-head offline suite [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped. A valid synthetic handoff returns `review_required`, keeps `semanticSupport: not_verified`, requires human approval, disables automatic application, and leaves article bytes unchanged. The three recovered historical attempts remain blocked from direct proposal-engine handoff because their original workflow metadata did not record the required artifact hashes. These results prove tested lineage/contract behavior, **not semantic factual support or production publishing readiness**.
+
+**Next technical task:** statically validate the new quarantine-hash workflow contract (YAML and shell syntax, metadata fields, and fail-closed behavior when the evidence pack/report is missing) without running the publishing workflow. Then inspect the generated CI evidence. Do not invoke providers, change article content, weaken gates, merge PR #35, or touch `main`.
+
+**Documentation reconciliation in progress:** align the four project-memory files with the 77/77 baseline, preserve historical test outcomes as point-in-time records, and make learning IDs unique.
+
+## Historical implementation log — artifact recovery and passage-ID reconciliation
 
 Risk: low. Provider cost: none. Production behavior change: none.
 
@@ -39,7 +47,7 @@ Inspected the archived claim-blocked attempt:
 2. Added `scripts/boat-run-artifact-recovery.mjs` to audit the real root `candidates[]` envelope, select exactly one candidate by exact `article-brief.json` title, verify run/SHA metadata and report source-ID/URL mapping, and emit recovery-time hashes without claiming those hashes were recorded at generation time.
 3. Recovery results and checksums are recorded in `BOAT/ARTIFACT_RECOVERY.md`. Runs 38085367295 and 37996683799 have exact claim-text coverage 15/15 and 18/18; run 37696062759 is only 4/7 and must not be used for claim-specific repairs until reconciled.
 4. Added a real-fixture integration test across all three checked-in article/report/brief/pack combinations. Latest CI [run 38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698) passed **57/57**. The exact-text resolver uniquely maps 12/15, 12/18, and 4/7 claim passages; it leaves the rest unresolved and never rewrites original reports. Never translate `Sx-FFn`/`Sx-BODY` into `Sx-Pn` unless the original saved text matches exactly one canonical passage; otherwise retain `unknown`.
-5. Next: build a separate proposal-input adapter that consumes the recovery audit and permits only unique exact-text passage mappings. Keep the proposal review-only; no semantic support claim and no automatic application.
+5. Historical next item (completed later in this branch): the separate recovered proposal-input adapter was added, with unique exact-text passage mapping and review-only output. Later entries below record the follow-on schema, eligibility report, and proposal-engine handoff work.
 6. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails
