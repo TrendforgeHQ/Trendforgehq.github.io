@@ -13,7 +13,7 @@ const binderBlock = workflow.slice(binderStep, uploadStep);
 assert.match(binderBlock, /continue-on-error:\\s*true/, 'attempt lineage binding must not add a new publication gate');
 assert.match(binderBlock, /GITHUB_RUN_ID:\\s*\\$\\{\\{ github\\.run_id \\}\\}/);
 assert.match(binderBlock, /GITHUB_SHA:\\s*\\$\\{\\{ github\\.sha \\}\\}/);
-assert.match(binderBlock, /node scripts\\/boat-bind-attempt-lineage\\.mjs/);
+assert.ok(binderBlock.includes('node scripts/boat-bind-attempt-lineage.mjs'), 'binder step must invoke the attempt-lineage script');
 assert.ok(writerStep >= 0, 'publish workflow must include lineage capture');
 assert.ok(buildStep > writerStep, 'lineage capture must happen before site build');
 assert.ok(outputCommitStep > buildStep, 'lineage output must be committed after build');
