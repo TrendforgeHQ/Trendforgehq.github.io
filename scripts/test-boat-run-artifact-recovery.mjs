@@ -94,6 +94,28 @@ test('article/report partial text coverage is explicit but does not erase pack r
   assert.ok(result.findings.some(item => item.code === 'BR-CLAIMS_NOT_ALL_IN_ARTICLE'));
 });
 
+test('unexpected blocked-metadata status blocks recovery even when IDs and hashes are present', () => {
+  const input = fixture();
+  const metadata = JSON.parse(input.blockedMetadataRaw);
+  metadata.status = 'generated-pending-verification';
+  input.blockedMetadataRaw = JSON.stringify(metadata);
+  const result = auditRecoveredRunArtifacts(input);
+  assert.equal(result.status, 'blocked');
+  assert.equal(result.packRecoveryStatus, 'blocked');
+  assert.ok(result.findings.some(item => item.code === 'BR-BLOCKED-METADATA-STATUS-MISMATCH'));
+});
+
+test('unexpected generated-metadata status blocks recovery even when IDs and hashes are present', () => {
+  const input = fixture();
+  const metadata = JSON.parse(input.generatedMetadataRaw);
+  metadata.status = 'claim-verification-blocked';
+  input.generatedMetadataRaw = JSON.stringify(metadata);
+  const result = auditRecoveredRunArtifacts(input);
+  assert.equal(result.status, 'blocked');
+  assert.equal(result.packRecoveryStatus, 'blocked');
+  assert.ok(result.findings.some(item => item.code === 'BR-GENERATED-METADATA-STATUS-MISMATCH'));
+});
+
 test('wrong artifact run ID blocks recovery', () => {
   const input = fixture();
   input.artifactRunId = '999999999';
