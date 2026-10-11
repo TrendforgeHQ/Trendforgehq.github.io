@@ -570,3 +570,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Preserves pre-repair attempt records, does not overwrite conflicting finalized bundles, and is idempotent. The workflow step is non-blocking and runs before attempt diagnostics are uploaded.
 - Root lineage audit can recognize finalized bundles or exact-hash lineage manifests; historical reports without a matching manifest/bundle remain UNKNOWN.
 - Offline run [38130627939](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130627939): 136/136 tests passed. A follow-up tightened workflow-SHA matching; latest-head CI remains pending.
+
+## 2026-10-11 — Fix lineage workflow test regex
+
+- Fixed double-escaped regex tokens in `scripts/test-boat-published-lineage-workflow.mjs` that made the contract test reject a valid non-blocking binder step.
+- Confirmed the failure was test-only; prior Control Center QA and production build passed.
+- Latest offline run `38130780216` emitted `fail 0`; final job conclusion and latest-head QA remain to be confirmed.
