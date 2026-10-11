@@ -74,3 +74,28 @@ Roadmap items are proposals until their implementation and verification are reco
 Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6.
 
 A phase may be split into smaller PRs. Avoid combining UI, backend, publishing workflow, and autonomous actions into one change.
+
+## Product-first realignment — 2026-10-11
+
+The roadmap must be judged against the original product goal, not the number of schemas or tests completed. The safety/lineage work is foundation, not the product itself. Keep it, but stop expanding contract-only tooling unless it unblocks a concrete end-user capability.
+
+### North-star acceptance criteria
+- A protected Control Center is the user's home for BOAT: live status, an actual conversation interface, task history, findings, proposals, approvals, and learning records.
+- The user can instruct BOAT in natural language; BOAT explains what it understood, what it will inspect, what it found, and what action it proposes.
+- BOAT audits the full published-article catalogue, including claim-by-claim evidence, source URLs/passages, freshness, attribution, uncertainty, and structural/editorial problems. Missing artifacts must be shown as unknown, never silently treated as passed.
+- BOAT can research the public web and review selected external articles for quality/approach comparisons, preserving source links and dates and learning editorial patterns rather than copying expression.
+- BOAT suggests specific fixes with evidence, risk, exact diff, tests, cost, and rollback; consequential actions require authenticated approval bound to the exact proposal.
+- Learning is an evidence-backed loop: incident → root-cause hypothesis → regression fixture → offline/historical evaluation → measured outcome → approval before promotion. No silent policy/gate weakening.
+- Every task, source, finding, proposal, approval, execution, test, and result is recorded and visible in Control Center and project memory.
+
+### Revised delivery order
+1. **Vertical slice first:** inspect the existing `app/control-center/page.tsx` and static-data model; design the real BOAT task/chat API boundary and threat model. Deliver a truthful Control Center task/chat experience with task history and read-only audit results before adding more standalone validators.
+2. **Published catalogue audit:** inventory every published article; establish coverage; create a deterministic report for article → claims → evidence pack → source/passages → freshness/editorial findings. Add resumable batches and a clear unknown/blocked state.
+3. **Web research + editorial benchmark:** add controlled public-web retrieval with source/date provenance and a comparison report for selected human-written/competitor articles; do not copy prose.
+4. **Proposal and permission centre:** render ranked fixes, exact diffs, expected impact, risk, test plan, cost, and rollback; secure approval and action records.
+5. **Controlled execution:** apply approved changes only on isolated branches/sandboxes, run existing verification/editorial/image/build gates, open a PR, and show the result in chat.
+6. **Learning and improvement:** turn verified failures/outcomes into testable experiments, compare before/after metrics, keep unapproved changes in shadow mode, and promote only through review.
+7. **Targeted topic workflows and bounded autonomy:** only after the above loop works end-to-end; retain dedupe, quota ceilings, kill switch, and all existing gates.
+
+### Immediate next task
+Do a Control Center interface and backend-contract audit, identify the smallest useful end-to-end read-only vertical slice, then implement it in a dedicated PR with tests. Do not spend the next step on another isolated schema unless the slice depends on it. Keep the current safety rules and do not touch `main`.
