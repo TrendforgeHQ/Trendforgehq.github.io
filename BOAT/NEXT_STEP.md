@@ -414,3 +414,9 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - Each archived claim row preserves verifier status/classification, source ID/title/URL/role, passage IDs, a capped evidence excerpt, context completeness, current-article exact-text diagnostic, run/SHA metadata when available, and the original report outcome. All historical attempts are retained; conflicting PASS/block history is not collapsed into a latest winner.
 - Missing reports remain UNKNOWN. Historical PASS is not current verification; exact-text non-match is only a version/segmentation signal. This step does not fetch sources, independently re-run the verifier, edit articles, generate repair text, or publish.
 - Added synthetic regression tests and a real-catalogue CLI integration test; added explicit offline workflow path filters. **Branch-head CI verification is pending**; inspect both BOAT Offline Tests and Control Center QA before marking verified.
+
+### Claim-audit data-source correction — 2026-10-11
+
+- First CI run exposed a test-fixture gap: the `gamma` article had no current Markdown file, so the audit correctly returned `unknown-current-article-missing` rather than `unknown-no-archived-claim-report`. Added the missing fixture file; no production audit logic was changed for that test failure.
+- Inspecting the real repository root revealed `data/claim-verification.json` is a current workflow snapshot for one published slug (`amazon-eyes-8-b-nvidia-chip-financing-to-lighten-ai-capital-load`), while archived attempt folders contain no matching claim reports for the current 48-slug catalogue at this scan. Updated the CLI to include the root report explicitly as `root-workflow-snapshot`, but not to imply exact-byte lineage because no root metadata/hash binding is available.
+- New CI verification is pending; report all counts from the latest branch-head logs only.
