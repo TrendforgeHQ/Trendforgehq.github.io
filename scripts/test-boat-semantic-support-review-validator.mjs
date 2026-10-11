@@ -66,6 +66,14 @@ test('CLI rejects invalid passage IDs, empty passage evidence, and invalid URI',
   assert.ok(result.output.errors.some(error => error.includes('passageId'))); assert.ok(result.output.errors.some(error => error.includes('passageText')));
   assert.ok(result.output.errors.some(error => error.includes('uri')));
 });
+test('CLI rejects non-web URI schemes for source evidence', t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-uri-scheme-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  for (const sourceUrl of ['javascript:alert(1)', 'file:///etc/passwd', 'ftp://example.com/source']) {
+    const record = validReview(); record.claim.sourceUrl = sourceUrl;
+    const result = runCli(dir, record); assert.equal(result.status, 1, sourceUrl);
+    assert.ok(result.output.errors.some(error => error.includes('uri')), sourceUrl);
+  }
+});
 test('CLI independently rejects unsafe safety invariants', t => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-review-safety-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
   const record = validReview(); record.safety.automaticApplication = true; record.safety.semanticSupport = 'supported';
