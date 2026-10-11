@@ -198,7 +198,7 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
   const runIdMatches = !!runMetadata && s(runMetadata.workflowRun) === s(recoveryAudit?.artifact?.runId);
   const workflowShaMatches = !!runMetadata && s(runMetadata.workflowSha) === s(recoveryAudit?.artifact?.workflowSha);
   const originalHashesMatch = !!runMetadata &&
-    runMetadata.hashesRecordedAtGeneration === true &&
+    runMetadata.hashesRecordedInWorkflow === true &&
     Object.entries(expectedOriginalHashes).every(([key, actual]) => !!actual && !!s(runMetadata[key]) && s(runMetadata[key]) === actual);
   const handoffAllowed = metadataBytesMatch && runIdMatches && workflowShaMatches && originalHashesMatch && handoffFindings.length === 0;
   return {
@@ -239,12 +239,12 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
       status: handoffAllowed ? 'ready' : 'blocked',
       allowed: handoffAllowed,
       reason: handoffAllowed
-        ? 'Original workflow metadata contains matching article/report/evidence-pack hashes and matching run/SHA identifiers.'
+        ? 'Workflow metadata contains matching article/report/evidence-pack hashes and matching run/SHA identifiers.'
         : 'Original generation-time hash fields and matching same-run metadata are absent or do not match; recovery-time hashes cannot substitute.',
       checks: {
         metadataPresent: !!runMetadata,
         metadataBytesMatch,
-        hashesRecordedAtGeneration: runMetadata?.hashesRecordedAtGeneration === true,
+        hashesRecordedInWorkflow: runMetadata?.hashesRecordedInWorkflow === true,
         runIdMatches,
         workflowShaMatches,
         artifactHashesMatch: originalHashesMatch,
