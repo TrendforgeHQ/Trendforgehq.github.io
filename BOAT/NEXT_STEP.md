@@ -300,3 +300,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Final verified offline run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed **127/127**, 0 failures, 0 skipped, on the then-current branch head; log confirms the schema/CLI/review-set tests and HTTP(S)-only URI regression passed.
 - Reviewed the publishing quarantine diff: it copies the evidence pack when present, hashes the exact quarantined article/report/pack bytes, records `hashesRecordedInWorkflow=true` only when all three hashes exist, and still removes the blocked article from the publication set. No production workflow was executed.
 - PR #35 remains open/draft/unmerged; `main` untouched. Remaining: final reviewer decision and any further requested review; do not merge by default.
+
+## North-star realignment — next step
+
+The goal is a usable Smart BOAT, not an ever-growing set of offline validators. Existing audit/lineage modules are enabling components only.
+
+**Immediate next action:** audit the existing Control Center route, its data inputs, current Supervisor/Self-Learning outputs, and available safe backend options. Produce a concrete vertical-slice implementation plan for a real BOAT task/chat surface: user instruction → read-only task execution → published-article findings → evidence-linked explanation → saved task/audit history. Then implement that slice with tests on this branch. Include a secure server-side boundary; never put privileged tokens in static browser code.
+
+**User-visible product goals to preserve:** audit all published articles, check claims/evidence/sources and freshness, research public web sources, compare external articles for editorial improvements, propose fixes with diffs/reasons/risks, request explicit permission for consequential changes, execute approved changes in isolation through existing gates, and learn from verified outcomes.
+
+**Do not treat as complete:** schemas, validators, archive eligibility counts, or passing offline tests do not deliver chat, live web research, full published-catalogue audit, approval UI, controlled execution, or learning promotion. Keep records honest about this distinction. PR #35 stays draft/unmerged; no provider or publishing workflow calls; do not touch `main`.
