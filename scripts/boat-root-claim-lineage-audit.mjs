@@ -190,7 +190,8 @@ function main() {
     attemptRecords.push({
       metadata,
       articleRaw: readIfExists(path.join(base, 'article.md')),
-      packRaw: readIfExists(path.join(base, 'authoritative-evidence-pack.json'))
+      packRaw: readIfExists(path.join(base, 'authoritative-evidence-pack.json')),
+      reportRaw: readIfExists(path.join(base, 'claim-verification.json'))
     });
   }
   process.stdout.write(JSON.stringify(auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords, lineageManifests }), null, 2) + String.fromCharCode(10));
