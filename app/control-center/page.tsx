@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import './control-center.css';
 import { auditPublishedCatalogue } from '../../scripts/boat-published-catalogue-audit.mjs';
+import { articles as publishedArticles } from '../../lib/articles';
 
 export const dynamic = 'force-static';
 
@@ -40,7 +41,7 @@ const singleSource = Number(evidence.singleSource ?? decisions.singleSourceVerif
 const strongEvidence = Number(evidence.strong ?? decisions.strongEvidenceReady ?? 0);
 const generated = Number(latest.articlesGenerated ?? latest.generatedArticles ?? articleCount ?? 0);
 
-const publishedCatalogue = auditPublishedCatalogue(path.join(process.cwd(), 'content', 'articles'));
+const publishedCatalogue = auditPublishedCatalogue(publishedArticles);
 const catalogueIssueArticles = publishedCatalogue.filter((article) => article.findings.length > 0);
 const catalogueMissingSources = publishedCatalogue.filter((article) => !article.sourceHeading || article.urls === 0).length;
 const catalogueEmptyHeadings = publishedCatalogue.reduce((sum, article) => sum + article.emptyHeadings, 0);
@@ -69,8 +70,8 @@ export default function ControlCenterPage() {
     </header>
 
 
-    <Section eyebrow="BOAT • CATALOGUE AUDIT" title="Published article audit" help="Build-time structural scan of Markdown articles in content/articles. This is a real inventory, not a claim that factual accuracy has been verified.">
-      <div className="cc-catalogue-note"><strong>Audit boundary</strong><p>Structural checks only: article inventory, source/reference heading, HTTP(S) links, empty headings, and repeated paragraphs. Claim-to-passage support, source freshness, attribution accuracy, and public-web verification are not yet run by this Control Center. Missing or unchecked evidence must not be interpreted as passed.</p><small>Snapshot generated when the site is built • {publishedCatalogue.length} Markdown article file(s) scanned</small></div>
+    <Section eyebrow="BOAT • CATALOGUE AUDIT" title="Published article audit" help="Build-time structural scan of the canonical published article index used to render /article pages. This is a real inventory, not a claim that factual accuracy has been verified.">
+      <div className="cc-catalogue-note"><strong>Audit boundary</strong><p>Structural checks only: article inventory, source/reference heading, HTTP(S) links, empty headings, and repeated paragraphs. Claim-to-passage support, source freshness, attribution accuracy, and public-web verification are not yet run by this Control Center. Missing or unchecked evidence must not be interpreted as passed.</p><small>Snapshot generated when the site is built • {publishedCatalogue.length} published article(s) scanned</small></div>
       <div className="cc-catalogue-stats">
         <div><b>{publishedCatalogue.length}</b><span>Articles inventoried</span></div>
         <div><b>{catalogueIssueArticles.length}</b><span>With structural flags</span></div>
@@ -79,7 +80,7 @@ export default function ControlCenterPage() {
       </div>
       {publishedCatalogue.length ? <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Article</th><th>Words</th><th>Links</th><th>Structural findings</th></tr></thead><tbody>
         {publishedCatalogue.slice(0, 20).map((article) => <tr key={article.file}><td><strong>{article.title}</strong><small>{article.file}</small></td><td>{article.words}</td><td>{article.urls}</td><td>{article.findings.length ? article.findings.join(' • ') : 'No structural flags detected'}</td></tr>)}
-      </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} inventoried articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No Markdown article files were found at content/articles during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
+      </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} inventoried articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No published articles were available in the canonical article index during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
     </Section>
 
     <Section eyebrow="01 • OVERVIEW" title="Today at a glance" help="The latest recorded publishing run, translated into plain language.">
