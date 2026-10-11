@@ -190,6 +190,15 @@ jobs:
           GITHUB_RUN_ID: ${{ github.run_id }}
           GITHUB_SHA: ${{ github.sha }}
         run: node scripts/boat-bind-attempt-lineage.mjs
+      - name: Bind claim report to exact archived attempt
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/bind-boat-attempt-lineage.mjs
+      - name: Verify attempt lineage binder fixtures
+        run: node scripts/test-bind-boat-attempt-lineage.mjs
       - name: Upload article attempt diagnostics
         if: ${{ !cancelled() }}
         continue-on-error: true
