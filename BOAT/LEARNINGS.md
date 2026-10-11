@@ -352,3 +352,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - A permutation test must not require the full report to be byte-identical when record order and input-relative indices intentionally preserve caller order.
 - Compare order-insensitive findings/verdict summaries canonically, then independently assert that report records retain input order and every dissenting verdict survives. Golden invalid fixtures should reflect the validator's actual complete error list rather than assume one error per unsafe record.
 - First CI run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) passed 111/113; harness expectations corrected, follow-up CI pending. No production audit logic changed.
+
+
+### L-048 validation update — golden tests verified
+
+- Follow-up CI [run 38122442789](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122442789) passed **113/113**, 0 failed, 0 skipped.
+- Golden cases verify duplicate-ID collisions, independent reviewer dissent, same-reviewer repeats/disagreement, invalid-record exclusion, source order, and absence of automatic winners. This confirms the tested offline contract only; semantic support remains unverified and existing gates remain mandatory.
