@@ -20,7 +20,10 @@ const titleFromMarkdown = text => {
   if (!match) return '';
   return match[1].replace(/^["']|["']$/g, '').trim();
 };
-const pointerEscape = value => String(value).replace(/~/g, '~0').replace(/\//g, '~1');
+function bodyFromMarkdown(text) {
+  return String(text).replace(/^---\s*\n[\s\S]*?\n---\s*/,'').replace(/^\s{0,3}#{1,6}\s+Sources\s*\n[\s\S]*$/im,'');
+}
+
 
 function makeFinding({ id, category, severity, title, description, claim, reportPath, index, workflowRun, recommendation }) {
   return {
@@ -38,6 +41,38 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
   const workflowRun = metadata?.workflowRun == null ? null : String(metadata.workflowRun);
   const workflowSha = metadata?.workflowSha == null ? null : String(metadata.workflowSha);
   const findings = [];
+  const articleBody = bodyFromMarkdown(articleText);
+  const bodyLines = articleBody.split('\n');
+  for (let i = 0; i < bodyLines.length; i++) {
+    if (/^\s{0,3}#{1,6}\s*$/.test(bodyLines[i])) {
+      findings.push(makeFinding({
+        id: 'AD-EMPTY-HEADING-' + (i + 1), category: 'empty_heading', severity: 'medium',
+        title: 'Empty Markdown heading',
+        description: 'An empty Markdown heading was found in the article body at body line ' + (i + 1) + '.',
+        claim: bodyLines[i].trim(), reportPath: articlePath, index: null, workflowRun,
+        recommendation: 'Add a meaningful heading or remove the empty heading; re-read the surrounding section after editing.'
+      }));
+    }
+  }
+  const prose = articleBody.replace(/^\s{0,3}#{1,6}\s+.*$/gm, '').replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '').replace(/\s+/g, ' ');
+  const candidates = prose.split(/(?<=[.!?])\s+(?=[A-Z0-9"“$])/).map(s => s.trim()).filter(s => s.length >= 50 && s.split(/\s+/).length >= 8);
+  const repeated = new Map();
+  for (const sentence of candidates) {
+    const key = sentence.toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[^a-z0-9]+/g, ' ').trim();
+    if (!key) continue;
+    if (!repeated.has(key)) repeated.set(key, []);
+    repeated.get(key).push(sentence);
+  }
+  for (const [key, occurrences] of repeated) {
+    if (occurrences.length < 2) continue;
+    findings.push(makeFinding({
+      id: 'AD-REPEATED-SENTENCE-' + hash(key).slice(0, 8), category: 'repeated_sentence', severity: 'medium',
+      title: 'Repeated sentence in article body',
+      description: 'The same normalized sentence appears ' + occurrences.length + ' times in the article body.',
+      claim: occurrences[0], reportPath: articlePath, index: null, workflowRun,
+      recommendation: 'Review the repeated sentence and retain only the intended occurrence without removing unique evidence or context.'
+    }));
+  }
   const limitations = [
     'This report extracts signals from an existing verifier report; it is not an independent re-check of source truth.',
     'A saved claim-verification PASS does not prove every factual statement is universally correct.',
