@@ -574,3 +574,9 @@ Verified input condition: `data/claim-verification.json` parses, points to the A
 ## 2026-10-11 — Root claim/evidence lineage audit verification
 
 Offline suite run [38129695590](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38129695590) passed **135/135 tests** at `e1146ef18c67be057f4d73893df395b9fdc5fedf`. The root lineage audit and synthetic cases passed. The audit cannot establish exact report-pack pairing without metadata hashes, so the root report remains `unknown-pack-binding`; source/passage ID checks are diagnostics and semantic support is `not_assessed`. The zero-byte evidence-pack file is an observed repository defect, not permission to fabricate evidence. A test-output wording-only follow-up at `9b0fd123c11811aceb5b9017f2ea3239dd99b3ef` is awaiting latest-head CI. PR #35 remains draft/open and unmerged; `main` is untouched.
+
+## 2026-10-11 — Root lineage audit test isolation and schema alignment
+
+Added `BOAT_AUDIT_ROOT` support and changed the CLI regression test to use a temporary isolated fixture, avoiding assumptions about mutable shared root data during parallel Node tests. The previous live test expected 24 candidates despite the repository's checked-in evidence-pack file being zero bytes; that assertion was not deterministic. The auditor now follows the actual canonical envelope (`candidates[]`) and maps fact anchors through `storyFactMap.coreFacts`. Synthetic CLI test validates candidate/source/passage/fact ID traceability while keeping report/run pairing UNKNOWN.
+
+The root evidence pack blob remains zero bytes in the checked branch, but `scripts/pre-writer-pipeline.mjs` writes it during a production run. That alone does not prove the production generation step failed. Next evidence needed: inspect a specific run's archived artifact and published lineage manifest without dispatching production. Latest-head CI is pending.
