@@ -306,3 +306,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Adapter handoff requires exact metadata-byte binding to the recovery audit, matching artifact hashes, and matching run/SHA. Tampered metadata fails closed.
 - Existing archived samples still have no hash fields and remain handoff-blocked; the workflow change only helps future quarantine artifacts.
 - Offline CI [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395): **73 passed, 0 failed, 0 skipped**. Publishing was not run.
+
+
+
+## Pack-shape handoff guard — verified (2026-10-11)
+
+- Existing factual proposal engine expects root-level evidencePack.sources; the authoritative recovered pack envelope stores sources under candidates[]. The adapter now marks handoff blocked unless the supplied pack shape matches the engine contract.
+- Even valid workflow-recorded hashes are insufficient on their own; metadata-byte integrity, run/SHA, all artifact hashes, and engine-compatible pack shape are required.
+- CI [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152): **73 passed, 0 failed, 0 skipped**. Current archived runs remain handoff-blocked.
