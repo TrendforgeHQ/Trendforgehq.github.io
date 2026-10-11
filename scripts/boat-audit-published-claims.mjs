@@ -9,6 +9,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const report = auditPublishedClaims({
   articles,
   attemptsDirectory: path.join(root, 'data', 'article-attempts'),
-  articlesDirectory: path.join(root, 'content', 'articles')
+  articlesDirectory: path.join(root, 'content', 'articles'),
+  rootReportPath: path.join(root, 'data', 'claim-verification.json'),
+  rootMetadataPath: path.join(root, 'data', 'metadata.json')
 });
 process.stdout.write(JSON.stringify(report, null, 2) + String.fromCharCode(10));
