@@ -229,3 +229,6 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Golden cases passed for duplicate IDs, independent reviewer disagreement, same-reviewer repeat/disagreement, and invalid records. Permutation tests passed while separately confirming input/source record order is preserved and dissenting verdicts remain visible.
 - First-run harness defects and corrections are recorded above. This validates the offline audit contract only; it does not establish semantic truth, approve publication, or change runtime behavior.
 - **Next:** inspect the final PR diff and check branch-head CI after the documentation updates. Keep PR #35 draft/unmerged; do not touch `main`, call providers, or run publishing.
+
+
+**Branch-head recheck after fixture cleanup:** [run 38122539254](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122539254) passed **113/113**, 0 failed, 0 skipped on head `9153fc66d0e37f31f0320a4ac3848670ee745f76`. The fixture is now minimal; all four golden scenarios and permutation/dissent checks pass. Final next action remains PR diff review and choosing the next safe offline BOAT task.
