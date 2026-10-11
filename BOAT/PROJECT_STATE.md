@@ -398,3 +398,6 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added regression coverage for metadata whose hashes and identifiers match but whose status is `generated-pending-verification`; it must not authorize handoff.
 - CI run [38123444976](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123444976) was queued on head `e5f3a61a4c12c67af5a2abd239645bf050330544`; final result still needs inspection.
 - The current workflow continues to quarantine and remove claim-blocked articles. This finding is defense-in-depth, not a confirmed production gate bypass. PR #35 remains draft/unmerged; main and publishing/provider workflows untouched.
+
+
+**Verification:** Branch-head BOAT Offline Tests [run 38123484401](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123484401) passed **124/124**, 0 failed, 0 skipped on `48dd22c7a2e7b00e2ddbb52f98b5294112658db6`. The regression proving non-blocked metadata cannot authorize handoff passed. Full PR review remains in progress; no production workflow was run.
