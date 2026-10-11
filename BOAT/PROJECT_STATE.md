@@ -524,3 +524,11 @@ Verified current baseline:
 - Publish workflow review confirms lineage manifest generation is non-blocking and occurs before build; git add data includes the manifest path for persistence when the normal output-commit path runs. This is code-path inspection only: no production publish was dispatched and no real manifest has yet been verified on the deployed branch.
 - PR #35 remains draft/open/unmerged. GitHub compare reports head 5 commits behind main; do not merge/rebase without a deliberate base-divergence review. main untouched; no provider calls or article changes.
 - Provenance must not be presented as semantic fact-checking: current-byte-match means exact bytes match a recorded manifest with a recorded claim-verification PASS, not that claims were independently reverified now.
+
+
+## Verified update — 2026-10-11 (latest branch-head verification)
+- At head `932d5878a8cd4cd4025ccc89954a716d28af020f`, BOAT Offline Tests [38128016828](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016828) and Control Center QA/production build [38128016780](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016780) both completed successfully.
+- Added a synthetic workflow-level contract test. It checks ordering, required environment, fail-closed/no-overwrite/no-article behavior, and that the existing output-commit path stages/transfers `data/`. It does not run the production publisher and cannot prove a real deployed manifest exists.
+- Code inspection confirms the article generator creates the run marker, lineage capture is after SEO validation and before build, and the generated manifest is eligible for transfer through the existing `data/` output path. Production persistence is still unverified by design.
+- Base divergence review: PR head is 5 commits behind `main`; the five main-only commits are generated intelligence-data refreshes (TrendForge intelligence, performance, experimentation, self-learning, memory). The 454 ahead count reflects branch history since the old merge base, not a count of newly authored BOAT changes. PR #35 remains draft/open/unmerged; no rebase/merge and no `main` write.
+- Exact-byte lineage remains provenance only; it is not a fresh semantic fact-check or source-freshness result. No publishing run, paid provider call, or article mutation was performed.
