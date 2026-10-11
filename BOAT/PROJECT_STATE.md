@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.1  
 **Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Article Doctor CI passed 10/10 at commit `dfa4f7e1090cf8df77cd48b4ff00e45a69e8b3a3` in run `38110774506`; draft PR remains unmerged.
+**Status:** Article Doctor CI passed 14/14 at commit `d532a48b78cd25d687dd55b3f59a40713431dddf` in run `38110939177`; draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -44,7 +44,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — 10/10 CI tests pass; artifact-integrity edge cases next |
+| 1 | Read-only artifact collection and Article Doctor report | In progress — 14/14 CI tests pass; claim findings now retain source/passage provenance |
 | 2 | Claim/source audit and editorial benchmark evaluation | Not started |
 | 3 | Fixture-backed repair proposals and regression harness | Not started |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
@@ -134,3 +134,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - The BOAT-only workflow now uses a targeted pull-request trigger without the duplicate push trigger or unnecessary concurrency lock; run 38110774506 completed successfully.
 - The historical Run 405 11/2/2 calibration remains unverified; the reconstructed 9/3/3 regression passed separately in run 38110223968.
 - Next task: harden malformed/missing report and frontmatter cases, preserving `unknown` for artifact-integrity gaps.
+
+
+## Source-to-claim provenance follow-up — 2026-10-11
+- Claim-level findings now retain saved verifier context: source URL/title, source ID/role, passage IDs, and a source excerpt capped at 500 characters, alongside the claim-report JSON pointer.
+- The report schema was updated to include those fields. The source context is copied from the saved verifier artifact; BOAT does **not** fetch or revalidate the URL and does not claim the excerpt independently proves the claim.
+- Added a regression using AD-FX-001 to verify source URL/title/ID/passage lineage and the exact `/claims/{index}` pointer.
+- Isolated Node tests at commit `d532a48b78cd25d687dd55b3f59a40713431dddf`: **14 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0.
+- **CI PASS:** [run 38110939177](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110939177): 14 passed, 0 failed, 0 skipped.
+- Next: audit source-context coverage across all archived fixtures, including claims whose saved verifier output lacks URL/passage details, and keep missing context explicit rather than inventing it.

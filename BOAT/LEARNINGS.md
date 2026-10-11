@@ -72,3 +72,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Observed:** The isolated BOAT workflow originally ran on both `push` and `pull_request` with the same concurrency group. A run was cancelled as commits arrived, and queued runs showed no job yet.
 - **Fix:** Keep the targeted `pull_request` trigger and remove the duplicate branch-push trigger and unnecessary concurrency lock for this short, read-only test job.
 - **Validation:** [Run 38110774506](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110774506) completed successfully: 10 passed, 0 failed, 0 skipped.
+
+
+## L-012 — Source provenance is not source verification
+- **Observed:** Saved claim reports contain fields such as `bestUrl`, `bestSource`, `sourceId`, `sourceRole`, `matchedPassages`, and `evidence`; these can be attached to a BOAT finding with a claim-report JSON pointer.
+- **Fix:** Preserve these fields as copied provenance, cap excerpt length, and explicitly state that no network fetch or independent source re-check occurred.
+- **Implication:** A source URL or passage ID improves traceability but does not, by itself, prove that the cited passage supports the claim. Future Evidence Auditor work must measure missing context and verify source support separately.
+- **Validation:** CI run 38110939177 passed 14 tests, including the source-lineage regression.

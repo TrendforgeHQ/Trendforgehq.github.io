@@ -75,3 +75,10 @@ All entries should describe actual work and results. Do not record planned work 
 - The archived real-article review found no empty-heading or repeated-sentence signals in AD-FX-001..003; tests now ensure those three samples do not receive structural false positives.
 - Corrected the isolated workflow to avoid simultaneous push and pull_request runs cancelling each other. The latest PR-triggered run completed successfully.
 - No production publishing workflow, article, provider routing, evidence/claim gates, or safety thresholds were changed.
+
+
+## 2026-10-11 — Source-to-claim provenance in findings
+- Added source metadata to claim findings from the saved verifier report: URL, title, source ID/role, matched passage IDs, and a source excerpt capped at 500 characters. The original claim-report JSON pointer remains alongside these fields.
+- Expanded the report schema and added a regression verifying source metadata and the exact claim pointer for an archived unsupported claim.
+- Final isolated Node run at commit `d532a48b78cd25d687dd55b3f59a40713431dddf`: **14/14 passed**. GitHub Actions [run 38110939177](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110939177) also passed 14/14.
+- This is provenance reuse, not independent source verification: BOAT makes no external requests and does not assert that the cited page currently supports the claim.
