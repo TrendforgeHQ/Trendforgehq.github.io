@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /** Create an immutable final attempt bundle binding article, evidence pack and claim report to one workflow run. */
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -47,7 +46,7 @@ export function bindAttemptLineage({ root, runId, workflowSha = '', boundAt = ne
     const attemptDir = path.join(attemptsDir, dirent.name);
     const metaFile = readJson(path.join(attemptDir, 'metadata.json'));
     const meta = metaFile?.value;
-    if (!meta || text(meta.workflowRun) !== text(runId) || text(meta.articlePath).replace(/^\.\//, '') !== normalizedArticlePath) continue;
+    if (!meta || meta.lineageBindingVersion === 1 || dirent.name.endsWith('-finalized') || text(meta.workflowRun) !== text(runId) || text(meta.articlePath).replace(/^\.\//, '') !== normalizedArticlePath) continue;
     if (text(workflowSha) && text(meta.workflowSha) && text(meta.workflowSha) !== text(workflowSha)) continue;
     const archivedPackPath = path.join(attemptDir, 'authoritative-evidence-pack.json');
     if (!fs.existsSync(archivedPackPath)) continue;
