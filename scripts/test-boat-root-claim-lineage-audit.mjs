@@ -42,4 +42,4 @@ assert.equal(output.reportType, 'boat-root-claim-evidence-lineage');
 assert.equal(output.status, 'unknown-pack-binding');
 assert.equal(output.artifacts.reportPresent, true);
 assert.equal(output.summary.claims, 10);
-console.log('BOAT root claim/evidence lineage audit: PASS (empty canonical pack correctly remains UNKNOWN)');
+console.log('BOAT root claim/evidence lineage audit: PASS (unbound root snapshot correctly remains UNKNOWN)');
