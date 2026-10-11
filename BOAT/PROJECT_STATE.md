@@ -616,3 +616,7 @@ Implemented a post-verification archive binder and wired it after the workflow c
 ## 2026-10-11 — Latest verification result
 
 At code head `494764f5788aa17877e48e7a15b51390d7fc099f`, BOAT Offline Tests passed **136/136**, including the isolated root-lineage fixture. Control Center deterministic suite and production build passed. This is CI/test validation, not proof of factual accuracy. The docs-only record triggers another CI cycle; production archive binding remains unverified until a naturally occurring pipeline run emits a matching attempt bundle.
+
+## Evidence artifact retention — 2026-10-11
+
+Updated the pipeline's downloadable diagnostics: the article-attempt artifact now explicitly includes `data/authoritative-evidence-pack.json`, and a separate run-scoped artifact uploads `data/published-lineage/manifest-${GITHUB_RUN_ID}.json` immediately after lineage capture and before the site build. Both uploads are non-blocking and warn when no file exists; this does not alter publication gating or claim factual correctness. Added workflow-contract assertions for the exact pack path, manifest run ID path, step order, and no-manifest behavior. PR CI is the validation target; production publishing was not dispatched. Next: verify latest offline suite and Control Center build, then inspect a real run's retained artifact once one is naturally produced.
