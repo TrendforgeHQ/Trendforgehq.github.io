@@ -26,7 +26,7 @@ export function createFactualRepairProposal({
 
   if (typeof articleRaw !== 'string') addIntegrity('FR-ARTICLE-MISSING', 'Exact original article text is required.');
   if (!claimReport || !Array.isArray(claimReport.claims)) addIntegrity('FR-CLAIMS-MISSING', 'Claim report is missing or has no claims array.');
-  if (!evidencePack || !Array.isArray(evidencePack.sources)) addIntegrity('FR-PACK-MISSING', 'Evidence pack is missing or has no sources array.');
+  if (!evidencePack || (!Array.isArray(evidencePack.sources) && !Array.isArray(evidencePack.candidates))) addIntegrity('FR-PACK-MISSING', 'Evidence pack is missing or has neither a sources array nor a candidate envelope.');
   if (!metadata || typeof metadata !== 'object') addIntegrity('FR-METADATA-MISSING', 'Run metadata is required.');
   if (!proposal || typeof proposal !== 'object') addIntegrity('FR-PROPOSAL-MISSING', 'A proposed replacement object is required.');
 
