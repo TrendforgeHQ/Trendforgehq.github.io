@@ -6,7 +6,7 @@ import { auditReviewSet } from './boat-semantic-support-review-set.mjs';
 async function main() {
   const args = process.argv.slice(2);
   if (args.length !== 1 || args[0] === '--help' || args[0] === '-h') {
-    console.error('Usage: node scripts/boat-semantic-support-review-set.mjs <review-set.json>');
+    console.error('Usage: node scripts/boat-semantic-support-review-set-cli.mjs <review-set.json>');
     process.exitCode = args[0] === '--help' || args[0] === '-h' ? 0 : 2;
     return;
   }
