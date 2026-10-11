@@ -104,3 +104,12 @@ In .github/workflows/publish.yml:
 - Regression coverage includes unique exact match, repeated duplicate text, ambiguous duplicate source passages, no-match behavior, and all three real archived attempts.
 - Latest branch-head run [38115430698](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115430698): **57 passed, 0 failed, 0 skipped**.
 - Original claim reports and articles remain unchanged; semantic support is still not verified.
+
+## Recovered proposal-input adapter
+
+Added `scripts/boat-recovered-proposal-input.mjs` as a separate offline step after recovery audit. It verifies that current article/report/brief/pack bytes match the recovery-time checksums, selects exactly one authoritative pack candidate by the saved brief title, and rechecks source IDs/URLs. A per-claim input is eligible only when the saved claim text occurs in the final quarantined article and the recovery resolver has one exact canonical passage from that same source.
+
+- Unmatched or ambiguous passages remain `unknown`; claims absent from the article and source-lineage mismatches are `blocked`.
+- The adapter emits source/passage inputs only. It does not author replacement text, does not apply edits, and does not pass recovery-time hashes off as original generation-time hashes.
+- Every output retains `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
+- Synthetic tests and integration tests against all three archived attempts were added. Expected eligible counts are 12, 12, and 4 respectively; these are test expectations, not a verified result. Branch-head CI validation is pending.
