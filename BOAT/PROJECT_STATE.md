@@ -421,3 +421,15 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Offline CI run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) succeeded: **127/127 passed**, 0 failed, 0 skipped. Review-set schema and CLI tests plus HTTP/HTTPS URL validation are included.
 - Publishing quarantine diff reviewed: blocked articles remain removed from the publication set; exact quarantined artifact hashes are recorded only when article, report, and evidence pack are all available. No publishing workflow was run.
 - PR #35 remains open/draft/unmerged; `main` is untouched. This is not approval to merge or evidence of semantic truth.
+
+## Product alignment correction — 2026-10-11
+
+The current work has concentrated on safety contracts, recovered artifact lineage, review schemas, and offline regression tests. Those are useful foundations, but they are not the intended user-facing product. The original goal is a Smart BOAT Control Center where the user can chat/instruct BOAT, review task progress and audit history, inspect findings, compare TrendForge articles with public-web references, approve proposed changes, and track learning/improvement.
+
+Verified current baseline:
+- `app/control-center/page.tsx` exists but is statically exported and reads committed data snapshots at build time; it is not a live BOAT chat or privileged task backend.
+- Existing Supervisor is advisory/observational; existing Self-Learning is shadow-mode metrics aggregation, not a full claim-level editorial learning loop.
+- Published-catalogue claim/evidence audit, external-web editorial benchmark, live chat backend, secure approval gateway, and BOAT-controlled execution are not yet implemented end-to-end.
+- Current offline suite passing proves offline regression contracts only; it does not mean the overall BOAT product is complete.
+
+**Priority correction:** next work must be a Control Center + secure task/chat boundary audit and a concrete read-only vertical slice, followed by full published-article coverage and source/claim review. Stop adding isolated schemas unless needed by a user-visible capability. Keep human approval for consequential changes, isolated branches, existing verification/editorial/image/build gates, quota protection, and complete audit records. PR #35 remains draft/unmerged; main untouched.
