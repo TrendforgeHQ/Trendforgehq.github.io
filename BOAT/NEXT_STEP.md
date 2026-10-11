@@ -29,14 +29,13 @@ Inspected the archived claim-blocked attempt:
 - The existing offline workflow's `scripts/test-boat-*.mjs` glob includes the new tests without requiring a production workflow change.
 
 ### Validation
-- New CI result: **pending** until the branch-head BOAT Offline Tests run is inspected.
+- New branch-head CI result: [BOAT Offline Tests run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567) — **44 passed, 0 failed, 0 skipped**. Logs confirm the adapter and schema-contract tests ran.
 - No provider, external-source fetch, image generation, site build, or publishing workflow was run.
 - No claim is made that the archived historical attempt has valid same-run evidence lineage.
 
 ### Next action after green tests
-1. Inspect the branch-head test logs and correct only reproducible adapter/test issues.
-2. If tests pass, record exact commit and run URL here and in `PROJECT_STATE.md`, `CHANGELOG.md`, and `LEARNINGS.md`.
-3. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
+1. Review the adapter CLI ergonomics and, if useful, add a fixture-level CLI test using the real archived attempt to assert `unknown` without writing into tracked artifacts.
+2. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails
 - Do not change `main`; do not merge PR #35 automatically.
