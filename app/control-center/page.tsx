@@ -79,8 +79,8 @@ export default function ControlCenterPage() {
         <div><b>{catalogueEmptyHeadings + catalogueRepeatedParagraphs}</b><span>Empty headings + repeated paragraphs</span></div>
       </div>
       {publishedCatalogue.length ? <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Article</th><th>Words</th><th>Links</th><th>Structural findings</th></tr></thead><tbody>
-        {publishedCatalogue.slice(0, 20).map((article) => <tr key={article.file}><td><strong>{article.title}</strong><small>{article.file}</small></td><td>{article.words}</td><td>{article.urls}</td><td>{article.findings.length ? article.findings.join(' • ') : 'No structural flags detected'}</td></tr>)}
-      </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} inventoried articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No published articles were available in the canonical article index during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
+        {publishedCatalogue.slice(0, 20).map((article) => <tr key={article.slug}><td><strong>{article.title}</strong><small>{article.slug}</small></td><td>{article.words}</td><td>{article.urls}</td><td>{article.findings.length ? article.findings.join(' • ') : 'No structural flags detected'}</td></tr>)}
+      </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} published articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No published articles were available in the canonical article index during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
     </Section>
 
     <Section eyebrow="01 • OVERVIEW" title="Today at a glance" help="The latest recorded publishing run, translated into plain language.">
