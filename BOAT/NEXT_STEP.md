@@ -322,3 +322,6 @@ The new helper has fixture tests for clean and flagged articles, non-Markdown ex
 
 
 **Verification update — 2026-10-11:** the new catalogue helper fixture test passed in BOAT Offline Tests run [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757). The complete BOAT suite passed **128/128**, and the Control Center deterministic suite passed **33/33**. The dedicated Control Center QA run [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747) also passed, including the production Next.js static build. Build logs include existing webpack cache/CSS warnings but no build failure. This verifies the static page compiles; it does not verify factual claims or create a live backend.
+
+
+**Build-fix note (2026-10-11):** the first CI build after switching the scanner to the canonical `lib/articles.ts` index caught a stale table key (`article.file` no longer exists). Fixed the table key/display to use `article.slug`, and aligned the deterministic test to the canonical-index input. The follow-up Control Center QA run is pending; do not count the build as green until its result is inspected.
