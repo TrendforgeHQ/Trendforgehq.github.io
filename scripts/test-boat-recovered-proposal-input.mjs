@@ -238,7 +238,8 @@ test('CLI rejects an incomplete argument list without writing output', () => {
 
 test('eligibility report schema requires counts and review-only guardrails', () => {
   const schema = JSON.parse(fs.readFileSync(path.join(root, 'BOAT/schemas/recovered-proposal-eligibility-report.schema.json'), 'utf8'));
-  assert.deepEqual(schema.properties.summary.properties.countsReconciled, { const: true });\n  assert.deepEqual(schema.properties.summary.properties.recoveryHashesRecordedAtGeneration, { const: false });
+  assert.deepEqual(schema.properties.summary.properties.countsReconciled, { const: true });
+  assert.deepEqual(schema.properties.summary.properties.recoveryHashesRecordedAtGeneration, { const: false });
   assert.deepEqual(schema.properties.summary.properties.semanticSupport, { const: 'not_verified' });
   assert.deepEqual(schema.properties.summary.properties.automaticApplication, { const: false });
   assert.ok(schema.required.includes('runs'));
