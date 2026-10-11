@@ -42,6 +42,7 @@ export function auditPublishedCatalogue(articles) {
   }).sort((a, b) => (b.findings.length - a.findings.length) || a.title.localeCompare(b.title));
 }
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
