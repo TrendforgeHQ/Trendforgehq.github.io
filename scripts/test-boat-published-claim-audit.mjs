@@ -73,6 +73,8 @@ try {
   const live = JSON.parse(cli.stdout);
   assert.equal(live.reportType, 'published-claim-level-audit');
   assert.equal(live.summary.articles, articles.length);
+  assert.ok(live.summary.archivedReports >= 1, 'root claim-verification snapshot should be included when present');
+  assert.ok(live.articles.some(a => a.reports.some(r => r.sourceKind === 'root-workflow-snapshot')), 'root snapshot must be explicitly labelled without exact-hash proof');
   assert.equal(live.articles.length, articles.length);
   assert.equal(live.summary.countsReconciled, true);
   assert.equal(live.articles.reduce((sum, a) => sum + a.claims, 0), live.summary.claims);
