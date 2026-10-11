@@ -432,3 +432,6 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 - When switching the catalogue scanner from raw Markdown files to the canonical published article index, CI caught a stale `file` property reference. Fix the UI to use the canonical article `slug` and rerun the production build before marking it complete.
+
+
+- The canonical article-index fix was verified by CI: 128/128 offline tests and 33/33 Control Center checks passed in [run 38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855); the production build compiled successfully in [run 38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938).
