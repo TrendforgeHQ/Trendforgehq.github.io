@@ -8,7 +8,7 @@
 
 **Scope boundary:** this is an offline manifest builder, not yet integrated into `.github/workflows/publish.yml` or Control Center. Hashes prove byte identity/provenance, not semantic truth or source freshness. No provider/publishing workflow was run; no article was changed; `main` remains untouched; PR #35 remains draft/unmerged.
 
-**Immediate next action:** inspect the exact current-run marker/report/pack data contract and design the smallest safe publish-time integration. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
+**Immediate next action:** verify the corrected manifest contract against branch-head offline CI. Actual schema inspection found and fixed a contract gap; the latest correction's CI is pending. Only after green tests should we design the smallest safe publish-time integration. Integration must bind only the current generated article and current workflow's successful claim report/evidence pack, preserve existing gates, and produce UNKNOWN rather than a false PASS when inputs are absent. Add end-to-end synthetic tests before wiring into the scheduled publishing workflow.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
@@ -342,3 +342,12 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - Added synthetic contract tests in `scripts/test-boat-published-lineage-manifest.mjs`. Added both paths to the BOAT offline workflow filter so isolated changes trigger the offline suite.
 - **Offline verification complete:** do not call this production-integrated or current published-article verification. The helper is not yet wired into `publish.yml`; no publishing/provider workflow was run, no article was edited, and `main` remains untouched.
 - Next: inspect branch-head offline CI. If green, review manifest contract against the actual generated marker/report/pack shapes, then integrate only after proving same-run inputs and preserving the existing publication gates.
+
+
+## 2026-10-11 — Lineage schema contract correction (offline verification pending)
+
+- Read the actual `scripts/generate-article-adaptive.mjs`, `scripts/verify-article-claims-v2.mjs`, `scripts/verify-article-claims-smart.mjs`, `scripts/pre-writer-pipeline.mjs`, and `scripts/authoritative-evidence-pack.mjs` data contracts.
+- Confirmed current-run marker fields include `version`, `runId`, `generated`, `articlePath`, `briefTitle`, and `updatedAt` (native fallback may also include `producer`). Claim report uses `pass`, `articlePath`, `articleTitle`, `claimCount`, `claims`, and `generatedAt`. The evidence artifact is an envelope `{version:1,status:'authoritative',candidates:[canonicalPack...]}`; each canonical pack must pass `validateAuthoritativeEvidencePack`.
+- Found a contract gap in the first manifest implementation: it looked for candidate entries but did not enforce the real envelope schema, validate the canonical candidate pack, cross-check marker `briefTitle`, or bind the report's `articleTitle` and `claimCount`. Corrected the builder and synthetic tests to validate these contracts and to reject duplicate/ambiguous candidates and invalid canonical packs.
+- No production publishing workflow, provider call, article edit, or `main` change was made. CI for the schema correction is pending; do not mark the correction verified until the new branch-head run passes.
+- Next: inspect the offline test and Control Center QA results for the new head. If green, design a separate, testable publish-time integration that captures the lineage record before run-scoped files are removed, without weakening any existing gate.
