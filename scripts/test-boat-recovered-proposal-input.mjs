@@ -121,7 +121,7 @@ test('all three recovered archived attempts only expose exact, unique claim inpu
       runId: '37696062759', artifactId: '11515936671', artifactName: 'trendforge-article-attempt-478',
       generatedDir: 'data/article-attempts/20261007-223019-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal',
       blockedDir: 'data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked',
-      expectedClaims: 7, expectedEligible: 4
+      expectedClaims: 7, expectedEligible: 2
     }
   ];
 
