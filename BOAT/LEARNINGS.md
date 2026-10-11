@@ -120,3 +120,8 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Make semantic support, changed factual details, source suitability, existing verifier results, and recorded human decision explicit checklist items.
 - **Boundary:** Passing lineage tests alone never authorizes applying the proposal.
 - **Validation:** Checklist output and schema assertions added; current CI pending.
+
+
+## L-020 — Human review should be operationalized, not merely implied
+- **Decision:** Proposal reports include a six-item checklist for semantic support, preservation of qualifications, factual details, source suitability, required verifier results, and reviewer identity/decision.
+- **Validation:** Run 38112722176 passed 39/39 after checklist implementation. Actual pipeline artifact adapter and schema-contract coverage remain outstanding.

@@ -134,3 +134,10 @@ All entries should describe actual work and results. Do not record planned work 
 - [BOAT Offline Tests run 38112644061](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112644061) passed **39/39**, 0 failed, 0 skipped at commit `b9a7d4ff3c4f87aaa224d87b0bd1d3e26a3a6cbb`.
 - This validates the CLI and five factual-repair proposal tests: exact bundle, hash mismatch, source/passage mismatch, missing claim text, and separate-output/input immutability.
 - A separate explicit reviewer checklist is being added; its tests are not yet counted in that 39-test result.
+
+
+## 2026-10-11 — Mandatory reviewer checklist validated
+- Added six explicit checklist items to every factual repair proposal, covering semantic support, changed facts/qualifications, factual details, source suitability, existing verifier/editorial checks, and recorded reviewer decision.
+- Updated the proposal schema contract and regression assertion.
+- [BOAT Offline Tests run 38112722176](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112722176) passed **39/39**, 0 failed, 0 skipped at commit `c1f55308bab89c186ac5910037da379b6e0adf87`.
+- Next: add read-only adapters for actual saved pipeline artifact shapes and explicit schema-contract tests, without running providers or publishing.
