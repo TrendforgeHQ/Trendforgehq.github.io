@@ -517,3 +517,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Read archived verifier reports and preserve all attempts, claim outcomes, source identifiers/URLs/roles, passage IDs, excerpts, run metadata, and current-text match diagnostics. Do not infer missing source context or choose the latest report as the truth.
 - **Limits:** Historical PASS is not current verification; source fields and passage IDs are saved metadata until independently resolved; text non-match is not proof of a false or absent claim. This tool does not fetch web sources, run providers, generate repairs, or mutate articles.
 - **Validation:** Added synthetic conflict/unknown cases and an integration test against the canonical published catalogue. Wait for branch-head offline and Control Center CI before marking the implementation verified.
+
+### L-068 validation note — distinguish absent report from absent article
+
+- CI exposed that the synthetic “no archived report” case also lacked the current Markdown file, correctly causing the stronger `unknown-current-article-missing` state. Add the article fixture rather than weakening the implementation's UNKNOWN precedence.
+- Inspecting the actual root data revealed a single root claim-verification snapshot mapped to a published slug. Include it as a distinct `root-workflow-snapshot`, but do not treat it as exact-current-byte verification without hash-bound lineage.
+- The corrected fixture and root-snapshot coverage are pending branch-head CI.
