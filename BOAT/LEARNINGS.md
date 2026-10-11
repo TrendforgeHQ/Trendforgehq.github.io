@@ -577,3 +577,7 @@ An article and evidence-pack hash bound to a run still cannot prove which verifi
 ## 2026-10-11 — Verification before assuming production lineage works
 
 The binder's isolated regression suite passed at code head `494764f5788aa17877e48e7a15b51390d7fc099f`; the full BOAT suite was **136/136**, and Control Center deterministic checks plus production build passed. A synthetic fixture proves code behavior, not that a real scheduled run produced the expected archive. Confirm the next naturally occurring run's `data/article-attempts/<run>/metadata.json` and exact archived `claim-verification.json` hashes before upgrading the live status from UNKNOWN.
+
+## Evidence artifact retention — 2026-10-11
+
+Updated the pipeline's downloadable diagnostics: the article-attempt artifact now explicitly includes `data/authoritative-evidence-pack.json`, and a separate run-scoped artifact uploads `data/published-lineage/manifest-${GITHUB_RUN_ID}.json` immediately after lineage capture and before the site build. Both uploads are non-blocking and warn when no file exists; this does not alter publication gating or claim factual correctness. Added workflow-contract assertions for the exact pack path, manifest run ID path, step order, and no-manifest behavior. PR CI is the validation target; production publishing was not dispatched. Next: verify latest offline suite and Control Center build, then inspect a real run's retained artifact once one is naturally produced.
