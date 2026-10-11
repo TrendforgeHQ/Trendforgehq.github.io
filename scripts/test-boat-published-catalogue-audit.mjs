@@ -85,8 +85,8 @@ try {
   const lineageDir = path.join(lineageRoot, 'data/published-lineage');
   fs.mkdirSync(articleDir, { recursive: true });
   fs.mkdirSync(lineageDir, { recursive: true });
-  const alphaBytes = '---\\ntitle: "Alpha"\\n---\\nCurrent published alpha bytes.\\n';
-  const betaCurrentBytes = '---\\ntitle: "Beta"\\n---\\nCurrent beta bytes changed after an older manifest.\\n';
+  const alphaBytes = '---\ntitle: "Alpha"\n---\nCurrent published alpha bytes.\n';
+  const betaCurrentBytes = '---\ntitle: "Beta"\n---\nCurrent beta bytes changed after an older manifest.\n';
   fs.writeFileSync(path.join(articleDir, 'alpha.md'), alphaBytes);
   fs.writeFileSync(path.join(articleDir, 'beta.md'), betaCurrentBytes);
   const hash = value => crypto.createHash('sha256').update(value).digest('hex');
@@ -99,7 +99,7 @@ try {
   });
   fs.writeFileSync(path.join(lineageDir, 'manifest-38126000003.json'), JSON.stringify({
     schemaVersion: 1, workflowRun: '38126000003', workflowSha: 'c'.repeat(40),
-    records: [makeRecord('alpha', alphaBytes), makeRecord('beta', '---\\ntitle: "Beta"\\n---\\nOld beta bytes.\\n')],
+    records: [makeRecord('alpha', alphaBytes), makeRecord('beta', '---\ntitle: "Beta"\n---\nOld beta bytes.\n')],
   }));
   const current = auditPublishedLineageCoverage([
     { slug: 'alpha', title: 'Alpha' }, { slug: 'beta', title: 'Beta' }, { slug: 'gamma', title: 'Gamma' }, { slug: 'missing', title: 'Missing file' },
