@@ -183,3 +183,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Recovery-time hashes protect the recovered files from subsequent accidental changes but are not original workflow hashes; never represent them as generation-time provenance.
 - The adapter emits inputs only. Human review and the existing verifier/editorial gates remain mandatory; semantic support is not verified.
 - Synthetic and all-three-real-run regression coverage added; CI result pending inspection.
+
+
+
+## L-014 — Adapter CLI boundaries must preserve the original article
+
+- The proposal-input CLI must write only to a new output path; it refuses output/input collisions and existing output files.
+- Tests verify that a successful run leaves the article byte-identical and that incomplete arguments fail without writing a manifest.
+- The manifest schema locks human approval, disabled automatic application, unverified semantic support, and recovery-time (not generation-time) hashes.
+- Validation: [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771), 67 passed, 0 failed, 0 skipped.
