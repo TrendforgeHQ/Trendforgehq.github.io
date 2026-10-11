@@ -517,3 +517,10 @@ Verified current baseline:
 - New branch-head CI is running at commit `8fc20d44eccb269ef530e7f57b939cfa171a6686`: BOAT Offline Tests run 38127662468 and Control Center QA run 38127662461. Do not mark the integration complete until both finish successfully, especially the production build.
 - No main-branch changes, merge, publishing workflow dispatch, article mutation, or provider calls were made.
 - Next: inspect both branch-head CI results. If the production build passes, review the full PR diff and confirm publish-time manifest persistence and Control Center states. Then continue toward the original BOAT target: a read-only audit of every published article, including evidence/claim/source lineage, with UNKNOWN preserved wherever proof is absent.
+
+
+## Verified update — 2026-10-11
+- Latest BOAT Offline Tests [38127688568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38127688568) and Control Center QA/build [38127688585](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38127688585) completed successfully.
+- Publish workflow review confirms lineage manifest generation is non-blocking and occurs before build; git add data includes the manifest path for persistence when the normal output-commit path runs. This is code-path inspection only: no production publish was dispatched and no real manifest has yet been verified on the deployed branch.
+- PR #35 remains draft/open/unmerged. GitHub compare reports head 5 commits behind main; do not merge/rebase without a deliberate base-divergence review. main untouched; no provider calls or article changes.
+- Provenance must not be presented as semantic fact-checking: current-byte-match means exact bytes match a recorded manifest with a recorded claim-verification PASS, not that claims were independently reverified now.
