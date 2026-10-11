@@ -3,7 +3,12 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Factual Repair Proposal baseline passed **39/39** in [run 38112892985](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112892985). Read-only pipeline artifact adapter and schema-contract tests passed **44/44** in [run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567), 0 failed, 0 skipped.
+**Current verified status:** Candidate-envelope proposal-engine handoff regression passed **77/77** in [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), 0 failed, 0 skipped. This is an offline regression result, not proof of semantic factual support or production publishing readiness. Three recovered historical attempts remain blocked from direct handoff because original workflow metadata lacks the required generation-time artifact hashes.
+
+## Current boundary and next task
+- The latest 77/77 suite validates offline contracts and synthetic proposal handoff only. It does not verify whether source passages semantically support claims, and it does not validate a live publish run.
+- Next: statically validate the publish quarantine-hash workflow contract and fail-closed missing-artifact cases without running publishing or invoking providers.
+- Historical validation entries in this file are retained as dated records; the current status above takes precedence where old pending/count summaries conflict.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -24,11 +29,10 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
 - Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.
-- Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Prior synthetic regression passed 13/13 in the 30-test suite; four new CLI integration tests are awaiting CI.
+- Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. The branch-head aggregate offline suite passed 77/77; historical per-step test counts below remain point-in-time records.
 - Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused.
-- Factual Repair Proposal: offline module binds a proposed replacement to exact article/report/evidence-pack hashes, workflow run, claim/source/passage lineage and target text. Never applies changes; outputs review-required or blocked/unknown. CI pending.
-- Factual Repair Proposal: offline proposal-only module binds a proposed replacement to article/report/evidence-pack hashes, run ID, claim/source/passage lineage, and target text. It cannot apply changes; output is always review-required or blocked/unknown. Previous branch-head CI passed 39/39.
-- Pipeline Artifact Adapter: added `scripts/boat-artifact-adapter.mjs` to preserve actual saved claim-report fields and legacy passage IDs, trust only recorded hashes, and fail closed when canonical evidence-pack lineage is absent. Added `scripts/test-boat-artifact-adapter.mjs` for adapter behavior and proposal schema-contract checks; branch-head CI passed 44/44 in run 38114116567.
+- Factual Repair Proposal: offline proposal-only module binds a proposed replacement to exact article/report/evidence-pack hashes, workflow run, claim/source/passage lineage, target text, and—when using a candidates[] pack—one exact candidate title/link match. Missing or ambiguous identity blocks. Successful synthetic handoff remains `review_required`, `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`; article bytes are unchanged. The latest aggregate branch-head suite passed 77/77.
+- Artifact/recovery adapters and eligibility report: preserve saved fields and legacy passage IDs, verify exact bytes/lineage, and fail closed on missing provenance. The three archived fixtures yield 26 traceability/passage-eligible claims, 3 blocked, and 11 unknown; these counts do not establish semantic support. Direct proposal-engine handoff for these archived fixtures remains blocked. Candidate-envelope synthetic handoff now passes the 77/77 aggregate suite.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
