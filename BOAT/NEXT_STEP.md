@@ -126,3 +126,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Branch-head CI [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899) passed **70/70**, 0 failed, 0 skipped, including the schema, CLI, per-claim, and archived-run tests.
 - Current totals remain 40 claims, 26 eligible, 3 blocked, 11 unknown; per-run eligible 12, 12, 2.
 - Next safe step: audit whether the proposal engine can consume eligible inputs without treating recovery-time hashes as original lineage. Do not connect or invoke it until that boundary is proven by tests; no publishing/provider runs.
+
+
+
+## Proposal-engine handoff boundary
+
+- Inspected the existing factual proposal engine: it requires exact artifact hashes in run metadata and a workflow run ID. Recovered-run hashes were computed during this audit and cannot safely be substituted for original generation-time metadata.
+- Therefore, the recovered proposal-input adapter now emits an explicit proposalEngineHandoff object with status=blocked and allowed=false. The eligibility report surfaces the same blocked handoff flag at summary and per-run levels.
+- Updated both JSON schemas and tests to lock this boundary. CI for this change is pending inspection.
+- This intentionally prevents eligible traceability inputs from being passed directly into the existing factual repair proposal engine with fabricated lineage. No repair text is generated and no article is edited.
