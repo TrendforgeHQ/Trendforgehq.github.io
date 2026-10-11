@@ -76,7 +76,7 @@ test('recommendations are advisory and never encode automatic publication', () =
 });
 
 test('rubric defines conservative verdict rules, disagreement handling, and explicit limitations', () => {
-  for (const phrase of ['supported', 'partially_supported', 'unsupported', 'unclear', 'second reviewer', 'does not semantically validate', 'Existing claim-verification']) {
+  for (const phrase of ['supported', 'partially_supported', 'unsupported', 'unclear', 'second reviewer', 'cannot semantically validate', 'Existing claim-verification']) {
     assert.ok(rubric.toLowerCase().includes(phrase.toLowerCase()), 'rubric missing: ' + phrase);
   }
 });
