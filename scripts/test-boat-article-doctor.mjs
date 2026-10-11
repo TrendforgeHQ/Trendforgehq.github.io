@@ -30,7 +30,36 @@ function matchesType(value, type) {
 
 // Dependency-free validator for the JSON Schema keywords used by this contract.
 // It intentionally supports this schema subset only; it is not a general JSON Schema implementation.
-function assertSchemaSubset(value, schema, at = '
+function assertSchemaSubset(value, schema, at = '$') {
+  if (Object.hasOwn(schema, 'const')) assert.equal(value, schema.const, at + ' must equal const');
+  if (schema.enum) assert.ok(schema.enum.includes(value), at + ' must be one of ' + schema.enum.join(', '));
+  if (schema.type) {
+    const allowed = Array.isArray(schema.type) ? schema.type : [schema.type];
+    assert.ok(allowed.some(type => matchesType(value, type)), at + ' must match type ' + allowed.join('|'));
+  }
+  if (schema.pattern) assert.match(value, new RegExp(schema.pattern), at + ' must match pattern');
+  if (schema.format === 'date-time') assert.ok(typeof value === 'string' && Number.isFinite(Date.parse(value)), at + ' must be a parseable date-time');
+  if (schema.minLength !== undefined) assert.ok(value.length >= schema.minLength, at + ' is too short');
+  if (schema.minimum !== undefined) assert.ok(value >= schema.minimum, at + ' is below minimum');
+  if (schema.maximum !== undefined) assert.ok(value <= schema.maximum, at + ' is above maximum');
+  if (schema.minItems !== undefined) assert.ok(value.length >= schema.minItems, at + ' has too few items');
+  if (schema.required) {
+    for (const key of schema.required) assert.ok(Object.hasOwn(value, key), at + ' missing required property ' + key);
+  }
+  if (schema.properties) {
+    if (schema.additionalProperties === false) {
+      for (const key of Object.keys(value)) assert.ok(Object.hasOwn(schema.properties, key), at + ' has unexpected property ' + key);
+    }
+    for (const [key, childSchema] of Object.entries(schema.properties)) {
+      if (Object.hasOwn(value, key)) assertSchemaSubset(value[key], childSchema, at + '.' + key);
+    }
+  }
+  if (schema.items) {
+    for (let i = 0; i < value.length; i++) assertSchemaSubset(value[i], schema.items, at + '[' + i + ']');
+  }
+}
+
+function loadFixture(fixture) {
   const articleText = fs.readFileSync(path.join(root, fixture.articlePath), 'utf8');
   const reportText = fs.readFileSync(path.join(root, fixture.reportPath), 'utf8');
   const metadataText = fs.readFileSync(path.join(root, fixture.metadataPath), 'utf8');
