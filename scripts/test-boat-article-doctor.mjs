@@ -75,6 +75,7 @@ test('archived failure fixtures produce stable read-only reports', () => {
     assert.equal(first.summary.status, 'blocked');
     assert.ok(first.summary.findingCount > 0);
     assert.ok(first.findings.some(item => item.category === 'unsupported_claim'), `${fixture.id} should retain unsupported-claim signal`);
+    assert.ok(!first.findings.some(item => ['empty_heading', 'repeated_sentence'].includes(item.category)), `${fixture.id} should not receive structural false positives on this archived sample`);
     assert.ok(first.provenance.every(item => /^[a-f0-9]{64}$/.test(item.sha256)));
     assert.deepEqual(input.raw.map(sha), before, 'input files must remain byte-identical');
   }

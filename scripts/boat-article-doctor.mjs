@@ -74,8 +74,9 @@ export function analyzeArticle({ articleText, articlePath, report, reportPath, m
     }));
   }
   const limitations = [
-    'This report extracts signals from an existing verifier report; it is not an independent re-check of source truth.',
+    'This report maps saved verifier signals and deterministic Markdown structure patterns; it does not independently re-check source truth.',
     'A saved claim-verification PASS does not prove every factual statement is universally correct.',
+    'Structural checks use exact normalized sentence matching and simple Markdown patterns; paraphrased repetition and other editorial issues may be missed.',
     'No network requests, provider calls, article edits, workflow dispatch, or publication actions are performed.'
   ];
 
