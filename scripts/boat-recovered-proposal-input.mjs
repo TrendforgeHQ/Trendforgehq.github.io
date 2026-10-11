@@ -195,8 +195,7 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
     evidencePackSha256: typeof evidencePackRaw === 'string' ? hash(evidencePackRaw) : ''
   };
   const engineSources = Array.isArray(packRoot?.sources) ? packRoot.sources : [];
-  const proposalEnginePackCompatible = !!selected &&
-    Array.isArray(packRoot?.sources) &&
+  const rootSourcesCompatible = Array.isArray(packRoot?.sources) &&
     engineSources.length === packSources.length &&
     packSources.every(source => {
       const engineSource = engineSources.find(item => s(item?.id) === s(source?.id));
@@ -204,6 +203,13 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
         s(engineSource.url ?? engineSource.finalUrl) === s(source.url ?? source.finalUrl) &&
         JSON.stringify(engineSource.passages) === JSON.stringify(source.passages);
     });
+  const candidateEnvelopeCompatible = !!selected &&
+    selected.status === 'authoritative' &&
+    Array.isArray(selected.sources) &&
+    s(selected?.candidate?.title) === briefTitle &&
+    s(selected?.candidate?.link) === s(recoveryAudit?.candidate?.link);
+  const proposalEnginePackCompatible = candidateEnvelopeCompatible &&
+    (!Array.isArray(packRoot?.sources) || rootSourcesCompatible);
   const metadataBytesMatch = typeof runMetadataRaw === 'string' && !!s(recoveryAudit?.hashes?.blockedMetadataSha256) && hash(runMetadataRaw) === s(recoveryAudit.hashes.blockedMetadataSha256);
   const runIdMatches = !!runMetadata && s(runMetadata.workflowRun) === s(recoveryAudit?.artifact?.runId);
   const workflowShaMatches = !!runMetadata && s(runMetadata.workflowSha) === s(recoveryAudit?.artifact?.workflowSha);
@@ -217,6 +223,11 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
     mode: 'offline-read-only',
     status,
     generatedAt,
+    candidate: recoveryAudit?.candidate ? {
+      title: s(recoveryAudit.candidate.title) || null,
+      link: s(recoveryAudit.candidate.link) || null,
+      sourceIds: Array.isArray(recoveryAudit.candidate.sourceIds) ? recoveryAudit.candidate.sourceIds : []
+    } : null,
     artifact: {
       runId: s(recoveryAudit?.artifact?.runId) || null,
       artifactId: s(recoveryAudit?.artifact?.artifactId) || null,
