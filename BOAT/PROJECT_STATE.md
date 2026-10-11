@@ -539,3 +539,9 @@ Verified current baseline:
 - A first test edit had invalid regex escaping and failed offline CI; the issue was in the test itself, corrected without changing production workflow behavior. Corrected branch-head offline suite [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) both passed at `5e24de25e22ca77a1e399b985d2c291fbeffb2a8`.
 - Production manifest creation/persistence is still not verified against a real publish run; that workflow remains undispatched. PR #35 remains draft/open/unmerged; `main` untouched.
 - Next: complete final changed-file intersection/conflict review for the five main-only generated-data commits. No blind merge/rebase, provider calls, or production publish.
+
+
+## 2026-10-11 — Actual catalogue audit CLI added
+- Added a read-only CLI over the canonical `lib/articles.ts` published catalogue. It emits a deterministic JSON report including audited article count, per-article structural findings, duplicate slugs, and explicit limitations. It does not claim semantic fact verification or source freshness and does not mutate article files.
+- Added an offline integration test and workflow path filters. The first test run exposed a CLI output formatting bug (literal `\\n` appended after JSON); corrected it to output a real newline. Latest BOAT Offline Tests [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed at `aca78e9aa46f61e0e570241b1429799b8452abd1`.
+- Control Center QA / production build [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was pending at last poll. Production publishing remains undispatched; no paid providers or article mutations used.
