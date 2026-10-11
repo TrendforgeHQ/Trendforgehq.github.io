@@ -422,3 +422,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Static-export constraints make browser-only privileged actions inappropriate; do not label a mock chat as a working BOAT runtime.
 - A build-time article inventory is a concrete first user-facing capability if the UI clearly distinguishes structural signals from semantic claim verification and calls out missing inputs as unknown.
 - Keep scanner behavior deterministic and read-only, test it with synthetic clean/flagged articles, and make changes to the offline workflow path filters so tests actually trigger. CI/build verification remains pending until the branch result is inspected.
+
+
+### L-058 verification update
+
+- The new structural catalogue scanner fixture suite passed as part of offline CI [38125272757](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272757): 128/128 tests passed; Control Center contract checks passed 33/33.
+- Dedicated Control Center QA [38125272747](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125272747) passed the Next.js static production build despite existing non-fatal webpack cache/CSS warnings.
+- These tests/build prove implementation and compilation only, not semantic fact-checking or a live BOAT backend.
