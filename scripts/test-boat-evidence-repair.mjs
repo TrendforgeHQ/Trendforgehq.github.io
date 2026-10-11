@@ -319,6 +319,57 @@ test('Factual Repair Proposal blocks when saved claim text is not found in origi
   assert.ok(result.findings.some(item => item.code === 'FR-CLAIM-NOT-FOUND-IN-ARTICLE'));
 });
 
+function makeCandidateEnvelopeRepairCase() {
+  const data = makeRepairCase();
+  const sources = data.pack.sources;
+  data.pack = {
+    version: 1,
+    status: 'authoritative',
+    workflowRun: 'run-123',
+    candidates: [{
+      version: 1,
+      status: 'authoritative',
+      candidate: { title: 'Candidate A', link: 'https://example.com/candidate-a' },
+      sources
+    }]
+  };
+  data.packRaw = JSON.stringify(data.pack, null, 2) + '\n';
+  data.metadata.evidencePackSha256 = hash(data.packRaw);
+  data.proposal.candidateTitle = 'Candidate A';
+  data.proposal.candidateLink = 'https://example.com/candidate-a';
+  return data;
+}
+
+test('Factual Repair Proposal resolves a candidate-envelope pack by exact title and link', () => {
+  const data = makeCandidateEnvelopeRepairCase();
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'review_required');
+  assert.equal(result.semanticSupport, 'not_verified');
+  assert.equal(result.proposal.sourceId, 'S1');
+  assert.equal(result.proposal.passageId, 'S1-P1');
+  assert.equal(result.proposal.candidateTitle, 'Candidate A');
+  assert.equal(result.proposal.candidateLink, 'https://example.com/candidate-a');
+});
+
+test('Factual Repair Proposal blocks candidate-envelope packs without candidate identity', () => {
+  const data = makeCandidateEnvelopeRepairCase();
+  delete data.proposal.candidateTitle;
+  delete data.proposal.candidateLink;
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'blocked');
+  assert.ok(result.findings.some(item => item.code === 'FR-CANDIDATE-IDENTITY-MISSING'));
+});
+
+test('Factual Repair Proposal blocks ambiguous duplicate candidate identities', () => {
+  const data = makeCandidateEnvelopeRepairCase();
+  data.pack.candidates.push({ ...data.pack.candidates[0] });
+  data.packRaw = JSON.stringify(data.pack, null, 2) + '\n';
+  data.metadata.evidencePackSha256 = hash(data.packRaw);
+  const result = createRepairProposal(data);
+  assert.equal(result.status, 'blocked');
+  assert.ok(result.findings.some(item => item.code === 'FR-CANDIDATE-IDENTITY-NOT-UNIQUE'));
+});
+
 test('Factual Repair Proposal CLI writes a separate review artifact and preserves article bytes', () => {
   const data = makeRepairCase();
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-factual-proposal-cli-'));
