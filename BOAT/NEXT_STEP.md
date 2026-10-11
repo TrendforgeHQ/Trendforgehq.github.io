@@ -1,22 +1,22 @@
 # BOAT Next Step
 
-## Current task: broaden read-only Article Doctor coverage
+## Current task: validate Article Doctor on archived real articles
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Verified completed work
-- Read-only evaluator: `scripts/boat-article-doctor.mjs`.
+### Verified implementation
+- Offline read-only evaluator: `scripts/boat-article-doctor.mjs`.
 - Regression suite: `scripts/test-boat-article-doctor.mjs`.
 - Report contract: `BOAT/schemas/article-doctor-report.schema.json`.
 - Isolated workflow: `.github/workflows/boat-offline-tests.yml`.
-- CI run [38110482104](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110482104) passed 7/7 tests at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`.
-- PR #35 remains draft and unmerged: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
+- At commit `966b3311615e77def02699e6861d5020eee447bb`, isolated Node tests passed 10/10 (exit code 0). The matching GitHub Actions run was pending at last check.
+- Draft PR #35: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
 
 ### Next implementation
-1. Add a clean verifier-report fixture and a partial-only fixture so BOAT proves it can distinguish `clear`, `attention`, `blocked`, and `unknown` without false-clean results.
-2. Add deterministic read-only Markdown checks for empty headings and repeated sentences, with fixtures and precise artifact pointers. These are diagnostics only; they must not change publication behavior.
-3. Keep unsupported/contradicted/attribution/numeric signals separate and preserve the rule that missing or mismatched artifacts produce `unknown`, not `clear`.
-4. Add a formal JSON Schema validation step only if it can be done with a reviewed, pinned dependency; until then, describe current coverage as a schema-contract smoke test.
-5. Record test command, exit code, run ID, commit SHA, and all unresolved gaps in `PROJECT_STATE.md` and `CHANGELOG.md`.
+1. Inspect the three archived article attempts (AD-FX-001..003) with the new structural diagnostics; record whether they produce expected findings or false positives. Do not change the source articles.
+2. Add a real-world structural regression fixture only if a specific finding can be grounded in the saved Markdown.
+3. Add malformed report / missing-claims and malformed frontmatter cases; preserve `unknown` for integrity problems.
+4. Keep the report contract smoke test distinct from full JSON Schema validation; do not claim formal schema validation without a reviewed validator.
+5. Record exact commit, command, exit code, Actions run ID, and unresolved issues before moving to the human-article benchmark lab.
 
 ### Separate Run 405 record
 - PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed a durable reconstructed baseline: 9 supported / 3 partial / 3 unsupported; verifier blocks as expected.

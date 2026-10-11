@@ -60,3 +60,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Implication:** Keep the runtime report, schema, and tests in sync. Clearly distinguish a contract smoke test from full JSON Schema validation.
 - **Confidence:** High; verified by source diff and CI run 38110482104 (7 passed, 0 failed).
 - **Validation status:** Key contract fields verified; full formal schema validation remains open.
+
+
+## L-010 — Structural checks must not consume neighboring prose
+- **Observed:** The first repeated-sentence regression failed because a whitespace regex used `\s*` in a multiline heading matcher; JavaScript `\s` includes line breaks, so the normalization could span lines and remove text beyond the heading.
+- **Fix:** Restrict heading/list line matching to horizontal whitespace (`[ \t]`) and keep the structural scan line-bounded.
+- **Validation:** Empty-heading and repeated-sentence test passes in the 10-test suite at commit `966b3311615e77def02699e6861d5020eee447bb`; isolated Node exit code 0. Latest GitHub Actions run pending at the time of this record.

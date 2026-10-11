@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.1  
 **Current phase:** Phase 1 — Offline Article Doctor  
-**Status:** Offline Article Doctor CI passed 7/7 at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`; draft PR remains unmerged.
+**Status:** Article Doctor code now has 10/10 passing isolated Node tests at commit `966b3311615e77def02699e6861d5020eee447bb`; the matching GitHub Actions run is pending at last check. Draft PR remains unmerged.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -44,7 +44,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Read-only artifact collection and Article Doctor report | In progress — offline evaluator and 7/7 CI tests pass; clean/partial fixtures and structural checks next |
+| 1 | Read-only artifact collection and Article Doctor report | In progress — clean/partial states and structural diagnostics implemented; 10/10 isolated tests pass; latest CI pending |
 | 2 | Claim/source audit and editorial benchmark evaluation | Not started |
 | 3 | Fixture-backed repair proposals and regression harness | Not started |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
@@ -109,3 +109,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - **Separate calibration:** PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed. Its durable reconstructed Run 405 regression pins 9 supported / 3 partial / 3 unsupported and confirms the verifier blocks. The historical 11/2/2 target remains unverified because the original evidence pack is unavailable.
 - BOAT draft PR #35 remains open and unmerged. No direct `main` changes, provider calls, image generation, publishing runs, or gate/threshold changes were made.
 - Next: add clean and partial-only regression fixtures, then deterministic read-only article-structure findings (empty headings/repeated sentences) without changing publication gates.
+
+
+## Structural diagnostics follow-up — 2026-10-11
+- Added deterministic read-only findings for empty Markdown headings and repeated sentences in article body text. Sources section and frontmatter are excluded from the duplicate scan; findings point to the article artifact and do not mutate it.
+- Added a regression test covering both findings and requiring `attention`, not `clear` or `blocked`.
+- The first structural test failed because the empty-heading regex used `\s*`, which can cross line boundaries and consume neighboring prose during normalization. The scan was corrected to use horizontal whitespace for heading/list-line matching.
+- Isolated Node test result at commit `966b3311615e77def02699e6861d5020eee447bb`: **10 passed, 0 failed, 0 skipped**, exit code 0, Node v20.9.0. The GitHub Actions run for this commit was pending at the time of this record; inspect its logs before claiming CI green.
+- Next: audit the three archived real article attempts with these structural checks, review any false positives, and only then add further deterministic checks. No repair or publication action is enabled.

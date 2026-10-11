@@ -50,3 +50,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Separate PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed the durable reconstructed Run 405 baseline (9 supported / 3 partial / 3 unsupported; verifier correctly blocks). The original 11/2/2 distribution remains unverified because its historical evidence pack is unavailable.
 - No direct `main` changes, merges, paid providers, image generation, publishing runs, or production gate changes.
 - Next step: add clean and partial-only fixtures, then deterministic read-only structural findings (empty headings and repeated sentences) without altering production gates.
+
+
+## 2026-10-11 — Structural Article Doctor diagnostics
+- Added read-only detection for empty Markdown headings and repeated sentences, excluding frontmatter and the Sources section from duplicate scanning.
+- Added a synthetic regression requiring both structural findings to be linked to the article artifact with null JSON pointers and status `attention`.
+- Initial run failed because a whitespace regex crossed line boundaries and prevented repeated-sentence detection. Restricted heading/list matching to horizontal whitespace; the regression then passed.
+- Isolated Node test at commit `966b3311615e77def02699e6861d5020eee447bb`: **10/10 passed**, exit code 0, Node v20.9.0. GitHub Actions run for that commit was pending at the time of the record.
+- No paid providers, source fetches, article edits, image generation, publishing runs, or production gate changes.
