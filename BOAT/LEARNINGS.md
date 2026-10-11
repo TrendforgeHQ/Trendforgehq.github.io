@@ -404,3 +404,8 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - A test being included in `node --test scripts/test-boat-*.mjs` does not guarantee its edits trigger the workflow; the `pull_request.paths` filter must also cover it.
 - Cross-check changed test filenames against explicit path filters. Added `scripts/test-boat-semantic-support-review.mjs` to the workflow allowlist; verify final branch-head CI before closing review.
+
+## L-056 — Record final review evidence without overstating what it proves
+
+- The final offline suite run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed 127/127 tests with no failures or skips. This proves the current offline regression suite passes; it does not prove article claims are semantically true or publication is safe for every future run.
+- Review the quarantine hash-recording patch separately from running it: the workflow records all-three-artifact hash provenance only when the article, claim report, and evidence pack are present, then removes the blocked article from the publication set. No production publishing workflow was run.
