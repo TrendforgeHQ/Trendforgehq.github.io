@@ -19,6 +19,7 @@ const attemptRecords = [{ metadata: { articlePath: report.articlePath, workflowR
 const resolved = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords });
 assert.equal(resolved.status, 'unknown-report-run-binding');
 assert.equal(resolved.artifacts.packArticleRunBindingProven, true);
+assert.equal(resolved.artifacts.archivedArticleBytesMatchCurrent, true);
 assert.equal(resolved.artifacts.reportRunBindingProven, false);
 assert.equal(resolved.artifacts.candidateMatchCount, 1);
 assert.equal(resolved.summary.sourceResolved, 1);
@@ -27,6 +28,11 @@ assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-P1').st
 assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-BODY').status, 'source-body-anchor-present-not-a-passage');
 assert.equal(resolved.claims[0].passageResolution.find(p => p.id === 'S1-FF1').status, 'fact-anchor-resolved-fields-only');
 assert.equal(resolved.claims[0].factualSupport, 'not_assessed');
+
+const repairedArticleAttempt = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw: articleRaw + 'post-repair change', attemptRecords: [{ metadata: attemptRecords[0].metadata, articleRaw: articleRaw, packRaw }] });
+assert.equal(repairedArticleAttempt.artifacts.packArticleRunBindingProven, true);
+assert.equal(repairedArticleAttempt.artifacts.archivedArticleBytesMatchCurrent, false);
+assert.equal(repairedArticleAttempt.status, 'unknown-report-run-binding');
 
 const mismatched = auditRootClaimLineage({ reportRaw, packRaw: JSON.stringify({ ...pack, generatedAt: 'different-bytes' }), briefRaw, articleRaw, attemptRecords });
 assert.equal(mismatched.status, 'unknown-pack-article-run-binding');
@@ -50,4 +56,4 @@ assert.equal(output.summary.claims, 10);
 assert.equal(output.artifacts.reportRunBindingProven, false);
 assert.equal(output.claims.every(c => c.factualSupport === 'not_assessed'), true);
 console.log('BOAT root claim/evidence lineage audit: PASS (canonical candidate and claim IDs traced; report/run binding remains UNKNOWN)');
-console.log('BOAT root claim/evidence lineage live summary:', JSON.stringify({ status: output.status, artifacts: { evidencePackCandidateCount: output.artifacts.evidencePackCandidateCount, candidateMatchCount: output.artifacts.candidateMatchCount, packArticleRunBindingProven: output.artifacts.packArticleRunBindingProven, matchedWorkflowRun: output.artifacts.matchedWorkflowRun, reportRunBindingProven: output.artifacts.reportRunBindingProven }, summary: output.summary, claimResolutions: output.claims.map(c => ({ index: c.claimIndex, sourceResolution: c.sourceResolution, sourceUrlMatchesCandidate: c.sourceUrlMatchesCandidate, passages: c.passageResolution.map(p => ({ id: p.id, status: p.status })) })) }));
+console.log('BOAT root claim/evidence lineage live summary:', JSON.stringify({ status: output.status, artifacts: { evidencePackCandidateCount: output.artifacts.evidencePackCandidateCount, candidateMatchCount: output.artifacts.candidateMatchCount, packArticleRunBindingProven: output.artifacts.packArticleRunBindingProven, matchedWorkflowRun: output.artifacts.matchedWorkflowRun, archivedArticleBytesMatchCurrent: output.artifacts.archivedArticleBytesMatchCurrent, reportRunBindingProven: output.artifacts.reportRunBindingProven }, summary: output.summary, claimResolutions: output.claims.map(c => ({ index: c.claimIndex, sourceResolution: c.sourceResolution, sourceUrlMatchesCandidate: c.sourceUrlMatchesCandidate, passages: c.passageResolution.map(p => ({ id: p.id, status: p.status })) })) }));
