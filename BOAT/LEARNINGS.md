@@ -504,3 +504,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Change:** Added an offline CLI and integration test over `lib/articles.ts`, not only synthetic fixtures. The report includes per-article structural findings, duplicate slugs, consistent counts, and limitations.
 - **Failure caught:** The first CI run detected a literal backslash-n appended after JSON, which made stdout invalid JSON. The CLI was corrected to append an actual newline; latest offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed.
 - **Boundary:** This improves structural inventory coverage; it is not semantic claim verification and does not prove source freshness/reachability. No article changes, publishing workflow, or paid-provider calls.
+## L-067 — Unify review signals without manufacturing a factual verdict
+
+- **Need:** Structural flags, archived claim-report outcomes, and exact-byte lineage are separate views. A human reviewer needs one per-article queue, but combining them must not upgrade provenance into semantic truth.
+- **Decision:** Combine the existing three audits into a read-only triage report. Preserve `unknown`, stale manifests, historical blocks, conflicting outcomes, and duplicate slug ambiguity. Priority is only work ordering; every item remains `needs-human-review`, including articles with a current-byte manifest match.
+- **Guardrail:** No public-web fetch, article mutation, repair execution, or publishing decision. Exact-byte lineage is provenance only; archived PASS is not current verification.
+- **Validation:** Added synthetic status/priority assertions and a CLI integration test against the real canonical article index. Branch-head CI must be inspected before this learning is marked verified.
