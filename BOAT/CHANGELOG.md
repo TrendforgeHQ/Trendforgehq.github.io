@@ -280,3 +280,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Added tests for a valid synthetic same-run bundle and tampered metadata fail-closed behavior.
 - Branch-head CI [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418) passed **73/73**, 0 failed, 0 skipped.
 - Archived bundles remain ineligible for engine handoff because original hashes were not recorded.
+
+
+
+## 2026-10-11 — Candidate-envelope proposal engine support
+
+- Factual proposal engine now resolves canonical candidates[] packs only when proposal candidate title/link match exactly one candidate. Missing or duplicate identity fails closed.
+- Added end-to-end adapter-to-proposal-engine regression; output remains review_required, human approval required, automatic application false, semantic support not verified, and article unchanged.
+- CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped.
