@@ -297,3 +297,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Run ID and workflow SHA agree within all three pairs, but 0/6 metadata files contain article/report/evidence-pack SHA-256 fields. Existing metadata cannot satisfy the factual proposal engine's hash contract.
 - Recovery-time hashes are not substituted. The adapter/report explicitly set proposal-engine handoff to blocked.
 - Latest docs/head CI [run 38119678517](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119678517): 70 passed, 0 failed, 0 skipped.
+
+
+
+## Workflow-recorded quarantine hashes — validated (2026-10-11)
+
+- Claim-verification quarantine now copies authoritative-evidence-pack.json and records articleSha256, claimReportSha256, evidencePackSha256, hashesRecordedInWorkflow, workflowRun, and workflowSha in the quarantine metadata.
+- Adapter handoff requires exact metadata-byte binding to the recovery audit, matching artifact hashes, and matching run/SHA. Tampered metadata fails closed.
+- Existing archived samples still have no hash fields and remain handoff-blocked; the workflow change only helps future quarantine artifacts.
+- Offline CI [run 38120312395](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120312395): **73 passed, 0 failed, 0 skipped**. Publishing was not run.
