@@ -24,7 +24,7 @@ Risk: low. Provider cost: none. Production behavior change: none.
 - Synthetic fixtures are used because the archived blocked attempts do not currently provide a verified same-run evidence-pack/hash bundle. Do not claim the archived attempts passed this new auditor until that bundle exists.
 
 ### Validation result and next task
-- **CI PASS:** [run 38111515276](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111515276), code commit `7c422befd7f7bc5064d4e1774220a6763151f62a`: **30 passed, 0 failed, 0 skipped**. This run tested the implementation commit before the subsequent docs-only formatting correction.
+- **CI PASS:** [run 38111608536](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111608536), commit `df2231e49e1a72b071b8421d68277187403db91b`: **30 passed, 0 failed, 0 skipped**. The earlier implementation run [38111515276](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38111515276) also passed 30/30.
 - Next: add a CLI-level test for the Evidence Auditor and a synthetic same-run artifact bundle; do not claim any legacy archive is auditable until exact pack/report hashes are available.
 - Then design factual repair proposals that preserve evidence and re-run existing claim verification. Keep unsupported/contradicted claims blocked when no evidence-backed repair exists.
 - Keep PR #35 draft/unmerged; no changes to `main`, publishing workflow, provider routing, or production gates.

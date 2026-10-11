@@ -3,7 +3,7 @@
 **Last updated:** 2026-10-11  
 **State version:** 0.1.2  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Article Doctor baseline passed 17/17 in run 38111154726. Evidence Auditor + Repair Engine passed 30/30 offline tests in run 38111515276 at code commit `7c422befd7f7bc5064d4e1774220a6763151f62a`; a docs-only follow-up commit is awaiting its own check.
+**Status:** Article Doctor passed 17/17 in run 38111154726. Evidence Auditor + Repair Engine passed 30/30 offline tests in runs 38111515276 and 38111608536; latest recorded pass was at commit `df2231e49e1a72b071b8421d68277187403db91b`.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -24,8 +24,8 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Chat backend: not implemented.
 - Approval gateway/button: not implemented.
 - Article Doctor: offline read-only CLI; latest recorded regression passed 17/17 in run 38111154726. It does not independently fetch or verify sources.
-- Evidence Auditor: offline identifier/lineage checker added; requires exact artifact hashes and workflow run metadata, with synthetic fixtures. New CI validation pending at commit time.
-- Repair Engine: bounded structural repair proposal module added; can remove empty headings and exact duplicate plain-text paragraphs in a separate output file. In-place edits and overwrite are refused. New CI validation pending at commit time.
+- Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Synthetic regression passed 13/13 new tests as part of the 30-test suite in run 38111608536.
+- Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused. Synthetic repair regressions passed in run 38111608536.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
@@ -46,7 +46,7 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 | Phase | Goal | Status |
 |---|---|---|
 | 0 | Blueprint, baseline audit, durable project records | In progress — draft PR open |
-| 1 | Offline artifact audit and bounded repair proposal | In progress — Article Doctor 17/17 passed; Evidence Auditor/Repair Engine CI pending |
+| 1 | Offline artifact audit and bounded repair proposal | In progress — Article Doctor 17/17 passed; Evidence Auditor/Repair Engine CI passed 30/30 in run 38111608536 |
 | 2 | Claim/source lineage audit and editorial benchmark evaluation | In progress — lineage auditor added; semantic source support and human benchmark not started |
 | 3 | Fixture-backed repair sandbox and regression harness | Started — safe structural-only proposal mode; factual repair remains diagnosis/proposal-only |
 | 4 | Secure approval gateway and Control Center workspace | Not started |
