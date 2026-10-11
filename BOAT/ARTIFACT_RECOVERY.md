@@ -8,7 +8,7 @@ Article edits: none
 
 ## Executive result
 
-The three previously archived claim-blocked attempts do have recoverable authoritative evidence packs. The packs were not inside the *claim-blocked* directories committed to the repository, but each original GitHub Actions artifact contains an earlier same-run generated-pending-verification directory with authoritative-evidence-pack.json and metadata.
+The three previously archived claim-blocked attempts do have recoverable authoritative evidence packs. The packs are not inside the *claim-blocked* directories themselves. The same-run generated-pending-verification sibling directories are also present in the repository, and the original GitHub Actions artifacts independently confirm those files were included in each run. Each sibling contains authoritative-evidence-pack.json and metadata.
 
 The pipeline's Archive generated article attempts step copies the canonical pack into that generated-attempt directory. Later, Claim verification gate creates a separate claim-blocked directory and copies the article, brief, claim report, and metadata—but not the evidence pack. The Upload article attempt diagnostics step uploads data/article-attempts/, so the earlier generated-attempt directory preserves the pack inside the run artifact. The root data/authoritative-evidence-pack.json is not explicitly listed in the upload step, but the copy in data/article-attempts/ is.
 
@@ -75,7 +75,7 @@ Other recovered-byte hashes:
 
 ## Findings and limits
 
-1. **Pack recovery: 3/3.** Each pack was recovered from the original workflow artifact, not reconstructed from the article brief.
+1. **Pack recovery: 3/3.** Each pack was read from its exact generated-attempt sibling in the repository and independently confirmed in the corresponding original workflow artifact; none was reconstructed from an article brief.
 2. **Candidate mapping: 3/3.** Each saved article-brief.json title exactly matched one and only one candidate title in its same-run canonical evidence-pack envelope.
 3. **Source mapping: 10/10.** All report source IDs/URLs matched the selected candidate's sources for these three runs.
 4. **Run metadata: 3/3.** Generated-attempt and blocked metadata agree on run ID and workflow SHA; generated metadata's article path matches the claim report's article path.
@@ -93,7 +93,7 @@ In .github/workflows/publish.yml:
 
 ## Next safe step
 
-- Extend the recovery audit's regression fixtures with these observed pack-envelope and metadata shapes.
+- Extend the recovery audit's regression fixtures with these observed pack-envelope and metadata shapes. A real-fixture integration test now reads all three checked-in article/report/brief/pack combinations.
 - Add an exact-text resolver that can map a legacy best-passage label only when the saved passage text matches a unique canonical pack passage; otherwise leave it unresolved.
 - Add the recovered run/artifact ID and computed checksums to project memory.
 - Keep the PR draft and unmerged. Do not change main, call providers, run publishing, or apply article repairs.

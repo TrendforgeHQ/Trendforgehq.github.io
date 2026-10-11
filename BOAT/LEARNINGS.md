@@ -145,9 +145,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 
 ## L-011 — Same-run evidence packs can survive outside claim-blocked directories
-- **Observed:** The original workflow artifacts for runs `38085367295`, `37996683799`, and `37696062759` each contain the canonical evidence pack in the generated-pending-verification attempt folder.
+- **Observed:** The original workflow artifacts for runs `38085367295`, `37996683799`, and `37696062759` each contain the canonical evidence pack in the generated-pending-verification attempt folder; the same generated-attempt folders and packs are also present in the repository.
 - **Root cause:** The initial archive step copies the pack; the later claim-blocked quarantine step copies article/brief/report/metadata but omits the pack. Since the uploaded artifact includes the full `data/article-attempts/` directory, the earlier generated-attempt copy survives.
 - **Validation:** Exact brief title selected one candidate in all three packs. Report source IDs/URLs matched 10/10 selected pack sources. Claim-text presence in final article was 15/15, 18/18, and 4/7.
 - **Caveat:** Recovered-byte hashes are computed now, not recorded by the original workflow. Matching IDs/URLs does not establish semantic support. The 4/7 run remains partial.
 - **Code:** `scripts/boat-run-artifact-recovery.mjs`; tests: `scripts/test-boat-run-artifact-recovery.mjs`; detailed checksums: `BOAT/ARTIFACT_RECOVERY.md`.
-- **Validation status:** Recovery audit tests added; CI result pending inspection.
+- **Validation status:** Synthetic recovery audit tests passed as part of 52/52 in run 38115164158. A real-fixture integration test across all three actual attempts has since been added; its branch-head CI result is pending inspection.

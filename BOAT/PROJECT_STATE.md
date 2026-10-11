@@ -194,10 +194,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 
 ## Phase 1.4 — Recover exact same-run evidence packs (2026-10-11)
 - Downloaded the original GitHub Actions artifacts for runs `38085367295`, `37996683799`, and `37696062759`. Artifact IDs: `11682276860`, `11647766077`, and `11515936671`.
-- All three artifacts contain the canonical evidence pack in the earlier generated-pending-verification attempt directory. The pack was omitted from the separate claim-blocked directory, not lost from the run artifact.
+- All three original workflow artifacts contain the canonical evidence pack in the earlier generated-pending-verification attempt directory. We also confirmed those exact sibling directories and packs are present in the repository. The pack was omitted from the separate claim-blocked directory, not lost.
 - Inspected `.github/workflows/publish.yml`: the first archive step copies `data/authoritative-evidence-pack.json`; the later claim-blocked quarantine step does not copy that pack; the upload step includes the full `data/article-attempts/` directory, preserving the earlier copy.
-- Added `scripts/boat-run-artifact-recovery.mjs` and `scripts/test-boat-run-artifact-recovery.mjs`. The audit selects one candidate only by exact brief-title match, checks workflow run/SHA/path metadata, validates report source IDs/URLs against the selected pack, computes explicit recovery-time checksums, and preserves legacy passage IDs.
+- Added `scripts/boat-run-artifact-recovery.mjs` and `scripts/test-boat-run-artifact-recovery.mjs`. The audit selects one candidate only by exact brief-title match, checks workflow run/SHA/path metadata, validates report source IDs/URLs against the selected pack, computes explicit recovery-time checksums, and preserves legacy passage IDs. Added a real-fixture integration test across all three checked-in attempts.
 - Detailed inventory and hashes: `BOAT/ARTIFACT_RECOVERY.md`.
 - Results from recovered bytes: pack recovery 3/3; source-ID/URL mapping 10/10. Exact claim text is present in final article for 15/15, 18/18, and 4/7 claims respectively. The third run remains partial and is not safe for claim-specific proposals until reconciled.
 - The computed hashes were not recorded at generation time; the manifest states this limitation. No semantic support is asserted.
-- New recovery audit CI result: pending inspection. No providers, publishing, site build, or article edits.
+- Initial recovery audit suite passed 52/52 in [run 38115164158](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38115164158). A real-fixture integration test was added afterward; its branch-head CI result is pending inspection. No providers, publishing, site build, or article edits.
