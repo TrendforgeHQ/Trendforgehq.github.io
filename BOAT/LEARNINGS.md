@@ -132,4 +132,4 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Implication:** An adapter must preserve original identifiers and distinguish artifact availability from proof of same-run lineage. It must not derive hashes and then present them as recorded provenance, or substitute an article brief for the evidence pack.
 - **Evidence:** Inspected the saved AD-FX-001 files in `data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/`.
 - **Confidence:** High for the inspected archived attempt only; not a claim that every pipeline run uses this exact shape.
-- **Validation status:** Code and offline regression tests added; branch-head CI is pending.
+- **Validation status:** Adapter and schema-contract tests passed in [run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567), 44 passed, 0 failed, 0 skipped. The archived attempt still has unproven lineage.
