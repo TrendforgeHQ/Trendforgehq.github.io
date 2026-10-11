@@ -192,3 +192,12 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Tests verify that a successful run leaves the article byte-identical and that incomplete arguments fail without writing a manifest.
 - The manifest schema locks human approval, disabled automatic application, unverified semantic support, and recovery-time (not generation-time) hashes.
 - Validation: [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771), 67 passed, 0 failed, 0 skipped.
+
+
+
+## L-015 — Eligibility is the intersection, not either individual coverage count
+
+- A claim is eligible for a later proposal only when exact article text, matching source lineage, and a unique same-source passage mapping all pass together.
+- In the 10x Research archived run, 4/7 claim strings are present in the article and 4/7 have unique passage matches, but only 2 claims meet both conditions. Do not infer eligibility by using either count alone.
+- The new stdout-only report lists every claim's status and reason codes; it does not assert factual support or modify content.
+- CI validation of the report is pending inspection.
