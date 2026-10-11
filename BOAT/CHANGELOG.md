@@ -550,3 +550,10 @@ All entries should describe actual work and results. Do not record planned work 
 - Replaced assertions tied to the checked-in mutable root pack (previously expected 24 candidates despite the tracked file being empty) with deterministic synthetic CLI coverage.
 - Aligned candidate selection and fact-anchor resolution with the real canonical envelope: `candidates[]`, `evidenceBrief.relevantPassages`, and `storyFactMap.coreFacts`.
 - Exact report/run binding remains UNKNOWN because metadata does not currently bind the claim-report hash. CI for the latest changes is pending.
+
+## 2026-10-11 — Corrected large-file diagnosis; traced historical lineage gap
+
+- Corrected the earlier zero-byte claim: GitHub's file-content wrapper omitted the oversized JSON body. Direct Git blob retrieval returned a 3,462,484-character canonical pack with 24 candidates.
+- At output commit `f91f00e722b2946bb876c574363177000c9f2e4d`, root and archived attempt pack share blob SHA `23b5b53069351539853d02be1a1f4e08c44b017a`. One candidate matches the archived brief title and both source URLs match the 10-claim report.
+- Offline run [38130433463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38130433463) passed 135/135 tests and ran the live read-only audit: 10/10 source IDs and URLs matched; 9 passage IDs resolved; 0 unresolved passage IDs.
+- Remaining issue is `unknown-report-run-binding`: historical run `38106429274` has no lineage manifest recording the claim-report hash. The old production workflow lacked the capture step; the current BOAT branch has a non-blocking capture step for future runs. No production run was dispatched and `main` was not changed.
