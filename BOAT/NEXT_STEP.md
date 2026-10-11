@@ -144,3 +144,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - CI [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350) passed **70/70**, 0 failed, 0 skipped, including adapter/schema/report regressions.
 - This avoids laundering recovery-time hashes into the existing same-run lineage contract. No factual proposal engine is invoked and no replacement text is generated.
 - Next: keep the handoff blocked unless original workflow-bound hashes can be recovered from trustworthy provenance. No provider calls, publishing, or merge.
+
+
+
+## Original metadata hash audit — verified
+
+- Inspected generated and claim-blocked metadata for all three recovered attempts (6 files). All 3 pairs agree on workflowRun/workflowSha; **0/6** contain the required article/report/evidence-pack SHA-256 fields.
+- This confirms the handoff blocker is based on actual saved metadata, not a theoretical concern. Recovery-time checksums cannot be treated as original hashes.
+- Latest docs/head CI [run 38119678517](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119678517) passed **70/70**, 0 failed, 0 skipped.
+- No production code, provider, publishing, or article changes. Continue blocking proposal-engine handoff until original hash provenance is recovered from a trustworthy record.
