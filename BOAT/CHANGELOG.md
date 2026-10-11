@@ -271,3 +271,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Adapter now checks whether the canonical evidence pack has the source shape expected by the factual proposal engine, in addition to metadata-byte, hash, run, and workflow-SHA checks.
 - Candidate-envelope packs remain blocked until the proposal engine can select a candidate by exact title/link.
 - CI [run 38120500152](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120500152) passed **73/73**, 0 failed, 0 skipped.
+
+
+
+## 2026-10-11 — Proposal-engine handoff gate
+
+- Added an explicit factual-proposal-engine handoff predicate requiring original generation-time hashes, same-run metadata, matching workflow SHA, and matching artifact bytes. Recovery-time checksums cannot satisfy it.
+- Added tests for a valid synthetic same-run bundle and tampered metadata fail-closed behavior.
+- Branch-head CI [run 38120577418](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120577418) passed **73/73**, 0 failed, 0 skipped.
+- Archived bundles remain ineligible for engine handoff because original hashes were not recorded.
