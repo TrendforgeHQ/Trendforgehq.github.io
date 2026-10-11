@@ -408,3 +408,9 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Recovery audit now requires expected lifecycle statuses for both metadata records: `claim-verification-blocked` and `generated-pending-verification`. Regression tests verify wrong status blocks recovery even when other identifiers remain available. CI run [38123747483](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123747483): **126/126 passed**.
 - Semantic review validator now accepts only HTTP/HTTPS source URLs; negative tests cover `javascript:`, `file:`, and `ftp:`. CI run [38123791630](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123791630): **127/127 passed**.
 - The publishing quarantine path still removes claim-blocked article output from the publication set. No confirmed production gate bypass was identified in the inspected paths. Review is not final until post-documentation CI and PR state are checked. PR #35 remains draft/unmerged.
+
+## Offline CI path-filter review — 2026-10-11
+
+- Review found that `scripts/test-boat-semantic-support-review.mjs` was included in the offline test glob but omitted from the workflow's PR path filters. Added its explicit path so edits to this test reliably trigger the offline suite.
+- This is test-coverage orchestration only. It does not change semantic-support decisions, proposal handoff, publication eligibility, or production behavior.
+- Final branch-head CI and remaining full-diff review are still pending. PR #35 remains draft/unmerged; `main` untouched; no provider or publishing workflow run.
