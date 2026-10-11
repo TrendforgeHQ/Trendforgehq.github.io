@@ -47,7 +47,7 @@ export function bindAttemptLineage({ root, runId, workflowSha = '', boundAt = ne
     const metaFile = readJson(path.join(attemptDir, 'metadata.json'));
     const meta = metaFile?.value;
     if (!meta || meta.lineageBindingVersion === 1 || dirent.name.endsWith('-finalized') || text(meta.workflowRun) !== text(runId) || text(meta.articlePath).replace(/^\.\//, '') !== normalizedArticlePath) continue;
-    if (text(workflowSha) && text(meta.workflowSha) && text(meta.workflowSha) !== text(workflowSha)) continue;
+    if (text(workflowSha) && text(meta.workflowSha) !== text(workflowSha)) continue;
     const archivedPackPath = path.join(attemptDir, 'authoritative-evidence-pack.json');
     if (!fs.existsSync(archivedPackPath)) continue;
     const archivedPackRaw = fs.readFileSync(archivedPackPath, 'utf8');
@@ -58,14 +58,16 @@ export function bindAttemptLineage({ root, runId, workflowSha = '', boundAt = ne
     const blocked = matchingDirs.find(item => item.name.includes('claim-blocked') && item.articleRaw);
     finalArticleRaw = blocked?.articleRaw ?? null;
   }
+  const eligibleSources = matchingDirs.filter(item => finalArticleRaw ? !item.name.includes('claim-blocked') : item.name.includes('claim-blocked'));
+  const sourceDirs = eligibleSources.length ? [eligibleSources[0]] : [];
   if (typeof finalArticleRaw !== 'string' || articleTitle(finalArticleRaw) !== text(report.articleTitle)) {
     return { status: 'unknown-current-article-mismatch', bound: 0, conflicts: 0, skipped: 0, findings: ['final article bytes are unavailable or do not match claim report articleTitle'] };
   }
-  if (matchingDirs.length === 0) return { status: 'no-run-matched-attempt', bound: 0, conflicts: 0, skipped: 0, findings: ['no archived attempt matches workflow run, article path, workflow SHA, and exact evidence-pack bytes'] };
+  if (sourceDirs.length === 0) return { status: 'no-run-matched-attempt', bound: 0, conflicts: 0, skipped: 0, findings: ['no archived attempt matches workflow run, article path, workflow SHA, and exact evidence-pack bytes'] };
 
   const slug = safeName(path.basename(normalizedArticlePath, '.md'));
   const result = { status: 'no-final-bundle-created', bound: 0, conflicts: 0, skipped: 0, findings: [] };
-  for (const source of matchingDirs) {
+  for (const source of sourceDirs) {
     const targetName = safeName(source.name + '-finalized');
     const targetDir = path.join(attemptsDir, targetName);
     const hashes = {
