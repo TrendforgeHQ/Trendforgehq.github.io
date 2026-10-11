@@ -293,3 +293,10 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Found one test-trigger omission: `scripts/test-boat-semantic-support-review.mjs` was executed by the broad Node test command but absent from the workflow `pull_request.paths` allowlist. An isolated future change to that test could therefore fail to trigger the offline suite.
 - Added the missing path entry in `.github/workflows/boat-offline-tests.yml`. This changes test triggering only; no runtime/publishing behavior or gate changed.
 - Next: verify CI on the final docs/head commit, then finish reviewing the remaining diff and confirm PR #35 is still draft/unmerged. No provider or publishing workflow runs.
+
+## Final diff-review checkpoint — 2026-10-11
+
+- Added the missing semantic-review schema test path to the offline workflow trigger list. Cross-check now shows every `scripts/test-boat-*.mjs` test changed in this PR has an explicit path trigger.
+- Final verified offline run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed **127/127**, 0 failures, 0 skipped, on the then-current branch head; log confirms the schema/CLI/review-set tests and HTTP(S)-only URI regression passed.
+- Reviewed the publishing quarantine diff: it copies the evidence pack when present, hashes the exact quarantined article/report/pack bytes, records `hashesRecordedInWorkflow=true` only when all three hashes exist, and still removes the blocked article from the publication set. No production workflow was executed.
+- PR #35 remains open/draft/unmerged; `main` untouched. Remaining: final reviewer decision and any further requested review; do not merge by default.
