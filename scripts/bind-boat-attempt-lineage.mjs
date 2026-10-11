@@ -30,7 +30,8 @@ export function bindAttemptLineage({ root = process.cwd(), runId, workflowSha })
   if (String(report.articlePath ?? '').replace(/^\.\//, '') !== articlePath) {
     throw new Error('claim report articlePath does not match current-run article');
   }
-  const articleBytes = read(path.join(root, articlePath));
+  const currentArticlePath = path.join(root, articlePath);
+  const currentArticleBytes = fs.existsSync(currentArticlePath) ? read(currentArticlePath) : null;
   const attemptsRoot = path.join(root, 'data/article-attempts');
   const matches = [];
   if (fs.existsSync(attemptsRoot)) {
@@ -45,15 +46,16 @@ export function bindAttemptLineage({ root = process.cwd(), runId, workflowSha })
       try { metadata = parse(read(metaPath), 'attempt metadata'); } catch { continue; }
       if (String(metadata.workflowRun ?? '') !== String(runId)) continue;
       if (String(metadata.articlePath ?? '').replace(/^\.\//, '') !== articlePath) continue;
-      if (sha256(read(archivedArticle)) !== sha256(articleBytes)) continue;
+      const archivedArticleBytes = read(archivedArticle);
+      if (currentArticleBytes && sha256(archivedArticleBytes) !== sha256(currentArticleBytes)) continue;
       if (sha256(read(archivedPack)) !== sha256(packBytes)) continue;
-      matches.push({ dir, metaPath, metadata });
+      matches.push({ dir, metaPath, metadata, articleBytes: archivedArticleBytes });
     }
   }
   if (matches.length !== 1) {
     throw new Error('expected exactly one same-run archive matching article and evidence-pack bytes; found ' + matches.length);
   }
-  const { metaPath, metadata } = matches[0];
+  const { metaPath, metadata, articleBytes } = matches[0];
   fs.writeFileSync(path.join(matches[0].dir, 'claim-verification.json'), reportBytes);
   const updated = {
     ...metadata,
@@ -69,7 +71,7 @@ export function bindAttemptLineage({ root = process.cwd(), runId, workflowSha })
     lineageBindingVersion: 1
   };
   fs.writeFileSync(metaPath, JSON.stringify(updated, null, 2) + '\n');
-  return { status: 'bound', runId: String(runId), articlePath, articleSha256: updated.articleSha256, claimReportSha256: updated.claimReportSha256, evidencePackSha256: updated.evidencePackSha256, claimReportPassRecorded: updated.claimReportPassRecorded, archiveDirectory: path.relative(root, matches[0].dir) };
+  return { status: 'bound', runId: String(runId), articlePath, articlePresentInPublicationSet: Boolean(currentArticleBytes), articleSha256: updated.articleSha256, claimReportSha256: updated.claimReportSha256, evidencePackSha256: updated.evidencePackSha256, claimReportPassRecorded: updated.claimReportPassRecorded, archiveDirectory: path.relative(root, matches[0].dir) };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) {
