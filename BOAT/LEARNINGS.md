@@ -573,3 +573,7 @@ A zero-byte tracked `data/authoritative-evidence-pack.json` does not prove the g
 ## 2026-10-11 — Bind all three bytes, not just article and evidence pack
 
 An article and evidence-pack hash bound to a run still cannot prove which verifier report belongs to that run. Archive the exact claim-report bytes and record `claimReportSha256` with `articleSha256`, `evidencePackSha256`, `workflowRun`, and `workflowSha`. Require exact same-run matching; fail closed on duplicate/missing/mismatched archives. If a failed article is quarantined before metadata binding, read the archived article bytes only—never restore it into the publication set. Even complete byte lineage proves provenance, not semantic claim support or source freshness.
+
+## 2026-10-11 — Verification before assuming production lineage works
+
+The binder's isolated regression suite passed at code head `494764f5788aa17877e48e7a15b51390d7fc099f`; the full BOAT suite was **136/136**, and Control Center deterministic checks plus production build passed. A synthetic fixture proves code behavior, not that a real scheduled run produced the expected archive. Confirm the next naturally occurring run's `data/article-attempts/<run>/metadata.json` and exact archived `claim-verification.json` hashes before upgrading the live status from UNKNOWN.

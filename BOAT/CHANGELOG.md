@@ -598,3 +598,7 @@ All entries should describe actual work and results. Do not record planned work 
 - Wired the binder after the claim-verification gate; it copies the exact verifier report into the matching archive, but never restores quarantined articles to the publish set.
 - Root lineage audit now proves report/run binding only when the archived report bytes and recorded report hash match the inspected report exactly.
 - Added isolated fixture coverage for exact binding, changed-pack mismatch, quarantined article handling and no-article skip. Latest CI verification pending.
+
+## 2026-10-11 — CI verification of report lineage binder
+
+Latest code head `494764f5788aa17877e48e7a15b51390d7fc099f`: BOAT Offline Tests **136/136 pass**; Control Center deterministic suite and production build **pass**. Links: [offline tests](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38132111529), [Control Center QA](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38132111445). This validates isolated tests only; no production publishing run was dispatched, and the real generated archive still needs observation.

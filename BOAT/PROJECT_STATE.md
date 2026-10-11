@@ -612,3 +612,7 @@ Inspected successful production run 493 (`38106429274`) artifact read-only. The 
 ## 2026-10-11 — Same-run claim report hash binding added
 
 Implemented a post-verification archive binder and wired it after the workflow claim-verification gate. The binder records exact article, claim-report and evidence-pack hashes plus workflow run/SHA in the attempt metadata and copies the report into the matching attempt archive. It requires exactly one same-run article-path match with identical article and pack bytes; mismatch or ambiguity fails closed. If an article has already been quarantined, it uses only its archived bytes and does not republish it. The root audit now requires the report hash and exact archived report bytes before declaring report/run binding proven. `semanticFactualSupport` remains `not_assessed`; this is provenance, not factual validation. CI must pass on the latest head before this change is considered verified.
+
+## 2026-10-11 — Latest verification result
+
+At code head `494764f5788aa17877e48e7a15b51390d7fc099f`, BOAT Offline Tests passed **136/136**, including the isolated root-lineage fixture. Control Center deterministic suite and production build passed. This is CI/test validation, not proof of factual accuracy. The docs-only record triggers another CI cycle; production archive binding remains unverified until a naturally occurring pipeline run emits a matching attempt bundle.
