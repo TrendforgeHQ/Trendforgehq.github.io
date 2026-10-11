@@ -37,13 +37,13 @@ assert.match(outputBlock, /git diff-tree[\s\S]*-- data lib\/articles\.ts public\
 assert.match(outputBlock, /git checkout "\$output_commit" -- "\$path"/, 'generated data must be transferred from the pipeline output commit');
 assert.match(outputBlock, /git push origin HEAD:main/, 'existing output publishing path must remain explicit');
 
-const commitRunMarker = outputBlock.indexOf('        run: |\\n');
+const commitRunMarker = outputBlock.indexOf('        run: |\n');
 assert.ok(commitRunMarker >= 0, 'output commit step must retain its shell run block');
-const commitShell = outputBlock.slice(commitRunMarker + '        run: |\\n'.length)
-  .split('\\n      - name: ')[0]
-  .split('\\n')
+const commitShell = outputBlock.slice(commitRunMarker + '        run: |\n'.length)
+  .split('\n      - name: ')[0]
+  .split('\n')
   .map(line => line.startsWith('          ') ? line.slice(10) : line)
-  .join('\\n');
+  .join('\n');
 const shellSyntax = spawnSync('bash', ['-n', '-c', commitShell], { encoding: 'utf8' });
 assert.equal(shellSyntax.status, 0, 'output commit shell must pass bash -n: ' + shellSyntax.stderr);
 
