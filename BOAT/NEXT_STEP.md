@@ -393,3 +393,11 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - Strengthened the synthetic workflow test to assert the exact `data/published-lineage/` output directory, run-scoped `manifest-<runId>.json` filename, and inclusion of `data/` in the existing generated-output transfer allowlist.
 - The first version of these extra assertions exposed malformed regex escaping and failed CI (run 38128194347); the test source was corrected, not the production workflow. The corrected branch-head BOAT Offline Tests [38128203466](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203466) and Control Center QA/production build [38128203447](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128203447) both **PASS** at `5e24de25e22ca77a1e399b985d2c291fbeffb2a8`.
 - Next: finish a changed-file intersection check against main's five generated-intelligence refresh commits, then review final PR status. Do not merge/rebase blindly or dispatch the production publisher.
+
+
+## Next-step delivery — 2026-10-11 (real catalogue audit CLI)
+- Added `scripts/boat-audit-published-catalogue.mjs`, an offline, read-only CLI that audits the actual canonical `lib/articles.ts` catalogue and emits JSON inventory, per-article structural findings, finding counts, and duplicate slugs. It does not edit articles or run provider calls.
+- Added `scripts/test-boat-audit-published-catalogue.mjs` and wired both files into BOAT Offline Tests path filters. Test asserts report inventory matches the actual catalogue, counts are internally consistent, and semantic/source-freshness limitations remain explicit.
+- Initial run caught a test integration bug: CLI emitted a literal backslash-n after JSON. Fixed output to emit an actual newline. Latest offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) **PASS** at `aca78e9aa46f61e0e570241b1429799b8452abd1`.
+- Control Center QA / production build [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was still running at last poll. Recheck before claiming full green.
+- Next: use this read-only inventory as the base for per-article issue review and safe repair proposals. Do not make automatic article edits, dispatch production publishing, or call paid providers.
