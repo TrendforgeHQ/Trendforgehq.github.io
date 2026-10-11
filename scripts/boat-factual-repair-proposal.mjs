@@ -32,6 +32,7 @@ export function createFactualRepairProposal({
 
   let claim = null;
   let source = null;
+  let candidateSources = null;
   let passageText = null;
   if (!integrity.length) {
     const expected = {
@@ -50,6 +51,30 @@ export function createFactualRepairProposal({
     if (reportRun && runId && reportRun !== runId) addIntegrity('FR-REPORT-RUN-MISMATCH', 'Claim report workflow run differs from metadata.');
     if (packRun && runId && packRun !== runId) addIntegrity('FR-PACK-RUN-MISMATCH', 'Evidence pack workflow run differs from metadata.');
     if (reportRun && packRun && reportRun !== packRun) addIntegrity('FR-ARTIFACT-RUN-MISMATCH', 'Claim report and evidence pack identify different workflow runs.');
+
+    if (Array.isArray(evidencePack.candidates)) {
+      const candidateTitle = text(proposal.candidateTitle);
+      const candidateLink = text(proposal.candidateLink);
+      if (!candidateTitle || !candidateLink) {
+        add('FR-CANDIDATE-IDENTITY-MISSING', 'high', 'Candidate-envelope packs require exact candidateTitle and candidateLink in the proposal.');
+      } else {
+        const candidateMatches = evidencePack.candidates.filter(item =>
+          text(item?.candidate?.title) === candidateTitle &&
+          text(item?.candidate?.link) === candidateLink
+        );
+        if (candidateMatches.length !== 1) {
+          add('FR-CANDIDATE-IDENTITY-NOT-UNIQUE', 'high', 'Candidate title/link must identify exactly one evidence-pack candidate.', {
+            candidateTitle, candidateLink, matchCount: candidateMatches.length
+          });
+        } else if (candidateMatches[0].status !== 'authoritative' || !Array.isArray(candidateMatches[0].sources)) {
+          add('FR-CANDIDATE-NOT-AUTHORITATIVE', 'high', 'Selected evidence-pack candidate is not authoritative or has no sources.');
+        } else {
+          candidateSources = candidateMatches[0].sources;
+        }
+      }
+    } else if (Array.isArray(evidencePack.sources)) {
+      candidateSources = evidencePack.sources;
+    }
 
     const claimIndex = Number(proposal.claimIndex);
     claim = claimReport.claims.find(item => Number(item?.index) === claimIndex) || null;
@@ -71,7 +96,7 @@ export function createFactualRepairProposal({
     } else if (requestedSourceId && !passageId.startsWith(requestedSourceId + '-')) {
       add('FR-PASSAGE-SOURCE-MISMATCH', 'high', 'Passage ID prefix does not match proposal sourceId.', { passageId, requestedSourceId });
     }
-    source = evidencePack.sources.find(item => text(item?.id) === requestedSourceId) || null;
+    source = (Array.isArray(candidateSources) ? candidateSources : []).find(item => text(item?.id) === requestedSourceId) || null;
     if (requestedSourceId && !source) add('FR-SOURCE-NOT-IN-PACK', 'high', 'Proposal sourceId is absent from the supplied evidence pack.', { requestedSourceId });
     if (source && /^S\d+-P\d+$/.test(passageId) && passageId.startsWith(requestedSourceId + '-')) {
       const passageNumber = Number(passageId.split('-P')[1]);
@@ -99,7 +124,7 @@ export function createFactualRepairProposal({
   }
 
   const status = integrity.length ? 'unknown' : findings.some(item => item.severity === 'high') ? 'blocked' : 'review_required';
-  const selectedSource = source || (Array.isArray(evidencePack?.sources) ? evidencePack.sources.find(item => text(item?.id) === text(proposal?.sourceId)) : null);
+  const selectedSource = source || (Array.isArray(candidateSources) ? candidateSources.find(item => text(item?.id) === text(proposal?.sourceId)) : null);
   const selectedPassageId = text(proposal?.passageId);
   if (selectedSource && passageText === null && /^S\d+-P\d+$/.test(selectedPassageId) && selectedPassageId.startsWith(text(selectedSource.id) + '-')) {
     const n = Number(selectedPassageId.split('-P')[1]);
@@ -121,6 +146,8 @@ export function createFactualRepairProposal({
     claim: claim ? { index: Number(claim.index), originalText: text(claim.claim), sourceId: text(claim.sourceId) || null } : null,
     proposal: {
       replacementText: text(proposal?.replacementText) || null,
+      candidateTitle: text(proposal?.candidateTitle) || null,
+      candidateLink: text(proposal?.candidateLink) || null,
       rationale: text(proposal?.rationale) || null,
       sourceId: text(proposal?.sourceId) || null,
       passageId: selectedPassageId || null,
