@@ -395,3 +395,9 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Added `scripts/test-boat-semantic-support-review.mjs` to the BOAT Offline Tests workflow path filters. The test was already covered by `node --test scripts/test-boat-*.mjs`, but changes to that file alone would not reliably trigger this workflow.
 - Test-triggering fix only; no production runtime, publishing logic, or safety threshold changed. Awaiting final branch-head CI.
+
+### Final diff-review checkpoint — 2026-10-11
+
+- Fixed the missing offline CI path trigger for `scripts/test-boat-semantic-support-review.mjs`.
+- Offline CI run [38124374037](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38124374037) passed **127/127**, 0 failed, 0 skipped.
+- Reviewed quarantine hash capture and confirmed the publication step still removes claim-blocked article output. No provider or publishing workflow was executed; PR remains draft/unmerged.
