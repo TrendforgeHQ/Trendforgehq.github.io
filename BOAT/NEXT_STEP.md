@@ -69,3 +69,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Added `scripts/test-boat-recovered-proposal-input.mjs` with synthetic integrity regressions and all three real archived samples. Offline CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64, 0 failed, 0 skipped; latest docs/head recheck [run 38117465699](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117465699) also passed 64/64.
 - Important limitation remains: recovery-time hashes were not recorded by the original workflow and do not retroactively establish generation-time integrity.
 - Do not merge PR #35 or run provider/publishing workflows. Next: inspect the exact CI result and fix only reproducible adapter/test defects.
+
+
+
+## Proposal-input schema and CLI validation
+
+- Added `BOAT/schemas/recovered-proposal-input.schema.json` to formalize the manifest contract, including review-only constants and the explicit recovery-time-hash limitation.
+- Extended `scripts/test-boat-recovered-proposal-input.mjs` with schema-contract assertions and CLI boundary tests: successful separate output, refusal to overwrite existing output, unchanged article bytes, and incomplete-argument rejection.
+- Branch-head CI [run 38118585771](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118585771) passed **67/67**, 0 failed, 0 skipped. Job log explicitly confirms both CLI tests and the schema contract test passed.
+- Actual archived eligibility remains 12/15, 12/18, and 2/7; the last sample's eligible set is the intersection of article-text presence and unique passage mapping, not either count alone.
+- Next safe step: add a read-only report summarizing per-claim eligibility and reasons across the three runs, then review its output. Keep PR draft/unmerged and do not run publishing/provider calls.
