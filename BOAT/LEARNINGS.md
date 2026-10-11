@@ -461,3 +461,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** Use the repository's `validateAuthoritativeEvidencePack` validator and require consistent marker, article frontmatter, brief, claim report, and evidence-pack candidate identity. Synthetic tests must represent the real schema and test malformed envelopes, duplicate candidates, and invalid packs.
 - **Validation status:** Corrected code/tests are on the BOAT branch; latest CI pending. Earlier 129/129 tests validated the earlier contract, not this new correction. No publishing/provider run, article mutation, or `main` edit occurred.
 - **Next:** inspect new offline CI and Control Center QA; only then consider a separately tested publish-time integration.
+
+
+## L-062 — Provenance capture must be diagnostic and non-blocking until proven stable
+- **Design:** The publish-time writer creates a run-specific immutable manifest only for a same-run generated article whose claim report is PASS and whose evidence pack matches the repository's canonical schema. It hashes the exact marker, article, report, evidence-pack envelope, and brief bytes.
+- **Safety:** No-article is a clean no-op; missing/mismatched inputs or non-PASS reports produce no manifest. Existing manifest files cannot be overwritten. The workflow step is `continue-on-error: true` and does not replace or relax publication gates.
+- **Persistence:** The manifest sits under `data/published-lineage/`, which is included by the existing `git add data` step. It will only be committed if later build/output commit steps succeed.
+- **Validation status:** Writer, CLI tests, and workflow wiring have been added; branch-head CI is pending. Earlier test failure was a test-expectation mismatch and was corrected. No publishing workflow/provider call/article mutation/`main` change occurred.
+- **Next:** verify offline tests and Control Center build; review exact diff before treating the integration as complete.
