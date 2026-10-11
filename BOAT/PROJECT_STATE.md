@@ -1,9 +1,9 @@
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
-**State version:** 0.1.9  
+**State version:** 0.2.0  
 **Current phase:** Phase 1 — Offline audit + sandbox repair foundations  
-**Status:** Factual Repair Proposal + six-item reviewer checklist passed **39/39** in [run 38112833259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112833259), with 0 failures and 0 skipped. Read-only pipeline artifact adapter and explicit schema-contract tests remain next.
+**Status:** Factual Repair Proposal baseline passed **39/39** in [run 38112892985](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112892985). Read-only pipeline artifact adapter and schema-contract tests are implemented on the branch; their CI result is pending.
 
 ## Mission
 Create a reliable, evidence-grounded, self-improving editorial operations bot for TrendForge with controlled permissions, article auditing, editorial benchmarking, urgent-topic prioritization, and durable project memory.
@@ -27,7 +27,8 @@ Create a reliable, evidence-grounded, self-improving editorial operations bot fo
 - Evidence Auditor: offline identifier/lineage checker; requires exact artifact hashes and workflow-run metadata. Prior synthetic regression passed 13/13 in the 30-test suite; four new CLI integration tests are awaiting CI.
 - Repair Engine: bounded structural proposal mode for empty headings and exact duplicate plain-text paragraphs; separate output only, with in-place edits/overwrites refused.
 - Factual Repair Proposal: offline module binds a proposed replacement to exact article/report/evidence-pack hashes, workflow run, claim/source/passage lineage and target text. Never applies changes; outputs review-required or blocked/unknown. CI pending.
-- Factual Repair Proposal: added an offline proposal-only module that binds a proposed replacement to article/report/evidence-pack hashes, run ID, claim/source/passage lineage, and target text. It cannot apply changes; output is always review-required or blocked/unknown. New CI validation pending.
+- Factual Repair Proposal: offline proposal-only module binds a proposed replacement to article/report/evidence-pack hashes, run ID, claim/source/passage lineage, and target text. It cannot apply changes; output is always review-required or blocked/unknown. Previous branch-head CI passed 39/39.
+- Pipeline Artifact Adapter: added `scripts/boat-artifact-adapter.mjs` to preserve actual saved claim-report fields and legacy passage IDs, trust only recorded hashes, and fail closed when canonical evidence-pack lineage is absent. Added `scripts/test-boat-artifact-adapter.mjs` for adapter behavior and proposal schema-contract checks; latest CI is pending.
 - Claim-level article audit: not implemented as a BOAT module.
 - Human-article benchmark lab: not implemented as a BOAT module.
 - Priority queue / targeted dispatch: not implemented.
@@ -164,3 +165,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added `scripts/boat-repair-engine.mjs` for low-risk structural fixes only: empty headings and exact duplicate plain-text paragraphs outside protected sections. It writes to a new output path, refuses in-place changes and output overwrites, and leaves claims/sources/policy untouched.
 - Added synthetic regression tests and an evidence-audit report schema. CI validation is pending; do not call this implementation tested until the run completes.
 - No provider calls, source fetching, image generation, site build, publishing run, main-branch change, merge, or production gate modification.
+
+
+## Phase 1.1 — Saved artifact adapter (2026-10-11)
+- Inspected the actual archived attempt at `data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/`.
+- Confirmed `claim-verification.json` has `claims[]`, `sources[]`, `sourceId`, `bestUrl`, `sourceRole`, `bestPassageId`, and `provenanceFactMatches[]`; `metadata.json` records `workflowRun`/`workflowSha` but no SHA-256 artifact hashes; the archived directory has no canonical evidence-pack JSON.
+- Confirmed legacy passage identifiers such as `S1-FF1` do not match proposal-engine canonical `S1-P1`; adapter preserves them without conversion and does not substitute article brief/source lists for an evidence pack.
+- Added the read-only artifact adapter and offline tests including schema-contract assertions. Missing pack or recorded hashes is expected to force `unknown`.
+- CI for this new adapter/test commit is pending; do not record the new suite as passing until logs are checked.
+- No provider, publishing run, article change, site build, or production gate change.
