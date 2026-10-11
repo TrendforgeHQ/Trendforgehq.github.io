@@ -19,12 +19,20 @@ function checkType(value, type) {
 
 function formatValid(value, format) {
   if (format === 'uri') {
-    try { const parsed = new URL(value); return Boolean(parsed.protocol && parsed.hostname); }
+    try { const parsed = new URL(value); return Boolean(parsed.protocol); }
     catch { return false; }
   }
   if (format === 'date-time') {
-    return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)
-      && Number.isFinite(Date.parse(value));
+    const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(Z|[+-](\d{2}):(\d{2}))$/.exec(value);
+    if (!match || !Number.isFinite(Date.parse(value))) return false;
+    const [, year, month, day, hour, minute, second, zone, offsetHour, offsetMinute] = match;
+    const y = Number(year), m = Number(month), d = Number(day);
+    const h = Number(hour), min = Number(minute), sec = Number(second);
+    const date = new Date(Date.UTC(y, m - 1, d));
+    if (date.getUTCFullYear() !== y || date.getUTCMonth() !== m - 1 || date.getUTCDate() !== d) return false;
+    if (h > 23 || min > 59 || sec > 59) return false;
+    if (zone !== 'Z' && (Number(offsetHour) > 23 || Number(offsetMinute) > 59)) return false;
+    return true;
   }
   return true;
 }
