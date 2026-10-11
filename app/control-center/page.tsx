@@ -39,6 +39,49 @@ const singleSource = Number(evidence.singleSource ?? decisions.singleSourceVerif
 const strongEvidence = Number(evidence.strong ?? decisions.strongEvidenceReady ?? 0);
 const generated = Number(latest.articlesGenerated ?? latest.generatedArticles ?? articleCount ?? 0);
 
+const articleDirectory = path.join(process.cwd(), 'content', 'articles');
+function auditPublishedCatalogue() {
+  try {
+    return fs.readdirSync(articleDirectory, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith('.md'))
+      .map((entry) => {
+        const filePath = path.join(articleDirectory, entry.name);
+        const raw = fs.readFileSync(filePath, 'utf8');
+        const body = raw.replace(/^---\\s*\\n[\\s\\S]*?\\n---\\s*\\n?/, '');
+        const titleMatch = raw.match(/^title:\\s*["']?(.+?)["']?\\s*$/m);
+        const headingMatch = body.match(/^#\\s+(.+)$/m);
+        const title = (titleMatch?.[1] ?? headingMatch?.[1] ?? entry.name.replace(/\\.md$/i, '')).replace(/["']$/, '').trim();
+        const urls = body.match(/https?:\\/\\/[^\\s)>"']+/gi) ?? [];
+        const headings = body.split(/\\r?\\n/).filter((line) => /^#{1,6}\\s*$/.test(line));
+        const paragraphs = body.split(/\\r?\\n\\s*\\r?\\n/).map((part) =>
+          part.replace(/^#{1,6}\\s+/gm, '').replace(/^[-*+]\\s+/gm, '').replace(/\\s+/g, ' ').trim().toLowerCase()
+        ).filter((part) => part.length >= 40 && !/^https?:\\/\\//.test(part));
+        const seen = new Set();
+        let repeatedParagraphs = 0;
+        for (const paragraph of paragraphs) {
+          if (seen.has(paragraph)) repeatedParagraphs++;
+          seen.add(paragraph);
+        }
+        const sourceHeading = /^#{1,6}\\s*(sources|references|sources and references|further reading)\\s*#*\\s*$/im.test(body);
+        const words = body.replace(/!?(\\[[^\\]]*\\])\\([^)]*\\)/g, '$1').replace(/https?:\\/\\/\\S+/g, '').match(/[\\p{L}\\p{N}][\\p{L}\\p{N}'’-]*/gu) ?? [];
+        const findings = [];
+        if (!sourceHeading) findings.push('No Sources/References heading');
+        if (urls.length === 0) findings.push('No HTTP(S) links found');
+        if (headings.length) findings.push(`${headings.length} empty heading(s)`);
+        if (repeatedParagraphs) findings.push(`${repeatedParagraphs} repeated paragraph(s)`);
+        return { file: entry.name, title, words: words.length, urls: urls.length, sourceHeading, emptyHeadings: headings.length, repeatedParagraphs, findings };
+      })
+      .sort((a, b) => (b.findings.length - a.findings.length) || a.title.localeCompare(b.title));
+  } catch {
+    return [];
+  }
+}
+const publishedCatalogue = auditPublishedCatalogue();
+const catalogueIssueArticles = publishedCatalogue.filter((article) => article.findings.length > 0);
+const catalogueMissingSources = publishedCatalogue.filter((article) => !article.sourceHeading || article.urls === 0).length;
+const catalogueEmptyHeadings = publishedCatalogue.reduce((sum, article) => sum + article.emptyHeadings, 0);
+const catalogueRepeatedParagraphs = publishedCatalogue.reduce((sum, article) => sum + article.repeatedParagraphs, 0);
+
 function Card({label, value, help}: {label:string; value:any; help:string}) {
   return <div className="cc-card"><div className="cc-label">{label}</div><div className="cc-value">{fmt(value)}</div><div className="cc-help">{help}</div></div>;
 }
@@ -60,6 +103,20 @@ export default function ControlCenterPage() {
       <div><p className="cc-eyebrow">TREND FORGE • PHASE 25</p><h1>Control Center</h1><p>One simple command view of what TrendForge is doing, where work is stuck, and why.</p></div>
       <div className="cc-health"><span>{healthIcon}</span><div><strong>{healthLabel}</strong><small>Supervisor status • observational only</small></div></div>
     </header>
+
+
+    <Section eyebrow="BOAT • CATALOGUE AUDIT" title="Published article audit" help="Build-time structural scan of Markdown articles in content/articles. This is a real inventory, not a claim that factual accuracy has been verified.">
+      <div className="cc-catalogue-note"><strong>Audit boundary</strong><p>Structural checks only: article inventory, source/reference heading, HTTP(S) links, empty headings, and repeated paragraphs. Claim-to-passage support, source freshness, attribution accuracy, and public-web verification are not yet run by this Control Center. Missing or unchecked evidence must not be interpreted as passed.</p><small>Snapshot generated when the site is built • {publishedCatalogue.length} Markdown article file(s) scanned</small></div>
+      <div className="cc-catalogue-stats">
+        <div><b>{publishedCatalogue.length}</b><span>Articles inventoried</span></div>
+        <div><b>{catalogueIssueArticles.length}</b><span>With structural flags</span></div>
+        <div><b>{catalogueMissingSources}</b><span>Missing source heading or links</span></div>
+        <div><b>{catalogueEmptyHeadings + catalogueRepeatedParagraphs}</b><span>Empty headings + repeated paragraphs</span></div>
+      </div>
+      {publishedCatalogue.length ? <div className="cc-catalogue-table-wrap"><table className="cc-catalogue-table"><thead><tr><th>Article</th><th>Words</th><th>Links</th><th>Structural findings</th></tr></thead><tbody>
+        {publishedCatalogue.slice(0, 20).map((article) => <tr key={article.file}><td><strong>{article.title}</strong><small>{article.file}</small></td><td>{article.words}</td><td>{article.urls}</td><td>{article.findings.length ? article.findings.join(' • ') : 'No structural flags detected'}</td></tr>)}
+      </tbody></table>{publishedCatalogue.length > 20 && <p className="cc-catalogue-more">Showing 20 of {publishedCatalogue.length} inventoried articles, ordered by number of structural flags.</p>}</div> : <div className="cc-empty">No Markdown article files were found at content/articles during this build. This is an inventory failure/unknown state, not a clean audit.</div>}
+    </Section>
 
     <Section eyebrow="01 • OVERVIEW" title="Today at a glance" help="The latest recorded publishing run, translated into plain language.">
       <div className="cc-grid">
