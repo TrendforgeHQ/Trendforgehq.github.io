@@ -47,3 +47,10 @@ Inspected the archived claim-blocked attempt:
 - No paid providers or publishing runs.
 - No article edits or automatic repair application.
 - Existing evidence, claim-verification, editorial, image-safety, and build gates remain authoritative.
+
+## Proposal-input adapter implementation (2026-10-11)
+
+- Added `scripts/boat-recovered-proposal-input.mjs`: binds current article/report/brief/canonical-pack bytes to the recovery audit's recovery-time hashes, requires exact unique candidate selection, rechecks source IDs/URLs, and exposes per-claim inputs only when the exact claim is present in the article and its source passage maps uniquely to canonical `Sx-Pn`.
+- Added `scripts/test-boat-recovered-proposal-input.mjs` with synthetic lineage/hash/missing-claim/ambiguous-passage cases and all three real archived attempts. CI validation is pending; do not treat expected fixture counts as passed until the workflow is green.
+- Recovery-time hashes are not represented as original generation-time metadata. Output always says `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and `replacementTextGenerated: false`.
+- Next: inspect branch-head offline CI, fix any regression, then record observed eligible/blocked/unknown counts. Keep PR #35 draft and unmerged.
