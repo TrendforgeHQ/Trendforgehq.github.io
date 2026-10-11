@@ -344,3 +344,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added golden report projections and permutation tests to ensure semantic findings remain stable regardless of input ordering while the output's source-record array preserves the supplied order and all dissenting verdicts remain visible.
 - Asserted that aggregate verdict remains null and automatic adjudication stays false. The report remains diagnostic-only; no majority vote, latest-wins, or canonical-record selection was added.
 - Added fixture/test paths to the offline BOAT workflow filters. CI result pending inspection. No provider calls, publishing, article mutation, main-branch changes, or PR merge.
+
+
+### Golden-test correction after first CI run
+
+- Inspected failed run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425): 111/113 passed. The invalid-record fixture has two expected validation errors; corrected the golden count to match validator output. The permutation test now canonicalizes only order-insensitive summaries, while source record order is asserted separately and remains untouched.
+- This was a test-harness correction only; no audit behavior, automatic-adjudication policy, or safety gate was weakened. Follow-up CI pending.
