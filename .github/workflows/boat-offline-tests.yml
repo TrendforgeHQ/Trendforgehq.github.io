@@ -30,6 +30,9 @@ on:
       - "scripts/boat-published-catalogue-audit.mjs"
       - "scripts/boat-published-catalogue-audit.d.mts"
       - "scripts/test-boat-published-catalogue-audit.mjs"
+      - "app/control-center/page.tsx"
+      - "app/control-center/control-center.css"
+      - "scripts/test-control-center.mjs"
       - "scripts/fixtures/boat-semantic-support-review-set-fixtures.mjs"
       - "BOAT/schemas/factual-repair-proposal.schema.json"
       - "scripts/test-boat-evidence-repair.mjs"
@@ -53,4 +56,4 @@ jobs:
           node-version: 24
           package-manager-cache: false
       - name: Run offline BOAT regression tests
-        run: node --test scripts/test-boat-*.mjs
+        run: node --test scripts/test-boat-*.mjs && node scripts/test-control-center.mjs
