@@ -1,14 +1,6 @@
 name: BOAT Offline Article Doctor Tests
 
 on:
-  push:
-    branches:
-      - docs/boat-blueprint-phase0-2026-10-11
-    paths:
-      - ".github/workflows/boat-offline-tests.yml"
-      - "BOAT/**"
-      - "scripts/boat-article-doctor.mjs"
-      - "scripts/test-boat-article-doctor.mjs"
   pull_request:
     paths:
       - ".github/workflows/boat-offline-tests.yml"
