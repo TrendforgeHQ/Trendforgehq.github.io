@@ -350,3 +350,10 @@ All entries should describe actual work and results. Do not record planned work 
 
 - Inspected failed run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425): 111/113 passed. The invalid-record fixture has two expected validation errors; corrected the golden count to match validator output. The permutation test now canonicalizes only order-insensitive summaries, while source record order is asserted separately and remains untouched.
 - This was a test-harness correction only; no audit behavior, automatic-adjudication policy, or safety gate was weakened. Follow-up CI pending.
+
+
+### Review-set golden fixtures — CI verified
+
+- Corrected the golden harness after first CI surfaced an expected error-count mismatch and an invalid comparison between canonical summaries and source-ordered records.
+- Verified run [38122442789](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122442789) passed **113/113**, 0 failed, 0 skipped. All four fixture categories and input-permutation/dissent-preservation tests passed.
+- The correction touched tests only. Audit remains diagnostic-only, with no aggregate verdict or automatic adjudication. No provider/publishing run; main untouched; PR #35 remains draft/unmerged.
