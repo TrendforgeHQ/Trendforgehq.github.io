@@ -428,3 +428,11 @@ All entries should describe actual work and results. Do not record planned work 
 
 
 - Follow-up CI green: [run 38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855) passed 128/128 offline tests and 33/33 Control Center checks; [run 38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938) passed the production build after the slug-field correction.
+
+
+### 2026-10-11 — Historical claim-report coverage in Control Center
+
+- Added archive scanning to map claim-verification reports to canonical published articles by `articlePath`.
+- Added visibility into archived PASS/block/conflicting history, evidence-pack file presence, and claim-count records.
+- Explicitly labels this as historical-only because current published bytes are not hash-linked to archived artifacts; missing evidence stays UNKNOWN and conflicting outcomes are not adjudicated.
+- CI: [38125733728](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733728) passed 128/128 tests and 37/37 Control Center checks; [38125733739](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125733739) passed production build.
