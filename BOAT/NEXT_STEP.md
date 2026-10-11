@@ -10,7 +10,9 @@
 
 **Completed this step:** added `BOAT/schemas/semantic-support-review.schema.json`, the human-review rubric `BOAT/SEMANTIC_SUPPORT_REVIEW.md`, and `scripts/test-boat-semantic-support-review.mjs`. The contract captures reviewer identity/role/conflict disclosure, exact workflow + three artifact hashes, claim/replacement/source/passage, component-level support, scope/time/attribution/uncertainty, verdict, risk flags, rationale, and advisory recommendation. It hard-locks `semanticSupport: not_verified`, approval required, automatic application false, and existing gates required.
 
-**Next technical task:** implement a read-only review-record validator/CLI that validates records against this schema and rejects missing/malformed bundle hashes, reviewer fields, passage evidence, or safety invariants. It must not modify proposal output or article bytes. First run the offline regression suite and inspect CI. Do not invoke providers, run publishing, weaken gates, merge PR #35, or touch `main`.
+**Completed this step (validation pending):** added `scripts/boat-semantic-support-review-validator.mjs`, a dependency-free, read-only CLI that validates records against the checked-in schema's keywords and independently pins all four safety invariants. It prints JSON to stdout, exits non-zero for invalid/missing/malformed input, and never writes a review record or article. Added `scripts/test-boat-semantic-support-review-validator.mjs` covering valid input, bad hashes, reviewer/timestamp failures, passage/URI failures, unsafe invariants, extra/missing fields, malformed/missing input, and read-only behavior. Added both paths to the offline workflow filters.
+
+**Next:** inspect branch-head offline CI run [38121667575](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121667575). If green, record actual totals and continue with stricter schema/CLI edge-case audit. Do not invoke providers, run publishing, weaken gates, merge PR #35, or touch `main`.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
