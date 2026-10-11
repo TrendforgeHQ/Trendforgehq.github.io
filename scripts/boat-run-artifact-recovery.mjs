@@ -98,6 +98,12 @@ export function auditRecoveredRunArtifacts({
   if (!runId || !/^\d+$/.test(runId)) add('BR-ARTIFACT-RUN-ID-MISSING', 'unknown', 'A numeric GitHub Actions run ID is required.');
   if (!artifactIdText || !/^\d+$/.test(artifactIdText)) add('BR-ARTIFACT-ID-MISSING', 'unknown', 'A numeric GitHub Actions artifact ID is required.');
 
+  if (blockedMetadata && blockedMetadata.status !== 'claim-verification-blocked') {
+    add('BR-BLOCKED-METADATA-STATUS-MISMATCH', 'high', 'Recovery requires metadata explicitly marked claim-verification-blocked.', { actual: text(blockedMetadata.status) || null });
+  }
+  if (generatedMetadata && generatedMetadata.status !== 'generated-pending-verification') {
+    add('BR-GENERATED-METADATA-STATUS-MISMATCH', 'high', 'Recovery requires the source attempt metadata explicitly marked generated-pending-verification.', { actual: text(generatedMetadata.status) || null });
+  }
   if (blockedMetadata && generatedMetadata && runId) {
     for (const [label, metadata] of [['blockedMetadata', blockedMetadata], ['generatedMetadata', generatedMetadata]]) {
       if (text(metadata.workflowRun) !== runId) {
