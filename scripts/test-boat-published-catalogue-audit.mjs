@@ -1,50 +1,42 @@
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
 import { auditPublishedCatalogue } from './boat-published-catalogue-audit.mjs';
 
-const root = fs.mkdtempSync(path.join(os.tmpdir(), 'boat-catalogue-'));
-try {
-  fs.writeFileSync(path.join(root, 'clean.md'), `---
-title: "Clean Article"
----
-# Clean Article
-
-A useful paragraph that is long enough to be part of the structural repetition detector.
-
-## Sources
-
-- https://example.com/story
-`);
-  fs.writeFileSync(path.join(root, 'flagged.md'), `# Flagged Article
-
-This paragraph is deliberately repeated and long enough to be picked up by the structural audit.
-
-This paragraph is deliberately repeated and long enough to be picked up by the structural audit.
-
-##
-
-No source links are included in this file.
-`);
-  fs.writeFileSync(path.join(root, 'ignore.txt'), 'not an article');
-  const report = auditPublishedCatalogue(root);
-  assert.equal(report.length, 2, 'only Markdown article files are inventoried');
-  const flagged = report.find((article) => article.file === 'flagged.md');
-  const clean = report.find((article) => article.file === 'clean.md');
-  assert.ok(flagged);
-  assert.equal(flagged.title, 'Flagged Article');
-  assert.equal(flagged.urls, 0);
-  assert.equal(flagged.sourceHeading, false);
-  assert.equal(flagged.emptyHeadings, 1);
-  assert.equal(flagged.repeatedParagraphs, 1);
-  assert.ok(flagged.findings.includes('No HTTP(S) links found'));
-  assert.ok(clean);
-  assert.equal(clean.sourceHeading, true);
-  assert.equal(clean.urls, 1);
-  assert.equal(clean.emptyHeadings, 0);
-  assert.equal(auditPublishedCatalogue(path.join(root, 'missing')).length, 0, 'missing directory is explicit empty inventory');
-  console.log('BOAT published catalogue audit tests: PASS');
-} finally {
-  fs.rmSync(root, { recursive: true, force: true });
-}
+const articles = [
+  {
+    slug: 'clean-article',
+    title: 'Clean Article',
+    content: [
+      '## Useful context\nA useful paragraph that is long enough to be part of the structural repetition detector.',
+      '## Further detail\nAnother useful paragraph that adds a different point and enough context for readers.',
+    ],
+    sources: [{ title: 'Publisher source', url: 'https://example.com/story' }],
+  },
+  {
+    slug: 'flagged-article',
+    title: 'Flagged Article',
+    content: [
+      'This paragraph is deliberately repeated and long enough to be picked up by the structural audit.',
+      'This paragraph is deliberately repeated and long enough to be picked up by the structural audit.',
+      '##\nNo source links are included in this file.',
+    ],
+    sources: [],
+  },
+];
+const report = auditPublishedCatalogue(articles);
+assert.equal(report.length, 2, 'every indexed published article is inventoried');
+const flagged = report.find((article) => article.slug === 'flagged-article');
+const clean = report.find((article) => article.slug === 'clean-article');
+assert.ok(flagged);
+assert.equal(flagged.title, 'Flagged Article');
+assert.equal(flagged.urls, 0);
+assert.equal(flagged.sourceHeading, false);
+assert.equal(flagged.emptyHeadings, 1);
+assert.equal(flagged.repeatedParagraphs, 1);
+assert.ok(flagged.findings.includes('No HTTP(S) source links found'));
+assert.ok(clean);
+assert.equal(clean.sourceHeading, true);
+assert.equal(clean.urls, 1);
+assert.equal(clean.emptyHeadings, 0);
+assert.equal(clean.repeatedParagraphs, 0);
+assert.deepEqual(auditPublishedCatalogue(null), [], 'missing/non-array article index returns an unknown empty inventory');
+console.log('BOAT published catalogue audit tests: PASS');
