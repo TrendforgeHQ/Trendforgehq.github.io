@@ -38,9 +38,9 @@ export function auditReviewSet(input) {
     const errors = validateSemanticSupportReview(review);
     return {
       index,
-      reviewId: review && typeof review === 'object' && !Array.isArray(review) ? (review.reviewId ?? null) : null,
-      reviewerId: review?.reviewer?.reviewerId ?? null,
-      verdict: review?.assessment?.verdict ?? null,
+      reviewId: review && typeof review === 'object' && !Array.isArray(review) && (typeof review.reviewId === 'string' || review.reviewId === null || review.reviewId === undefined) ? (review.reviewId ?? null) : null,
+      reviewerId: typeof review?.reviewer?.reviewerId === 'string' ? review.reviewer.reviewerId : null,
+      verdict: ['supported', 'partially_supported', 'unsupported', 'unclear'].includes(review?.assessment?.verdict) ? review.assessment.verdict : null,
       errors,
       eligible: errors.length === 0,
       signature: stableJson(review)
