@@ -450,3 +450,9 @@ All entries should describe actual work and results. Do not record planned work 
 - BOAT Offline Tests [run 38126927243](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927243) passed **129/129**, 0 failed, 0 skipped; logs confirm the new lineage manifest contract test passed.
 - Control Center deterministic suite passed **37/37** in [run 38126927298](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126927298); production build was still in progress at the last check.
 - No provider/publishing workflow was run. The helper remains offline-only and is not yet wired into `publish.yml`.
+
+
+### Control Center build verification for lineage-manifest branch head (2026-10-11)
+- Final documentation-head Control Center QA [run 38126992154](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992154) passed. Logs confirm Next.js compilation, static page generation (100/100), and export (2/2).
+- BOAT offline suite [run 38126992293](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992293) passed **129/129**, 0 failed, 0 skipped; Control Center checks passed **37/37**.
+- This is offline/build verification only; publishing workflow was not run and lineage builder remains unintegrated.
