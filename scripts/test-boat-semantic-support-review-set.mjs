@@ -67,6 +67,20 @@ test('different exact bundles or replacements are not compared as one subject', 
   assert.equal(report.subjectGroups.length, 2);
   assert.ok(!report.findings.some(f => f.type === 'conflicting_independent_reviews'));
 });
+test('different proposed replacements are never compared as one subject', () => {
+  const report = auditReviewSet([
+    review({ id: 'SSR-AAA-001', reviewer: 'reviewer-a', verdict: 'supported', replacement: 'The company announced the product on Monday.' }),
+    review({ id: 'SSR-BBB-002', reviewer: 'reviewer-b', verdict: 'unsupported', replacement: 'The company secretly launched the product on Monday.' })
+  ]);
+  assert.equal(report.subjectGroups.length, 2);
+  assert.ok(!report.findings.some(f => f.type === 'conflicting_independent_reviews'));
+});
+test('subject fingerprints do not expose raw claim or passage text', () => {
+  const report = auditReviewSet([review()]);
+  const serialized = JSON.stringify(report);
+  assert.match(report.subjectGroups[0].subjectFingerprint, /^[a-f0-9]{64}$/);
+  assert.ok(!serialized.includes('The company announced the product on Monday.'));
+});
 test('invalid records are reported and excluded from review comparison', () => {
   const bad = review({ id: 'SSR-BAD-001', reviewer: 'reviewer-a' }); bad.safety.automaticApplication = true;
   const good = review({ id: 'SSR-GOOD-002', reviewer: 'reviewer-b', verdict: 'unsupported' });
