@@ -20,6 +20,8 @@ export function auditRootClaimLineage({ reportRaw, packRaw }) {
   const pack = packParsed.value;
   const claims = Array.isArray(report?.claims) ? report.claims : [];
   const usablePack = packParsed.valid && pack && Array.isArray(pack.sources);
+  // This root snapshot has no metadata input, so it can never prove report-pack pairing.
+  const packBindingProven = false;
   const sourceIndex = new Map();
   if (usablePack) for (const source of pack.sources) {
     const id = text(source?.id ?? source?.sourceId);
@@ -34,10 +36,11 @@ export function auditRootClaimLineage({ reportRaw, packRaw }) {
       ...text(claim?.bestPassageId).split(',')
     ].map(text).filter((v, j, all) => all.indexOf(v) === j);
     const matches = usablePack ? (sourceIndex.get(sourceId) ?? []) : [];
-    let sourceStatus = !sourceId ? 'unknown-source-id-missing' : !usablePack ? 'unknown-pack-binding' : matches.length === 0 ? 'unknown-source-not-found' : matches.length > 1 ? 'unknown-source-id-duplicate' : 'source-id-resolved-fields-only';
+    let sourceStatus = !sourceId ? 'unknown-source-id-missing' : !packBindingProven ? 'unknown-pack-binding' : !usablePack ? 'unknown-pack-binding' : matches.length === 0 ? 'unknown-source-not-found' : matches.length > 1 ? 'unknown-source-id-duplicate' : 'source-id-resolved-fields-only';
     const passageStatuses = ids.map(id => ({
       id,
-      status: !usablePack ? 'unknown-pack-binding'
+      status: !packBindingProven ? 'unknown-pack-binding'
+        : !usablePack ? 'unknown-pack-binding'
         : !sourceId || !matches.length ? 'unknown-source-not-resolved'
         : matches.length > 1 ? 'unknown-duplicate-source-id'
         : Array.isArray(matches[0].passages) && /^S\d+-P\d+$/.test(id) && id.startsWith(sourceId + '-P')
@@ -51,6 +54,8 @@ export function auditRootClaimLineage({ reportRaw, packRaw }) {
       savedClassification: text(claim?.classification) || null,
       sourceId: sourceId || null,
       sourceResolution: sourceStatus,
+      localPackSourceIdMatch: usablePack ? matches.length === 1 : null,
+      localPackPassageIdMatches: usablePack ? ids.filter(id => (matches[0]?.passages ?? []).some((_, passageIndex) => id === sourceId + '-P' + (passageIndex + 1)) || (pack?.evidenceBrief?.relevantPassages ?? []).some(p => text(p?.sourceId) === sourceId && text(p?.passageId ?? p?.id) === id)) : null,
       passageIds: ids,
       passageResolution: passageStatuses,
       factualSupport: 'not_assessed',
@@ -58,6 +63,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw }) {
     };
   });
   const status = !reportParsed.valid || !Array.isArray(report?.claims) ? 'unknown-report-invalid-or-missing'
+    : !packBindingProven ? 'unknown-pack-binding'
     : !usablePack ? 'unknown-pack-binding'
     : rows.some(r => r.sourceResolution.startsWith('unknown-') || r.passageResolution.some(p => p.status.startsWith('unknown-'))) ? 'attention-unresolved-identifiers'
     : 'identifiers-resolved-semantic-support-unknown';
