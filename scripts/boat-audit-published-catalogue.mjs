@@ -40,4 +40,4 @@ const report = {
   duplicateSlugs,
   articles: results,
 };
-process.stdout.write(JSON.stringify(report, null, 2) + '\\n');
+process.stdout.write(JSON.stringify(report, null, 2) + String.fromCharCode(10));
