@@ -4,9 +4,11 @@
 
 **Current verified baseline:** candidate-envelope factual-proposal handoff is implemented for synthetic fixtures. Branch-head offline suite [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped. A valid synthetic handoff returns `review_required`, keeps `semanticSupport: not_verified`, requires human approval, disables automatic application, and leaves article bytes unchanged. The three recovered historical attempts remain blocked from direct proposal-engine handoff because their original workflow metadata did not record the required artifact hashes. These results prove tested lineage/contract behavior, **not semantic factual support or production publishing readiness**.
 
-**Next technical task:** statically validate the new quarantine-hash workflow contract (YAML and shell syntax, metadata fields, and fail-closed behavior when the evidence pack/report is missing) without running the publishing workflow. Then inspect the generated CI evidence. Do not invoke providers, change article content, weaken gates, merge PR #35, or touch `main`.
+**Completed this step:** the claim-verification quarantine metadata now sets `hashesRecordedInWorkflow` to `true` only when the article, claim report, and canonical evidence-pack SHA-256 values are all non-empty. If either report or pack is missing, the marker remains `false`; empty fields are not presented as a complete provenance bundle. A regression guard was added and branch-head offline suite [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875) passed **77/77**, 0 failed, 0 skipped. This was an offline test run only; the publishing workflow was not executed.
 
-**Documentation reconciliation in progress:** align the four project-memory files with the 77/77 baseline, preserve historical test outcomes as point-in-time records, and make learning IDs unique.
+**Documentation reconciliation completed:** the four project-memory files now use the latest 77/77 baseline; learning IDs are unique and historical pending labels are explicitly identified as point-in-time records.
+
+**Next technical task:** define an offline human-review benchmark contract for claim-to-passage semantic support. Start with a schema and review rubric, keep `semanticSupport: not_verified` until a reviewer records a decision, and do not invoke providers, change articles, weaken gates, merge PR #35, or touch `main`.
 
 ## Historical implementation log — artifact recovery and passage-ID reconciliation
 
