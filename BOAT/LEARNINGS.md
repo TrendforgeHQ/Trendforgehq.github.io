@@ -368,3 +368,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Sort report-level findings and subject groups by stable content/opaque fingerprints, and sort verdict arrays. Do not reorder the source `records` array to achieve deterministic output.
 - Input-relative indices necessarily vary when input order changes. Exclude indices from the permutation comparison key but retain them in actual output so findings still refer to the caller's positions.
 - Multi-subject permutation coverage passed in [run 38122708610](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122708610): **114/114 passed**, 0 failed, 0 skipped. Dissent remains visible and no aggregate winner is produced.
+
+
+## L-050 — Make diagnostic report boundaries explicit in schema
+
+- A review-set report schema should describe both the normal audit and invalid-input envelope, preserve caller-order record indices, and list all diagnostic finding types without implying a truth verdict.
+- Lock `aggregateVerdict` to null and `automaticAdjudication` to false in subject groups. Schema contract tests passed in offline CI run 38122850780: 120/120, 0 failures, 0 skips.
