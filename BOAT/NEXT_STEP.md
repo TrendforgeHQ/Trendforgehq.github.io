@@ -107,3 +107,12 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Added BOAT/schemas/recovered-proposal-eligibility-report.schema.json for the stdout report envelope, summary counts, per-run records, and per-claim reason codes.
 - Schema-contract tests explicitly lock recovery-time-only hashes, semanticSupport=not_verified, approvalRequired=true, and automaticApplication=false.
 - CI for the schema addition is pending inspection. Next: verify the full offline suite and, if green, record the new total. No production changes.
+
+
+
+## Eligibility report schema — verified
+
+- Report schema and schema-contract assertions passed in branch-head CI [run 38119136348](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119136348): **70/70 passed**, 0 failed, 0 skipped.
+- The suite confirms the report JSON contract includes per-claim statuses/reason codes and retains recovery-time-only hashes, human approval required, automatic application false, and semantic support not verified.
+- Current validated baseline: 40 archived claims, 26 eligible for a later human-reviewed proposal, 3 blocked, 11 unknown. No factual-support upgrade is implied.
+- Next safe task: add cross-checks ensuring summary counts always equal the sum of per-run counts and per-claim statuses, then rerun offline CI. PR remains draft/unmerged.
