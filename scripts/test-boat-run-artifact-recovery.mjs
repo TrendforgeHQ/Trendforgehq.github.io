@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
 import { auditRecoveredRunArtifacts } from './boat-run-artifact-recovery.mjs';
 
 function fixture() {
@@ -128,4 +130,73 @@ test('missing recovery metadata yields unknown rather than fabricated lineage', 
   assert.equal(result.status, 'unknown');
   assert.equal(result.packRecoveryStatus, 'unknown');
   assert.ok(result.findings.some(item => item.code === 'BR-INPUT-MISSING' && item.details.artifact === 'generatedMetadata'));
+});
+
+
+test('all three real archived attempts recover the exact same-run canonical pack from repository siblings', () => {
+  const root = process.cwd();
+  const fixtures = [
+    {
+      runId: '38085367295', artifactId: '11682276860', artifactName: 'trendforge-article-attempt-492',
+      generatedDir: 'data/article-attempts/20261010-205544-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police',
+      blockedDir: 'data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked',
+      expectedClaims: 15, expectedPresent: 15, expectedSources: 4
+    },
+    {
+      runId: '37996683799', artifactId: '11647766077', artifactName: 'trendforge-article-attempt-488',
+      generatedDir: 'data/article-attempts/20261009-220306-ai-generated-code-blooms-but-software-shipments-stay-flat',
+      blockedDir: 'data/article-attempts/20261009-220410-ai-generated-code-blooms-but-software-shipments-stay-flat-claim-blocked',
+      expectedClaims: 18, expectedPresent: 18, expectedSources: 4
+    },
+    {
+      runId: '37696062759', artifactId: '11515936671', artifactName: 'trendforge-article-attempt-478',
+      generatedDir: 'data/article-attempts/20261007-223019-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal',
+      blockedDir: 'data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked',
+      expectedClaims: 7, expectedPresent: 4, expectedSources: 2
+    }
+  ];
+
+  for (const f of fixtures) {
+    const file = (dir, name) => path.join(root, dir, name);
+    const paths = {
+      article: file(f.blockedDir, 'article.md'),
+      report: file(f.blockedDir, 'claim-verification.json'),
+      brief: file(f.blockedDir, 'article-brief.json'),
+      pack: file(f.generatedDir, 'authoritative-evidence-pack.json'),
+      blockedMetadata: file(f.blockedDir, 'metadata.json'),
+      generatedMetadata: file(f.generatedDir, 'metadata.json')
+    };
+    for (const [label, filePath] of Object.entries(paths)) {
+      assert.equal(fs.existsSync(filePath), true, 'missing real archived fixture ' + label + ': ' + filePath);
+    }
+    const result = auditRecoveredRunArtifacts({
+      articleRaw: fs.readFileSync(paths.article, 'utf8'),
+      claimReportRaw: fs.readFileSync(paths.report, 'utf8'),
+      articleBriefRaw: fs.readFileSync(paths.brief, 'utf8'),
+      evidencePackRaw: fs.readFileSync(paths.pack, 'utf8'),
+      blockedMetadataRaw: fs.readFileSync(paths.blockedMetadata, 'utf8'),
+      generatedMetadataRaw: fs.readFileSync(paths.generatedMetadata, 'utf8'),
+      artifactRunId: f.runId,
+      artifactId: f.artifactId,
+      artifactName: f.artifactName,
+      evidencePackEntry: f.generatedDir + '/authoritative-evidence-pack.json',
+      articleEntry: f.blockedDir + '/article.md',
+      claimReportEntry: f.blockedDir + '/claim-verification.json'
+    });
+    assert.equal(result.packRecoveryStatus, 'recovered', f.runId + ': ' + JSON.stringify(result.findings));
+    assert.equal(result.artifact.runId, f.runId);
+    assert.equal(result.report.claimCount, f.expectedClaims);
+    assert.equal(result.report.reportSourceCount, f.expectedSources);
+    assert.equal(result.report.claimTextCoverage.total, f.expectedClaims);
+    assert.equal(result.report.claimTextCoverage.exactTextFoundInArticle, f.expectedPresent);
+    assert.equal(result.hashes.hashesRecordedAtGeneration, false);
+    assert.equal(result.semanticSupport, 'not_verified');
+    assert.equal(result.automaticApplication, false);
+    assert.equal(result.passageIdAudit.valuesPreserved, true);
+    assert.ok(result.findings.some(item => item.code === 'BR-LEGACY-PASSAGE-IDS'), f.runId + ': legacy passage warning missing');
+    if (f.runId === '37696062759') {
+      assert.equal(result.status, 'recovered_with_warnings');
+      assert.ok(result.findings.some(item => item.code === 'BR-CLAIMS_NOT_ALL_IN_ARTICLE'));
+    }
+  }
 });
