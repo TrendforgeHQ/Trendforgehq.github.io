@@ -187,7 +187,7 @@ export function auditRecoveredRunArtifacts({
     engine: 'BOAT Run Artifact Recovery Audit',
     mode: 'offline-read-only',
     status,
-    packRecoveryStatus: selectedPack && !hardErrors.some(x => ['BR-CANDIDATE-NOT-FOUND','BR-CANDIDATE-AMBIGUOUS','BR-SELECTED-CANDIDATE-INVALID','BR-SOURCE-URL-MISMATCH','BR-REPORT-SOURCE-NOT-IN-PACK','BR-CLAIM-SOURCE-NOT-IN-PACK'].includes(x.code)) ? 'recovered' : hardErrors.length ? 'blocked' : 'unknown',
+    packRecoveryStatus: hardErrors.length ? 'blocked' : unknowns.length ? 'unknown' : selectedPack ? 'recovered' : 'unknown',
     semanticSupport: 'not_verified',
     automaticApplication: false,
     approvalRequired: true,
