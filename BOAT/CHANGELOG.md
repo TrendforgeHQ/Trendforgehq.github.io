@@ -537,3 +537,9 @@ All entries should describe actual work and results. Do not record planned work 
 - CI verification for these latest commits is pending; no claim is made that the new tests have passed until the workflow result is checked.
 
 - Follow-up correction: initial regression run exposed malformed CLI stdout caused by a literal `\\n` suffix. Replaced it with a real newline using `String.fromCharCode(10)` in `b70032893c8f9108f8d523e44f917ba8f1be2b37`; verify latest-head CI before calling the feature green.
+
+## 2026-10-11 — Root lineage audit regression results
+
+- Offline run [38129695590](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38129695590) passed 135/135 tests, including the new root claim/evidence lineage audit.
+- Corrected the test harness to require UNKNOWN whenever exact report-pack binding is unavailable, even if local IDs happen to match. This avoids promoting unbound artifacts to a resolved lineage status.
+- Corrected the CLI test's success text to say the root snapshot is unbound rather than assuming the pack is empty during concurrent tests. That wording-only follow-up is pending latest-head CI.
