@@ -53,7 +53,8 @@ function buildSample(sample) {
     articleRaw: input.articleRaw,
     claimReportRaw: input.claimReportRaw,
     articleBriefRaw: input.articleBriefRaw,
-    evidencePackRaw: input.evidencePackRaw
+    evidencePackRaw: input.evidencePackRaw,
+    runMetadataRaw: input.blockedMetadataRaw
   });
   const claims = result.claims.map(claim => ({
     claimIndex: claim.claimIndex,
