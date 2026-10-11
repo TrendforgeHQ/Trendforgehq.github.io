@@ -12,8 +12,8 @@ Risk: low. Provider cost: none. Production behavior change: none.
 ### Exact next actions
 1. Inspect the actual BOAT offline workflow run and logs. Do not infer pass from file presence or a missing run.
 2. If tests fail, fix the smallest underlying issue on the BOAT branch, rerun, and record command/exit code/commit.
-3. Review the Run 405 durable reconstruction test on PR #34. The original evidence-pack artifact expired and the committed archived pack is empty; the reconstruction must be described as a new deterministic regression fixture, not an exact historical replay.
-4. If reconstructed calibration is not 11 supported / 2 partial / 2 unsupported, preserve the failure and investigate; do not weaken expected results just to make CI green.
+3. Inspect the latest Run 405 durable reconstruction result on PR #34. The first reconstruction yielded 9 supported / 3 partial / 3 unsupported and correctly blocked; the test now pins that reconstructed baseline while explicitly preserving the historical 11/2/2 result as unverified.
+4. Do not change the expected reconstructed counts just to make CI green. Recover the original exact evidence pack before claiming or retesting the historical 11/2/2 calibration; until then, keep the two results distinct.
 5. Strengthen the report schema and validate it against real Article Doctor output after the regression suite is runnable.
 6. Update `PROJECT_STATE.md`, `CHANGELOG.md`, and `LEARNINGS.md` with actual run IDs, test results, commit SHAs, and unresolved gaps.
 
