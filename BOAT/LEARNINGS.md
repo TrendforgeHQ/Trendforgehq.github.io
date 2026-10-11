@@ -345,3 +345,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - For permutation stability, compare canonicalized order-insensitive findings and verdict summaries, but preserve the original source order in the report's `records` array. Do not sort or drop raw records just to make reports look identical.
 - Keep all distinct verdicts visible, `aggregateVerdict: null`, and `automaticAdjudication: false`; the audit is descriptive and does not decide truth.
 - Added fixture and golden-test paths to offline CI. Branch-head validation is pending inspection; no provider or publishing workflow was run.
+
+
+## L-048 — Compare permutation-stable summaries separately from source order
+
+- A permutation test must not require the full report to be byte-identical when record order and input-relative indices intentionally preserve caller order.
+- Compare order-insensitive findings/verdict summaries canonically, then independently assert that report records retain input order and every dissenting verdict survives. Golden invalid fixtures should reflect the validator's actual complete error list rather than assume one error per unsafe record.
+- First CI run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) passed 111/113; harness expectations corrected, follow-up CI pending. No production audit logic changed.
