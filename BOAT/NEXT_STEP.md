@@ -401,3 +401,9 @@ Verification: [BOAT Offline Tests run 38125733728](https://github.com/Trendforge
 - Initial run caught a test integration bug: CLI emitted a literal backslash-n after JSON. Fixed output to emit an actual newline. Latest offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) **PASS** at `aca78e9aa46f61e0e570241b1429799b8452abd1`.
 - Control Center QA / production build [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was still running at last poll. Recheck before claiming full green.
 - Next: use this read-only inventory as the base for per-article issue review and safe repair proposals. Do not make automatic article edits, dispatch production publishing, or call paid providers.
+## Next implementation — combined published review queue (2026-10-11)
+
+- Added `scripts/boat-published-review-queue.mjs` and `scripts/boat-audit-published-review-queue.mjs` to combine the canonical published catalogue's structural findings, historical claim-report coverage, and exact-byte lineage coverage into one per-article read-only triage report.
+- The report ranks review priority, preserves `unknown`, stale lineage, historical blocks, conflicting outcomes, and duplicate-slug ambiguity, and suggests next human review actions. Every article remains `needs-human-review`; no result is a factual PASS, and the queue cannot edit or publish articles.
+- Added synthetic triage assertions plus an integration test that runs the CLI over the real `lib/articles.ts` catalogue; added explicit offline workflow path filters for the module, CLI, and test.
+- **Verification pending:** inspect branch-head BOAT Offline Tests and Control Center QA before marking this step complete. No production publishing, provider calls, article edits, merge, or `main` changes.
