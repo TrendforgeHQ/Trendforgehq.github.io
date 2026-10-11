@@ -194,13 +194,23 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
     claimReportSha256: typeof claimReportRaw === 'string' ? hash(claimReportRaw) : '',
     evidencePackSha256: typeof evidencePackRaw === 'string' ? hash(evidencePackRaw) : ''
   };
+  const engineSources = Array.isArray(packRoot?.sources) ? packRoot.sources : [];
+  const proposalEnginePackCompatible = !!selected &&
+    Array.isArray(packRoot?.sources) &&
+    engineSources.length === packSources.length &&
+    packSources.every(source => {
+      const engineSource = engineSources.find(item => s(item?.id) === s(source?.id));
+      return !!engineSource &&
+        s(engineSource.url ?? engineSource.finalUrl) === s(source.url ?? source.finalUrl) &&
+        JSON.stringify(engineSource.passages) === JSON.stringify(source.passages);
+    });
   const metadataBytesMatch = typeof runMetadataRaw === 'string' && !!s(recoveryAudit?.hashes?.blockedMetadataSha256) && hash(runMetadataRaw) === s(recoveryAudit.hashes.blockedMetadataSha256);
   const runIdMatches = !!runMetadata && s(runMetadata.workflowRun) === s(recoveryAudit?.artifact?.runId);
   const workflowShaMatches = !!runMetadata && s(runMetadata.workflowSha) === s(recoveryAudit?.artifact?.workflowSha);
   const originalHashesMatch = !!runMetadata &&
     runMetadata.hashesRecordedInWorkflow === true &&
     Object.entries(expectedOriginalHashes).every(([key, actual]) => !!actual && !!s(runMetadata[key]) && s(runMetadata[key]) === actual);
-  const handoffAllowed = metadataBytesMatch && runIdMatches && workflowShaMatches && originalHashesMatch && handoffFindings.length === 0;
+  const handoffAllowed = metadataBytesMatch && runIdMatches && workflowShaMatches && originalHashesMatch && proposalEnginePackCompatible && handoffFindings.length === 0;
   return {
     schemaVersion: '1.0',
     engine: 'BOAT Recovered Proposal-Input Adapter',
