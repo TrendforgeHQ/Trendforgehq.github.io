@@ -512,3 +512,8 @@ All entries should describe actual work and results. Do not record planned work 
 - Added `scripts/boat-audit-published-catalogue.mjs` to inventory the canonical article catalogue and emit JSON findings and duplicate slugs, without modifying articles.
 - Added `scripts/test-boat-audit-published-catalogue.mjs` to compare report inventory against actual `lib/articles.ts`, validate summary counts, and preserve the explicit non-semantic-audit limitations. Wired both paths into BOAT Offline Tests.
 - Corrected CLI JSON newline after CI exposed a malformed output stream. Offline run [38128438403](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438403) passed. Control Center QA [38128438407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128438407) was pending at last poll.
+## 2026-10-11 — Combined published article review queue
+
+- Added a read-only CLI to combine structural catalogue findings, archived claim-report coverage, and exact-byte lineage into one triage queue for the actual canonical published article index.
+- Added per-article priority, explicit human-review state, unknown/stale/conflicting signals, duplicate-slug ambiguity, and suggested review actions. No priority means factual correctness; no automatic repair or publication decision is permitted.
+- Added synthetic and real-catalogue CLI integration tests and workflow path filters. CI verification pending inspection.
