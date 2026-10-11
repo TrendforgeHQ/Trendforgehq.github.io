@@ -10,7 +10,7 @@
     "generatedAt": { "type": "string", "format": "date-time" },
     "summary": {
       "type": "object",
-      "required": ["runs", "claims", "eligible", "blocked", "unknown", "countsReconciled", "recoveryHashesRecordedAtGeneration", "semanticSupport", "automaticApplication"],
+      "required": ["runs", "claims", "eligible", "blocked", "unknown", "countsReconciled", "recoveryHashesRecordedAtGeneration", "semanticSupport", "automaticApplication", "proposalEngineHandoffAllowed"],
       "properties": {
         "runs": { "type": "integer", "minimum": 0 },
         "claims": { "type": "integer", "minimum": 0 },
@@ -20,7 +20,8 @@
         "countsReconciled": { "const": true },
         "recoveryHashesRecordedAtGeneration": { "const": false },
         "semanticSupport": { "const": "not_verified" },
-        "automaticApplication": { "const": false }
+        "automaticApplication": { "const": false },
+        "proposalEngineHandoffAllowed": { "const": false }
       },
       "additionalProperties": false
     },
@@ -28,7 +29,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["runId", "artifactId", "artifactName", "recoveryStatus", "bundleStatus", "totalClaims", "eligible", "blocked", "unknown", "hashProvenance", "recordedAtGeneration", "countsReconciled", "claims", "findings", "approvalRequired", "automaticApplication", "semanticSupport"],
+        "required": ["runId", "artifactId", "artifactName", "recoveryStatus", "bundleStatus", "totalClaims", "eligible", "blocked", "unknown", "hashProvenance", "recordedAtGeneration", "countsReconciled", "claims", "findings", "approvalRequired", "automaticApplication", "semanticSupport", "proposalEngineHandoffAllowed"],
         "properties": {
           "runId": { "type": "string", "pattern": "^[0-9]+$" },
           "artifactId": { "type": "string", "pattern": "^[0-9]+$" },
@@ -60,7 +61,8 @@
           "findings": { "type": "array", "items": { "type": "object" } },
           "approvalRequired": { "const": true },
           "automaticApplication": { "const": false },
-          "semanticSupport": { "const": "not_verified" }
+          "semanticSupport": { "const": "not_verified" },
+          "proposalEngineHandoffAllowed": { "const": false }
         },
         "additionalProperties": false
       }
