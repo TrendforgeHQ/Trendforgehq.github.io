@@ -221,3 +221,11 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 
 
 **CI correction note:** first run [38122385425](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122385425) ran 113 tests: 111 passed, 2 failed. One golden expectation underestimated validator error count for the deliberately unsafe fixture; the permutation test incorrectly compared source-order records as if they should be sorted. Updated the expected error count and now compare order-insensitive summaries separately while explicitly asserting the records array preserves each supplied order. Re-run branch-head CI before marking this step verified.
+
+
+## Deterministic review-set golden fixtures — verified (2026-10-11)
+
+- Branch code/test-fix CI [run 38122442789](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122442789) passed **113/113**, 0 failed, 0 skipped.
+- Golden cases passed for duplicate IDs, independent reviewer disagreement, same-reviewer repeat/disagreement, and invalid records. Permutation tests passed while separately confirming input/source record order is preserved and dissenting verdicts remain visible.
+- First-run harness defects and corrections are recorded above. This validates the offline audit contract only; it does not establish semantic truth, approve publication, or change runtime behavior.
+- **Next:** inspect the final PR diff and check branch-head CI after the documentation updates. Keep PR #35 draft/unmerged; do not touch `main`, call providers, or run publishing.
