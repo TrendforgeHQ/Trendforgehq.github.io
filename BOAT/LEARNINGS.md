@@ -167,3 +167,9 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - **Decision:** A claim is eligible only when exact claim text occurs in the recovered article, claim/report/pack source IDs and URLs align, and the recovery resolver reports one canonical exact-text passage from that same source.
 - **Fail-closed behavior:** Missing or ambiguous passage is `unknown`; missing article claim or source-lineage mismatch is `blocked`. Human approval remains required; semantic support is not verified; no replacement text is generated or applied.
 - **Validation status:** Synthetic and three-real-attempt integration tests added; CI result pending inspection.
+
+
+## L-014 — Independent coverage ratios must not be treated as an intersection
+- **Observed:** For archived run 37696062759, 4/7 report claim strings are present in the article and 4/7 claims have unique passage mappings, but only 2 claims satisfy both conditions simultaneously.
+- **Decision:** Proposal eligibility must be computed per claim from the intersection of exact article-text presence, same-source URL lineage, and unique canonical passage mapping; independent aggregate counts cannot be multiplied or assumed to overlap.
+- **Validation:** First CI run exposed the mistaken expected count of 4; regression now expects 2 eligible claims for this run. Revalidation pending.
