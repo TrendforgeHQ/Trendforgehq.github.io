@@ -488,3 +488,12 @@ Verified current baseline:
 - Final documentation-head Control Center QA [run 38126992154](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992154) passed; logs confirm Next.js compilation, static page generation (100/100), and export (2/2).
 - Combined with offline suite [run 38126992293](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38126992293), the current recorded results are 129/129 offline tests and 37/37 Control Center checks with successful production build.
 - These runs do not exercise the production publishing workflow or prove semantic factual support. The manifest builder remains offline-only.
+
+
+## 2026-10-11 — Lineage schema contract correction (offline verification pending)
+
+- Read the actual `scripts/generate-article-adaptive.mjs`, `scripts/verify-article-claims-v2.mjs`, `scripts/verify-article-claims-smart.mjs`, `scripts/pre-writer-pipeline.mjs`, and `scripts/authoritative-evidence-pack.mjs` data contracts.
+- Confirmed current-run marker fields include `version`, `runId`, `generated`, `articlePath`, `briefTitle`, and `updatedAt` (native fallback may also include `producer`). Claim report uses `pass`, `articlePath`, `articleTitle`, `claimCount`, `claims`, and `generatedAt`. The evidence artifact is an envelope `{version:1,status:'authoritative',candidates:[canonicalPack...]}`; each canonical pack must pass `validateAuthoritativeEvidencePack`.
+- Found a contract gap in the first manifest implementation: it looked for candidate entries but did not enforce the real envelope schema, validate the canonical candidate pack, cross-check marker `briefTitle`, or bind the report's `articleTitle` and `claimCount`. Corrected the builder and synthetic tests to validate these contracts and to reject duplicate/ambiguous candidates and invalid canonical packs.
+- No production publishing workflow, provider call, article edit, or `main` change was made. CI for the schema correction is pending; do not mark the correction verified until the new branch-head run passes.
+- Next: inspect the offline test and Control Center QA results for the new head. If green, design a separate, testable publish-time integration that captures the lineage record before run-scoped files are removed, without weakening any existing gate.
