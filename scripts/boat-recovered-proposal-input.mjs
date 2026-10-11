@@ -243,6 +243,7 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
         : 'Original generation-time hash fields and matching same-run metadata are absent or do not match; recovery-time hashes cannot substitute.',
       checks: {
         metadataPresent: !!runMetadata,
+        metadataBytesMatch,
         hashesRecordedAtGeneration: runMetadata?.hashesRecordedAtGeneration === true,
         runIdMatches,
         workflowShaMatches,
