@@ -325,3 +325,6 @@ The new helper has fixture tests for clean and flagged articles, non-Markdown ex
 
 
 **Build-fix note (2026-10-11):** the first CI build after switching the scanner to the canonical `lib/articles.ts` index caught a stale table key (`article.file` no longer exists). Fixed the table key/display to use `article.slug`, and aligned the deterministic test to the canonical-index input. The follow-up Control Center QA run is pending; do not count the build as green until its result is inspected.
+
+
+**Verification complete (2026-10-11):** follow-up run [38125516855](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516855) passed **128/128 BOAT tests**, 0 failed; Control Center checks passed **33/33**. Run [38125516938](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38125516938) passed the Control Center QA production build (Next.js compiled successfully). The earlier type failure was caught, fixed, and verified by these green follow-up runs.
