@@ -6,10 +6,10 @@ import { pathToFileURL } from 'node:url';
 
 const sha256 = raw => createHash('sha256').update(raw).digest('hex');
 const text = value => typeof value === 'string' ? value.trim() : '';
-const normalizePassage = value => text(value).normalize('NFC').replace(/\\s+/g, ' ').trim();
+const normalizePassage = value => text(value).normalize('NFC').replace(/\s+/g, ' ').trim();
 function collapseRepeatedPassage(value) {
   const normalized = normalizePassage(value);
-  const parts = normalized.split(/(?<=[.!?])\\s+/).filter(Boolean);
+  const parts = normalized.split(/(?<=[.!?])\s+/).filter(Boolean);
   if (parts.length >= 2 && parts.every(part => part === parts[0])) return parts[0];
   return null;
 }
