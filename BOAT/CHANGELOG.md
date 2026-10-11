@@ -517,3 +517,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Added a read-only CLI to combine structural catalogue findings, archived claim-report coverage, and exact-byte lineage into one triage queue for the actual canonical published article index.
 - Added per-article priority, explicit human-review state, unknown/stale/conflicting signals, duplicate-slug ambiguity, and suggested review actions. No priority means factual correctness; no automatic repair or publication decision is permitted.
 - Added synthetic and real-catalogue CLI integration tests and workflow path filters. CI verification pending inspection.
+
+## 2026-10-11 — Claim-level published audit
+
+- Added a read-only claim-level report over archived verifier attempts matched to current published articles by canonical `articlePath`.
+- Report rows retain claim outcome, source identifiers/URLs/titles/roles, passage IDs and bounded excerpt, run metadata, current article text-match diagnostics, and all historical attempts including conflicts. Missing proof remains unknown; no latest-attempt winner is selected.
+- Added synthetic and real-catalogue CLI tests and explicit offline workflow trigger paths. Verification pending.
