@@ -218,3 +218,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Added the explicit import and a direct child-process test that parses stdout JSON and asserts no report file is written.
 - Corrected branch-head CI: [run 38118989732](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38118989732), 69 passed, 0 failed, 0 skipped.
 - Verified report counts: 40 total, 26 eligible, 3 blocked, 11 unknown. Eligibility remains traceability-only, not semantic support.
+
+
+
+## L-018 — Keep report schema aligned with review-only output
+
+- Downstream report consumers need an explicit contract for per-claim statuses and reason codes, not just a successful JSON parse.
+- Added a report schema and tests that preserve the review-only constraints: recovery-time hashes, semantic support not verified, and automatic application disabled.
+- Branch-head CI validation is pending inspection.
