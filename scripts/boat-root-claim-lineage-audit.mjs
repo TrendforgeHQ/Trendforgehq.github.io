@@ -14,8 +14,8 @@ const parse = raw => { try { return { value: JSON.parse(raw), valid: true }; } c
 
 export function auditRootClaimLineage({ reportRaw, packRaw }) {
   const reportParsed = typeof reportRaw === 'string' ? parse(reportRaw) : { value: null, valid: false };
-  const packPresent = typeof packRaw === 'string' && packRaw.length > 0;
-  const packParsed = packPresent ? parse(packRaw) : { value: null, valid: false };
+  const packPresent = typeof packRaw === 'string';
+  const packParsed = packPresent && packRaw.length > 0 ? parse(packRaw) : { value: null, valid: false };
   const report = reportParsed.value;
   const pack = packParsed.value;
   const claims = Array.isArray(report?.claims) ? report.claims : [];
