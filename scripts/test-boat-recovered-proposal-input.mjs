@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { auditRecoveredRunArtifacts } from './boat-run-artifact-recovery.mjs';
 import { buildRecoveredProposalInputs } from './boat-recovered-proposal-input.mjs';
+import { buildReviewReport } from './boat-recovered-proposal-review-report.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 
@@ -232,4 +233,26 @@ test('CLI rejects an incomplete argument list without writing output', () => {
   const result = spawnSync(process.execPath, [path.join(root, 'scripts/boat-recovered-proposal-input.mjs'), '--article', 'missing.md'], { encoding: 'utf8' });
   assert.equal(result.status, 2);
   assert.match(result.stderr, /Missing required --recovery-audit/);
+});
+
+
+test('read-only eligibility report summarizes per-claim reasons across all archived runs', () => {
+  const report = buildReviewReport();
+  assert.equal(report.mode, 'offline-read-only');
+  assert.equal(report.summary.runs, 3);
+  assert.equal(report.summary.claims, 40);
+  assert.equal(report.summary.eligible, 26);
+  assert.equal(report.summary.blocked, 3);
+  assert.equal(report.summary.unknown, 11);
+  assert.equal(report.summary.recoveryHashesRecordedAtGeneration, false);
+  assert.equal(report.summary.automaticApplication, false);
+  assert.equal(report.summary.semanticSupport, 'not_verified');
+  assert.deepEqual(report.runs.map(run => run.eligible), [12, 12, 2]);
+  const third = report.runs.find(run => run.runId === '37696062759');
+  assert.equal(third.totalClaims, 7);
+  assert.equal(third.eligible, 2);
+  assert.equal(third.blocked, 3);
+  assert.equal(third.unknown, 2);
+  assert.ok(third.claims.filter(claim => claim.status === 'blocked').every(claim => claim.reasonCodes.includes('BPI-CLAIM-NOT-IN-ARTICLE')));
+  assert.ok(report.runs.flatMap(run => run.claims).filter(claim => claim.status === 'ready_for_human_proposal').every(claim => claim.passageId && claim.sourceId));
 });
