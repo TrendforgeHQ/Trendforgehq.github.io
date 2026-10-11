@@ -323,3 +323,13 @@ All entries should describe actual work and results. Do not record planned work 
 - Replaced the weak keyword-string assertion with a recursive inventory test that fails if the checked-in schema adds a keyword not explicitly supported by the dependency-free validator.
 - Branch-head offline suite [run 38121773355](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121773355) passed **94/94**, 0 failed, 0 skipped. Revalidation after the test-contract update [run 38121806369](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121806369) also passed **94/94**.
 - No providers, publishing, article changes, or main-branch changes. Next: define duplicate review-ID and conflicting-review handling; preserve independent dissent records.
+
+
+## 2026-10-11 — Review-set identity and disagreement policy
+
+- Added `BOAT/REVIEW_SET_POLICY.md`: repeated review IDs are blocking identity errors; invalid or ID-colliding records are excluded from comparison; same-reviewer repeats do not count as independent review; conflicting independent verdicts require human resolution; matching verdicts remain descriptive only.
+- Added `scripts/boat-semantic-support-review-set.mjs` and `scripts/boat-semantic-support-review-set-cli.mjs` for read-only review-set auditing. The report never chooses an aggregate verdict or changes source records. Exact review subject identity includes workflow/bundle hashes, proposal, claim, replacement, source and passage.
+- Added `scripts/test-boat-semantic-support-review-set.mjs` for duplicate IDs, ID collisions, independent disagreement/agreement, same-reviewer repeats, invalid records, exact-subject separation, CLI behavior, and input immutability. Added CLI paths to offline workflow filters and clarified the review rubric.
+- Initial runs found three test-harness issues (two incorrect assertions/CLI target and one empty-stdout symptom from invoking the module instead of the CLI). Corrected these; [run 38122064796](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38122064796) passed **104/104**.
+- Follow-up hardening hashes the subject identity for compact reports and avoids echoing claim/passage text in the fingerprint; adds tests for replacement separation and fingerprint privacy. CI for these final commits is pending at this entry.
+- No provider calls, publishing, article mutation, or main-branch changes. PR #35 remains draft/unmerged.
