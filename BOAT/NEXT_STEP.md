@@ -1,21 +1,26 @@
 # BOAT Next Step
 
-## Current task: verify Phase 1 offline Article Doctor
+## Current task: broaden read-only Article Doctor coverage
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Implemented on the dedicated BOAT branch
+### Verified completed work
 - Read-only evaluator: `scripts/boat-article-doctor.mjs`.
-- Offline regression suite: `scripts/test-boat-article-doctor.mjs`.
-- Isolated test workflow: `.github/workflows/boat-offline-tests.yml`.
+- Regression suite: `scripts/test-boat-article-doctor.mjs`.
+- Report contract: `BOAT/schemas/article-doctor-report.schema.json`.
+- Isolated workflow: `.github/workflows/boat-offline-tests.yml`.
+- CI run [38110482104](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110482104) passed 7/7 tests at commit `c52a129cb8fc11350e6fabcd8ce38953aeb2a19f`.
 - PR #35 remains draft and unmerged: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35.
 
-### Exact next actions
-1. Inspect the actual BOAT offline workflow run and logs. Do not infer pass from file presence or a missing run.
-2. If tests fail, fix the smallest underlying issue on the BOAT branch, rerun, and record command/exit code/commit.
-3. Inspect the latest Run 405 durable reconstruction result on PR #34. The first reconstruction yielded 9 supported / 3 partial / 3 unsupported and correctly blocked; the test now pins that reconstructed baseline while explicitly preserving the historical 11/2/2 result as unverified.
-4. Do not change the expected reconstructed counts just to make CI green. Recover the original exact evidence pack before claiming or retesting the historical 11/2/2 calibration; until then, keep the two results distinct.
-5. Strengthen the report schema and validate it against real Article Doctor output after the regression suite is runnable.
-6. Update `PROJECT_STATE.md`, `CHANGELOG.md`, and `LEARNINGS.md` with actual run IDs, test results, commit SHAs, and unresolved gaps.
+### Next implementation
+1. Add a clean verifier-report fixture and a partial-only fixture so BOAT proves it can distinguish `clear`, `attention`, `blocked`, and `unknown` without false-clean results.
+2. Add deterministic read-only Markdown checks for empty headings and repeated sentences, with fixtures and precise artifact pointers. These are diagnostics only; they must not change publication behavior.
+3. Keep unsupported/contradicted/attribution/numeric signals separate and preserve the rule that missing or mismatched artifacts produce `unknown`, not `clear`.
+4. Add a formal JSON Schema validation step only if it can be done with a reviewed, pinned dependency; until then, describe current coverage as a schema-contract smoke test.
+5. Record test command, exit code, run ID, commit SHA, and all unresolved gaps in `PROJECT_STATE.md` and `CHANGELOG.md`.
+
+### Separate Run 405 record
+- PR #34 reliability run [38110223968](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38110223968) passed a durable reconstructed baseline: 9 supported / 3 partial / 3 unsupported; verifier blocks as expected.
+- Historical target 11/2/2 remains unverified because the original artifact expired and the committed archived evidence-pack file is empty. Do not call the reconstructed fixture an exact replay or change expected counts to force a match.
 
 ### Guardrails
 - No paid providers, external source fetches, article edits, publishing workflow runs, image generation, or production gate changes for this phase.
