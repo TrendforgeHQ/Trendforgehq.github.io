@@ -272,3 +272,11 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - The report schema requires countsReconciled=true for both summary and each run.
 - Latest branch-head CI [run 38119336899](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119336899): **70 passed, 0 failed, 0 skipped**.
 - Verified report totals: 40 claims; 26 eligible, 3 blocked, 11 unknown. Per-run eligible counts: 12, 12, 2.
+
+
+
+## Proposal-engine handoff boundary (2026-10-11)
+
+- Audited the existing factual repair proposal engine. It requires exact artifact hashes stored in run metadata and a workflow run ID; recovery-time checksums do not satisfy that provenance contract.
+- Added proposalEngineHandoff {status: blocked, allowed: false} to recovered proposal-input manifests and exposed the blocked flag in the eligibility report and both schemas.
+- Added tests to ensure the handoff remains blocked. Validation is pending branch-head CI inspection.
