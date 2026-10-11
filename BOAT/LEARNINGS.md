@@ -249,3 +249,10 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - The factual proposal engine requires exact hashes bound to run metadata. Hashes computed now from recovered artifacts do not prove which bytes the original workflow hashed.
 - The recovered proposal-input adapter now marks direct handoff to the factual proposal engine blocked until original generation-time provenance is available.
 - Regression tests and schemas enforce allowed=false. CI validation is pending.
+
+
+
+## L-022 — A blocked handoff is safer than provenance reconstruction by assumption
+
+- Even if recovered source and passage mapping is exact, the existing factual proposal engine's metadata hash contract cannot be satisfied by checksums computed after the original run.
+- The adapter now explicitly sets proposalEngineHandoff.allowed=false. Regression suite passed [run 38119611350](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38119611350), 70 passed, 0 failed, 0 skipped.
