@@ -113,3 +113,13 @@ Added `scripts/boat-recovered-proposal-input.mjs` as a separate offline step aft
 - The adapter emits source/passage inputs only. It does not author replacement text, does not apply edits, and does not pass recovery-time hashes off as original generation-time hashes.
 - Every output retains `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
 - Synthetic tests and integration tests against all three archived attempts were added. The first adapter CI run (38117347327) disproved the initial estimate of 4 eligible claims for run 37696062759: although 4/7 claim strings occur in the article and 4/7 passages map uniquely, those sets do not fully overlap. Only claims 6 and 9 satisfy both conditions, so the corrected eligible count is 2. The test expectation now encodes this stricter intersection. Branch-head CI [run 38117403288](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38117403288) passed 64/64 tests, 0 failed, 0 skipped.
+
+
+
+## Proposal-engine metadata hash audit (2026-10-11)
+
+Inspected both generated-pending-verification and claim-blocked metadata for all three recovered runs (six metadata files total). Each generated/blocked pair agrees on workflowRun and workflowSha, but none of the six files contains article/report/evidence-pack SHA-256 fields. Their metadata keys are:
+- Generated: archivedAt, status, articleFile, articlePath, workflowRun, workflowSha, evidenceArtifact.
+- Claim-blocked: status, workflowRun, workflowSha, reason.
+
+**Conclusion:** the existing factual repair proposal engine's exact hash-bound metadata contract cannot be satisfied from these saved metadata files. The newly computed recovery-time hashes do not substitute for the absent original hashes. Direct proposal-engine handoff therefore remains blocked for all three archived attempts unless trustworthy original hash provenance is recovered elsewhere.
