@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { auditRootClaimLineage } from './boat-root-claim-lineage-audit.mjs';
 
@@ -11,6 +12,7 @@ const report = { articlePath: 'content/articles/example.md', articleTitle: 'Exam
   { index: 1, claim: 'Example claim', status: 'partial', classification: 'supported_with_context', sourceId: 'S1', bestUrl: 'https://example.com/story', bestPassageId: 'S1-FF1', matchedPassages: ['S1-P1', 'S1-BODY'], coreFactMatch: { factId: 'F1', sourceId: 'S1' }, provenanceFactMatches: [{ factId: 'F1', sourceId: 'S1' }] }
 ] };
 const reportRaw = JSON.stringify(report);
+const sha256 = value => createHash('sha256').update(value).digest('hex');
 const briefRaw = JSON.stringify({ brief: { title: 'Example source story' } });
 const pack = { version: 1, generatedAt: '2026-10-11T00:00:00.000Z', status: 'authoritative', candidates: [{
   candidate: { title: 'Example source story' },
@@ -18,12 +20,12 @@ const pack = { version: 1, generatedAt: '2026-10-11T00:00:00.000Z', status: 'aut
   evidenceBrief: { relevantPassages: [{ sourceId: 'S1', passageId: 'P1', text: 'Example passage.' }], storyFactMap: { coreFacts: [{ factId: 'F1', sourceId: 'S1', passageId: 'S1-P1' }] } }
 }] };
 const packRaw = JSON.stringify(pack);
-const attemptRecords = [{ metadata: { articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40) }, articleRaw, packRaw }];
+const attemptRecords = [{ metadata: { articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40), claimReportSha256: sha256(reportRaw) }, articleRaw, packRaw, reportRaw }];
 
 const resolved = auditRootClaimLineage({ reportRaw, packRaw, briefRaw, articleRaw, attemptRecords });
-assert.equal(resolved.status, 'unknown-report-run-binding');
+assert.equal(resolved.status, 'identifiers-resolved-semantic-support-unknown');
 assert.equal(resolved.artifacts.packArchiveRunBindingProven, true);
-assert.equal(resolved.artifacts.reportRunBindingProven, false);
+assert.equal(resolved.artifacts.reportRunBindingProven, true);
 assert.equal(resolved.artifacts.candidateMatchCount, 1);
 assert.equal(resolved.summary.sourceResolved, 1);
 assert.equal(resolved.summary.sourceUrlsMatched, 1);
@@ -77,6 +79,7 @@ try {
   fs.writeFileSync(path.join(attemptDir, 'metadata.json'), JSON.stringify({ articlePath: report.articlePath, workflowRun: '12345', workflowSha: 'a'.repeat(40) }));
   fs.writeFileSync(path.join(attemptDir, 'article.md'), articleRaw);
   fs.writeFileSync(path.join(attemptDir, 'authoritative-evidence-pack.json'), packRaw);
+  fs.writeFileSync(path.join(attemptDir, 'claim-verification.json'), reportRaw);
   const finalizedDir = path.join(tempRoot, 'data', 'article-attempts', 'fixture-run-finalized');
   fs.mkdirSync(finalizedDir);
   fs.writeFileSync(path.join(finalizedDir, 'article.md'), articleRaw);
@@ -104,4 +107,4 @@ try {
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
 }
-console.log('BOAT root claim/evidence lineage audit: PASS (isolated fixtures; exact report/run binding remains UNKNOWN)');
+console.log('BOAT root claim/evidence lineage audit: PASS (isolated fixtures; exact report/run hash binding proven; semantic support remains UNKNOWN)');
