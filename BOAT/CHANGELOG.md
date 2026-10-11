@@ -162,3 +162,9 @@ All entries should describe actual work and results. Do not record planned work 
 - Inspected [BOAT Offline Tests run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567) and its job logs after the adapter/test commits.
 - Result: **44 passed, 0 failed, 0 skipped**. The five new tests passed: valid mapping, legacy passage-ID preservation, missing lineage remains unknown, proposal schema contract, and malformed JSON handling.
 - Updated canonical state and next-step records with the verified result. This confirms offline contract behavior, not semantic truth of the archived article or same-run lineage for the missing historical evidence pack.
+
+
+## 2026-10-11 — Real archived-attempt adapter integration
+- Added a CLI integration regression against the actual AD-FX-001 saved `article.md`, `claim-verification.json`, and `metadata.json`.
+- Verified that absent canonical evidence-pack/hash lineage yields `unknown`; the command exits nonzero, keeps the proposal review-only, and does not modify the original input bytes.
+- Latest run [38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407): **45 passed, 0 failed, 0 skipped**.

@@ -29,12 +29,13 @@ Inspected the archived claim-blocked attempt:
 - The existing offline workflow's `scripts/test-boat-*.mjs` glob includes the new tests without requiring a production workflow change.
 
 ### Validation
-- New branch-head CI result: [BOAT Offline Tests run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567) — **44 passed, 0 failed, 0 skipped**. Logs confirm the adapter and schema-contract tests ran.
+- Adapter + schema-contract check [run 38114116567](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114116567): **44 passed, 0 failed, 0 skipped**.
+- Real archived-attempt CLI integration [run 38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407): **45 passed, 0 failed, 0 skipped**. The test confirms `unknown` status when the evidence pack and recorded hashes are absent, and verifies the original article/report/metadata bytes are unchanged.
 - No provider, external-source fetch, image generation, site build, or publishing workflow was run.
 - No claim is made that the archived historical attempt has valid same-run evidence lineage.
 
 ### Next action after green tests
-1. Review the adapter CLI ergonomics and, if useful, add a fixture-level CLI test using the real archived attempt to assert `unknown` without writing into tracked artifacts.
+1. Inspect the other archived attempts for the actual retained evidence-pack shape and recorded lineage metadata. Extend the adapter only for observed fields; if canonical packs are missing, keep the result `unknown` and record the limitation.
 2. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails

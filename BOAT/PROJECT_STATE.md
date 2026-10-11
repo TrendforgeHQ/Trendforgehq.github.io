@@ -174,3 +174,10 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Added the read-only artifact adapter and offline tests including schema-contract assertions. Missing pack or recorded hashes is expected to force `unknown`.
 - CI for this new adapter/test commit is pending; do not record the new suite as passing until logs are checked.
 - No provider, publishing run, article change, site build, or production gate change.
+
+
+## Phase 1.2 — Archived-attempt CLI integration (2026-10-11)
+- Added a fixture-level CLI test using the actual AD-FX-001 archived article, claim-verification report, and metadata.
+- The test deliberately supplies no evidence pack and confirms the CLI exits nonzero with proposal status `unknown`, retains `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`, and leaves all three tracked input files byte-identical.
+- Latest branch-head CI: [run 38114233407](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114233407), **45 passed, 0 failed, 0 skipped**.
+- This is an integration test of fail-closed behavior; it does not establish semantic claim support or historical evidence-pack lineage.
