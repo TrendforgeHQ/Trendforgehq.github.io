@@ -389,3 +389,12 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Tests now structurally validate generated review-set reports and invalid-input output against the checked-in schema.
 - Negative cases cover invalid fingerprints, unknown finding types, extra properties, and fixed report safety fields.
 - Offline CI run 38123099695 passed 123/123 tests, with no failures or skips. This is report-contract validation only.
+
+
+## Safety review update — 2026-10-11
+
+- Reviewed the publishing quarantine hash change and BOAT proposal/review safety boundary.
+- Defensive gap found and patched: proposal-engine handoff now requires run metadata status `claim-verification-blocked` in addition to matching metadata bytes, run ID, workflow SHA, workflow-recorded marker, exact artifact hashes, and compatible pack identity.
+- Added regression coverage for metadata whose hashes and identifiers match but whose status is `generated-pending-verification`; it must not authorize handoff.
+- CI run [38123444976](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38123444976) was queued on head `e5f3a61a4c12c67af5a2abd239645bf050330544`; final result still needs inspection.
+- The current workflow continues to quarantine and remove claim-blocked articles. This finding is defense-in-depth, not a confirmed production gate bypass. PR #35 remains draft/unmerged; main and publishing/provider workflows untouched.
