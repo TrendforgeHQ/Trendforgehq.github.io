@@ -155,7 +155,6 @@ export function auditPublishedLineageCoverage(articles, articlesDirectory, linea
       if (!articlePath.startsWith(prefix) || !articlePath.endsWith('.md')) continue;
       const articleSlug = articlePath.slice(prefix.length, -3);
       if (!/^[A-Za-z0-9._-]+$/.test(articleSlug) || articleSlug.includes('..')) continue;
-      if (!match || articlePath.includes('..')) continue;
       const hashes = record?.hashes ?? {};
       const hashKeys = ['articleSha256', 'claimReportSha256', 'evidencePackSha256', 'articleBriefSha256', 'currentRunMarkerSha256'];
       const structurallyValid = record.schemaVersion === 1
