@@ -524,13 +524,13 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - Inspecting the actual root data revealed a single root claim-verification snapshot mapped to a published slug. Include it as a distinct `root-workflow-snapshot`, but do not treat it as exact-current-byte verification without hash-bound lineage.
 - The corrected fixture and root-snapshot coverage are pending branch-head CI.
 
-## 2026-10-11 — Empty evidence-pack files must remain UNKNOWN
+## 2026-10-11 — Canonical pack content retrieval correction
 
-**Observed:** the root claim report parses and lists 10 claims, but the canonical evidence-pack file is zero bytes on both the working branch and `main`. A positive saved report-level `pass` does not supply the missing evidence pack or prove current published bytes.
+**Correction:** the current root `data/authoritative-evidence-pack.json` is not empty. A helper returned an empty content field for this large file; reading the raw GitHub contents response showed valid JSON (~3.46 MB) with 24 candidates. The Amazon/Nvidia brief matches exactly one candidate with two sources. The root pack and archived attempt pack have the same Git blob SHA, and archive metadata ties the article path and pack to run `38106429274`.
 
-**Rule:** never reconstruct the missing canonical evidence pack from claim-verifier output. The report and pack are distinct artifacts; exact pairing needs verified run metadata and matching raw-file hashes. Source/passage ID matches, when possible, are structural traceability only and do not establish semantic support. Empty/invalid/missing pack => `unknown-pack-binding`; no automatic repair or publication decision.
+**Remaining gap:** the attempt archive metadata does not contain the claim-report hash or report run ID. Therefore the article+pack run linkage can be checked, but the claim report's exact run binding remains UNKNOWN. Source/passage/fact ID matches are structural traceability only; semantic support and source freshness remain unassessed. Never manufacture evidence or infer a report hash.
 
-**Validation:** added deterministic test cases for empty and invalid packs, matching IDs, and absent source IDs. Await CI for the committed revision before marking the tests verified.
+**Validation:** the audit was updated to understand the real `{version,status,candidates}` envelope, match the candidate through `data/article-brief.json`, and resolve `Sx-Pn`, body anchors, and `Sx-FFn` fact anchors. Latest-head CI is pending.
 
 **Test harness lesson (2026-10-11):** when generating source through a string template, newline escaping can accidentally write the two characters `\\` and `n` into a CLI output expression. Test the real CLI stdout as JSON in CI; do not count module-level assertions alone as end-to-end validation. Fix commit: `b70032893c8f9108f8d523e44f917ba8f1be2b37`; latest-head CI is still required.
 
