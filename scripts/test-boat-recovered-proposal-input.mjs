@@ -185,7 +185,7 @@ test('all three recovered archived attempts only expose exact, unique claim inpu
 test('output schema preserves review-only and recovery-hash constraints', () => {
   const schema = JSON.parse(fs.readFileSync(path.join(root, 'BOAT/schemas/recovered-proposal-input.schema.json'), 'utf8'));
   const required = new Set(schema.required);
-  for (const key of ['status', 'artifact', 'hashes', 'counts', 'claims', 'approvalRequired', 'automaticApplication', 'semanticSupport', 'replacementTextGenerated']) {
+  for (const key of ['status', 'artifact', 'hashes', 'counts', 'claims', 'approvalRequired', 'automaticApplication', 'semanticSupport', 'replacementTextGenerated', 'proposalEngineHandoff']) {
     assert.ok(required.has(key), 'schema must require ' + key);
   }
   assert.deepEqual(schema.properties.status.enum, ['ready_with_restrictions', 'no_eligible_claims', 'blocked', 'unknown']);
@@ -193,6 +193,8 @@ test('output schema preserves review-only and recovery-hash constraints', () => 
   assert.equal(schema.properties.automaticApplication.const, false);
   assert.equal(schema.properties.semanticSupport.const, 'not_verified');
   assert.equal(schema.properties.replacementTextGenerated.const, false);
+  assert.equal(schema.properties.proposalEngineHandoff.properties.status.const, 'blocked');
+  assert.equal(schema.properties.proposalEngineHandoff.properties.allowed.const, false);
   assert.equal(schema.properties.hashes.properties.recordedAtGeneration.const, false);
 });
 
