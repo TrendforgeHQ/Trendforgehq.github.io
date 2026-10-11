@@ -3,7 +3,7 @@
   "title": "BOAT Recovered Proposal-Input Manifest",
   "type": "object",
   "required": [
-    "schemaVersion", "engine", "mode", "status", "generatedAt", "artifact",
+    "schemaVersion", "engine", "mode", "status", "generatedAt", "candidate", "artifact",
     "hashes", "counts", "claims", "findings", "approvalRequired",
     "automaticApplication", "semanticSupport", "replacementTextGenerated", "proposalEngineHandoff", "limitations"
   ],
@@ -13,6 +13,16 @@
     "mode": { "const": "offline-read-only" },
     "status": { "enum": ["ready_with_restrictions", "no_eligible_claims", "blocked", "unknown"] },
     "generatedAt": { "type": "string", "format": "date-time" },
+    "candidate": {
+      "type": ["object", "null"],
+      "required": ["title", "link", "sourceIds"],
+      "properties": {
+        "title": { "type": ["string", "null"] },
+        "link": { "type": ["string", "null"] },
+        "sourceIds": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
     "artifact": {
       "type": "object",
       "required": ["runId", "artifactId", "artifactName", "recoveryAuditStatus", "membershipVerification"],
