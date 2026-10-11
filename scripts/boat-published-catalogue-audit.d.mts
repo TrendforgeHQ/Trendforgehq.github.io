@@ -13,3 +13,15 @@ export type PublishedEvidenceCoverage = {
   evidencePackReports: number; status: 'unknown' | 'historical-pass' | 'historical-block' | 'conflicting-history'; note: string;
 };
 export function auditPublishedEvidenceCoverage(articles: PublishedEvidenceArticleInput[] | unknown, attemptsDirectory: string): PublishedEvidenceCoverage[];
+
+export type PublishedLineageArticleInput = { slug?: string; title?: string };
+export type PublishedLineageCoverage = {
+  slug: string; title: string; articlePath: string; currentArticleSha256: string | null;
+  manifestRecords: number; matchingRecords: number;
+  status: 'unknown' | 'stale-manifest' | 'current-byte-match'; note: string;
+};
+export function auditPublishedLineageCoverage(
+  articles: PublishedLineageArticleInput[] | unknown,
+  articlesDirectory: string,
+  lineageDirectory: string,
+): PublishedLineageCoverage[];
