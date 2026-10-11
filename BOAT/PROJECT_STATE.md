@@ -190,3 +190,14 @@ Follow [NEXT_STEP.md](NEXT_STEP.md). Do not start runtime changes until Phase 0 
 - Legacy passage identifiers vary (observed examples: `S1-FF1,S2-FF6`, `S2-BODY`, `S1-BODY`). These cannot safely be rewritten as canonical `Sx-Pn` identifiers.
 - The branch-head offline suite passed **45/45** in [run 38114305258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114305258), 0 failures, 0 skipped, including the real archived-attempt CLI integration.
 - Next audit target: inspect the authoritative evidence-pack producer and workflow artifact retention paths to determine whether exact same-run packs can be recovered; do not infer missing historical lineage from article briefs.
+
+
+## Phase 1.4 — Recover exact same-run evidence packs (2026-10-11)
+- Downloaded the original GitHub Actions artifacts for runs `38085367295`, `37996683799`, and `37696062759`. Artifact IDs: `11682276860`, `11647766077`, and `11515936671`.
+- All three artifacts contain the canonical evidence pack in the earlier generated-pending-verification attempt directory. The pack was omitted from the separate claim-blocked directory, not lost from the run artifact.
+- Inspected `.github/workflows/publish.yml`: the first archive step copies `data/authoritative-evidence-pack.json`; the later claim-blocked quarantine step does not copy that pack; the upload step includes the full `data/article-attempts/` directory, preserving the earlier copy.
+- Added `scripts/boat-run-artifact-recovery.mjs` and `scripts/test-boat-run-artifact-recovery.mjs`. The audit selects one candidate only by exact brief-title match, checks workflow run/SHA/path metadata, validates report source IDs/URLs against the selected pack, computes explicit recovery-time checksums, and preserves legacy passage IDs.
+- Detailed inventory and hashes: `BOAT/ARTIFACT_RECOVERY.md`.
+- Results from recovered bytes: pack recovery 3/3; source-ID/URL mapping 10/10. Exact claim text is present in final article for 15/15, 18/18, and 4/7 claims respectively. The third run remains partial and is not safe for claim-specific proposals until reconciled.
+- The computed hashes were not recorded at generation time; the manifest states this limitation. No semantic support is asserted.
+- New recovery audit CI result: pending inspection. No providers, publishing, site build, or article edits.

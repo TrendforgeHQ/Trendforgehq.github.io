@@ -175,3 +175,11 @@ All entries should describe actual work and results. Do not record planned work 
 - All three archived metadata files record run ID and workflow SHA but no recorded artifact SHA-256 hashes. Legacy passage IDs include `S1-FF1,S2-FF6`, `S2-BODY`, and `S1-BODY`; no automatic conversion was added.
 - Latest branch-head offline test run before this documentation record: [38114305258](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38114305258), **45 passed, 0 failed, 0 skipped**.
 - Next: inspect the evidence-pack producer and workflow artifact retention to determine whether exact same-run packs exist elsewhere.
+
+
+## 2026-10-11 — Recovered original same-run evidence packs
+- Downloaded still-live workflow artifacts for runs `38085367295`, `37996683799`, and `37696062759`.
+- Located the authoritative evidence pack in each artifact's generated-pending-verification directory. Root cause: the later claim-blocked quarantine step omits the pack, while the earlier generated-attempt directory remains inside the uploaded `data/article-attempts/` folder.
+- Added the read-only recovery audit and offline tests; recorded artifact IDs, expiry dates, pack checksums, source mapping, and claim/article coverage in `BOAT/ARTIFACT_RECOVERY.md`.
+- Recovery-time hashes are explicitly distinguished from original generation-time hashes. Legacy passage IDs are not converted. Run 37696062759 has only 4/7 claim strings present in the final quarantined article and is marked partial for claim-specific use.
+- CI for the new recovery audit is pending; inspect the branch-head test logs before claiming a pass.

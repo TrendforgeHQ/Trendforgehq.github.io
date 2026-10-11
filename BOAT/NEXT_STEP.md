@@ -1,6 +1,6 @@
 # BOAT Next Step
 
-## Current task: read-only adapter for saved TrendForge artifacts
+## Current task: historical evidence-pack recovery and passage-ID reconciliation
 
 Risk: low. Provider cost: none. Production behavior change: none.
 
@@ -15,7 +15,7 @@ Inspected the archived claim-blocked attempt:
 - `article.md` is the saved article text.
 - `claim-verification.json` contains `claims[]`, `sources[]`, claim `sourceId`, `bestUrl`, `sourceRole`, `bestPassageId`, and `provenanceFactMatches[]`.
 - `metadata.json` records `workflowRun` and `workflowSha`, but does **not** record article/report/evidence-pack SHA-256 hashes.
-- The archived attempt directory does **not** contain a canonical evidence-pack JSON file.
+- The claim-blocked archived directory does **not** contain a canonical evidence-pack JSON file, but the original workflow artifact can preserve it in the earlier generated-pending-verification directory.
 - Legacy `bestPassageId` uses values such as `S1-FF1,S2-FF6`, unlike the proposal engine's canonical `S1-P1` passage IDs. The adapter must preserve these values, not rewrite them or infer a passage match.
 - Therefore this archived attempt cannot prove same-run article/report/evidence-pack lineage. Its adapter result must remain `unknown`; this is expected fail-closed behavior, not a test failure.
 
@@ -34,10 +34,12 @@ Inspected the archived claim-blocked attempt:
 - No provider, external-source fetch, image generation, site build, or publishing workflow was run.
 - No claim is made that the archived historical attempt has valid same-run evidence lineage.
 
-### Next action after green tests
-1. All three archived blocked attempts have now been inspected: each stores `article.md`, `article-brief.json`, `claim-verification.json`, and `metadata.json`, but no canonical evidence-pack JSON or recorded artifact SHA-256 hashes. Their legacy passage labels vary (`S1-FF1`, `S2-BODY`, `S1-BODY`), so do not map them into `Sx-Pn` by guesswork.
-2. Next, inspect the live producer/consumer code for the authoritative evidence-pack schema and determine whether an exact same-run pack can be recovered from existing committed artifacts or workflow artifacts. If it cannot, retain `unknown` and document the retention gap; do not reconstruct historical provenance from briefs.
-3. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
+### Recovered artifact finding (2026-10-11)
+1. All three original GitHub Actions artifacts were still available and downloaded from their exact run IDs. Each contains the matching generated-pending-verification folder and canonical authoritative-evidence-pack.json.
+2. Added `scripts/boat-run-artifact-recovery.mjs` to audit the real root `candidates[]` envelope, select exactly one candidate by exact `article-brief.json` title, verify run/SHA metadata and report source-ID/URL mapping, and emit recovery-time hashes without claiming those hashes were recorded at generation time.
+3. Recovery results and checksums are recorded in `BOAT/ARTIFACT_RECOVERY.md`. Runs 38085367295 and 37996683799 have exact claim-text coverage 15/15 and 18/18; run 37696062759 is only 4/7 and must not be used for claim-specific repairs until reconciled.
+4. Next, validate the new recovery audit in CI, then implement exact-text passage resolution. Never translate `Sx-FFn`/`Sx-BODY` into `Sx-Pn` unless the original saved text matches exactly one canonical passage; otherwise retain `unknown`.
+5. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails
 - Do not change `main`; do not merge PR #35 automatically.
