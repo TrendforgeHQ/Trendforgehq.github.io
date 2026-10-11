@@ -97,6 +97,35 @@ test('maps attribution, numeric mismatch, contradiction and scope warnings indep
   assert.equal(output.summary.status, 'blocked');
 });
 
+test('clean supported report yields clear without claiming independent source re-check', () => {
+  const output = analyzeArticle({
+    articleText: '---\ntitle: "Clean Article"\n---\nA clean article with one supported factual statement.',
+    articlePath: 'clean.md',
+    report: { articleTitle: 'Clean Article', pass: true, claims: [{ index: 1, claim: 'The agency published a report on Monday.', status: 'verified', classification: 'supported' }] },
+    reportPath: 'clean-report.json',
+    metadata: { workflowRun: '300', workflowSha: 'abc123' }, metadataPath: 'metadata.json',
+    expectedWorkflowRun: '300', generatedAt: fixedTime
+  });
+  assert.equal(output.summary.status, 'clear');
+  assert.equal(output.summary.findingCount, 0);
+  assert.equal(output.checks[0].status, 'pass');
+  assert.equal(output.checks[1].status, 'pass');
+  assert.equal(output.checks[2].status, 'not_run');
+});
+
+test('partial-only certainty warning yields attention, not clear or blocked', () => {
+  const output = analyzeArticle({
+    articleText: '---\ntitle: "Partial Article"\n---\nA statement requiring careful attribution.',
+    articlePath: 'partial.md',
+    report: { articleTitle: 'Partial Article', pass: true, claims: [{ index: 1, claim: 'A source described a possible outcome.', status: 'partial', classification: 'supported_with_context', attributionUncertainty: { blocked: false, certaintyEscalation: true, attributionDropped: false } }] },
+    reportPath: 'partial-report.json', generatedAt: fixedTime
+  });
+  assert.equal(output.summary.status, 'attention');
+  assert.equal(output.summary.findingCount, 1);
+  assert.equal(output.summary.highSeverityCount, 0);
+  assert.equal(output.findings[0].category, 'attribution');
+  assert.equal(output.findings[0].severity, 'medium');
+});
 test('mismatched article title yields unknown status, never a clean pass', () => {
   const output = analyzeArticle({
     articleText: '---\ntitle: "Wrong Article"\n---\nBody.',
