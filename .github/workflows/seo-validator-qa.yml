@@ -46,7 +46,12 @@ jobs:
               const full = path.join(dir, entry.name);
               if (entry.isDirectory()) walk(full);
               else if (entry.isFile() && entry.name.endsWith('.html')) {
-                const html = fs.readFileSync(full, 'utf8');
+                // Google/Bing ownership verification files are not page metadata.
+                if (/^(google|BingSiteAuth)[a-zA-Z0-9_-]*\.html$/i.test(entry.name)) continue;
+                // Ignore title-like strings inside Next.js hydration scripts.
+                const html = fs.readFileSync(full, 'utf8')
+                  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+                  .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
                 const matches = [...html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/gi)];
                 if (matches.length !== 1) failures.push(`${full}: expected one title tag, found ${matches.length}`);
                 for (const match of matches) {
