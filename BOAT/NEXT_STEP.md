@@ -1,33 +1,45 @@
 # BOAT Next Step
 
-## Current task: validate factual repair proposal engine
+## Current task: read-only adapter for saved TrendForge artifacts
+
 Risk: low. Provider cost: none. Production behavior change: none.
 
-### Last verified baseline
-- [BOAT Offline Tests run 38112229842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112229842): **34 passed, 0 failed, 0 skipped**.
-- Four Evidence Auditor CLI tests covered valid same-run bundle, blocked lineage, missing hashes, and malformed JSON.
+### Verified baseline before adapter
+- Draft PR #35: https://github.com/TrendforgeHQ/Trendforgehq.github.io/pull/35
+- Previous branch-head offline suite: [run 38112892985](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112892985), **39 passed, 0 failed, 0 skipped**.
+- Factual repair proposals remain proposal-only, require human approval, and never apply changes.
 
-### Verified implementation
-- [BOAT Offline Tests run 38112644061](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112644061): **39 passed, 0 failed, 0 skipped** at commit `b9a7d4ff3c4f87aaa224d87b0bd1d3e26a3a6cbb`.
+### Actual artifact inspection
+Inspected the archived claim-blocked attempt:
+`data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/`
+- `article.md` is the saved article text.
+- `claim-verification.json` contains `claims[]`, `sources[]`, claim `sourceId`, `bestUrl`, `sourceRole`, `bestPassageId`, and `provenanceFactMatches[]`.
+- `metadata.json` records `workflowRun` and `workflowSha`, but does **not** record article/report/evidence-pack SHA-256 hashes.
+- The archived attempt directory does **not** contain a canonical evidence-pack JSON file.
+- Legacy `bestPassageId` uses values such as `S1-FF1,S2-FF6`, unlike the proposal engine's canonical `S1-P1` passage IDs. The adapter must preserve these values, not rewrite them or infer a passage match.
+- Therefore this archived attempt cannot prove same-run article/report/evidence-pack lineage. Its adapter result must remain `unknown`; this is expected fail-closed behavior, not a test failure.
 
-### Verified review checklist
-- [BOAT Offline Tests run 38112722176](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38112722176): **39 passed, 0 failed, 0 skipped** at commit `c1f55308bab89c186ac5910037da379b6e0adf87`.
-- The proposal report now includes six review items covering semantic support, changed facts/qualifiers, names/dates/numbers/scope/attribution, source suitability, existing verifier/editorial results, and recorded reviewer decision.
+### Implemented in this step
+- Added `scripts/boat-artifact-adapter.mjs` as a read-only adapter for saved article, claim-report, evidence-pack, and metadata bytes.
+- It preserves existing claim fields and legacy passage IDs without invented conversions.
+- It trusts only hashes recorded in metadata; it does not manufacture hashes and claim that they establish same-run provenance.
+- Missing canonical evidence pack or recorded hashes emits explicit adapter findings and forces proposal status to `unknown`.
+- CLI writes a separate output, refuses to overwrite inputs or an existing output, and does not modify the article.
+- Added `scripts/test-boat-artifact-adapter.mjs` for compatible artifact mapping, legacy passage preservation, missing-lineage fail-closed behavior, malformed JSON, and proposal schema-contract assertions.
+- The existing offline workflow's `scripts/test-boat-*.mjs` glob includes the new tests without requiring a production workflow change.
 
-### Next task: validate real pipeline artifact adapters without running providers
-- Added `scripts/boat-factual-repair-proposal.mjs`: generates a review artifact tied to the exact article, claim-report, evidence-pack hashes, workflow run, target claim, source ID, and canonical passage ID.
-- Rejects missing/mismatched hashes, wrong source/passage lineage, unresolved passages, and claim text not found in the article.
-- Output statuses are `review_required`, `blocked`, or `unknown`; it always sets `approvalRequired: true`, `automaticApplication: false`, and `semanticSupport: not_verified`.
-- CLI writes a separate JSON report and refuses to overwrite input files or an existing output.
-- Five new synthetic tests cover bundle binding, hash mismatch, source/passage mismatch, missing claim text, and CLI output safety.
+### Validation
+- New CI result: **pending** until the branch-head BOAT Offline Tests run is inspected.
+- No provider, external-source fetch, image generation, site build, or publishing workflow was run.
+- No claim is made that the archived historical attempt has valid same-run evidence lineage.
 
-### Next implementation
-1. Build a read-only adapter that maps actual saved pipeline artifact shapes into the proposal inputs; use checked-in or downloaded historical artifacts only, with no provider run.
-2. Add a schema-contract test for the review checklist and statuses.
-3. Keep factual proposals review-only; any future human-approved copy must pass existing claim verification and all required editorial/safety/build gates.
-4. Do not change or publish any real article in this phase.
+### Next action after green tests
+1. Inspect the branch-head test logs and correct only reproducible adapter/test issues.
+2. If tests pass, record exact commit and run URL here and in `PROJECT_STATE.md`, `CHANGELOG.md`, and `LEARNINGS.md`.
+3. Keep the PR draft/unmerged. Any future accepted factual correction must go through the existing claim verifier and all required editorial, image-safety, and build gates.
 
 ### Guardrails
-- No paid providers, external source fetches, image generation, site build, or publishing workflow runs.
-- Do not change `main`; keep PR #35 draft/unmerged unless separately asked and review/checks are complete.
+- Do not change `main`; do not merge PR #35 automatically.
+- No paid providers or publishing runs.
+- No article edits or automatic repair application.
 - Existing evidence, claim-verification, editorial, image-safety, and build gates remain authoritative.
