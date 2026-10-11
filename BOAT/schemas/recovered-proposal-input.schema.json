@@ -61,7 +61,7 @@
         "reason": { "type": "string", "minLength": 1 },
         "checks": {
           "type": "object",
-          "required": ["metadataPresent", "metadataBytesMatch", "hashesRecordedInWorkflow", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "metadataParseValid"],
+          "required": ["metadataPresent", "metadataBytesMatch", "hashesRecordedInWorkflow", "runIdMatches", "workflowShaMatches", "artifactHashesMatch", "proposalEnginePackCompatible", "metadataParseValid"],
           "properties": {
             "metadataPresent": { "type": "boolean" },
             "metadataBytesMatch": { "type": "boolean" },
@@ -69,6 +69,7 @@
             "runIdMatches": { "type": "boolean" },
             "workflowShaMatches": { "type": "boolean" },
             "artifactHashesMatch": { "type": "boolean" },
+            "proposalEnginePackCompatible": { "type": "boolean" },
             "metadataParseValid": { "type": "boolean" }
           },
           "additionalProperties": false
