@@ -483,3 +483,11 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 - A passing build does not prove a publishing workflow actually writes a manifest. Code inspection shows the lineage writer is non-blocking and the data/ directory is staged by the output commit step, but production persistence has not been exercised. Test this contract offline rather than spending provider/image quota or dispatching production publishing.
 - Exact-byte lineage is provenance, not semantic support or source freshness. Keep UI wording narrow and unknown/stale states visible.
 - GitHub compare reports the PR branch is 5 commits behind main; avoid blind merge/rebase. Inspect divergence and diff before declaring merge readiness.
+
+
+## L-064 — A workflow contract test is not a production persistence proof
+- **Observed:** BOAT Offline Tests and Control Center QA/production build both pass at branch head `932d5878a8cd4cd4025ccc89954a716d28af020f` (runs [38128016828](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016828), [38128016780](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016780)).
+- **Verified in code:** the adaptive generator creates a current-run marker; lineage capture runs after the SEO gate and before build; the existing output commit stages and transfers `data/`.
+- **Limit:** the new regression test statically checks workflow wiring. Because production publishing was not run, no claim can be made that a real manifest was created or persisted to the deployed branch.
+- **Divergence:** main has five generated-intelligence data refresh commits beyond the merge base. The PR branch's 454-commit ahead count includes old history and must not be interpreted as 454 new BOAT changes. Do not merge/rebase blindly.
+- **Rule:** distinguish static workflow contract, offline CLI behavior, and actual production persistence as three separate evidence levels. Exact-byte lineage is not semantic verification.
