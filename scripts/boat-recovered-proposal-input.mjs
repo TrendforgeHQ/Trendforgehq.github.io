@@ -258,6 +258,7 @@ export function buildRecoveredProposalInputs({ recoveryAudit, articleRaw, claimR
         runIdMatches,
         workflowShaMatches,
         artifactHashesMatch: originalHashesMatch,
+        proposalEnginePackCompatible,
         metadataParseValid: handoffFindings.length === 0
       }
     },
