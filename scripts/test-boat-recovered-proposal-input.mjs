@@ -69,6 +69,9 @@ test('synthetic exact-lineage claim becomes an input only, never a generated pro
 
 test('proposal engine handoff is allowed only with matching original hashes bound to same-run metadata', () => {
   const f = syntheticFixture();
+  const candidateEnvelope = JSON.parse(f.evidencePackRaw);
+  delete candidateEnvelope.sources;
+  f.evidencePackRaw = JSON.stringify(candidateEnvelope);
   const metadata = JSON.parse(f.blockedMetadataRaw);
   metadata.hashesRecordedInWorkflow = true;
   metadata.articleSha256 = sha256(f.articleRaw);
