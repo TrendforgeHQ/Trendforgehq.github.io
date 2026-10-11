@@ -59,9 +59,25 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       && record?.hashes?.evidencePackSha256 === currentHashes.evidencePackSha256
       && record?.hashes?.articleBriefSha256 === currentHashes.articleBriefSha256
       && text(manifest.workflowRun) !== '' && /^[0-9]+$/.test(text(manifest.workflowRun))));
-  // The attempt archive binds the pack to a run; only an exact manifest hash match binds the report too.
-  const packArchiveRunBindingProven = Boolean(archiveMatch || manifestMatch);
-  const reportRunBindingProven = Boolean(manifestMatch);
+  const finalizedAttemptMatch = attemptRecords.find(item => {
+    const meta = item?.metadata;
+    return meta?.lineageBindingVersion === 1
+      && text(meta?.articlePath).replace(/^\.\//, '') === articlePath
+      && text(meta?.workflowRun) !== ''
+      && typeof item.articleRaw === 'string' && typeof articleRaw === 'string'
+      && sha256(item.articleRaw) === sha256(articleRaw)
+      && typeof item.packRaw === 'string' && typeof packRaw === 'string'
+      && sha256(item.packRaw) === sha256(packRaw)
+      && typeof item.reportRaw === 'string' && typeof reportRaw === 'string'
+      && sha256(item.reportRaw) === sha256(reportRaw)
+      && text(meta?.articleSha256) === sha256(articleRaw)
+      && text(meta?.evidencePackSha256) === sha256(packRaw)
+      && text(meta?.claimReportSha256) === sha256(reportRaw);
+  }) ?? null;
+  // A finalized immutable attempt bundle can bind all three exact bytes to one run;
+  // the older attempt archive binds only the evidence pack, and a manifest is another valid binder.
+  const packArchiveRunBindingProven = Boolean(archiveMatch || manifestMatch || finalizedAttemptMatch);
+  const reportRunBindingProven = Boolean(manifestMatch || finalizedAttemptMatch);
   const rows = claims.map((claim, i) => {
     const sourceId = text(claim?.sourceId ?? claim?.coreFactMatch?.sourceId);
     const ids = [
@@ -136,9 +152,11 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
       articleTitle: articleTitle || null,
       articleTitleMatchesClaimReport: Boolean(articleTitle && text(report?.articleTitle) === articleTitle),
       packArchiveRunBindingProven,
-      matchedWorkflowRun: manifestMatch ? text(manifestMatch.workflowRun) : archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
-      matchedWorkflowSha: manifestMatch ? text(manifestMatch.workflowSha) : archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
+      matchedWorkflowRun: finalizedAttemptMatch ? text(finalizedAttemptMatch.metadata.workflowRun) : manifestMatch ? text(manifestMatch.workflowRun) : archiveMatch ? text(archiveMatch.metadata.workflowRun) : null,
+      matchedWorkflowSha: finalizedAttemptMatch ? text(finalizedAttemptMatch.metadata.workflowSha) : manifestMatch ? text(manifestMatch.workflowSha) : archiveMatch ? text(archiveMatch.metadata.workflowSha) : null,
       matchedLineageManifest: Boolean(manifestMatch),
+      matchedFinalizedAttemptBundle: Boolean(finalizedAttemptMatch),
+      finalizedArticleBytesMatchCurrent: Boolean(finalizedAttemptMatch),
       archivedArticleBytesMatchCurrent,
       archivedPackBytesMatchCurrent: Boolean(archiveMatch),
       manifestBytesMatchCurrent: Boolean(manifestMatch),
@@ -157,7 +175,7 @@ export function auditRootClaimLineage({ reportRaw, packRaw, briefRaw = null, art
     },
     claims: rows,
     limitations: [
-      'Attempt metadata binds the archived evidence pack to a workflow run; only a lineage manifest with matching article, report, pack, and brief hashes proves report-to-run pairing.',
+      'Exact report/run pairing is proven only by a finalized immutable attempt bundle or a lineage manifest whose article, report, pack, and brief hashes match current bytes.',
       'Source/passage/fact identifiers and URLs are structural traceability only; they do not prove semantic support or source freshness.',
       'No source URLs are fetched, no model/provider is called, and no article or publication state is changed.'
     ]
