@@ -492,3 +492,11 @@ All entries should describe actual work and results. Do not record planned work 
 - Inspected publish workflow ordering and output staging: lineage writer runs after SEO validation and before build, with continue-on-error enabled; manifest is under data/ and staged by the output commit path if the workflow reaches that step. Real publish-time persistence remains untested by design.
 - PR #35 is still draft/open/unmerged; compare shows 5 commits behind main. No production publish, provider calls, article changes, merge, or main-branch writes.
 - Next focus: offline/synthetic test for persistence and skip/failure cases, then inspect base divergence and complete PR diff before any merge recommendation.
+
+
+## 2026-10-11 — Workflow persistence contract verification
+- Added `scripts/test-boat-published-lineage-workflow.mjs` and included it in BOAT Offline Tests path filters.
+- Latest branch-head verification passed: BOAT Offline Tests [38128016828](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016828) and Control Center QA/production build [38128016780](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38128016780), head `932d5878a8cd4cd4025ccc89954a716d28af020f`.
+- The static contract test verifies lineage capture ordering, non-blocking configuration, environment wiring, immutable run-scoped output, no-article no-op/fail-closed safeguards, and the existing `data/` staging/transfer path. It does not prove actual production persistence.
+- Reviewed branch divergence: five main-only commits since the merge base are generated intelligence-data refreshes; PR #35 remains draft/unmerged and main untouched. No production workflow dispatch or provider call.
+- Next: make the path-specific manifest persistence assertion more explicit and finish changed-file/conflict review before any merge recommendation.
