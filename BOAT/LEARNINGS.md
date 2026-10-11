@@ -321,4 +321,4 @@ Three archived blocked reports are useful regression seeds, but they do not repr
 
 - The review schema defines the record shape, but the CLI also independently pins `semanticSupport: not_verified`, `approvalRequired: true`, `automaticApplication: false`, and `existingGatesStillRequired: true`.
 - The validator is read-only, prints a JSON result, and returns non-zero on invalid records; it does not write reviews or article bytes. Its tests cover malformed bundle hashes, reviewer/timestamp fields, passage evidence, extra properties, and unsafe constants.
-- CI for the validator commit is pending inspection. Do not treat the implementation as verified until the branch-head offline test logs pass.
+- Validation: branch-head offline CI [run 38121699251](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121699251) passed 92/92, 0 failed, 0 skipped. The next audit should scrutinize timestamp edge cases and the scope of supported schema keywords.
