@@ -208,3 +208,13 @@ CI caught an important intersection issue in run 38117347327: run 37696062759 ha
 - Added end-to-end offline test: valid workflow-bound metadata + exact candidate envelope -> proposal engine returns review_required; semanticSupport stays not_verified, approvalRequired=true, automaticApplication=false, and article bytes remain untouched.
 - CI [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568) passed **77/77**, 0 failed, 0 skipped. Missing and ambiguous candidate identity tests also pass.
 - Existing archived runs remain blocked for direct handoff because their metadata lacks the required original workflow-recorded hashes. No publishing/provider workflow was run.
+
+
+## Deterministic review-set golden fixtures — implementation in progress (2026-10-11)
+
+- Added synthetic fixtures for duplicate review IDs, conflicting independent reviewers, same-reviewer disagreement/repeats, and an invalid record mixed with one valid review.
+- Added golden report tests for each case and permutation checks. The canonical comparison sorts only order-insensitive findings/verdict summaries; the report's `records` array must retain the exact caller/source order, every dissenting verdict remains visible, and no aggregate verdict or automatic adjudication is permitted.
+- Added both fixture and golden-test paths to the offline workflow filters. CI result is pending; inspect failures before calling this complete.
+- Constraints unchanged: diagnostic-only; no provider calls, publishing runs, main-branch edits, or PR merge. PR #35 stays draft/unmerged.
+
+**Next step after CI:** fix any fixture/test issues without weakening contracts, rerun the branch-head offline suite, record the verified run, and then inspect PR status.
