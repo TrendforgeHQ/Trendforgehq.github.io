@@ -1,5 +1,3 @@
-import { createHash } from 'node:crypto';
-
 export function review({ id, reviewer = 'reviewer-a', verdict = 'supported', unsafe = false } = {}) {
   const record = {
     schemaVersion: '1.0',
@@ -75,8 +73,3 @@ export const reviewSetFixtures = {
     review({ id: 'SSR-GOLD-302', reviewer: 'reviewer-b', verdict: 'unsupported' })
   ]
 };
-
-// This fixture identity is informational; it is not a review verdict or truth claim.
-export const fixtureSetSha256 = createHash('sha256')
-  .update(JSON.stringify(Object.keys(reviewSetFixtures)))
-  .digest('hex');
