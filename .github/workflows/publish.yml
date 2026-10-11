@@ -224,6 +224,13 @@ jobs:
         run: node scripts/v2-self-check.mjs
       - name: Validate centralized SEO
         run: npx tsx scripts/validate-seo.ts
+      - name: Capture published article lineage (diagnostic, non-blocking)
+        if: success()
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/write-boat-published-lineage-manifest.mjs
       - name: Build site
         run: npm run build
       - name: Commit pipeline output
