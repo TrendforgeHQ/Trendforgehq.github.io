@@ -296,3 +296,12 @@ All entries should describe actual work and results. Do not record planned work 
 - Updated `PROJECT_STATE.md` to lead with the latest **77/77** branch-head offline result, current proposal-only safety boundary, archived-attempt limitation, and next task. Removed duplicate stale factual-proposal summary text.
 - Renumbered learning headings uniquely in document order without removing learning content; added a note explaining that old `pending` labels are historical point-in-time records.
 - Validation baseline referenced: [run 38120828568](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38120828568), **77/77 passed**, 0 failed, 0 skipped. Documentation-change CI result is to be checked after this commit. No provider or publishing workflow was run; PR #35 remains draft/unmerged and `main` untouched.
+
+
+## 2026-10-11 — Fail-closed quarantine hash completeness marker
+
+- Static review found the quarantine metadata wrote `hashesRecordedInWorkflow: true` even when the claim report or canonical evidence pack was missing and the corresponding hash string was empty. The downstream adapter already failed closed, but the metadata marker overstated bundle completeness.
+- Changed the publish workflow gate to default the marker to `false` and set it to `true` only when article, claim-report, and evidence-pack hashes are all non-empty. The exact hash values and workflow run/SHA remain recorded in the same quarantine metadata.
+- Strengthened the existing offline workflow-contract test to require the default-false marker, all-three-hash condition, dynamic metadata field, and absence of the unconditional `true` literal.
+- Branch-head offline suite [run 38121317875](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38121317875) passed **77/77**, 0 failed, 0 skipped. Publishing was not run; PR #35 remains draft/unmerged and `main` is untouched.
+- Next: design a human-reviewed claim-to-passage semantic-support benchmark; lineage and exact text mapping alone must not upgrade `semanticSupport: not_verified`.
