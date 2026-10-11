@@ -88,7 +88,7 @@ export function auditReviewSet(input) {
     }
     const reviewerRepeatIndices = [];
     const independent = [];
-    for (const [reviewerId, reviewerEntries] of byReviewer) {
+    for (const [reviewerId, reviewerEntries] of [...byReviewer.entries()].sort(([a], [b]) => a.localeCompare(b))) {
       if (reviewerEntries.length > 1) {
         reviewerRepeatIndices.push(...reviewerEntries.map(entry => entry.index));
         const verdicts = [...new Set(reviewerEntries.map(entry => entry.verdict))];
@@ -97,15 +97,16 @@ export function auditReviewSet(input) {
           severity: 'review_required',
           reviewerId,
           recordIndices: reviewerEntries.map(entry => entry.index),
-          verdicts,
+          verdicts: [...verdicts].sort(),
+          subjectFingerprint: key,
           message: verdicts.length > 1
             ? 'One reviewer supplied different verdicts for the same exact subject; this is not independent disagreement.'
             : 'One reviewer has multiple records for the same exact subject; they do not count as independent reviews.'
         });
       } else independent.push(reviewerEntries[0]);
     }
-    const verdicts = [...new Set(independent.map(entry => entry.verdict))];
-    const allVerdicts = [...new Set(entries.map(entry => entry.verdict))];
+    const verdicts = [...new Set(independent.map(entry => entry.verdict))].sort();
+    const allVerdicts = [...new Set(entries.map(entry => entry.verdict))].sort();
     let status = 'single_or_non_independent_review';
     if (independent.length >= 2 && verdicts.length > 1) status = 'conflicting_independent_reviews';
     else if (independent.length >= 2 && verdicts.length === 1) status = 'independent_agreement';
@@ -114,8 +115,9 @@ export function auditReviewSet(input) {
         type: status,
         severity: 'human_resolution_required',
         recordIndices: independent.map(entry => entry.index),
-        reviewerIds: independent.map(entry => entry.reviewerId),
-        verdicts,
+        reviewerIds: independent.map(entry => entry.reviewerId).sort(),
+        verdicts: [...verdicts].sort(),
+        subjectFingerprint: key,
         message: 'Independent reviewers disagree. Preserve every review; no winner or aggregate verdict is selected.'
       });
     } else if (status === 'independent_agreement') {
@@ -123,8 +125,9 @@ export function auditReviewSet(input) {
         type: status,
         severity: 'informational',
         recordIndices: independent.map(entry => entry.index),
-        reviewerIds: independent.map(entry => entry.reviewerId),
-        verdicts,
+        reviewerIds: independent.map(entry => entry.reviewerId).sort(),
+        verdicts: [...verdicts].sort(),
+        subjectFingerprint: key,
         message: 'Independent reviewers recorded the same verdict. This is descriptive agreement, not proof of truth or publication approval.'
       });
     }
@@ -150,6 +153,15 @@ export function auditReviewSet(input) {
       message: 'Invalid records are excluded from agreement/conflict analysis.'
     });
   }
+
+  // Keep source records and all input-relative indices untouched, but make report collection order stable.
+  // Findings tied to a subject carry its opaque fingerprint so same-type findings across subjects sort consistently.
+  findings.sort((a, b) => {
+    const { recordIndices: _aIndices, ...aStable } = a;
+    const { recordIndices: _bIndices, ...bStable } = b;
+    return stableJson(aStable).localeCompare(stableJson(bStable));
+  });
+  subjectGroups.sort((a, b) => a.subjectFingerprint.localeCompare(b.subjectFingerprint));
 
   const blocking = findings.some(finding => finding.severity === 'blocking');
   const conflicts = findings.some(finding => finding.type === 'conflicting_independent_reviews' || finding.type === 'same_reviewer_disagreement');
