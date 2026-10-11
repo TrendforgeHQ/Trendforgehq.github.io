@@ -152,6 +152,10 @@ jobs:
             if [ -f "$quarantine/authoritative-evidence-pack.json" ]; then
               evidence_pack_sha256="$(sha256sum "$quarantine/authoritative-evidence-pack.json" | awk '{print $1}')"
             fi
+            hashes_recorded_in_workflow=false
+            if [ -n "$article_sha256" ] && [ -n "$claim_report_sha256" ] && [ -n "$evidence_pack_sha256" ]; then
+              hashes_recorded_in_workflow=true
+            fi
             if [ -f data/grounding-repair.json ]; then
               if grep -Fq "\"articlePath\":\"$article\"" data/grounding-repair.json && grep -Fq "\"runId\":\"${GITHUB_RUN_ID:-unknown}\"" data/grounding-repair.json; then
                 cp data/grounding-repair.json "$quarantine/grounding-repair.json"
@@ -160,7 +164,7 @@ jobs:
               fi
             fi
             cat > "$quarantine/metadata.json" <<EOF
-          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","articleSha256":"$article_sha256","claimReportSha256":"$claim_report_sha256","evidencePackSha256":"$evidence_pack_sha256","hashesRecordedInWorkflow":true,"reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
+          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","articleSha256":"$article_sha256","claimReportSha256":"$claim_report_sha256","evidencePackSha256":"$evidence_pack_sha256","hashesRecordedInWorkflow":$hashes_recorded_in_workflow,"reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
           EOF
             rm -f "$article"
             echo "Claim verification: generated article quarantined and removed from publication set: $quarantine"
