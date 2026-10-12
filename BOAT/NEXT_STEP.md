@@ -1,3 +1,10 @@
+## 2026-10-12 — Audit input cleanliness guard added (CI pending)
+
+- Catalogue runner now also refuses to run if `lib/articles.ts`, `scripts/boat-published-catalogue-audit.mjs`, or the runner itself has uncommitted tracked changes. This closes the gap where a clean HEAD SHA could otherwise be paired with dirty audit inputs.
+- Current code head: `4305a5f7582222aafab05609fedf1b08ebea9dad`. Re-run the offline suite and inspect the result before calling this hardening validated.
+
+---
+
 ## 2026-10-12 — Resumable audit core CI result
 
 - BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) completed successfully on the PR merge checkout containing task-core implementation commit `27b67ebffc98868f00c6a97f337c9fdf731bd942`.
