@@ -1,3 +1,12 @@
+## 2026-10-12 — Dependency-minimized task-state core (implementation started)
+
+- Added `scripts/boat-task-state.mjs`, its JSON Schema contract, and `scripts/test-boat-task-state.mjs`.
+- The core uses Node built-ins only; deterministic task identity is pinned to task type, config, and a full commit SHA. It includes explicit state transitions, idempotent checkpoints/findings, default-zero AI/web budgets, atomic local JSON writes, an exclusive writer lock, and optimistic revision checks.
+- The test suite is now part of the existing offline `node --test scripts/test-boat-*.mjs` glob. Actual CI result is pending; do not claim the code is validated until logs are inspected.
+- Next: inspect the published-catalogue audit CLI contract, connect it as a bounded read-only task worker, then test interruption/resume end to end. Do not add network/model calls in that slice.
+
+---
+
 ## 2026-10-12 — Dependency-minimization decision
 
 **Decision:** Do not add Supabase or another hosted backend as a prerequisite. Build the repository-owned, provider-independent task core first. See [DEPENDENCY_MINIMIZATION_BLUEPRINT.md](DEPENDENCY_MINIMIZATION_BLUEPRINT.md).

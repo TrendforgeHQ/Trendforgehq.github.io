@@ -1,3 +1,12 @@
+## 2026-10-12 — Dependency-minimized task-state core added (CI pending)
+
+- Added a Node-built-in-only task state module, JSON Schema, and deterministic offline tests on the isolated dependency-minimization branch.
+- Task identity includes task type, normalized config, and pinned full commit SHA; state includes explicit status/revision, checkpoints, idempotent findings, error records, and AI/web budget counters with zero defaults.
+- Local persistence uses temporary-file replacement, an exclusive lock file, and expected-revision conflict checks. A stale lock is deliberately not auto-deleted; operator recovery remains explicit.
+- **Validation:** tests have been authored and are wired into the existing BOAT test glob, but this commit's CI result is pending. This is not yet a running audit worker or live Control Center backend.
+- No external backend, third-party package, provider/network call, image generation, publishing dispatch, article edit, secret/gate change, or main-branch edit was made.
+
+
 ## 2026-10-12 — Dependency minimization
 
 - Added [DEPENDENCY_MINIMIZATION_BLUEPRINT.md](DEPENDENCY_MINIMIZATION_BLUEPRINT.md) as the architecture decision for reducing mandatory external dependencies and free-tier quota risk.

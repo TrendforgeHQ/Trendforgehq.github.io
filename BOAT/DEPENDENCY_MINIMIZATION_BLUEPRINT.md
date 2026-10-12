@@ -136,3 +136,8 @@ Implement the repository-owned task core before adding any external service:
 ## Current implementation status
 
 This document records the architecture decision and proposed acceptance criteria. The task state machine, local persistence, and resumable runner are **not yet implemented by this documentation change**. They must be added in a separate isolated code commit with tests and verified CI.
+
+
+## Implementation progress — task state core
+
+Added `scripts/boat-task-state.mjs`, `BOAT/schemas/task-record.schema.json`, and `scripts/test-boat-task-state.mjs` on the dependency-minimization branch. This first code slice uses Node built-ins only and covers task identity pinned to a commit, explicit transitions, resumable checkpoints, idempotent findings, default-zero AI/web budgets, atomic local JSON persistence, and revision/lock conflict checks. CI validation is pending. The catalogue audit worker and end-to-end resume integration are not implemented yet.

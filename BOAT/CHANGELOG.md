@@ -650,3 +650,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added `BOAT/DEPENDENCY_MINIMIZATION_BLUEPRINT.md` defining a provider-independent core, optional bounded adapters, portable task state, quota-aware execution tiers, phased implementation, acceptance criteria, and security/non-goals.
 - Recorded the decision not to add Supabase or another hosted backend as a prerequisite. The first planned implementation is a dependency-light task contract plus local resumable state and offline tests.
 - This change is documentation only; it does not implement the task engine and does not claim runtime validation. No publishing/provider/image workflow was dispatched, no article or secret changed, and `main` remains untouched.
+
+
+## 2026-10-12 — Provider-independent task-state core (CI pending)
+- Added `scripts/boat-task-state.mjs` with deterministic task IDs pinned to task type/config/commit SHA, guarded status transitions, resumable checkpoints, idempotent finding merge, default-zero AI/web budgets, and local JSON persistence with atomic replacement, lock, and revision-conflict checks.
+- Added `BOAT/schemas/task-record.schema.json` and `scripts/test-boat-task-state.mjs` for offline regression coverage.
+- The new test file is picked up by the existing `node --test scripts/test-boat-*.mjs` command. CI has not yet been verified for this code commit; no pass is claimed.
+- No new package/backend, publishing/provider/image calls, production edits, or changes to `main`.

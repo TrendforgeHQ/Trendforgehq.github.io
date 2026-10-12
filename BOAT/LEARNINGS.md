@@ -623,3 +623,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Implication:** Provider failover alone does not solve quota interruptions. Tasks must checkpoint completed units, resume idempotently, and preserve partial results when a network/provider budget is exhausted.
 - **Limit:** GitHub Actions also has usage limits, and workflow artifacts can expire. This design reduces lock-in and wasted work; it does not promise unlimited free compute or permanent artifact retention.
 - **Validation status:** Architecture decision documented; task-state implementation and its tests are pending.
+
+
+## L-NEW — Portable task state can reduce repeated work, but does not itself create intelligence
+- **Observed:** A repository-owned task-state module now defines task identity, explicit transitions, checkpoints, idempotent finding IDs, budget counters, and local persistence without a third-party runtime package.
+- **Implication:** The next step is to integrate existing read-only audit logic and prove resume behavior end to end; the state module alone is not a worker, model, or live Control Center backend.
+- **Risk:** File locks can remain after a process crash. The implementation intentionally fails closed on an existing lock instead of deleting it automatically; recovery needs explicit operator action.
+- **Validation status:** Tests authored and wired into the offline test glob; CI result pending at the time of this entry.
