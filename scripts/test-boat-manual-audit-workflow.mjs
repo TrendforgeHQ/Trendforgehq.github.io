@@ -25,13 +25,13 @@ test('manual BOAT audit has no automatic trigger and uses read-only repository p
   assert.match(source, /name: Build checkpoint provenance manifest/);
   assert.match(source, /boat-task-artifact-manifest\.mjs --mode create/);
   assert.match(source, /name: Validate and import canonical task-store artifact/);
-  assert.match(source, /boat-task-store-artifact\\.mjs --mode validate/);
-  assert.match(source, /boat-task-store-artifact\\.mjs --mode import/);
+  assert.match(source, /boat-task-store-artifact\.mjs --mode validate/);
+  assert.match(source, /boat-task-store-artifact\.mjs --mode import/);
   assert.match(source, /--task-store/);
   assert.match(source, /name: Build portable canonical task-store artifact/);
-  assert.match(source, /boat-task-store-artifact\\.mjs --mode create/);
-  assert.match(source, /boat-task-store-portable\\.json/);
-  assert.match(source, /!.*boat-task-store\\.json/);
+  assert.match(source, /boat-task-store-artifact\.mjs --mode create/);
+  assert.match(source, /boat-task-store-portable\.json/);
+  assert.match(source, /!.*boat-task-store\.json/);
   assert.match(source, /steps\.validate_checkpoint\.outcome == 'success'/);
   assert.ok(source.indexOf('name: Validate prior task checkpoint manifest') < source.indexOf('name: Run BOAT audit'));
   assert.ok(source.indexOf('name: Build checkpoint provenance manifest') < source.indexOf('name: Upload portable task checkpoint and report'));
