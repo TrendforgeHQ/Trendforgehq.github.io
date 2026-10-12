@@ -207,6 +207,7 @@ jobs:
           name: boat-audit-${{ steps.run.outputs.task_id || steps.discover.outputs.task_id || inputs.resume_task_id || github.run_id }}
           path: |
             ${{ runner.temp }}/boat-state/*.json
+            !${{ runner.temp }}/boat-state/boat-task-store.json
             ${{ runner.temp }}/boat-state/*.md
           if-no-files-found: warn
           retention-days: 14
