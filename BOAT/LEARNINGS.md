@@ -601,3 +601,17 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## 2026-10-11 — Test the actual transfer script, but do not overclaim production repair
 
 The workflow-contract test caught a false assumption about the exact log string, then caught brittle shell-block extraction in the test itself. Corrected the assertions to match actual checkpoint calls and extracted the YAML shell block via its `run: |` marker; added a `bash -n` syntax check so malformed transfer shell is caught in offline CI. On implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT offline suite passed 137/137 and Control Center build passed. This proves test/workflow contract consistency only. The actual zero-byte committed pack vs non-empty retained artifact discrepancy still requires diagnostics from a future naturally scheduled run; no production run was manually triggered.
+
+
+## L-019 — A static Control Center cannot be the privileged BOAT runtime
+- **Observed:** `next.config.mjs` sets `output: 'export'`; `app/control-center/page.tsx` reads committed JSON snapshots at build time. The publishing workflow has provider secrets and write permissions, so it is not a safe arbitrary browser-command endpoint.
+- **Decision:** Keep GitHub Pages as the presentation layer. A real conversational task interface requires a separately authenticated backend and a least-privilege worker. Never ship a GitHub token/provider key in client code or present a client-only echo as a real bot response.
+- **First implementation scope:** read-only published-catalogue audit task, durable task states/history, pinned commit provenance, explicit unknown/blocked states, bounded/idempotent requests, and zero paid-provider budget.
+- **Safety boundary:** no article mutation, publish dispatch, merge, or gate changes in the first slice. Approval for later repairs must be server-verified and bound to an immutable proposal hash.
+- **Evidence:** interface audit in `BOAT/CONTROL_CENTER_INTERFACE_AUDIT.md`; existing PR #35 branch-head checks passed in runs 38136303910 and 38136303936. Those checks do not validate a backend, which is not yet implemented.
+
+## L-020 — Verify the new branch, not just its parent baseline
+- **Observed:** PR #35's prior branch-head checks were green, but a separate audit PR still needed its own CI result before being called validated.
+- **Decision:** Record PR #37's own run 38219593540 as the verification result. It passed the existing offline workflow, including 37/37 Control Center deterministic checks and the read-only root-lineage audit.
+- **Limitation:** These tests do not exercise a live backend, authentication, task persistence, or a chat interface. Those capabilities remain unimplemented.
+- **Constraint:** GitHub Pages remains the free static frontend; no external backend/identity service has been selected. Verify a free-tier server-side option and its security properties before implementation.
