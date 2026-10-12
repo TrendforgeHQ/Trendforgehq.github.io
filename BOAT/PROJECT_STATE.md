@@ -827,3 +827,13 @@ Implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1` passed BOAT O
 
 - Run [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861) passed for the preceding docs-record commit `89d530359996a1ef772896e72b7b5e3a803a387a`. Both the offline regression suite and read-only lineage audit succeeded.
 - This does not change the operational status: manual dispatch/cross-run resume remain unverified; no live API/auth broker exists; `main` is untouched.
+
+
+## 2026-10-12 — Cross-run checkpoint manifest validation added
+
+- Added `scripts/boat-task-artifact-manifest.mjs` and `scripts/test-boat-task-artifact-manifest.mjs`. The portable manifest binds source run ID, task ID/type, pinned commit SHA, audit profile/config hash, exact task-record hash, and report hash.
+- Updated `.github/workflows/boat-manual-audit.yml` to validate a downloaded prior checkpoint before the audit worker runs, and to generate a new manifest for the current run only after validation succeeds. The manifest is part of the 14-day checkpoint artifact.
+- Negative tests cover wrong run/task/commit, JSON/report tampering or missing report, unsupported profile, non-resumable state, and CLI round-trip.
+- Final validation: BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`; the offline regression suite and read-only published-root lineage audit both succeeded.
+- Run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) first caught over-escaped regex assertions in the workflow test. They were corrected; the subsequent full run passed.
+- This is still offline/static validation. No manual workflow dispatch, cross-run artifact round-trip, live API/authentication, publishing, provider/image call, article edit, merge, or `main` change occurred.
