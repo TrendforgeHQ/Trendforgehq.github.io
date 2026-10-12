@@ -158,3 +158,8 @@ The dependency-light task-state and resumable catalogue worker implementation pa
 ## Latest validation — 2026-10-12
 
 BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed after adding checkout commit and clean-input guards. Task state and pause/resume integration tests passed, and the read-only published-root lineage audit completed. The scope remains structural and offline; no live backend, semantic fact-check, or repair execution is claimed.
+
+
+## Phase B implementation update — combined read-only review task
+
+The resumable worker now orchestrates the existing structural catalogue audit, archived evidence coverage, exact-byte lineage, published review queue, and archived claim-level report diagnostics. The report retains provenance and current-text-match diagnostics but never asserts independent semantic verification. Task profile version 2 prevents resuming older structural-only state under the new semantics. CI validation is pending for this integration.

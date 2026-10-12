@@ -683,3 +683,11 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Offline workflow [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed after adding checkout-SHA and clean-audit-input guards.
 - Task-state and catalogue task pause/resume integration tests passed; the read-only published-root lineage audit also completed successfully.
 - The prior failure in [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) was an assertion-message mismatch, corrected before the successful runs. No provider or publishing workflow was dispatched.
+
+
+## 2026-10-12 — Combined review-queue task integration (CI pending)
+- Extended the resumable catalogue task to run structural, archived evidence-coverage, exact-byte lineage, combined review-queue, and archived claim-level audits as a single pinned read-only task.
+- Emits reviewable per-article findings plus claim-history findings with archived report identity/hash, saved verifier status, source/passage metadata, and current article text-match diagnostic.
+- Findings remain advisory, explicitly mark semantic support as not assessed/unknown, and require human review; no repair or publishing action is enabled.
+- Bumped the task audit profile to version 2 so version-1 structural-only task state cannot be resumed under different semantics.
+- Added/updated offline integration assertions; CI pending.

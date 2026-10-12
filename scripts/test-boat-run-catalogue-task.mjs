@@ -34,6 +34,15 @@ test('catalogue task pauses after a bounded batch and resumes to completion with
     assert.equal(completed.pinnedCommitSha, commit);
     assert.ok(completed.findings >= paused.findings);
     assert.ok(completed.limitations.some(item => item.includes('semantic support')));
+    assert.equal(completed.auditComponents.structuralArticles, completed.progress.totalArticles);
+    assert.equal(completed.auditComponents.evidenceArticles, completed.progress.totalArticles);
+    assert.equal(completed.auditComponents.lineageArticles, completed.progress.totalArticles);
+    assert.equal(completed.auditComponents.reviewQueueArticles, completed.progress.totalArticles);
+    assert.equal(completed.auditComponents.claimAuditArticles, completed.progress.totalArticles);
+    assert.ok(completed.findingsByCategory.structure >= 0);
+    assert.ok(completed.findingsByCategory.claim_history >= 0);
+    assert.ok(completed.limitations.some(item => item.includes('historical verifier results are signals only')));
+    assert.equal(completed.auditComponents.reviewQueueSummary.automaticRepair, undefined);
     const stored = JSON.parse(await fs.readFile(path.join(dir, paused.taskId + '.json'), 'utf8'));
     assert.equal(stored.status, 'completed');
     assert.equal(stored.budget.aiCalls, 0);
@@ -53,7 +62,7 @@ test('resume refuses a different pinned commit or changed batch configuration', 
     const wrongSha = run(['--commit', 'c'.repeat(40), '--state-dir', dir, '--batch-size', '10', '--resume', taskId]);
     assert.notEqual(wrongSha.status, 0);
     assert.match(wrongSha.stderr, /must equal the checked-out repository commit SHA/);
-    const forged = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: 'c'.repeat(40), config: { batchSize: 10, totalArticles: 1, auditVersion: 1 } });
+    const forged = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: 'c'.repeat(40), config: { batchSize: 10, totalArticles: 1, auditVersion: 2, auditProfile: 'combined-structural-evidence-lineage-claim-history' } });
     await saveTaskRecord(path.join(dir, forged.taskId + '.json'), forged, { expectedRevision: null });
     const mismatchedRecord = run(['--commit', commit, '--state-dir', dir, '--batch-size', '10', '--resume', forged.taskId]);
     assert.notEqual(mismatchedRecord.status, 0);
@@ -71,5 +80,26 @@ test('invalid arguments fail before creating a task', async () => {
     assert.notEqual(result.status, 0);
     assert.match(result.stderr, /full 40-character/);
     assert.deepEqual(await fs.readdir(dir), []);
+  } finally { await fs.rm(dir, { recursive: true, force: true }); }
+});
+
+
+test('combined audit records historical claim signals without claiming current semantic verification', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'boat-combined-audit-'));
+  try {
+    const result = run(['--commit', commit, '--state-dir', dir, '--batch-size', '100']);
+    assert.equal(result.status, 0, result.stderr);
+    const report = JSON.parse(result.stdout);
+    assert.equal(report.status, 'completed');
+    assert.equal(report.auditComponents.structuralArticles, report.progress.totalArticles);
+    assert.equal(report.auditComponents.evidenceArticles, report.progress.totalArticles);
+    assert.equal(report.auditComponents.lineageArticles, report.progress.totalArticles);
+    assert.equal(report.auditComponents.reviewQueueArticles, report.progress.totalArticles);
+    assert.equal(report.auditComponents.claimAuditArticles, report.progress.totalArticles);
+    assert.ok(report.limitations.some(item => item.includes('historical verifier results are signals only')));
+    const state = JSON.parse(await fs.readFile(path.join(dir, report.taskId + '.json'), 'utf8'));
+    assert.ok(state.findings.every(item => item.semanticSupport === 'not_assessed' || item.semanticSupport === 'unknown'));
+    assert.ok(state.findings.every(item => item.requiresApproval === true));
+    assert.ok(state.findings.some(item => item.category === 'claim_history') || report.auditComponents.archivedClaimRows === 0);
   } finally { await fs.rm(dir, { recursive: true, force: true }); }
 });

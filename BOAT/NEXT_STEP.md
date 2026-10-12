@@ -1,3 +1,13 @@
+## 2026-10-12 — Combined review-queue task integration (CI pending)
+
+- Upgraded the resumable worker from structural-only findings to a combined read-only review task: structural catalogue checks, historical evidence coverage, exact-byte lineage, the existing published review queue, and archived claim-verifier report diagnostics.
+- Claim-level findings retain saved status, claim text, source/passage metadata, report identity/hash, and whether text was found in current article bytes. Every finding explicitly sets semantic support to not assessed/unknown and requires human approval; historical PASS is not current fact verification.
+- Task identity now uses audit version 2 and an explicit combined profile; older structural-only task records are rejected for resume instead of silently mixing report semantics.
+- The runner's cleanliness guard now covers article Markdown, archived attempts, lineage manifests, root verifier snapshots, and all audit modules.
+- Tests have been updated for combined audit components and claim-history safety. CI result for this code commit is pending; no green result is claimed yet.
+
+---
+
 ## 2026-10-12 — Latest task-core validation (green)
 
 - BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed on the PR merge checkout containing code commit `4305a5f7582222aafab05609fedf1b08ebea9dad`.

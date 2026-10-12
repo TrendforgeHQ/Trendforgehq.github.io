@@ -658,3 +658,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Verified:** pause/resume, repeated completed-task resume, zero AI/web counters, and pinned-input/config mismatch checks passed in the integration suite.
 - **Limit:** The green suite verifies deterministic structural review only; it does not prove semantic claim support, source freshness, or a live authenticated Control Center.
 - **Validation status:** Verified by the linked BOAT Offline Tests run.
+
+
+## L-NEW — A combined review queue must preserve historical provenance and semantic uncertainty
+- **Observed:** Existing BOAT code can combine structural checks, archived evidence coverage, exact-byte lineage, and archived claim-verifier report diagnostics without new network/model calls.
+- **Decision:** The resumable task records these as separate review signals; it preserves report IDs/hashes, saved claim statuses, source/passage fields, and current-text-match diagnostics.
+- **Safety:** All claim findings explicitly remain `not_assessed` or `unknown`; an old verifier PASS is not current factual verification. Findings are proposal/review signals, never repair authorization.
+- **Compatibility:** Audit-profile version 2 prevents an older structural-only task from being resumed with new output semantics.
+- **Validation status:** Integration tests authored; current commit CI pending.
