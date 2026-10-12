@@ -700,3 +700,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Correction:** Compare both values through the same recursive canonicalization before resuming.
 - **Security note:** Human-readable reports must escape untrusted article/claim text so content cannot inject HTML/Markdown structure into the review artifact.
 - **Validation status:** Regression tests authored; CI pending.
+
+
+## L-NEW — Imported utility modules must not execute their CLI entrypoint
+- **Observed:** Importing the report renderer from the task worker invoked its CLI against the worker's arguments, causing task execution to fail before report writing.
+- **Correction:** Guard CLI execution by comparing the invoked script path with the module URL; keep renderer/writer exports side-effect-free.
+- **Related fixes:** Use Node fs/promises methods directly and render machine statuses as readable labels.
+- **Validation status:** CI fix pending.

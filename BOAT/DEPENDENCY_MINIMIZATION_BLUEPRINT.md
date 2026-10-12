@@ -191,3 +191,10 @@ Added a deterministic Markdown renderer and wired the worker to refresh a siblin
 ## Report renderer hardening follow-up
 
 Resume validation compares audit-component summaries through recursive canonicalization, matching the task-state factory. The Markdown renderer escapes HTML/Markdown metacharacters from untrusted article and claim text; regression coverage includes script-like text. CI validation pending.
+## 2026-10-12 — Report renderer integration fixes (CI pending)
+
+- Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.
+- Added a direct-execution guard, corrected promise-based filesystem calls, and render semantic statuses as readable labels. Re-run the offline suite before treating report generation as verified.
+
+---
+

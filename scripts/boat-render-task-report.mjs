@@ -5,6 +5,7 @@
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { loadTaskRecord, validateTaskRecord } from './boat-task-state.mjs';
 
 const esc = value => String(value ?? '').replace(/\\/g, '\\\\').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/[|`*_{}\[\]()#+.!-]/g, '\\$&');
@@ -71,7 +72,7 @@ export function renderTaskReport(record) {
       '- **Status:** ' + esc(statusLabel(finding.status)),
       '- **Article:** ' + strong(finding.articleSlug ?? 'unknown') + ' — ' + esc(finding.articleTitle ?? ''),
       '- **Finding ID:** ' + strong(finding.findingId),
-      '- **Semantic support:** ' + esc(finding.semanticSupport ?? 'unknown'),
+      '- **Semantic support:** ' + esc(statusLabel(finding.semanticSupport ?? 'unknown')),
       '- **Human approval required:** ' + (finding.requiresApproval === true ? 'yes' : 'not specified'),
       '',
       esc(finding.description ?? 'No description recorded.'),
@@ -104,14 +105,14 @@ export function renderTaskReport(record) {
 export async function writeTaskReport(outputPath, record) {
   const absolute = path.resolve(outputPath);
   const markdown = renderTaskReport(record);
-  await fs.promises.mkdir(path.dirname(absolute), { recursive: true });
+  await fs.mkdir(path.dirname(absolute), { recursive: true });
   const temp = absolute + '.tmp-' + process.pid + '-' + Math.random().toString(16).slice(2);
   try {
-    const handle = await fs.promises.open(temp, 'wx', 0o600);
+    const handle = await fs.open(temp, 'wx', 0o600);
     try { await handle.writeFile(markdown, 'utf8'); await handle.sync(); }
     finally { await handle.close(); }
-    await fs.promises.rename(temp, absolute);
-  } finally { await fs.promises.rm(temp, { force: true }).catch(() => {}); }
+    await fs.rename(temp, absolute);
+  } finally { await fs.rm(temp, { force: true }).catch(() => {}); }
   return absolute;
 }
 
@@ -137,7 +138,9 @@ async function main() {
   await writeTaskReport(output, record);
   process.stdout.write(JSON.stringify({ taskId: record.taskId, status: record.status, reportPath: output }, null, 2) + '\n');
 }
-main().catch(error => {
-  process.stderr.write('BOAT report render failed: ' + error.message + '\n');
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(error => {
+    process.stderr.write('BOAT report render failed: ' + error.message + '\n');
+    process.exitCode = 1;
+  });
+}

@@ -724,3 +724,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Canonicalized audit-component summary comparison on resume to match task-config canonicalization.
 - Hardened Markdown report escaping for HTML and Markdown metacharacters; added regression assertions for script-like and formatted claim text.
 - CI validation pending.
+## 2026-10-12 — Report renderer integration fixes (CI pending)
+
+- Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.
+- Added a direct-execution guard, corrected promise-based filesystem calls, and render semantic statuses as readable labels. Re-run the offline suite before treating report generation as verified.
+
+---
+

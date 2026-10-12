@@ -1,3 +1,10 @@
+## 2026-10-12 — Report renderer integration fixes (CI pending)
+
+- Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.
+- Added a direct-execution guard, corrected promise-based filesystem calls, and render semantic statuses as readable labels. Re-run the offline suite before treating report generation as verified.
+
+---
+
 ## 2026-10-12 — Report renderer hardening and canonical resume comparison (CI pending)
 
 - Before running the new report tests, reviewed two implementation details: task config is canonicalized with sorted object keys, so audit-summary comparison must use the same canonical comparison; the report renderer must escape HTML/Markdown metacharacters from article and claim content.
