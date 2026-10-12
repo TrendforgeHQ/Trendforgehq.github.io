@@ -707,3 +707,10 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 - Documented trust boundaries, no-secret-in-browser rule, least-privilege worker, pinned commit/task provenance, fail-closed authorization, artifact resume validation, CSRF/session requirements, threat mitigations, and approval binding for a future repair proposal.
 - Important deployment gate: the manual-only workflow has static CI coverage but has not been dispatched. It may require a reviewed default-branch merge to become dispatchable. Do not merge merely to unlock the test; keep `main` unchanged until an explicit operator decision.
 - Next: add offline schema/authorization-decision fixtures and negative tests for stale commit, cross-task/run resume, over-budget inputs, and artifact manifest mismatch. Keep the static Control Center read-only; no hosting/auth product chosen, no live API, no repair executor, no publish/provider/image calls.
+
+
+## 2026-10-12 — Security-boundary documentation CI passed
+
+- BOAT Offline Tests run [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) passed for security-boundary documentation commit `b060f4b58e470e49fb421fe3bb796e2745e20508`. Offline BOAT regression tests and the read-only published-root lineage audit both succeeded.
+- This validates the PR checkout's existing offline suite and lineage audit; it does not test a live API, auth broker, manual workflow dispatch, or cross-run artifact resume.
+- Next: add offline task request/response and artifact-manifest validation tests before selecting or implementing any live backend.
