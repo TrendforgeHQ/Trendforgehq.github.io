@@ -1,3 +1,13 @@
+## L-NEW — Cross-run task-store recovery must not upload the ephemeral canonical file
+
+- **Observation:** GitHub-hosted runners are ephemeral. A local canonical store is useful during one run but cannot be treated as the next run's persistent state.
+- **Decision:** Resume must validate the source run ID, task ID, pinned commit, store/task hashes, profile/version and idempotency mapping in the portable single-task artifact before importing it into a new canonical store. Import is create-only and must never overwrite/merge an existing store.
+- **Workflow change:** the manual audit workflow now uses the canonical store for task execution, imports the portable artifact before resume, and exports a fresh portable artifact after execution. The ephemeral canonical file is explicitly excluded from upload.
+- **Validation status:** the portable artifact module and test suite passed on PR head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842). The subsequent workflow wiring and static-test changes are pending a real CI job and have not been manually exercised.
+- **Limitation:** the manifest is an integrity/provenance binding, not a cryptographic signature or authentication mechanism. A successful static test does not prove cross-run artifact download/resume; a controlled manual run is still required.
+
+---
+
 ## L-NEW — Store-backed resume must treat portable task JSON as a cache, not authority
 
 - **Observation:** A valid but stale task JSON artifact can disagree with the unified task store after interruption. If resume trusts the artifact, it may rewind a cursor and redo already completed work.
