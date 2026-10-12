@@ -685,3 +685,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Verified:** The task pauses/resumes; category totals reconcile; findings preserve article/report provenance; no automatic repair or publication decision is enabled.
 - **Limit:** This is historical/structural triage. It does not independently validate source content, freshness, reachability, or factual truth. Live Control Center authentication/task submission remains unimplemented.
 - **Next:** Generate a portable, deterministic human-readable report from the saved task record before adding live backend/UI connectivity.
+
+
+## L-NEW — Persisted findings need a human-readable artifact as well as machine state
+- **Observed:** The combined task record is machine-readable JSON, but a reviewer should not have to inspect raw JSON to understand findings and their limitations.
+- **Decision:** Generate a deterministic Markdown sibling report from the saved record after each checkpoint; keep JSON canonical and Markdown a derived view.
+- **Safety:** Report renderer makes no network/AI calls, escapes untrusted text for Markdown tables/inline code, and refuses to overwrite the state JSON. It prominently says historical PASS and provenance do not prove current truth.
+- **Compatibility:** Task profile v3 stores audit-component summary in task identity/config and blocks resume when the recomputed component summary differs.
+- **Validation status:** Tests authored; CI pending.

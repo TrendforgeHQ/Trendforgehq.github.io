@@ -26,10 +26,15 @@ test('catalogue task pauses after a bounded batch and resumes to completion with
     assert.equal(paused.budget.aiCalls, 0);
     assert.equal(paused.budget.webRequests, 0);
     assert.ok(paused.taskId.startsWith('boat_'));
+    assert.ok(paused.reportFile.endsWith('.md'));
+    const pausedMarkdown = await fs.readFile(paused.reportFile, 'utf8');
+    assert.match(pausedMarkdown, /BOAT Editorial Task Report/);
+    assert.match(pausedMarkdown, /paused/i);
     const resume = run(['--commit', commit, '--state-dir', dir, '--batch-size', '10', '--resume', paused.taskId]);
     assert.equal(resume.status, 0, resume.stderr);
     const completed = JSON.parse(resume.stdout);
     assert.equal(completed.status, 'completed');
+    assert.match(await fs.readFile(completed.reportFile, 'utf8'), /completed/i);
     assert.equal(completed.progress.completedUnits, completed.progress.totalArticles);
     assert.equal(completed.pinnedCommitSha, commit);
     assert.ok(completed.findings >= paused.findings);
@@ -64,7 +69,7 @@ test('resume refuses a different pinned commit or changed batch configuration', 
     const wrongSha = run(['--commit', 'c'.repeat(40), '--state-dir', dir, '--batch-size', '10', '--resume', taskId]);
     assert.notEqual(wrongSha.status, 0);
     assert.match(wrongSha.stderr, /must equal the checked-out repository commit SHA/);
-    const forged = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: 'c'.repeat(40), config: { batchSize: 10, totalArticles: 1, auditVersion: 2, auditProfile: 'combined-structural-evidence-lineage-claim-history' } });
+    const forged = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: 'c'.repeat(40), config: { batchSize: 10, totalArticles: 1, auditVersion: 3, auditProfile: 'combined-structural-evidence-lineage-claim-history', auditComponents: {} } });
     await saveTaskRecord(path.join(dir, forged.taskId + '.json'), forged, { expectedRevision: null });
     const mismatchedRecord = run(['--commit', commit, '--state-dir', dir, '--batch-size', '10', '--resume', forged.taskId]);
     assert.notEqual(mismatchedRecord.status, 0);

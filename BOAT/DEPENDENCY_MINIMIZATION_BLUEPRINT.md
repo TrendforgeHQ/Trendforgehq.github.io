@@ -181,3 +181,8 @@ The resumable worker now orchestrates the existing structural catalogue audit, a
 ## Latest validation and next step — 2026-10-12
 
 Combined editorial audit code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7` passed BOAT Offline Tests run [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482), including pause/resume and explicit no-auto-repair/no-auto-publication assertions. The task is structural and historical-triage only; it does not independently establish semantic truth or source freshness. Next planned slice: produce a deterministic portable human-readable report from the saved task record, then design authenticated Control Center connectivity as a separate security-boundary change.
+
+
+## Phase B follow-up — human-readable task report
+
+Added a deterministic Markdown renderer and wired the worker to refresh a sibling report after each saved checkpoint and final status transition. Task profile v3 stores the combined audit summary in the task configuration and blocks resume if that summary drifts for the pinned inputs. Renderer tests cover deterministic output, escaped content, claim/report provenance, CLI/file output, and refusal to overwrite the canonical JSON task record. CI validation is pending.

@@ -1,3 +1,12 @@
+## 2026-10-12 — Human-readable task report implementation (CI pending)
+
+- Added scripts/boat-render-task-report.mjs, a deterministic Markdown renderer for a saved BOAT task record. It displays task identity/status/progress, budgets, finding counts, claim-history provenance, and uncertainty/approval limits without network or AI calls.
+- The resumable runner now writes a sibling .md report after each checkpoint and on completion/resume, so a paused task has a readable report too.
+- Task profile bumped to version 3 and stores the deterministic audit-component summary in task config; resume blocks if the same commit produces a different component summary/profile, avoiding silent report-semantic drift.
+- Added tests for deterministic rendering, escaped content, provenance fields, CLI stdout/file output, and protection against overwriting the task JSON. CI result pending.
+
+---
+
 ## 2026-10-12 — Combined editorial audit CI verified
 
 - BOAT Offline Tests run [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482) passed on code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7`.

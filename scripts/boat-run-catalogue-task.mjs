@@ -16,6 +16,7 @@ import {
   addTaskFindings, checkpointTask, createTaskRecord, loadTaskRecord,
   saveTaskRecord, transitionTask
 } from './boat-task-state.mjs';
+import { writeTaskReport } from './boat-render-task-report.mjs';
 
 const sha256 = value => crypto.createHash('sha256').update(value).digest('hex');
 function usage() {
@@ -116,12 +117,14 @@ async function main() {
     record = await loadTaskRecord(filePath);
     if (record.taskId !== options.resume) throw new Error('Stored task ID does not match requested resume ID');
     if (record.pinnedCommitSha !== options.commit) throw new Error('Resume blocked: supplied commit does not match pinned commit');
-    if (record.taskType !== 'published_catalogue_audit' || record.config.batchSize !== options.batchSize || record.config.totalArticles !== articles.length || record.config.auditVersion !== 2) {
+    if (record.taskType !== 'published_catalogue_audit' || record.config.batchSize !== options.batchSize || record.config.totalArticles !== articles.length || record.config.auditVersion !== 3 || record.config.auditProfile !== 'combined-structural-evidence-lineage-claim-history' || JSON.stringify(record.config.auditComponents) !== JSON.stringify(auditComponents)) {
       throw new Error('Resume blocked: task type, batch size, or catalogue size differs from original task configuration');
     }
     diskRevision = record.revision;
     if (record.status === 'completed') {
-      process.stdout.write(JSON.stringify(summary(record, record.status, auditComponents), null, 2) + '\n');
+      const reportFile = filePath.replace(/\.json$/i, '.md');
+      await writeTaskReport(reportFile, record);
+      process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation: 0 }, null, 2) + '\n');
       return;
     }
     if (!['paused', 'running', 'queued'].includes(record.status)) throw new Error('Resume blocked for task status: ' + record.status);
@@ -134,7 +137,7 @@ async function main() {
     record = createTaskRecord({
       taskType: 'published_catalogue_audit',
       pinnedCommitSha: options.commit,
-      config: { batchSize: options.batchSize, totalArticles: articles.length, auditVersion: 2, auditProfile: 'combined-structural-evidence-lineage-claim-history' }
+      config: { batchSize: options.batchSize, totalArticles: articles.length, auditVersion: 3, auditProfile: 'combined-structural-evidence-lineage-claim-history', auditComponents }
     });
     filePath = path.join(stateDir, record.taskId + '.json');
     await saveTaskRecord(filePath, record, { expectedRevision: null });
@@ -195,13 +198,16 @@ async function main() {
     });
     await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
     diskRevision = record.revision;
+    await writeTaskReport(filePath.replace(/\.json$/i, '.md'), record);
     cursor = end;
     batchesThisInvocation++;
   }
   const finalStatus = cursor >= articles.length ? 'completed' : 'paused';
   record = transitionTask(record, finalStatus, { reason: finalStatus === 'paused' ? 'Invocation batch limit reached; resume from saved checkpoint.' : null });
   await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
-  process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, batchesThisInvocation }, null, 2) + '\n');
+  const reportFile = filePath.replace(/\.json$/i, '.md');
+  await writeTaskReport(reportFile, record);
+  process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation }, null, 2) + '\n');
 }
 main().catch(error => {
   process.stderr.write(`BOAT catalogue task failed closed: ${error.message}\n${usage()}`);

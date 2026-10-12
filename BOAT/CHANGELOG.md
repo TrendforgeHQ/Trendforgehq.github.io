@@ -711,3 +711,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Combined task now records structural, archived evidence coverage, exact-byte lineage, review queue, and archived claim-history signals with article/report provenance and explicit semantic uncertainty.
 - Removed redundant duplicate-slug noise and added current article SHA-256 to claim-history findings. Tests assert read-only mode and disabled auto-repair/publication.
 - All four BOAT project records updated; PR #38 remains draft and unmerged.
+
+
+## 2026-10-12 — Deterministic Markdown task report (CI pending)
+- Added scripts/boat-render-task-report.mjs with a pure report renderer and atomic Markdown file writer.
+- Integrated automatic sibling .md report updates into the resumable catalogue worker after checkpoints and completion; reports include progress, category/severity counts, budget use, claim/report provenance, and explicit uncertainty/safety limits.
+- Bumped task audit profile to v3 and bound the stored audit-component summary into task identity/configuration.
+- Added renderer tests for determinism, escaping, provenance, CLI output, and task-state overwrite protection. CI pending.
