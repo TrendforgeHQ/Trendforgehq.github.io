@@ -1,5 +1,15 @@
 ## L-NEW — Cross-run task-store recovery must not upload the ephemeral canonical file
 
+- **Observation:** GitHub-hosted runners are ephemeral. A local canonical store is useful within one run but cannot be treated as persistent state for the next run.
+- **Decision:** Resume validates source run ID, task ID, pinned commit, store/task hashes, profile/version and idempotency mapping in a portable single-task artifact before importing it into a new canonical store. Import is create-only and must not overwrite or merge existing state.
+- **Workflow change:** the manual audit workflow now invokes the runner in `--task-store` mode, imports the portable artifact before resume, and exports a new portable artifact after execution. The ephemeral canonical store is excluded from upload.
+- **Validation:** portable artifact module/tests passed on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842). Subsequent workflow wiring is pending a real CI job; run [38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) had zero jobs and is not a test pass.
+- **Limitation:** the manifest binds integrity/provenance but is not a cryptographic signature or authentication. End-to-end artifact download/import/resume remains unverified until a controlled manual run succeeds.
+
+---
+
+## L-NEW — Cross-run task-store recovery must not upload the ephemeral canonical file
+
 - **Observation:** GitHub-hosted runners are ephemeral. A local canonical store is useful during one run but cannot be treated as the next run's persistent state.
 - **Decision:** Resume must validate the source run ID, task ID, pinned commit, store/task hashes, profile/version and idempotency mapping in the portable single-task artifact before importing it into a new canonical store. Import is create-only and must never overwrite/merge an existing store.
 - **Workflow change:** the manual audit workflow now uses the canonical store for task execution, imports the portable artifact before resume, and exports a fresh portable artifact after execution. The ephemeral canonical file is explicitly excluded from upload.
