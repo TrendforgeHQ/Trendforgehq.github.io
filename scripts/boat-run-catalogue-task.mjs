@@ -81,6 +81,8 @@ async function main() {
   const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
   const checkedOutCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: repoRoot, encoding: 'utf8' }).trim();
   if (options.commit !== checkedOutCommit) throw new Error('Input pin mismatch: --commit must equal the checked-out repository commit SHA');
+  const dirtyAuditInputs = execFileSync('git', ['status', '--porcelain', '--untracked-files=no', '--', 'lib/articles.ts', 'scripts/boat-published-catalogue-audit.mjs', 'scripts/boat-run-catalogue-task.mjs'], { cwd: repoRoot, encoding: 'utf8' }).trim();
+  if (dirtyAuditInputs) throw new Error('Input pin mismatch: audited catalogue or audit code has uncommitted changes');
   const stateDir = path.resolve(options.stateDir);
   await fs.mkdir(stateDir, { recursive: true });
   const duplicateCounts = new Map();
