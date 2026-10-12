@@ -104,7 +104,7 @@ test('artifact hash mismatch blocks proposal and cannot be applied', () => {
 
 test('unsafe article paths and malformed commit pins fail closed', () => {
   const f = fixture();
-  assert.throws(() => createArticleReviewCycle({ ...f, articlePath: '../content/articles/escape.md', baseCommitSha: commit }), /allowlisted article path/);
+  assert.throws(() => createArticleReviewCycle({ ...f, articlePath: '../content/articles/escape.md', baseCommitSha: commit }), /allowlisted content\/articles/);
   assert.throws(() => createArticleReviewCycle({ ...f, baseCommitSha: 'short' }), /full lowercase 40-character/);
 });
 
