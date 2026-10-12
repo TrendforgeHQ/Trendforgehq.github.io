@@ -776,3 +776,11 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## 2026-10-12 — Follow-up documentation validation
 
 - Project-record updates documenting the security-boundary CI result passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861) on preceding commit `89d530359996a1ef772896e72b7b5e3a803a387a`.
+
+
+## 2026-10-12 — Checkpoint manifest and resume validation
+
+- Added a Node-built-in checkpoint manifest tool and regression tests; it binds source workflow run, task identity/type, pinned revision, audit profile/config, and exact JSON/report bytes.
+- Manual audit workflow validates the prior manifest before resume and only refreshes it for a new run after prior validation succeeds; uploaded checkpoint artifact includes the manifest.
+- Final BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`, including offline suite and read-only lineage audit. Earlier run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) exposed over-escaped static-test regexes, corrected before the pass.
+- No live dispatch/resume, API/authentication, or production action was run.
