@@ -720,3 +720,12 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 
 - BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861) passed on the preceding project-record update commit `89d530359996a1ef772896e72b7b5e3a803a387a`, including the offline regression suite and read-only published-root lineage audit.
 - The current follow-up only records that result. The manual audit workflow still has not been dispatched; no live API/auth broker exists.
+
+
+## 2026-10-12 — Checkpoint artifact provenance hardened and CI passed
+
+- Added `scripts/boat-task-artifact-manifest.mjs` plus tests. Each portable checkpoint now carries a manifest binding the source Actions run ID, task ID/type, pinned commit, audit profile/config hash, exact task JSON hash, and report hash.
+- Manual resume now validates that manifest after downloading the artifact and before invoking the runner. The manifest is refreshed for the current run only after a successful prior-manifest validation, then included in the next checkpoint artifact. Wrong run/task/commit, modified JSON/report bytes, unsupported profile, or non-resumable status fails closed.
+- BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed for code/workflow commit `ec6eb586234487ced58804929c6c0d36cc988bc3`, including manifest unit/CLI tests, workflow safety tests, the existing offline suite, and the read-only published-root lineage audit.
+- An earlier run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) caught over-escaped regexes in the static workflow test; those assertions were corrected before the passing run.
+- Still not end-to-end: manual dispatch and cross-run artifact download/resume have not been exercised. Do not merge to `main` solely to unlock dispatch. Next: record this implementation in the project files, then continue offline request/schema and negative-resume coverage while awaiting an explicit deployment decision.
