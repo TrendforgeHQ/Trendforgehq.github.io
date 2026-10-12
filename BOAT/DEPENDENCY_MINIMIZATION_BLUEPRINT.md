@@ -243,3 +243,8 @@ The follow-up BOAT record update at `89d530359996a1ef772896e72b7b5e3a803a387a` p
 ## 2026-10-12 — Portable checkpoint provenance implementation
 
 Added `scripts/boat-task-artifact-manifest.mjs` and offline tests. The manifest binds source Actions run ID, task ID/type, pinned commit, audit profile/config hash, and exact task JSON/report hashes. The manual-only workflow validates it before resume and refreshes it only after successful validation. BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`, including the offline regression suite and read-only lineage audit. Manual dispatch and cross-run artifact resume remain unverified; this feature is still isolated from the publishing workflow.
+
+
+## 2026-10-12 — Offline request/response contract slice
+
+Added `scripts/boat-task-contract.mjs`, `scripts/test-boat-task-contract.mjs`, and request/response schemas under `BOAT/schemas/`. The contract accepts only bounded read-only catalogue audits pinned to a full commit SHA, requires an idempotency key, rejects additional fields, and fixes AI/web budgets at zero. Authorization decisions require trusted server context and enforce operator/CSRF/origin/rate-limit, repository/workflow/task/commit allowlists, batch caps, budget policy, and duplicate-key rejection. The contract is pure code only; it does not authenticate users, persist idempotency keys, submit a workflow, or connect the static Control Center to a backend. The offline CI path filter now includes the contract tests; latest CI result is pending.
