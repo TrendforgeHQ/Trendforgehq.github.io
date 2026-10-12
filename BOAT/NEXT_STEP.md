@@ -1,3 +1,12 @@
+## 2026-10-12 — Manual-only audit workflow CI verified
+
+- BOAT Offline Tests run [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual-workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2` in the PR merge checkout.
+- Confirmed static workflow tests pass: only `workflow_dispatch`, `contents: read` and `actions: read`, checkout credentials disabled, no production-publish/provider coupling, 14-day artifacts, and flat checkpoint/report artifact layout with task-ID recovery after interrupted runs.
+- Renderer, combined audit pause/resume tests, and published-root lineage audit also passed in the same run.
+- Workflow has not been manually dispatched; the CI validates workflow structure and the existing runner tests, not an end-to-end cross-run artifact download. Next: do a controlled manual test only after review, then use the generated report to refine claim-level review UX. No production publish workflow was run.
+
+---
+
 ## 2026-10-12 — Manual audit artifact layout hardening (CI pending)
 
 - Corrected GitHub Actions expressions in the manual-only workflow and split the portable checkpoint/report artifact from the optional summary artifact. This ensures the downloaded task JSON lands at the expected state-directory root for resume.

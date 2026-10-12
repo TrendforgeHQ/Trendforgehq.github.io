@@ -218,3 +218,8 @@ The manual workflow's GitHub Actions expression markers were corrected after det
 ## Manual workflow artifact/resume hardening
 
 Checkpoint/report files are uploaded separately from the task summary so a downloaded checkpoint lands directly in the worker state directory. A recovery step discovers the task ID from saved JSON if execution stops after a checkpoint but before normal output. Current-head CI pending; workflow not manually dispatched.
+
+
+## Manual workflow validation — 2026-10-12
+
+Static workflow and task tests passed in BOAT Offline Tests [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086). This validates trigger isolation, read-only permissions, artifact layout, report rendering, and local pause/resume logic. The manual workflow has not itself been dispatched, so cross-run artifact download/resume is still unverified. The next operational step is a controlled manual run; no production publishing workflow is involved.

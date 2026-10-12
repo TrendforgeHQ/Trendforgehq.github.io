@@ -734,3 +734,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Correction:** Upload checkpoint/report files separately from the summary so the checkpoint artifact's root contains the task JSON and Markdown files directly.
 - **Recovery:** If the worker fails after saving a checkpoint but before emitting the normal summary, discover the task ID from the saved JSON and use it for the artifact name.
 - **Validation status:** Workflow static test and offline CI pending.
+
+
+## L-NEW — Static workflow safety tests do not prove cross-run artifact resume
+- **Observed:** Run 38224116086 passed static workflow isolation/permission/artifact-layout tests plus task/report regression suites.
+- **Verified:** The workflow definition has only a manual trigger, read-only contents/actions permissions, no persisted checkout credentials, and separate checkpoint/report versus summary artifacts.
+- **Not yet verified:** A real manual dispatch, artifact upload/download between separate runs, and end-to-end resumed completion. The workflow was not dispatched as part of CI.
+- **Next:** Controlled manual test, then inspect the produced report before any authenticated Control Center integration.

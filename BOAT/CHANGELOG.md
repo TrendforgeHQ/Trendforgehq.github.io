@@ -752,3 +752,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## 2026-10-12 — Manual workflow artifact layout hardening (CI pending)
 - Split task checkpoint/report and summary into separate artifacts so the resume download has a flat state directory.
 - Added task-ID discovery for interrupted runs after a checkpoint has been saved. Static tests now cover this recovery path; CI pending.
+
+
+## 2026-10-12 — Manual-only BOAT workflow static CI green
+- BOAT Offline Tests [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual-workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2`.
+- Static workflow tests passed for manual-only trigger, read-only permissions, no provider/publish coupling, 14-day artifacts, flat resume artifact layout, and interrupted-task ID discovery.
+- Report renderer, combined audit pause/resume, and published-root lineage tests passed. The workflow itself has not been manually dispatched; cross-run artifact resume remains unverified.

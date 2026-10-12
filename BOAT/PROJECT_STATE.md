@@ -1,3 +1,12 @@
+## 2026-10-12 — Manual-only BOAT audit workflow CI validated
+
+- BOAT Offline Tests run [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2`.
+- Static tests verify a manual-only trigger, read-only contents/actions permissions, disabled checkout credentials, no publishing/provider coupling, 14-day artifacts, and expected resume artifact layout/task-ID recovery.
+- Report-renderer tests, combined audit pause/resume tests, and the read-only published-root lineage audit also passed.
+- Important limitation: the new workflow itself has not been manually dispatched, so cross-run artifact download/resume is not yet end-to-end verified. No publishing workflow was dispatched.
+- Next: perform a controlled manual-only audit run, inspect the report artifact, and then design the authenticated Control Center boundary. Keep main untouched and do not auto-merge/publish.
+
+
 ## 2026-10-12 — Manual audit artifact layout hardening (CI pending)
 
 - Corrected GitHub Actions expressions in the manual-only workflow and split the portable checkpoint/report artifact from the optional summary artifact. This ensures the downloaded task JSON lands at the expected state-directory root for resume.
