@@ -119,6 +119,18 @@ jobs:
           set -euo pipefail
           node scripts/boat-task-artifact-manifest.mjs --mode validate --state-dir "$RUNNER_TEMP/boat-state" --run-id "$RESUME_RUN_ID" --task-id "$RESUME_TASK_ID" --commit "$AUDIT_COMMIT_SHA"
 
+      - name: Validate and import canonical task-store artifact
+        if: ${{ inputs.resume_task_id != '' }}
+        shell: bash
+        env:
+          RESUME_TASK_ID: ${{ inputs.resume_task_id }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+          AUDIT_COMMIT_SHA: ${{ inputs.audit_commit_sha }}
+        run: |
+          set -euo pipefail
+          node scripts/boat-task-store-artifact.mjs --mode validate --store "$RUNNER_TEMP/boat-state/boat-task-store-portable.json" --manifest "$RUNNER_TEMP/boat-state/boat-task-store-manifest.json" --run-id "$RESUME_RUN_ID" --task-id "$RESUME_TASK_ID" --commit "$AUDIT_COMMIT_SHA"
+          node scripts/boat-task-store-artifact.mjs --mode import --store "$RUNNER_TEMP/boat-state/boat-task-store-portable.json" --manifest "$RUNNER_TEMP/boat-state/boat-task-store-manifest.json" --run-id "$RESUME_RUN_ID" --task-id "$RESUME_TASK_ID" --commit "$AUDIT_COMMIT_SHA" --output "$RUNNER_TEMP/boat-state/boat-task-store.json"
+
       - name: Run BOAT audit
         id: run
         shell: bash
@@ -128,7 +140,7 @@ jobs:
           RESUME_TASK_ID: ${{ inputs.resume_task_id }}
         run: |
           set -euo pipefail
-          args=(--commit "$(git rev-parse HEAD)" --state-dir "$RUNNER_TEMP/boat-state" --batch-size "$BATCH_SIZE")
+          args=(--commit "$(git rev-parse HEAD)" --state-dir "$RUNNER_TEMP/boat-state" --batch-size "$BATCH_SIZE" --task-store "$RUNNER_TEMP/boat-state/boat-task-store.json")
           if [[ "$MAX_BATCHES" != "0" ]]; then args+=(--max-batches "$MAX_BATCHES"); fi
           if [[ -n "$RESUME_TASK_ID" ]]; then args+=(--resume "$RESUME_TASK_ID"); fi
           node scripts/boat-run-catalogue-task.mjs "${args[@]}" > "$RUNNER_TEMP/boat-summary.json"
@@ -172,6 +184,21 @@ jobs:
             exit 0
           fi
           node scripts/boat-task-artifact-manifest.mjs --mode create --state-dir "$RUNNER_TEMP/boat-state" --run-id "$CURRENT_RUN_ID" --task-id "$TASK_ID"
+
+      - name: Build portable canonical task-store artifact
+        if: always() && (inputs.resume_task_id == '' || steps.validate_checkpoint.outcome == 'success')
+        shell: bash
+        env:
+          TASK_ID: ${{ steps.run.outputs.task_id || steps.discover.outputs.task_id || inputs.resume_task_id }}
+          CURRENT_RUN_ID: ${{ github.run_id }}
+          AUDIT_COMMIT_SHA: ${{ inputs.audit_commit_sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$TASK_ID" || ! -f "$RUNNER_TEMP/boat-state/boat-task-store.json" ]]; then
+            echo "No canonical task store or task ID; portable store artifact not created."
+            exit 0
+          fi
+          node scripts/boat-task-store-artifact.mjs --mode create --store "$RUNNER_TEMP/boat-state/boat-task-store.json" --manifest "$RUNNER_TEMP/boat-state/boat-task-store-manifest.json" --run-id "$CURRENT_RUN_ID" --task-id "$TASK_ID" --commit "$AUDIT_COMMIT_SHA" --output "$RUNNER_TEMP/boat-state/boat-task-store-portable.json"
 
       - name: Upload portable task checkpoint and report
         if: always()
