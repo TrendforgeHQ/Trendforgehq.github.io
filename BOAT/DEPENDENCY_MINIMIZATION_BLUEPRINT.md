@@ -1,3 +1,12 @@
+## Implementation update — atomic task-store progress writes (2026-10-12)
+
+- Added `updateStoredTask()` so a task's checkpoint and findings can be committed in the same atomic JSON-store replacement, with exclusive locking and expected-task-revision checks.
+- Offline CI [38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259) passed 184 tests, 0 failures, and the read-only published-root lineage audit.
+- No new dependency or hosted database was introduced. This remains a single-local-workspace persistence primitive.
+- **Not yet complete:** the existing catalogue runner still uses its per-task JSON file and does not yet treat the unified task store as canonical. Next phase is a separately tested opt-in adapter, preserving manual workflow artifact compatibility. Cross-run hosted persistence, live auth/API, and automatic execution remain unproven/out of scope.
+
+---
+
 # BOAT Dependency-Minimization Blueprint
 
 **Date:** 2026-10-12  

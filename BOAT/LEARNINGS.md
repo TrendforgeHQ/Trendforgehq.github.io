@@ -1,3 +1,12 @@
+## L-NEW — Atomic store updates must support batched logical transitions
+
+- **Observed:** The catalogue worker may perform several in-memory state operations (for example, add findings and checkpoint units) before persisting one durable transaction. Requiring each store write to advance the task revision by exactly one rejected a valid batched update.
+- **Fix:** `updateStoredTask()` requires the same task ID, a valid task record, and a task revision strictly newer than the persisted revision; the store lock and expected-revision check still reject stale writers.
+- **Validation:** [Run 38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259) passed 184/184 offline tests and the read-only published-root lineage audit. The first run [38228841380](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228841380) exposed the over-strict revision rule and is retained as a failed validation, not hidden.
+- **Limitation:** This primitive is not yet wired into `boat-run-catalogue-task.mjs`; no runner/store integration or hosted cross-run persistence is claimed.
+
+---
+
 # BOAT Learning Register
 
 Keep verified observations separate from hypotheses. Each entry should include evidence and a validation status.

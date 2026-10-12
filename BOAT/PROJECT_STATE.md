@@ -1,3 +1,13 @@
+## 2026-10-12 — Atomic task-store update primitive green
+
+- Current code head: `f11b473d79980a2bda83766e302d18562b89aad7` on `docs/boat-dependency-minimization-blueprint`; PR #38 remains draft/open/unmerged, base is `feat/boat-control-center-vertical-slice-audit`, and `main` is untouched.
+- Added `updateStoredTask()` with lock-protected expected-revision checks and atomic store replacement. New tests cover checkpoint/findings persistence in one store update, stale-writer conflict without file mutation, and invalid revision advancement.
+- CI [38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259) passed **184 tests, 0 failures**; read-only published-root lineage audit passed (`savedReportPass: true`, `passagesUnresolved: 0`).
+- This is a safe persistence primitive, **not yet a store-backed catalogue runner**. Existing catalogue runner still writes its per-task JSON file independently. Next work is an opt-in adapter and crash/restart integration tests; do not switch the manual workflow until proven.
+- Zero AI/web budget, no new dependencies, no publishing, no article mutation, no workflow dispatch, no merge, no `main` edits. Store remains local-workspace only; hosted cross-run persistence is not established.
+
+---
+
 ## 2026-10-12 — Manual-only BOAT audit workflow CI validated
 
 - BOAT Offline Tests run [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2`.

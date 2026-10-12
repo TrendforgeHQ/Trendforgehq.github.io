@@ -1,3 +1,14 @@
+## 2026-10-12 — Atomic task-store checkpoint update primitive
+
+- Added `updateStoredTask()` to update one task under the unified store lock with expected-revision protection and one atomic store replacement.
+- Added tests for checkpoint and finding persistence together, stale-writer rejection with exact bytes preserved, and invalid revision updates.
+- First run [38228841380](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228841380) correctly failed on a test assumption that persisted changes always advance the logical task revision by exactly one. Adjusted the guard to require a forward revision and reran.
+- Verified run [38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259): **184 tests passed, 0 failed**; published-root lineage audit passed.
+- The catalogue runner has not yet been migrated to the unified store. The next implementation step is an optional adapter with crash/restart tests; manual workflow behavior remains unchanged.
+- No new package/service, AI/web usage, provider/image generation, publishing, article mutation, merge, or `main` changes.
+
+---
+
 # BOAT Changelog
 
 All entries should describe actual work and results. Do not record planned work as completed.

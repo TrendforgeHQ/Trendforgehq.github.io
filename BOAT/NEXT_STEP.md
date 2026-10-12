@@ -1,3 +1,14 @@
+## 2026-10-12 — Atomic task-store progress updates validated; runner adapter remains next
+
+- Added `updateStoredTask()` to `scripts/boat-task-store.mjs`: updates a persisted task under the existing exclusive store lock, checks the expected task revision, validates task identity/schema, and commits the updated checkpoint/findings and store revision in one atomic replacement.
+- Added regressions for atomic checkpoint+finding persistence, stale revision rejection with exact-byte preservation, and invalid unchanged-revision updates.
+- Initial CI run [38228841380](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228841380) caught an overly strict test assumption that each persisted transaction must advance exactly one in-memory task revision. Relaxed the guard to require a forward revision while still rejecting stale/same-revision writes.
+- Corrected follow-up CI run [38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259) passed: **184 tests, 0 failures**; read-only published-root lineage audit passed (`savedReportPass: true`, `passagesUnresolved: 0`).
+- **Important scope:** the unified store now has a safe atomic progress-update primitive, but `boat-run-catalogue-task.mjs` does not yet use that store as its canonical task state. Do not claim runner/store integration is complete.
+- Next: design and test the optional store-backed runner path while preserving current per-task JSON artifacts for the manual workflow. Verify recovery from the store wins over a stale artifact, completed unit IDs are skipped, findings remain deduplicated, and report output is deterministic. Keep the manual workflow unchanged until offline tests prove the adapter. No dispatch, provider/web calls, article edits, merge, or `main` changes.
+
+---
+
 ## 2026-10-12 — Manual-only audit workflow CI verified
 
 - BOAT Offline Tests run [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual-workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2` in the PR merge checkout.
