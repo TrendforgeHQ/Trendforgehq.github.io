@@ -4,9 +4,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { transitionTask } from './boat-task-state.mjs';
+import { addTaskFindings, checkpointTask, transitionTask } from './boat-task-state.mjs';
 import {
-  loadTaskStore, recoverInterruptedTasks, submitTaskRequest, validateTaskStore
+  loadTaskStore, recoverInterruptedTasks, submitTaskRequest, updateStoredTask, validateTaskStore
 } from './boat-task-store.mjs';
 
 const sha = 'c'.repeat(40);
@@ -95,4 +95,36 @@ test('invalid request does not create a file or claim', async () => withTempStor
   const result = await submitTaskRequest(file, request({ maxBatches: 0 }), { createdAt: t0 });
   assert.equal(result.outcome, 'invalid_request');
   await assert.rejects(() => fs.stat(file), { code: 'ENOENT' });
+}));
+
+
+test('checkpoint and findings advance atomically with compare-and-swap revision protection', async () => withTempStore(async file => {
+  const created = await submitTaskRequest(file, request(), { createdAt: t0 });
+  const started = transitionTask(created.task, 'running', { updatedAt: t1 });
+  const startSave = await updateStoredTask(file, started.taskId, created.task.revision, () => started);
+  assert.equal(startSave.outcome, 'updated');
+  const finding = { findingId: 'F-' + 'a'.repeat(24), category: 'structure', severity: 'low', status: 'review_signal', title: 'fixture', semanticSupport: 'not_assessed', requiresApproval: true };
+  const checkpointed = checkpointTask(addTaskFindings(started, [finding], { updatedAt: t1 }), {
+    cursor: 'index:10', completedUnitIds: ['0:alpha', '1:beta'], updatedAt: t1
+  });
+  const saved = await updateStoredTask(file, started.taskId, started.revision, () => checkpointed);
+  assert.equal(saved.outcome, 'updated');
+  const persisted = await loadTaskStore(file);
+  assert.equal(persisted.tasks[0].checkpoint.cursor, 'index:10');
+  assert.deepEqual(persisted.tasks[0].checkpoint.completedUnits, ['0:alpha', '1:beta']);
+  assert.equal(persisted.tasks[0].findings.length, 1);
+  assert.equal(persisted.revision, 3);
+
+  const before = await fs.readFile(file, 'utf8');
+  const stale = await updateStoredTask(file, started.taskId, started.revision, () => checkpointed);
+  assert.equal(stale.outcome, 'revision_conflict');
+  assert.equal(stale.currentRevision, checkpointed.revision);
+  assert.equal(await fs.readFile(file, 'utf8'), before);
+}));
+
+test('stored task update rejects a changed identity or skipped task revision', async () => withTempStore(async file => {
+  const created = await submitTaskRequest(file, request(), { createdAt: t0 });
+  const invalid = { ...transitionTask(created.task, 'running', { updatedAt: t1 }), revision: created.task.revision + 2 };
+  await assert.rejects(() => updateStoredTask(file, created.task.taskId, created.task.revision, () => invalid), /advance exactly one revision/);
+  assert.equal((await loadTaskStore(file)).tasks[0].status, 'queued');
 }));

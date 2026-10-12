@@ -142,6 +142,39 @@ export async function submitTaskRequest(filePath, request, { createdAt = new Dat
   });
 }
 
+
+/**
+ * Atomically advances one persisted task inside the unified store.
+ * The expected task revision is checked while holding the store lock; a stale
+ * worker cannot overwrite newer checkpoints/findings. The updater must return
+ * exactly the next task revision. No work is executed by this primitive.
+ */
+export async function updateStoredTask(filePath, taskId, expectedTaskRevision, updater) {
+  if (!taskIdOk(taskId) || !Number.isSafeInteger(expectedTaskRevision) || expectedTaskRevision < 0 || typeof updater !== 'function') {
+    return { outcome: 'invalid_update' };
+  }
+  return withStoreLock(filePath, store => {
+    const index = store.tasks.findIndex(task => task.taskId === taskId);
+    if (index < 0) return { write: false, value: { outcome: 'not_found' } };
+    const current = store.tasks[index];
+    if (current.revision !== expectedTaskRevision) {
+      return { write: false, value: { outcome: 'revision_conflict', currentRevision: current.revision, storeRevision: store.revision } };
+    }
+    const nextTask = updater(structuredClone(current));
+    const validation = validateTaskRecord(nextTask);
+    if (!validation.valid) throw new Error(`Invalid updated BOAT task: ${validation.errors.join('; ')}`);
+    if (nextTask.taskId !== taskId || nextTask.revision !== current.revision + 1) {
+      throw new Error('Task updater must preserve taskId and advance exactly one revision');
+    }
+    const next = {
+      ...store,
+      revision: store.revision + 1,
+      tasks: store.tasks.map((task, taskIndex) => taskIndex === index ? nextTask : task)
+    };
+    return { write: true, store: next, value: { outcome: 'updated', task: structuredClone(nextTask), storeRevision: next.revision } };
+  });
+}
+
 /**
  * On startup, convert persisted 'running' tasks to 'paused' with their last
  * checkpoint preserved. The caller must explicitly resume paused tasks; this
