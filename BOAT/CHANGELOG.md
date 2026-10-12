@@ -765,3 +765,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` describing the current static UI boundary, threat model, request/task contract, authentication/browser requirements, artifact resume validation, future proposal approval binding, and acceptance criteria for a live read-only integration.
 - Kept implementation intentionally documentation-only: no auth service, API, queue, hosted database, secret, or new dependency added. Static Control Center remains read-only; no repair/publish capability was enabled.
 - Recorded the workflow dispatch blocker honestly: static CI is green, but the manual-only workflow has not been dispatched, and `main` must not be merged just to unlock it.
+
+
+## 2026-10-12 — Security boundary docs validated
+
+- The Control Center security-boundary design and BOAT record updates passed BOAT Offline Tests run [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) on commit `b060f4b58e470e49fb421fe3bb796e2745e20508`.
+- The run passed the offline regression suite and read-only published-root lineage audit. No live auth/API or manual dispatch was tested.
