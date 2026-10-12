@@ -760,3 +760,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 ## 2026-10-12 — Follow-up records validation
 
 - The follow-up documentation record commit `89d530359996a1ef772896e72b7b5e3a803a387a` passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861), including offline regression tests and the read-only lineage audit. This is still not evidence of live workflow dispatch or broker/authentication.
+
+
+## 2026-10-12 — Checkpoint artifact provenance lessons
+
+- A prior run ID supplied to artifact download is necessary but not enough for the task's own provenance contract. Bind the portable task JSON and derived Markdown report to an explicit manifest containing source run ID, task ID, pinned commit, profile/config hash, and exact-byte hashes; validate before resuming.
+- Do not re-sign a failed or mismatched downloaded checkpoint under the current run ID. The workflow now creates the next manifest only if prior-manifest validation succeeded (or it is a new task).
+- The first static-test run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) caught over-escaped regex assertions. Corrected them and verified the full offline suite in [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231).
+- These checks improve provenance integrity but do not prove the Actions artifact round-trip works end-to-end; that still needs a controlled manual run after the dispatch/deployment gate is explicitly resolved.
