@@ -784,3 +784,12 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Manual audit workflow validates the prior manifest before resume and only refreshes it for a new run after prior validation succeeds; uploaded checkpoint artifact includes the manifest.
 - Final BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`, including offline suite and read-only lineage audit. Earlier run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) exposed over-escaped static-test regexes, corrected before the pass.
 - No live dispatch/resume, API/authentication, or production action was run.
+
+
+## 2026-10-12 — Read-only task contract and authorization decision
+
+- Added dependency-free task request/response validators and a pure authorization policy.
+- Added JSON Schemas for request and response with additional properties denied; request budgets must remain zero and batch count must be bounded.
+- Added offline tests for contract validation, error/status consistency, authorization denials, replay prevention signal, and immutable repository/workflow policy.
+- Added new contract/test paths to BOAT Offline Tests triggers. CI for the current head is pending inspection; no pass claimed yet.
+- No server, credentials, live task API, or production workflow integration.
