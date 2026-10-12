@@ -783,3 +783,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed 168/168 tests and the read-only published-root lineage audit.
 - This establishes that the repository-owned request/response validator and pure authorization decision policy satisfy their current offline tests. It does not establish identity verification, CSRF middleware, durable replay prevention, actual workflow submission, or a secure live broker.
 - The JSON Schema check currently parses the schema files and compares important values with runtime rules; it is not a full JSON Schema validator.
+
+## 2026-10-12 — Idempotency needs durable identity, not just replay denial
+
+- A deny-only `usedIdempotencyKeys` check cannot distinguish a safe retry from an unsafe reuse of the same key for a different request. The offline ledger fingerprints the validated request (excluding the key itself) and stores the original task ID.
+- Same-key/same-request retries should return the first task ID without creating another entry. Same-key/different-request must be a conflict and must not mutate stored bytes.
+- A lock and atomic file replacement protect one local workspace from concurrent writers, but they do not coordinate multiple machines or make the task record and ledger a single transaction. A future broker needs an explicit crash-recovery strategy for the gap between claiming a key and creating the task.
+- This is local persistence and offline test coverage only. CI remains pending inspection; no claim of live broker or distributed exactly-once execution is made.
