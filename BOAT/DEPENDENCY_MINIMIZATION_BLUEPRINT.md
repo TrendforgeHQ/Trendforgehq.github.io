@@ -223,3 +223,8 @@ Checkpoint/report files are uploaded separately from the task summary so a downl
 ## Manual workflow validation — 2026-10-12
 
 Static workflow and task tests passed in BOAT Offline Tests [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086). This validates trigger isolation, read-only permissions, artifact layout, report rendering, and local pause/resume logic. The manual workflow has not itself been dispatched, so cross-run artifact download/resume is still unverified. The next operational step is a controlled manual run; no production publishing workflow is involved.
+
+
+## 2026-10-12 — Control Center security boundary follow-up
+
+The companion design is recorded in [`CONTROL_CENTER_SECURITY_BOUNDARY.md`](CONTROL_CENTER_SECURITY_BOUNDARY.md). The current Control Center is still a static snapshot and must not be treated as a live authenticated console. Before any live integration, require a server-side broker, least-privilege manual worker, request/task schemas, negative authorization/resume tests, and explicit cost/quota/security comparison. No backend/auth product has been selected. The manual workflow has static CI validation only; actual dispatch and cross-run artifact resume remain unverified. Do not merge to `main` solely to unlock dispatch, and do not connect BOAT to the publishing workflow.
