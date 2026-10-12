@@ -807,3 +807,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added stable semantic request fingerprinting: exact retry returns original task ID; reused key with changed request is rejected as conflict; duplicate ledger entries and corrupt files fail closed.
 - Added offline tests for persistence across reload, conflict byte-preservation, lock handling, corrupt state, and task lifecycle transitions. Expanded BOAT Offline Tests path filters.
 - CI is pending inspection. No live API, authentication, distributed store, workflow dispatch, production publishing, provider/image usage, merge, or main-branch edit.
+
+## 2026-10-12 — Lifecycle/idempotency validation result
+
+- Latest BOAT Offline Tests run [38227586730](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38227586730) completed successfully on the current PR head: **176 test checks passed, 0 failed**; Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit step completed successfully.
+- The idempotency tests verified same-request replay returns the original task ID, changed-request key reuse conflicts without modifying persisted bytes, persistence survives reload, and lock/corrupt-state handling fails closed.
+- Validation is for the offline/local implementation only. It does not establish distributed idempotency, a live API/auth broker, cross-run artifact resume, or atomic task-record-plus-ledger creation. No merge, dispatch, provider/web/image calls, publishing, or `main` change.
