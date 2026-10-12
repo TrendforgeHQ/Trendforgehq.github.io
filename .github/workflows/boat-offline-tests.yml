@@ -5,7 +5,7 @@ on:
     paths:
       - ".github/workflows/boat-offline-tests.yml"
       - ".github/workflows/publish.yml"
-      - "BOAT/**"
+      - "BOAT/schemas/**"
       - "scripts/boat-article-doctor.mjs"
       - "scripts/test-boat-article-doctor.mjs"
       - "scripts/boat-evidence-auditor.mjs"
@@ -60,6 +60,10 @@ on:
       - "scripts/test-boat-task-contract.mjs"
       - "scripts/boat-task-idempotency.mjs"
       - "scripts/test-boat-task-idempotency.mjs"
+      - "scripts/boat-task-state.mjs"
+      - "scripts/test-boat-task-state.mjs"
+      - "scripts/boat-task-store.mjs"
+      - "scripts/test-boat-task-store.mjs"
   workflow_dispatch:
 
 permissions:
