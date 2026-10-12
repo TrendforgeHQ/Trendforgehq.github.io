@@ -186,3 +186,8 @@ Combined editorial audit code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7` 
 ## Phase B follow-up — human-readable task report
 
 Added a deterministic Markdown renderer and wired the worker to refresh a sibling report after each saved checkpoint and final status transition. Task profile v3 stores the combined audit summary in the task configuration and blocks resume if that summary drifts for the pinned inputs. Renderer tests cover deterministic output, escaped content, claim/report provenance, CLI/file output, and refusal to overwrite the canonical JSON task record. CI validation is pending.
+
+
+## Report renderer hardening follow-up
+
+Resume validation compares audit-component summaries through recursive canonicalization, matching the task-state factory. The Markdown renderer escapes HTML/Markdown metacharacters from untrusted article and claim text; regression coverage includes script-like text. CI validation pending.

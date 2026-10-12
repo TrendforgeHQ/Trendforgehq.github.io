@@ -693,3 +693,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Safety:** Report renderer makes no network/AI calls, escapes untrusted text for Markdown tables/inline code, and refuses to overwrite the state JSON. It prominently says historical PASS and provenance do not prove current truth.
 - **Compatibility:** Task profile v3 stores audit-component summary in task identity/config and blocks resume when the recomputed component summary differs.
 - **Validation status:** Tests authored; CI pending.
+
+
+## L-NEW — Canonical task config needs canonical equality checks on resume
+- **Observed:** The task-state factory canonicalizes nested config keys. Comparing the stored audit summary with insertion-order JSON could reject an otherwise identical resumed task.
+- **Correction:** Compare both values through the same recursive canonicalization before resuming.
+- **Security note:** Human-readable reports must escape untrusted article/claim text so content cannot inject HTML/Markdown structure into the review artifact.
+- **Validation status:** Regression tests authored; CI pending.

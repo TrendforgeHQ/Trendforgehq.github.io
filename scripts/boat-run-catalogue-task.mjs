@@ -19,6 +19,8 @@ import {
 import { writeTaskReport } from './boat-render-task-report.mjs';
 
 const sha256 = value => crypto.createHash('sha256').update(value).digest('hex');
+const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
+const stableJson = value => JSON.stringify(canonical(value));
 function usage() {
   return 'Usage: node scripts/boat-run-catalogue-task.mjs --commit <40-char-sha> --state-dir <dir> [--batch-size 1..100] [--max-batches n] [--resume boat_<24-hex>]' + String.fromCharCode(10);
 }
@@ -117,7 +119,7 @@ async function main() {
     record = await loadTaskRecord(filePath);
     if (record.taskId !== options.resume) throw new Error('Stored task ID does not match requested resume ID');
     if (record.pinnedCommitSha !== options.commit) throw new Error('Resume blocked: supplied commit does not match pinned commit');
-    if (record.taskType !== 'published_catalogue_audit' || record.config.batchSize !== options.batchSize || record.config.totalArticles !== articles.length || record.config.auditVersion !== 3 || record.config.auditProfile !== 'combined-structural-evidence-lineage-claim-history' || JSON.stringify(record.config.auditComponents) !== JSON.stringify(auditComponents)) {
+    if (record.taskType !== 'published_catalogue_audit' || record.config.batchSize !== options.batchSize || record.config.totalArticles !== articles.length || record.config.auditVersion !== 3 || record.config.auditProfile !== 'combined-structural-evidence-lineage-claim-history' || stableJson(record.config.auditComponents) !== stableJson(auditComponents)) {
       throw new Error('Resume blocked: task type, batch size, or catalogue size differs from original task configuration');
     }
     diskRevision = record.revision;

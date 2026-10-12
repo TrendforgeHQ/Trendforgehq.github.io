@@ -1,3 +1,11 @@
+## 2026-10-12 — Report renderer hardening and canonical resume comparison (CI pending)
+
+- Before running the new report tests, reviewed two implementation details: task config is canonicalized with sorted object keys, so audit-summary comparison must use the same canonical comparison; the report renderer must escape HTML/Markdown metacharacters from article and claim content.
+- Added canonical stable comparison for the stored audit summary and expanded report escaping tests with HTML-like and Markdown-like untrusted text.
+- Current report/runner commit requires its own offline CI result; no pass is claimed for these latest fixes yet.
+
+---
+
 ## 2026-10-12 — Human-readable task report implementation (CI pending)
 
 - Added scripts/boat-render-task-report.mjs, a deterministic Markdown renderer for a saved BOAT task record. It displays task identity/status/progress, budgets, finding counts, claim-history provenance, and uncertainty/approval limits without network or AI calls.

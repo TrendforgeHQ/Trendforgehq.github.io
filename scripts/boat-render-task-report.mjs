@@ -7,7 +7,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadTaskRecord, validateTaskRecord } from './boat-task-state.mjs';
 
-const esc = value => String(value ?? '').replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();
+const esc = value => String(value ?? '').replace(/\\/g, '\\\\').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/[|`*_{}\\[\\]()#+.!-]/g, '\\const esc = value => String(value ?? '').replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').replace(/\s+/g, ' ').trim();');
 const strong = value => '**' + esc(value) + '**';
 const severityRank = { high: 0, medium: 1, low: 2 };
 const statusLabel = status => String(status ?? 'unknown').replace(/_/g, ' ');

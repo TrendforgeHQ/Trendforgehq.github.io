@@ -14,7 +14,7 @@ const sha = 'd'.repeat(40);
 test('human report is deterministic, escaped, and preserves explicit uncertainty', () => {
   const queued = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: sha, createdAt: '2026-10-12T08:00:00.000Z', config: { totalArticles: 2, auditProfile: 'combined-structural-evidence-lineage-claim-history', auditComponents: { automaticRepair: false, automaticPublicationDecision: false } } });
   const running = transitionTask(queued, 'running', { updatedAt: '2026-10-12T08:01:00.000Z' });
-  const withFinding = addTaskFindings(running, [{ findingId: 'F-1', category: 'claim_history', severity: 'high', status: 'review_required', articleSlug: 'alpha', articleTitle: 'Alpha | article', title: 'Unsupported claim', description: 'Needs review', semanticSupport: 'not_assessed', requiresApproval: true, claim: { text: 'Claim with | delimiter', savedVerifierStatus: 'unsupported', currentArticleTextStatus: 'not-exactly-found-possible-version-or-segmentation-difference', currentArticleSha256: 'a'.repeat(64), report: { attemptId: 'run-1', reportSha256: 'b'.repeat(64), historicalPass: false }, source: { title: 'Source', url: 'https://example.com' }, passages: [{ id: 'P1', excerpt: 'Saved excerpt' }] } }], { updatedAt: '2026-10-12T08:02:00.000Z' });
+  const withFinding = addTaskFindings(running, [{ findingId: 'F-1', category: 'claim_history', severity: 'high', status: 'review_required', articleSlug: 'alpha', articleTitle: 'Alpha | article', title: 'Unsupported claim', description: 'Needs review <script>alert(1)</script> **literal**', semanticSupport: 'not_assessed', requiresApproval: true, claim: { text: 'Claim with | delimiter', savedVerifierStatus: 'unsupported', currentArticleTextStatus: 'not-exactly-found-possible-version-or-segmentation-difference', currentArticleSha256: 'a'.repeat(64), report: { attemptId: 'run-1', reportSha256: 'b'.repeat(64), historicalPass: false }, source: { title: 'Source', url: 'https://example.com' }, passages: [{ id: 'P1', excerpt: 'Saved excerpt' }] } }], { updatedAt: '2026-10-12T08:02:00.000Z' });
   const first = renderTaskReport(withFinding);
   const second = renderTaskReport(withFinding);
   assert.equal(first, second);
@@ -24,6 +24,8 @@ test('human report is deterministic, escaped, and preserves explicit uncertainty
   assert.match(first, /b{64}/);
   assert.match(first, /Claim with \\\| delimiter/);
   assert.match(first, /not independently verify source reachability/);
+  assert.doesNotMatch(first, /<script>/);
+  assert.match(first, /&lt;script&gt;/);
 });
 
 test('CLI renders to stdout or an atomic Markdown file and refuses to overwrite task JSON', async () => {

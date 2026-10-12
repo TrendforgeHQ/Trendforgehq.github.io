@@ -718,3 +718,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Integrated automatic sibling .md report updates into the resumable catalogue worker after checkpoints and completion; reports include progress, category/severity counts, budget use, claim/report provenance, and explicit uncertainty/safety limits.
 - Bumped task audit profile to v3 and bound the stored audit-component summary into task identity/configuration.
 - Added renderer tests for determinism, escaping, provenance, CLI output, and task-state overwrite protection. CI pending.
+
+
+## 2026-10-12 — Report rendering hardening (CI pending)
+- Canonicalized audit-component summary comparison on resume to match task-config canonicalization.
+- Hardened Markdown report escaping for HTML and Markdown metacharacters; added regression assertions for script-like and formatted claim text.
+- CI validation pending.
