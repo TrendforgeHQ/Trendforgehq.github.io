@@ -800,3 +800,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed: 168 tests, 0 failures, and read-only published-root lineage audit passed.
 - Contract tests verify allowed bounded request shapes, stable response/error fields, authorization denials, zero budgets, fixed repository/workflow policy, and schema file consistency smoke checks.
 - No live API/auth integration or production workflow activity.
+
+## 2026-10-12 — Offline task lifecycle and idempotency
+
+- Added portable idempotency-ledger policy and local JSON persistence using Node built-ins only.
+- Added stable semantic request fingerprinting: exact retry returns original task ID; reused key with changed request is rejected as conflict; duplicate ledger entries and corrupt files fail closed.
+- Added offline tests for persistence across reload, conflict byte-preservation, lock handling, corrupt state, and task lifecycle transitions. Expanded BOAT Offline Tests path filters.
+- CI is pending inspection. No live API, authentication, distributed store, workflow dispatch, production publishing, provider/image usage, merge, or main-branch edit.
