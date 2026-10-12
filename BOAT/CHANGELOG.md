@@ -1,3 +1,11 @@
+## 2026-10-12 — CI trigger cleanup and verification status
+
+- Removed the temporary branch-only push trigger from `.github/workflows/boat-offline-tests.yml` after the associated push runs contained zero jobs. The established pull-request/path-filtered trigger and `workflow_dispatch` remain.
+- Recorded that the manual-workflow canonical-store integration is still awaiting a real test job. Baseline portable-store validation on earlier head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` passed in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842), but this does not cover later workflow changes or cross-run resume.
+- PR #38 remains draft/open/unmerged. No merge, `main` change, manual workflow dispatch, article edit, publishing, or provider/image call was performed.
+
+---
+
 ## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
 
 - Updated `.github/workflows/boat-manual-audit.yml` to run the catalogue task with `--task-store`, validate/import the prior run's portable store before resume, and export a fresh portable single-task store artifact after execution.
