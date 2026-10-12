@@ -163,3 +163,11 @@ BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgeh
 ## Phase B implementation update — combined read-only review task
 
 The resumable worker now orchestrates the existing structural catalogue audit, archived evidence coverage, exact-byte lineage, published review queue, and archived claim-level report diagnostics. The report retains provenance and current-text-match diagnostics but never asserts independent semantic verification. Task profile version 2 prevents resuming older structural-only state under the new semantics. CI validation is pending for this integration.
+## 2026-10-12 — Combined review integration test correction (CI pending)
+
+- First combined-review run [38222862267](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222862267) exposed a brittle test assumption: it expected at least one structural finding in the first batch, although the existing structural audit can legitimately return zero findings for those articles. The combined audit safety test passed.
+- Replaced the brittle assertion with reconciliation of category counts against the total findings count. Exposed and asserted the review queue's read-only, no-auto-repair, and no-automatic-publication flags in the task summary.
+- Re-run the full offline workflow and inspect results before treating the combined integration as validated.
+
+---
+

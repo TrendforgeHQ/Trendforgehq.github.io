@@ -1,3 +1,11 @@
+## 2026-10-12 — Combined review integration test correction (CI pending)
+
+- First combined-review run [38222862267](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222862267) exposed a brittle test assumption: it expected at least one structural finding in the first batch, although the existing structural audit can legitimately return zero findings for those articles. The combined audit safety test passed.
+- Replaced the brittle assertion with reconciliation of category counts against the total findings count. Exposed and asserted the review queue's read-only, no-auto-repair, and no-automatic-publication flags in the task summary.
+- Re-run the full offline workflow and inspect results before treating the combined integration as validated.
+
+---
+
 ## 2026-10-12 — Combined review-queue task integration (CI pending)
 
 - Upgraded the resumable worker from structural-only findings to a combined read-only review task: structural catalogue checks, historical evidence coverage, exact-byte lineage, the existing published review queue, and archived claim-verifier report diagnostics.

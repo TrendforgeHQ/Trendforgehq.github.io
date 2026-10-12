@@ -39,10 +39,12 @@ test('catalogue task pauses after a bounded batch and resumes to completion with
     assert.equal(completed.auditComponents.lineageArticles, completed.progress.totalArticles);
     assert.equal(completed.auditComponents.reviewQueueArticles, completed.progress.totalArticles);
     assert.equal(completed.auditComponents.claimAuditArticles, completed.progress.totalArticles);
-    assert.ok(completed.findingsByCategory.structure >= 0);
-    assert.ok(completed.findingsByCategory.claim_history >= 0);
+    assert.equal(Object.values(completed.findingsByCategory).reduce((sum, count) => sum + count, 0), completed.findings);
+    assert.ok(Object.values(completed.findingsByCategory).every(count => Number.isInteger(count) && count >= 0));
     assert.ok(completed.limitations.some(item => item.includes('historical verifier results are signals only')));
-    assert.equal(completed.auditComponents.reviewQueueSummary.automaticRepair, undefined);
+    assert.equal(completed.auditComponents.reviewQueueReadOnly, true);
+    assert.equal(completed.auditComponents.automaticRepair, false);
+    assert.equal(completed.auditComponents.automaticPublicationDecision, false);
     const stored = JSON.parse(await fs.readFile(path.join(dir, paused.taskId + '.json'), 'utf8'));
     assert.equal(stored.status, 'completed');
     assert.equal(stored.budget.aiCalls, 0);
@@ -97,6 +99,9 @@ test('combined audit records historical claim signals without claiming current s
     assert.equal(report.auditComponents.reviewQueueArticles, report.progress.totalArticles);
     assert.equal(report.auditComponents.claimAuditArticles, report.progress.totalArticles);
     assert.ok(report.limitations.some(item => item.includes('historical verifier results are signals only')));
+    assert.equal(report.auditComponents.reviewQueueReadOnly, true);
+    assert.equal(report.auditComponents.automaticRepair, false);
+    assert.equal(report.auditComponents.automaticPublicationDecision, false);
     const state = JSON.parse(await fs.readFile(path.join(dir, report.taskId + '.json'), 'utf8'));
     assert.ok(state.findings.every(item => item.semanticSupport === 'not_assessed' || item.semanticSupport === 'unknown'));
     assert.ok(state.findings.every(item => item.requiresApproval === true));

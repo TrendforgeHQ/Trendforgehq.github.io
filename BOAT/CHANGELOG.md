@@ -691,3 +691,11 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Findings remain advisory, explicitly mark semantic support as not assessed/unknown, and require human review; no repair or publishing action is enabled.
 - Bumped the task audit profile to version 2 so version-1 structural-only task state cannot be resumed under different semantics.
 - Added/updated offline integration assertions; CI pending.
+## 2026-10-12 — Combined review integration test correction (CI pending)
+
+- First combined-review run [38222862267](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222862267) exposed a brittle test assumption: it expected at least one structural finding in the first batch, although the existing structural audit can legitimately return zero findings for those articles. The combined audit safety test passed.
+- Replaced the brittle assertion with reconciliation of category counts against the total findings count. Exposed and asserted the review queue's read-only, no-auto-repair, and no-automatic-publication flags in the task summary.
+- Re-run the full offline workflow and inspect results before treating the combined integration as validated.
+
+---
+

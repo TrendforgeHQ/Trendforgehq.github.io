@@ -666,3 +666,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Safety:** All claim findings explicitly remain `not_assessed` or `unknown`; an old verifier PASS is not current factual verification. Findings are proposal/review signals, never repair authorization.
 - **Compatibility:** Audit-profile version 2 prevents an older structural-only task from being resumed with new output semantics.
 - **Validation status:** Integration tests authored; current commit CI pending.
+
+
+## L-NEW — Zero findings in a batch is a valid audit outcome
+- **Observed:** The first combined-review CI run failed because a test expected structural findings to exist in a specific early batch. The underlying combined-audit safety test passed; structural checks may legitimately return no findings for a batch.
+- **Correction:** Test category-count reconciliation and explicit no-auto-repair/no-auto-publication flags instead of assuming a finding category must be non-empty.
+- **Validation status:** Corrective test and summary metadata are committed; CI pending.
