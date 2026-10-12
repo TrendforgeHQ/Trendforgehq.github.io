@@ -1,5 +1,15 @@
 ## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
 
+- Updated `.github/workflows/boat-manual-audit.yml` to run the catalogue task with `--task-store`, validate/import the prior run's portable store before resume, and export a fresh portable single-task store artifact after execution.
+- Excluded the ephemeral full canonical store from upload to avoid import collisions. The portable payload and run-bound manifest are uploaded alongside the task snapshot/report.
+- Extended static workflow assertions for validate/import/create, runner wiring, and upload exclusion. Added a branch-scoped push trigger to the offline-only test workflow; it has no provider or publishing steps.
+- Baseline: portable-store implementation passed [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) on head `d260cb4e330d4f88101ec4cf03e973a86d1eb412`. The new workflow integration is **not CI-verified**; [run 38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) had zero jobs.
+- No manual dispatch, article edit, publishing, provider/image call, merge, or `main` change was performed.
+
+---
+
+## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
+
 - Updated `.github/workflows/boat-manual-audit.yml` to run the catalogue task with `--task-store`, validate and import the previous run's portable canonical-store artifact before resuming, and export a new portable store artifact for the current run.
 - Excluded the ephemeral full canonical store from upload to avoid import collisions; the portable single-task store and provenance manifest are retained alongside the task snapshot/report.
 - Extended the manual-workflow regression test with assertions for validate/import/create and upload exclusion.
