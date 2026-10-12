@@ -1,3 +1,8 @@
+
+## CI validation boundary — 2026-10-12
+
+The temporary branch-only push trigger for BOAT Offline Tests was removed after its Actions runs contained zero jobs. Those records are not test failures of the implementation and are not passing validation. The portable task-store module passed on the earlier head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` ([run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842)); later manual workflow wiring still needs a real job and a controlled cross-run resume test. Preserve PR #38 as draft, leave `main` untouched, and do not claim the complete BOAT agent is deployed.
+
 # BOAT Blueprint
 
 ## Implementation status — 2026-10-12
