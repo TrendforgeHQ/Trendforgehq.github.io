@@ -743,3 +743,7 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added `.github/workflows/boat-manual-audit.yml` with only a manual `workflow_dispatch` trigger, read-only `contents`/`actions` permissions, no persisted checkout credentials, no provider secrets, and no connection to the production publish workflow.
 - The workflow can run a complete or bounded audit, upload task JSON/Markdown artifacts for 14 days, and resume from a prior artifact using exact task/run IDs and the original pinned commit.
 - Added offline static tests for trigger isolation, permissions, artifact retention, and resume-input validation. CI pending; workflow not manually dispatched.
+
+
+## 2026-10-12 — Manual workflow expression correction (CI pending)
+- Removed literal backslashes accidentally preserved before GitHub Actions expression markers in the manual workflow. Awaiting static test and offline CI validation.

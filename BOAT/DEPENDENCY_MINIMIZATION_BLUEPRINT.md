@@ -208,3 +208,8 @@ Report renderer and combined resumable task code commit `8fbc0eb2543bde5253251e2
 ## Operational entry point — manual-only read-only audit
 
 Added `.github/workflows/boat-manual-audit.yml`, with only a manual trigger, read-only `contents`/`actions` permissions, no checkout credentials, and no provider secrets or production-publish coupling. It can run a complete/bounded task, upload the portable JSON checkpoint and Markdown report for 14 days, and resume only from a prior run artifact using the exact original commit SHA. Static safety tests are added; CI validation is pending and the workflow has not been manually dispatched.
+
+
+## Manual workflow expression correction
+
+The manual workflow's GitHub Actions expression markers were corrected after detecting literal template-escape backslashes in the committed YAML. Current-head CI is pending; no manual dispatch has been run.

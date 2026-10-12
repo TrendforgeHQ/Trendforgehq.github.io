@@ -40,7 +40,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: boat-manual-audit-\${{ inputs.resume_task_id || github.run_id }}
+  group: boat-manual-audit-${{ inputs.resume_task_id || github.run_id }}
   cancel-in-progress: false
 
 jobs:
@@ -52,9 +52,9 @@ jobs:
       - name: Validate inputs
         shell: bash
         env:
-          AUDIT_COMMIT_SHA: \${{ inputs.audit_commit_sha }}
-          RESUME_TASK_ID: \${{ inputs.resume_task_id }}
-          RESUME_RUN_ID: \${{ inputs.resume_run_id }}
+          AUDIT_COMMIT_SHA: ${{ inputs.audit_commit_sha }}
+          RESUME_TASK_ID: ${{ inputs.resume_task_id }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
         run: |
           set -euo pipefail
           if [[ -n "$AUDIT_COMMIT_SHA" && ! "$AUDIT_COMMIT_SHA" =~ ^[a-f0-9]{40}$ ]]; then
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout pinned audit commit
         uses: actions/checkout@v4
         with:
-          ref: \${{ inputs.audit_commit_sha || github.sha }}
+          ref: ${{ inputs.audit_commit_sha || github.sha }}
           persist-credentials: false
 
       - name: Set up Node
@@ -97,29 +97,29 @@ jobs:
         run: mkdir -p "$RUNNER_TEMP/boat-state"
 
       - name: Download prior task checkpoint
-        if: \${{ inputs.resume_task_id != '' }}
+        if: ${{ inputs.resume_task_id != '' }}
         uses: actions/download-artifact@v4
         with:
-          name: boat-audit-\${{ inputs.resume_task_id }}
-          path: \${{ runner.temp }}/boat-state
-          repository: \${{ github.repository }}
-          run-id: \${{ inputs.resume_run_id }}
-          github-token: \${{ github.token }}
+          name: boat-audit-${{ inputs.resume_task_id }}
+          path: ${{ runner.temp }}/boat-state
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
           merge-multiple: true
 
       - name: Run BOAT audit
         id: run
         shell: bash
         env:
-          BATCH_SIZE: \${{ inputs.batch_size }}
-          MAX_BATCHES: \${{ inputs.max_batches }}
-          RESUME_TASK_ID: \${{ inputs.resume_task_id }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
+          MAX_BATCHES: ${{ inputs.max_batches }}
+          RESUME_TASK_ID: ${{ inputs.resume_task_id }}
         run: |
           set -euo pipefail
           args=(--commit "$(git rev-parse HEAD)" --state-dir "$RUNNER_TEMP/boat-state" --batch-size "$BATCH_SIZE")
           if [[ "$MAX_BATCHES" != "0" ]]; then args+=(--max-batches "$MAX_BATCHES"); fi
           if [[ -n "$RESUME_TASK_ID" ]]; then args+=(--resume "$RESUME_TASK_ID"); fi
-          node scripts/boat-run-catalogue-task.mjs "\${args[@]}" > "$RUNNER_TEMP/boat-summary.json"
+          node scripts/boat-run-catalogue-task.mjs "${args[@]}" > "$RUNNER_TEMP/boat-summary.json"
           cat "$RUNNER_TEMP/boat-summary.json"
           echo "task_id=$(jq -r '.taskId' "$RUNNER_TEMP/boat-summary.json")" >> "$GITHUB_OUTPUT"
           echo "report_file=$(jq -r '.reportFile' "$RUNNER_TEMP/boat-summary.json")" >> "$GITHUB_OUTPUT"
@@ -140,10 +140,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: boat-audit-\${{ steps.run.outputs.task_id || inputs.resume_task_id || github.run_id }}
+          name: boat-audit-${{ steps.run.outputs.task_id || inputs.resume_task_id || github.run_id }}
           path: |
-            \${{ runner.temp }}/boat-state/*.json
-            \${{ runner.temp }}/boat-state/*.md
-            \${{ runner.temp }}/boat-summary.json
+            ${{ runner.temp }}/boat-state/*.json
+            ${{ runner.temp }}/boat-state/*.md
+            ${{ runner.temp }}/boat-summary.json
           if-no-files-found: warn
           retention-days: 14

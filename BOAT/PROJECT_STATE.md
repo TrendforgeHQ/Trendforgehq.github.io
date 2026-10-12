@@ -1,3 +1,10 @@
+## 2026-10-12 — Manual workflow expression fix (CI pending)
+
+- Corrected GitHub Actions expression interpolation in the new manual workflow. The initial committed YAML contained literal escape backslashes before expressions because the workflow source was generated from a raw template; these have been removed so Actions receives the intended expressions.
+- Static workflow-safety test and full offline CI must pass before calling the manual entry point ready. The workflow has not been dispatched.
+
+---
+
 ## 2026-10-12 — Manual-only BOAT worker entry point added (CI pending)
 
 - Added `.github/workflows/boat-manual-audit.yml`, triggered only by `workflow_dispatch`, with `contents: read`, `actions: read`, and checkout credentials disabled.

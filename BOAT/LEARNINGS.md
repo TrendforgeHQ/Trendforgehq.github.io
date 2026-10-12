@@ -721,3 +721,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Resume contract:** A paused task can resume only when the task ID, prior workflow run ID, and exact original commit SHA are supplied. Artifact expiry or unavailable history blocks resume; it does not silently restart under new inputs.
 - **Safety:** No push/PR/schedule trigger, no write permissions, no provider secrets, no publishing dispatch, and checkout credentials disabled.
 - **Validation status:** Static workflow safety tests authored; CI pending. Workflow has not been manually dispatched.
+
+
+## L-NEW — Validate generated workflow syntax, not just intended YAML source
+- **Observed:** Raw-template escaping left literal backslashes before GitHub Actions expressions in the first generated workflow file.
+- **Correction:** Normalize expression markers before committing and add static workflow tests for manual-only triggers, read-only permissions, and artifact/resume wiring.
+- **Validation status:** Current-head CI pending; workflow has not been manually dispatched.
