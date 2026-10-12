@@ -1,3 +1,11 @@
+## 2026-10-12 — Task core validated after provenance hardening
+
+- Latest BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) succeeded for code commit `4305a5f7582222aafab05609fedf1b08ebea9dad` in the PR merge checkout.
+- Tests verified deterministic task identity, guarded transitions, idempotent checkpoints/findings, zero-default AI/web budgets, local persistence/conflict behavior, bounded pause/resume, completed-task idempotency, and refusal of mismatched commit/configuration.
+- Runner also refuses a supplied commit that differs from the actual checkout and refuses tracked edits to its audited catalogue/audit inputs.
+- Scope remains deterministic structural audit; no semantic truth check, source freshness retrieval, live Control Center API/auth, or repair executor is claimed.
+
+
 ## 2026-10-12 — Task-state and resumable catalogue worker validation
 
 - Offline workflow run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) succeeded on a PR merge checkout containing task-core implementation commit `27b67ebffc98868f00c6a97f337c9fdf731bd942`.

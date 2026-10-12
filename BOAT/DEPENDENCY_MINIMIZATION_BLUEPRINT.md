@@ -153,3 +153,8 @@ Added `scripts/boat-task-state.mjs`, `BOAT/schemas/task-record.schema.json`, and
 ## Validation update — 2026-10-12
 
 The dependency-light task-state and resumable catalogue worker implementation passed BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281). The task-state tests and pause/resume integration tests passed, and the read-only published-root lineage audit completed. This verifies deterministic structural execution only; semantic support, source freshness, live backend/authentication, and repair execution remain out of scope.
+
+
+## Latest validation — 2026-10-12
+
+BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed after adding checkout commit and clean-input guards. Task state and pause/resume integration tests passed, and the read-only published-root lineage audit completed. The scope remains structural and offline; no live backend, semantic fact-check, or repair execution is claimed.

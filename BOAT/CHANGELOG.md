@@ -677,3 +677,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - The new task-state regression tests and three end-to-end catalogue pause/resume tests passed. The workflow's read-only published-root lineage audit also completed.
 - A preceding run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) failed on a mismatched test-message expectation; the assertion and commit-binding test were corrected, then run 38221034281 passed.
 - No production publishing, provider, or image workflow was triggered.
+
+
+## 2026-10-12 — Task core validation and input pin hardening
+- Offline workflow [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed after adding checkout-SHA and clean-audit-input guards.
+- Task-state and catalogue task pause/resume integration tests passed; the read-only published-root lineage audit also completed successfully.
+- The prior failure in [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) was an assertion-message mismatch, corrected before the successful runs. No provider or publishing workflow was dispatched.

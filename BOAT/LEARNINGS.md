@@ -651,3 +651,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Verified behavior:** bounded batch pauses, saved checkpoint resumes to completion, repeat resume is idempotent, and mismatched commit/configuration is rejected.
 - **Limit:** This proves deterministic structural task execution only. It does not verify semantic claim support, source freshness, or live Control Center authentication/task submission.
 - **Validation status:** CI verified for the code implementation in the PR merge checkout.
+
+
+## L-NEW — Provenance guard plus resumability tests are now green
+- **Observed:** Run 38221180437 passed after the runner was hardened to compare the supplied commit to the checked-out SHA and reject dirty tracked audit inputs.
+- **Verified:** pause/resume, repeated completed-task resume, zero AI/web counters, and pinned-input/config mismatch checks passed in the integration suite.
+- **Limit:** The green suite verifies deterministic structural review only; it does not prove semantic claim support, source freshness, or a live authenticated Control Center.
+- **Validation status:** Verified by the linked BOAT Offline Tests run.

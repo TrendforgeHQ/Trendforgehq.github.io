@@ -1,3 +1,12 @@
+## 2026-10-12 — Latest task-core validation (green)
+
+- BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed on the PR merge checkout containing code commit `4305a5f7582222aafab05609fedf1b08ebea9dad`.
+- Confirmed the new state tests and catalogue task pause/resume integration tests passed, and the read-only published-root lineage audit completed successfully.
+- The runner now requires the supplied commit to match the actual checkout and rejects uncommitted changes to the catalogue/audit input files.
+- This validates deterministic structural execution only. It does not prove semantic factual support or provide live Control Center auth/task API/repair execution.
+
+---
+
 ## 2026-10-12 — Audit input cleanliness guard added (CI pending)
 
 - Catalogue runner now also refuses to run if `lib/articles.ts`, `scripts/boat-published-catalogue-audit.mjs`, or the runner itself has uncommitted tracked changes. This closes the gap where a clean HEAD SHA could otherwise be paired with dirty audit inputs.
