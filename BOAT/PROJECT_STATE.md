@@ -1,3 +1,13 @@
+## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
+
+- Portable task-store implementation passed BOAT Offline Tests on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842).
+- The manual-only workflow now runs the catalogue worker with `--task-store`, validates/imports the prior run's portable single-task store before resume, and exports a fresh portable store after execution. The ephemeral canonical store is excluded from artifact upload; task snapshot/report and portable payload/manifest remain available.
+- Static workflow regression assertions cover validation, import, export, runner wiring and upload exclusion. A branch-scoped push trigger was added to the offline-test workflow to help validate this isolated integration without invoking publishing or providers.
+- **Pending:** latest push run [38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) and preceding runs contain zero jobs. No test pass is claimed for the new workflow changes; manual dispatch/cross-run resume remains unverified.
+- Next acceptance gate: obtain a real offline CI job on the current head, then run a controlled small-batch manual audit and verify artifact import/resume on the exact pinned commit. PR #38 remains draft/unmerged; `main`, article contents, production publishing and providers remain untouched.
+
+---
+
 ## 2026-10-12 — Manual workflow now wired for canonical portable task-store resume (CI pending)
 
 - Confirmed [BOAT Offline Tests run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) passed for PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412`; this is the last verified implementation head before the new workflow wiring.
