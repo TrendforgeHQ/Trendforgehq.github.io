@@ -238,3 +238,8 @@ The companion security proposal `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` and i
 ## Follow-up records validation — 2026-10-12
 
 The follow-up BOAT record update at `89d530359996a1ef772896e72b7b5e3a803a387a` passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861), including offline regression tests and the read-only published-root lineage audit. Manual dispatch, cross-run artifact resume, and live authentication remain unverified.
+
+
+## 2026-10-12 — Portable checkpoint provenance implementation
+
+Added `scripts/boat-task-artifact-manifest.mjs` and offline tests. The manifest binds source Actions run ID, task ID/type, pinned commit, audit profile/config hash, and exact task JSON/report hashes. The manual-only workflow validates it before resume and refreshes it only after successful validation. BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`, including the offline regression suite and read-only lineage audit. Manual dispatch and cross-run artifact resume remain unverified; this feature is still isolated from the publishing workflow.
