@@ -749,3 +749,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - GitHub Actions artifacts are expiring transport, not durable shared task history. Resume must bind task ID, prior run ID, artifact identity, pinned commit, task profile/config, and schema, and must fail closed on any mismatch.
 - A green static workflow test is not proof of a manual dispatch or cross-run artifact resume. Keep that distinction explicit in project status and reports.
 - Approval must bind to immutable proposal bytes and the base commit; any proposal/base/path/test change requires renewed approval. BOAT must never turn a historical verifier PASS into a current factual claim or dispatch the production publishing workflow.
+
+
+## 2026-10-12 — Security boundary docs CI result
+
+- BOAT Offline Tests [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) passed on `b060f4b58e470e49fb421fe3bb796e2745e20508`, including the existing offline regression suite and read-only published-root lineage audit.
+- A documentation PR passing CI must not be confused with validation of a future live broker, authentication/session security, or manual workflow artifact round-trip.
