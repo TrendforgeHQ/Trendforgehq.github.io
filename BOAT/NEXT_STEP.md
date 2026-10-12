@@ -746,3 +746,13 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 - Verified denials for unauthenticated/non-operator callers, invalid CSRF/origin, rate limiting, wrong repo/workflow, non-allowlisted task/commit, missing/oversized batch policy, budget expansion, idempotency replay, extra request/response fields, inconsistent counters, and malformed response state/error pairing.
 - JSON schema files parse and match key runtime contract values. This is a contract smoke test, not a full JSON Schema standards validator.
 - Current boundary remains offline-only: the authorization context is assumed to be created by trusted server code. No live authentication/API, idempotency database, workflow dispatch, publishing, provider/image call, article edit, merge, or `main` change.
+
+## 2026-10-12 — Task lifecycle and portable idempotency ledger
+
+- Added `scripts/boat-task-idempotency.mjs`: a Node-built-in-only, versioned JSON ledger with canonical request fingerprints, exclusive local locking, atomic replacement, and fail-closed corruption/lock handling.
+- Idempotency behavior: same key + same semantic request returns the original task ID without a second ledger entry; same key + changed request returns a conflict; a new key creates one claim. Key identity excludes only the idempotency key itself, while all other validated request fields are fingerprinted.
+- Added `scripts/test-boat-task-idempotency.mjs` for pure decisions, stable replay identity, changed-request conflict, reload persistence, unchanged bytes on conflict, lock/corruption failures, and malformed ledger rejection.
+- Extended `scripts/test-boat-task-state.mjs` with allowed/denied lifecycle transition coverage, including completed-task terminal behavior, pause/resume, blocked recovery, and failed-task retry through queued state.
+- Updated BOAT Offline Tests path filters for the new module/tests. CI validation is pending inspection; do not claim a pass until the run is checked.
+- Important limitation: this ledger is portable local file persistence, not distributed coordination. It does not yet atomically create the task record and idempotency claim as one transaction, survive arbitrary hosted-runner loss unless the workspace is durably retained, authenticate callers, or dispatch workflows. No new service/dependency was added; AI/web budgets remain zero; no workflow was dispatched, no publishing/provider/image call occurred, no merge, and `main` remains untouched.
+- Next: inspect CI; if green, document the atomic task-creation boundary and add a crash/recovery contract before wiring any live broker.
