@@ -1,3 +1,14 @@
+## 2026-10-12 — Portable canonical store wired into manual workflow (CI pending)
+
+- Confirmed [BOAT Offline Tests run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store module and offline tests on that head.
+- Updated the manual-only audit workflow to use `--task-store` as canonical state, validate/import the prior run's portable single-task store before resume, and export a fresh portable store artifact after execution. The ephemeral full store is excluded from upload.
+- Expanded static workflow tests for validate/import/create wiring and upload exclusion. Added a branch-scoped push trigger to BOAT Offline Tests so the integration can be tested without invoking publishing/providers.
+- **Current workflow changes are not verified.** The latest push-event run [38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) reports zero jobs; earlier push runs also had no jobs. This is not a passing test result.
+- Next: resolve why the offline workflow is not creating a job for this branch, obtain a real successful test run on the exact head, then run a controlled manual-only audit with a small batch and verify cross-run artifact resume on the exact same commit.
+- No hosted database or new package; AI/web budgets remain zero. No publishing workflow, provider/image call, article edit, merge, or `main` change.
+
+---
+
 ## 2026-10-12 — Portable canonical store integrated into manual workflow (CI pending)
 
 - Confirmed BOAT Offline Tests run [38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store artifact implementation and the offline suite on that head.
