@@ -248,3 +248,8 @@ Added `scripts/boat-task-artifact-manifest.mjs` and offline tests. The manifest 
 ## 2026-10-12 — Offline request/response contract slice
 
 Added `scripts/boat-task-contract.mjs`, `scripts/test-boat-task-contract.mjs`, and request/response schemas under `BOAT/schemas/`. The contract accepts only bounded read-only catalogue audits pinned to a full commit SHA, requires an idempotency key, rejects additional fields, and fixes AI/web budgets at zero. Authorization decisions require trusted server context and enforce operator/CSRF/origin/rate-limit, repository/workflow/task/commit allowlists, batch caps, budget policy, and duplicate-key rejection. The contract is pure code only; it does not authenticate users, persist idempotency keys, submit a workflow, or connect the static Control Center to a backend. The offline CI path filter now includes the contract tests; latest CI result is pending.
+
+
+## 2026-10-12 — Contract slice CI result
+
+BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed **168/168 tests**, and the read-only published-root lineage audit succeeded. The new contract tests cover bounded request shapes, strict response fields/counters, fail-closed authorization decisions, repository/workflow/task/commit allowlists, zero budgets, idempotency replay signals, and schema smoke checks. This is not a live broker/auth implementation; trusted context creation, actual session security, and persistent idempotency are still future server-side work.
