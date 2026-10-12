@@ -61,6 +61,7 @@ export function validateTaskResponse(response) {
   if (!isObject(b) || !onlyKeys(b, ['aiCalls','webRequests','limits']) || !nonNegativeInt(b.aiCalls) ||
       !nonNegativeInt(b.webRequests) || !isObject(b.limits) || !onlyKeys(b.limits, ['aiCalls','webRequests']) ||
       !nonNegativeInt(b.limits.aiCalls) || !nonNegativeInt(b.limits.webRequests) ||
+      b.aiCalls !== 0 || b.webRequests !== 0 || b.limits.aiCalls !== 0 || b.limits.webRequests !== 0 ||
       (isObject(b) && (b.aiCalls > (b.limits?.aiCalls ?? -1) || b.webRequests > (b.limits?.webRequests ?? -1)))) errors.push('invalid budget counters or limits');
   const report = response.report;
   if (!isObject(report) || !onlyKeys(report, ['format','artifactName']) || report.format !== 'markdown' ||
@@ -85,8 +86,9 @@ export function authorizeTaskRequest(request, context) {
   if (context.repository !== BOAT_REPOSITORY || context.workflow !== BOAT_AUDIT_WORKFLOW) return { allowed: false, code: 'REPOSITORY_POLICY_MISMATCH' };
   if (!Array.isArray(context.allowedTaskTypes) || !context.allowedTaskTypes.includes(request.taskType)) return { allowed: false, code: 'TASK_TYPE_DENIED' };
   if (!Array.isArray(context.allowedCommitShas) || !context.allowedCommitShas.includes(request.pinnedCommitSha)) return { allowed: false, code: 'COMMIT_NOT_ALLOWLISTED' };
-  if ((context.maxBatchSize !== undefined && request.batchSize > context.maxBatchSize) ||
-      (context.maxBatches !== undefined && request.maxBatches > context.maxBatches)) return { allowed: false, code: 'BATCH_LIMIT_EXCEEDED' };
+  if (!Number.isInteger(context.maxBatchSize) || context.maxBatchSize < 1 || context.maxBatchSize > 50 ||
+      !Number.isInteger(context.maxBatches) || context.maxBatches < 1 || context.maxBatches > 5 ||
+      request.batchSize > context.maxBatchSize || request.maxBatches > context.maxBatches) return { allowed: false, code: 'BATCH_LIMIT_EXCEEDED' };
   if (context.maxAiCalls !== 0 || context.maxWebRequests !== 0 ||
       request.budgetLimits.aiCalls !== 0 || request.budgetLimits.webRequests !== 0) return { allowed: false, code: 'BUDGET_DENIED' };
   if (Array.isArray(context.usedIdempotencyKeys) && context.usedIdempotencyKeys.includes(request.idempotencyKey)) return { allowed: false, code: 'IDEMPOTENCY_REPLAY' };
