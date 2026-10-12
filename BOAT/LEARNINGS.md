@@ -637,3 +637,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Implication:** Checkpoints are safe only when the input revision and the interpretation/configuration of the task are stable; otherwise old progress can be misapplied to new inputs.
 - **Limit:** This runner's output is a deterministic structural review signal, not semantic fact verification. AI and web budgets remain zero in this implementation.
 - **Validation status:** Integration tests authored; current commit CI pending.
+
+
+## L-NEW — User-supplied commit strings are not provenance by themselves
+- **Observed:** The first task runner accepted a full SHA argument but did not prove that the current checkout matched it.
+- **Correction:** The runner now compares the supplied SHA with `git rev-parse HEAD` before reading or creating task state, and resume also checks the stored task pin.
+- **Implication:** Provenance requires binding the task to the actual bytes being audited, not merely storing a syntactically valid commit identifier.
+- **Validation status:** Corrective test authored; next CI run pending.

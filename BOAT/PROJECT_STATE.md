@@ -1,3 +1,10 @@
+
+
+## 2026-10-12 — Input revision binding and first CI failure
+- Initial task-state integration run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) exposed a test assertion mismatch: the implementation's configuration-mismatch message was more specific than the test's expected regex. The other newly added task-state tests passed in that run; the overall workflow failed, so no green result is claimed.
+- Hardened the catalogue runner to verify `--commit` equals the actual checked-out Git commit, preventing an arbitrary supplied SHA from being presented as the audited input revision.
+- Updated the integration test to use the checked-out SHA and separately test a task record whose stored pinned commit does not match.
+- Next validation: rerun the offline suite and inspect the new run's test output. No publishing/provider/image workflow was dispatched.
 ## 2026-10-12 — Read-only resumable catalogue task implemented (CI pending)
 
 - Added a bounded batch runner over the repository's existing deterministic published-catalogue audit.

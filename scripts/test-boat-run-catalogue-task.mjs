@@ -4,12 +4,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
+import { createTaskRecord, saveTaskRecord } from './boat-task-state.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const script = path.join(root, 'scripts/boat-run-catalogue-task.mjs');
-const commit = 'b'.repeat(40);
+const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 function run(args) {
   return spawnSync(process.execPath, [script, ...args], { cwd: root, encoding: 'utf8', timeout: 30000 });
 }
@@ -51,10 +52,15 @@ test('resume refuses a different pinned commit or changed batch configuration', 
     const taskId = JSON.parse(first.stdout).taskId;
     const wrongSha = run(['--commit', 'c'.repeat(40), '--state-dir', dir, '--batch-size', '10', '--resume', taskId]);
     assert.notEqual(wrongSha.status, 0);
-    assert.match(wrongSha.stderr, /does not match pinned commit/);
+    assert.match(wrongSha.stderr, /must equal the checked-out repository commit SHA/);
+    const forged = createTaskRecord({ taskType: 'published_catalogue_audit', pinnedCommitSha: 'c'.repeat(40), config: { batchSize: 10, totalArticles: 1, auditVersion: 1 } });
+    await saveTaskRecord(path.join(dir, forged.taskId + '.json'), forged, { expectedRevision: null });
+    const mismatchedRecord = run(['--commit', commit, '--state-dir', dir, '--batch-size', '10', '--resume', forged.taskId]);
+    assert.notEqual(mismatchedRecord.status, 0);
+    assert.match(mismatchedRecord.stderr, /does not match pinned commit/);
     const wrongBatch = run(['--commit', commit, '--state-dir', dir, '--batch-size', '11', '--resume', taskId]);
     assert.notEqual(wrongBatch.status, 0);
-    assert.match(wrongBatch.stderr, /configuration differs/);
+    assert.match(wrongBatch.stderr, /differs from original task configuration/);
   } finally { await fs.rm(dir, { recursive: true, force: true }); }
 });
 

@@ -141,3 +141,10 @@ This document records the architecture decision and proposed acceptance criteria
 ## Implementation progress — task state core
 
 Added `scripts/boat-task-state.mjs`, `BOAT/schemas/task-record.schema.json`, and `scripts/test-boat-task-state.mjs` on the dependency-minimization branch. This first code slice uses Node built-ins only and covers task identity pinned to a commit, explicit transitions, resumable checkpoints, idempotent findings, default-zero AI/web budgets, atomic local JSON persistence, and revision/lock conflict checks. CI validation is pending. The catalogue audit worker and end-to-end resume integration are not implemented yet.
+
+
+## 2026-10-12 — Input revision binding and first CI failure
+- Initial task-state integration run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) exposed a test assertion mismatch: the implementation's configuration-mismatch message was more specific than the test's expected regex. The other newly added task-state tests passed in that run; the overall workflow failed, so no green result is claimed.
+- Hardened the catalogue runner to verify `--commit` equals the actual checked-out Git commit, preventing an arbitrary supplied SHA from being presented as the audited input revision.
+- Updated the integration test to use the checked-out SHA and separately test a task record whose stored pinned commit does not match.
+- Next validation: rerun the offline suite and inspect the new run's test output. No publishing/provider/image workflow was dispatched.

@@ -6,6 +6,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { articles } from '../lib/articles.ts';
 import { auditPublishedCatalogue } from './boat-published-catalogue-audit.mjs';
 import {
@@ -77,6 +78,9 @@ function summary(record, status) {
 async function main() {
   const options = argsFrom(process.argv.slice(2));
   if (options.help) { process.stdout.write(usage()); return; }
+  const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+  const checkedOutCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: repoRoot, encoding: 'utf8' }).trim();
+  if (options.commit !== checkedOutCommit) throw new Error('Input pin mismatch: --commit must equal the checked-out repository commit SHA');
   const stateDir = path.resolve(options.stateDir);
   await fs.mkdir(stateDir, { recursive: true });
   const duplicateCounts = new Map();
