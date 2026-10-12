@@ -1,8 +1,13 @@
 # BOAT Blueprint
 
+## Implementation status — 2026-10-12
+
+The architecture above remains the target design, not a claim that the complete BOAT agent is deployed. Repository-owned slices now exist for read-only published-catalogue review, evidence/lineage and archived claim-history triage, resumable task state, human-readable reports, and a single-article approval-bound structural sandbox proposal. Semantic factual verification, automatic post-repair reruns of all authoritative gates, authenticated live Control Center execution, and the full learning loop remain incomplete. The portable task-store module passed offline CI on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412`; subsequent manual-workflow integration is pending CI and a real cross-run manual test. No publishing, merge, or main-branch change is authorized by this status note.
+
+
 **Version:** 0.1.0  
 **Phase:** 0 — foundation and baseline  
-**Status:** Proposed architecture; implementation not yet started
+**Status:** Architecture baseline defined; implementation is in progress through isolated, offline-tested vertical slices
 
 ## 1. Mission
 
