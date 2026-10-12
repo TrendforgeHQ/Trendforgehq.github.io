@@ -734,6 +734,39 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "ff-eai-and-faraday-future-joint-product-launch-set-for-october-14",
+    "title": "FF EAI and Faraday Future Joint Product Launch Set for October 14",
+    "description": "FF EAI Robotics Ecosystem Inc. and Faraday Future Intelligent Electric Inc. are preparing a joint launch event on October 14, 2026, that will showcase new humanoid robots, an education ecosystem, and a reinforcement learning platform.",
+    "category": "Product Launches",
+    "date": "2026-10-12",
+    "publishedAt": "2026-10-12T03:16:50.684Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## Event Details and Product Lineup\nFF EAI Robotics Ecosystem Inc. (NASDAQ: FFR) and Faraday Future Intelligent Electric Inc. (NASDAQ: FFAI) will co‑host a new product launch on October 14, 2026. The program will feature FF Nova, a first‑of‑its‑kind embodied AI humanoid robot, and its smaller counterpart, FF Nova Mini. It will also introduce the EAI Education Ecosystem Brain, the Curriculum Skills 2.0 suite, and the FF Nova Developer Reinforcement Learning Platform.",
+      "## Academic Participation and Strategic Context\nMore than 50 scholars and professors from leading universities and the AI field are invited to attend the event. This invitation signals an emphasis on academic collaboration and suggests that the companies intend to align their product development with research needs.",
+      "## Implications for the Robotics Ecosystem\nFF R&D will concentrate on the research, manufacturing, commercialization, and deployment of intelligent robotic technologies once the acquisition of FFAI’s EAI Robotics business is completed. The ecosystem is structured to support the entire robotics lifecycle, including research and development, deployment, data collection and training, operations, and commercial applications.",
+      "## Uncertainty and Forward‑Looking Language\nThe companies acknowledge that the statements in their communication are forward‑looking. They are based on estimates and assumptions that are considered reasonable by management but are inherently uncertain. Actual results may differ materially. No independent accounting review has been performed, and the companies do not guarantee that their projections will be met.",
+      "## Takeaway for Stakeholders\nInvestors and industry observers should note the scheduled launch date and the broad product mix, which indicates a strategic push toward integrated AI robotics solutions. The event’s academic focus may hint at future partnerships or research collaborations that could shape product roadmaps.The companies acknowledge that the statements in their communication are forward‑looking.",
+      "## What the Evidence Shows\nThe joint launch event on October 14, 2026 will be hosted by FF EAI Robotics Ecosystem Inc. and Faraday Future Intelligent Electric Inc."
+    ],
+    "sources": [
+      {
+        "title": "FF EAI Robotics Ecosystem Inc. (NASDAQ: FFR) Highlights Faraday Future Announcement: This Week's Investor Weekly Report from YT Jia Rescheduled to October 14; FFR and FFAI to Host Joint New Product Launch Event on October 14 - Yahoo! Finance Canada",
+        "url": "https://ca.finance.yahoo.com/news/ff-eai-robotics-ecosystem-inc-002200965.html"
+      },
+      {
+        "title": "Two humanoid robots are among four products Faraday Future plans to launch Oct. 14. - Stock Titan",
+        "url": "https://www.stocktitan.net/news/FFAI/faraday-future-announces-this-week-s-investor-weekly-report-from-yt-c3ovvra0mb52.html"
+      }
+    ],
+    "image": "/images/articles/ff-eai-and-faraday-future-joint-product-launch-set-for-october-14.1024x576.png",
+    "imageAlt": "Editorial image for FF EAI and Faraday Future Joint Product Launch Set for October 14",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "google-s-first-orbital-ai-data-center-test-launches-on-october-1",
     "title": "Google’s First Orbital AI Data Center Test Launches on October 1",
     "description": "Google is launching a small experimental satellite, Project Suncatcher, to try out AI chips in space. The mission will test heat management, limited run time, and the feasibility of a future constellation.",
