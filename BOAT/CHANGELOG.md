@@ -657,3 +657,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added `BOAT/schemas/task-record.schema.json` and `scripts/test-boat-task-state.mjs` for offline regression coverage.
 - The new test file is picked up by the existing `node --test scripts/test-boat-*.mjs` command. CI has not yet been verified for this code commit; no pass is claimed.
 - No new package/backend, publishing/provider/image calls, production edits, or changes to `main`.
+
+
+## 2026-10-12 — Resumable read-only catalogue task runner (CI pending)
+- Added `scripts/boat-run-catalogue-task.mjs`, which batches the existing structural catalogue audit, persists a portable task record after each batch, pauses at an explicit per-invocation batch cap, and resumes only when commit SHA/task configuration match.
+- Added `scripts/test-boat-run-catalogue-task.mjs` for resume/completion, zero AI/web budgets, completed-task idempotency, pinned-input mismatch, configuration mismatch, and invalid-argument checks.
+- Runner makes no network or AI calls and never mutates article content. CI validation is pending; no pass is claimed yet.

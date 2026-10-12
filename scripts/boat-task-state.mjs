@@ -180,6 +180,8 @@ export async function saveTaskRecord(filePath, record, { expectedRevision = null
       throw new Error(`Task state conflict: expected revision ${expectedRevision}, found ${existing.revision}`);
     }
     if (existing && existing.taskId !== record.taskId) throw new Error('Task state conflict: taskId mismatch');
+    if (existing && record.revision <= existing.revision) throw new Error('Task state conflict: new revision must be greater than the stored revision');
+    if (!existing && record.revision !== 0) throw new Error('Task state conflict: a new task must start at revision 0');
     tempPath = `${absolute}.tmp-${process.pid}-${crypto.randomBytes(6).toString('hex')}`;
     const temp = await fs.promises.open(tempPath, 'wx', 0o600);
     try {

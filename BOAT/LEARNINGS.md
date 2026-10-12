@@ -630,3 +630,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Implication:** The next step is to integrate existing read-only audit logic and prove resume behavior end to end; the state module alone is not a worker, model, or live Control Center backend.
 - **Risk:** File locks can remain after a process crash. The implementation intentionally fails closed on an existing lock instead of deleting it automatically; recovery needs explicit operator action.
 - **Validation status:** Tests authored and wired into the offline test glob; CI result pending at the time of this entry.
+
+
+## L-NEW — A resumable audit must pin both input revision and task configuration
+- **Observed:** The read-only catalogue task runner accepts an explicit full commit SHA and batch size, persists a cursor after each batch, and refuses to resume if the commit, task type, catalogue size, or batch configuration differs.
+- **Implication:** Checkpoints are safe only when the input revision and the interpretation/configuration of the task are stable; otherwise old progress can be misapplied to new inputs.
+- **Limit:** This runner's output is a deterministic structural review signal, not semantic fact verification. AI and web budgets remain zero in this implementation.
+- **Validation status:** Integration tests authored; current commit CI pending.

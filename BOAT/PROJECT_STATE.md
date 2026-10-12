@@ -1,3 +1,12 @@
+## 2026-10-12 — Read-only resumable catalogue task implemented (CI pending)
+
+- Added a bounded batch runner over the repository's existing deterministic published-catalogue audit.
+- The runner pins each task to an explicit full commit SHA, saves portable JSON task state after every batch, resumes from a validated cursor, deduplicates findings, and defaults AI/web usage counters to zero.
+- The new integration test covers pause/resume, task completion, repeat resume, commit/config mismatch, and argument validation. CI result is pending.
+- It remains a structural inventory only. Semantic support, source freshness/reachability, live Control Center task submission, shared authentication, and repair execution remain unimplemented.
+- No production publishing workflow, provider/image call, article edit, secret/gate change, or main-branch change.
+
+
 ## 2026-10-12 — Dependency-minimized task-state core added (CI pending)
 
 - Added a Node-built-in-only task state module, JSON Schema, and deterministic offline tests on the isolated dependency-minimization branch.

@@ -1,3 +1,12 @@
+## 2026-10-12 — Resumable catalogue worker added (CI pending)
+
+- Added `scripts/boat-run-catalogue-task.mjs`, a bounded, read-only runner over the existing `auditPublishedCatalogue` function. It processes batches, checkpoints completed article units, saves state after each batch, and can resume with the same pinned commit/config.
+- Added `scripts/test-boat-run-catalogue-task.mjs` for pause/resume, no-provider/no-network budget, completed-task idempotency, pinned-commit/config mismatch, and invalid CLI arguments.
+- This worker is structural only: it does not establish semantic claim support or source freshness and does not edit articles.
+- Next: inspect this commit's offline CI; if green, review runner logs and harden any issues before connecting a Control Center task API. No live API, authentication, external backend, or repair execution is enabled.
+
+---
+
 ## 2026-10-12 — Dependency-minimized task-state core (implementation started)
 
 - Added `scripts/boat-task-state.mjs`, its JSON Schema contract, and `scripts/test-boat-task-state.mjs`.
