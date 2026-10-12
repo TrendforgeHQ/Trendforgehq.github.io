@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   BOAT_AUDIT_WORKFLOW, BOAT_REPOSITORY, authorizeTaskRequest,
   validateTaskRequest, validateTaskResponse
@@ -72,6 +75,7 @@ test('response contract rejects secret-like extra fields, inconsistent counters,
   assert.match(validateTaskResponse(response({ status: 'blocked', error: null })).errors.join(' '), /require a stable error/);
   assert.match(validateTaskResponse(response({ status: 'completed', error: { code: 'FORBIDDEN', message: 'no' } })).errors.join(' '), /must not expose an error/);
   assert.match(validateTaskResponse(response({ budget: { aiCalls: 1, webRequests: 0, limits: { aiCalls: 0, webRequests: 0 } } })).errors.join(' '), /budget counters/);
+  assert.match(validateTaskResponse(response({ budget: { aiCalls: 0, webRequests: 0, limits: { aiCalls: 1, webRequests: 0 } } })).errors.join(' '), /budget counters/);
 });
 
 test('authorization allows only an operator-approved, pinned, bounded read-only audit', () => {
@@ -106,6 +110,7 @@ test('authorization denies wrong repo/workflow, unapproved task type, and unallo
 
 test('authorization denies expanded budgets, batch limits, and idempotency replay', () => {
   assert.equal(authorizeTaskRequest(request(), context({ maxAiCalls: 1 })).code, 'BUDGET_DENIED');
+  assert.equal(authorizeTaskRequest(request(), context({ maxBatchSize: undefined })).code, 'BATCH_LIMIT_EXCEEDED');
   assert.equal(authorizeTaskRequest({ ...request(), batchSize: 50 }, context({ maxBatchSize: 25 })).code, 'BATCH_LIMIT_EXCEEDED');
   assert.equal(authorizeTaskRequest({ ...request(), maxBatches: 5 }, context({ maxBatches: 2 })).code, 'BATCH_LIMIT_EXCEEDED');
   assert.equal(authorizeTaskRequest(request(), context({ usedIdempotencyKeys: ['boat-test-key-0001'] })).code, 'IDEMPOTENCY_REPLAY');
@@ -117,4 +122,19 @@ test('authorization policy is pure and cannot be widened by request-supplied rep
   const result = authorizeTaskRequest(malicious, context());
   assert.equal(result.allowed, false);
   assert.equal(result.code, 'INVALID_REQUEST');
+});
+
+test('versioned JSON Schema files are valid JSON and match the bounded contract', () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const requestSchema = JSON.parse(fs.readFileSync(path.join(root, 'BOAT/schemas/task-request.schema.json'), 'utf8'));
+  const responseSchema = JSON.parse(fs.readFileSync(path.join(root, 'BOAT/schemas/task-response.schema.json'), 'utf8'));
+  assert.equal(requestSchema.properties.schemaVersion.const, 1);
+  assert.equal(requestSchema.additionalProperties, false);
+  assert.deepEqual(requestSchema.properties.batchSize.enum, [10, 25, 50]);
+  assert.deepEqual(requestSchema.properties.maxBatches.enum, [1, 2, 5]);
+  assert.equal(requestSchema.properties.budgetLimits.properties.aiCalls.const, 0);
+  assert.equal(requestSchema.properties.budgetLimits.properties.webRequests.const, 0);
+  assert.equal(responseSchema.properties.schemaVersion.const, 1);
+  assert.equal(responseSchema.additionalProperties, false);
+  assert.ok(responseSchema.required.includes('error'));
 });
