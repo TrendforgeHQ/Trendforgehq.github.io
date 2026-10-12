@@ -1,3 +1,12 @@
+## L-NEW — A zero-job Actions run is not code validation
+
+- **Observation:** temporary branch-only push-trigger runs were recorded as failed but had no jobs. The workflow definition is not on the repository's default branch, so those runs did not execute the BOAT test suite.
+- **Correction:** removed the temporary branch-only push trigger instead of repeatedly creating misleading zero-job run records. Keep the established pull-request/path-filtered and manual-dispatch triggers.
+- **State distinction:** the portable-store implementation passed offline CI on the earlier `d260cb4e330d4f88101ec4cf03e973a86d1eb412` head ([run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842)); later manual-workflow wiring remains unverified. Neither a zero-job run nor the earlier baseline proves cross-run resume works.
+- **Next validation:** obtain a real job using an allowed trigger, inspect its test output, then perform a controlled small-batch manual audit and resume from the exact prior run/task/commit artifact. Preserve the draft PR and do not touch `main`, publishing, article content or providers without approval.
+
+---
+
 ## L-NEW — Cross-run task-store recovery must not upload the ephemeral canonical file
 
 - **Observation:** GitHub-hosted runners are ephemeral. A local canonical store is useful within one run but cannot be treated as persistent state for the next run.
