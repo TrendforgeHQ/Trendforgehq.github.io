@@ -771,3 +771,8 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 
 - The Control Center security-boundary design and BOAT record updates passed BOAT Offline Tests run [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) on commit `b060f4b58e470e49fb421fe3bb796e2745e20508`.
 - The run passed the offline regression suite and read-only published-root lineage audit. No live auth/API or manual dispatch was tested.
+
+
+## 2026-10-12 — Follow-up documentation validation
+
+- Project-record updates documenting the security-boundary CI result passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861) on preceding commit `89d530359996a1ef772896e72b7b5e3a803a387a`.
