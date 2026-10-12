@@ -253,3 +253,11 @@ Added `scripts/boat-task-contract.mjs`, `scripts/test-boat-task-contract.mjs`, a
 ## 2026-10-12 — Contract slice CI result
 
 BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed **168/168 tests**, and the read-only published-root lineage audit succeeded. The new contract tests cover bounded request shapes, strict response fields/counters, fail-closed authorization decisions, repository/workflow/task/commit allowlists, zero budgets, idempotency replay signals, and schema smoke checks. This is not a live broker/auth implementation; trusted context creation, actual session security, and persistent idempotency are still future server-side work.
+
+## 2026-10-12 — Local idempotency ledger and lifecycle boundary
+
+- Added a portable, versioned JSON idempotency ledger using Node built-ins only. It hashes canonical validated request content and preserves the first task ID for an identical retry; a reused key with changed request content is rejected.
+- Local writes use an exclusive lock, atomic replacement, and fail-closed handling for corrupt files or lock contention. Stale locks require explicit operator recovery; they are never silently removed.
+- Task lifecycle transition tests now explicitly cover pause/resume, review completion, blocked/failed recovery, and the completed terminal state.
+- This provides single-workspace persistence only. It is not a distributed lock, not authentication, not a live API, and not an atomic transaction across task-record creation plus idempotency claim. Do not advertise exactly-once execution or connect this to Control Center until the crash window and broker boundary are resolved.
+- No new dependency or hosted service; zero AI/web budget; no workflow dispatch, publishing, provider/image calls, merge, or `main` change. CI validation is pending inspection.
