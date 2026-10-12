@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - ".github/workflows/boat-offline-tests.yml"
+      - ".github/workflows/boat-manual-audit.yml"
+      - "scripts/test-boat-manual-audit-workflow.mjs"
       - ".github/workflows/publish.yml"
       - "BOAT/schemas/**"
       - "scripts/boat-article-doctor.mjs"
