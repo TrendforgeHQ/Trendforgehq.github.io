@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trendforgehq.github.io/BOAT/schemas/task-request.schema.json",
+  "title": "BOAT Read-only Task Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "taskType", "pinnedCommitSha", "batchSize", "maxBatches", "budgetLimits", "idempotencyKey"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "taskType": { "const": "published_catalogue_audit" },
+    "pinnedCommitSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "batchSize": { "type": "integer", "enum": [10, 25, 50] },
+    "maxBatches": { "type": "integer", "enum": [1, 2, 5], "description": "Bounded requests only; maxBatches=0 (unbounded) is intentionally rejected." },
+    "budgetLimits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aiCalls", "webRequests"],
+      "properties": { "aiCalls": { "const": 0 }, "webRequests": { "const": 0 } }
+    },
+    "idempotencyKey": { "type": "string", "pattern": "^[A-Za-z0-9._:-]{16,128}$" }
+  }
+}
