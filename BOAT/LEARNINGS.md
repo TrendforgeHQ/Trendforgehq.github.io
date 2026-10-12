@@ -776,3 +776,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - A syntactically valid request is not an authorized request. Validate shape first, then apply a separate fail-closed authorization policy; fixed stable decision codes make denials testable.
 - Start with a bounded read-only task allowlist and zero AI/web budget. Reject extra fields and unbounded requests instead of relying on UI controls.
 - A pure authorization policy is not authentication: live integration still requires a reviewed server-side identity/session, CSRF/origin validation, rate limiting, and durable idempotency storage. Current work is offline contract/testing only; CI is pending.
+
+
+## 2026-10-12 — Contract CI evidence and limits
+
+- BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed 168/168 tests and the read-only published-root lineage audit.
+- This establishes that the repository-owned request/response validator and pure authorization decision policy satisfy their current offline tests. It does not establish identity verification, CSRF middleware, durable replay prevention, actual workflow submission, or a secure live broker.
+- The JSON Schema check currently parses the schema files and compares important values with runtime rules; it is not a full JSON Schema validator.
