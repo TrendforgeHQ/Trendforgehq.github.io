@@ -958,3 +958,9 @@ Second CI review on 2026-10-12: the next run confirmed the timestamp and no-over
 A code-path review found the first CLI draft wrote the manifest but did not itself write the portable store payload, so the round-trip test was too permissive about manually supplying that payload. Fixed `--mode create` to emit both the single-task store payload and manifest using exclusive-create semantics, roll back the new payload if manifest creation fails, and reject colliding output paths. The CLI test now validates and imports the actual exported payload while asserting the canonical input store remains byte-for-byte unchanged. Await CI on the latest commit.
 
 Portable-store integration test follow-up: extended the existing canonical task-store regression file (an already-established CI trigger path) to prove that an exported/imported portable artifact is accepted by the canonical store loader, retains the matching idempotency key/task identity, leaves the source store unchanged, and does not auto-resume. This gives the PR's base-branch path filter a known existing test path to evaluate; latest-head CI remains the acceptance gate.
+
+### Manual-audit CI path-filter correction — 2026-10-12
+
+- Commit `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2` adds the manual audit workflow and its static safety test to the offline test workflow's path filter.
+- Current PR #38 head is this commit; PR remains draft/open/unmerged. The GitHub workflow-run lookup returned no PR-triggered run for this head, so the path-filter correction and manual workflow wiring are not yet CI-verified. Earlier passing tests apply only to their exact historical commits.
+- No main, article, publishing workflow, provider, image generation, or dispatch changes were made.
