@@ -228,3 +228,8 @@ Static workflow and task tests passed in BOAT Offline Tests [38224116086](https:
 ## 2026-10-12 — Control Center security boundary follow-up
 
 The companion design is recorded in [`CONTROL_CENTER_SECURITY_BOUNDARY.md`](CONTROL_CENTER_SECURITY_BOUNDARY.md). The current Control Center is still a static snapshot and must not be treated as a live authenticated console. Before any live integration, require a server-side broker, least-privilege manual worker, request/task schemas, negative authorization/resume tests, and explicit cost/quota/security comparison. No backend/auth product has been selected. The manual workflow has static CI validation only; actual dispatch and cross-run artifact resume remain unverified. Do not merge to `main` solely to unlock dispatch, and do not connect BOAT to the publishing workflow.
+
+
+## Security boundary validation — 2026-10-12
+
+The companion security proposal `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` and its record updates passed BOAT Offline Tests [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) on commit `b060f4b58e470e49fb421fe3bb796e2745e20508`. The offline regression suite and read-only published-root lineage audit passed. This validates the current PR checkout, not a live API/authentication broker or manual workflow artifact resume. The next code step is offline validation of request/task schemas and artifact manifest/resume rejection cases; no hosting product is selected.
