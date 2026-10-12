@@ -198,3 +198,8 @@ Resume validation compares audit-component summaries through recursive canonical
 
 ---
 
+
+
+## Latest report validation — 2026-10-12
+
+Report renderer and combined resumable task code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc` passed BOAT Offline Tests [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210). Deterministic rendering, escaping, provenance display, CLI/file output, pause/resume, combined audit safety, and the read-only lineage audit passed. JSON remains canonical; Markdown is a derived reviewer-facing report. Next step is a separate security design for authenticated Control Center connectivity.

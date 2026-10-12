@@ -1,3 +1,12 @@
+## 2026-10-12 — Human-readable task report implementation validated
+
+- BOAT Offline Tests run [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210) passed for code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc` in the PR merge checkout.
+- The resumable combined audit now refreshes a sibling Markdown report after each saved batch and on completion/resume; the canonical task state remains JSON.
+- Report tests passed for deterministic rendering, escaped article/claim content, preserved article/report provenance, CLI stdout/file output, and task-state overwrite protection. The combined audit pause/resume tests and read-only published-root lineage audit also passed.
+- Audit profile v3 stores the component summary in task config and validates canonical equality on resume. Automatic repair and publication decisions remain disabled.
+- Still not implemented: independently verified claim/source semantics, source freshness/reachability, authenticated live Control Center API/history, or repair executor.
+
+
 ## 2026-10-12 — Report renderer integration fixes (CI pending)
 
 - Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.

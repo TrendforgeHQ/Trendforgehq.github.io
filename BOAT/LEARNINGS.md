@@ -707,3 +707,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Correction:** Guard CLI execution by comparing the invoked script path with the module URL; keep renderer/writer exports side-effect-free.
 - **Related fixes:** Use Node fs/promises methods directly and render machine statuses as readable labels.
 - **Validation status:** CI fix pending.
+
+
+## L-NEW — Derived human reports should be reproducible and never become the source of truth
+- **Observed:** A Markdown task report can be generated deterministically from the canonical JSON task state and refreshed after each checkpoint.
+- **Verified:** Run 38223584210 passed tests for deterministic output, escaping, provenance, CLI output, and refusing to overwrite task JSON.
+- **Decision:** JSON remains canonical; Markdown is a derived reviewer-facing artifact. Reports state uncertainty and that historical PASS/provenance is not current fact verification.
+- **Limit:** This improves reviewability but does not create live Control Center authentication or semantic verification.

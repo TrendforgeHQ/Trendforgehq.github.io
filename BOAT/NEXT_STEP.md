@@ -1,3 +1,12 @@
+## 2026-10-12 — Human-readable task report CI verified
+
+- BOAT Offline Tests run [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210) passed for code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc`.
+- Confirmed report tests pass for deterministic output, escaping, claim/report provenance, CLI stdout/file output, and refusal to overwrite task JSON. Resumable combined-audit tests also passed, including pause/resume and the no-auto-repair/no-auto-publication checks; the published-root lineage audit passed.
+- Runner refreshes a sibling Markdown report after each saved batch and on final status/resume. Audit profile v3 stores the audit summary and checks it canonically before resume.
+- Next: inspect the report output for reviewer usability, then plan the authenticated Control Center integration as a separate security-boundary change. Do not enable network/AI or repair execution yet.
+
+---
+
 ## 2026-10-12 — Report renderer integration fixes (CI pending)
 
 - Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.
