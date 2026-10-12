@@ -741,3 +741,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Verified:** The workflow definition has only a manual trigger, read-only contents/actions permissions, no persisted checkout credentials, and separate checkpoint/report versus summary artifacts.
 - **Not yet verified:** A real manual dispatch, artifact upload/download between separate runs, and end-to-end resumed completion. The workflow was not dispatched as part of CI.
 - **Next:** Controlled manual test, then inspect the produced report before any authenticated Control Center integration.
+
+
+## 2026-10-12 — Security boundary lessons for Control Center
+
+- A statically exported page can render committed audit snapshots but cannot securely host privileged credentials or enforce server-side authorization. A live task console requires a server-side broker; CORS or hidden UI controls are not authentication.
+- GitHub Actions artifacts are expiring transport, not durable shared task history. Resume must bind task ID, prior run ID, artifact identity, pinned commit, task profile/config, and schema, and must fail closed on any mismatch.
+- A green static workflow test is not proof of a manual dispatch or cross-run artifact resume. Keep that distinction explicit in project status and reports.
+- Approval must bind to immutable proposal bytes and the base commit; any proposal/base/path/test change requires renewed approval. BOAT must never turn a historical verifier PASS into a current factual claim or dispatch the production publishing workflow.
