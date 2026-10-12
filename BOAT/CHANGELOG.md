@@ -670,3 +670,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Hardened the catalogue runner to verify `--commit` equals the actual checked-out Git commit, preventing an arbitrary supplied SHA from being presented as the audited input revision.
 - Updated the integration test to use the checked-out SHA and separately test a task record whose stored pinned commit does not match.
 - Next validation: rerun the offline suite and inspect the new run's test output. No publishing/provider/image workflow was dispatched.
+
+
+## 2026-10-12 — Task-state and resumable worker CI verified
+- BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) succeeded on a PR merge checkout containing the task-state and catalogue worker code.
+- The new task-state regression tests and three end-to-end catalogue pause/resume tests passed. The workflow's read-only published-root lineage audit also completed.
+- A preceding run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) failed on a mismatched test-message expectation; the assertion and commit-binding test were corrected, then run 38221034281 passed.
+- No production publishing, provider, or image workflow was triggered.

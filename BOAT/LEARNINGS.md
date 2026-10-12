@@ -644,3 +644,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Correction:** The runner now compares the supplied SHA with `git rev-parse HEAD` before reading or creating task state, and resume also checks the stored task pin.
 - **Implication:** Provenance requires binding the task to the actual bytes being audited, not merely storing a syntactically valid commit identifier.
 - **Validation status:** Corrective test authored; next CI run pending.
+
+
+## L-NEW — First resumable worker validation is green, with scope limits
+- **Observed:** BOAT Offline Tests run 38221034281 succeeded; the task-state suite and three catalogue task integration tests passed.
+- **Verified behavior:** bounded batch pauses, saved checkpoint resumes to completion, repeat resume is idempotent, and mismatched commit/configuration is rejected.
+- **Limit:** This proves deterministic structural task execution only. It does not verify semantic claim support, source freshness, or live Control Center authentication/task submission.
+- **Validation status:** CI verified for the code implementation in the PR merge checkout.

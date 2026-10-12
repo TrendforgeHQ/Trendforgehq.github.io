@@ -148,3 +148,8 @@ Added `scripts/boat-task-state.mjs`, `BOAT/schemas/task-record.schema.json`, and
 - Hardened the catalogue runner to verify `--commit` equals the actual checked-out Git commit, preventing an arbitrary supplied SHA from being presented as the audited input revision.
 - Updated the integration test to use the checked-out SHA and separately test a task record whose stored pinned commit does not match.
 - Next validation: rerun the offline suite and inspect the new run's test output. No publishing/provider/image workflow was dispatched.
+
+
+## Validation update — 2026-10-12
+
+The dependency-light task-state and resumable catalogue worker implementation passed BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281). The task-state tests and pause/resume integration tests passed, and the read-only published-root lineage audit completed. This verifies deterministic structural execution only; semantic support, source freshness, live backend/authentication, and repair execution remain out of scope.

@@ -1,3 +1,12 @@
+## 2026-10-12 — Resumable audit core CI result
+
+- BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) completed successfully on the PR merge checkout containing task-core implementation commit `27b67ebffc98868f00c6a97f337c9fdf731bd942`.
+- Confirmed the three catalogue-runner integration tests passed (bounded pause/resume, commit/config mismatch refusal, invalid-argument refusal) and all eight task-state tests passed. The full offline workflow, including the read-only published-root lineage audit, succeeded.
+- The runner checks that `--commit` equals the checked-out Git SHA; it does not accept a syntactically valid but unrelated SHA as audit provenance.
+- This validates the current code implementation, not a live Control Center backend, semantic factual truth, web retrieval, or repair execution. No provider/image calls or publishing workflow were run.
+
+---
+
 ## 2026-10-12 — Worktree commit binding correction awaiting CI
 
 - Current head includes a guard that requires the explicit task commit to equal the actual checked-out Git SHA; the integration test now derives its fixture SHA from the same checkout.

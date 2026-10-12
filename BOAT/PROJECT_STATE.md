@@ -1,3 +1,10 @@
+## 2026-10-12 — Task-state and resumable catalogue worker validation
+
+- Offline workflow run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) succeeded on a PR merge checkout containing task-core implementation commit `27b67ebffc98868f00c6a97f337c9fdf731bd942`.
+- Verified the new task-state tests and catalogue pause/resume integration tests passed, and the full BOAT offline workflow plus read-only lineage audit completed successfully.
+- The worker is dependency-light and structural-only; AI/web budgets default to zero. This is not evidence of semantic truth or live UI/backend readiness.
+
+
 
 
 ## 2026-10-12 — Input revision binding and first CI failure
