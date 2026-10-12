@@ -755,3 +755,8 @@ The workflow-contract test caught a false assumption about the exact log string,
 
 - BOAT Offline Tests [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) passed on `b060f4b58e470e49fb421fe3bb796e2745e20508`, including the existing offline regression suite and read-only published-root lineage audit.
 - A documentation PR passing CI must not be confused with validation of a future live broker, authentication/session security, or manual workflow artifact round-trip.
+
+
+## 2026-10-12 — Follow-up records validation
+
+- The follow-up documentation record commit `89d530359996a1ef772896e72b7b5e3a803a387a` passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861), including offline regression tests and the read-only lineage audit. This is still not evidence of live workflow dispatch or broker/authentication.
