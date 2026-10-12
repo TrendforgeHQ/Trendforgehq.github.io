@@ -672,3 +672,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Observed:** The first combined-review CI run failed because a test expected structural findings to exist in a specific early batch. The underlying combined-audit safety test passed; structural checks may legitimately return no findings for a batch.
 - **Correction:** Test category-count reconciliation and explicit no-auto-repair/no-auto-publication flags instead of assuming a finding category must be non-empty.
 - **Validation status:** Corrective test and summary metadata are committed; CI pending.
+
+
+## L-NEW — Findings should carry exact current article identity without duplicate noise
+- **Observed:** Combined review queue already reports duplicate slug identity per catalogue entry; the older standalone duplicate-slug block in the worker would add a redundant extra finding.
+- **Correction:** Remove the redundant global duplicate signal and attach the current article SHA-256 to each archived claim-history finding, alongside the archived claim-report hash.
+- **Validation status:** Combined integration baseline passed in run 38222968795; cleanup commit CI pending.

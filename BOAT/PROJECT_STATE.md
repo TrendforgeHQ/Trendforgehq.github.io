@@ -1,3 +1,10 @@
+## 2026-10-12 — Combined review queue CI passed; provenance tidy-up pending CI
+
+- BOAT Offline Tests run [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed for combined structural/evidence/lineage/review-queue/claim-history integration, including task pause/resume and explicit no-auto-repair/no-auto-publication assertions.
+- Follow-up cleanup removes a redundant duplicate-slug finding (the combined review queue already emits the per-entry identity finding) and attaches the current article SHA-256 to each archived claim-history finding. This follow-up commit requires its own CI result.
+
+---
+
 ## 2026-10-12 — Combined review integration test correction (CI pending)
 
 - First combined-review run [38222862267](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222862267) exposed a brittle test assumption: it expected at least one structural finding in the first batch, although the existing structural audit can legitimately return zero findings for those articles. The combined audit safety test passed.

@@ -180,7 +180,7 @@ async function main() {
             const issue = flags.contradicted ? 'historical-contradicted-signal' : flags.numericMismatch ? 'historical-numeric-mismatch-signal' : flags.unsupported ? 'historical-unsupported-signal' : claim.reviewStatus === 'unknown' ? 'claim-context-unknown' : claim.currentArticleTextStatus?.startsWith('not-exactly-found') ? 'claim-text-not-exactly-found' : claim.sourceContextStatus !== 'fields-present-not-validated' ? 'claim-source-context-incomplete' : 'historical-claim-signal-requires-semantic-review';
             const findingId = 'F-' + sha256(`${record.taskId}|claim|${articleIndex}|${report.attemptId}|${claim.claimIndex}|${issue}`).slice(0, 24);
             const severity = flags.contradicted || flags.numericMismatch || flags.unsupported ? 'high' : claim.reviewStatus === 'unknown' || claim.sourceContextStatus !== 'fields-present-not-validated' ? 'medium' : 'low';
-            findings.push({ findingId, category: 'claim_history', severity, status: flags.contradicted || flags.numericMismatch || flags.unsupported ? 'review_required' : claim.reviewStatus === 'unknown' ? 'unknown' : 'historical_signal_only', articleSlug: slug, articleTitle: title, articleIndex, title: issue, description: 'Archived verifier metadata only; current source reachability, freshness, passage identity, and semantic support have not been independently checked.', claim: { index: claim.claimIndex, text: claim.claimText, savedVerifierStatus: claim.savedVerifierStatus, classification: claim.classification, flags, currentArticleTextStatus: claim.currentArticleTextStatus, sourceContextStatus: claim.sourceContextStatus, source: claim.source, passages: (claim.passages ?? []).map(passage => ({ id: passage.id, excerpt: typeof passage.excerpt === 'string' ? passage.excerpt.slice(0, 300) : null })), report: { attemptId: report.attemptId, sourceKind: report.sourceKind, workflowRun: report.workflowRun, workflowSha: report.workflowSha, reportPath: report.reportPath, reportSha256: report.reportSha256, historicalPass: report.reportPass } }, semanticSupport: 'not_assessed', requiresApproval: true });
+            findings.push({ findingId, category: 'claim_history', severity, status: flags.contradicted || flags.numericMismatch || flags.unsupported ? 'review_required' : claim.reviewStatus === 'unknown' ? 'unknown' : 'historical_signal_only', articleSlug: slug, articleTitle: title, articleIndex, title: issue, description: 'Archived verifier metadata only; current source reachability, freshness, passage identity, and semantic support have not been independently checked.', claim: { index: claim.claimIndex, text: claim.claimText, savedVerifierStatus: claim.savedVerifierStatus, classification: claim.classification, flags, currentArticleTextStatus: claim.currentArticleTextStatus, sourceContextStatus: claim.sourceContextStatus, source: claim.source, passages: (claim.passages ?? []).map(passage => ({ id: passage.id, excerpt: typeof passage.excerpt === 'string' ? passage.excerpt.slice(0, 300) : null })), report: { attemptId: report.attemptId, sourceKind: report.sourceKind, workflowRun: report.workflowRun, workflowSha: report.workflowSha, reportPath: report.reportPath, reportSha256: report.reportSha256, historicalPass: report.reportPass }, currentArticleSha256: claimRecord.currentArticleSha256 }, semanticSupport: 'not_assessed', requiresApproval: true });
           }
         }
       }
@@ -188,20 +188,6 @@ async function main() {
         if (!queueRecord?.reasons.includes(message)) findings.push(findingForArticle(record.taskId, article, articleIndex, message));
       }
     }
-    if (cursor === 0) {
-      for (const duplicate of duplicateSlugs) findings.push({
-        findingId: 'F-' + sha256(`${record.taskId}|duplicate-slug|${duplicate.slug}`).slice(0, 24),
-        category: 'identity',
-        severity: 'high',
-        status: 'review_signal',
-        articleSlug: duplicate.slug,
-        title: 'Duplicate article slug: ' + duplicate.slug,
-        description: `The catalogue contains ${duplicate.count} entries for this slug; identity must be resolved before attaching evidence or proposing a repair.`,
-        semanticSupport: 'not_assessed',
-        requiresApproval: true
-      });
-    }
-    const before = record.revision;
     record = addTaskFindings(record, findings);
     record = checkpointTask(record, {
       cursor: `index:${end}`,

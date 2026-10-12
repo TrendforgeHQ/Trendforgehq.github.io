@@ -699,3 +699,8 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 
 ---
 
+
+
+## 2026-10-12 — Combined review queue CI passed
+- BOAT Offline Tests [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed after correcting the zero-findings test assumption and asserting read-only/no-repair/no-publication invariants.
+- Follow-up cleanup removes redundant duplicate-slug reporting and binds claim-history findings to the current article SHA-256; validation of this cleanup is pending.
