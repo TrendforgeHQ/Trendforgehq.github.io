@@ -5,7 +5,8 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync, execFileSync } from 'node:child_process';
-import { createTaskRecord, saveTaskRecord } from './boat-task-state.mjs';
+import { createTaskRecord, saveTaskRecord, transitionTask } from './boat-task-state.mjs';
+import { loadTaskStore } from './boat-task-store.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -111,5 +112,75 @@ test('combined audit records historical claim signals without claiming current s
     assert.ok(state.findings.every(item => item.semanticSupport === 'not_assessed' || item.semanticSupport === 'unknown'));
     assert.ok(state.findings.every(item => item.requiresApproval === true));
     assert.ok(state.findings.some(item => item.category === 'claim_history') || report.auditComponents.archivedClaimRows === 0);
+  } finally { await fs.rm(dir, { recursive: true, force: true }); }
+});
+
+
+test('store-backed runner resumes from canonical store, skips completed units, and repairs stale artifact snapshots', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'boat-catalogue-store-adapter-'));
+  const storePath = path.join(dir, 'canonical-store.json');
+  const stateDir = path.join(dir, 'artifacts');
+  try {
+    const first = run(['--commit', commit, '--state-dir', stateDir, '--task-store', storePath, '--batch-size', '10', '--max-batches', '1']);
+    assert.equal(first.status, 0, first.stderr);
+    const paused = JSON.parse(first.stdout);
+    assert.equal(paused.status, 'paused');
+    assert.equal(paused.articlesProcessedThisInvocation, 10);
+    let store = await loadTaskStore(storePath);
+    assert.equal(store.tasks.length, 1);
+    assert.equal(store.idempotency.length, 1);
+    assert.equal(store.tasks[0].taskId, paused.taskId);
+    assert.equal(store.tasks[0].checkpoint.completedUnits.length, 10);
+
+    let canonicalTask = transitionTask(store.tasks[0], 'running', { reason: 'test fixture simulates interrupted worker' });
+    store = { ...store, revision: store.revision + 1, tasks: store.tasks.map(task => task.taskId === paused.taskId ? canonicalTask : task) };
+    await fs.writeFile(storePath, JSON.stringify(store, null, 2) + '\n', 'utf8');
+    const stalePath = path.join(stateDir, paused.taskId + '.json');
+    const stale = JSON.parse(await fs.readFile(stalePath, 'utf8'));
+    stale.checkpoint = { cursor: 'index:0', completedUnits: [] };
+    stale.findings = [];
+    stale.status = 'paused';
+    await fs.writeFile(stalePath, JSON.stringify(stale, null, 2) + '\n', 'utf8');
+
+    const resumed = run(['--commit', commit, '--state-dir', stateDir, '--task-store', storePath, '--batch-size', '10', '--resume', paused.taskId]);
+    assert.equal(resumed.status, 0, resumed.stderr);
+    const completed = JSON.parse(resumed.stdout);
+    assert.equal(completed.status, 'completed');
+    assert.equal(completed.articlesProcessedThisInvocation, completed.progress.totalArticles - 10);
+    assert.equal(completed.progress.completedUnits, completed.progress.totalArticles);
+    assert.equal(completed.budget.aiCalls, 0);
+    assert.equal(completed.budget.webRequests, 0);
+
+    store = await loadTaskStore(storePath);
+    assert.equal(store.tasks.length, 1);
+    assert.equal(store.idempotency.length, 1);
+    const saved = store.tasks[0];
+    assert.equal(saved.status, 'completed');
+    assert.equal(saved.checkpoint.completedUnits.length, completed.progress.totalArticles);
+    assert.equal(new Set(saved.checkpoint.completedUnits).size, saved.checkpoint.completedUnits.length);
+    assert.equal(new Set(saved.findings.map(item => item.findingId)).size, saved.findings.length);
+    assert.deepEqual(JSON.parse(await fs.readFile(stalePath, 'utf8')), saved);
+    assert.match(await fs.readFile(completed.reportFile, 'utf8'), /completed/i);
+
+    const reportBytes = await fs.readFile(completed.reportFile, 'utf8');
+    const repeat = run(['--commit', commit, '--state-dir', stateDir, '--task-store', storePath, '--batch-size', '10', '--resume', paused.taskId]);
+    assert.equal(repeat.status, 0, repeat.stderr);
+    assert.equal(JSON.parse(repeat.stdout).articlesProcessedThisInvocation, 0);
+    assert.equal(await fs.readFile(completed.reportFile, 'utf8'), reportBytes);
+    assert.deepEqual((await fs.readdir(stateDir)).filter(name => name === paused.taskId + '.md'), [paused.taskId + '.md']);
+  } finally { await fs.rm(dir, { recursive: true, force: true }); }
+});
+
+test('store-backed resume fails closed if only a stale task artifact exists', async () => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'boat-catalogue-store-missing-'));
+  try {
+    const stateDir = path.join(dir, 'artifacts');
+    const first = run(['--commit', commit, '--state-dir', stateDir, '--batch-size', '10', '--max-batches', '1']);
+    assert.equal(first.status, 0, first.stderr);
+    const taskId = JSON.parse(first.stdout).taskId;
+    const storePath = path.join(dir, 'empty-store.json');
+    const resume = run(['--commit', commit, '--state-dir', stateDir, '--task-store', storePath, '--batch-size', '10', '--resume', taskId]);
+    assert.notEqual(resume.status, 0);
+    assert.match(resume.stderr, /canonical task store has no matching task/);
   } finally { await fs.rm(dir, { recursive: true, force: true }); }
 });

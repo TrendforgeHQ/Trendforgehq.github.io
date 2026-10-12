@@ -143,6 +143,42 @@ export async function submitTaskRequest(filePath, request, { createdAt = new Dat
 }
 
 
+
+/**
+ * Registers a deterministic catalogue task and idempotency claim together.
+ * Retains the runner's full audit configuration without weakening the public request schema.
+ */
+export async function registerStoredTask(filePath, taskRecord, idempotencyKey) {
+  const validation = validateTaskRecord(taskRecord);
+  if (!validation.valid) return { outcome: 'invalid_task', errors: validation.errors };
+  if (!keyOk(idempotencyKey)) return { outcome: 'invalid_idempotency_key' };
+  const identity = { taskType: taskRecord.taskType, pinnedCommitSha: taskRecord.pinnedCommitSha, config: taskRecord.config };
+  const requestHash = hash(stable(identity));
+  return withStoreLock(filePath, store => {
+    const claim = store.idempotency.find(item => item.key === idempotencyKey);
+    if (claim && claim.requestHash !== requestHash) {
+      return { write: false, value: { outcome: 'conflict', code: 'IDEMPOTENCY_KEY_REUSED_WITH_DIFFERENT_TASK' } };
+    }
+    const existing = store.tasks.find(item => item.taskId === taskRecord.taskId);
+    if (existing) {
+      const existingIdentity = { taskType: existing.taskType, pinnedCommitSha: existing.pinnedCommitSha, config: existing.config };
+      if (stable(existingIdentity) !== stable(identity)) return { write: false, value: { outcome: 'task_identity_conflict' } };
+      if (claim && claim.taskId !== existing.taskId) return { write: false, value: { outcome: 'conflict', code: 'IDEMPOTENCY_KEY_POINTS_TO_DIFFERENT_TASK' } };
+      if (claim) return { write: false, value: { outcome: 'replay', task: structuredClone(existing), storeRevision: store.revision } };
+      const next = { ...store, revision: store.revision + 1, idempotency: [...store.idempotency, { key: idempotencyKey, requestHash, taskId: existing.taskId }] };
+      return { write: true, store: next, value: { outcome: 'replay', task: structuredClone(existing), storeRevision: next.revision } };
+    }
+    if (claim) return { write: false, value: { outcome: 'conflict', code: 'IDEMPOTENCY_TASK_MISSING' } };
+    if (taskRecord.status !== 'queued' || taskRecord.revision !== 0) return { write: false, value: { outcome: 'invalid_initial_task_state' } };
+    const next = {
+      ...store, revision: store.revision + 1,
+      tasks: [...store.tasks, structuredClone(taskRecord)],
+      idempotency: [...store.idempotency, { key: idempotencyKey, requestHash, taskId: taskRecord.taskId }]
+    };
+    return { write: true, store: next, value: { outcome: 'created', task: structuredClone(taskRecord), storeRevision: next.revision } };
+  });
+}
+
 /**
  * Atomically advances one persisted task inside the unified store.
  * The expected task revision is checked while holding the store lock; a stale

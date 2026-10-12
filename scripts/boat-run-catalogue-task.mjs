@@ -16,13 +16,14 @@ import {
   addTaskFindings, checkpointTask, createTaskRecord, loadTaskRecord,
   saveTaskRecord, transitionTask
 } from './boat-task-state.mjs';
+import { loadTaskStore, registerStoredTask, updateStoredTask } from './boat-task-store.mjs';
 import { writeTaskReport } from './boat-render-task-report.mjs';
 
 const sha256 = value => crypto.createHash('sha256').update(value).digest('hex');
 const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
 const stableJson = value => JSON.stringify(canonical(value));
 function usage() {
-  return 'Usage: node scripts/boat-run-catalogue-task.mjs --commit <40-char-sha> --state-dir <dir> [--batch-size 1..100] [--max-batches n] [--resume boat_<24-hex>]' + String.fromCharCode(10);
+  return 'Usage: node scripts/boat-run-catalogue-task.mjs --commit <40-char-sha> --state-dir <dir> [--batch-size 1..100] [--max-batches n] [--resume boat_<24-hex>] [--task-store <file>]' + String.fromCharCode(10);
 }
 function argsFrom(argv) {
   const out = {};
@@ -32,7 +33,7 @@ function argsFrom(argv) {
     if (key === '--help') { out.help = true; continue; }
     const value = argv[++i];
     if (!value || value.startsWith('--')) throw new Error('Missing value for ' + key);
-    const name = ({ '--commit': 'commit', '--state-dir': 'stateDir', '--batch-size': 'batchSize', '--max-batches': 'maxBatches', '--resume': 'resume' })[key];
+    const name = ({ '--commit': 'commit', '--state-dir': 'stateDir', '--batch-size': 'batchSize', '--max-batches': 'maxBatches', '--resume': 'resume', '--task-store': 'taskStore' })[key];
     if (!name) throw new Error('Unknown option: ' + key);
     if (Object.hasOwn(out, name)) throw new Error('Duplicate option: ' + key);
     out[name] = value;
@@ -64,6 +65,29 @@ function findingForArticle(taskId, article, index, message) {
     requiresApproval: true
   };
 }
+
+async function writeTaskSnapshot(filePath, record) {
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  const tempPath = `${filePath}.tmp-${process.pid}-${crypto.randomBytes(6).toString('hex')}`;
+  try {
+    const handle = await fs.open(tempPath, 'wx', 0o600);
+    try { await handle.writeFile(JSON.stringify(record, null, 2) + '\n', 'utf8'); await handle.sync(); }
+    finally { await handle.close(); }
+    await fs.rename(tempPath, filePath);
+  } finally { await fs.rm(tempPath, { force: true }).catch(() => {}); }
+}
+
+async function persistRecord({ filePath, record, diskRevision, taskStorePath }) {
+  if (!taskStorePath) {
+    await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
+    return record.revision;
+  }
+  const saved = await updateStoredTask(taskStorePath, record.taskId, diskRevision, () => record);
+  if (saved.outcome !== 'updated') throw new Error(`Canonical task-store update failed: ${saved.outcome}`);
+  await writeTaskSnapshot(filePath, saved.task);
+  return saved.task.revision;
+}
+
 function summary(record, status, auditComponents) {
   const findingsByCategory = Object.fromEntries([...new Set(record.findings.map(item => item.category))].sort().map(category => [category, record.findings.filter(item => item.category === category).length]));
   return {
@@ -113,27 +137,39 @@ async function main() {
   const reviewByIdentity = new Map(reviewQueue.articles.map(item => [`${item.slug}\\0${item.title}`, item]));
   const claimsBySlug = new Map(claimAudit.articles.map(item => [item.slug, item]));
   const auditComponents = { structuralArticles: structural.length, evidenceArticles: evidence.length, lineageArticles: lineage.length, reviewQueueArticles: reviewQueue.articles.length, claimAuditArticles: claimAudit.articles.length, archivedClaimReports: claimAudit.summary.archivedReports, archivedClaimRows: claimAudit.summary.claims, historicalUnsupportedSignals: claimAudit.summary.unsupported, historicalContradictedSignals: claimAudit.summary.contradicted, historicalNumericMismatchSignals: claimAudit.summary.numericMismatch, reviewQueueReadOnly: reviewQueue.readOnly, automaticRepair: reviewQueue.automaticRepair, automaticPublicationDecision: reviewQueue.automaticPublicationDecision, reviewQueueSummary: reviewQueue.summary, claimAuditSummary: claimAudit.summary };
+  const taskStorePath = options.taskStore ? path.resolve(options.taskStore) : null;
   let record, filePath, diskRevision;
   if (options.resume) {
     filePath = path.join(stateDir, options.resume + '.json');
-    record = await loadTaskRecord(filePath);
+    if (taskStorePath) {
+      const store = await loadTaskStore(taskStorePath);
+      record = store.tasks.find(task => task.taskId === options.resume);
+      if (!record) throw new Error('Resume blocked: canonical task store has no matching task; refusing to trust a per-task artifact');
+      record = structuredClone(record);
+    } else {
+      record = await loadTaskRecord(filePath);
+    }
     if (record.taskId !== options.resume) throw new Error('Stored task ID does not match requested resume ID');
     if (record.pinnedCommitSha !== options.commit) throw new Error('Resume blocked: supplied commit does not match pinned commit');
     if (record.taskType !== 'published_catalogue_audit' || record.config.batchSize !== options.batchSize || record.config.totalArticles !== articles.length || record.config.auditVersion !== 3 || record.config.auditProfile !== 'combined-structural-evidence-lineage-claim-history' || stableJson(record.config.auditComponents) !== stableJson(auditComponents)) {
       throw new Error('Resume blocked: task type, batch size, or catalogue size differs from original task configuration');
     }
     diskRevision = record.revision;
+    if (taskStorePath) await writeTaskSnapshot(filePath, record);
     if (record.status === 'completed') {
       const reportFile = filePath.replace(/\.json$/i, '.md');
       await writeTaskReport(reportFile, record);
-      process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation: 0 }, null, 2) + '\n');
+      process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation: 0, articlesProcessedThisInvocation: 0 }, null, 2) + '\n');
       return;
     }
     if (!['paused', 'running', 'queued'].includes(record.status)) throw new Error('Resume blocked for task status: ' + record.status);
-    if (record.status !== 'running') {
+    if (record.status === 'running') {
+      record = transitionTask(record, 'paused', { reason: 'RECOVERED_AFTER_INTERRUPTED_RUN; explicit --resume received' });
       record = transitionTask(record, 'running');
-      await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
-      diskRevision = record.revision;
+      diskRevision = await persistRecord({ filePath, record, diskRevision, taskStorePath });
+    } else {
+      record = transitionTask(record, 'running');
+      diskRevision = await persistRecord({ filePath, record, diskRevision, taskStorePath });
     }
   } else {
     record = createTaskRecord({
@@ -142,11 +178,20 @@ async function main() {
       config: { batchSize: options.batchSize, totalArticles: articles.length, auditVersion: 3, auditProfile: 'combined-structural-evidence-lineage-claim-history', auditComponents }
     });
     filePath = path.join(stateDir, record.taskId + '.json');
-    await saveTaskRecord(filePath, record, { expectedRevision: null });
-    diskRevision = record.revision;
+    if (taskStorePath) {
+      const registered = await registerStoredTask(taskStorePath, record, `catalogue-audit:${record.taskId}`);
+      if (registered.outcome === 'locked') throw new Error('Canonical task store is locked by another writer');
+      if (registered.outcome === 'created') record = registered.task;
+      else if (registered.outcome === 'replay') throw new Error(`Task already exists in canonical store with status ${registered.task.status}; pass --resume ${registered.task.taskId} for explicit continuation`);
+      else throw new Error(`Cannot register task in canonical store: ${registered.outcome}`);
+      diskRevision = record.revision;
+      await writeTaskSnapshot(filePath, record);
+    } else {
+      await saveTaskRecord(filePath, record, { expectedRevision: null });
+      diskRevision = record.revision;
+    }
     record = transitionTask(record, 'running');
-    await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
-    diskRevision = record.revision;
+    diskRevision = await persistRecord({ filePath, record, diskRevision, taskStorePath });
   }
 
   let cursor = 0;
@@ -157,13 +202,22 @@ async function main() {
   }
   if (!Number.isInteger(cursor) || cursor < 0 || cursor > articles.length) throw new Error('Resume blocked: checkpoint cursor is outside catalogue bounds');
   let batchesThisInvocation = 0;
+  let articlesProcessedThisInvocation = 0;
+  const completedUnitIds = new Set(record.checkpoint.completedUnits);
   while (cursor < articles.length && batchesThisInvocation < options.maxBatches) {
     const end = Math.min(cursor + options.batchSize, articles.length);
-    const batchArticles = articles.slice(cursor, end);
-    const batchResults = auditPublishedCatalogue(batchArticles);
+    const batchEntries = [];
+    for (let index = cursor; index < end; index++) {
+      const article = articles[index];
+      const unitId = `${index}:${String(article?.slug ?? '')}`;
+      if (!completedUnitIds.has(unitId)) batchEntries.push({ article, index });
+    }
+    const batchArticles = batchEntries.map(entry => entry.article);
+    const batchResults = batchArticles.length ? auditPublishedCatalogue(batchArticles) : [];
+    articlesProcessedThisInvocation += batchArticles.length;
     const findings = [];
     for (let offset = 0; offset < batchResults.length; offset++) {
-      const articleIndex = cursor + offset;
+      const articleIndex = batchEntries[offset].index;
       const article = batchArticles[offset];
       const slug = String(article?.slug ?? '');
       const title = String(article?.title ?? slug ?? 'Untitled article');
@@ -196,20 +250,20 @@ async function main() {
     record = addTaskFindings(record, findings);
     record = checkpointTask(record, {
       cursor: `index:${end}`,
-      completedUnitIds: batchArticles.map((article, offset) => `${cursor + offset}:${String(article?.slug ?? '')}`)
+      completedUnitIds: articles.slice(cursor, end).map((article, offset) => `${cursor + offset}:${String(article?.slug ?? '')}`)
     });
-    await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
-    diskRevision = record.revision;
+    for (const unit of record.checkpoint.completedUnits) completedUnitIds.add(unit);
+    diskRevision = await persistRecord({ filePath, record, diskRevision, taskStorePath });
     await writeTaskReport(filePath.replace(/\.json$/i, '.md'), record);
     cursor = end;
     batchesThisInvocation++;
   }
   const finalStatus = cursor >= articles.length ? 'completed' : 'paused';
   record = transitionTask(record, finalStatus, { reason: finalStatus === 'paused' ? 'Invocation batch limit reached; resume from saved checkpoint.' : null });
-  await saveTaskRecord(filePath, record, { expectedRevision: diskRevision });
+  diskRevision = await persistRecord({ filePath, record, diskRevision, taskStorePath });
   const reportFile = filePath.replace(/\.json$/i, '.md');
   await writeTaskReport(reportFile, record);
-  process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation }, null, 2) + '\n');
+  process.stdout.write(JSON.stringify({ ...summary(record, record.status, auditComponents), stateFile: filePath, reportFile, batchesThisInvocation, articlesProcessedThisInvocation }, null, 2) + '\n');
 }
 main().catch(error => {
   process.stderr.write(`BOAT catalogue task failed closed: ${error.message}\n${usage()}`);
