@@ -768,3 +768,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 - Do not re-sign a failed or mismatched downloaded checkpoint under the current run ID. The workflow now creates the next manifest only if prior-manifest validation succeeded (or it is a new task).
 - The first static-test run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) caught over-escaped regex assertions. Corrected them and verified the full offline suite in [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231).
 - These checks improve provenance integrity but do not prove the Actions artifact round-trip works end-to-end; that still needs a controlled manual run after the dispatch/deployment gate is explicitly resolved.
+
+
+## 2026-10-12 — Keep task authorization separate from client input
+
+- The request body must not choose its repository, workflow, role, permissions, or budget ceilings. Those values must come from trusted server configuration/session context.
+- A syntactically valid request is not an authorized request. Validate shape first, then apply a separate fail-closed authorization policy; fixed stable decision codes make denials testable.
+- Start with a bounded read-only task allowlist and zero AI/web budget. Reject extra fields and unbounded requests instead of relying on UI controls.
+- A pure authorization policy is not authentication: live integration still requires a reviewed server-side identity/session, CSRF/origin validation, rate limiting, and durable idempotency storage. Current work is offline contract/testing only; CI is pending.
