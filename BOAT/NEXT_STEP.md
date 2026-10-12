@@ -1,3 +1,13 @@
+## 2026-10-12 — CI trigger diagnosis and safe rollback
+
+- Investigated the zero-job push runs created while trying to validate the manual-workflow adapter. The runs are push events against a branch whose workflow definition is not on the repository's default branch; they contain no test job and cannot validate code.
+- Removed the temporary branch-only `push` trigger from `.github/workflows/boat-offline-tests.yml`. The workflow is back to the existing pull-request/path-filtered test model plus manual dispatch; no production workflow is involved.
+- PR #38 remains draft/open/unmerged and based on `feat/boat-control-center-vertical-slice-audit`. No `main` change, merge, publishing dispatch, article edit, or provider/image call was made.
+- **Verification status:** portable-store module tests passed on earlier head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` ([run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842)). The later manual-workflow integration is not CI-verified, and cross-run artifact resume has not been tested. The zero-job push runs must not be counted as failures of the code or as passes.
+- Next: validate the current integration through an actual permitted test execution without changing `main`, publishing, or providers. If the draft PR suppresses pull-request checks, preserve its draft state and do not change PR state without explicit approval; report the CI limitation rather than fabricating a result.
+
+---
+
 ## 2026-10-12 — Portable canonical store wired into manual workflow (CI pending)
 
 - Confirmed [BOAT Offline Tests run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store module and offline tests on that head.
