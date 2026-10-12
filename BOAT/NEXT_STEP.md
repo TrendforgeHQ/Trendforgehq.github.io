@@ -866,3 +866,9 @@ Portable-store integration test follow-up: extended the existing canonical task-
 - Added `.github/workflows/boat-manual-audit.yml` and `scripts/test-boat-manual-audit-workflow.mjs` to the BOAT Offline Tests path filter, so changes to the workflow integration and its safety assertions are included in CI selection.
 - Commit: `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2` on the existing draft PR branch only. Latest-head workflow lookup currently shows no PR-triggered run; this change is not yet CI-verified.
 - Next gate: obtain a real offline-test job on this exact head, then review its test and read-only lineage-audit results. Do not dispatch the manual audit or change PR/main state as a workaround.
+
+### Verification follow-up — 2026-10-12
+
+- Reviewed the manual audit workflow, portable-store exporter/importer, canonical store, catalogue runner, and regression assertions. Fixed over-escaped regexes in `scripts/test-boat-manual-audit-workflow.mjs` that would not match the workflow's `.mjs`/`.json` paths. Commit: `7bc1b3fcb7b8da7459ee4ca1125d5ad407882e26`.
+- A separate static cross-check now passes **13/13** workflow/artifact wiring checks, including read-only permissions, validate-before-import, explicit runner `--task-store`, create-only import, ephemeral-store exclusion, and no provider/publishing integration. This is static verification only, not a Node test-runner or GitHub Actions pass.
+- Exact latest head still has no PR-triggered workflow run and no status checks. Next acceptance gate is a real test job plus the bounded manual audit and cross-run resume; do not claim final-stage completion before those execute.
