@@ -699,3 +699,11 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## Transfer diagnostics validated offline — 2026-10-11
 
 At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offline Tests passed **137/137** (run [38136204355](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204355)); the Control Center deterministic suite and production build also passed (run [38136204315](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204315)). The workflow contract test checks byte/hash/blob diagnostics and the output-transfer shell syntax. Next: after the next naturally scheduled production run, inspect `EVIDENCE_PACK_PERSISTENCE` log lines at pre-commit, output commit, and post-transfer checkpoints and compare them with that run's artifact. Do not manually dispatch publishing or treat offline validation as proof that the production discrepancy is fixed. Latest documentation-only commits will trigger CI again.
+
+
+## 2026-10-12 — Control Center security boundary design recorded
+
+- Added `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` after confirming the Control Center is a static build-time snapshot (`output: 'export'`), not a server runtime or authenticated task API.
+- Documented trust boundaries, no-secret-in-browser rule, least-privilege worker, pinned commit/task provenance, fail-closed authorization, artifact resume validation, CSRF/session requirements, threat mitigations, and approval binding for a future repair proposal.
+- Important deployment gate: the manual-only workflow has static CI coverage but has not been dispatched. It may require a reviewed default-branch merge to become dispatchable. Do not merge merely to unlock the test; keep `main` unchanged until an explicit operator decision.
+- Next: add offline schema/authorization-decision fixtures and negative tests for stale commit, cross-task/run resume, over-budget inputs, and artifact manifest mismatch. Keep the static Control Center read-only; no hosting/auth product chosen, no live API, no repair executor, no publish/provider/image calls.
