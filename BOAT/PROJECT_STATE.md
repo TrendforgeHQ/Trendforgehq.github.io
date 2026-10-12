@@ -1,3 +1,14 @@
+## 2026-10-12 — Manual workflow now wired for canonical portable task-store resume (CI pending)
+
+- Confirmed [BOAT Offline Tests run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) passed for PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412`; this is the last verified implementation head before the new workflow wiring.
+- Updated the manual-only audit workflow to initialize/use the canonical `boat-task-store.json`, validate and import `boat-task-store-portable.json` plus its run-bound manifest on resume, and export a fresh portable store after execution.
+- The uploaded artifact excludes the ephemeral full canonical store and retains the single-task portable payload, manifest, task snapshot and report. Existing task checkpoint manifest validation remains in place.
+- Added static regression assertions for portable-store validation, import, runner integration, export, and upload exclusion.
+- **Pending:** the workflow/test changes have not yet received a real test job. Push-event runs 38234497007, 38234509688 and 38234528282 contain zero jobs and do not validate the code. Manual dispatch and cross-run resume remain unverified.
+- Next acceptance gate: successful offline CI on the current head; then a controlled manual audit with a small batch, inspect the artifact and resume on the exact same commit. PR #38 stays draft/unmerged; `main`, production publishing, article contents and provider settings remain untouched.
+
+---
+
 ## 2026-10-12 — Optional canonical-store runner adapter passes offline integration tests
 
 - Implementation commit: `d7b97be99b717088a30291a3a6e2819c6d561236`; offline CI [38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046) passed **186/186** tests and read-only published-root lineage audit.
