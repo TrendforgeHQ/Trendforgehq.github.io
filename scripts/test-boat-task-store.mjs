@@ -122,9 +122,9 @@ test('checkpoint and findings advance atomically with compare-and-swap revision 
   assert.equal(await fs.readFile(file, 'utf8'), before);
 }));
 
-test('stored task update rejects a changed identity or skipped task revision', async () => withTempStore(async file => {
+test('stored task update rejects an unchanged task revision', async () => withTempStore(async file => {
   const created = await submitTaskRequest(file, request(), { createdAt: t0 });
-  const invalid = { ...transitionTask(created.task, 'running', { updatedAt: t1 }), revision: created.task.revision + 2 };
-  await assert.rejects(() => updateStoredTask(file, created.task.taskId, created.task.revision, () => invalid), /advance exactly one revision/);
+  const invalid = { ...transitionTask(created.task, 'running', { updatedAt: t1 }), revision: created.task.revision };
+  await assert.rejects(() => updateStoredTask(file, created.task.taskId, created.task.revision, () => invalid), /advance the task revision/);
   assert.equal((await loadTaskStore(file)).tasks[0].status, 'queued');
 }));

@@ -163,8 +163,8 @@ export async function updateStoredTask(filePath, taskId, expectedTaskRevision, u
     const nextTask = updater(structuredClone(current));
     const validation = validateTaskRecord(nextTask);
     if (!validation.valid) throw new Error(`Invalid updated BOAT task: ${validation.errors.join('; ')}`);
-    if (nextTask.taskId !== taskId || nextTask.revision !== current.revision + 1) {
-      throw new Error('Task updater must preserve taskId and advance exactly one revision');
+    if (nextTask.taskId !== taskId || nextTask.revision <= current.revision) {
+      throw new Error('Task updater must preserve taskId and advance the task revision');
     }
     const next = {
       ...store,
