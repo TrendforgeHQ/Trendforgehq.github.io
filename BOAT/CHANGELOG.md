@@ -1,3 +1,13 @@
+## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
+
+- Updated `.github/workflows/boat-manual-audit.yml` to run the catalogue task with `--task-store`, validate and import the previous run's portable canonical-store artifact before resuming, and export a new portable store artifact for the current run.
+- Excluded the ephemeral full canonical store from upload to avoid import collisions; the portable single-task store and provenance manifest are retained alongside the task snapshot/report.
+- Extended the manual-workflow regression test with assertions for validate/import/create and upload exclusion.
+- Baseline validation: PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` passed [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842). The new workflow changes remain **CI pending**; push runs 38234497007, 38234509688 and 38234528282 had zero jobs and are not successful test runs.
+- No workflow dispatch, article mutation, publishing, provider/image call, merge or `main` change was performed.
+
+---
+
 ## 2026-10-12 — Store-backed catalogue runner adapter
 
 - Added `registerStoredTask()` to register the full audit task record and deterministic idempotency claim in one canonical store transaction.
