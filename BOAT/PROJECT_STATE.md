@@ -845,3 +845,10 @@ Implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1` passed BOAT O
 - Request policy is deliberately narrow: one read-only catalogue audit type, allowlisted commit SHA, bounded batch sizes/counts, idempotency key, and AI/web budgets fixed to zero. The pure authorization decision requires trusted server context and denies unauthenticated/non-operator, bad CSRF/origin, rate-limited, wrong repository/workflow, non-allowlisted commit/task type, excessive batch, budget expansion, and idempotency replay.
 - Updated offline CI path filters to include the new contract/test. Latest head `e438ed4504edc2fa8388316ee2e2c9e145e8cfd2`; CI result not yet surfaced by the commit-run lookup, so status remains pending.
 - This is not a live authentication implementation or API. Static Control Center remains read-only; no hosted service selected, no workflow dispatch/publishing/provider/image calls, no article edits, and `main` remains untouched.
+
+
+## 2026-10-12 — Task contract slice validated by CI
+
+- BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed on contract head `7ec5705010e1d28194aae4654be4721f72383d4b`: **168 tests passed, 0 failed**; read-only published-root lineage audit also succeeded.
+- New coverage includes request/response validation, authorization decision codes, fixed repository/workflow/task/commit allowlists, required server-side caps, zero budgets, idempotency replay signals, and request/response schema smoke checks.
+- CI pass validates pure offline policy only. It does not authenticate an identity, persist idempotency keys, dispatch Actions, or create a live Control Center API. No publishing/provider/image actions or main-branch changes.
