@@ -729,3 +729,12 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 - BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed for code/workflow commit `ec6eb586234487ced58804929c6c0d36cc988bc3`, including manifest unit/CLI tests, workflow safety tests, the existing offline suite, and the read-only published-root lineage audit.
 - An earlier run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) caught over-escaped regexes in the static workflow test; those assertions were corrected before the passing run.
 - Still not end-to-end: manual dispatch and cross-run artifact download/resume have not been exercised. Do not merge to `main` solely to unlock dispatch. Next: record this implementation in the project files, then continue offline request/schema and negative-resume coverage while awaiting an explicit deployment decision.
+
+
+## 2026-10-12 — Offline task contract and authorization policy added (CI pending)
+
+- Added `scripts/boat-task-contract.mjs` with request/response validators and a pure fail-closed authorization decision function; added request and response JSON Schemas under `BOAT/schemas/`.
+- The initial request contract permits only bounded published-catalogue audits (batch sizes 10/25/50; 1/2/5 batches), a full pinned commit SHA, an idempotency key, and zero AI/web budgets. It rejects extra fields, arbitrary repository/workflow names, and unbounded full-catalogue requests.
+- Trusted authorization context must be supplied by a future server adapter; the pure policy checks authenticated operator role, CSRF/origin checks, rate limit, fixed repository/workflow, task-type allowlist, commit allowlist, batch caps, zero budgets, and idempotency replay. It performs no network or workflow calls.
+- Added `scripts/test-boat-task-contract.mjs` covering valid/invalid contracts and denial paths. Updated BOAT Offline Tests path filters so changes to the contract/test trigger CI. Validation for the latest head is pending; do not claim the tests passed until the run is inspected.
+- No live endpoint, auth provider, UI wiring, repair execution, publish/provider/image call, merge, or `main` change. Next: inspect CI and align any schema/runtime mismatches before considering an authenticated broker.
