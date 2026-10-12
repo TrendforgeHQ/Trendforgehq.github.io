@@ -261,3 +261,9 @@ BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.gi
 - Task lifecycle transition tests now explicitly cover pause/resume, review completion, blocked/failed recovery, and the completed terminal state.
 - This provides single-workspace persistence only. It is not a distributed lock, not authentication, not a live API, and not an atomic transaction across task-record creation plus idempotency claim. Do not advertise exactly-once execution or connect this to Control Center until the crash window and broker boundary are resolved.
 - No new dependency or hosted service; zero AI/web budget; no workflow dispatch, publishing, provider/image calls, merge, or `main` change. CI validation is pending inspection.
+
+## 2026-10-12 — Lifecycle/idempotency validation result
+
+- Latest BOAT Offline Tests run [38227586730](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38227586730) completed successfully on the current PR head: **176 test checks passed, 0 failed**; Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit step completed successfully.
+- The idempotency tests verified same-request replay returns the original task ID, changed-request key reuse conflicts without modifying persisted bytes, persistence survives reload, and lock/corrupt-state handling fails closed.
+- Validation is for the offline/local implementation only. It does not establish distributed idempotency, a live API/auth broker, cross-run artifact resume, or atomic task-record-plus-ledger creation. No merge, dispatch, provider/web/image calls, publishing, or `main` change.
