@@ -615,3 +615,11 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Decision:** Record PR #37's own run 38219593540 as the verification result. It passed the existing offline workflow, including 37/37 Control Center deterministic checks and the read-only root-lineage audit.
 - **Limitation:** These tests do not exercise a live backend, authentication, task persistence, or a chat interface. Those capabilities remain unimplemented.
 - **Constraint:** GitHub Pages remains the free static frontend; no external backend/identity service has been selected. Verify a free-tier server-side option and its security properties before implementation.
+
+
+## L-NEW — Quota resilience requires resumable work, not just provider fallback
+- **Observed:** The current deployment is a static GitHub Pages export; BOAT has deterministic offline audit scripts, while live task submission and durable shared task history are not implemented.
+- **Decision:** Keep the core task contract, audit rules, state format, checkpoints, and report generation owned by the repository. Treat AI, external retrieval, hosted storage, and hosted authentication as optional adapters rather than prerequisites for deterministic audits.
+- **Implication:** Provider failover alone does not solve quota interruptions. Tasks must checkpoint completed units, resume idempotently, and preserve partial results when a network/provider budget is exhausted.
+- **Limit:** GitHub Actions also has usage limits, and workflow artifacts can expire. This design reduces lock-in and wasted work; it does not promise unlimited free compute or permanent artifact retention.
+- **Validation status:** Architecture decision documented; task-state implementation and its tests are pending.

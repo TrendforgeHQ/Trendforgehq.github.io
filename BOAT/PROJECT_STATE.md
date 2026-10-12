@@ -1,3 +1,13 @@
+## 2026-10-12 — Dependency minimization
+
+- Added [DEPENDENCY_MINIMIZATION_BLUEPRINT.md](DEPENDENCY_MINIMIZATION_BLUEPRINT.md) as the architecture decision for reducing mandatory external dependencies and free-tier quota risk.
+- Decision: do not select Supabase or another hosted backend now. First build a repository-owned task contract, local portable persistence, checkpoints, and idempotent deterministic audit runner.
+- AI providers and public-web retrieval are optional, budgeted adapters; first implementation slice must work with both disabled.
+- GitHub Actions is a possible bounded worker, not unlimited compute or a durable database. Workflow artifacts can expire; task format must remain portable.
+- Implementation status: blueprint only in this change. Task state machine, persistence, and resumable runner are not yet implemented or tested.
+- No runtime, article, provider, image, publishing workflow, secret, gate, or main-branch change was made by this blueprint change.
+
+
 ## 2026-10-12 — PR #37 validation follow-up
 
 - PR #37's own BOAT Offline Tests run [38219593540](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38219593540) completed successfully. The log confirms the Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit completed.

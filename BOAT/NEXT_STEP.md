@@ -1,3 +1,13 @@
+## 2026-10-12 — Dependency-minimization decision
+
+**Decision:** Do not add Supabase or another hosted backend as a prerequisite. Build the repository-owned, provider-independent task core first. See [DEPENDENCY_MINIMIZATION_BLUEPRINT.md](DEPENDENCY_MINIMIZATION_BLUEPRINT.md).
+
+**Next implementation:** create a versioned task contract and deterministic local state/checkpoint module; add offline tests for resume, idempotency, corrupt/stale state, and atomic persistence. Then connect it to the existing read-only published-catalogue audit only after checking that CLI's exact contract. AI and web adapters remain optional and disabled in the first slice.
+
+**Guardrails:** no `main` edits, auto-merge/publish, publishing workflow dispatch, provider/image calls, new hosted backend, browser secrets, or gate changes. Keep task state portable and pinned to an input commit. Do not label semantic support verified unless it was actually checked.
+
+---
+
 ## Verification follow-up — 2026-10-12
 
 **PR #37's own CI:** BOAT Offline Tests run [38219593540](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38219593540) completed successfully after this audit and record update. Its log confirms the existing Control Center deterministic suite passed **37/37**, and the read-only published-root lineage audit completed. This is documentation-branch regression coverage; no live backend exists yet.

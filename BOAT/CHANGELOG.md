@@ -643,3 +643,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - PR #37 BOAT Offline Tests run 38219593540 completed successfully.
 - Confirmed 37/37 existing Control Center deterministic checks and completion of the read-only published-root lineage audit.
 - The result validates the audit/documentation branch against existing tests only; it does not imply that a live task API, chat backend, or approval gateway exists.
+
+
+## 2026-10-12 — Dependency-minimization blueprint
+- Inspected the existing BOAT branch records, static-export configuration, offline test workflow, Control Center QA workflow, and package scripts/dependency baseline.
+- Added `BOAT/DEPENDENCY_MINIMIZATION_BLUEPRINT.md` defining a provider-independent core, optional bounded adapters, portable task state, quota-aware execution tiers, phased implementation, acceptance criteria, and security/non-goals.
+- Recorded the decision not to add Supabase or another hosted backend as a prerequisite. The first planned implementation is a dependency-light task contract plus local resumable state and offline tests.
+- This change is documentation only; it does not implement the task engine and does not claim runtime validation. No publishing/provider/image workflow was dispatched, no article or secret changed, and `main` remains untouched.
