@@ -1,3 +1,11 @@
+## 2026-10-12 — Worktree commit binding correction awaiting CI
+
+- Current head includes a guard that requires the explicit task commit to equal the actual checked-out Git SHA; the integration test now derives its fixture SHA from the same checkout.
+- The previous run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) failed only at the batch-configuration assertion message; task-state tests and the initial pause/resume test passed. The assertion was corrected and commit pinning was strengthened afterward.
+- Validation of the current head remains pending. Do not treat the previous failure as a pass.
+
+---
+
 
 
 ## 2026-10-12 — Input revision binding and first CI failure
