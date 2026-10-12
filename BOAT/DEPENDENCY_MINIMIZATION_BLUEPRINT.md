@@ -233,3 +233,8 @@ The companion design is recorded in [`CONTROL_CENTER_SECURITY_BOUNDARY.md`](CONT
 ## Security boundary validation — 2026-10-12
 
 The companion security proposal `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` and its record updates passed BOAT Offline Tests [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) on commit `b060f4b58e470e49fb421fe3bb796e2745e20508`. The offline regression suite and read-only published-root lineage audit passed. This validates the current PR checkout, not a live API/authentication broker or manual workflow artifact resume. The next code step is offline validation of request/task schemas and artifact manifest/resume rejection cases; no hosting product is selected.
+
+
+## Follow-up records validation — 2026-10-12
+
+The follow-up BOAT record update at `89d530359996a1ef772896e72b7b5e3a803a387a` passed BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861), including offline regression tests and the read-only published-root lineage audit. Manual dispatch, cross-run artifact resume, and live authentication remain unverified.
