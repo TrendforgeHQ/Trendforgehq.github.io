@@ -51,7 +51,7 @@ export function createArticleReviewCycle({
       typeof evidencePackRaw !== 'string' || typeof metadataRaw !== 'string') {
     throw new Error('Exact article, claim-report, evidence-pack, and metadata bytes are required');
   }
-  if (!safeArticlePath(articlePath)) throw new Error('articlePath must be content/articles/<safe-slug>.md');
+  if (!safeArticlePath(articlePath)) throw new Error('articlePath must be an allowlisted content/articles/<safe-slug>.md path');
   if (!isSha(baseCommitSha)) throw new Error('baseCommitSha must be a full lowercase 40-character commit SHA');
   if (!isIsoDate(generatedAt)) throw new Error('generatedAt must be a valid date-time');
   const claimReport = parseJson(claimReportRaw, 'claim report');

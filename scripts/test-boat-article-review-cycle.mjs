@@ -40,7 +40,7 @@ function approve(proposal) {
     schemaVersion: 1, decision: 'approve', proposalHash: proposal.proposalHash,
     baseCommitSha: proposal.baseCommitSha, targetPath: proposal.targetPath,
     beforeSha256: proposal.beforeSha256, afterSha256: proposal.afterSha256,
-    approvedBy: 'offline-test-operator', approvedAt: '2026-10-12T12:01:00.000Z',
+    approvedBy: 'offline-test-operator', approvedAt: '2020-10-12T12:01:00.000Z',
     rationale: 'Reviewed the exact structural-only diff and approved a sandbox candidate.'
   };
 }
