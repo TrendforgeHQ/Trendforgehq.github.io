@@ -1,3 +1,11 @@
+## CI trigger correction — 2026-10-12
+
+- A temporary branch-only push trigger generated run records with zero jobs and did not execute tests. Removed it; the offline test workflow retains its existing pull-request/path-filtered trigger and manual dispatch.
+- The portable task-store implementation passed offline CI on the earlier head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` ([run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842)). The later manual workflow wiring remains unverified, and no end-to-end cross-run resume is claimed.
+- Do not merge or change `main` to force validation. Keep the PR draft; use an allowed test path and accurately report any CI limitation. No additional service or package is introduced.
+
+---
+
 ## Manual workflow adapter follow-up — 2026-10-12 (CI pending)
 
 - The portable single-task canonical-store artifact implementation passed BOAT Offline Tests on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842).
