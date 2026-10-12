@@ -1,3 +1,14 @@
+## 2026-10-12 — Portable canonical store integrated into manual workflow (CI pending)
+
+- Confirmed BOAT Offline Tests run [38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store artifact implementation and the offline suite on that head.
+- Updated `.github/workflows/boat-manual-audit.yml` to use `--task-store` as canonical task state, validate/import the prior run's portable single-task store before resume, and export a new run-bound portable store artifact after execution. The ephemeral canonical store file is excluded from artifact upload; only the validated portable subset is retained.
+- Expanded `scripts/test-boat-manual-audit-workflow.mjs` to guard the new validate/import/create wiring and the exclusion of the ephemeral store file.
+- **Current workflow-integration changes are not yet CI-verified.** Recent push-event runs have no jobs because the workflow is not configured for push; they are not test results. Do not claim the workflow wiring passed.
+- Next: obtain a real BOAT Offline Tests run on the exact workflow-integration head, fix failures, then perform a controlled manual-only run with a small batch and verify resume from its artifact using the same pinned commit. Do not dispatch the publishing workflow, edit articles, merge, or change `main`.
+- Safety: no hosted database or new package; AI/web budgets remain zero; no production publish/provider/image call was made.
+
+---
+
 ## 2026-10-12 — Optional canonical-store catalogue runner validated
 
 - Added opt-in `--task-store <file>` to `scripts/boat-run-catalogue-task.mjs`. When enabled, the unified task store is canonical; per-task JSON is a regenerable compatibility snapshot and the Markdown report is deterministically overwritten at its stable task path.
