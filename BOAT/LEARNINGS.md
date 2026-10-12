@@ -727,3 +727,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Observed:** Raw-template escaping left literal backslashes before GitHub Actions expressions in the first generated workflow file.
 - **Correction:** Normalize expression markers before committing and add static workflow tests for manual-only triggers, read-only permissions, and artifact/resume wiring.
 - **Validation status:** Current-head CI pending; workflow has not been manually dispatched.
+
+
+## L-NEW — Resume artifacts must preserve the expected directory layout
+- **Observed:** Combining task-state files with a summary file from a parent directory changes the upload artifact's common root and can nest task JSON under a subdirectory when downloaded.
+- **Correction:** Upload checkpoint/report files separately from the summary so the checkpoint artifact's root contains the task JSON and Markdown files directly.
+- **Recovery:** If the worker fails after saving a checkpoint but before emitting the normal summary, discover the task ID from the saved JSON and use it for the artifact name.
+- **Validation status:** Workflow static test and offline CI pending.

@@ -1,3 +1,11 @@
+## 2026-10-12 — Manual audit artifact layout hardening (CI pending)
+
+- Corrected GitHub Actions expressions in the manual-only workflow and split the portable checkpoint/report artifact from the optional summary artifact. This ensures the downloaded task JSON lands at the expected state-directory root for resume.
+- Added a recovery step that discovers a saved task ID if a run is interrupted after checkpointing but before the normal summary output is produced.
+- Expanded static workflow tests for artifact layout and recovery. CI pending; the workflow has not been manually dispatched.
+
+---
+
 ## 2026-10-12 — Manual workflow expression fix (CI pending)
 
 - Corrected GitHub Actions expression interpolation in the new manual workflow. The initial committed YAML contained literal escape backslashes before expressions because the workflow source was generated from a raw template; these have been removed so Actions receives the intended expressions.

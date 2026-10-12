@@ -16,6 +16,9 @@ test('manual BOAT audit has no automatic trigger and uses read-only repository p
   assert.match(source, /persist-credentials: false/);
   assert.match(source, /actions\/upload-artifact@v4/);
   assert.match(source, /actions\/download-artifact@v4/);
+  assert.match(source, /Discover saved task ID after interruption/);
+  assert.match(source, /name: boat-audit-summary-/);
+  assert.match(source, /runner\.temp \/boat-state\/\*\.json/);
   assert.match(source, /retention-days: 14/);
 });
 

@@ -213,3 +213,8 @@ Added `.github/workflows/boat-manual-audit.yml`, with only a manual trigger, rea
 ## Manual workflow expression correction
 
 The manual workflow's GitHub Actions expression markers were corrected after detecting literal template-escape backslashes in the committed YAML. Current-head CI is pending; no manual dispatch has been run.
+
+
+## Manual workflow artifact/resume hardening
+
+Checkpoint/report files are uploaded separately from the task summary so a downloaded checkpoint lands directly in the worker state directory. A recovery step discovers the task ID from saved JSON if execution stops after a checkpoint but before normal output. Current-head CI pending; workflow not manually dispatched.

@@ -747,3 +747,8 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 
 ## 2026-10-12 — Manual workflow expression correction (CI pending)
 - Removed literal backslashes accidentally preserved before GitHub Actions expression markers in the manual workflow. Awaiting static test and offline CI validation.
+
+
+## 2026-10-12 — Manual workflow artifact layout hardening (CI pending)
+- Split task checkpoint/report and summary into separate artifacts so the resume download has a flat state directory.
+- Added task-ID discovery for interrupted runs after a checkpoint has been saved. Static tests now cover this recovery path; CI pending.
