@@ -738,3 +738,11 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 - Trusted authorization context must be supplied by a future server adapter; the pure policy checks authenticated operator role, CSRF/origin checks, rate limit, fixed repository/workflow, task-type allowlist, commit allowlist, batch caps, zero budgets, and idempotency replay. It performs no network or workflow calls.
 - Added `scripts/test-boat-task-contract.mjs` covering valid/invalid contracts and denial paths. Updated BOAT Offline Tests path filters so changes to the contract/test trigger CI. Validation for the latest head is pending; do not claim the tests passed until the run is inspected.
 - No live endpoint, auth provider, UI wiring, repair execution, publish/provider/image call, merge, or `main` change. Next: inspect CI and align any schema/runtime mismatches before considering an authenticated broker.
+
+
+## 2026-10-12 — Task contract and authorization tests passed
+
+- BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed on contract head `7ec5705010e1d28194aae4654be4721f72383d4b`: **168 passed, 0 failed**, including the new task request/response contract tests and read-only published-root lineage audit.
+- Verified denials for unauthenticated/non-operator callers, invalid CSRF/origin, rate limiting, wrong repo/workflow, non-allowlisted task/commit, missing/oversized batch policy, budget expansion, idempotency replay, extra request/response fields, inconsistent counters, and malformed response state/error pairing.
+- JSON schema files parse and match key runtime contract values. This is a contract smoke test, not a full JSON Schema standards validator.
+- Current boundary remains offline-only: the authorization context is assumed to be created by trusted server code. No live authentication/API, idempotency database, workflow dispatch, publishing, provider/image call, article edit, merge, or `main` change.
