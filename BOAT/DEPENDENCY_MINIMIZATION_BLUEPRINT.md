@@ -1,3 +1,13 @@
+## Implementation update — opt-in canonical-store catalogue runner (2026-10-12)
+
+- Added `registerStoredTask()` and optional `--task-store` support to the existing read-only catalogue runner. The unified store is authoritative for task/checkpoint/findings state; JSON task files are compatibility snapshots only in this mode.
+- Explicit resume reads canonical store state, rejects missing store records, and skips completed article unit IDs. Checkpoint and findings are committed in one store replacement; reports are regenerated at a stable path.
+- Validation [run 38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046): 186 tests passed, 0 failed, and the read-only lineage audit passed.
+- The manual workflow has **not** been switched to this mode. Hosted runners are ephemeral, so saving the store to a local runner path alone does not establish cross-run persistence. A future workflow change needs an explicitly versioned store artifact with integrity/provenance checks and migration tests.
+- No new dependencies, hosted backend, AI/web usage, publishing, article edits, workflow dispatch, merge, or `main` changes.
+
+---
+
 ## Implementation update — atomic task-store progress writes (2026-10-12)
 
 - Added `updateStoredTask()` so a task's checkpoint and findings can be committed in the same atomic JSON-store replacement, with exclusive locking and expected-task-revision checks.

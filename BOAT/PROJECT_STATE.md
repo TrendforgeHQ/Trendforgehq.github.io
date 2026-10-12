@@ -1,3 +1,14 @@
+## 2026-10-12 — Optional canonical-store runner adapter passes offline integration tests
+
+- Implementation commit: `d7b97be99b717088a30291a3a6e2819c6d561236`; offline CI [38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046) passed **186/186** tests and read-only published-root lineage audit.
+- `boat-run-catalogue-task.mjs --task-store <file>` now treats the unified store as canonical for task registration, checkpoint/findings updates, and explicit resume. The task JSON artifact is a regenerated compatibility snapshot, not the source of truth in this mode.
+- Integration test simulated an interrupted `running` record and deliberately stale JSON snapshot. Resume used the canonical store, processed only the remaining catalogue units, preserved unique findings/completed-unit IDs, kept AI/web usage at zero, and produced stable report bytes on repeat.
+- Missing task in canonical store fails closed; artifact-only state is not imported. Existing mode without `--task-store` is retained for the current manual workflow.
+- Added runner source/test paths to the BOAT offline CI path filter. Manual workflow was not changed or dispatched.
+- Boundaries remain: local workspace only; GitHub-hosted cross-run persistence, live Control Center auth/API, multi-process leasing, semantic source verification, and automatic repairs are not implemented. No new dependencies, publishing, article mutation, provider calls, merge, or `main` changes.
+
+---
+
 ## 2026-10-12 — Atomic task-store update primitive green
 
 - Current code head: `f11b473d79980a2bda83766e302d18562b89aad7` on `docs/boat-dependency-minimization-blueprint`; PR #38 remains draft/open/unmerged, base is `feat/boat-control-center-vertical-slice-audit`, and `main` is untouched.

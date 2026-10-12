@@ -1,3 +1,13 @@
+## L-NEW — Store-backed resume must treat portable task JSON as a cache, not authority
+
+- **Observation:** A valid but stale task JSON artifact can disagree with the unified task store after interruption. If resume trusts the artifact, it may rewind a cursor and redo already completed work.
+- **Decision:** In explicit `--task-store` mode, load task identity, status, findings, and checkpoint from the canonical store. Rewrite the task JSON snapshot from that record. If the store does not contain the requested task, fail closed rather than importing artifact state.
+- **Idempotency:** Skip article units already recorded in `checkpoint.completedUnits`; deterministic finding IDs plus task-state deduplication protect against duplicate findings. Reports are rewritten to a stable task path rather than appended.
+- **Validation:** [Run 38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046) passed 186/186 offline tests and the read-only published-root lineage audit. Integration fixture simulated a running task after interruption and an intentionally stale artifact; only remaining articles were processed.
+- **Limitations:** The store is local to a retained workspace. This does not prove persistence across ephemeral hosted runners or provide a multi-process lease. The manual workflow remains unchanged until a separately validated portable-store/artifact design exists.
+
+---
+
 ## L-NEW — Atomic store updates must support batched logical transitions
 
 - **Observed:** The catalogue worker may perform several in-memory state operations (for example, add findings and checkpoint units) before persisting one durable transaction. Requiring each store write to advance the task revision by exactly one rejected a valid batched update.

@@ -1,3 +1,15 @@
+## 2026-10-12 — Store-backed catalogue runner adapter
+
+- Added `registerStoredTask()` to register the full audit task record and deterministic idempotency claim in one canonical store transaction.
+- Added optional `--task-store` support to the catalogue runner. Task-store updates are authoritative; task JSON snapshots are regenerated from canonical state and the Markdown report is rewritten at a stable path.
+- Resume uses the canonical stored record, refuses to proceed if the requested task is missing from the store, and skips article units already present in `checkpoint.completedUnits`. Findings retain deterministic IDs and deduplication.
+- Integration tests simulate interrupted execution and a stale task artifact, verify only unfinished articles are processed, confirm unique checkpoint/finding IDs and zero AI/web budgets, and assert report bytes remain unchanged on repeat completion.
+- Added runner source/test files to the offline workflow path filter.
+- Verified [run 38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046): **186 passed, 0 failed**, plus read-only published-root lineage audit.
+- The manual workflow remains on the existing task JSON/report/manifest artifact model; the new store mode is opt-in and local-workspace only. No publishing, article mutation, provider use, workflow dispatch, merge, or `main` change.
+
+---
+
 ## 2026-10-12 — Atomic task-store checkpoint update primitive
 
 - Added `updateStoredTask()` to update one task under the unified store lock with expected-revision protection and one atomic store replacement.

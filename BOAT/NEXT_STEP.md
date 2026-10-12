@@ -1,3 +1,16 @@
+## 2026-10-12 — Optional canonical-store catalogue runner validated
+
+- Added opt-in `--task-store <file>` to `scripts/boat-run-catalogue-task.mjs`. When enabled, the unified task store is canonical; per-task JSON is a regenerable compatibility snapshot and the Markdown report is deterministically overwritten at its stable task path.
+- Added `registerStoredTask()` so the runner's richer pinned audit config and idempotency claim are committed together without relaxing the public request schema.
+- Checkpoints and findings now persist in one task-store transaction through `updateStoredTask()`. The runner resumes from the stored cursor/completed-unit IDs and skips already completed article units. Stale per-task artifacts are overwritten from the store; if the store lacks the requested task, resume fails closed instead of importing the artifact.
+- Added integration coverage simulating an interrupted `running` task plus stale artifact, proving only remaining articles are processed, completed unit IDs/findings stay unique, AI/web budgets remain zero, and completed report output is stable on repeat. Added negative test for a missing canonical task.
+- Offline CI [run 38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046) passed **186 tests, 0 failures**; read-only published-root lineage audit passed (`savedReportPass: true`, `passagesUnresolved: 0`).
+- Added explicit runner and runner-test paths to BOAT Offline Tests so future changes to these files remain covered.
+- **Not switched on in the manual workflow:** `boat-manual-audit.yml` remains unchanged and still uses the portable task JSON/report/manifest artifacts. Cross-run task-store persistence is not proven because GitHub-hosted runners are ephemeral. Use `--task-store` only with a workspace that retains that file between invocations.
+- Next: validate whether the canonical store should be packaged into an explicitly versioned portable artifact before any workflow integration; keep artifact manifest provenance strict, do not trust artifact-only state when store-backed mode is selected. No publishing, article edits, provider calls, workflow dispatch, merge, or `main` changes.
+
+---
+
 ## 2026-10-12 — Atomic task-store progress updates validated; runner adapter remains next
 
 - Added `updateStoredTask()` to `scripts/boat-task-store.mjs`: updates a persisted task under the existing exclusive store lock, checks the expected task revision, validates task identity/schema, and commits the updated checkpoint/findings and store revision in one atomic replacement.
