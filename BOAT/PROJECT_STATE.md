@@ -806,3 +806,12 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## Verified offline validation — evidence-pack transfer instrumentation
 
 Implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1` passed BOAT Offline Tests 137/137 (run [38136204355](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204355)) and Control Center deterministic suite plus production build (run [38136204315](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204315)). Transfer instrumentation logs the working-file byte count/SHA-256/Git blob before commit, committed blob ID/size, and staged blob after transfer; mismatch is a warning, not a new publication gate. This validates the diagnostic contract, not the actual production persistence result. Main's checked-in evidence pack is still zero bytes; root cause remains unproven pending a future naturally scheduled run's logs and artifacts. PR #35 remains draft/open/unmerged; main was not changed by this work.
+
+
+## 2026-10-12 — Security design boundary added; live integration still blocked
+
+- Added `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` as a design proposal for a future authenticated Control Center, task broker, manual-only worker, portable reports, and human-approved repairs.
+- Verified current UI source still exports statically (`dynamic = 'force-static'`) and reads build-time data; it cannot safely enforce server-side auth or hold privileged tokens. It remains observational only.
+- PR #38's manual-only workflow is statically tested, but actual workflow dispatch and cross-run artifact resume are unverified. No dispatch-capable tool is available here, and no merge to `main` is authorized. Do not represent this as end-to-end operational.
+- Design requirements now explicitly include server-side authorization, no privileged browser tokens, fixed workflow/repository allowlists, zero-default AI/web budgets, task/run/commit/profile-bound resume, CSRF/origin protections, and repair approval tied to proposal hash + base SHA.
+- No backend/auth provider selected. No live API, automatic repair, publish workflow, provider/image call, article change, or `main` change.
