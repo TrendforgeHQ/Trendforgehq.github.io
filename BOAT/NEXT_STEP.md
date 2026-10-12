@@ -1,3 +1,11 @@
+## 2026-10-12 — Control Center vertical-slice audit
+
+**Verified branch-head CI:** PR #35 head `afbacc3649e70af3561d77981d6f246afc43938b` has successful BOAT Offline Tests run [38136303910](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303910) and Control Center QA run [38136303936](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303936). The offline log includes the 37/37 Control Center deterministic checks. These runs validate that exact branch head, not a new implementation.
+
+**Completed:** inspected `next.config.mjs`, Control Center page/test/workflow, and publishing workflow. Added [CONTROL_CENTER_INTERFACE_AUDIT.md](CONTROL_CENTER_INTERFACE_AUDIT.md). Confirmed `output: 'export'`: GitHub Pages is a static frontend and cannot host the privileged chat/task API. The current Control Center uses build-time committed snapshots, not live task state.
+
+**Next action:** identify/confirm an authenticated external backend and identity boundary, then implement a minimal read-only task endpoint + worker and connect the UI to real task states. No mock chat, client-side credentials, publishing dispatch, paid provider calls, article writes, or main-branch changes.
+
 # BOAT Next Step
 
 ## Current status and next action — 2026-10-11
