@@ -852,3 +852,10 @@ Implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1` passed BOAT O
 - BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed on contract head `7ec5705010e1d28194aae4654be4721f72383d4b`: **168 tests passed, 0 failed**; read-only published-root lineage audit also succeeded.
 - New coverage includes request/response validation, authorization decision codes, fixed repository/workflow/task/commit allowlists, required server-side caps, zero budgets, idempotency replay signals, and request/response schema smoke checks.
 - CI pass validates pure offline policy only. It does not authenticate an identity, persist idempotency keys, dispatch Actions, or create a live Control Center API. No publishing/provider/image actions or main-branch changes.
+
+## 2026-10-12 — Lifecycle and idempotency persistence slice added
+
+- Added `scripts/boat-task-idempotency.mjs`, a dependency-free JSON ledger with request fingerprinting and atomic, lock-protected local writes. Identical retries return the original task ID; changed requests under a reused key return conflict; invalid requests, malformed state, and lock contention fail closed.
+- Added `scripts/test-boat-task-idempotency.mjs` and strengthened task-state tests for pause/resume, review completion, blocked/failed recovery, and completed terminal behavior.
+- Updated BOAT Offline Tests path filters so idempotency changes run in the offline suite. Latest CI result has not yet been inspected; status is pending.
+- Scope is intentionally local/offline. The ledger is not distributed, is not an auth mechanism, and does not provide a transaction spanning idempotency claim plus task-record creation. No hosted backend, package, AI/web spend, live workflow dispatch, publishing, provider/image call, article mutation, merge, or `main` change.
