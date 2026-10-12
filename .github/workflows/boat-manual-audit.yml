@@ -107,6 +107,18 @@ jobs:
           github-token: ${{ github.token }}
           merge-multiple: true
 
+      - name: Validate prior task checkpoint manifest
+        id: validate_checkpoint
+        if: ${{ inputs.resume_task_id != '' }}
+        shell: bash
+        env:
+          RESUME_TASK_ID: ${{ inputs.resume_task_id }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+          AUDIT_COMMIT_SHA: ${{ inputs.audit_commit_sha }}
+        run: |
+          set -euo pipefail
+          node scripts/boat-task-artifact-manifest.mjs --mode validate --state-dir "$RUNNER_TEMP/boat-state" --run-id "$RESUME_RUN_ID" --task-id "$RESUME_TASK_ID" --commit "$AUDIT_COMMIT_SHA"
+
       - name: Run BOAT audit
         id: run
         shell: bash
@@ -146,6 +158,20 @@ jobs:
           if [[ -n "$task_file" ]]; then
             echo "task_id=$(jq -r '.taskId' "$task_file")" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Build checkpoint provenance manifest
+        if: always() && (inputs.resume_task_id == '' || steps.validate_checkpoint.outcome == 'success')
+        shell: bash
+        env:
+          TASK_ID: ${{ steps.run.outputs.task_id || steps.discover.outputs.task_id || inputs.resume_task_id }}
+          CURRENT_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$TASK_ID" || ! -f "$RUNNER_TEMP/boat-state/$TASK_ID.json" ]]; then
+            echo "No saved task checkpoint; manifest not created."
+            exit 0
+          fi
+          node scripts/boat-task-artifact-manifest.mjs --mode create --state-dir "$RUNNER_TEMP/boat-state" --run-id "$CURRENT_RUN_ID" --task-id "$TASK_ID"
 
       - name: Upload portable task checkpoint and report
         if: always()
