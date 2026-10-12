@@ -1,3 +1,12 @@
+## 2026-10-12 — Zero-job CI diagnosis (manual integration still unverified)
+
+- The temporary branch-only `push` trigger produced GitHub Actions run records with zero jobs. It was not a valid way to test a workflow definition that is not present on the repository's default branch, so the temporary trigger has been removed. The offline workflow retains its pull-request/path-filtered trigger and manual dispatch.
+- PR #38 is still draft/open/unmerged. The manual audit workflow remains wired for canonical `--task-store` use and portable-store validate/import/export, but this integration has not yet passed a real CI job or a cross-run manual test.
+- Last verified baseline: portable artifact module/tests passed on head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842). That result does not validate the later workflow wiring.
+- Do not infer failure of the implementation from zero-job runs; equally, do not claim success. Keep `main`, publishing, article content and provider/image configuration untouched. Next is a real test execution under the existing allowed PR/manual trigger, followed by a controlled small-batch artifact resume test.
+
+---
+
 ## 2026-10-12 — Manual workflow canonical-store integration (CI pending)
 
 - Portable task-store implementation passed BOAT Offline Tests on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842).
