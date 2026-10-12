@@ -911,3 +911,8 @@ Portable-store integration test follow-up: extended the existing canonical task-
 
 - Updated `.github/workflows/boat-offline-tests.yml` to include `.github/workflows/boat-manual-audit.yml` and `scripts/test-boat-manual-audit-workflow.mjs` in its path filter.
 - Commit: `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2` on the existing draft PR branch. No PR-triggered workflow run is visible for the new head yet; verification remains pending.
+
+### 2026-10-12 — Correct portable-store workflow assertions
+
+- Fixed over-escaped regex assertions in `scripts/test-boat-manual-audit-workflow.mjs` so they match the actual `.mjs` commands, portable JSON filename, and canonical-store artifact exclusion. Commit: `7bc1b3fcb7b8da7459ee4ca1125d5ad407882e26`.
+- Rechecked workflow wiring independently: 13/13 selected static checks passed. GitHub Actions execution for the latest head remains pending; static checks are not a CI pass.
