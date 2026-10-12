@@ -964,3 +964,9 @@ Portable-store integration test follow-up: extended the existing canonical task-
 - Commit `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2` adds the manual audit workflow and its static safety test to the offline test workflow's path filter.
 - Current PR #38 head is this commit; PR remains draft/open/unmerged. The GitHub workflow-run lookup returned no PR-triggered run for this head, so the path-filter correction and manual workflow wiring are not yet CI-verified. Earlier passing tests apply only to their exact historical commits.
 - No main, article, publishing workflow, provider, image generation, or dispatch changes were made.
+
+### Verification follow-up — 2026-10-12
+
+- Corrected over-escaped portable-store workflow assertions in commit `7bc1b3fcb7b8da7459ee4ca1125d5ad407882e26`.
+- Independent static cross-check: **13/13** selected wiring/security assertions pass against current source. Verified read-only permissions; no automatic trigger on the manual audit; prior checkpoint validation before run; portable store validation/import; canonical store passed to runner; portable export and ephemeral file exclusion; create-only import; and no production/premium provider connection.
+- CI status remains **unverified**: the latest PR head has no visible PR-triggered run and the combined commit status is empty. Earlier passing runs apply only to their historical SHAs. PR #38 remains draft/open/unmerged; `main` and production workflows untouched.
