@@ -1,3 +1,12 @@
+## 2026-10-12 — Combined editorial audit CI verified
+
+- BOAT Offline Tests run [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482) passed on code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7`.
+- Verified the combined resumable task covers structural catalogue checks, archived evidence coverage, exact-byte lineage, review-queue triage, and archived claim-history diagnostics. The bounded pause/resume test and the combined safety test passed; the read-only published-root lineage audit passed.
+- Summary explicitly reports read-only mode and `automaticRepair: false`, `automaticPublicationDecision: false`. Claim findings carry current article SHA-256 plus archived report identity/hash and remain `not_assessed`/unknown until independently reviewed.
+- Next: improve the actual review experience by producing a deterministic human-readable per-task report from the saved task record, then design the authenticated Control Center integration separately. Do not add AI/web calls or repair execution yet.
+
+---
+
 ## 2026-10-12 — Combined review queue CI passed; provenance tidy-up pending CI
 
 - BOAT Offline Tests run [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed for combined structural/evidence/lineage/review-queue/claim-history integration, including task pause/resume and explicit no-auto-repair/no-auto-publication assertions.

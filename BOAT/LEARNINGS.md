@@ -678,3 +678,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Observed:** Combined review queue already reports duplicate slug identity per catalogue entry; the older standalone duplicate-slug block in the worker would add a redundant extra finding.
 - **Correction:** Remove the redundant global duplicate signal and attach the current article SHA-256 to each archived claim-history finding, alongside the archived claim-report hash.
 - **Validation status:** Combined integration baseline passed in run 38222968795; cleanup commit CI pending.
+
+
+## L-NEW — Combined read-only review task is green; semantic review remains separate
+- **Observed:** BOAT Offline Tests run 38223070482 passed after combining existing structural, historical evidence, exact-byte lineage, review-queue, and archived claim-history modules into one resumable task.
+- **Verified:** The task pauses/resumes; category totals reconcile; findings preserve article/report provenance; no automatic repair or publication decision is enabled.
+- **Limit:** This is historical/structural triage. It does not independently validate source content, freshness, reachability, or factual truth. Live Control Center authentication/task submission remains unimplemented.
+- **Next:** Generate a portable, deterministic human-readable report from the saved task record before adding live backend/UI connectivity.

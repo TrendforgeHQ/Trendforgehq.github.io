@@ -1,3 +1,12 @@
+## 2026-10-12 — Combined editorial review task validated
+
+- BOAT Offline Tests run [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482) passed for code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7` in the PR merge checkout.
+- The resumable task combines structural catalogue checks, historical evidence coverage, exact-byte lineage, the combined published review queue, and archived claim-level diagnostics. Claim findings preserve current article hash and archived report provenance, but semantic support remains explicitly not assessed/unknown.
+- Test assertions cover category-count reconciliation, pause/resume, zero AI/web budgets, and no automatic repair/publication. Read-only lineage audit also passed.
+- Still not implemented: current semantic claim/source verification, public-web freshness/reachability checks, authenticated live Control Center task API/history, or repair executor.
+- No main-branch changes, article mutation, provider/image calls, or publishing workflow dispatch.
+
+
 ## 2026-10-12 — Combined review queue CI passed; provenance tidy-up pending CI
 
 - BOAT Offline Tests run [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed for combined structural/evidence/lineage/review-queue/claim-history integration, including task pause/resume and explicit no-auto-repair/no-auto-publication assertions.

@@ -704,3 +704,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## 2026-10-12 — Combined review queue CI passed
 - BOAT Offline Tests [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed after correcting the zero-findings test assumption and asserting read-only/no-repair/no-publication invariants.
 - Follow-up cleanup removes redundant duplicate-slug reporting and binds claim-history findings to the current article SHA-256; validation of this cleanup is pending.
+
+
+## 2026-10-12 — Combined editorial audit green
+- BOAT Offline Tests [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482) passed for combined review task code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7`.
+- Combined task now records structural, archived evidence coverage, exact-byte lineage, review queue, and archived claim-history signals with article/report provenance and explicit semantic uncertainty.
+- Removed redundant duplicate-slug noise and added current article SHA-256 to claim-history findings. Tests assert read-only mode and disabled auto-repair/publication.
+- All four BOAT project records updated; PR #38 remains draft and unmerged.
