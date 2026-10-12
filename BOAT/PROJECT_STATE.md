@@ -1,3 +1,12 @@
+## 2026-10-12 — Control Center vertical-slice audit
+
+- **Branch-head status checked:** BOAT Offline Tests [38136303910](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303910) and Control Center QA [38136303936](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303936) both succeeded for PR #35 head `afbacc3649e70af3561d77981d6f246afc43938b`. Control Center deterministic checks recorded in the log: 37/37. These are the existing branch-head results, not tests of this audit-only commit.
+- Audited `next.config.mjs`, `app/control-center/page.tsx`, `scripts/test-control-center.mjs`, Control Center QA, and `.github/workflows/publish.yml`.
+- Confirmed static export (`output: 'export'`) and build-time snapshots. Live chat, authenticated task submission, persistent task history, approval gateway, and a privileged action backend are not implemented.
+- Added `BOAT/CONTROL_CENTER_INTERFACE_AUDIT.md` with the current interface boundary, first read-only vertical slice, security requirements, hosting boundary, and acceptance criteria.
+- No application code, publishing workflow, articles, provider settings, thresholds, or production gates changed. No paid provider or image-generation calls were made. `main` remains untouched.
+- **Next:** select/confirm the separately hosted authenticated backend and identity boundary; implement a real read-only task API/worker before enabling any repair action.
+
 # BOAT — Canonical Project State
 
 **Last updated:** 2026-10-11  
