@@ -793,3 +793,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - Added offline tests for contract validation, error/status consistency, authorization denials, replay prevention signal, and immutable repository/workflow policy.
 - Added new contract/test paths to BOAT Offline Tests triggers. CI for the current head is pending inspection; no pass claimed yet.
 - No server, credentials, live task API, or production workflow integration.
+
+
+## 2026-10-12 — Task request/response contract CI pass
+
+- BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed: 168 tests, 0 failures, and read-only published-root lineage audit passed.
+- Contract tests verify allowed bounded request shapes, stable response/error fields, authorization denials, zero budgets, fixed repository/workflow policy, and schema file consistency smoke checks.
+- No live API/auth integration or production workflow activity.
