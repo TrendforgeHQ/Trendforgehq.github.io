@@ -756,3 +756,9 @@ At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offlin
 - Updated BOAT Offline Tests path filters for the new module/tests. CI validation is pending inspection; do not claim a pass until the run is checked.
 - Important limitation: this ledger is portable local file persistence, not distributed coordination. It does not yet atomically create the task record and idempotency claim as one transaction, survive arbitrary hosted-runner loss unless the workspace is durably retained, authenticate callers, or dispatch workflows. No new service/dependency was added; AI/web budgets remain zero; no workflow was dispatched, no publishing/provider/image call occurred, no merge, and `main` remains untouched.
 - Next: inspect CI; if green, document the atomic task-creation boundary and add a crash/recovery contract before wiring any live broker.
+
+## 2026-10-12 — Lifecycle/idempotency validation result
+
+- Latest BOAT Offline Tests run [38227586730](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38227586730) completed successfully on the current PR head: **176 test checks passed, 0 failed**; Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit step completed successfully.
+- The idempotency tests verified same-request replay returns the original task ID, changed-request key reuse conflicts without modifying persisted bytes, persistence survives reload, and lock/corrupt-state handling fails closed.
+- Validation is for the offline/local implementation only. It does not establish distributed idempotency, a live API/auth broker, cross-run artifact resume, or atomic task-record-plus-ledger creation. No merge, dispatch, provider/web/image calls, publishing, or `main` change.
