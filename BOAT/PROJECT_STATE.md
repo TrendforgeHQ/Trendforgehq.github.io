@@ -837,3 +837,11 @@ Implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1` passed BOAT O
 - Final validation: BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed on `ec6eb586234487ced58804929c6c0d36cc988bc3`; the offline regression suite and read-only published-root lineage audit both succeeded.
 - Run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) first caught over-escaped regex assertions in the workflow test. They were corrected; the subsequent full run passed.
 - This is still offline/static validation. No manual workflow dispatch, cross-run artifact round-trip, live API/authentication, publishing, provider/image call, article edit, merge, or `main` change occurred.
+
+
+## 2026-10-12 — Task contract and authorization policy implemented offline
+
+- Added request/response contract code in `scripts/boat-task-contract.mjs`, request/response JSON Schemas in `BOAT/schemas/task-request.schema.json` and `BOAT/schemas/task-response.schema.json`, plus offline tests in `scripts/test-boat-task-contract.mjs`.
+- Request policy is deliberately narrow: one read-only catalogue audit type, allowlisted commit SHA, bounded batch sizes/counts, idempotency key, and AI/web budgets fixed to zero. The pure authorization decision requires trusted server context and denies unauthenticated/non-operator, bad CSRF/origin, rate-limited, wrong repository/workflow, non-allowlisted commit/task type, excessive batch, budget expansion, and idempotency replay.
+- Updated offline CI path filters to include the new contract/test. Latest head `e438ed4504edc2fa8388316ee2e2c9e145e8cfd2`; CI result not yet surfaced by the commit-run lookup, so status remains pending.
+- This is not a live authentication implementation or API. Static Control Center remains read-only; no hosted service selected, no workflow dispatch/publishing/provider/image calls, no article edits, and `main` remains untouched.
