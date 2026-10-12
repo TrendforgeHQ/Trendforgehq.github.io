@@ -4,10 +4,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { addTaskFindings, checkpointTask, transitionTask } from './boat-task-state.mjs';
+import { addTaskFindings, checkpointTask, transitionTask, createTaskRecord } from './boat-task-state.mjs';
 import {
-  loadTaskStore, recoverInterruptedTasks, submitTaskRequest, updateStoredTask, validateTaskStore
+  loadTaskStore, recoverInterruptedTasks, submitTaskRequest, updateStoredTask, validateTaskStore, registerStoredTask
 } from './boat-task-store.mjs';
+import { createPortableTaskStoreArtifact, importPortableTaskStoreArtifact } from './boat-task-store-artifact.mjs';
 
 const sha = 'c'.repeat(40);
 const request = (overrides = {}) => ({
@@ -127,4 +128,32 @@ test('stored task update rejects an unchanged task revision', async () => withTe
   const invalid = { ...transitionTask(created.task, 'running', { updatedAt: t1 }), revision: created.task.revision };
   await assert.rejects(() => updateStoredTask(file, created.task.taskId, created.task.revision, () => invalid), /advance the task revision/);
   assert.equal((await loadTaskStore(file)).tasks[0].status, 'queued');
+}));
+
+
+test('portable store import is accepted by the canonical store loader and preserves replay identity', async () => withTempStore(async sourcePath => {
+  const task = createTaskRecord({
+    taskType: 'published_catalogue_audit', pinnedCommitSha: sha, createdAt: t0,
+    config: { auditVersion: 3, auditProfile: 'combined-structural-evidence-lineage-claim-history', batchSize: 10, totalArticles: 48, auditComponents: { structural: 48, evidence: 48, lineage: 48 } }
+  });
+  const key = 'catalogue-audit:' + task.taskId;
+  const registered = await registerStoredTask(sourcePath, task, key);
+  assert.equal(registered.outcome, 'created');
+  const canonicalBefore = await fs.readFile(sourcePath, 'utf8');
+  const artifact = createPortableTaskStoreArtifact({
+    storeText: canonicalBefore, sourceRunId: '38232459006', expectedTaskId: task.taskId, expectedCommitSha: sha
+  });
+  assert.equal(await fs.readFile(sourcePath, 'utf8'), canonicalBefore, 'export is read-only');
+  const restoredPath = path.join(path.dirname(sourcePath), 'restored-store.json');
+  await importPortableTaskStoreArtifact({
+    storeText: artifact.portableStoreText, manifestText: artifact.manifestText,
+    destinationPath: restoredPath, expectedSourceRunId: '38232459006',
+    expectedTaskId: task.taskId, expectedCommitSha: sha
+  });
+  const restored = await loadTaskStore(restoredPath);
+  assert.equal(validateTaskStore(restored).valid, true);
+  assert.equal(restored.tasks[0].taskId, task.taskId);
+  assert.equal(restored.idempotency[0].key, key);
+  assert.equal(restored.idempotency[0].taskId, task.taskId);
+  assert.equal(restored.tasks[0].status, 'queued', 'import must not auto-resume a task');
 }));
