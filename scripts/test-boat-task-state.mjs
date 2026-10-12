@@ -96,3 +96,20 @@ test('failed persistence leaves the prior task bytes intact', async () => {
     assert.equal(await fs.readFile(file, 'utf8'), original);
   } finally { await fs.rm(dir, { recursive: true, force: true }); }
 });
+
+test('task lifecycle permits only documented transitions and keeps completed terminal', () => {
+  const queued = create();
+  const running = transitionTask(queued, 'running', { updatedAt: t1 });
+  const paused = transitionTask(running, 'paused', { updatedAt: t1 });
+  const resumed = transitionTask(paused, 'running', { updatedAt: t1 });
+  const review = transitionTask(resumed, 'needs_review', { updatedAt: t1 });
+  const reviewed = transitionTask(review, 'completed', { updatedAt: t1 });
+  assert.equal(reviewed.status, 'completed');
+  assert.throws(() => transitionTask(reviewed, 'queued', { updatedAt: t1 }), /Invalid task transition/);
+  assert.throws(() => transitionTask(reviewed, 'running', { updatedAt: t1 }), /Invalid task transition/);
+  const blocked = transitionTask(queued, 'blocked', { updatedAt: t1, reason: 'policy denied' });
+  assert.equal(transitionTask(blocked, 'queued', { updatedAt: t1 }).status, 'queued');
+  const failed = transitionTask(running, 'failed', { updatedAt: t1, reason: 'local I/O failed' });
+  assert.equal(transitionTask(failed, 'queued', { updatedAt: t1 }).status, 'queued');
+  assert.throws(() => transitionTask(queued, 'paused', { updatedAt: t1 }), /Invalid task transition/);
+});
