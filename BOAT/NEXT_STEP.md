@@ -1,3 +1,12 @@
+## 2026-10-12 — Manual-only BOAT worker entry point added (CI pending)
+
+- Added `.github/workflows/boat-manual-audit.yml`, triggered only by `workflow_dispatch`, with `contents: read`, `actions: read`, and checkout credentials disabled.
+- It runs the existing BOAT resumable combined audit, uploads the portable JSON checkpoint and Markdown report for 14 days, and can resume a paused task by downloading its artifact from a prior run. Resume requires both task ID and prior run ID plus the exact original audit commit SHA.
+- This workflow is independent of the scheduled production publishing pipeline. It has no provider secrets, no write permissions, no push/PR/schedule trigger, and no article edits, merges, or publication action.
+- Added static workflow safety tests to the offline test suite. Current CI validation pending; workflow has not been manually dispatched.
+
+---
+
 ## 2026-10-12 — Human-readable task report CI verified
 
 - BOAT Offline Tests run [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210) passed for code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc`.

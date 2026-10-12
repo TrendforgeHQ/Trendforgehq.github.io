@@ -714,3 +714,10 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **Verified:** Run 38223584210 passed tests for deterministic output, escaping, provenance, CLI output, and refusing to overwrite task JSON.
 - **Decision:** JSON remains canonical; Markdown is a derived reviewer-facing artifact. Reports state uncertainty and that historical PASS/provenance is not current fact verification.
 - **Limit:** This improves reviewability but does not create live Control Center authentication or semantic verification.
+
+
+## L-NEW — A manual worker can expose BOAT without coupling it to publishing
+- **Decision:** Use a dedicated `workflow_dispatch`-only workflow with read-only repository/action permissions to run the deterministic BOAT audit and upload portable task state/report artifacts.
+- **Resume contract:** A paused task can resume only when the task ID, prior workflow run ID, and exact original commit SHA are supplied. Artifact expiry or unavailable history blocks resume; it does not silently restart under new inputs.
+- **Safety:** No push/PR/schedule trigger, no write permissions, no provider secrets, no publishing dispatch, and checkout credentials disabled.
+- **Validation status:** Static workflow safety tests authored; CI pending. Workflow has not been manually dispatched.

@@ -1,0 +1,149 @@
+name: BOAT Manual Read-only Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      audit_commit_sha:
+        description: "Optional exact commit SHA to audit; leave blank to use the selected workflow ref"
+        required: false
+        type: string
+      batch_size:
+        description: "Articles processed per checkpoint"
+        required: true
+        type: choice
+        options:
+          - "10"
+          - "25"
+          - "50"
+        default: "10"
+      max_batches:
+        description: "0 means finish the full catalogue; other values pause after that many batches"
+        required: true
+        type: choice
+        options:
+          - "0"
+          - "1"
+          - "2"
+          - "5"
+        default: "0"
+      resume_task_id:
+        description: "Optional BOAT task ID from an earlier run"
+        required: false
+        type: string
+      resume_run_id:
+        description: "Required with resume_task_id: earlier GitHub Actions run ID containing the task artifact"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: boat-manual-audit-\${{ inputs.resume_task_id || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Run bounded read-only editorial audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Validate inputs
+        shell: bash
+        env:
+          AUDIT_COMMIT_SHA: \${{ inputs.audit_commit_sha }}
+          RESUME_TASK_ID: \${{ inputs.resume_task_id }}
+          RESUME_RUN_ID: \${{ inputs.resume_run_id }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$AUDIT_COMMIT_SHA" && ! "$AUDIT_COMMIT_SHA" =~ ^[a-f0-9]{40}$ ]]; then
+            echo "audit_commit_sha must be a full 40-character lowercase SHA" >&2
+            exit 1
+          fi
+          if [[ -n "$RESUME_TASK_ID" || -n "$RESUME_RUN_ID" ]]; then
+            if [[ -z "$RESUME_TASK_ID" || -z "$RESUME_RUN_ID" ]]; then
+              echo "resume_task_id and resume_run_id must be supplied together" >&2
+              exit 1
+            fi
+            if [[ ! "$RESUME_TASK_ID" =~ ^boat_[a-f0-9]{24}$ ]]; then
+              echo "resume_task_id has an invalid format" >&2
+              exit 1
+            fi
+            if [[ ! "$RESUME_RUN_ID" =~ ^[0-9]+$ ]]; then
+              echo "resume_run_id must be numeric" >&2
+              exit 1
+            fi
+            if [[ -z "$AUDIT_COMMIT_SHA" ]]; then
+              echo "Resuming requires the exact original audit_commit_sha" >&2
+              exit 1
+            fi
+          fi
+
+      - name: Checkout pinned audit commit
+        uses: actions/checkout@v4
+        with:
+          ref: \${{ inputs.audit_commit_sha || github.sha }}
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Prepare state directory
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/boat-state"
+
+      - name: Download prior task checkpoint
+        if: \${{ inputs.resume_task_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: boat-audit-\${{ inputs.resume_task_id }}
+          path: \${{ runner.temp }}/boat-state
+          repository: \${{ github.repository }}
+          run-id: \${{ inputs.resume_run_id }}
+          github-token: \${{ github.token }}
+          merge-multiple: true
+
+      - name: Run BOAT audit
+        id: run
+        shell: bash
+        env:
+          BATCH_SIZE: \${{ inputs.batch_size }}
+          MAX_BATCHES: \${{ inputs.max_batches }}
+          RESUME_TASK_ID: \${{ inputs.resume_task_id }}
+        run: |
+          set -euo pipefail
+          args=(--commit "$(git rev-parse HEAD)" --state-dir "$RUNNER_TEMP/boat-state" --batch-size "$BATCH_SIZE")
+          if [[ "$MAX_BATCHES" != "0" ]]; then args+=(--max-batches "$MAX_BATCHES"); fi
+          if [[ -n "$RESUME_TASK_ID" ]]; then args+=(--resume "$RESUME_TASK_ID"); fi
+          node scripts/boat-run-catalogue-task.mjs "\${args[@]}" > "$RUNNER_TEMP/boat-summary.json"
+          cat "$RUNNER_TEMP/boat-summary.json"
+          echo "task_id=$(jq -r '.taskId' "$RUNNER_TEMP/boat-summary.json")" >> "$GITHUB_OUTPUT"
+          echo "report_file=$(jq -r '.reportFile' "$RUNNER_TEMP/boat-summary.json")" >> "$GITHUB_OUTPUT"
+
+      - name: Publish task summary to job page
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f "$RUNNER_TEMP/boat-summary.json" ]]; then
+            {
+              echo "## BOAT read-only audit"
+              echo
+              cat "$RUNNER_TEMP/boat-summary.json"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload portable task checkpoint and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boat-audit-\${{ steps.run.outputs.task_id || inputs.resume_task_id || github.run_id }}
+          path: |
+            \${{ runner.temp }}/boat-state/*.json
+            \${{ runner.temp }}/boat-state/*.md
+            \${{ runner.temp }}/boat-summary.json
+          if-no-files-found: warn
+          retention-days: 14

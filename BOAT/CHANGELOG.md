@@ -737,3 +737,9 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - BOAT Offline Tests [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210) passed for code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc`.
 - Report renderer tests passed for deterministic output, HTML/Markdown escaping, provenance display, CLI stdout/file output, and protection against overwriting task JSON.
 - Combined resumable audit tests passed, and the read-only published-root lineage audit passed. Project records updated; PR #38 remains draft/unmerged.
+
+
+## 2026-10-12 — Manual-only read-only BOAT workflow (CI pending)
+- Added `.github/workflows/boat-manual-audit.yml` with only a manual `workflow_dispatch` trigger, read-only `contents`/`actions` permissions, no persisted checkout credentials, no provider secrets, and no connection to the production publish workflow.
+- The workflow can run a complete or bounded audit, upload task JSON/Markdown artifacts for 14 days, and resume from a prior artifact using exact task/run IDs and the original pinned commit.
+- Added offline static tests for trigger isolation, permissions, artifact retention, and resume-input validation. CI pending; workflow not manually dispatched.
