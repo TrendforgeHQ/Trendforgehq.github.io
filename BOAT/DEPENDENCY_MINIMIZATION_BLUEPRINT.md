@@ -1,3 +1,12 @@
+## Manual workflow adapter follow-up — 2026-10-12 (CI pending)
+
+- The portable single-task canonical-store artifact implementation passed BOAT Offline Tests on PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` in [run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842).
+- The manual-only workflow is now wired to validate/import that artifact before resume and export a fresh run-bound artifact afterward. It invokes the repository-owned runner in `--task-store` mode and excludes the ephemeral canonical store from upload.
+- Workflow wiring and static assertions are **not yet CI-verified**; the latest push run [38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) had zero jobs. Do not claim end-to-end resume until an actual offline test job passes and a controlled manual run validates artifact download/import/resume.
+- Dependency decision unchanged: no Supabase/hosted database, no new package, zero AI/web budget, and no connection to production publishing.
+
+---
+
 ## Implementation update — opt-in canonical-store catalogue runner (2026-10-12)
 
 - Added `registerStoredTask()` and optional `--task-store` support to the existing read-only catalogue runner. The unified store is authoritative for task/checkpoint/findings state; JSON task files are compatibility snapshots only in this mode.
