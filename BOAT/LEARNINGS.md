@@ -790,3 +790,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - Same-key/same-request retries should return the first task ID without creating another entry. Same-key/different-request must be a conflict and must not mutate stored bytes.
 - A lock and atomic file replacement protect one local workspace from concurrent writers, but they do not coordinate multiple machines or make the task record and ledger a single transaction. A future broker needs an explicit crash-recovery strategy for the gap between claiming a key and creating the task.
 - This is local persistence and offline test coverage only. CI remains pending inspection; no claim of live broker or distributed exactly-once execution is made.
+
+## 2026-10-12 — Lifecycle/idempotency validation result
+
+- Latest BOAT Offline Tests run [38227586730](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38227586730) completed successfully on the current PR head: **176 test checks passed, 0 failed**; Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit step completed successfully.
+- The idempotency tests verified same-request replay returns the original task ID, changed-request key reuse conflicts without modifying persisted bytes, persistence survives reload, and lock/corrupt-state handling fails closed.
+- Validation is for the offline/local implementation only. It does not establish distributed idempotency, a live API/auth broker, cross-run artifact resume, or atomic task-record-plus-ledger creation. No merge, dispatch, provider/web/image calls, publishing, or `main` change.
