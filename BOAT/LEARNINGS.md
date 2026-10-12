@@ -890,3 +890,7 @@ Portable-store integration test follow-up: extended the existing canonical task-
 ### 2026-10-12 — CI path filters must cover integration safety tests
 
 The manual audit workflow's static safety test was not listed in the offline workflow's path filter. A code change could therefore alter workflow wiring without selecting the regression test by path. Added both the manual workflow and its test to that filter in commit `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2`. This is a coverage correction, not proof that CI ran: the current head still has no visible PR-triggered run. Keep the acceptance status pending until an actual job executes.
+
+### 2026-10-12 — Static assertions can silently miss workflow paths
+
+The manual-workflow regression test had over-escaped regexes around `.mjs` and `.json`. Those patterns would not match the real workflow strings. Fixed them in `7bc1b3fcb7b8da7459ee4ca1125d5ad407882e26`, then independently checked the updated patterns and 12 additional workflow/artifact invariants: 13/13 passed. This does not substitute for executing `node --test` or a real Actions job. Keep the CI gate pending until the exact current head has a real job result.
