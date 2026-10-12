@@ -94,18 +94,17 @@ test('import never overwrites or merges an existing destination store', async ()
 test('CLI creates, validates and imports a portable store artifact without overwriting inputs', async () => {
   const f = fixture(), dir = await fs.mkdtemp(path.join(os.tmpdir(), 'boat-store-cli-'));
   try {
-    const store = path.join(dir, 'store.json'), manifest = path.join(dir, 'manifest.json'), imported = path.join(dir, 'imported.json');
+    const store = path.join(dir, 'store.json'), portableStore = path.join(dir, 'portable-store.json'), manifest = path.join(dir, 'manifest.json'), imported = path.join(dir, 'imported.json');
     await fs.writeFile(store, f.storeText);
     const script = path.join(root, 'scripts/boat-task-store-artifact.mjs');
-    const args = ['--store',store,'--manifest',manifest,'--run-id',runId,'--task-id',f.task.taskId,'--commit',commit];
-    const create = spawnSync(process.execPath, [script,'--mode','create',...args], { encoding: 'utf8' });
+    const args = ['--manifest',manifest,'--run-id',runId,'--task-id',f.task.taskId,'--commit',commit];
+    const create = spawnSync(process.execPath, [script,'--mode','create','--store',store,'--output',portableStore,...args], { encoding: 'utf8' });
     assert.equal(create.status, 0, create.stderr);
-    const art = exported(f);
-    await fs.writeFile(store, art.portableStoreText);
-    const validateResult = spawnSync(process.execPath, [script,'--mode','validate',...args], { encoding: 'utf8' });
+    assert.equal((await fs.readFile(store, 'utf8')), f.storeText, 'export must not alter canonical input store');
+    const validateResult = spawnSync(process.execPath, [script,'--mode','validate','--store',portableStore,...args], { encoding: 'utf8' });
     assert.equal(validateResult.status, 0, validateResult.stderr);
     assert.equal(JSON.parse(validateResult.stdout).valid, true);
-    const importResult = spawnSync(process.execPath, [script,'--mode','import',...args,'--output',imported], { encoding: 'utf8' });
+    const importResult = spawnSync(process.execPath, [script,'--mode','import','--store',portableStore,...args,'--output',imported], { encoding: 'utf8' });
     assert.equal(importResult.status, 0, importResult.stderr);
     assert.equal(JSON.parse(importResult.stdout).imported, true);
     assert.deepEqual(JSON.parse(await fs.readFile(imported,'utf8')), art.portableStore);

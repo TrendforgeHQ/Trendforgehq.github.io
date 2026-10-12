@@ -136,7 +136,7 @@ function parseArgs(argv) {
   }
   if (!['create','validate','import'].includes(out.mode)) throw new Error('--mode must be create, validate, or import');
   if (!out.store || !out.manifest || !isRunId(out.runId) || !isTaskId(out.taskId) || !isSha(out.commit)) throw new Error('--store, --manifest, numeric --run-id, valid --task-id, and full --commit are required');
-  if (out.mode === 'import' && !out.output) throw new Error('import mode requires --output');
+  if (['create','import'].includes(out.mode) && !out.output) throw new Error(out.mode + ' mode requires --output');
   return out;
 }
 async function main() {
@@ -145,8 +145,18 @@ async function main() {
   const manifestPath = path.resolve(args.manifest);
   if (args.mode === 'create') {
     const result = createPortableTaskStoreArtifact({ storeText, sourceRunId: args.runId, expectedTaskId: args.taskId, expectedCommitSha: args.commit });
-    await fs.writeFile(manifestPath, result.manifestText, { flag: 'wx', mode: 0o600 });
-    process.stdout.write(JSON.stringify({ valid: true, taskId: result.manifest.taskId, sourceRunId: result.manifest.sourceRunId, storeSha256: result.manifest.storeSha256 }) + '\n');
+    const outputPath = path.resolve(args.output);
+    if (outputPath === manifestPath) throw new Error('Portable store output and manifest paths must be distinct');
+    let outputCreated = false;
+    try {
+      await fs.writeFile(outputPath, result.portableStoreText, { flag: 'wx', mode: 0o600 });
+      outputCreated = true;
+      await fs.writeFile(manifestPath, result.manifestText, { flag: 'wx', mode: 0o600 });
+    } catch (error) {
+      if (outputCreated) await fs.rm(outputPath, { force: true }).catch(() => {});
+      throw error;
+    }
+    process.stdout.write(JSON.stringify({ valid: true, taskId: result.manifest.taskId, sourceRunId: result.manifest.sourceRunId, storeSha256: result.manifest.storeSha256, outputPath, manifestPath }) + '\n');
     return;
   }
   const manifestText = await fs.readFile(manifestPath, 'utf8');

@@ -922,3 +922,7 @@ Second CI review on 2026-10-12: the next run confirmed the timestamp and no-over
 - Trust boundary: the manifest is an integrity/provenance binding, not a cryptographic signature; trust still depends on downloading the artifact from the exact supplied GitHub Actions run and validating the requested task/commit. This is not authentication or a distributed store.
 - Manual workflow is unchanged: it still downloads/validates the existing per-task checkpoint manifest and does not import/use the portable canonical store. No workflow dispatch, article edit, provider call, publishing, or merge was performed.
 - Validation state at this commit preparation: await CI on the exact head before calling the artifact round-trip verified.
+
+### Portable artifact CLI completeness fix — 2026-10-12
+
+A code-path review found the first CLI draft wrote the manifest but did not itself write the portable store payload, so the round-trip test was too permissive about manually supplying that payload. Fixed `--mode create` to emit both the single-task store payload and manifest using exclusive-create semantics, roll back the new payload if manifest creation fails, and reject colliding output paths. The CLI test now validates and imports the actual exported payload while asserting the canonical input store remains byte-for-byte unchanged. Await CI on the latest commit.
