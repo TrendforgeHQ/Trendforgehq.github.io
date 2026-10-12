@@ -758,3 +758,10 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 - BOAT Offline Tests [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual-workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2`.
 - Static workflow tests passed for manual-only trigger, read-only permissions, no provider/publish coupling, 14-day artifacts, flat resume artifact layout, and interrupted-task ID discovery.
 - Report renderer, combined audit pause/resume, and published-root lineage tests passed. The workflow itself has not been manually dispatched; cross-run artifact resume remains unverified.
+
+
+## 2026-10-12 — Control Center security boundary proposal
+
+- Added `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` describing the current static UI boundary, threat model, request/task contract, authentication/browser requirements, artifact resume validation, future proposal approval binding, and acceptance criteria for a live read-only integration.
+- Kept implementation intentionally documentation-only: no auth service, API, queue, hosted database, secret, or new dependency added. Static Control Center remains read-only; no repair/publish capability was enabled.
+- Recorded the workflow dispatch blocker honestly: static CI is green, but the manual-only workflow has not been dispatched, and `main` must not be merged just to unlock it.
