@@ -4,9 +4,13 @@ on:
   pull_request:
     paths:
       - ".github/workflows/boat-offline-tests.yml"
+      - ".github/workflows/boat-manual-audit.yml"
+      - "scripts/test-boat-manual-audit-workflow.mjs"
       - ".github/workflows/publish.yml"
-      - "BOAT/**"
+      - "BOAT/schemas/**"
       - "scripts/boat-article-doctor.mjs"
+      - "scripts/boat-article-review-cycle.mjs"
+      - "scripts/test-boat-article-review-cycle.mjs"
       - "scripts/test-boat-article-doctor.mjs"
       - "scripts/boat-evidence-auditor.mjs"
       - "scripts/boat-repair-engine.mjs"
@@ -56,6 +60,18 @@ on:
       - "scripts/fixtures/boat-semantic-support-review-set-fixtures.mjs"
       - "BOAT/schemas/factual-repair-proposal.schema.json"
       - "scripts/test-boat-evidence-repair.mjs"
+      - "scripts/boat-task-contract.mjs"
+      - "scripts/test-boat-task-contract.mjs"
+      - "scripts/boat-task-idempotency.mjs"
+      - "scripts/test-boat-task-idempotency.mjs"
+      - "scripts/boat-task-state.mjs"
+      - "scripts/test-boat-task-state.mjs"
+      - "scripts/boat-run-catalogue-task.mjs"
+      - "scripts/test-boat-run-catalogue-task.mjs"
+      - "scripts/boat-task-store.mjs"
+      - "scripts/boat-task-store-artifact.mjs"
+      - "scripts/test-boat-task-store-artifact.mjs"
+      - "scripts/test-boat-task-store.mjs"
   workflow_dispatch:
 
 permissions:
@@ -79,3 +95,13 @@ jobs:
         run: node --test scripts/test-boat-*.mjs && node scripts/test-control-center.mjs
       - name: Run read-only published root lineage audit
         run: node scripts/boat-root-claim-lineage-audit.mjs
+
+## Portable canonical-store artifact design (offline-tested; workflow not switched)
+
+- Added `scripts/boat-task-store-artifact.mjs` to export a **single-task subset** of the canonical store while preserving its store revision, full task checkpoint/findings/errors/budget, and the exact `catalogue-audit:<taskId>` idempotency claim. It intentionally excludes unrelated tasks and claims.
+- Manifest binds exact portable-store bytes and task-record bytes to a numeric source Actions run ID, task ID/type, full pinned commit SHA, store schema/revision/counts, and supported audit profile/version. Validation also checks task schema/status and recomputes the idempotency identity hash; altered bytes, mismatched run/task/commit, unsupported profile/status, and malformed or conflicting claim mappings fail closed.
+- Import is deliberately **create-only**: validates before writing, creates a new destination with exclusive-create semantics, and refuses to overwrite or merge an existing store. A successful import preserves paused status/checkpoint and does not resume work automatically.
+- Added offline round-trip/CLI tests for exact checkpoint + idempotency preservation, tampered store/manifest, wrong run/task/commit, invalid profile/status, malformed JSON, and no-overwrite behavior. Added the new files to BOAT Offline Tests path filters.
+- Trust boundary: the manifest is an integrity/provenance binding, not a cryptographic signature; trust still depends on downloading the artifact from the exact supplied GitHub Actions run and validating the requested task/commit. This is not authentication or a distributed store.
+- Manual workflow is unchanged: it still downloads/validates the existing per-task checkpoint manifest and does not import/use the portable canonical store. No workflow dispatch, article edit, provider call, publishing, or merge was performed.
+- Validation state at this commit preparation: await CI on the exact head before calling the artifact round-trip verified.

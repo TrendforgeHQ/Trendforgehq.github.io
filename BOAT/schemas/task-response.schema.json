@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trendforgehq.github.io/BOAT/schemas/task-response.schema.json",
+  "title": "BOAT Read-only Task Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "taskId", "taskType", "status", "pinnedCommitSha", "createdAt", "updatedAt", "progress", "findings", "budget", "report", "error"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "taskId": { "type": "string", "pattern": "^boat_[a-f0-9]{24}$" },
+    "taskType": { "const": "published_catalogue_audit" },
+    "status": { "enum": ["queued", "running", "paused", "needs_review", "blocked", "completed", "failed"] },
+    "pinnedCommitSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "progress": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cursor", "completedUnits", "totalUnits"],
+      "properties": {
+        "cursor": { "type": ["string", "null"] },
+        "completedUnits": { "type": "integer", "minimum": 0 },
+        "totalUnits": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "byCategory"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "byCategory": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      }
+    },
+    "budget": {
+      "type": "object", "additionalProperties": false,
+      "required": ["aiCalls", "webRequests", "limits"],
+      "properties": {
+        "aiCalls": { "type": "integer", "minimum": 0 },
+        "webRequests": { "type": "integer", "minimum": 0 },
+        "limits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["aiCalls", "webRequests"],
+          "properties": { "aiCalls": { "type": "integer", "minimum": 0 }, "webRequests": { "type": "integer", "minimum": 0 } }
+        }
+      }
+    },
+    "report": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "artifactName"],
+      "properties": {
+        "format": { "const": "markdown" },
+        "artifactName": { "type": ["string", "null"], "pattern": "^boat-audit-[A-Za-z0-9_-]{1,100}$" }
+      }
+    },
+    "error": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object", "additionalProperties": false, "required": ["code", "message"],
+          "properties": {
+            "code": { "enum": ["INVALID_REQUEST", "UNAUTHENTICATED", "FORBIDDEN", "CSRF_INVALID", "ORIGIN_DENIED", "RATE_LIMITED", "REPOSITORY_POLICY_MISMATCH", "TASK_TYPE_DENIED", "COMMIT_NOT_ALLOWLISTED", "BUDGET_DENIED", "BATCH_LIMIT_EXCEEDED", "IDEMPOTENCY_REPLAY", "INVALID_RESPONSE"] },
+            "message": { "type": "string", "maxLength": 500 }
+          }
+        }
+      ]
+    }
+  }
+}

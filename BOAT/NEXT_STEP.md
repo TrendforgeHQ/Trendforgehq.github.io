@@ -1,3 +1,227 @@
+## 2026-10-12 — CI trigger diagnosis and safe rollback
+
+- Investigated the zero-job push runs created while trying to validate the manual-workflow adapter. The runs are push events against a branch whose workflow definition is not on the repository's default branch; they contain no test job and cannot validate code.
+- Removed the temporary branch-only `push` trigger from `.github/workflows/boat-offline-tests.yml`. The workflow is back to the existing pull-request/path-filtered test model plus manual dispatch; no production workflow is involved.
+- PR #38 remains draft/open/unmerged and based on `feat/boat-control-center-vertical-slice-audit`. No `main` change, merge, publishing dispatch, article edit, or provider/image call was made.
+- **Verification status:** portable-store module tests passed on earlier head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` ([run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842)). The later manual-workflow integration is not CI-verified, and cross-run artifact resume has not been tested. The zero-job push runs must not be counted as failures of the code or as passes.
+- Next: validate the current integration through an actual permitted test execution without changing `main`, publishing, or providers. If the draft PR suppresses pull-request checks, preserve its draft state and do not change PR state without explicit approval; report the CI limitation rather than fabricating a result.
+
+---
+
+## 2026-10-12 — Portable canonical store wired into manual workflow (CI pending)
+
+- Confirmed [BOAT Offline Tests run 38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store module and offline tests on that head.
+- Updated the manual-only audit workflow to use `--task-store` as canonical state, validate/import the prior run's portable single-task store before resume, and export a fresh portable store artifact after execution. The ephemeral full store is excluded from upload.
+- Expanded static workflow tests for validate/import/create wiring and upload exclusion. Added a branch-scoped push trigger to BOAT Offline Tests so the integration can be tested without invoking publishing/providers.
+- **Current workflow changes are not verified.** The latest push-event run [38234644034](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38234644034) reports zero jobs; earlier push runs also had no jobs. This is not a passing test result.
+- Next: resolve why the offline workflow is not creating a job for this branch, obtain a real successful test run on the exact head, then run a controlled manual-only audit with a small batch and verify cross-run artifact resume on the exact same commit.
+- No hosted database or new package; AI/web budgets remain zero. No publishing workflow, provider/image call, article edit, merge, or `main` change.
+
+---
+
+## 2026-10-12 — Portable canonical store integrated into manual workflow (CI pending)
+
+- Confirmed BOAT Offline Tests run [38230099842](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38230099842) is associated with PR #38 head `d260cb4e330d4f88101ec4cf03e973a86d1eb412` and completed successfully. This validates the portable task-store artifact implementation and the offline suite on that head.
+- Updated `.github/workflows/boat-manual-audit.yml` to use `--task-store` as canonical task state, validate/import the prior run's portable single-task store before resume, and export a new run-bound portable store artifact after execution. The ephemeral canonical store file is excluded from artifact upload; only the validated portable subset is retained.
+- Expanded `scripts/test-boat-manual-audit-workflow.mjs` to guard the new validate/import/create wiring and the exclusion of the ephemeral store file.
+- **Current workflow-integration changes are not yet CI-verified.** Recent push-event runs have no jobs because the workflow is not configured for push; they are not test results. Do not claim the workflow wiring passed.
+- Next: obtain a real BOAT Offline Tests run on the exact workflow-integration head, fix failures, then perform a controlled manual-only run with a small batch and verify resume from its artifact using the same pinned commit. Do not dispatch the publishing workflow, edit articles, merge, or change `main`.
+- Safety: no hosted database or new package; AI/web budgets remain zero; no production publish/provider/image call was made.
+
+---
+
+## 2026-10-12 — Optional canonical-store catalogue runner validated
+
+- Added opt-in `--task-store <file>` to `scripts/boat-run-catalogue-task.mjs`. When enabled, the unified task store is canonical; per-task JSON is a regenerable compatibility snapshot and the Markdown report is deterministically overwritten at its stable task path.
+- Added `registerStoredTask()` so the runner's richer pinned audit config and idempotency claim are committed together without relaxing the public request schema.
+- Checkpoints and findings now persist in one task-store transaction through `updateStoredTask()`. The runner resumes from the stored cursor/completed-unit IDs and skips already completed article units. Stale per-task artifacts are overwritten from the store; if the store lacks the requested task, resume fails closed instead of importing the artifact.
+- Added integration coverage simulating an interrupted `running` task plus stale artifact, proving only remaining articles are processed, completed unit IDs/findings stay unique, AI/web budgets remain zero, and completed report output is stable on repeat. Added negative test for a missing canonical task.
+- Offline CI [run 38229900046](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38229900046) passed **186 tests, 0 failures**; read-only published-root lineage audit passed (`savedReportPass: true`, `passagesUnresolved: 0`).
+- Added explicit runner and runner-test paths to BOAT Offline Tests so future changes to these files remain covered.
+- **Not switched on in the manual workflow:** `boat-manual-audit.yml` remains unchanged and still uses the portable task JSON/report/manifest artifacts. Cross-run task-store persistence is not proven because GitHub-hosted runners are ephemeral. Use `--task-store` only with a workspace that retains that file between invocations.
+- Next: validate whether the canonical store should be packaged into an explicitly versioned portable artifact before any workflow integration; keep artifact manifest provenance strict, do not trust artifact-only state when store-backed mode is selected. No publishing, article edits, provider calls, workflow dispatch, merge, or `main` changes.
+
+---
+
+## 2026-10-12 — Atomic task-store progress updates validated; runner adapter remains next
+
+- Added `updateStoredTask()` to `scripts/boat-task-store.mjs`: updates a persisted task under the existing exclusive store lock, checks the expected task revision, validates task identity/schema, and commits the updated checkpoint/findings and store revision in one atomic replacement.
+- Added regressions for atomic checkpoint+finding persistence, stale revision rejection with exact-byte preservation, and invalid unchanged-revision updates.
+- Initial CI run [38228841380](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228841380) caught an overly strict test assumption that each persisted transaction must advance exactly one in-memory task revision. Relaxed the guard to require a forward revision while still rejecting stale/same-revision writes.
+- Corrected follow-up CI run [38228963259](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228963259) passed: **184 tests, 0 failures**; read-only published-root lineage audit passed (`savedReportPass: true`, `passagesUnresolved: 0`).
+- **Important scope:** the unified store now has a safe atomic progress-update primitive, but `boat-run-catalogue-task.mjs` does not yet use that store as its canonical task state. Do not claim runner/store integration is complete.
+- Next: design and test the optional store-backed runner path while preserving current per-task JSON artifacts for the manual workflow. Verify recovery from the store wins over a stale artifact, completed unit IDs are skipped, findings remain deduplicated, and report output is deterministic. Keep the manual workflow unchanged until offline tests prove the adapter. No dispatch, provider/web calls, article edits, merge, or `main` changes.
+
+---
+
+## 2026-10-12 — Manual-only audit workflow CI verified
+
+- BOAT Offline Tests run [38224116086](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224116086) passed for the manual-workflow integration commit `e8a90bc0cb99f6c133d93239d4be104f517980d2` in the PR merge checkout.
+- Confirmed static workflow tests pass: only `workflow_dispatch`, `contents: read` and `actions: read`, checkout credentials disabled, no production-publish/provider coupling, 14-day artifacts, and flat checkpoint/report artifact layout with task-ID recovery after interrupted runs.
+- Renderer, combined audit pause/resume tests, and published-root lineage audit also passed in the same run.
+- Workflow has not been manually dispatched; the CI validates workflow structure and the existing runner tests, not an end-to-end cross-run artifact download. Next: do a controlled manual test only after review, then use the generated report to refine claim-level review UX. No production publish workflow was run.
+
+---
+
+## 2026-10-12 — Manual audit artifact layout hardening (CI pending)
+
+- Corrected GitHub Actions expressions in the manual-only workflow and split the portable checkpoint/report artifact from the optional summary artifact. This ensures the downloaded task JSON lands at the expected state-directory root for resume.
+- Added a recovery step that discovers a saved task ID if a run is interrupted after checkpointing but before the normal summary output is produced.
+- Expanded static workflow tests for artifact layout and recovery. CI pending; the workflow has not been manually dispatched.
+
+---
+
+## 2026-10-12 — Manual workflow expression fix (CI pending)
+
+- Corrected GitHub Actions expression interpolation in the new manual workflow. The initial committed YAML contained literal escape backslashes before expressions because the workflow source was generated from a raw template; these have been removed so Actions receives the intended expressions.
+- Static workflow-safety test and full offline CI must pass before calling the manual entry point ready. The workflow has not been dispatched.
+
+---
+
+## 2026-10-12 — Manual-only BOAT worker entry point added (CI pending)
+
+- Added `.github/workflows/boat-manual-audit.yml`, triggered only by `workflow_dispatch`, with `contents: read`, `actions: read`, and checkout credentials disabled.
+- It runs the existing BOAT resumable combined audit, uploads the portable JSON checkpoint and Markdown report for 14 days, and can resume a paused task by downloading its artifact from a prior run. Resume requires both task ID and prior run ID plus the exact original audit commit SHA.
+- This workflow is independent of the scheduled production publishing pipeline. It has no provider secrets, no write permissions, no push/PR/schedule trigger, and no article edits, merges, or publication action.
+- Added static workflow safety tests to the offline test suite. Current CI validation pending; workflow has not been manually dispatched.
+
+---
+
+## 2026-10-12 — Human-readable task report CI verified
+
+- BOAT Offline Tests run [38223584210](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223584210) passed for code commit `8fbc0eb2543bde5253251e22b9610e8b624c32dc`.
+- Confirmed report tests pass for deterministic output, escaping, claim/report provenance, CLI stdout/file output, and refusal to overwrite task JSON. Resumable combined-audit tests also passed, including pause/resume and the no-auto-repair/no-auto-publication checks; the published-root lineage audit passed.
+- Runner refreshes a sibling Markdown report after each saved batch and on final status/resume. Audit profile v3 stores the audit summary and checks it canonically before resume.
+- Next: inspect the report output for reviewer usability, then plan the authenticated Control Center integration as a separate security-boundary change. Do not enable network/AI or repair execution yet.
+
+---
+
+## 2026-10-12 — Report renderer integration fixes (CI pending)
+
+- Latest CI exposed three renderer integration issues: the module executed its CLI when imported by the worker, Node's fs/promises module was called through a nonexistent nested .promises property, and the human report displayed raw underscore status instead of a readable label.
+- Added a direct-execution guard, corrected promise-based filesystem calls, and render semantic statuses as readable labels. Re-run the offline suite before treating report generation as verified.
+
+---
+
+## 2026-10-12 — Report renderer hardening and canonical resume comparison (CI pending)
+
+- Before running the new report tests, reviewed two implementation details: task config is canonicalized with sorted object keys, so audit-summary comparison must use the same canonical comparison; the report renderer must escape HTML/Markdown metacharacters from article and claim content.
+- Added canonical stable comparison for the stored audit summary and expanded report escaping tests with HTML-like and Markdown-like untrusted text.
+- Current report/runner commit requires its own offline CI result; no pass is claimed for these latest fixes yet.
+
+---
+
+## 2026-10-12 — Human-readable task report implementation (CI pending)
+
+- Added scripts/boat-render-task-report.mjs, a deterministic Markdown renderer for a saved BOAT task record. It displays task identity/status/progress, budgets, finding counts, claim-history provenance, and uncertainty/approval limits without network or AI calls.
+- The resumable runner now writes a sibling .md report after each checkpoint and on completion/resume, so a paused task has a readable report too.
+- Task profile bumped to version 3 and stores the deterministic audit-component summary in task config; resume blocks if the same commit produces a different component summary/profile, avoiding silent report-semantic drift.
+- Added tests for deterministic rendering, escaped content, provenance fields, CLI stdout/file output, and protection against overwriting the task JSON. CI result pending.
+
+---
+
+## 2026-10-12 — Combined editorial audit CI verified
+
+- BOAT Offline Tests run [38223070482](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38223070482) passed on code commit `7af241d74736468c0ff0ae4ce06ae7c4fa38e1e7`.
+- Verified the combined resumable task covers structural catalogue checks, archived evidence coverage, exact-byte lineage, review-queue triage, and archived claim-history diagnostics. The bounded pause/resume test and the combined safety test passed; the read-only published-root lineage audit passed.
+- Summary explicitly reports read-only mode and `automaticRepair: false`, `automaticPublicationDecision: false`. Claim findings carry current article SHA-256 plus archived report identity/hash and remain `not_assessed`/unknown until independently reviewed.
+- Next: improve the actual review experience by producing a deterministic human-readable per-task report from the saved task record, then design the authenticated Control Center integration separately. Do not add AI/web calls or repair execution yet.
+
+---
+
+## 2026-10-12 — Combined review queue CI passed; provenance tidy-up pending CI
+
+- BOAT Offline Tests run [38222968795](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222968795) passed for combined structural/evidence/lineage/review-queue/claim-history integration, including task pause/resume and explicit no-auto-repair/no-auto-publication assertions.
+- Follow-up cleanup removes a redundant duplicate-slug finding (the combined review queue already emits the per-entry identity finding) and attaches the current article SHA-256 to each archived claim-history finding. This follow-up commit requires its own CI result.
+
+---
+
+## 2026-10-12 — Combined review integration test correction (CI pending)
+
+- First combined-review run [38222862267](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38222862267) exposed a brittle test assumption: it expected at least one structural finding in the first batch, although the existing structural audit can legitimately return zero findings for those articles. The combined audit safety test passed.
+- Replaced the brittle assertion with reconciliation of category counts against the total findings count. Exposed and asserted the review queue's read-only, no-auto-repair, and no-automatic-publication flags in the task summary.
+- Re-run the full offline workflow and inspect results before treating the combined integration as validated.
+
+---
+
+## 2026-10-12 — Combined review-queue task integration (CI pending)
+
+- Upgraded the resumable worker from structural-only findings to a combined read-only review task: structural catalogue checks, historical evidence coverage, exact-byte lineage, the existing published review queue, and archived claim-verifier report diagnostics.
+- Claim-level findings retain saved status, claim text, source/passage metadata, report identity/hash, and whether text was found in current article bytes. Every finding explicitly sets semantic support to not assessed/unknown and requires human approval; historical PASS is not current fact verification.
+- Task identity now uses audit version 2 and an explicit combined profile; older structural-only task records are rejected for resume instead of silently mixing report semantics.
+- The runner's cleanliness guard now covers article Markdown, archived attempts, lineage manifests, root verifier snapshots, and all audit modules.
+- Tests have been updated for combined audit components and claim-history safety. CI result for this code commit is pending; no green result is claimed yet.
+
+---
+
+## 2026-10-12 — Latest task-core validation (green)
+
+- BOAT Offline Tests run [38221180437](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221180437) passed on the PR merge checkout containing code commit `4305a5f7582222aafab05609fedf1b08ebea9dad`.
+- Confirmed the new state tests and catalogue task pause/resume integration tests passed, and the read-only published-root lineage audit completed successfully.
+- The runner now requires the supplied commit to match the actual checkout and rejects uncommitted changes to the catalogue/audit input files.
+- This validates deterministic structural execution only. It does not prove semantic factual support or provide live Control Center auth/task API/repair execution.
+
+---
+
+## 2026-10-12 — Audit input cleanliness guard added (CI pending)
+
+- Catalogue runner now also refuses to run if `lib/articles.ts`, `scripts/boat-published-catalogue-audit.mjs`, or the runner itself has uncommitted tracked changes. This closes the gap where a clean HEAD SHA could otherwise be paired with dirty audit inputs.
+- Current code head: `4305a5f7582222aafab05609fedf1b08ebea9dad`. Re-run the offline suite and inspect the result before calling this hardening validated.
+
+---
+
+## 2026-10-12 — Resumable audit core CI result
+
+- BOAT Offline Tests run [38221034281](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38221034281) completed successfully on the PR merge checkout containing task-core implementation commit `27b67ebffc98868f00c6a97f337c9fdf731bd942`.
+- Confirmed the three catalogue-runner integration tests passed (bounded pause/resume, commit/config mismatch refusal, invalid-argument refusal) and all eight task-state tests passed. The full offline workflow, including the read-only published-root lineage audit, succeeded.
+- The runner checks that `--commit` equals the checked-out Git SHA; it does not accept a syntactically valid but unrelated SHA as audit provenance.
+- This validates the current code implementation, not a live Control Center backend, semantic factual truth, web retrieval, or repair execution. No provider/image calls or publishing workflow were run.
+
+---
+
+## 2026-10-12 — Worktree commit binding correction awaiting CI
+
+- Current head includes a guard that requires the explicit task commit to equal the actual checked-out Git SHA; the integration test now derives its fixture SHA from the same checkout.
+- The previous run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) failed only at the batch-configuration assertion message; task-state tests and the initial pause/resume test passed. The assertion was corrected and commit pinning was strengthened afterward.
+- Validation of the current head remains pending. Do not treat the previous failure as a pass.
+
+---
+
+
+
+## 2026-10-12 — Input revision binding and first CI failure
+- Initial task-state integration run [38220909162](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38220909162) exposed a test assertion mismatch: the implementation's configuration-mismatch message was more specific than the test's expected regex. The other newly added task-state tests passed in that run; the overall workflow failed, so no green result is claimed.
+- Hardened the catalogue runner to verify `--commit` equals the actual checked-out Git commit, preventing an arbitrary supplied SHA from being presented as the audited input revision.
+- Updated the integration test to use the checked-out SHA and separately test a task record whose stored pinned commit does not match.
+- Next validation: rerun the offline suite and inspect the new run's test output. No publishing/provider/image workflow was dispatched.
+## 2026-10-12 — Resumable catalogue worker added (CI pending)
+
+- Added `scripts/boat-run-catalogue-task.mjs`, a bounded, read-only runner over the existing `auditPublishedCatalogue` function. It processes batches, checkpoints completed article units, saves state after each batch, and can resume with the same pinned commit/config.
+- Added `scripts/test-boat-run-catalogue-task.mjs` for pause/resume, no-provider/no-network budget, completed-task idempotency, pinned-commit/config mismatch, and invalid CLI arguments.
+- This worker is structural only: it does not establish semantic claim support or source freshness and does not edit articles.
+- Next: inspect this commit's offline CI; if green, review runner logs and harden any issues before connecting a Control Center task API. No live API, authentication, external backend, or repair execution is enabled.
+
+---
+
+## 2026-10-12 — Dependency-minimized task-state core (implementation started)
+
+- Added `scripts/boat-task-state.mjs`, its JSON Schema contract, and `scripts/test-boat-task-state.mjs`.
+- The core uses Node built-ins only; deterministic task identity is pinned to task type, config, and a full commit SHA. It includes explicit state transitions, idempotent checkpoints/findings, default-zero AI/web budgets, atomic local JSON writes, an exclusive writer lock, and optimistic revision checks.
+- The test suite is now part of the existing offline `node --test scripts/test-boat-*.mjs` glob. Actual CI result is pending; do not claim the code is validated until logs are inspected.
+- Next: inspect the published-catalogue audit CLI contract, connect it as a bounded read-only task worker, then test interruption/resume end to end. Do not add network/model calls in that slice.
+
+---
+
+## 2026-10-12 — Dependency-minimization decision
+
+**Decision:** Do not add Supabase or another hosted backend as a prerequisite. Build the repository-owned, provider-independent task core first. See [DEPENDENCY_MINIMIZATION_BLUEPRINT.md](DEPENDENCY_MINIMIZATION_BLUEPRINT.md).
+
+**Next implementation:** create a versioned task contract and deterministic local state/checkpoint module; add offline tests for resume, idempotency, corrupt/stale state, and atomic persistence. Then connect it to the existing read-only published-catalogue audit only after checking that CLI's exact contract. AI and web adapters remain optional and disabled in the first slice.
+
+**Guardrails:** no `main` edits, auto-merge/publish, publishing workflow dispatch, provider/image calls, new hosted backend, browser secrets, or gate changes. Keep task state portable and pinned to an input commit. Do not label semantic support verified unless it was actually checked.
+
+---
+
 ## Verification follow-up — 2026-10-12
 
 **PR #37's own CI:** BOAT Offline Tests run [38219593540](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38219593540) completed successfully after this audit and record update. Its log confirms the existing Control Center deterministic suite passed **37/37**, and the read-only published-root lineage audit completed. This is documentation-branch regression coverage; no live backend exists yet.
@@ -531,3 +755,120 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## Transfer diagnostics validated offline — 2026-10-11
 
 At implementation commit `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT Offline Tests passed **137/137** (run [38136204355](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204355)); the Control Center deterministic suite and production build also passed (run [38136204315](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136204315)). The workflow contract test checks byte/hash/blob diagnostics and the output-transfer shell syntax. Next: after the next naturally scheduled production run, inspect `EVIDENCE_PACK_PERSISTENCE` log lines at pre-commit, output commit, and post-transfer checkpoints and compare them with that run's artifact. Do not manually dispatch publishing or treat offline validation as proof that the production discrepancy is fixed. Latest documentation-only commits will trigger CI again.
+
+
+## 2026-10-12 — Control Center security boundary design recorded
+
+- Added `BOAT/CONTROL_CENTER_SECURITY_BOUNDARY.md` after confirming the Control Center is a static build-time snapshot (`output: 'export'`), not a server runtime or authenticated task API.
+- Documented trust boundaries, no-secret-in-browser rule, least-privilege worker, pinned commit/task provenance, fail-closed authorization, artifact resume validation, CSRF/session requirements, threat mitigations, and approval binding for a future repair proposal.
+- Important deployment gate: the manual-only workflow has static CI coverage but has not been dispatched. It may require a reviewed default-branch merge to become dispatchable. Do not merge merely to unlock the test; keep `main` unchanged until an explicit operator decision.
+- Next: add offline schema/authorization-decision fixtures and negative tests for stale commit, cross-task/run resume, over-budget inputs, and artifact manifest mismatch. Keep the static Control Center read-only; no hosting/auth product chosen, no live API, no repair executor, no publish/provider/image calls.
+
+
+## 2026-10-12 — Security-boundary documentation CI passed
+
+- BOAT Offline Tests run [38224801135](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224801135) passed for security-boundary documentation commit `b060f4b58e470e49fb421fe3bb796e2745e20508`. Offline BOAT regression tests and the read-only published-root lineage audit both succeeded.
+- This validates the PR checkout's existing offline suite and lineage audit; it does not test a live API, auth broker, manual workflow dispatch, or cross-run artifact resume.
+- Next: add offline task request/response and artifact-manifest validation tests before selecting or implementing any live backend.
+
+
+## 2026-10-12 — Follow-up record update CI passed
+
+- BOAT Offline Tests [38224894861](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38224894861) passed on the preceding project-record update commit `89d530359996a1ef772896e72b7b5e3a803a387a`, including the offline regression suite and read-only published-root lineage audit.
+- The current follow-up only records that result. The manual audit workflow still has not been dispatched; no live API/auth broker exists.
+
+
+## 2026-10-12 — Checkpoint artifact provenance hardened and CI passed
+
+- Added `scripts/boat-task-artifact-manifest.mjs` plus tests. Each portable checkpoint now carries a manifest binding the source Actions run ID, task ID/type, pinned commit, audit profile/config hash, exact task JSON hash, and report hash.
+- Manual resume now validates that manifest after downloading the artifact and before invoking the runner. The manifest is refreshed for the current run only after a successful prior-manifest validation, then included in the next checkpoint artifact. Wrong run/task/commit, modified JSON/report bytes, unsupported profile, or non-resumable status fails closed.
+- BOAT Offline Tests [38225314231](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225314231) passed for code/workflow commit `ec6eb586234487ced58804929c6c0d36cc988bc3`, including manifest unit/CLI tests, workflow safety tests, the existing offline suite, and the read-only published-root lineage audit.
+- An earlier run [38225209463](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38225209463) caught over-escaped regexes in the static workflow test; those assertions were corrected before the passing run.
+- Still not end-to-end: manual dispatch and cross-run artifact download/resume have not been exercised. Do not merge to `main` solely to unlock dispatch. Next: record this implementation in the project files, then continue offline request/schema and negative-resume coverage while awaiting an explicit deployment decision.
+
+
+## 2026-10-12 — Offline task contract and authorization policy added (CI pending)
+
+- Added `scripts/boat-task-contract.mjs` with request/response validators and a pure fail-closed authorization decision function; added request and response JSON Schemas under `BOAT/schemas/`.
+- The initial request contract permits only bounded published-catalogue audits (batch sizes 10/25/50; 1/2/5 batches), a full pinned commit SHA, an idempotency key, and zero AI/web budgets. It rejects extra fields, arbitrary repository/workflow names, and unbounded full-catalogue requests.
+- Trusted authorization context must be supplied by a future server adapter; the pure policy checks authenticated operator role, CSRF/origin checks, rate limit, fixed repository/workflow, task-type allowlist, commit allowlist, batch caps, zero budgets, and idempotency replay. It performs no network or workflow calls.
+- Added `scripts/test-boat-task-contract.mjs` covering valid/invalid contracts and denial paths. Updated BOAT Offline Tests path filters so changes to the contract/test trigger CI. Validation for the latest head is pending; do not claim the tests passed until the run is inspected.
+- No live endpoint, auth provider, UI wiring, repair execution, publish/provider/image call, merge, or `main` change. Next: inspect CI and align any schema/runtime mismatches before considering an authenticated broker.
+
+
+## 2026-10-12 — Task contract and authorization tests passed
+
+- BOAT Offline Tests [38226609696](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38226609696) passed on contract head `7ec5705010e1d28194aae4654be4721f72383d4b`: **168 passed, 0 failed**, including the new task request/response contract tests and read-only published-root lineage audit.
+- Verified denials for unauthenticated/non-operator callers, invalid CSRF/origin, rate limiting, wrong repo/workflow, non-allowlisted task/commit, missing/oversized batch policy, budget expansion, idempotency replay, extra request/response fields, inconsistent counters, and malformed response state/error pairing.
+- JSON schema files parse and match key runtime contract values. This is a contract smoke test, not a full JSON Schema standards validator.
+- Current boundary remains offline-only: the authorization context is assumed to be created by trusted server code. No live authentication/API, idempotency database, workflow dispatch, publishing, provider/image call, article edit, merge, or `main` change.
+
+## 2026-10-12 — Task lifecycle and portable idempotency ledger
+
+- Added `scripts/boat-task-idempotency.mjs`: a Node-built-in-only, versioned JSON ledger with canonical request fingerprints, exclusive local locking, atomic replacement, and fail-closed corruption/lock handling.
+- Idempotency behavior: same key + same semantic request returns the original task ID without a second ledger entry; same key + changed request returns a conflict; a new key creates one claim. Key identity excludes only the idempotency key itself, while all other validated request fields are fingerprinted.
+- Added `scripts/test-boat-task-idempotency.mjs` for pure decisions, stable replay identity, changed-request conflict, reload persistence, unchanged bytes on conflict, lock/corruption failures, and malformed ledger rejection.
+- Extended `scripts/test-boat-task-state.mjs` with allowed/denied lifecycle transition coverage, including completed-task terminal behavior, pause/resume, blocked recovery, and failed-task retry through queued state.
+- Updated BOAT Offline Tests path filters for the new module/tests. CI validation is pending inspection; do not claim a pass until the run is checked.
+- Important limitation: this ledger is portable local file persistence, not distributed coordination. It does not yet atomically create the task record and idempotency claim as one transaction, survive arbitrary hosted-runner loss unless the workspace is durably retained, authenticate callers, or dispatch workflows. No new service/dependency was added; AI/web budgets remain zero; no workflow was dispatched, no publishing/provider/image call occurred, no merge, and `main` remains untouched.
+- Next: inspect CI; if green, document the atomic task-creation boundary and add a crash/recovery contract before wiring any live broker.
+
+## 2026-10-12 — Lifecycle/idempotency validation result
+
+- Latest BOAT Offline Tests run [38227586730](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38227586730) completed successfully on the current PR head: **176 test checks passed, 0 failed**; Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit step completed successfully.
+- The idempotency tests verified same-request replay returns the original task ID, changed-request key reuse conflicts without modifying persisted bytes, persistence survives reload, and lock/corrupt-state handling fails closed.
+- Validation is for the offline/local implementation only. It does not establish distributed idempotency, a live API/auth broker, cross-run artifact resume, or atomic task-record-plus-ledger creation. No merge, dispatch, provider/web/image calls, publishing, or `main` change.
+
+## 2026-10-12 — Atomic task store and crash recovery
+
+- Added `scripts/boat-task-store.mjs`: one versioned JSON document stores task records and idempotency-key mappings together, so creating a task and claiming its key are committed in one atomic file replacement instead of two independent files.
+- Added `scripts/test-boat-task-store.mjs`: task+claim consistency, restart replay, changed-request conflict with byte-preservation, interrupted-running recovery, checkpoint preservation, invalid input, corrupt store, dangling idempotency reference, and lock contention.
+- Recovery turns persisted `running` tasks into `paused`, adds an explicit recovery note, preserves the last checkpoint, and does not execute work. Resuming still requires a separate explicit operator action.
+- Offline CI on implementation head `692b7e63be3e2229ec32e878321f35eba0c038f4` passed **182 tests, 0 failures**, including the new task-store recovery tests and published-root lineage audit. The workflow-filter update was independently validated in [run 38228067483](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38228067483): offline regression suite and read-only published-root lineage audit both passed.
+- Reduced CI churn by replacing the broad `BOAT/**` path trigger with `BOAT/schemas/**`; documentation-only edits no longer trigger BOAT Offline Tests. Task state/store/idempotency source and test files are explicitly included, along with schema files.
+- Limits: single local filesystem/workspace only; no multi-machine coordination, live authentication/API, workflow dispatch, or production connection. Atomic rename protects the combined JSON update, but host/power-loss durability and cross-run hosted-runner persistence are not yet end-to-end proven. No new dependency, paid AI/web usage, publishing, article mutation, merge, or `main` change.
+
+## 2026-10-12 — One-article review/repair vertical slice (offline)
+
+- Added `scripts/boat-article-review-cycle.mjs` to connect the existing Article Doctor, evidence-lineage auditor, and sandbox structural repair engine into one deterministic review bundle for one exact published-article path.
+- The review bundle records hashes for the exact article, claim report, evidence pack, and metadata; the proposal binds the full base commit, target path, before/after article hashes, exact candidate Markdown, and change list into a SHA-256 proposal identity.
+- Application requires an explicit approval JSON that matches the proposal hash, base commit, target path, before/after hashes, reviewer identity, timestamp, and rationale. Stale article bytes, changed proposal contents, wrong commit, mismatched approval, rejected decisions, and non-allowlisted article paths fail closed.
+- Approved output is written only to a new sandbox candidate outside `content/articles/`; the original article is never overwritten. Post-fix structural checks must be idempotent, and a learning record captures the reviewer decision, hashes, outcome, and explicit remaining limitations.
+- Added offline tests for the complete audit → proposal → approval → sandbox candidate → post-fix verification → learning record path, plus tampering, stale bytes/commit, approval mismatch, artifact-hash mismatch, and no-overwrite protection. Updated BOAT Offline Tests path filters to include the new module and tests.
+- Safety limits: no network/AI/provider calls, no production workflow dispatch, no article edit, no publishing, and no merge. A local approval file is not authentication; semantic factual support remains `not_verified`, the existing claim verifier has not been rerun by this structural-only slice, and human review/build/editorial gates remain required.
+- Validation state at commit preparation: CI not yet run for this new slice. Do not claim the vertical slice is verified until the latest-head offline suite passes.
+- Next: inspect CI on the exact commit, fix any failures, then use the cycle on a retained offline fixture. Do not run it against a live article for mutation or connect it to the manual/publishing workflow without a separately reviewed integration.
+
+### First CI feedback and correction — 2026-10-12
+
+The first run for the new vertical slice ([38231788176](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38231788176)) caught three issues in the new tests/CLI contract: an assertion expected different wording for the safe-path rejection, and the CLI test approval timestamp was in the future relative to the runner clock, which also masked the no-overwrite assertion. Updated the path error to state the allowlist and made the fixture approval timestamp unambiguously historical. This is a test/contract correction, not a production article change. Re-run CI on the corrected head before declaring the slice passing.
+
+Second CI review on 2026-10-12: the next run confirmed the timestamp and no-overwrite cases now pass. One remaining negative-test assertion still expected `allowlisted article path` while the guard correctly said `allowlisted content/articles/<safe-slug>.md path`. Corrected the assertion to match the guard's explicit wording; this is test alignment only. Await the new head's CI before calling the slice green.
+
+## Portable canonical-store artifact design (offline-tested; workflow not switched)
+
+- Added `scripts/boat-task-store-artifact.mjs` to export a **single-task subset** of the canonical store while preserving its store revision, full task checkpoint/findings/errors/budget, and the exact `catalogue-audit:<taskId>` idempotency claim. It intentionally excludes unrelated tasks and claims.
+- Manifest binds exact portable-store bytes and task-record bytes to a numeric source Actions run ID, task ID/type, full pinned commit SHA, store schema/revision/counts, and supported audit profile/version. Validation also checks task schema/status and recomputes the idempotency identity hash; altered bytes, mismatched run/task/commit, unsupported profile/status, and malformed or conflicting claim mappings fail closed.
+- Import is deliberately **create-only**: validates before writing, creates a new destination with exclusive-create semantics, and refuses to overwrite or merge an existing store. A successful import preserves paused status/checkpoint and does not resume work automatically.
+- Added offline round-trip/CLI tests for exact checkpoint + idempotency preservation, tampered store/manifest, wrong run/task/commit, invalid profile/status, malformed JSON, and no-overwrite behavior. Added the new files to BOAT Offline Tests path filters.
+- Trust boundary: the manifest is an integrity/provenance binding, not a cryptographic signature; trust still depends on downloading the artifact from the exact supplied GitHub Actions run and validating the requested task/commit. This is not authentication or a distributed store.
+- Manual workflow is unchanged: it still downloads/validates the existing per-task checkpoint manifest and does not import/use the portable canonical store. No workflow dispatch, article edit, provider call, publishing, or merge was performed.
+- Validation state at this commit preparation: await CI on the exact head before calling the artifact round-trip verified.
+
+### Portable artifact CLI completeness fix — 2026-10-12
+
+A code-path review found the first CLI draft wrote the manifest but did not itself write the portable store payload, so the round-trip test was too permissive about manually supplying that payload. Fixed `--mode create` to emit both the single-task store payload and manifest using exclusive-create semantics, roll back the new payload if manifest creation fails, and reject colliding output paths. The CLI test now validates and imports the actual exported payload while asserting the canonical input store remains byte-for-byte unchanged. Await CI on the latest commit.
+
+Portable-store integration test follow-up: extended the existing canonical task-store regression file (an already-established CI trigger path) to prove that an exported/imported portable artifact is accepted by the canonical store loader, retains the matching idempotency key/task identity, leaves the source store unchanged, and does not auto-resume. This gives the PR's base-branch path filter a known existing test path to evaluate; latest-head CI remains the acceptance gate.
+
+### Manual-audit CI path-filter correction — 2026-10-12
+
+- Added `.github/workflows/boat-manual-audit.yml` and `scripts/test-boat-manual-audit-workflow.mjs` to the BOAT Offline Tests path filter, so changes to the workflow integration and its safety assertions are included in CI selection.
+- Commit: `af2b9c12f602168de21775d7fbe5cf4c2eaac7a2` on the existing draft PR branch only. Latest-head workflow lookup currently shows no PR-triggered run; this change is not yet CI-verified.
+- Next gate: obtain a real offline-test job on this exact head, then review its test and read-only lineage-audit results. Do not dispatch the manual audit or change PR/main state as a workaround.
+
+### Verification follow-up — 2026-10-12
+
+- Reviewed the manual audit workflow, portable-store exporter/importer, canonical store, catalogue runner, and regression assertions. Fixed over-escaped regexes in `scripts/test-boat-manual-audit-workflow.mjs` that would not match the workflow's `.mjs`/`.json` paths. Commit: `7bc1b3fcb7b8da7459ee4ca1125d5ad407882e26`.
+- A separate static cross-check now passes **13/13** workflow/artifact wiring checks, including read-only permissions, validate-before-import, explicit runner `--task-store`, create-only import, ephemeral-store exclusion, and no provider/publishing integration. This is static verification only, not a Node test-runner or GitHub Actions pass.
+- Exact latest head still has no PR-triggered workflow run and no status checks. Next acceptance gate is a real test job plus the bounded manual audit and cross-run resume; do not claim final-stage completion before those execute.

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Task Record",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "taskId",
+    "taskType",
+    "pinnedCommitSha",
+    "config",
+    "status",
+    "createdAt",
+    "updatedAt",
+    "revision",
+    "checkpoint",
+    "findings",
+    "errors",
+    "budget"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "taskId": {
+      "type": "string",
+      "pattern": "^boat_[a-f0-9]{24}$"
+    },
+    "taskType": {
+      "enum": [
+        "published_catalogue_audit",
+        "article_audit"
+      ]
+    },
+    "pinnedCommitSha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "config": {
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "paused",
+        "needs_review",
+        "blocked",
+        "completed",
+        "failed"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checkpoint": {
+      "type": "object",
+      "required": [
+        "cursor",
+        "completedUnits"
+      ],
+      "properties": {
+        "cursor": {},
+        "completedUnits": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "findingId"
+        ],
+        "properties": {
+          "findingId": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "at"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "aiCalls",
+        "webRequests",
+        "limits"
+      ],
+      "properties": {
+        "aiCalls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "webRequests": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "limits": {
+          "type": "object",
+          "required": [
+            "aiCalls",
+            "webRequests"
+          ],
+          "properties": {
+            "aiCalls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "webRequests": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
