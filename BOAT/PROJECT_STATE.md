@@ -1,3 +1,10 @@
+## 2026-10-12 — PR #37 validation follow-up
+
+- PR #37's own BOAT Offline Tests run [38219593540](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38219593540) completed successfully. The log confirms the Control Center deterministic suite passed **37/37** and the read-only published-root lineage audit completed.
+- This validates the current documentation branch against existing offline regression checks; it does not validate a chat backend or task runtime, neither of which exists yet.
+- Hosting constraint: the current deployment is free GitHub Pages static export. No external backend or identity provider has previously been selected. Keep the backend choice open until a free-tier option with adequate server-side secret handling and authenticated access is verified.
+
+
 ## 2026-10-12 — Control Center vertical-slice audit
 
 - **Branch-head status checked:** BOAT Offline Tests [38136303910](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303910) and Control Center QA [38136303936](https://github.com/TrendforgeHQ/Trendforgehq.github.io/actions/runs/38136303936) both succeeded for PR #35 head `afbacc3649e70af3561d77981d6f246afc43938b`. Control Center deterministic checks recorded in the log: 37/37. These are the existing branch-head results, not tests of this audit-only commit.

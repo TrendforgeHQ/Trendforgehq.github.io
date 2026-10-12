@@ -609,3 +609,9 @@ The workflow-contract test caught a false assumption about the exact log string,
 - **First implementation scope:** read-only published-catalogue audit task, durable task states/history, pinned commit provenance, explicit unknown/blocked states, bounded/idempotent requests, and zero paid-provider budget.
 - **Safety boundary:** no article mutation, publish dispatch, merge, or gate changes in the first slice. Approval for later repairs must be server-verified and bound to an immutable proposal hash.
 - **Evidence:** interface audit in `BOAT/CONTROL_CENTER_INTERFACE_AUDIT.md`; existing PR #35 branch-head checks passed in runs 38136303910 and 38136303936. Those checks do not validate a backend, which is not yet implemented.
+
+## L-020 — Verify the new branch, not just its parent baseline
+- **Observed:** PR #35's prior branch-head checks were green, but a separate audit PR still needed its own CI result before being called validated.
+- **Decision:** Record PR #37's own run 38219593540 as the verification result. It passed the existing offline workflow, including 37/37 Control Center deterministic checks and the read-only root-lineage audit.
+- **Limitation:** These tests do not exercise a live backend, authentication, task persistence, or a chat interface. Those capabilities remain unimplemented.
+- **Constraint:** GitHub Pages remains the free static frontend; no external backend/identity service has been selected. Verify a free-tier server-side option and its security properties before implementation.
