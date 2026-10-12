@@ -601,3 +601,11 @@ Also added `scripts/boat-numeric-claim-coverage-audit.mjs` and its regression te
 ## 2026-10-11 — Test the actual transfer script, but do not overclaim production repair
 
 The workflow-contract test caught a false assumption about the exact log string, then caught brittle shell-block extraction in the test itself. Corrected the assertions to match actual checkpoint calls and extracted the YAML shell block via its `run: |` marker; added a `bash -n` syntax check so malformed transfer shell is caught in offline CI. On implementation revision `70a128b895ca719060e700b5f3a36f25ef1d13c1`, BOAT offline suite passed 137/137 and Control Center build passed. This proves test/workflow contract consistency only. The actual zero-byte committed pack vs non-empty retained artifact discrepancy still requires diagnostics from a future naturally scheduled run; no production run was manually triggered.
+
+
+## L-019 — A static Control Center cannot be the privileged BOAT runtime
+- **Observed:** `next.config.mjs` sets `output: 'export'`; `app/control-center/page.tsx` reads committed JSON snapshots at build time. The publishing workflow has provider secrets and write permissions, so it is not a safe arbitrary browser-command endpoint.
+- **Decision:** Keep GitHub Pages as the presentation layer. A real conversational task interface requires a separately authenticated backend and a least-privilege worker. Never ship a GitHub token/provider key in client code or present a client-only echo as a real bot response.
+- **First implementation scope:** read-only published-catalogue audit task, durable task states/history, pinned commit provenance, explicit unknown/blocked states, bounded/idempotent requests, and zero paid-provider budget.
+- **Safety boundary:** no article mutation, publish dispatch, merge, or gate changes in the first slice. Approval for later repairs must be server-verified and bound to an immutable proposal hash.
+- **Evidence:** interface audit in `BOAT/CONTROL_CENTER_INTERFACE_AUDIT.md`; existing PR #35 branch-head checks passed in runs 38136303910 and 38136303936. Those checks do not validate a backend, which is not yet implemented.
