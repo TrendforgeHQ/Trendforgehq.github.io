@@ -17,7 +17,7 @@ export default function CommentsWidget({ articleSlug }: CommentsWidgetProps) {
     script.src = 'https://utteranc.es/client.js';
     script.async = true;
     script.crossOrigin = 'anonymous';
-    script.setAttribute('repo', 'WebTooler/Trendforge');
+    script.setAttribute('repo', 'TrendforgeHQ/Trendforgehq.github.io');
     script.setAttribute('issue-term', 'pathname');
     script.setAttribute('label', 'comments');
     script.setAttribute('theme', 'github-light');
@@ -38,7 +38,7 @@ export default function CommentsWidget({ articleSlug }: CommentsWidgetProps) {
     const pageUrl = `${window.location.origin}${window.location.pathname}`;
     const title = `Comment: ${document.title.replace(/\s*[|·-]\s*TrendForge.*$/i, '').trim()}`;
     const body = `${text}\n\n---\nArticle: ${pageUrl}`;
-    const issueUrl = `https://github.com/WebTooler/Trendforge/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    const issueUrl = `https://github.com/TrendforgeHQ/Trendforgehq.github.io/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
     window.open(issueUrl, '_blank', 'noopener,noreferrer');
   };
 
