@@ -181,7 +181,7 @@ OUTPUT FORMAT: Return ONLY one valid JSON object with exactly three string keys:
   // Reject exact consecutive sentence duplication here so the adaptive queue can try
   // the next evidence-qualified candidate instead of failing the entire publication run
   // at the later repository-wide quality gate. This does not weaken that gate.
-  const normalizedSentences=generated.content.split(/(?<=[.!?])\\s+/).map(sentence=>sentence.toLowerCase().replace(/[\\s`*_#>\\[\\]().,!?;:'\"—–-]+/g,' ').trim()).filter(Boolean);
+  const normalizedSentences=generated.content.split(/(?<=[.!?])\s+/).map(sentence=>sentence.toLowerCase().replace(/[\s`*_#>\[\]().,!?;:'"—–-]+/g,' ').trim()).filter(Boolean);
   const hasConsecutiveDuplicate=normalizedSentences.some((sentence,index)=>index>0 && sentence.length>=50 && sentence===normalizedSentences[index-1]);
   if(hasConsecutiveDuplicate){console.log('Generated candidate contains a consecutive duplicate sentence; rejecting this candidate so the adaptive queue can continue.');process.exit(0);}
   if(existingTitles.has(generated.title.toLowerCase().trim())){console.log('Generated article title duplicates an existing article; publication blocked.');process.exit(0);}
