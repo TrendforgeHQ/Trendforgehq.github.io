@@ -60,7 +60,7 @@ export default function CommentsWidget({ articleSlug }: CommentsWidgetProps) {
           maxLength={2000}
         />
         <button type="button" className={styles.submit} onClick={submitComment} disabled={!comment.trim()}>
-          Continue to GitHub
+          Post comment
         </button>
       </div>
 
