@@ -178,6 +178,12 @@ OUTPUT FORMAT: Return ONLY one valid JSON object with exactly three string keys:
   console.log(`Article generation provider: ${output.provider}`);
   let generated:{title:string;description:string;content:string};try{generated=parseModelJson(output.text);}catch(e){console.log(`${e instanceof Error?e.message:String(e)}; publishing blocked.`);process.exit(0);}
   if(!generated.title?.trim()||!generated.description?.trim()||!generated.content?.trim()){console.log('AI output is missing required article fields; publishing blocked.');process.exit(0);}
+  // Reject exact consecutive sentence duplication here so the adaptive queue can try
+  // the next evidence-qualified candidate instead of failing the entire publication run
+  // at the later repository-wide quality gate. This does not weaken that gate.
+  const normalizedSentences=generated.content.split(/(?<=[.!?])\\s+/).map(sentence=>sentence.toLowerCase().replace(/[\\s`*_#>\\[\\]().,!?;:'\"—–-]+/g,' ').trim()).filter(Boolean);
+  const hasConsecutiveDuplicate=normalizedSentences.some((sentence,index)=>index>0 && sentence.length>=50 && sentence===normalizedSentences[index-1]);
+  if(hasConsecutiveDuplicate){console.log('Generated candidate contains a consecutive duplicate sentence; rejecting this candidate so the adaptive queue can continue.');process.exit(0);}
   if(existingTitles.has(generated.title.toLowerCase().trim())){console.log('Generated article title duplicates an existing article; publication blocked.');process.exit(0);}
   const generatedDuplicate=existingTopics.map(text=>semanticDuplicate(`${generated.title} ${generated.description} ${generated.content.slice(0,5000)}`,text)).find(x=>x.duplicate);if(generatedDuplicate){console.log(`Generated article is semantically duplicate; shared concepts: ${generatedDuplicate.sharedConcepts.join(', ')}; entities: ${generatedDuplicate.sharedEntities.join(', ')}; shared phrases: ${generatedDuplicate.sharedPhrases}. Publication blocked.`);process.exit(0);}
   const article={...generated,slug:slugify(generated.title),category:brief.category,sources:brief.sources.map(s=>({title:s.title,url:s.url})),generatedAt:new Date().toISOString()};
