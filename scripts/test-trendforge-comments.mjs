@@ -30,11 +30,11 @@ for (const flag of protectedFlags) {
 }
 
 if (policy.provider !== 'utterances') throw new Error('Unexpected comments provider');
-if (policy.repository !== 'WebTooler/Trendforge') throw new Error('Comments repository mismatch');
+if (policy.repository !== 'TrendforgeHQ/Trendforgehq.github.io') throw new Error('Comments repository mismatch');
 if (policy.mapping !== 'pathname') throw new Error('Comments must map to article pathname');
 if (policy.label !== 'comments') throw new Error('Comments label mismatch');
 if (!component.includes("https://utteranc.es/client.js")) throw new Error('Utterances client missing');
-if (!component.includes("setAttribute('repo', 'WebTooler/Trendforge')")) throw new Error('Utterances repository missing');
+if (!component.includes("setAttribute('repo', 'TrendforgeHQ/Trendforgehq.github.io')")) throw new Error('Utterances repository missing');
 if (!component.includes("setAttribute('issue-term', 'pathname')")) throw new Error('Pathname mapping missing');
 if (!component.includes("setAttribute('label', 'comments')")) throw new Error('Comments label missing');
 if (component.includes("fetch(") || component.includes("/api/")) throw new Error('Comments widget must not call TrendForge APIs');

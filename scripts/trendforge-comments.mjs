@@ -2,7 +2,7 @@ export const commentsPolicy = Object.freeze({
   version: 1,
   mode: 'external-community-layer',
   provider: 'utterances',
-  repository: 'WebTooler/Trendforge',
+  repository: 'TrendforgeHQ/Trendforgehq.github.io',
   mapping: 'pathname',
   label: 'comments',
   influencesResearch: false,
