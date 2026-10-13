@@ -1,6 +1,15 @@
 name: TrendForge Comments
 
 on:
+  pull_request:
+    paths:
+      - "app/components/CommentsWidget.tsx"
+      - "app/components/CommentsWidget.module.css"
+      - "app/article/[slug]/page.tsx"
+      - "scripts/trendforge-comments.mjs"
+      - "scripts/test-trendforge-comments.mjs"
+      - "package.json"
+      - ".github/workflows/comments.yml"
   push:
     branches: ["main"]
     paths:
