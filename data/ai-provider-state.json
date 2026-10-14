@@ -2,33 +2,14 @@
   "version": 10,
   "providers": {
     "Groq": {
-      "failures": 130,
+      "failures": 131,
       "quotaBlockedUntil": 0,
-      "lastStatus": 200,
-      "lastError": null,
-      "lastClass": "success",
+      "lastStatus": 400,
+      "lastError": "400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\\"title\\\":\\\"Ethereum and Bitcoin Dip After Hotter‑than‑Expected Inflation Data\\\",\\\"description\\\":\\\"The morning of October 14, 2026 saw a decline in Bitcoin and Ethereum prices following a CPI report that surprised economists, shifting expectations on Fed policy and eroding recent gains in the cr",
+      "lastClass": "request",
       "successes": 195,
       "lastSuccessAt": "2026-10-14T10:54:13.601Z",
       "history": [
-        {
-          "at": 1791775012753,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 999,
-          "usage": {
-            "queue_time": 0.200482826,
-            "prompt_tokens": 1699,
-            "prompt_time": 0.114368745,
-            "completion_tokens": 413,
-            "completion_time": 0.433926871,
-            "total_tokens": 2112,
-            "total_time": 0.548295616,
-            "completion_tokens_details": {
-              "reasoning_tokens": 258
-            }
-          }
-        },
         {
           "at": 1791775025392,
           "ok": true,
@@ -389,6 +370,12 @@
               "reasoning_tokens": 173
             }
           }
+        },
+        {
+          "at": 1791994430824,
+          "ok": false,
+          "class": "request",
+          "status": 400
         }
       ],
       "lastLatencyMs": 758,
@@ -406,18 +393,12 @@
       }
     },
     "Gemini": {
-      "failures": 83,
-      "quotaBlockedUntil": 1791850096233,
+      "failures": 84,
+      "quotaBlockedUntil": 1791994559843,
       "lastStatus": 503,
       "lastError": "503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "lastClass": "server",
       "history": [
-        {
-          "at": 1791169386102,
-          "ok": false,
-          "class": "error",
-          "status": 200
-        },
         {
           "at": 1791243111022,
           "ok": false,
@@ -567,6 +548,12 @@
         },
         {
           "at": 1791849976233,
+          "ok": false,
+          "class": "server",
+          "status": 503
+        },
+        {
+          "at": 1791994439843,
           "ok": false,
           "class": "server",
           "status": 503
@@ -739,15 +726,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 17,
-      "lastSuccessAt": "2026-10-11T11:50:49.979Z",
+      "successes": 18,
+      "lastSuccessAt": "2026-10-14T16:14:56.137Z",
       "history": [
-        {
-          "at": 1791113599370,
-          "ok": false,
-          "class": "transient",
-          "status": 200
-        },
         {
           "at": 1791130337740,
           "ok": false,
@@ -885,22 +866,40 @@
             },
             "cached_tokens": 144
           }
+        },
+        {
+          "at": 1791994496137,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 55979,
+          "usage": {
+            "billed_units": {
+              "input_tokens": 4891,
+              "output_tokens": 516
+            },
+            "tokens": {
+              "input_tokens": 5061,
+              "output_tokens": 517
+            },
+            "cached_tokens": 144
+          }
         }
       ],
-      "lastLatencyMs": 23490,
+      "lastLatencyMs": 55979,
       "lastUsage": {
         "billed_units": {
-          "input_tokens": 5073,
-          "output_tokens": 484
+          "input_tokens": 4891,
+          "output_tokens": 516
         },
         "tokens": {
-          "input_tokens": 5243,
-          "output_tokens": 485
+          "input_tokens": 5061,
+          "output_tokens": 517
         },
         "cached_tokens": 144
       }
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-14T10:54:13.601Z"
+  "updatedAt": "2026-10-14T16:14:56.137Z"
 }
