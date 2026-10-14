@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T17:35:10.811Z",
+  "updatedAt": "2026-10-14T21:55:55.830Z",
   "mode": "shadow",
   "policy": {
     "observationalOnly": true,
@@ -12,7 +12,7 @@
     "minimumPerformanceRuns": 5
   },
   "metrics": {
-    "runCount": 97,
+    "runCount": 98,
     "topicCount": 500,
     "articleCount": 56,
     "latestEditorialScore": 77,
@@ -23,15 +23,15 @@
     "publishCandidateRate": 0
   },
   "changes": {
-    "editorialScore": 1,
+    "editorialScore": 0,
     "claimConfidence": 0,
-    "evidencePassRate": 3
+    "evidencePassRate": 0
   },
   "providers": {
     "Cerebras": {
       "successRate": 0,
       "successes": 0,
-      "failures": 679,
+      "failures": 686,
       "cooldownRuns": 0,
       "latestStatus": 402,
       "latestClass": "error"
@@ -46,24 +46,24 @@
     },
     "Cohere": {
       "successRate": 12,
-      "successes": 1233,
-      "failures": 9149,
+      "successes": 1251,
+      "failures": 9292,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
       "successRate": 1,
-      "successes": 33,
-      "failures": 4925,
+      "successes": 36,
+      "failures": 5009,
       "cooldownRuns": 4,
       "latestStatus": 503,
       "latestClass": "server"
     },
     "Groq": {
       "successRate": 52,
-      "successes": 8812,
-      "failures": 8136,
+      "successes": 9007,
+      "failures": 8267,
       "cooldownRuns": 2,
       "latestStatus": 400,
       "latestClass": "request"
@@ -71,15 +71,15 @@
     "OpenAI": {
       "successRate": 0,
       "successes": 0,
-      "failures": 291,
+      "failures": 294,
       "cooldownRuns": 0,
       "latestStatus": 429,
       "latestClass": "quota"
     },
     "OpenRouter": {
       "successRate": 3,
-      "successes": 183,
-      "failures": 6875,
+      "successes": 185,
+      "failures": 6991,
       "cooldownRuns": 0,
       "latestStatus": 0,
       "latestClass": "transient"
@@ -222,7 +222,7 @@
       "id": "editorial-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Average editorial score changed by +1 points versus the previous run."
+      "detail": "Average editorial score changed by +0 points versus the previous run."
     },
     {
       "id": "claim-trend",
@@ -234,7 +234,7 @@
       "id": "evidence-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Evidence pass rate changed by +3 percentage points versus the previous run."
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run."
     },
     {
       "id": "current-bottlenecks",
@@ -249,7 +249,7 @@
     "mode": "shadow"
   },
   "source": {
-    "memoryRuns": 97,
+    "memoryRuns": 98,
     "learningVersion": 2,
     "experimentationVersion": 1
   }
