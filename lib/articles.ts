@@ -415,6 +415,39 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "army-s-gatekeeper-program-promises-minutes-long-software-approval",
+    "title": "Army’s Gatekeeper Program Promises Minutes‑Long Software Approval",
+    "description": "The Army’s new cybersecurity sandbox, Project Gatekeeper, aims to replace months‑long approval cycles with a rapid, automated test that still protects networks. The platform will run on Army cloud, use GSA Login.gov for access, and give developers instant pass or detailed feedback.",
+    "category": "Technology",
+    "date": "2026-10-14",
+    "publishedAt": "2026-10-14T10:54:11.414Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## A New Testing Sandbox for Commercial Software\nThe Army’s Project Gatekeeper will launch in October with a dedicated sandbox that runs on Army cloud but is isolated from operational networks. Companies can upload their code without needing a current Army contract or a program manager sponsor, and the system will assess the software for security vulnerabilities.",
+      "## From Months to Minutes\nOfficials say the new process will cut the time required for software approval from months to “minutes” without sacrificing security. In a live demonstration, acting CIO Gabe Chiulli described success as a company logging in, submitting code, and receiving a green check mark from the pipeline within minutes.",
+      "## How the Process Works\nDevelopers still need a Common Access Card to access the platform. The Army is finalizing a partnership with the General Services Administration to use Login.gov, a public‑sector login system.In minutes, the automated system will either tell the company its software passed the test or give detailed, actionable feedback explaining why it failed.",
+      "## Why It Matters\nCompare that with the current, cumbersome clearance process that can take days or weeks – stalling some software projects for as long as nine months, Chiulli and other officials said. The process is criticized for inconsistent cybersecurity practices, lack of transparency for contractors, and limited visibility for Army leaders. Gatekeeper is intended to replace “weird, janky” arrangements with a standardized testing workflow that lets developers identify and correct vulnerabilities before the software moves toward use on Army networks.",
+      "## What to Watch\nThe platform’s effectiveness will depend on its ability to maintain rigorous security while scaling to many developers. Observers will also track how the new Login.gov integration affects access for non‑Army contractors and whether the sandbox can handle the breadth of commercial software types the Army seeks.",
+      "## Practical Takeaway\nFor software vendors, Gatekeeper offers a faster route to Army procurement, but they must still obtain a Common Access Card and navigate the initial login process. The Army’s promise of minutes‑long approvals hinges on the sandbox’s automated assessments and the clarity of the feedback it provides."
+    ],
+    "sources": [
+      {
+        "title": "Army’s Project Gatekeeper aims to cut software approval times from months to ‘minutes’ - Breaking Defense",
+        "url": "https://breakingdefense.com/2026/10/armys-project-gatekeeper-aims-to-cut-software-approval-times-from-months-to-minutes/"
+      },
+      {
+        "title": "Army Software Can Take 8 Months to Get Working. A New System Aims to Speed Things Up. - Military.com",
+        "url": "https://www.military.com/army-cio-gabe-chiulli-targets-months-long-software-delays-with-gatekeeper"
+      }
+    ],
+    "image": "/images/articles/army-s-gatekeeper-program-promises-minutes-long-software-approval.1024x576.png",
+    "imageAlt": "Editorial image for Army’s Gatekeeper Program Promises Minutes‑Long Software Approval",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "beyond-obscurity-navigating-the-dual-eras-of-drone-threats-and-ai-driven-vulnerabilities",
     "title": "Beyond Obscurity: Navigating the Dual Eras of Drone Threats and AI-Driven Vulnerabilities",
     "description": "An editorial analysis of how widespread drone risks and AI-driven automated analysis are dismantling traditional physical and digital reliance on hidden defenses.",
