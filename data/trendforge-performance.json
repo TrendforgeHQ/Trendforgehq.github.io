@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T17:19:49.947Z",
+  "updatedAt": "2026-10-15T21:44:15.664Z",
   "mode": "shadow",
   "policy": {
     "observationalOnly": true,
@@ -12,7 +12,7 @@
     "minimumPerformanceRuns": 5
   },
   "metrics": {
-    "runCount": 101,
+    "runCount": 102,
     "topicCount": 500,
     "articleCount": 57,
     "latestEditorialScore": 76,
@@ -24,14 +24,14 @@
   },
   "changes": {
     "editorialScore": 0,
-    "claimConfidence": -8,
+    "claimConfidence": 0,
     "evidencePassRate": 0
   },
   "providers": {
     "Cerebras": {
       "successRate": 0,
       "successes": 0,
-      "failures": 707,
+      "failures": 714,
       "cooldownRuns": 0,
       "latestStatus": 402,
       "latestClass": "error"
@@ -46,24 +46,24 @@
     },
     "Cohere": {
       "successRate": 12,
-      "successes": 1305,
-      "failures": 9721,
+      "successes": 1323,
+      "failures": 9864,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
       "successRate": 1,
-      "successes": 45,
-      "failures": 5261,
+      "successes": 48,
+      "failures": 5345,
       "cooldownRuns": 4,
       "latestStatus": 503,
       "latestClass": "server"
     },
     "Groq": {
       "successRate": 53,
-      "successes": 9610,
-      "failures": 8660,
+      "successes": 9815,
+      "failures": 8791,
       "cooldownRuns": 2,
       "latestStatus": 200,
       "latestClass": "success"
@@ -71,15 +71,15 @@
     "OpenAI": {
       "successRate": 0,
       "successes": 0,
-      "failures": 303,
+      "failures": 306,
       "cooldownRuns": 0,
       "latestStatus": 429,
       "latestClass": "quota"
     },
     "OpenRouter": {
       "successRate": 3,
-      "successes": 191,
-      "failures": 7339,
+      "successes": 193,
+      "failures": 7455,
       "cooldownRuns": 0,
       "latestStatus": 0,
       "latestClass": "transient"
@@ -228,7 +228,7 @@
       "id": "claim-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Average claim confidence changed by -8 points versus the previous run."
+      "detail": "Average claim confidence changed by +0 points versus the previous run."
     },
     {
       "id": "evidence-trend",
@@ -249,7 +249,7 @@
     "mode": "shadow"
   },
   "source": {
-    "memoryRuns": 101,
+    "memoryRuns": 102,
     "learningVersion": 2,
     "experimentationVersion": 1
   }
