@@ -4,50 +4,12 @@
     "Groq": {
       "failures": 131,
       "quotaBlockedUntil": 0,
-      "lastStatus": 400,
-      "lastError": "400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\\"title\\\":\\\"Ethereum and Bitcoin Dip After Hotter‑than‑Expected Inflation Data\\\",\\\"description\\\":\\\"The morning of October 14, 2026 saw a decline in Bitcoin and Ethereum prices following a CPI report that surprised economists, shifting expectations on Fed policy and eroding recent gains in the cr",
-      "lastClass": "request",
-      "successes": 195,
-      "lastSuccessAt": "2026-10-14T10:54:13.601Z",
+      "lastStatus": 200,
+      "lastError": null,
+      "lastClass": "success",
+      "successes": 197,
+      "lastSuccessAt": "2026-10-15T02:23:33.702Z",
       "history": [
-        {
-          "at": 1791775025392,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 12306,
-          "usage": {
-            "queue_time": 0.095267435,
-            "prompt_tokens": 1355,
-            "prompt_time": 0.080134392,
-            "completion_tokens": 381,
-            "completion_time": 0.399481755,
-            "total_tokens": 1736,
-            "total_time": 0.479616147,
-            "completion_tokens_details": {
-              "reasoning_tokens": 290
-            }
-          }
-        },
-        {
-          "at": 1791813315369,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1205,
-          "usage": {
-            "queue_time": 0.082473329,
-            "prompt_tokens": 5023,
-            "prompt_time": 0.306242485,
-            "completion_tokens": 568,
-            "completion_time": 0.651478214,
-            "total_tokens": 5591,
-            "total_time": 0.957720699,
-            "completion_tokens_details": {
-              "reasoning_tokens": 25
-            }
-          }
-        },
         {
           "at": 1791813316902,
           "ok": true,
@@ -376,19 +338,57 @@
           "ok": false,
           "class": "request",
           "status": 400
+        },
+        {
+          "at": 1792031009926,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 1648,
+          "usage": {
+            "queue_time": 0.22263414,
+            "prompt_tokens": 5029,
+            "prompt_time": 0.364147357,
+            "completion_tokens": 744,
+            "completion_time": 0.801328432,
+            "total_tokens": 5773,
+            "total_time": 1.165475789,
+            "completion_tokens_details": {
+              "reasoning_tokens": 22
+            }
+          }
+        },
+        {
+          "at": 1792031013702,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 2492,
+          "usage": {
+            "queue_time": 0.115267499,
+            "prompt_tokens": 2043,
+            "prompt_time": 0.119401771,
+            "completion_tokens": 520,
+            "completion_time": 0.555111223,
+            "total_tokens": 2563,
+            "total_time": 0.674512994,
+            "completion_tokens_details": {
+              "reasoning_tokens": 382
+            }
+          }
         }
       ],
-      "lastLatencyMs": 758,
+      "lastLatencyMs": 2492,
       "lastUsage": {
-        "queue_time": 0.180384419,
-        "prompt_tokens": 1356,
-        "prompt_time": 0.106722666,
-        "completion_tokens": 309,
-        "completion_time": 0.33676038,
-        "total_tokens": 1665,
-        "total_time": 0.443483046,
+        "queue_time": 0.115267499,
+        "prompt_tokens": 2043,
+        "prompt_time": 0.119401771,
+        "completion_tokens": 520,
+        "completion_time": 0.555111223,
+        "total_tokens": 2563,
+        "total_time": 0.674512994,
         "completion_tokens_details": {
-          "reasoning_tokens": 173
+          "reasoning_tokens": 382
         }
       }
     },
@@ -901,5 +901,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-14T16:14:56.137Z"
+  "updatedAt": "2026-10-15T02:23:33.702Z"
 }
