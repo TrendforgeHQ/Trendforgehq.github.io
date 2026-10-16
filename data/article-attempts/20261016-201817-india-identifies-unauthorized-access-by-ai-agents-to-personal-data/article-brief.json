@@ -1,0 +1,727 @@
+{
+  "generatedAt": "2026-10-16T20:18:00.262Z",
+  "brief": {
+    "title": "India becomes the latest country to report rogue AI agent activity",
+    "category": "AI",
+    "angle": "Explain what changed, why it matters, what is known versus uncertain, and what readers should watch next. Use only the retrieved evidence passages as factual context.",
+    "keyPoints": [
+      "The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles.",
+      "Cross-check the development across 2 independent reachable source domains. Prefer primary/official evidence when available, while retaining independent secondary reporting for corroboration."
+    ],
+    "sources": [
+      {
+        "title": "India becomes the latest country to report rogue AI agent activity",
+        "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+        "publishedAt": "2026-10-16T17:52:24.000Z"
+      },
+      {
+        "title": "When AI agents go rogue: Australia breach offers warning for countries like India - The Hindu",
+        "url": "https://www.thehindu.com/news/national/when-ai-agents-go-rogue-australia-breach-offers-warning-for-countries-like-india/article71515799.ece",
+        "publishedAt": "2026-10-16T17:52:24.000Z"
+      }
+    ]
+  },
+  "prompt": "Write an original English-language editorial article for TrendForge.\n\nDo not copy, paraphrase sentence-by-sentence, or imitate any source article.\n\nSynthesize the supplied facts and explain why they matter, but keep the evidence boundary hard: the supplied evidence is the only source of factual premises.\n\nUse clear H2 sections, short paragraphs, and useful editorial context where appropriate.\n\nDo not invent facts, quotes, statistics, dates, product capabilities, sources, motives, causes, outcomes, comparisons, or future developments.\n\nEvery checkable factual claim must be directly traceable to the supplied evidence. Preserve attribution when the source is expressing a person or publisher opinion.\n\nEditorial analysis, implications, and recommendations are allowed only when clearly framed as analysis or advice and when they do not introduce a new factual premise. Do not turn an inference into a fact.\n\nA 400-900 word fully grounded article is acceptable. When the evidence is rich, expand by covering additional supported details, attributed statements, context explicitly present in the evidence, and clearly labeled implications—not by adding outside knowledge or filler.\n\nPrefer a complete 500-800 word article when the evidence supports it, but never pad solely to hit a word target.\n\nReturn clean article prose with Markdown H2 headings (## Heading). Do not return HTML tags.\n\nTitle: India becomes the latest country to report rogue AI agent activity\n\nCategory: AI\n\nEditorial angle: Explain what changed, why it matters, what is known versus uncertain, and what readers should watch next. Use only the retrieved evidence passages as factual context.\n\nKey points:\n- The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles.\n- Cross-check the development across 2 independent reachable source domains. Prefer primary/official evidence when available, while retaining independent secondary reporting for corroboration.\n\nSources:\n- India becomes the latest country to report rogue AI agent activity: https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/\n- When AI agents go rogue: Australia breach offers warning for countries like India - The Hindu: https://www.thehindu.com/news/national/when-ai-agents-go-rogue-australia-breach-offers-warning-for-countries-like-india/article71515799.eceRETRIEVED EVIDENCE PACK — THIS IS THE ONLY FACTUAL KNOWLEDGE YOU MAY USE:SOURCE S1\nPublisher/article: India becomes the latest country to report rogue AI agent activity\nURL: https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/\nRole: DIRECT_REPORTING\n[S1-P1] AI agents from multiple providers accessed personal data and confidential material at Indian organizations during research and testing, India’s cybersecurity agency said Thursday.\\n[S1-P2] Last month, OpenAI apologized to Australia after its agents accessed four government websites, including a Medicare statistics portal.\\n[S1-P3] CERT-In described no such hacking in India, where the agents appear to have simply used the access left lying around.\\n\\nSOURCE S2\nPublisher/article: When AI agents go rogue: Australia breach offers warning for countries like India - The Hindu\nURL: https://www.thehindu.com/news/national/when-ai-agents-go-rogue-australia-breach-offers-warning-for-countries-like-india/article71515799.ece\nRole: CORROBORATION\n[S2-P1] Srinivas Padmanabuni, Co-founder and CTO of AiEnsured, said.\\n[S2-P2] But researchers argue that international declarations alone may not be enough.\\n[S2-P3] For India, the issue is particularly significant because the country&#039;s digital infrastructure increasingly spans government services, financial systems, public databases and critical infrastructure.GROUNDING CONTRACT:- Every material factual statement must be supported by at least one evidence passage above.- Do not use model memory or outside knowledge to add facts, prices, numbers, dates, names, quotes, product details or causal claims.- If a detail is not explicitly supported by the evidence pack, omit it.- Preserve uncertainty and attribution when the evidence is uncertain or attributed.- Do not combine different stories merely because they share a keyword.- Do not invent quotations or statistics.- The evidence-pack source IDs are internal and must NOT appear in the published prose.- Prefer a smaller, fully grounded article over a longer article with unsupported context.- The Editorial Evidence Brief is a derived map, not an additional factual source. If any brief summary conflicts with a supporting passage, follow the passage and preserve uncertainty.OUTPUT FORMAT: Return ONLY one valid JSON object with exactly three string keys: title, description, content. No markdown fences, no commentary. IMPORTANT: title must be a descriptive original headline between 20 and 110 characters. description must be at least 80 characters. Evidence-mode word range: 231-420 words. Do not pad with unsupported material. Write an original synthesis and do not reproduce source sentences, paragraphs, or headlines.",
+  "blueprint": {
+    "version": 3,
+    "mode": "narrow",
+    "targetWords": {
+      "min": 231,
+      "max": 420,
+      "soft": 326
+    },
+    "h2Guidance": {
+      "preferredMin": 1,
+      "preferredMax": 2,
+      "writerDecides": true,
+      "noPadding": true
+    },
+    "maxH2": 2,
+    "requireCrossCheck": false,
+    "allowContextSection": false,
+    "sectionPlan": [
+      "development",
+      "supported detail",
+      "evidence-backed synthesis"
+    ],
+    "synthesis": {
+      "allowed": true,
+      "maxWords": 73,
+      "maxStatements": 3,
+      "allowedFactIds": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6",
+        "F7",
+        "F8",
+        "F9",
+        "F10",
+        "F12"
+      ],
+      "heading": "What the Evidence Shows"
+    },
+    "evidenceCapacity": {
+      "sourceCount": 2,
+      "independentFamilies": 2,
+      "totalPassages": 16,
+      "totalChars": 2556,
+      "level": "low",
+      "rawPassageCount": 48,
+      "relevantPassageCount": 11,
+      "supportedClaimCount": 16,
+      "relevantEvidenceDensity": 0.229,
+      "coreFactCount": 11,
+      "coreFactChars": 1463,
+      "maxSupportedWords": 421,
+      "maxFactualClaims": 11
+    },
+    "instructions": [
+      "Stay narrow and factual.",
+      "Use only core story facts first; context facts cannot compensate for missing core facts.",
+      "Do not infer missing context.",
+      "Do not exceed the supported factual claim budget."
+    ],
+    "claimBudget": {
+      "maxFactualClaims": 11
+    }
+  },
+  "articleContract": {
+    "version": 1,
+    "title": "India becomes the latest country to report rogue AI agent activity",
+    "mode": "narrow",
+    "wordBudget": {
+      "min": 231,
+      "max": 420,
+      "soft": 326
+    },
+    "h2Budget": {
+      "preferredMin": 1,
+      "preferredMax": 2
+    },
+    "atomicClaimBudget": 11,
+    "allowedFactIds": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F12"
+    ],
+    "synthesis": {
+      "allowed": true,
+      "maxWords": 73,
+      "maxStatements": 3,
+      "allowedFactIds": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6",
+        "F7",
+        "F8",
+        "F9",
+        "F10",
+        "F12"
+      ]
+    },
+    "rules": {
+      "newFactsInSynthesis": false,
+      "newNumbersInSynthesis": false,
+      "newEntitiesInSynthesis": false,
+      "newCausalityInSynthesis": false
+    }
+  },
+  "sourceRelationship": "same-candidate strong verified evidence",
+  "verifiedEvidenceDomains": [
+    "techcrunch.com",
+    "thehindu.com"
+  ],
+  "storyFactMap": {
+    "version": 1,
+    "story": {
+      "title": "India becomes the latest country to report rogue AI agent activity",
+      "description": ""
+    },
+    "sourceRoles": [
+      {
+        "id": "S1",
+        "role": "DIRECT_REPORTING"
+      },
+      {
+        "id": "S2",
+        "role": "CORROBORATION"
+      }
+    ],
+    "temporal": {
+      "version": 1,
+      "eventDate": null,
+      "eventDateSource": "none",
+      "sources": [
+        {
+          "sourceId": "S1",
+          "sourceDate": null,
+          "temporalStatus": "unknown"
+        },
+        {
+          "sourceId": "S2",
+          "sourceDate": null,
+          "temporalStatus": "unknown"
+        }
+      ]
+    },
+    "facts": [
+      {
+        "factId": "F1",
+        "claimId": "C1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "This makes India the latest stop on what has become a world tour for rogue AI agents.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 2,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F2",
+        "claimId": "C2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "In July, OpenAI’s agents escaped a test environment and hacked French company Hugging Face — kicking off a summer of rogue AI agent activity.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 3,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F3",
+        "claimId": "C3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "Last month, OpenAI apologized to Australia after its agents accessed four government websites, including a Medicare statistics portal.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F4",
+        "claimId": "C4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 1,
+        "passageId": "S1-P1",
+        "text": "AI agents from multiple providers accessed personal data and confidential material at Indian organizations during research and testing, India’s cybersecurity agency said Thursday.",
+        "attribution": true,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F5",
+        "claimId": "C5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 5,
+        "passageId": "S1-P5",
+        "text": "CERT-In described no such hacking in India, where the agents appear to have simply used the access left lying around.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F6",
+        "claimId": "C6",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "For countries such as India, with vast government databases and increasingly digitised public infrastructure, researchers say the incident should serve as a warning.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F7",
+        "claimId": "C7",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "“What happened with, say, an Australian community website can happen with an Indian website or an Indian government system, which would be more crucial,” Dr.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F8",
+        "claimId": "C8",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "Srinivas Padmanabuni, Co-founder and CTO of AiEnsured, said.",
+        "attribution": true,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F9",
+        "claimId": "C9",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 29,
+        "passageId": "S2-P29",
+        "text": "Australia was among 22 countries that earlier this week signed a joint statement calling for global oversight and guardrails for AI development.",
+        "attribution": false,
+        "numbers": [
+          "22"
+        ],
+        "core": true,
+        "specificityScore": 9,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F10",
+        "claimId": "C10",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 29,
+        "passageId": "S2-P29",
+        "text": "But researchers argue that international declarations alone may not be enough.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F11",
+        "claimId": "C11",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 5,
+        "passageId": "S2-P5",
+        "text": "It could become horrible when one major incident happens and somebody steals the secrets of one of the major departments or, say, atomic energy,” he said.",
+        "attribution": true,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 7,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F12",
+        "claimId": "C12",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 30,
+        "passageId": "S2-P30",
+        "text": "For India, the issue is particularly significant because the country&#039;s digital infrastructure increasingly spans government services, financial systems, public databases and critical infrastructure.",
+        "attribution": false,
+        "numbers": [
+          "039"
+        ],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 2,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F13",
+        "claimId": "C13",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 2,
+        "passageId": "S2-P2",
+        "text": "An artificial intelligence agent looking for private encryption keys on an Australian government website has triggered a warning that the next target could be anywhere.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F14",
+        "claimId": "C14",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 7,
+        "passageId": "S2-P7",
+        "text": "As AI agents become increasingly capable of acting independently on the internet, experts say the distinction between an AI system that merely generates information and one that can actively interact with digital infrastructure is becoming critical.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F15",
+        "claimId": "C15",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 33,
+        "passageId": "S2-P33",
+        "text": "The question now is whether governments will treat it as an isolated breach or as an early warning of what autonomous AI could do when its instructions are clear, but its boundaries are not.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      }
+    ],
+    "coreFacts": [
+      {
+        "factId": "F1",
+        "claimId": "C1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "This makes India the latest stop on what has become a world tour for rogue AI agents.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 2,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F2",
+        "claimId": "C2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "In July, OpenAI’s agents escaped a test environment and hacked French company Hugging Face — kicking off a summer of rogue AI agent activity.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 3,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F3",
+        "claimId": "C3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 4,
+        "passageId": "S1-P4",
+        "text": "Last month, OpenAI apologized to Australia after its agents accessed four government websites, including a Medicare statistics portal.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 18,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F4",
+        "claimId": "C4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 1,
+        "passageId": "S1-P1",
+        "text": "AI agents from multiple providers accessed personal data and confidential material at Indian organizations during research and testing, India’s cybersecurity agency said Thursday.",
+        "attribution": true,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F5",
+        "claimId": "C5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "passageIndex": 5,
+        "passageId": "S1-P5",
+        "text": "CERT-In described no such hacking in India, where the agents appear to have simply used the access left lying around.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F6",
+        "claimId": "C6",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "For countries such as India, with vast government databases and increasingly digitised public infrastructure, researchers say the incident should serve as a warning.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F7",
+        "claimId": "C7",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "“What happened with, say, an Australian community website can happen with an Indian website or an Indian government system, which would be more crucial,” Dr.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F8",
+        "claimId": "C8",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 4,
+        "passageId": "S2-P4",
+        "text": "Srinivas Padmanabuni, Co-founder and CTO of AiEnsured, said.",
+        "attribution": true,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 13,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F9",
+        "claimId": "C9",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 29,
+        "passageId": "S2-P29",
+        "text": "Australia was among 22 countries that earlier this week signed a joint statement calling for global oversight and guardrails for AI development.",
+        "attribution": false,
+        "numbers": [
+          "22"
+        ],
+        "core": true,
+        "specificityScore": 9,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F10",
+        "claimId": "C10",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 29,
+        "passageId": "S2-P29",
+        "text": "But researchers argue that international declarations alone may not be enough.",
+        "attribution": false,
+        "numbers": [],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F12",
+        "claimId": "C12",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 30,
+        "passageId": "S2-P30",
+        "text": "For India, the issue is particularly significant because the country&#039;s digital infrastructure increasingly spans government services, financial systems, public databases and critical infrastructure.",
+        "attribution": false,
+        "numbers": [
+          "039"
+        ],
+        "core": true,
+        "specificityScore": 8,
+        "titleOverlap": 2,
+        "descriptionOverlap": 0
+      }
+    ],
+    "contextFacts": [
+      {
+        "factId": "F11",
+        "claimId": "C11",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 5,
+        "passageId": "S2-P5",
+        "text": "It could become horrible when one major incident happens and somebody steals the secrets of one of the major departments or, say, atomic energy,” he said.",
+        "attribution": true,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 7,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F13",
+        "claimId": "C13",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 2,
+        "passageId": "S2-P2",
+        "text": "An artificial intelligence agent looking for private encryption keys on an Australian government website has triggered a warning that the next target could be anywhere.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 1,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F14",
+        "claimId": "C14",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 7,
+        "passageId": "S2-P7",
+        "text": "As AI agents become increasingly capable of acting independently on the internet, experts say the distinction between an AI system that merely generates information and one that can actively interact with digital infrastructure is becoming critical.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      },
+      {
+        "factId": "F15",
+        "claimId": "C15",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "passageIndex": 33,
+        "passageId": "S2-P33",
+        "text": "The question now is whether governments will treat it as an isolated breach or as an early warning of what autonomous AI could do when its instructions are clear, but its boundaries are not.",
+        "attribution": false,
+        "numbers": [],
+        "core": false,
+        "specificityScore": 5,
+        "titleOverlap": 0,
+        "descriptionOverlap": 0
+      }
+    ],
+    "gaps": [],
+    "capacity": {
+      "level": "low",
+      "coreFactCount": 11,
+      "coreFactChars": 1463,
+      "directCoreFactCount": 5,
+      "coreSourceCount": 2,
+      "maxFactualClaims": 11,
+      "maxSupportedWords": 421,
+      "maxBodyWords": 348,
+      "synthesisCapacity": {
+        "allowed": true,
+        "maxWords": 73,
+        "maxStatements": 3,
+        "allowedFactIds": [
+          "F1",
+          "F2",
+          "F3",
+          "F4",
+          "F5",
+          "F6",
+          "F7",
+          "F8",
+          "F9",
+          "F10",
+          "F12"
+        ]
+      }
+    },
+    "policy": {
+      "coreFactsOnlyForCoreNarrative": true,
+      "contextCannotCompensateForCore": true,
+      "sourceRoleRequired": true,
+      "claimToFactMappingRequired": true,
+      "synthesisMustReuseVerifiedFacts": true,
+      "synthesisCannotIntroduceNewPremise": true
+    }
+  },
+  "grounding": {
+    "version": 8,
+    "strongEvidence": true,
+    "sourceCount": 2,
+    "usablePassages": 16,
+    "minimumUsablePassages": 6,
+    "primarySourceCount": 0,
+    "sources": [
+      {
+        "title": "India becomes the latest country to report rogue AI agent activity",
+        "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+        "role": "DIRECT_REPORTING",
+        "kind": "paragraph-evidence",
+        "articleBodyLength": 660,
+        "passages": [
+          "This makes India the latest stop on what has become a world tour for rogue AI agents.",
+          "In July, OpenAI’s agents escaped a test environment and hacked French company Hugging Face — kicking off a summer of rogue AI agent activity.",
+          "Last month, OpenAI apologized to Australia after its agents accessed four government websites, including a Medicare statistics portal.",
+          "AI agents from multiple providers accessed personal data and confidential material at Indian organizations during research and testing, India’s cybersecurity agency said Thursday.",
+          "CERT-In described no such hacking in India, where the agents appear to have simply used the access left lying around."
+        ]
+      },
+      {
+        "title": "When AI agents go rogue: Australia breach offers warning for countries like India - The Hindu",
+        "url": "https://www.thehindu.com/news/national/when-ai-agents-go-rogue-australia-breach-offers-warning-for-countries-like-india/article71515799.ece",
+        "role": "CORROBORATION",
+        "kind": "paragraph-evidence",
+        "articleBodyLength": 1896,
+        "passages": [
+          "For countries such as India, with vast government databases and increasingly digitised public infrastructure, researchers say the incident should serve as a warning.",
+          "“What happened with, say, an Australian community website can happen with an Indian website or an Indian government system, which would be more crucial,” Dr.",
+          "Srinivas Padmanabuni, Co-founder and CTO of AiEnsured, said.",
+          "Australia was among 22 countries that earlier this week signed a joint statement calling for global oversight and guardrails for AI development.",
+          "But researchers argue that international declarations alone may not be enough.",
+          "It could become horrible when one major incident happens and somebody steals the secrets of one of the major departments or, say, atomic energy,” he said.",
+          "For India, the issue is particularly significant because the country&#039;s digital infrastructure increasingly spans government services, financial systems, public databases and critical infrastructure.",
+          "An artificial intelligence agent looking for private encryption keys on an Australian government website has triggered a warning that the next target could be anywhere.",
+          "As AI agents become increasingly capable of acting independently on the internet, experts say the distinction between an AI system that merely generates information and one that can actively interact with digital infrastructure is becoming critical.",
+          "The question now is whether governments will treat it as an isolated breach or as an early warning of what autonomous AI could do when its instructions are clear, but its boundaries are not.",
+          "The incident, in which an autonomous AI system went beyond its intended task and attempted to circumvent security protections, has become a stark example of a growing concern among AI safety researchers: what happens when an AI agent is given a goal but is left to decide for itself how far it should go to achieve it."
+        ]
+      }
+    ]
+  }
+}
