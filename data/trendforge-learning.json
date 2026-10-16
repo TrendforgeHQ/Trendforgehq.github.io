@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T11:52:01.999Z",
+  "updatedAt": "2026-10-16T16:55:05.260Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -11,38 +11,38 @@
     "minimumLearningRuns": 5
   },
   "sample": {
-    "runs": 104,
+    "runs": 105,
     "topics": 500,
     "articles": 57
   },
   "decisions": {
-    "samples": 104,
+    "samples": 105,
     "publishCandidateRate": 0,
-    "reviewRate": 19,
+    "reviewRate": 18,
     "holdRate": 81,
     "rejectRate": 0,
     "strongEvidenceRate": 10,
     "singleSourceReadyRate": 30
   },
   "evidence": {
-    "samples": 104,
+    "samples": 105,
     "passRate": 31,
     "blockRate": 12,
     "strongRate": 7,
     "singleSourceRate": 23
   },
   "claims": {
-    "samples": 104,
-    "passRate": 54,
-    "averageConfidence": 69,
+    "samples": 105,
+    "passRate": 53,
+    "averageConfidence": 68,
     "averageUnsupported": 1,
     "averageClaimsPerArticle": 12
   },
   "providers": {
     "Cerebras": {
-      "samples": 104,
+      "samples": 105,
       "successes": 0,
-      "failures": 728,
+      "failures": 735,
       "successRate": 0,
       "cooldownRuns": 0,
       "latestStatus": 402,
@@ -58,45 +58,45 @@
       "latestClass": "rate_limit"
     },
     "Cohere": {
-      "samples": 104,
-      "successes": 1359,
-      "failures": 10150,
+      "samples": 105,
+      "successes": 1377,
+      "failures": 10293,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
-      "samples": 104,
-      "successes": 54,
-      "failures": 5513,
+      "samples": 105,
+      "successes": 57,
+      "failures": 5597,
       "successRate": 1,
       "cooldownRuns": 4,
       "latestStatus": 503,
       "latestClass": "server"
     },
     "Groq": {
-      "samples": 104,
-      "successes": 10226,
-      "failures": 9053,
+      "samples": 105,
+      "successes": 10432,
+      "failures": 9184,
       "successRate": 53,
       "cooldownRuns": 2,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "OpenAI": {
-      "samples": 104,
+      "samples": 105,
       "successes": 0,
-      "failures": 312,
+      "failures": 315,
       "successRate": 0,
       "cooldownRuns": 0,
       "latestStatus": 429,
       "latestClass": "quota"
     },
     "OpenRouter": {
-      "samples": 104,
-      "successes": 197,
-      "failures": 7687,
+      "samples": 105,
+      "successes": 199,
+      "failures": 7803,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 0,
@@ -200,14 +200,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": -1,
-      "evidenceBlockRate": -5,
-      "claimConfidence": -10,
-      "claimUnsupported": 3,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
+      "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-16T11:51:34.205Z",
-    "previousRunAt": "2026-10-16T04:56:24.356Z"
+    "latestRunAt": "2026-10-16T16:54:36.883Z",
+    "previousRunAt": "2026-10-16T11:51:34.205Z"
   },
   "signals": [
     {
@@ -216,10 +216,10 @@
       "observation": true,
       "detail": "Historical evidence currently contains more single-source candidates than strong multi-source candidates.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
-        "singleSource": 5535,
-        "strong": 1693
+        "singleSource": 5595,
+        "strong": 1710
       }
     },
     {
@@ -228,7 +228,7 @@
       "observation": true,
       "detail": "Claim-verification history contains unsupported claims in at least some observed article runs.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
         "averageUnsupported": 1
       }
@@ -239,7 +239,7 @@
       "observation": true,
       "detail": "Provider success/failure and cooldown history is available for reliability learning.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
         "providers": 7
       }
@@ -248,38 +248,38 @@
       "id": "evidence-pass-rate-change",
       "type": "trend",
       "observation": false,
-      "detail": "Evidence pass rate changed by -1 percentage points versus the previous run.",
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
-        "delta": -1
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by -10 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
-        "delta": -10
+        "delta": 0
       }
     },
     {
       "id": "claim-unsupported-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Unsupported-claim count changed by +3 versus the previous run.",
+      "observation": false,
+      "detail": "Unsupported-claim count changed by +0 versus the previous run.",
       "confidence": "medium",
-      "sampleRuns": 104,
+      "sampleRuns": 105,
       "evidence": {
-        "delta": 3
+        "delta": 0
       }
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-16T04:56:51.019Z",
+    "previousUpdatedAt": "2026-10-16T11:52:01.999Z",
     "previousVersion": 2
   }
 }
