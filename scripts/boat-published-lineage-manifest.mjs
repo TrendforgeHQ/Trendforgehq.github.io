@@ -1,0 +1,147 @@
+import crypto from 'node:crypto';
+import { validateAuthoritativeEvidencePack } from './authoritative-evidence-pack.mjs';
+
+const sha256 = value => crypto.createHash('sha256').update(value).digest('hex');
+const parseJson = (value, label) => {
+  if (typeof value !== 'string' || !value.trim()) throw new Error(label + ' is missing or empty');
+  try { return JSON.parse(value); } catch { throw new Error(label + ' is not valid JSON'); }
+};
+const clean = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+const titleTokens = value => new Set(clean(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').split(/\s+/).filter(token => token.length >= 3));
+const titlesMatch = (a, b) => {
+  const left = titleTokens(a), right = titleTokens(b);
+  return [...left].filter(token => right.has(token)).length >= 2;
+};
+const articleTitleFromMarkdown = markdown => {
+  const match = String(markdown).match(/^title:\s*["']([\s\S]*?)["']\s*$/m);
+  return match ? clean(match[1]) : '';
+};
+
+/**
+ * Build a lineage record using the repository's real data contracts:
+ * current-run marker; v18 claim report; evidence-pack envelope {version,status,candidates};
+ * each candidate is a canonical pack built by authoritative-evidence-pack.mjs.
+ * This records provenance; it does not establish semantic factual support.
+ * Inputs must be exact UTF-8 file contents, without normalization.
+ */
+export function buildPublishedLineageRecord({
+  workflowRun,
+  workflowSha,
+  currentRunArticleJson,
+  articleBytes,
+  claimReportBytes,
+  evidencePackBytes,
+  briefBytes,
+  generatedAt = new Date().toISOString(),
+}) {
+  const run = String(workflowRun ?? '').trim();
+  const sha = String(workflowSha ?? '').trim();
+  if (!run || !/^[0-9]+$/.test(run)) throw new Error('workflowRun must be a numeric GitHub Actions run ID');
+  if (!/^[0-9a-f]{40}$/i.test(sha)) throw new Error('workflowSha must be a 40-character commit SHA');
+  if (typeof articleBytes !== 'string' || !articleBytes.length) throw new Error('articleBytes is missing or empty');
+
+  const current = parseJson(currentRunArticleJson, 'current-run article marker');
+  if (current.generated !== true) throw new Error('current-run article marker does not confirm generation');
+  if (String(current.runId ?? '') !== run) throw new Error('current-run article marker belongs to a different workflow run');
+  const articlePath = String(current.articlePath ?? '');
+  if (!/^content\/articles\/[A-Za-z0-9._-]+\.md$/.test(articlePath) || articlePath.includes('..')) {
+    throw new Error('current-run article path is invalid');
+  }
+  const slug = articlePath.slice('content/articles/'.length, -3);
+  const articleTitle = articleTitleFromMarkdown(articleBytes);
+  if (!articleTitle) throw new Error('article frontmatter title is missing');
+
+  const brief = parseJson(briefBytes, 'article brief');
+  const briefTitle = clean(brief?.brief?.title);
+  if (!briefTitle) throw new Error('article brief title is missing');
+  if (clean(current.briefTitle) !== briefTitle) throw new Error('current-run marker briefTitle does not match current article brief');
+  if (!titlesMatch(articleTitle, briefTitle)) throw new Error('article frontmatter title does not match current article brief');
+
+  const report = parseJson(claimReportBytes, 'claim-verification report');
+  if (report.pass !== true) throw new Error('claim-verification report is not PASS');
+  if (String(report.articlePath ?? '').replace(/^\.\//, '') !== articlePath) {
+    throw new Error('claim-verification report articlePath does not match current-run article');
+  }
+  if (clean(report.articleTitle) !== articleTitle) throw new Error('claim-verification report articleTitle does not match article bytes');
+  if (!Array.isArray(report.claims) || report.claims.length === 0) throw new Error('claim-verification report has no claim records');
+  if (Number(report.claimCount) !== report.claims.length) throw new Error('claim-verification report claimCount does not match claims array');
+
+  const root = parseJson(evidencePackBytes, 'authoritative evidence pack');
+  if (root.version !== 1 || root.status !== 'authoritative' || !Array.isArray(root.candidates)) {
+    throw new Error('authoritative evidence pack does not match the canonical envelope schema');
+  }
+  const matchingCandidates = root.candidates.filter(item => clean(item?.candidate?.title) === briefTitle);
+  if (matchingCandidates.length !== 1) throw new Error('evidence pack must contain exactly one candidate matching the current brief title');
+  const candidate = matchingCandidates[0];
+  if (!validateAuthoritativeEvidencePack(candidate)) throw new Error('matched evidence-pack candidate fails canonical pack validation');
+  if (candidate.sources.length === 0) throw new Error('matched evidence-pack candidate has no sources');
+
+  const parsedGeneratedAt = Date.parse(generatedAt);
+  if (!Number.isFinite(parsedGeneratedAt)) throw new Error('generatedAt must be a valid timestamp');
+
+  return {
+    schemaVersion: 1,
+    slug,
+    articlePath,
+    articleTitle,
+    workflowRun: run,
+    workflowSha: sha.toLowerCase(),
+    generatedAt: new Date(parsedGeneratedAt).toISOString(),
+    provenance: 'captured-by-current-workflow-run',
+    hashes: {
+      articleSha256: sha256(articleBytes),
+      claimReportSha256: sha256(claimReportBytes),
+      evidencePackSha256: sha256(evidencePackBytes),
+      articleBriefSha256: sha256(briefBytes),
+      currentRunMarkerSha256: sha256(currentRunArticleJson),
+    },
+    claimVerification: {
+      status: 'pass',
+      claimCount: report.claims.length,
+      reportGeneratedAt: typeof report.generatedAt === 'string' ? report.generatedAt : null,
+      verificationMode: typeof report.verificationMode === 'string' ? report.verificationMode : null,
+    },
+    evidencePack: {
+      candidateTitle: briefTitle,
+      sourceCount: candidate.sources.length,
+      evidencePackVersion: root.version,
+      evidencePackStatus: root.status,
+    },
+    limits: [
+      'Hashes bind the exact bytes supplied to this builder; they do not independently prove semantic support.',
+      'A claim-verification PASS reflects the existing verifier result and is not a guarantee of universal factual correctness.',
+      'Source freshness and external-source reachability require separate checks.',
+    ],
+  };
+}
+
+/** Build a deterministic one-run manifest and reject duplicate article paths. */
+export function buildPublishedLineageManifest(input) {
+  const records = Array.isArray(input?.records) ? input.records : [];
+  if (!records.length) throw new Error('at least one lineage record input is required');
+  const built = records.map(record => buildPublishedLineageRecord({
+    ...record,
+    workflowRun: input.workflowRun,
+    workflowSha: input.workflowSha,
+    generatedAt: input.generatedAt,
+  }));
+  const paths = new Set();
+  for (const record of built) {
+    if (paths.has(record.articlePath)) throw new Error('duplicate articlePath in one workflow-run manifest');
+    paths.add(record.articlePath);
+  }
+  built.sort((a, b) => a.slug.localeCompare(b.slug));
+  const manifestTime = input.generatedAt ?? new Date().toISOString();
+  if (!Number.isFinite(Date.parse(manifestTime))) throw new Error('generatedAt must be a valid timestamp');
+  return {
+    schemaVersion: 1,
+    workflowRun: String(input.workflowRun),
+    workflowSha: String(input.workflowSha).toLowerCase(),
+    generatedAt: new Date(Date.parse(manifestTime)).toISOString(),
+    records: built,
+    limits: [
+      'This manifest records provenance and exact-byte hashes; it does not certify semantic truth.',
+      'A missing record is UNKNOWN, never an implicit PASS.',
+    ],
+  };
+}
