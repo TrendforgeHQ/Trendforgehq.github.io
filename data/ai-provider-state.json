@@ -400,12 +400,6 @@
       "lastClass": "success",
       "history": [
         {
-          "at": 1791289678113,
-          "ok": false,
-          "class": "transient",
-          "status": 0
-        },
-        {
           "at": 1791324256202,
           "ok": false,
           "class": "error",
@@ -583,23 +577,42 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1792266821356,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 4428,
+          "usage": {
+            "promptTokenCount": 5238,
+            "candidatesTokenCount": 497,
+            "totalTokenCount": 5735,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5238
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 5564,
+      "lastLatencyMs": 4428,
       "lastUsage": {
-        "promptTokenCount": 4464,
-        "candidatesTokenCount": 558,
-        "totalTokenCount": 5022,
+        "promptTokenCount": 5238,
+        "candidatesTokenCount": 497,
+        "totalTokenCount": 5735,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 4464
+            "tokenCount": 5238
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 5,
-      "lastSuccessAt": "2026-10-17T02:08:01.380Z"
+      "successes": 6,
+      "lastSuccessAt": "2026-10-17T19:53:41.356Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -927,5 +940,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-17T14:40:47.899Z"
+  "updatedAt": "2026-10-17T19:53:42.772Z"
 }
