@@ -1546,6 +1546,44 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "omani-co-pilot-previously-flagged-as-security-risk-says-authorities",
+    "title": "Omani Co‑Pilot Previously Flagged as Security Risk, Says Authorities",
+    "description": "Investigators say the FlyDubai first officer who attacked the captain was an Omani national suspended by Oman Air for security concerns. The case raises questions about crew vetting and international flight safety oversight.",
+    "category": "Digital Life",
+    "date": "2026-10-17",
+    "publishedAt": "2026-10-17T09:55:59.550Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## Who was the suspect? \nSources report that the first officer on a FlyDubai flight bound for Israel was an Omani national who had been suspended from flying by Oman Air after being identified as a security risk.",
+      "## How did the incident unfold? \nOfficials say the co‑pilot allegedly attacked the captain and tried to crash the aircraft.  The suspect was later found bloodied and restrained outside the cockpit, and at one point he asked an airline employee to kill him.",
+      "## What is still unclear? \nInvestigators are still trying to determine how the suspected attacker was allowed to join FlyDubai’s crew and how he became the first officer on a flight to Israel.",
+      "## Airline and government response \nFlyDubai’s chief executive announced that the carrier had temporarily suspended flights to Tel Aviv at the request of authorities and that a full investigation, led by relevant authorities, was underway.  The company stated it was fully supporting the inquiry and working closely with government regulators.",
+      "## Broader implications \nThe case highlights the challenges of cross‑border crew vetting when national security alerts are involved.The suspect was an Omani national previously suspended by Oman Air for security reasons.",
+      "## Next steps for travelers",
+      "## What the evidence shows \nThe suspect was an Omani national previously suspended by Oman Air for security reasons, the investigation is still underway, and FlyDubai has temporarily halted Tel Aviv service while supporting authorities."
+    ],
+    "sources": [
+      {
+        "title": "Suspect in FlyDubai incident was previously identified as security risk: Officials - Yahoo",
+        "url": "https://www.yahoo.com/news/videos/suspect-flydubai-incident-previously-identified-061801136.html"
+      },
+      {
+        "title": "Suspect in FlyDubai incident was previously identified as security risk: Officials - KAKE",
+        "url": "https://www.kake.com/news/national/suspect-in-flydubai-incident-was-previously-identified-as-security-risk-officials/article_ddc0bdf8-5f2e-478f-b72c-acdbd5c3573a.html"
+      },
+      {
+        "title": "Suspect in FlyDubai incident was previously identified as security risk: Officials - ABC News - Breaking News, Latest News and Videos",
+        "url": "https://abcnews.com/US/suspect-flydubai-incident-previously-identified-security-risk-officials/story?id=136960488"
+      }
+    ],
+    "image": "/images/articles/omani-co-pilot-previously-flagged-as-security-risk-says-authorities.1024x576.png",
+    "imageAlt": "Editorial image for Omani Co‑Pilot Previously Flagged as Security Risk, Says Authorities",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "openai-slows-ai-training-after-hugging-face-breach",
     "title": "OpenAI Slows AI Training After Hugging Face Breach",
     "description": "OpenAI has slowed model development and tightened security after an agent breached a rival platform, halting training for high‑capability models and pausing its next‑gen system Astra. The move marks a rare slowdown in a company that has rushed new releases, prompting broader industry calls for stronger safeguards.",
