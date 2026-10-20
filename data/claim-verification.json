@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-20T16:05:16.785Z",
-  "articlePath": "content/articles/microsoft-warns-enterprise-ai-agents-are-insider-threats.md",
-  "articleTitle": "Microsoft Warns Enterprise AI Agents Are Insider Threats",
+  "generatedAt": "2026-10-20T21:04:35.227Z",
+  "articlePath": "content/articles/south-korea-s-1-trillion-won-chip-making-gamble-samsung-s-new-pyeongtaek-hub.md",
+  "articleTitle": "South Korea’s 1‑Trillion‑Won Chip‑Making Gamble: Samsung’s New Pyeongtaek Hub",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 1,
-  "usableSourceCount": 1,
-  "claimCount": 15,
-  "editorialCount": 0,
-  "verified": 8,
-  "partial": 6,
+  "sourceCount": 4,
+  "usableSourceCount": 4,
+  "claimCount": 16,
+  "editorialCount": 1,
+  "verified": 13,
+  "partial": 2,
   "unsupported": 1,
   "sourceUnavailable": 0,
-  "averageConfidence": 74,
+  "averageConfidence": 84,
   "pass": false,
   "policy": {
     "verifiedMin": 62,
@@ -45,76 +45,130 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "domain": "techcrunch.com",
-      "passageCount": 21,
-      "articleBodyLength": 3129
+      "title": "Samsung readies $648 billion bet, report says, as AI boom reshapes South Korea - Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/samsung-readies-648-billion-bet-030641266.html",
+      "domain": "finance.yahoo.com",
+      "passageCount": 5,
+      "articleBodyLength": 1304
+    },
+    {
+      "id": "S2",
+      "title": "Samsung to invest in South Korea mega chip-making plan - BBC",
+      "url": "https://www.bbc.com/news/business-64960985",
+      "domain": "bbc.com",
+      "passageCount": 5,
+      "articleBodyLength": 585
+    },
+    {
+      "id": "S3",
+      "title": "South Korea greenlights the world's largest semiconductor hub - Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/south-korea-greenlights-the-worlds-largest-semiconductor-hub-half-the-size-of-beverly-hills-to-house-six-fabs-three-power-plans-and-fab-suppliers",
+      "domain": "tomshardware.com",
+      "passageCount": 5,
+      "articleBodyLength": 590
+    },
+    {
+      "id": "S4",
+      "title": "A visit to Samsung’s massive new semiconductor hub",
+      "url": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "domain": "technologyreview.com",
+      "passageCount": 11,
+      "articleBodyLength": 1599
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Microsoft’s Project Perception began with three classes of agents.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 90,
+      "claim": "Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, including a possible 300 trillion won push to build chip factories in the country's southwest, a media report said.8 billion) push to build chip factories in the country’s southwest.Samsung plans to invest around 300 trillion won ($230.8bn; £189.6bn) over 20 years in the South Korea government's push to develop a mega semiconductor hub in the country.",
+      "status": "unsupported",
+      "classification": "contradicted",
+      "confidence": 24,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Samsung readies $648 billion bet, report says, as AI boom reshapes South Korea - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/samsung-readies-648-billion-bet-030641266.html",
+      "bestDomain": "finance.yahoo.com",
       "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F1",
         "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 73
+        "sourceRole": "CORROBORATION",
+        "score": 20
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F1",
           "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 3
+          "sourceRole": "CORROBORATION",
+          "score": 20,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them.",
-      "bestPassage": "Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
-      ],
+      "evidence": "SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "bestPassage": "SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "matchedPassages": [],
       "sharedTerms": [
-        "microsoft",
-        "project",
-        "perception",
-        "three",
-        "class",
-        "agent"
+        "samsung",
+        "group",
+        "unveil",
+        "sweep",
+        "decade",
+        "long",
+        "invest",
+        "plan",
+        "monday",
+        "pledg",
+        "000",
+        "trillion",
+        "won",
+        "648",
+        "billion",
+        "anchor",
+        "south",
+        "korea",
+        "next",
+        "growth",
+        "cycle",
+        "includ",
+        "possible",
+        "300",
+        "push",
+        "build",
+        "chip",
+        "factori",
+        "the",
+        "country",
+        "southwest",
+        "media",
+        "report",
+        "government",
+        "semiconductor",
+        "hub"
       ],
       "entityShared": [
-        "microsoft",
-        "project",
-        "perception"
+        "samsung",
+        "group",
+        "monday",
+        "south",
+        "korea"
       ],
       "topicShared": [
-        "microsoft",
-        "agent"
+        "samsung",
+        "semiconductor",
+        "hub"
       ],
-      "numericMismatch": false,
+      "numericMismatch": true,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
+        "evidenceUncertain": true,
+        "claimUncertain": true,
         "evidenceAttributed": true,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -127,57 +181,65 @@
     },
     {
       "index": 2,
-      "claim": "A red team acts like a hacker, a blue team spots the red team’s attacks and evaluates the flaws it finds, and a green team works to fix those flaws.",
+      "claim": "South Korea’s Ministry of Trade, Industry and Energy said the mega cluster would be the key base of the country’s semiconductor ecosystem.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 75,
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "bestSource": "Samsung to invest in South Korea mega chip-making plan - BBC",
+      "bestUrl": "https://www.bbc.com/news/business-64960985",
+      "bestDomain": "bbc.com",
+      "sourceId": "S2",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 69
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "score": 98
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 69,
-          "passageIndex": 3
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "CORROBORATION",
+          "score": 98,
+          "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them.",
-      "bestPassage": "Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "\"The mega cluster will be the key base of our semiconductor ecosystem,\" South Korea's Ministry of Trade, Industry and Energy said in a statement on Wednesday .",
+      "bestPassage": "\"The mega cluster will be the key base of our semiconductor ecosystem,\" South Korea's Ministry of Trade, Industry and Energy said in a statement on Wednesday .",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
+        "S2-BODY",
+        "S2-P2"
       ],
       "sharedTerms": [
-        "red",
-        "team",
-        "like",
-        "hacker",
-        "blue",
-        "the",
-        "attack",
+        "south",
+        "korea",
+        "ministry",
+        "trade",
         "and",
-        "find",
-        "green",
-        "fix",
-        "those"
+        "energy",
+        "the",
+        "mega",
+        "cluster",
+        "key",
+        "base",
+        "country",
+        "semiconductor",
+        "ecosystem"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "south",
+        "korea",
+        "ministry",
+        "trade",
+        "energy"
+      ],
       "topicShared": [
-        "like"
+        "semiconductor"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -187,7 +249,7 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -200,154 +262,139 @@
     },
     {
       "index": 3,
-      "claim": "The project was introduced to give enterprises a way to test and secure themselves against the very models that can also be used to attack.",
+      "claim": "The country is home to major microprocessor manufacturers such as SK Hynix.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 62,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "bestSource": "Samsung to invest in South Korea mega chip-making plan - BBC",
+      "bestUrl": "https://www.bbc.com/news/business-64960985",
+      "bestDomain": "bbc.com",
+      "sourceId": "S2",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 23
+        "factId": "F8",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "score": 76
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 23,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 23,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F4",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 23,
+          "factId": "F8",
+          "sourceId": "S2",
+          "sourceRole": "CORROBORATION",
+          "score": 76,
           "passageIndex": 15
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Project Perception was Microsoft&#8217;s answer to powerful hacking models like Anthropic&#8217;s Mythos and Fable and OpenAI&#8217;s security vulnerability scanning system Daybreak. Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them. The platform isolates agents in secure environments and can monitor and stop behavior through hardware, functioning something like a kill switch.",
-      "bestPassage": "Project Perception was Microsoft&#8217;s answer to powerful hacking models like Anthropic&#8217;s Mythos and Fable and OpenAI&#8217;s security vulnerability scanning system Daybreak. Project Perception originally launched three classes of agents: a &#8220;red team&#8221; that acted like hackers and attacked, a &#8220;blue team&#8221; that detected the red team and assessed the vulnerabilities they found, and a &#8220;green team&#8221; tasked with fixing them. The platform isolates agents in secure environments and can monitor and stop behavior through hardware, functioning something like a kill switch.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "South Korea is home to other major microprocessor manufacturers such as SK Hynix.",
+      "bestPassage": "South Korea is home to other major microprocessor manufacturers such as SK Hynix.",
       "matchedPassages": [
-        "S1-BODY"
+        "S2-BODY",
+        "S2-P3"
       ],
       "sharedTerms": [
         "the",
-        "project",
-        "was",
-        "introduc",
-        "enterpris",
-        "and",
-        "secure",
-        "models",
-        "can",
-        "attack"
+        "country",
+        "home",
+        "major",
+        "microprocessor",
+        "manufacturer",
+        "such",
+        "hynix"
       ],
-      "entityShared": [],
-      "topicShared": [
-        "models",
-        "can"
+      "entityShared": [
+        "hynix"
       ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 4,
-      "claim": "The company’s chief executive, Satya Nadella, has cautioned that the very agents enterprises pay for could become insider threats.",
+      "claim": "The science park is described as the world’s largest semiconductor hub, accommodating multiple fabs, power plants, and fab suppliers.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 83,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "bestSource": "South Korea greenlights the world's largest semiconductor hub - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/semiconductors/south-korea-greenlights-the-worlds-largest-semiconductor-hub-half-the-size-of-beverly-hills-to-house-six-fabs-three-power-plans-and-fab-suppliers",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S3",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 83
+        "factId": "F12",
+        "sourceId": "S3",
+        "sourceRole": "CORROBORATION",
+        "score": 87
       },
       "provenanceFactMatches": [
         {
-          "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 4
+          "factId": "F12",
+          "sourceId": "S3",
+          "sourceRole": "CORROBORATION",
+          "score": 87,
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-P11",
-      "evidence": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
-      "bestPassage": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
+      "bestPassageId": "S3-P2",
+      "evidence": "The science park is said to be the world's largest semiconductor hub, accommodating multiple fabs, power plants, and fab suppliers.",
+      "bestPassage": "The science park is said to be the world's largest semiconductor hub, accommodating multiple fabs, power plants, and fab suppliers.",
       "matchedPassages": [
-        "S1-P11",
-        "S1-BODY"
+        "S3-P2",
+        "S3-BODY"
       ],
       "sharedTerms": [
         "the",
-        "satya",
-        "nadella",
-        "has",
-        "agent",
-        "enterpris",
-        "pay",
-        "for",
-        "insider",
-        "threat"
+        "science",
+        "park",
+        "world",
+        "largest",
+        "semiconductor",
+        "hub",
+        "accommodat",
+        "multiple",
+        "fabs",
+        "power",
+        "plant",
+        "and",
+        "fab",
+        "supplier"
       ],
-      "entityShared": [
-        "satya",
-        "nadella"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "agent",
-        "insider",
-        "threat"
+        "semiconductor",
+        "hub"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -361,162 +408,79 @@
     },
     {
       "index": 5,
-      "claim": "He has urged organizations to deploy monitoring systems that are separate from the AI labs that supply the agents.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 81,
+      "claim": "Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea, to meet growing demand for memory chips used in generative‑AI models.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F17",
-        "sourceId": "S1",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 49
+        "score": 93
       },
       "provenanceFactMatches": [
         {
           "factId": "F17",
-          "sourceId": "S1",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 49,
-          "passageIndex": 5
-        },
-        {
-          "factId": "F19",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 44,
-          "passageIndex": 11
-        },
-        {
-          "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 4
+          "score": 93,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF17,S1-FF19,S1-FF11",
-      "evidence": "He wants enterprises to implement separate systems, not controlled by the AI labs, to watch and control the agents that those AI labs&#8217; products launch. The software that monitors agent behavior should be separate from the suppliers of agents, just as auditors should be independent of the organizations they audit. But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
-      "bestPassage": "He wants enterprises to implement separate systems, not controlled by the AI labs, to watch and control the agents that those AI labs&#8217; products launch. The software that monitors agent behavior should be separate from the suppliers of agents, just as auditors should be independent of the organizations they audit. But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
+      "bestPassageId": "S4-BODY",
+      "evidence": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea.",
+      "bestPassage": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea.",
       "matchedPassages": [
-        "S1-BODY"
+        "S4-BODY",
+        "S4-P2"
       ],
       "sharedTerms": [
-        "has",
-        "organization",
-        "deploy",
-        "monitor",
-        "system",
-        "are",
-        "separate",
-        "the",
-        "labs",
-        "agent"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "are",
-        "agent"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": false,
-        "blocked": true
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 6,
-      "claim": "Microsoft’s own Defender product now includes a detection feature that can identify up to 60 types of agents that employees might bring into the workplace, including those from Claude, Codex and OpenClaw.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 92,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F8",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 92
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F8",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 92,
-          "passageIndex": 13
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF8",
-      "evidence": "In addition to Guardian Agents, it has added an agent detection feature to its Microsoft Defender product that can find up to 60 types of agents that employees bring into the workplace, including Claude Code, Codex, and OpenClaw.",
-      "bestPassage": "In addition to Guardian Agents, it has added an agent detection feature to its Microsoft Defender product that can find up to 60 types of agents that employees bring into the workplace, including Claude Code, Codex, and OpenClaw.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P8"
-      ],
-      "sharedTerms": [
-        "microsoft",
-        "defender",
-        "product",
-        "includ",
-        "detection",
-        "feature",
-        "can",
-        "typ",
-        "agent",
-        "worker",
-        "the",
-        "workplace",
-        "claude",
-        "codex",
-        "and",
-        "openclaw"
+        "samsung",
+        "build",
+        "massive",
+        "new",
+        "semiconductor",
+        "manufactur",
+        "complex",
+        "pyeongtaek",
+        "south",
+        "korea",
+        "meet",
+        "grow",
+        "demand",
+        "for",
+        "memory",
+        "chip",
+        "generative",
+        "models"
       ],
       "entityShared": [
-        "microsoft",
-        "defender",
-        "claude",
-        "codex",
-        "openclaw"
+        "samsung",
+        "pyeongtaek",
+        "south",
+        "korea"
       ],
       "topicShared": [
-        "microsoft",
-        "can",
-        "agent"
+        "samsung",
+        "massive",
+        "new",
+        "semiconductor"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -525,75 +489,146 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 7,
-      "claim": "In addition, the software can limit agents’ access to data and systems and can adjust their permissions dynamically based on the task at hand.",
+      "index": 6,
+      "claim": "Three fabs already operate around the clock, and a fourth is coming online.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 87,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S1",
+        "factId": "F18",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 77
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
-          "sourceId": "S1",
+          "factId": "F18",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 77,
-          "passageIndex": 13
+          "score": 94,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "It has also added features that limit agents&#8217; access to data and systems, and dynamically adjust their agent permissions based on the task.",
-      "bestPassage": "It has also added features that limit agents&#8217; access to data and systems, and dynamically adjust their agent permissions based on the task.",
+      "bestPassageId": "S4-P3",
+      "evidence": "Three fabs already operate around the clock, and a fourth is coming online.",
+      "bestPassage": "Three fabs already operate around the clock, and a fourth is coming online.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P9"
+        "S4-P3",
+        "S4-BODY"
       ],
       "sharedTerms": [
-        "addition",
+        "three",
+        "fabs",
+        "operate",
         "the",
-        "software",
-        "can",
-        "limit",
-        "agent",
-        "acces",
-        "data",
+        "clock",
         "and",
-        "system",
-        "adjust",
-        "permission",
-        "dynamically",
-        "bas",
-        "task"
+        "fourth",
+        "com",
+        "online"
       ],
-      "entityShared": [],
-      "topicShared": [
-        "can",
-        "agent"
+      "entityShared": [
+        "three"
       ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "Thousands of workers, dressed head to toe in black with sky‑blue vests, take off helmets bearing their names and fab numbers.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F22",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F22",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 3
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-P7",
+      "evidence": "Thousands of workers, dressed head to toe in black with sky-blue vests, take off helmets bearing their names and fab numbers.",
+      "bestPassage": "Thousands of workers, dressed head to toe in black with sky-blue vests, take off helmets bearing their names and fab numbers.",
+      "matchedPassages": [
+        "S4-P7",
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "thousand",
+        "worker",
+        "dress",
+        "head",
+        "toe",
+        "black",
+        "sky",
+        "blue",
+        "vest",
+        "take",
+        "off",
+        "helmet",
+        "bear",
+        "nam",
+        "and",
+        "fab",
+        "number"
+      ],
+      "entityShared": [
+        "thousand"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -608,67 +643,85 @@
     },
     {
       "index": 8,
-      "claim": "One concrete measure is the requirement for human approval whenever an agent seems to be making risky choices.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 72,
+      "claim": "The build‑out is Samsung’s attempt to reclaim its lead on memory chips after SK Hynix has pulled ahead in the global market for high‑bandwidth models that power Nvidia’s AI accelerators.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S1",
+        "factId": "F20",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 49
+        "score": 100
       },
       "provenanceFactMatches": [
         {
-          "factId": "F10",
-          "sourceId": "S1",
+          "factId": "F20",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 49,
-          "passageIndex": 13
+          "score": 100,
+          "passageIndex": 7
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "That includes requiring human approval if an agent appears to be making risky decisions.",
-      "bestPassage": "That includes requiring human approval if an agent appears to be making risky decisions.",
+      "bestPassageId": "S4-P5",
+      "evidence": "And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips.",
+      "bestPassage": "And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips.",
       "matchedPassages": [
-        "S1-BODY"
+        "S4-P5",
+        "S4-BODY"
       ],
       "sharedTerms": [
-        "one",
         "the",
+        "build",
+        "out",
+        "samsung",
+        "attempt",
+        "reclaim",
+        "its",
+        "lead",
+        "memory",
+        "chip",
+        "hynix",
+        "has",
+        "pull",
+        "ahead",
+        "global",
+        "market",
         "for",
-        "human",
-        "approval",
-        "agent",
-        "mak",
-        "risky"
+        "high",
+        "bandwidth",
+        "models",
+        "power",
+        "nvidia",
+        "accelerator"
       ],
       "entityShared": [
-        "one"
+        "samsung",
+        "hynix",
+        "nvidia"
       ],
       "topicShared": [
-        "agent"
+        "samsung"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
+        "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
-        "certaintyEscalation": true,
+        "certaintyEscalation": false,
         "attributionDropped": false,
-        "blocked": true
+        "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
@@ -678,47 +731,59 @@
     },
     {
       "index": 9,
-      "claim": "The approach mirrors how auditors must remain independent of the organizations they examine.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 49,
+      "claim": "Generative AI models run on powerful GPUs that depend on stacks of specialized memory chips packaged with the processor.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F19",
-        "sourceId": "S1",
+        "factId": "F16",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 43
+        "score": 98
       },
       "provenanceFactMatches": [
         {
-          "factId": "F19",
-          "sourceId": "S1",
+          "factId": "F16",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 43,
-          "passageIndex": 11
+          "score": 98,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The software that monitors agent behavior should be separate from the suppliers of agents, just as auditors should be independent of the organizations they audit.",
-      "bestPassage": "The software that monitors agent behavior should be separate from the suppliers of agents, just as auditors should be independent of the organizations they audit.",
+      "bestPassageId": "S4-P1",
+      "evidence": "Generative AI models run on powerful chips known as GPUs, which depend on stacks of specialized memory chips packaged with the processor.",
+      "bestPassage": "Generative AI models run on powerful chips known as GPUs, which depend on stacks of specialized memory chips packaged with the processor.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P19"
+        "S4-P1",
+        "S4-BODY"
       ],
       "sharedTerms": [
+        "generative",
+        "models",
+        "run",
+        "powerful",
+        "gpus",
+        "depend",
+        "stack",
+        "specializ",
+        "memory",
+        "chip",
+        "packag",
         "the",
-        "auditor",
-        "independent",
-        "organization"
+        "processor"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "generative",
+        "gpus"
+      ],
       "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
@@ -741,129 +806,133 @@
     },
     {
       "index": 10,
-      "claim": "This rule is designed to curb the unpredictability that can arise when models are trained solely to perform tasks rather than to follow organizational norms or judgment.",
+      "claim": "The demand for these memory chips is rising as AI workloads grow.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 67,
+      "confidence": 64,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F6",
-        "sourceId": "S1",
+        "factId": "F17",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 42
+        "score": 38
       },
       "provenanceFactMatches": [
         {
-          "factId": "F6",
-          "sourceId": "S1",
+          "factId": "F17",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 42,
-          "passageIndex": 8
+          "score": 38,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F20",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 38,
+          "passageIndex": 7
+        },
+        {
+          "factId": "F16",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 29,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "They have been trained to achieve tasks, not follow &#8220;organizational norms or judgment.&#8221;",
-      "bestPassage": "They have been trained to achieve tasks, not follow &#8220;organizational norms or judgment.&#8221;",
+      "bestPassageId": "S4-FF17,S4-FF20,S4-FF16",
+      "evidence": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea. And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips. Generative AI models run on powerful chips known as GPUs, which depend on stacks of specialized memory chips packaged with the processor.",
+      "bestPassage": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea. And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips. Generative AI models run on powerful chips known as GPUs, which depend on stacks of specialized memory chips packaged with the processor.",
       "matchedPassages": [
-        "S1-BODY"
+        "S4-BODY"
       ],
       "sharedTerms": [
-        "design",
         "the",
-        "can",
-        "models",
-        "are",
-        "train",
-        "task",
-        "follow",
-        "organizational",
-        "norm",
-        "judgment"
+        "demand",
+        "for",
+        "memory",
+        "chip",
+        "grow"
       ],
       "entityShared": [],
-      "topicShared": [
-        "can",
-        "models",
-        "are"
-      ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
+      "factCoverage": 3,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
       "index": 11,
-      "claim": "Microsoft’s announcement comes amid growing concerns about frontier models that cannot be fully trusted.",
+      "claim": "Samsung’s new complex is therefore positioned to supply the specialized memory required for next‑generation AI hardware.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 59,
+      "confidence": 58,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
+        "factId": "F17",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 34
+        "score": 40
       },
       "provenanceFactMatches": [
         {
-          "factId": "F5",
-          "sourceId": "S1",
+          "factId": "F17",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 34,
-          "passageIndex": 8
+          "score": 40,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "&#8220;Unfortunately, frontier models, regardless of their origin, cannot be trusted,&#8221; she wrote , adding that this isn&#8217;t because they are malicious or easily hacked, but because they are unpredictable.",
-      "bestPassage": "&#8220;Unfortunately, frontier models, regardless of their origin, cannot be trusted,&#8221; she wrote , adding that this isn&#8217;t because they are malicious or easily hacked, but because they are unpredictable.",
+      "bestPassageId": "S4-BODY",
+      "evidence": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea.",
+      "bestPassage": "To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea.",
       "matchedPassages": [
-        "S1-BODY"
+        "S4-BODY",
+        "S4-P2"
       ],
       "sharedTerms": [
-        "microsoft",
-        "com",
-        "grow",
-        "frontier",
-        "models",
-        "cannot",
-        "trust"
+        "samsung",
+        "new",
+        "complex",
+        "the",
+        "specializ",
+        "memory",
+        "for"
       ],
       "entityShared": [
-        "microsoft"
+        "samsung"
       ],
       "topicShared": [
-        "microsoft",
-        "frontier",
-        "models",
-        "trust"
+        "samsung",
+        "new"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -878,7 +947,7 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
+      "factCoverage": 2,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -886,65 +955,74 @@
     },
     {
       "index": 12,
-      "claim": "The company’s own lab develops models, and OpenAI is one of its major cloud customers.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 90,
+      "claim": "Candidates across multiple regions aggressively pitched their areas as the next semiconductor hub, promising to lure giants such as Samsung and SK Hynix.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Samsung readies $648 billion bet, report says, as AI boom reshapes South Korea - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/samsung-readies-648-billion-bet-030641266.html",
+      "bestDomain": "finance.yahoo.com",
       "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
-        "factId": "F15",
+        "factId": "F4",
         "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 80
+        "sourceRole": "CORROBORATION",
+        "score": 100
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
+          "factId": "F4",
           "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 80,
-          "passageIndex": 10
+          "sourceRole": "CORROBORATION",
+          "score": 100,
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "OpenAI is also one of its biggest cloud customers, and Microsoft has its own AI lab developing models.",
-      "bestPassage": "OpenAI is also one of its biggest cloud customers, and Microsoft has its own AI lab developing models.",
+      "bestPassageId": "S1-P4",
+      "evidence": "Candidates across multiple regions aggressively pitched their areas as the next semiconductor hub, promising to lure giants such as ​Samsung and SK Hynix.",
+      "bestPassage": "Candidates across multiple regions aggressively pitched their areas as the next semiconductor hub, promising to lure giants such as ​Samsung and SK Hynix.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P15"
+        "S1-P4",
+        "S1-BODY"
       ],
       "sharedTerms": [
+        "candidat",
+        "acros",
+        "multiple",
+        "region",
+        "aggressively",
+        "pitch",
+        "area",
         "the",
-        "own",
-        "lab",
-        "develop",
-        "models",
+        "next",
+        "semiconductor",
+        "hub",
+        "promis",
+        "lure",
+        "giant",
+        "such",
+        "samsung",
         "and",
-        "openai",
-        "one",
-        "its",
-        "cloud",
-        "customer"
+        "hynix"
       ],
       "entityShared": [
-        "openai"
+        "candidat",
+        "samsung",
+        "hynix"
       ],
       "topicShared": [
-        "models"
+        "semiconductor",
+        "hub",
+        "samsung"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "major"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
@@ -962,131 +1040,73 @@
     },
     {
       "index": 13,
-      "claim": "By insisting on separate, independent monitoring, Microsoft seeks to prevent malicious or accidental misuse of AI agents inside enterprises, treating them as potential insider threats.",
+      "claim": "The South Korean government has greenlit the Yongin Semiconductor National Industrial Complex three months earlier than expected, significantly reducing the project planning timeline.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 66,
+      "confidence": 99,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
+      "bestSource": "South Korea greenlights the world's largest semiconductor hub - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/semiconductors/south-korea-greenlights-the-worlds-largest-semiconductor-hub-half-the-size-of-beverly-hills-to-house-six-fabs-three-power-plans-and-fab-suppliers",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S3",
+      "sourceRole": "CORROBORATION",
       "coreFactMatch": {
         "factId": "F11",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 35
+        "sourceId": "S3",
+        "sourceRole": "CORROBORATION",
+        "score": 99
       },
       "provenanceFactMatches": [
         {
           "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
-          "passageIndex": 4
+          "sourceId": "S3",
+          "sourceRole": "CORROBORATION",
+          "score": 99,
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
-      "bestPassage": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
+      "bestPassageId": "S3-FF11",
+      "evidence": "The South Korean government has greenlit the Yongin Semiconductor National Industrial Complex three months earlier than expected, which will significantly reduce the project planning timeline, reports BusinessKorea .",
+      "bestPassage": "The South Korean government has greenlit the Yongin Semiconductor National Industrial Complex three months earlier than expected, which will significantly reduce the project planning timeline, reports BusinessKorea .",
       "matchedPassages": [
-        "S1-BODY"
+        "S3-P1",
+        "S3-BODY"
       ],
       "sharedTerms": [
-        "separate",
-        "independent",
-        "monitor",
-        "microsoft",
-        "maliciou",
-        "agent",
-        "enterpris",
-        "them",
-        "insider",
-        "threat"
-      ],
-      "entityShared": [
-        "microsoft"
-      ],
-      "topicShared": [
-        "microsoft",
-        "agent",
-        "insider",
-        "threat"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 14,
-      "claim": "Microsoft’s latest Defender update is the first step, but broader adoption of similar controls may follow as the industry grapples with the same uncertainty about how much agency to give AI systems.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 56,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 25
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 25,
-          "passageIndex": 4
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
-      "bestPassage": "But lately, Microsoft CEO Satya Nadella has been warning that the AI enemy may be the very agents enterprises have deployed and are paying for, much like a rogue human employee, otherwise known as an &#8220;insider threat.&#8221;",
-      "matchedPassages": [
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "microsoft",
-        "defender",
         "the",
-        "but",
-        "broader",
-        "control",
-        "may",
-        "follow",
-        "system"
+        "south",
+        "korean",
+        "government",
+        "has",
+        "greenlit",
+        "yongin",
+        "semiconductor",
+        "national",
+        "industrial",
+        "complex",
+        "three",
+        "month",
+        "earlier",
+        "expect",
+        "significantly",
+        "project",
+        "plann",
+        "timeline"
       ],
       "entityShared": [
-        "microsoft",
-        "defender"
+        "the",
+        "south",
+        "korean",
+        "yongin",
+        "semiconductor",
+        "national",
+        "industrial",
+        "complex"
       ],
       "topicShared": [
-        "microsoft"
+        "semiconductor"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1095,7 +1115,255 @@
       "attributionUncertainty": {
         "evidenceUncertain": true,
         "claimUncertain": true,
-        "evidenceAttributed": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 14,
+      "claim": "The Pyeongtaek complex is still expanding; a fourth fab is expected to come online soon.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 62,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "A visit to Samsung’s massive new semiconductor hub",
+      "bestUrl": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+      "bestDomain": "technologyreview.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S3",
+        "sourceRole": "CORROBORATION",
+        "score": 27
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S3",
+          "sourceRole": "CORROBORATION",
+          "score": 27,
+          "passageIndex": 14
+        },
+        {
+          "factId": "F20",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 26,
+          "passageIndex": 7
+        },
+        {
+          "factId": "F18",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 25,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF11,S4-FF20,S4-FF18",
+      "evidence": "The South Korean government has greenlit the Yongin Semiconductor National Industrial Complex three months earlier than expected, which will significantly reduce the project planning timeline, reports BusinessKorea . And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips. Three fabs already operate around the clock, and a fourth is coming online.",
+      "bestPassage": "The South Korean government has greenlit the Yongin Semiconductor National Industrial Complex three months earlier than expected, which will significantly reduce the project planning timeline, reports BusinessKorea . And for years the company watched its domestic rival SK Hynix pull ahead in the global market for the high-bandwidth models that power Nvidia’s AI accelerators. (Meanwhile, the Taiwanese chipmaker TSMC has dominated the foundry business, manufacturing chips that other companies design.) The Pyeongtaek build-out is Samsung’s attempt to reclaim its lead on memory chips. Three fabs already operate around the clock, and a fourth is coming online.",
+      "matchedPassages": [
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "pyeongtaek",
+        "complex",
+        "fourth",
+        "expect",
+        "online"
+      ],
+      "entityShared": [
+        "the",
+        "pyeongtaek"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 15,
+      "claim": "Samsung’s large‑scale investment and the government’s support signal a concerted effort to maintain South Korea’s competitiveness in the global semiconductor supply chain.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 72,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Samsung readies $648 billion bet, report says, as AI boom reshapes South Korea - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/samsung-readies-648-billion-bet-030641266.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "CORROBORATION",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "CORROBORATION",
+        "score": 59
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "CORROBORATION",
+          "score": 59,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "CORROBORATION",
+          "score": 51,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Electronics giant Samsung says it plans to invest around 300tn won ($230.8bn; £189.6bn) over 20 years in the South Korea government's push to develop a mega semiconductor hub in the country. SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "bestPassage": "Electronics giant Samsung says it plans to invest around 300tn won ($230.8bn; £189.6bn) over 20 years in the South Korea government's push to develop a mega semiconductor hub in the country. SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "samsung",
+        "invest",
+        "and",
+        "the",
+        "government",
+        "south",
+        "korea",
+        "semiconductor"
+      ],
+      "entityShared": [
+        "samsung",
+        "south",
+        "korea"
+      ],
+      "topicShared": [
+        "samsung",
+        "semiconductor"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 17,
+      "claim": "The initiative appears designed to decentralise South Korea's AI boom into a nationwide engine of growth, easing infrastructure bottlenecks while jumpstarting jobs, innovation hubs and next‑generation manufacturing across underserved regions.The initiative appears designed to decentralise South Korea's AI boom into a nationwide engine of growth, easing infrastructure bottlenecks while jumpstarting jobs, innovation hubs and next‑generation manufacturing across underserved regions.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Samsung readies $648 billion bet, report says, as AI boom reshapes South Korea - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/samsung-readies-648-billion-bet-030641266.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "CORROBORATION",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "CORROBORATION",
+        "score": 41
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "CORROBORATION",
+          "score": 41,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P2",
+      "evidence": "SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "bestPassage": "SEOUL, June 26 (Reuters) - Samsung Group will unveil a sweeping decade-long investment plan on Monday, pledging 1,000 trillion won ($648 billion) to anchor South Korea's next growth cycle, ‌including a possible 300 trillion won push to build chip factories in the country's southwest, a media report ‌said.",
+      "matchedPassages": [
+        "S1-P2",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "initiative",
+        "appear",
+        "design",
+        "decentralise",
+        "south",
+        "korea",
+        "boom",
+        "nationwide",
+        "engine",
+        "growth",
+        "eas",
+        "infrastructure",
+        "bottleneck",
+        "jumpstart",
+        "job",
+        "innovation",
+        "hubs",
+        "and",
+        "next",
+        "generation",
+        "manufactur",
+        "acros",
+        "underserv",
+        "region"
+      ],
+      "entityShared": [
+        "south",
+        "korea"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -1106,38 +1374,14 @@
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 15,
-      "claim": "Microsoft’s own Defender product now includes a detection feature that can identify up to 60 types of agents that employees might bring into the workplace.",
-      "type": "synthesis",
-      "status": "unsupported",
-      "classification": "unsupported_synthesis",
-      "confidence": 88,
-      "sourceId": "S1",
-      "sourceRole": "SYNTHESIS",
-      "bestSource": "Microsoft says AI agents are like insider threats as &#8216;frontier models can&#8217;t be trusted&#8217;",
-      "bestUrl": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
-      "bestDomain": "techcrunch.com",
-      "coreFactMatch": null,
-      "synthesisFactMatches": [
-        {
-          "factId": "F8",
-          "sourceId": "S1",
-          "score": 88,
-          "passageIndex": 13,
-          "passageId": "S1-P13"
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-P13",
-      "evidence": "In addition to Guardian Agents, it has added an agent detection feature to its Microsoft Defender product that can find up to 60 types of agents that employees bring into the workplace, including Claude Code, Codex, and OpenClaw.",
-      "bestPassage": "In addition to Guardian Agents, it has added an agent detection feature to its Microsoft Defender product that can find up to 60 types of agents that employees bring into the workplace, including Claude Code, Codex, and OpenClaw.",
-      "matchedPassages": [
-        "S1-P13"
-      ],
-      "matchingMode": "fact-map-synthesis-insufficient"
     }
   ],
-  "editorial": []
+  "editorial": [
+    {
+      "index": 16,
+      "claim": "Observers should watch how the additional fabs and power plans scale up and how Samsung balances memory production with other chip segments.",
+      "type": "editorial-recommendation",
+      "status": "editorial-excluded"
+    }
+  ]
 }
