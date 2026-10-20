@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T22:37:57.811Z",
+  "updatedAt": "2026-10-20T05:13:54.725Z",
   "mode": "shadow",
   "policy": {
     "observationalOnly": true,
@@ -12,26 +12,26 @@
     "minimumPerformanceRuns": 5
   },
   "metrics": {
-    "runCount": 117,
+    "runCount": 118,
     "topicCount": 500,
     "articleCount": 64,
     "latestEditorialScore": 76,
-    "latestClaimConfidence": 71,
-    "latestEvidencePassRate": 27,
-    "latestEvidenceBlockRate": 10,
-    "singleSourceReadyRate": 33,
+    "latestClaimConfidence": 76,
+    "latestEvidencePassRate": 39,
+    "latestEvidenceBlockRate": 8,
+    "singleSourceReadyRate": 30,
     "publishCandidateRate": 0
   },
   "changes": {
     "editorialScore": 0,
-    "claimConfidence": 0,
-    "evidencePassRate": 0
+    "claimConfidence": 5,
+    "evidencePassRate": 12
   },
   "providers": {
     "Cerebras": {
       "successRate": 0,
       "successes": 0,
-      "failures": 819,
+      "failures": 826,
       "cooldownRuns": 0,
       "latestStatus": 402,
       "latestClass": "error"
@@ -46,24 +46,24 @@
     },
     "Cohere": {
       "successRate": 12,
-      "successes": 1600,
-      "failures": 12009,
+      "successes": 1619,
+      "failures": 12152,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
       "successRate": 2,
-      "successes": 130,
-      "failures": 6612,
+      "successes": 138,
+      "failures": 6697,
       "cooldownRuns": 4,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Groq": {
       "successRate": 55,
-      "successes": 13078,
-      "failures": 10774,
+      "successes": 13309,
+      "failures": 10907,
       "cooldownRuns": 2,
       "latestStatus": 200,
       "latestClass": "success"
@@ -71,15 +71,15 @@
     "OpenAI": {
       "successRate": 0,
       "successes": 0,
-      "failures": 351,
+      "failures": 354,
       "cooldownRuns": 0,
       "latestStatus": 429,
       "latestClass": "quota"
     },
     "OpenRouter": {
       "successRate": 2,
-      "successes": 223,
-      "failures": 9195,
+      "successes": 225,
+      "failures": 9311,
       "cooldownRuns": 0,
       "latestStatus": 0,
       "latestClass": "transient"
@@ -87,96 +87,97 @@
   },
   "categories": {
     "AI": {
-      "topicSamples": 34,
-      "averageScore": 66,
-      "averageConfidence": 86,
-      "evidenceLevels": {
-        "strong": 11,
-        "single-source-verified": 12,
-        "none": 11
-      },
-      "decisions": {
-        "review": 17,
-        "hold": 17
-      }
-    },
-    "Crypto": {
-      "topicSamples": 174,
-      "averageScore": 64,
-      "averageConfidence": 87,
-      "evidenceLevels": {
-        "single-source-verified": 46,
-        "strong": 70,
-        "none": 58
-      },
-      "decisions": {
-        "review": 70,
-        "hold": 104
-      }
-    },
-    "Digital Life": {
-      "topicSamples": 112,
+      "topicSamples": 30,
       "averageScore": 65,
       "averageConfidence": 86,
       "evidenceLevels": {
-        "strong": 30,
-        "single-source-verified": 25,
-        "none": 57
+        "single-source-verified": 11,
+        "strong": 8,
+        "none": 11
       },
       "decisions": {
-        "review": 47,
-        "hold": 65
+        "review": 14,
+        "hold": 16
+      }
+    },
+    "Crypto": {
+      "topicSamples": 169,
+      "averageScore": 64,
+      "averageConfidence": 87,
+      "evidenceLevels": {
+        "none": 58,
+        "strong": 66,
+        "single-source-verified": 45
+      },
+      "decisions": {
+        "hold": 104,
+        "review": 65
+      }
+    },
+    "Digital Life": {
+      "topicSamples": 118,
+      "averageScore": 65,
+      "averageConfidence": 86,
+      "evidenceLevels": {
+        "single-source-verified": 28,
+        "none": 59,
+        "strong": 31
+      },
+      "decisions": {
+        "review": 49,
+        "hold": 69
       }
     },
     "How-To": {
-      "topicSamples": 2,
-      "averageScore": 52,
-      "averageConfidence": 64,
+      "topicSamples": 3,
+      "averageScore": 60,
+      "averageConfidence": 74,
       "evidenceLevels": {
         "none": 1,
-        "single-source-verified": 1
+        "single-source-verified": 2
       },
       "decisions": {
-        "hold": 2
+        "hold": 2,
+        "review": 1
       }
     },
     "Innovation": {
-      "topicSamples": 27,
+      "topicSamples": 26,
       "averageScore": 57,
       "averageConfidence": 59,
       "evidenceLevels": {
-        "none": 27
+        "none": 26
       },
       "decisions": {
-        "hold": 27
+        "hold": 26
       }
     },
     "Product Launches": {
-      "topicSamples": 48,
+      "topicSamples": 49,
       "averageScore": 59,
       "averageConfidence": 69,
       "evidenceLevels": {
         "none": 32,
         "strong": 6,
-        "single-source-verified": 10
+        "single-source-verified": 11
       },
       "decisions": {
-        "review": 14,
-        "hold": 34
+        "hold": 34,
+        "review": 15
       }
     },
     "Technology": {
-      "topicSamples": 103,
+      "topicSamples": 105,
       "averageScore": 65,
       "averageConfidence": 87,
       "evidenceLevels": {
-        "single-source-verified": 29,
-        "none": 40,
-        "strong": 34
+        "strong": 35,
+        "none": 42,
+        "single-source-verified": 28
       },
       "decisions": {
-        "review": 48,
-        "hold": 55
+        "hold": 56,
+        "review": 49
       }
     }
   },
@@ -228,13 +229,13 @@
       "id": "claim-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Average claim confidence changed by +0 points versus the previous run."
+      "detail": "Average claim confidence changed by +5 points versus the previous run."
     },
     {
       "id": "evidence-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run."
+      "detail": "Evidence pass rate changed by +12 percentage points versus the previous run."
     },
     {
       "id": "current-bottlenecks",
@@ -249,7 +250,7 @@
     "mode": "shadow"
   },
   "source": {
-    "memoryRuns": 117,
+    "memoryRuns": 118,
     "learningVersion": 2,
     "experimentationVersion": 1
   }
