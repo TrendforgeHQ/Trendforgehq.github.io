@@ -142,6 +142,20 @@ jobs:
             cp "$article" "$quarantine/article.md"
             [ -f data/article-brief.json ] && cp data/article-brief.json "$quarantine/article-brief.json"
             [ -f data/claim-verification.json ] && cp data/claim-verification.json "$quarantine/claim-verification.json"
+            [ -f data/authoritative-evidence-pack.json ] && cp data/authoritative-evidence-pack.json "$quarantine/authoritative-evidence-pack.json"
+            article_sha256="$(sha256sum "$quarantine/article.md" | awk '{print $1}')"
+            claim_report_sha256=""
+            if [ -f "$quarantine/claim-verification.json" ]; then
+              claim_report_sha256="$(sha256sum "$quarantine/claim-verification.json" | awk '{print $1}')"
+            fi
+            evidence_pack_sha256=""
+            if [ -f "$quarantine/authoritative-evidence-pack.json" ]; then
+              evidence_pack_sha256="$(sha256sum "$quarantine/authoritative-evidence-pack.json" | awk '{print $1}')"
+            fi
+            hashes_recorded_in_workflow=false
+            if [ -n "$article_sha256" ] && [ -n "$claim_report_sha256" ] && [ -n "$evidence_pack_sha256" ]; then
+              hashes_recorded_in_workflow=true
+            fi
             if [ -f data/grounding-repair.json ]; then
               if grep -Fq "\"articlePath\":\"$article\"" data/grounding-repair.json && grep -Fq "\"runId\":\"${GITHUB_RUN_ID:-unknown}\"" data/grounding-repair.json; then
                 cp data/grounding-repair.json "$quarantine/grounding-repair.json"
@@ -150,7 +164,7 @@ jobs:
               fi
             fi
             cat > "$quarantine/metadata.json" <<EOF
-          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
+          {"status":"claim-verification-blocked","workflowRun":"${GITHUB_RUN_ID:-unknown}","workflowSha":"${GITHUB_SHA:-unknown}","articleSha256":"$article_sha256","claimReportSha256":"$claim_report_sha256","evidencePackSha256":"$evidence_pack_sha256","hashesRecordedInWorkflow":$hashes_recorded_in_workflow,"reason":"Bounded claim verification did not reach PASS; generated article quarantined and will not be published."}
           EOF
             rm -f "$article"
             echo "Claim verification: generated article quarantined and removed from publication set: $quarantine"
@@ -169,6 +183,22 @@ jobs:
           else
             echo "Claim verification: PASS — a bounded claim-verification attempt completed successfully (initial=${{ steps.claim_verification.outcome }} reverify1=${{ steps.claim_reverification_1.outcome }} final=${{ steps.claim_verification_final.outcome }})."
           fi
+      - name: Bind final claim report to exact attempt bytes
+        if: always() && !cancelled()
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/boat-bind-attempt-lineage.mjs
+      - name: Bind claim report to exact archived attempt
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/bind-boat-attempt-lineage.mjs
+      - name: Verify attempt lineage binder fixtures
+        run: node scripts/test-bind-boat-attempt-lineage.mjs
       - name: Upload article attempt diagnostics
         if: ${{ !cancelled() }}
         continue-on-error: true
@@ -180,6 +210,7 @@ jobs:
             data/article-brief.json
             data/article-contract.json
             data/claim-verification.json
+            data/authoritative-evidence-pack.json
             data/grounding-repair.json
             data/evidence-integrity.json
             data/current-article-rejected.json
@@ -210,6 +241,22 @@ jobs:
         run: node scripts/v2-self-check.mjs
       - name: Validate centralized SEO
         run: npx tsx scripts/validate-seo.ts
+      - name: Capture published article lineage (diagnostic, non-blocking)
+        if: success()
+        continue-on-error: true
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/write-boat-published-lineage-manifest.mjs
+      - name: Upload exact published lineage manifest
+        if: always() && !cancelled()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: trendforge-lineage-${{ github.run_number }}
+          path: data/published-lineage/manifest-${{ github.run_id }}.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Build site
         run: npm run build
       - name: Commit pipeline output
@@ -222,20 +269,47 @@ jobs:
           rm -f data/current-run-article.json
           git restore --worktree --staged next-env.d.ts package-lock.json 2>/dev/null || true
           rm -rf .next out node_modules
+          log_pack_worktree() {
+            local stage="$1"
+            local file="data/authoritative-evidence-pack.json"
+            if [ -f "$file" ]; then
+              echo "EVIDENCE_PACK_PERSISTENCE stage=$stage bytes=$(wc -c < "$file" | tr -d ' ') sha256=$(sha256sum "$file" | awk '{print $1}') git_blob=$(git hash-object "$file")"
+            else
+              echo "EVIDENCE_PACK_PERSISTENCE stage=$stage state=missing"
+            fi
+          }
           git add data lib/articles.ts public/images/articles
           if [ -d content/articles ]; then git add content/articles; fi
+          log_pack_worktree "pre-output-commit"
           echo '--- staged changes ---'
           git status --short
           if git diff --cached --quiet; then echo 'No pipeline output changes to commit.'; exit 0; fi
           git commit -m 'chore: update TrendForge content pipeline'
           if ! git diff --quiet || ! git diff --cached --quiet; then git reset --hard HEAD; fi
           output_commit="$(git rev-parse HEAD)"
+          output_pack_blob="$(git rev-parse "$output_commit:data/authoritative-evidence-pack.json" 2>/dev/null || true)"
+          if [ -n "$output_pack_blob" ]; then
+            echo "EVIDENCE_PACK_PERSISTENCE stage=output-commit commit=$output_commit blob=$output_pack_blob bytes=$(git cat-file -s "$output_pack_blob")"
+          else
+            echo "EVIDENCE_PACK_PERSISTENCE stage=output-commit state=path-absent commit=$output_commit"
+          fi
           git fetch origin main
           git reset --hard origin/main
           generated_files="$(git diff-tree --no-commit-id --diff-filter=ACMRT --name-only -r "$output_commit" -- data lib/articles.ts public/images/articles content/articles 2>/dev/null || true)"
-          if [ -z "$generated_files" ]; then echo 'No generated output paths found in pipeline commit.'; exit 0; fi
+          if [ -z "$generated_files" ]; then echo 'No pipeline output changes found in pipeline commit.'; exit 0; fi
           while IFS= read -r path; do [ -z "$path" ] && continue; git checkout "$output_commit" -- "$path"; done <<< "$generated_files"
           git add $generated_files
+          log_pack_worktree "post-transfer-staging"
+          transferred_pack_blob="$(git ls-files -s -- data/authoritative-evidence-pack.json | awk 'NR==1 {print $2}')"
+          if [ -n "$output_pack_blob" ] && [ -n "$transferred_pack_blob" ]; then
+            if [ "$output_pack_blob" = "$transferred_pack_blob" ]; then
+              echo "EVIDENCE_PACK_PERSISTENCE transfer=exact-match blob=$transferred_pack_blob"
+            else
+              echo "WARNING: EVIDENCE_PACK_PERSISTENCE transfer-mismatch output_blob=$output_pack_blob staged_blob=$transferred_pack_blob"
+            fi
+          else
+            echo "EVIDENCE_PACK_PERSISTENCE transfer=unknown output_blob=${output_pack_blob:-missing} staged_blob=${transferred_pack_blob:-missing}"
+          fi
           if git diff --cached --quiet; then echo 'Generated output is already present on main.'; exit 0; fi
           git commit -m 'chore: update TrendForge content pipeline'
           git push origin HEAD:main
