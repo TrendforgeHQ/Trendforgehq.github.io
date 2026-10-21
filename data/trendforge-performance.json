@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T05:16:20.487Z",
+  "updatedAt": "2026-10-21T12:20:15.406Z",
   "mode": "shadow",
   "policy": {
     "observationalOnly": true,
@@ -24,8 +24,8 @@
   },
   "changes": {
     "editorialScore": 0,
-    "claimConfidence": -6,
-    "evidencePassRate": 1
+    "claimConfidence": 0,
+    "evidencePassRate": 0
   },
   "providers": {
     "Cerebras": {
@@ -46,24 +46,24 @@
     },
     "Cohere": {
       "successRate": 12,
-      "successes": 1692,
-      "failures": 12678,
+      "successes": 1710,
+      "failures": 12798,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
-      "successRate": 2,
-      "successes": 175,
-      "failures": 7020,
+      "successRate": 3,
+      "successes": 185,
+      "failures": 7096,
       "cooldownRuns": 2,
       "latestStatus": 200,
       "latestClass": "error"
     },
     "Groq": {
       "successRate": 56,
-      "successes": 14265,
-      "failures": 11366,
+      "successes": 14507,
+      "failures": 11463,
       "cooldownRuns": 0,
       "latestStatus": 400,
       "latestClass": "request"
@@ -78,8 +78,8 @@
     },
     "OpenRouter": {
       "successRate": 2,
-      "successes": 233,
-      "failures": 9753,
+      "successes": 235,
+      "failures": 9857,
       "cooldownRuns": 0,
       "latestStatus": 504,
       "latestClass": "server"
@@ -115,16 +115,16 @@
       }
     },
     "Digital Life": {
-      "topicSamples": 135,
+      "topicSamples": 134,
       "averageScore": 64,
       "averageConfidence": 86,
       "evidenceLevels": {
-        "none": 72,
+        "none": 71,
         "strong": 34,
         "single-source-verified": 29
       },
       "decisions": {
-        "hold": 89,
+        "hold": 88,
         "review": 46
       }
     },
@@ -141,14 +141,14 @@
       }
     },
     "Innovation": {
-      "topicSamples": 26,
+      "topicSamples": 27,
       "averageScore": 57,
       "averageConfidence": 59,
       "evidenceLevels": {
-        "none": 26
+        "none": 27
       },
       "decisions": {
-        "hold": 26
+        "hold": 27
       }
     },
     "Product Launches": {
@@ -223,13 +223,13 @@
       "id": "claim-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Average claim confidence changed by -6 points versus the previous run."
+      "detail": "Average claim confidence changed by +0 points versus the previous run."
     },
     {
       "id": "evidence-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Evidence pass rate changed by +1 percentage points versus the previous run."
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run."
     },
     {
       "id": "current-bottlenecks",
