@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T17:37:46.920Z",
+  "updatedAt": "2026-10-21T21:58:02.671Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -19,14 +19,14 @@
     "samples": 120,
     "publishCandidateRate": 0,
     "reviewRate": 15,
-    "holdRate": 84,
+    "holdRate": 85,
     "rejectRate": 0,
     "strongEvidenceRate": 10,
     "singleSourceReadyRate": 30
   },
   "evidence": {
     "samples": 120,
-    "passRate": 31,
+    "passRate": 32,
     "blockRate": 10,
     "strongRate": 7,
     "singleSourceRate": 24
@@ -59,8 +59,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 1728,
-      "failures": 12918,
+      "successes": 1746,
+      "failures": 13038,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +68,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 195,
-      "failures": 7172,
+      "successes": 205,
+      "failures": 7248,
       "successRate": 3,
       "cooldownRuns": 2,
       "latestStatus": 200,
@@ -77,8 +77,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 14751,
-      "failures": 11560,
+      "successes": 14995,
+      "failures": 11657,
       "successRate": 56,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -95,8 +95,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 237,
-      "failures": 9961,
+      "successes": 239,
+      "failures": 10065,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 504,
@@ -201,13 +201,13 @@
   "trends": {
     "latestVsPrevious": {
       "evidencePassRate": 0,
-      "evidenceBlockRate": -1,
-      "claimConfidence": 3,
-      "claimUnsupported": -1,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
+      "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-21T17:37:10.233Z",
-    "previousRunAt": "2026-10-21T12:19:05.098Z"
+    "latestRunAt": "2026-10-21T21:57:28.622Z",
+    "previousRunAt": "2026-10-21T17:37:10.233Z"
   },
   "signals": [
     {
@@ -218,8 +218,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6645,
-        "strong": 1979
+        "singleSource": 6685,
+        "strong": 2002
       }
     },
     {
@@ -259,27 +259,27 @@
       "id": "claim-confidence-change",
       "type": "trend",
       "observation": false,
-      "detail": "Average claim confidence changed by +3 points versus the previous run.",
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 3
+        "delta": 0
       }
     },
     {
       "id": "claim-unsupported-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Unsupported-claim count changed by -1 versus the previous run.",
+      "observation": false,
+      "detail": "Unsupported-claim count changed by +0 versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -1
+        "delta": 0
       }
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-21T12:19:39.874Z",
+    "previousUpdatedAt": "2026-10-21T17:37:46.920Z",
     "previousVersion": 2
   }
 }
