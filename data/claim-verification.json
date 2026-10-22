@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-22T10:54:19.441Z",
-  "articlePath": "content/articles/south-korea-s-crypto-bill-nears-completion-with-exchange-and-stablecoin-rules.md",
-  "articleTitle": "South Korea’s Crypto Bill Nears Completion With Exchange and Stablecoin Rules",
+  "generatedAt": "2026-10-22T16:21:03.772Z",
+  "articlePath": "content/articles/ethereum-draft-aims-for-four-minute-finality-to-cut-cross-chain-costs.md",
+  "articleTitle": "Ethereum Draft Aims for Four‑Minute Finality to Cut Cross‑Chain Costs",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
   "sourceCount": 2,
   "usableSourceCount": 2,
-  "claimCount": 9,
-  "editorialCount": 3,
-  "verified": 9,
-  "partial": 0,
+  "claimCount": 12,
+  "editorialCount": 1,
+  "verified": 7,
+  "partial": 5,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 85,
+  "averageConfidence": 77,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,110 +45,94 @@
   "sources": [
     {
       "id": "S1",
-      "title": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "url": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "domain": "techtimes.com",
-      "passageCount": 12,
-      "articleBodyLength": 2926
+      "title": "Ethereum’s four-minute settlement plan could lower the cost of moving crypto - LCX Exchange",
+      "url": "https://lcx.com/en/cryptonews/ethereums-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "domain": "lcx.com",
+      "passageCount": 2,
+      "articleBodyLength": 246
     },
     {
       "id": "S2",
-      "title": "South Korea Crypto Bill Nears Completion With Exchange and Stablecoin Rules - Bitcoin Foundation",
-      "url": "https://bitcoinfoundation.org/news/regulation/south-korea-crypto-bill-nears-completion-with-exchange-and-stablecoin-rules/",
-      "domain": "bitcoinfoundation.org",
-      "passageCount": 6,
-      "articleBodyLength": 830
+      "title": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "url": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "domain": "coindesk.com",
+      "passageCount": 24,
+      "articleBodyLength": 2991
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "On July 15 2026, South Korea’s Ministry of Economy and Finance announced the National Asset Basic Act, which for the first time in 76 years incorporates digital assets into the legal framework that governs public wealth.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 96,
+      "claim": "Ethereum researchers have filed a draft that would cut the wait for a transaction to become final from roughly 16 minutes to about four.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
+        "factId": "F3",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 96
+        "score": 87
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
-          "sourceId": "S1",
+          "factId": "F3",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 96,
+          "score": 87,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF1",
-      "evidence": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation.",
-      "bestPassage": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
+      "bestPassage": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
+        "S2-BODY",
+        "S2-P1"
       ],
       "sharedTerms": [
-        "july",
-        "2026",
-        "south",
-        "korea",
-        "ministry",
-        "economy",
-        "and",
-        "finance",
-        "announce",
+        "eth",
+        "researcher",
+        "fil",
+        "draft",
+        "cut",
         "the",
-        "national",
-        "asset",
-        "basic",
-        "act",
+        "wait",
         "for",
-        "first",
-        "time",
-        "year",
-        "legal",
-        "public",
-        "wealth"
+        "transaction",
+        "become",
+        "final",
+        "roughly",
+        "minut",
+        "four"
       ],
       "entityShared": [
-        "july",
-        "south",
-        "korea",
-        "ministry",
-        "economy",
-        "finance",
-        "national",
-        "asset",
-        "basic",
-        "act"
+        "eth"
       ],
       "topicShared": [
-        "south",
-        "korea",
-        "and"
+        "eth",
+        "the",
+        "four"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
+        "evidenceUncertain": true,
         "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
         "attributionDropped": false,
-        "blocked": false
+        "blocked": true
       },
       "factCoverage": 1,
       "multiFactSupported": false,
@@ -158,56 +142,146 @@
     },
     {
       "index": 2,
-      "claim": "The act follows Japan’s parliamentary vote to reclassify cryptocurrencies as financial products on the same day.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 81,
+      "claim": "The change could allow money‑transfer services that hold customers’ payments while they clear to use their funds sooner.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 61,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
+      "bestSource": "Ethereum’s four-minute settlement plan could lower the cost of moving crypto - LCX Exchange",
+      "bestUrl": "https://lcx.com/en/cryptonews/ethereums-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "lcx.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 81
+        "score": 53
       },
       "provenanceFactMatches": [
         {
           "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 81,
+          "score": 53,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-P1",
-      "evidence": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation.",
-      "bestPassage": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation.",
+      "evidence": "A new draft targets a fourfold cut in the time it takes Ethereum transactions to become final, which could free up money transfer services tie up while customers’ payments clear.",
+      "bestPassage": "A new draft targets a fourfold cut in the time it takes Ethereum transactions to become final, which could free up money transfer services tie up while customers’ payments clear.",
       "matchedPassages": [
         "S1-P1",
         "S1-BODY"
       ],
       "sharedTerms": [
         "the",
-        "act",
-        "japan",
-        "reclassify",
-        "crypto",
-        "financial",
-        "product",
-        "same",
-        "day"
+        "money",
+        "transfer",
+        "servic",
+        "customer",
+        "payment",
+        "clear"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 3,
+      "claim": "The proposal was submitted by Ben Edgington, who coordinates Ethereum’s fast‑finality research, along with Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 97,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 93
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 93,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin.",
+      "bestPassage": "Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P9"
+      ],
+      "sharedTerms": [
+        "the",
+        "proposal",
+        "was",
+        "ben",
+        "edgington",
+        "who",
+        "coordinat",
+        "eth",
+        "fast",
+        "finality",
+        "research",
+        "francesco",
+        "amato",
+        "roberto",
+        "saltini",
+        "yann",
+        "vonlanthen",
+        "and",
+        "mikhail",
+        "kalinin"
       ],
       "entityShared": [
-        "japan"
+        "ben",
+        "edgington",
+        "eth",
+        "francesco",
+        "amato",
+        "roberto",
+        "saltini",
+        "yann",
+        "vonlanthen",
+        "mikhail",
+        "kalinin"
       ],
       "topicShared": [
-        "crypto"
+        "the",
+        "eth"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -216,7 +290,7 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": true,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -230,53 +304,136 @@
     },
     {
       "index": 4,
-      "claim": "State assets have climbed from 188.3 trillion won in 2001 to over 1,400 trillion won today, roughly $938 billion.",
+      "claim": "In the current system, a transaction can enter an Ethereum block before the network treats it as final.Finality occurs after validators cast two full rounds of votes, after which a block is considered final.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 85,
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
-        "sourceId": "S1",
+        "factId": "F12",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 85
+        "score": 68
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
-          "sourceId": "S1",
+          "factId": "F12",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 85,
-          "passageIndex": 11
+          "score": 68,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF4",
-      "evidence": "South Korean state assets have grown from 188.3 trillion won in 2001 to more than 1,400 trillion won today, roughly $938 billion in state holdings.",
-      "bestPassage": "South Korean state assets have grown from 188.3 trillion won in 2001 to more than 1,400 trillion won today, roughly $938 billion in state holdings.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "In the current mechanism, a transaction can land in an Ethereum block well before the network treats it as final, the point where validators, the computers that secure the network, commit to never rewriting it.",
+      "bestPassage": "In the current mechanism, a transaction can land in an Ethereum block well before the network treats it as final, the point where validators, the computers that secure the network, commit to never rewriting it.",
       "matchedPassages": [
-        "S1-P4",
-        "S1-BODY"
+        "S2-BODY",
+        "S2-P10"
       ],
       "sharedTerms": [
-        "state",
-        "asset",
-        "188",
-        "trillion",
-        "won",
-        "2001",
-        "400",
-        "roughly",
-        "938",
-        "billion"
+        "the",
+        "current",
+        "transaction",
+        "can",
+        "eth",
+        "block",
+        "network",
+        "treat",
+        "final",
+        "finality",
+        "validator",
+        "cast",
+        "two",
+        "full",
+        "round",
+        "vot"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "eth"
+      ],
+      "topicShared": [
+        "the",
+        "eth"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 5,
+      "claim": "Validators take turns casting votes; a block becomes final only after two full rounds of voting.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F8",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F8",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P6",
+      "evidence": "Validators take turns casting those votes, and a block only becomes final after two full rounds of everyone voting.",
+      "bestPassage": "Validators take turns casting those votes, and a block only becomes final after two full rounds of everyone voting.",
+      "matchedPassages": [
+        "S2-P6",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "validator",
+        "take",
+        "turn",
+        "cast",
+        "vot",
+        "block",
+        "becom",
+        "final",
+        "two",
+        "full",
+        "round"
+      ],
+      "entityShared": [
+        "validator"
+      ],
       "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
@@ -293,248 +450,72 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 5,
-      "claim": "Domestic activity is dominated by altcoins, which account for 85 % of crypto transactions, while Bitcoin and Ethereum represent 9 % and 6 % respectively—an inverse of most Western markets.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 92,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 92
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F7",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 92,
-          "passageIndex": 28
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF7",
-      "evidence": "Altcoins represent 85% of domestic crypto activity, while Bitcoin accounts for just 9% and Ethereum for 6% &mdash; almost the inverse of most Western markets, according to Kaiko.",
-      "bestPassage": "Altcoins represent 85% of domestic crypto activity, while Bitcoin accounts for just 9% and Ethereum for 6% &mdash; almost the inverse of most Western markets, according to Kaiko.",
-      "matchedPassages": [
-        "S1-P7",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "domestic",
-        "activity",
-        "altcoin",
-        "account",
-        "for",
-        "crypto",
-        "btc",
-        "and",
-        "eth",
-        "represent",
-        "inverse",
-        "western",
-        "market"
-      ],
-      "entityShared": [
-        "btc",
-        "eth",
-        "western"
-      ],
-      "topicShared": [
-        "crypto",
-        "btc",
-        "and"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 6,
-      "claim": "The bill, still a proposal, is nearing completion and will establish licensing regimes for crypto exchanges and rules for stablecoin issuance.",
+      "claim": "Because the process takes about 16 minutes, services that move funds off Ethereum must hold customers’ money for that duration.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 87,
+      "confidence": 75,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Crypto Bill Nears Completion With Exchange and Stablecoin Rules - Bitcoin Foundation",
-      "bestUrl": "https://bitcoinfoundation.org/news/regulation/south-korea-crypto-bill-nears-completion-with-exchange-and-stablecoin-rules/",
-      "bestDomain": "bitcoinfoundation.org",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F15",
+        "factId": "F3",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 69
+        "score": 47
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
+          "factId": "F3",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 69,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F16",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 60,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F13",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 59,
+          "score": 47,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-FF15,S2-FF16,S2-FF13",
-      "evidence": "The framework would set licensing regimes for crypto exchanges and rules for issuing stablecoins, so trading platforms and stablecoin issuers fall under one broader legislative effort. The bill is still a proposal nearing completion, which means the licensing requirements and the stablecoin conditions will be settled as it moves forward. The South Korea crypto bill nears completion with exchange licensing and stablecoin issuance rules, while its separate crypto tax debate intensifies.",
-      "bestPassage": "The framework would set licensing regimes for crypto exchanges and rules for issuing stablecoins, so trading platforms and stablecoin issuers fall under one broader legislative effort. The bill is still a proposal nearing completion, which means the licensing requirements and the stablecoin conditions will be settled as it moves forward. The South Korea crypto bill nears completion with exchange licensing and stablecoin issuance rules, while its separate crypto tax debate intensifies.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
+      "bestPassage": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P3"
+        "S2-BODY"
       ],
       "sharedTerms": [
         "the",
-        "bill",
-        "proposal",
-        "near",
-        "completion",
-        "and",
-        "licens",
-        "regim",
-        "for",
-        "crypto",
-        "exchang",
-        "rul",
-        "stablecoin",
-        "issuance"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "bill",
-        "near",
-        "completion",
-        "and",
-        "crypto",
-        "rul",
-        "stablecoin"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 7,
-      "claim": "The Bank of Korea has demanded that stablecoin issuers hold 51 % bank ownership, arguing that only financially solvent institutions can ensure stability.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 79,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 79
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 79,
-          "passageIndex": 19
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF11",
-      "evidence": "The Bank of Korea demanded 51% bank ownership for stablecoin issuers, insisting that financial institutions with existing solvency and anti-money-laundering requirements were the only entities capable of ensuring stability.",
-      "bestPassage": "The Bank of Korea demanded 51% bank ownership for stablecoin issuers, insisting that financial institutions with existing solvency and anti-money-laundering requirements were the only entities capable of ensuring stability.",
-      "matchedPassages": [
-        "S1-P11",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "bank",
-        "korea",
-        "demand",
-        "stablecoin",
-        "issuer",
-        "ownership",
-        "institution",
-        "stability"
+        "minut",
+        "servic",
+        "move",
+        "fund",
+        "off",
+        "eth",
+        "hold",
+        "customer",
+        "money",
+        "for"
       ],
       "entityShared": [
-        "the",
-        "bank",
-        "korea"
+        "eth"
       ],
       "topicShared": [
-        "korea",
-        "stablecoin"
+        "the",
+        "eth"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
+        "evidenceUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -548,84 +529,184 @@
       "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 8,
-      "claim": "The Financial Services Commission warns that such a requirement could lock technology firms out of stablecoin issuance and suppress competition, citing the EU’s Markets in Crypto‑Assets regulation where most licensed stablecoin issuers are electronic money institutions rather than banks.",
+      "index": 7,
+      "claim": "The draft’s reduction to four minutes would lower the idle money cost from roughly $10,000 per transaction to about $67,000.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 100,
+      "confidence": 82,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 100
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F10",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 100,
-          "passageIndex": 20
-        }
-      ],
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
       "contextOnlySource": false,
-      "bestPassageId": "S1-P10",
-      "evidence": "The Financial Services Commission pushed back, warning that such a rule would effectively lock technology firms out of stablecoin issuance and suppress competition &mdash; and cited the EU's Markets in Crypto-Assets regulation, where the majority of licensed stablecoin issuers are electronic money institutions rather than banks, as a counterexample.",
-      "bestPassage": "The Financial Services Commission pushed back, warning that such a rule would effectively lock technology firms out of stablecoin issuance and suppress competition &mdash; and cited the EU's Markets in Crypto-Assets regulation, where the majority of licensed stablecoin issuers are electronic money institutions rather than banks, as a counterexample.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains. Ethereum Foundation research counts that idle money as a real cost for these firms, and a shorter wait lets them reuse it sooner. At four minutes, however, that drops to roughly $67,000. The 16-minute wait comes down to how Ethereum’s validators vote. Each one casts a single vote that does two jobs at once, helping pick the next block and helping lock older blocks in for good. Validators take turns casting those votes, and a block only becomes final after two full rounds of everyone voting. The draft leaves voting timings, penalties and parts of its security analysis unresolved as of Thursday. Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline. Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin. In the current mechanism, a transaction can land in an Ethereum block well before the network treats it as final, the point where validators, the computers that secure the network, commit to never rewriting it. Anyone moving funds off Ethereum has to decide when it’s safe to release money on the other side. Stablecoin providers such as Circle CRCL $87.21 , which issues the dollar-pegged USDC, already charges for speed. Its fast route from Ethereum currently costs 0.01%, or $1 per $10,000, before network and application charges. Its standard route carries no Circle transfer fee. A transfer service can pay them right away from money it already holds there, then wait to get repaid once the original transaction settles. The customer gets their funds in seconds, and the service has $10,000 tied up until Ethereum is done. The researchers say splitting the votes would also make it easier to eventually swap in quantum-resistant signatures. Ethereum would need that upgrade if quantum computers ever get strong enough to break today’s cryptography. However, four minutes would still be slow next to Solana, which switched on its Alpenglow upgrade Wednesday with a target of finality in about 150 milliseconds. Disclosure & Polices : CoinDesk is an award-winning media outlet that covers the cryptocurrency industry. Its journalists abide by a strict set of editorial policies . CoinDesk has adopted a set of principles aimed at ensuring the integrity, editorial independence and freedom from bias of its publications. CoinDesk is part of Bullish (NYSE:BLSH), an institutionally focused global digital asset platform that provides market infrastructure and information services. Bullish owns and invests in digital asset businesses and digital assets and CoinDesk employees, including journalists, may receive Bullish equity-based compensation.",
+      "bestPassage": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains. Ethereum Foundation research counts that idle money as a real cost for these firms, and a shorter wait lets them reuse it sooner. At four minutes, however, that drops to roughly $67,000. The 16-minute wait comes down to how Ethereum’s validators vote. Each one casts a single vote that does two jobs at once, helping pick the next block and helping lock older blocks in for good. Validators take turns casting those votes, and a block only becomes final after two full rounds of everyone voting. The draft leaves voting timings, penalties and parts of its security analysis unresolved as of Thursday. Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline. Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin. In the current mechanism, a transaction can land in an Ethereum block well before the network treats it as final, the point where validators, the computers that secure the network, commit to never rewriting it. Anyone moving funds off Ethereum has to decide when it’s safe to release money on the other side. Stablecoin providers such as Circle CRCL $87.21 , which issues the dollar-pegged USDC, already charges for speed. Its fast route from Ethereum currently costs 0.01%, or $1 per $10,000, before network and application charges. Its standard route carries no Circle transfer fee. A transfer service can pay them right away from money it already holds there, then wait to get repaid once the original transaction settles. The customer gets their funds in seconds, and the service has $10,000 tied up until Ethereum is done. The researchers say splitting the votes would also make it easier to eventually swap in quantum-resistant signatures. Ethereum would need that upgrade if quantum computers ever get strong enough to break today’s cryptography. However, four minutes would still be slow next to Solana, which switched on its Alpenglow upgrade Wednesday with a target of finality in about 150 milliseconds. Disclosure & Polices : CoinDesk is an award-winning media outlet that covers the cryptocurrency industry. Its journalists abide by a strict set of editorial policies . CoinDesk has adopted a set of principles aimed at ensuring the integrity, editorial independence and freedom from bias of its publications. CoinDesk is part of Bullish (NYSE:BLSH), an institutionally focused global digital asset platform that provides market infrastructure and information services. Bullish owns and invests in digital asset businesses and digital assets and CoinDesk employees, including journalists, may receive Bullish equity-based compensation.",
       "matchedPassages": [
-        "S1-P10",
-        "S1-BODY"
+        "S2-BODY"
       ],
       "sharedTerms": [
         "the",
-        "financial",
-        "servic",
-        "commission",
-        "warn",
-        "such",
-        "requirement",
-        "lock",
-        "firm",
-        "out",
-        "stablecoin",
-        "issuance",
-        "and",
-        "suppres",
-        "competition",
-        "cit",
-        "market",
-        "crypto",
-        "asset",
-        "regulation",
-        "licens",
-        "issuer",
-        "are",
-        "electronic",
+        "draft",
+        "four",
+        "minut",
+        "idle",
         "money",
-        "institution",
-        "rather",
-        "bank"
+        "cost",
+        "roughly",
+        "000",
+        "per",
+        "transaction"
       ],
-      "entityShared": [
-        "the",
-        "financial",
-        "servic",
-        "commission",
-        "market",
-        "crypto",
-        "asset"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "stablecoin",
+        "the",
+        "four",
+        "lower",
+        "cost"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 0,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "semantic-context-evidence-pack"
+    },
+    {
+      "index": 8,
+      "claim": "This figure reflects the amount tied up during the wait for finality.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 54,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 30
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 30,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
+      "bestPassage": "Ethereum researchers want to cut the wait for a transaction to become final from about 16 minutes to roughly four, a change that could make it cheaper to move money between blockchains.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "tied",
+        "wait",
+        "for",
+        "finality"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "The draft leaves several technical details unresolved, including voting timings, penalties, and parts of the security analysis.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 80,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F9",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 76
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F9",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 76,
+          "passageIndex": 14
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "The draft leaves voting timings, penalties and parts of its security analysis unresolved as of Thursday.",
+      "bestPassage": "The draft leaves voting timings, penalties and parts of its security analysis unresolved as of Thursday.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P7"
+      ],
+      "sharedTerms": [
+        "the",
+        "draft",
+        "leav",
+        "unresolv",
+        "includ",
+        "vot",
+        "timing",
+        "penalti",
         "and",
-        "crypto"
+        "part",
+        "security",
+        "analysi"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -633,7 +714,7 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -648,58 +729,61 @@
     },
     {
       "index": 10,
-      "claim": "While licensing and stablecoin conditions are advancing, taxation remains on a separate track and is gaining attention as the digital‑asset bill progresses.",
+      "claim": "Ben Edgington noted that many aspects remain to be determined, and the immediate aim is to obtain a proposal number to enter the formal upgrade pipeline.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 74,
+      "confidence": 86,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Crypto Bill Nears Completion With Exchange and Stablecoin Rules - Bitcoin Foundation",
-      "bestUrl": "https://bitcoinfoundation.org/news/regulation/south-korea-crypto-bill-nears-completion-with-exchange-and-stablecoin-rules/",
-      "bestDomain": "bitcoinfoundation.org",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
+        "factId": "F10",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 64
+        "score": 79
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
+          "factId": "F10",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 64,
-          "passageIndex": 4
+          "score": 79,
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Taxation sits on a separate track in South Korea&#8217;s crypto policy debate, and it is getting louder as the digital asset bill advances.",
-      "bestPassage": "Taxation sits on a separate track in South Korea&#8217;s crypto policy debate, and it is getting louder as the digital asset bill advances.",
+      "evidence": "Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline.",
+      "bestPassage": "Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline.",
       "matchedPassages": [
         "S2-BODY",
-        "S2-P2"
+        "S2-P8"
       ],
       "sharedTerms": [
-        "licens",
+        "ben",
+        "edgington",
+        "aspect",
+        "remain",
         "and",
-        "stablecoin",
-        "condition",
-        "advanc",
-        "taxation",
-        "separate",
-        "track",
         "the",
-        "asset",
-        "bill"
+        "immediate",
+        "aim",
+        "proposal",
+        "number",
+        "formal",
+        "upgrade",
+        "pipeline"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "ben",
+        "edgington"
+      ],
       "topicShared": [
-        "and",
-        "stablecoin",
-        "bill"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -709,7 +793,7 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -722,77 +806,131 @@
     },
     {
       "index": 12,
-      "claim": "What the Evidence Shows: South Korea is embedding digital assets into its national asset law, moving to regulate exchanges and stablecoins with a focus on bank ownership, and witnessing a shift toward stablecoin liquidity use—all amid a broader debate on taxation and market participation.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 69,
+      "claim": "Ethereum’s fast‑finality draft proposes a fourfold reduction in finality time, which could significantly reduce the capital tied up during cross‑chain transfers.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 64,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "South Korea Folds Crypto Into National Asset Law as Japan Passes Its Own Reform",
-      "bestUrl": "https://www.techtimes.com/articles/320704/20260716/south-korea-folds-crypto-national-asset-law-japan-passes-its-own-reform.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S1",
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 43
+        "score": 45
       },
       "provenanceFactMatches": [
         {
           "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 43,
+          "score": 45,
           "passageIndex": 1
         },
         {
-          "factId": "F13",
+          "factId": "F11",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 40,
-          "passageIndex": 1
-        },
-        {
-          "factId": "F14",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 40,
-          "passageIndex": 4
+          "score": 44,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation. The South Korea crypto bill nears completion with exchange licensing and stablecoin issuance rules, while its separate crypto tax debate intensifies. Taxation sits on a separate track in South Korea&#8217;s crypto policy debate, and it is getting louder as the digital asset bill advances.",
-      "bestPassage": "On July 15, 2026 &mdash; the same day Japan's parliament formally voted to reclassify cryptocurrencies as financial products &mdash; South Korea's Ministry of Economy and Finance announced the National Asset Basic Act, declaring it would rewrite the legal foundation of how the government manages public wealth, and for the first time in 76 years, digital assets would be part of that foundation. The South Korea crypto bill nears completion with exchange licensing and stablecoin issuance rules, while its separate crypto tax debate intensifies. Taxation sits on a separate track in South Korea&#8217;s crypto policy debate, and it is getting louder as the digital asset bill advances.",
+      "bestPassageId": "S1-FF1,S2-FF11",
+      "evidence": "A new draft targets a fourfold cut in the time it takes Ethereum transactions to become final, which could free up money transfer services tie up while customers’ payments clear. Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin.",
+      "bestPassage": "A new draft targets a fourfold cut in the time it takes Ethereum transactions to become final, which could free up money transfer services tie up while customers’ payments clear. Ben Edgington, who coordinates Ethereum’s fast-finality research, filed the draft Wednesday with fellow researchers Francesco D’Amato, Roberto Saltini, Yann Vonlanthen and Mikhail Kalinin.",
       "matchedPassages": [
-        "S1-BODY"
+        "S2-BODY",
+        "S2-P9"
+      ],
+      "sharedTerms": [
+        "eth",
+        "fast",
+        "finality",
+        "draft",
+        "fourfold",
+        "time",
+        "the",
+        "transfer"
+      ],
+      "entityShared": [
+        "eth"
+      ],
+      "topicShared": [
+        "eth",
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [
+        "significantly"
+      ],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 13,
+      "claim": "The proposal is still under development, and key technical elements remain to be finalized before it can be adopted.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 48,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "ETH news: Ethereum’s four-minute settlement plan could lower the cost of moving crypto - CoinDesk",
+      "bestUrl": "https://www.coindesk.com/tech/2026/10/22/ethereum-s-four-minute-settlement-plan-could-lower-the-cost-of-moving-crypto",
+      "bestDomain": "coindesk.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 30
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 30,
+          "passageIndex": 14
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline.",
+      "bestPassage": "Edgington wrote that “many aspects remain TBD” and that the immediate aim was getting a proposal number — which puts the idea into Ethereum’s formal upgrade pipeline.",
+      "matchedPassages": [
+        "S2-BODY"
       ],
       "sharedTerms": [
         "the",
-        "south",
-        "korea",
-        "asset",
-        "national",
-        "law",
+        "proposal",
         "and",
-        "stablecoin",
-        "bank",
-        "ownership",
-        "shift",
-        "liquidity",
-        "market"
+        "remain",
+        "can",
+        "adopt"
       ],
-      "entityShared": [
-        "south",
-        "korea"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "south",
-        "korea",
-        "and",
-        "stablecoin"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -800,37 +938,25 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
-      "multiFactSupported": true,
+      "factCoverage": 2,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     }
   ],
   "editorial": [
     {
-      "index": 3,
-      "claim": "The move signals a shift from treating crypto as a payment method to recognizing it as a financial asset within the state’s asset base.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 9,
-      "claim": "8× to 3.6× during the same period.This shift signals that stablecoins are increasingly used as deployable liquidity rather than speculative instruments.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
       "index": 11,
-      "claim": "Stakeholders should monitor how the final legislation balances financial stability with technological innovation and how tax policy will integrate with the new regulatory framework.",
-      "type": "editorial-recommendation",
+      "claim": "While the proposal could make cross‑chain transfers cheaper, the exact impact will depend on how the final design is implemented and how quickly validators adopt the new rules.",
+      "type": "editorial-analysis",
       "status": "editorial-excluded"
     }
   ]
