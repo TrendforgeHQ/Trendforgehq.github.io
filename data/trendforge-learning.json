@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T05:18:07.623Z",
+  "updatedAt": "2026-10-23T12:02:33.570Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -13,7 +13,7 @@
   "sample": {
     "runs": 120,
     "topics": 500,
-    "articles": 69
+    "articles": 70
   },
   "decisions": {
     "samples": 120,
@@ -22,7 +22,7 @@
     "holdRate": 86,
     "rejectRate": 0,
     "strongEvidenceRate": 11,
-    "singleSourceReadyRate": 30
+    "singleSourceReadyRate": 31
   },
   "evidence": {
     "samples": 120,
@@ -33,7 +33,7 @@
   },
   "claims": {
     "samples": 120,
-    "passRate": 51,
+    "passRate": 52,
     "averageConfidence": 69,
     "averageUnsupported": 1,
     "averageClaimsPerArticle": 13
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 1817,
-      "failures": 13592,
+      "successes": 1830,
+      "failures": 13699,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,17 +59,17 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 255,
-      "failures": 7613,
+      "successes": 266,
+      "failures": 7682,
       "successRate": 3,
       "cooldownRuns": 1,
       "latestStatus": 200,
-      "latestClass": "error"
+      "latestClass": "success"
     },
     "Groq": {
       "samples": 120,
-      "successes": 16228,
-      "failures": 12140,
+      "successes": 16474,
+      "failures": 12235,
       "successRate": 57,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -87,7 +87,7 @@
     "OpenRouter": {
       "samples": 120,
       "successes": 240,
-      "failures": 10541,
+      "failures": 10631,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 504,
@@ -96,51 +96,51 @@
   },
   "categories": {
     "AI": {
-      "topicSamples": 35,
-      "averageScore": 65,
-      "averageConfidence": 87,
+      "topicSamples": 46,
+      "averageScore": 64,
+      "averageConfidence": 86,
       "evidenceLevels": {
-        "strong": 14,
-        "none": 13,
-        "single-source-verified": 8
+        "strong": 16,
+        "none": 18,
+        "single-source-verified": 12
       },
       "decisions": {
-        "hold": 20,
-        "review": 15
+        "hold": 33,
+        "review": 13
       }
     },
     "Crypto": {
-      "topicSamples": 135,
+      "topicSamples": 125,
       "averageScore": 64,
       "averageConfidence": 87,
       "evidenceLevels": {
-        "strong": 55,
-        "single-source-verified": 40,
-        "none": 40
+        "single-source-verified": 37,
+        "strong": 51,
+        "none": 37
       },
       "decisions": {
-        "hold": 85,
-        "review": 50
+        "review": 45,
+        "hold": 80
       }
     },
     "Digital Life": {
-      "topicSamples": 122,
-      "averageScore": 65,
+      "topicSamples": 127,
+      "averageScore": 64,
       "averageConfidence": 86,
       "evidenceLevels": {
-        "none": 57,
-        "strong": 38,
-        "single-source-verified": 27
+        "strong": 39,
+        "none": 60,
+        "single-source-verified": 28
       },
       "decisions": {
-        "hold": 75,
-        "review": 47
+        "review": 46,
+        "hold": 81
       }
     },
     "How-To": {
       "topicSamples": 5,
-      "averageScore": 58,
-      "averageConfidence": 71,
+      "averageScore": 56,
+      "averageConfidence": 69,
       "evidenceLevels": {
         "none": 3,
         "single-source-verified": 2
@@ -150,55 +150,55 @@
       }
     },
     "Innovation": {
-      "topicSamples": 30,
+      "topicSamples": 31,
       "averageScore": 56,
       "averageConfidence": 59,
       "evidenceLevels": {
-        "none": 30
+        "none": 31
       },
       "decisions": {
-        "hold": 30
+        "hold": 31
       }
     },
     "Product Launches": {
-      "topicSamples": 39,
-      "averageScore": 60,
-      "averageConfidence": 72,
+      "topicSamples": 38,
+      "averageScore": 61,
+      "averageConfidence": 74,
       "evidenceLevels": {
-        "none": 24,
-        "single-source-verified": 8,
+        "none": 22,
+        "single-source-verified": 9,
         "strong": 7
       },
       "decisions": {
-        "hold": 30,
-        "review": 9
+        "hold": 28,
+        "review": 10
       }
     },
     "Technology": {
-      "topicSamples": 134,
+      "topicSamples": 128,
       "averageScore": 65,
       "averageConfidence": 87,
       "evidenceLevels": {
-        "none": 48,
-        "single-source-verified": 47,
-        "strong": 39
+        "single-source-verified": 45,
+        "strong": 38,
+        "none": 45
       },
       "decisions": {
-        "hold": 82,
-        "review": 52
+        "review": 49,
+        "hold": 79
       }
     }
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 0,
-      "evidenceBlockRate": 0,
-      "claimConfidence": 0,
+      "evidencePassRate": -8,
+      "evidenceBlockRate": 2,
+      "claimConfidence": -4,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-23T05:17:28.140Z",
-    "previousRunAt": "2026-10-22T21:53:58.745Z"
+    "latestRunAt": "2026-10-23T12:01:58.403Z",
+    "previousRunAt": "2026-10-23T05:17:28.140Z"
   },
   "signals": [
     {
@@ -209,8 +209,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6887,
-        "strong": 2117
+        "singleSource": 6919,
+        "strong": 2130
       }
     },
     {
@@ -238,23 +238,23 @@
     {
       "id": "evidence-pass-rate-change",
       "type": "trend",
-      "observation": false,
-      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
+      "observation": true,
+      "detail": "Evidence pass rate changed by -8 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 0
+        "delta": -8
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
       "observation": false,
-      "detail": "Average claim confidence changed by +0 points versus the previous run.",
+      "detail": "Average claim confidence changed by -4 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 0
+        "delta": -4
       }
     },
     {
@@ -270,7 +270,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-22T21:54:37.889Z",
+    "previousUpdatedAt": "2026-10-23T05:18:07.623Z",
     "previousVersion": 2
   }
 }
