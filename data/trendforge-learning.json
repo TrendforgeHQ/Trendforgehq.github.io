@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T21:54:37.889Z",
+  "updatedAt": "2026-10-23T05:18:07.623Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -26,8 +26,8 @@
   },
   "evidence": {
     "samples": 120,
-    "passRate": 32,
-    "blockRate": 10,
+    "passRate": 33,
+    "blockRate": 9,
     "strongRate": 8,
     "singleSourceRate": 25
   },
@@ -48,19 +48,10 @@
       "latestStatus": 402,
       "latestClass": "error"
     },
-    "Cloudflare": {
-      "samples": 1,
-      "successes": 0,
-      "failures": 18,
-      "successRate": 0,
-      "cooldownRuns": 0,
-      "latestStatus": 429,
-      "latestClass": "rate_limit"
-    },
     "Cohere": {
       "samples": 120,
-      "successes": 1803,
-      "failures": 13483,
+      "successes": 1817,
+      "failures": 13592,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 245,
-      "failures": 7542,
+      "successes": 255,
+      "failures": 7613,
       "successRate": 3,
       "cooldownRuns": 1,
       "latestStatus": 200,
@@ -77,8 +68,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 15978,
-      "failures": 12044,
+      "successes": 16228,
+      "failures": 12140,
       "successRate": 57,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -96,7 +87,7 @@
     "OpenRouter": {
       "samples": 120,
       "successes": 240,
-      "failures": 10449,
+      "failures": 10541,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 504,
@@ -159,14 +150,14 @@
       }
     },
     "Innovation": {
-      "topicSamples": 29,
+      "topicSamples": 30,
       "averageScore": 56,
       "averageConfidence": 59,
       "evidenceLevels": {
-        "none": 29
+        "none": 30
       },
       "decisions": {
-        "hold": 29
+        "hold": 30
       }
     },
     "Product Launches": {
@@ -184,30 +175,30 @@
       }
     },
     "Technology": {
-      "topicSamples": 135,
+      "topicSamples": 134,
       "averageScore": 65,
       "averageConfidence": 87,
       "evidenceLevels": {
-        "none": 49,
+        "none": 48,
         "single-source-verified": 47,
         "strong": 39
       },
       "decisions": {
-        "hold": 83,
+        "hold": 82,
         "review": 52
       }
     }
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 2,
-      "evidenceBlockRate": 1,
-      "claimConfidence": 6,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-22T21:53:58.745Z",
-    "previousRunAt": "2026-10-22T17:35:27.180Z"
+    "latestRunAt": "2026-10-23T05:17:28.140Z",
+    "previousRunAt": "2026-10-22T21:53:58.745Z"
   },
   "signals": [
     {
@@ -218,8 +209,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6836,
-        "strong": 2093
+        "singleSource": 6887,
+        "strong": 2117
       }
     },
     {
@@ -241,29 +232,29 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "providers": 7
+        "providers": 6
       }
     },
     {
       "id": "evidence-pass-rate-change",
       "type": "trend",
       "observation": false,
-      "detail": "Evidence pass rate changed by +2 percentage points versus the previous run.",
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 2
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by +6 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 6
+        "delta": 0
       }
     },
     {
@@ -279,7 +270,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-22T17:36:06.445Z",
+    "previousUpdatedAt": "2026-10-22T21:54:37.889Z",
     "previousVersion": 2
   }
 }
