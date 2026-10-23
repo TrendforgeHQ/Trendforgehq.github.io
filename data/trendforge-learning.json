@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T17:24:57.200Z",
+  "updatedAt": "2026-10-23T21:38:24.569Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -33,7 +33,7 @@
   },
   "claims": {
     "samples": 120,
-    "passRate": 52,
+    "passRate": 51,
     "averageConfidence": 69,
     "averageUnsupported": 1,
     "averageClaimsPerArticle": 13
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 1843,
-      "failures": 13805,
+      "successes": 1856,
+      "failures": 13907,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,17 +59,17 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 277,
-      "failures": 7750,
-      "successRate": 3,
+      "successes": 288,
+      "failures": 7814,
+      "successRate": 4,
       "cooldownRuns": 1,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Groq": {
       "samples": 120,
-      "successes": 16720,
-      "failures": 12330,
+      "successes": 16962,
+      "failures": 12425,
       "successRate": 58,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -87,7 +87,7 @@
     "OpenRouter": {
       "samples": 120,
       "successes": 240,
-      "failures": 10720,
+      "failures": 10805,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 504,
@@ -191,14 +191,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 1,
+      "evidencePassRate": 0,
       "evidenceBlockRate": 0,
-      "claimConfidence": -5,
-      "claimUnsupported": 1,
+      "claimConfidence": 0,
+      "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-23T17:24:19.390Z",
-    "previousRunAt": "2026-10-23T12:01:58.403Z"
+    "latestRunAt": "2026-10-23T21:37:49.785Z",
+    "previousRunAt": "2026-10-23T17:24:19.390Z"
   },
   "signals": [
     {
@@ -209,8 +209,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6950,
-        "strong": 2145
+        "singleSource": 6961,
+        "strong": 2128
       }
     },
     {
@@ -239,38 +239,38 @@
       "id": "evidence-pass-rate-change",
       "type": "trend",
       "observation": false,
-      "detail": "Evidence pass rate changed by +1 percentage points versus the previous run.",
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 1
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by -5 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -5
+        "delta": 0
       }
     },
     {
       "id": "claim-unsupported-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Unsupported-claim count changed by +1 versus the previous run.",
+      "observation": false,
+      "detail": "Unsupported-claim count changed by +0 versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 1
+        "delta": 0
       }
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-23T12:02:33.570Z",
+    "previousUpdatedAt": "2026-10-23T17:24:57.200Z",
     "previousVersion": 2
   }
 }
