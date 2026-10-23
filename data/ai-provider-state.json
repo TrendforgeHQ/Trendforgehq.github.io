@@ -7,28 +7,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 259,
-      "lastSuccessAt": "2026-10-22T21:03:13.096Z",
+      "successes": 260,
+      "lastSuccessAt": "2026-10-23T10:47:48.756Z",
       "history": [
-        {
-          "at": 1792530224334,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1890,
-          "usage": {
-            "queue_time": 0.228953948,
-            "prompt_tokens": 2255,
-            "prompt_time": 0.115472296,
-            "completion_tokens": 1056,
-            "completion_time": 1.414670286,
-            "total_tokens": 3311,
-            "total_time": 1.5301425819999999,
-            "completion_tokens_details": {
-              "reasoning_tokens": 889
-            }
-          }
-        },
         {
           "at": 1792530246554,
           "ok": true,
@@ -376,19 +357,38 @@
               "reasoning_tokens": 135
             }
           }
+        },
+        {
+          "at": 1792752468756,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 677,
+          "usage": {
+            "queue_time": 0.074087451,
+            "prompt_tokens": 2447,
+            "prompt_time": 0.195714553,
+            "completion_tokens": 285,
+            "completion_time": 0.301901456,
+            "total_tokens": 2732,
+            "total_time": 0.497616009,
+            "completion_tokens_details": {
+              "reasoning_tokens": 156
+            }
+          }
         }
       ],
-      "lastLatencyMs": 3162,
+      "lastLatencyMs": 677,
       "lastUsage": {
-        "queue_time": 0.178081058,
-        "prompt_tokens": 1226,
-        "prompt_time": 0.068430476,
-        "completion_tokens": 196,
-        "completion_time": 0.219900624,
-        "total_tokens": 1422,
-        "total_time": 0.2883311,
+        "queue_time": 0.074087451,
+        "prompt_tokens": 2447,
+        "prompt_time": 0.195714553,
+        "completion_tokens": 285,
+        "completion_time": 0.301901456,
+        "total_tokens": 2732,
+        "total_time": 0.497616009,
         "completion_tokens_details": {
-          "reasoning_tokens": 135
+          "reasoning_tokens": 156
         }
       }
     },
@@ -396,15 +396,9 @@
       "failures": 87,
       "quotaBlockedUntil": 0,
       "lastStatus": 200,
-      "lastError": "Invalid repair structured output",
-      "lastClass": "error",
+      "lastError": null,
+      "lastClass": "success",
       "history": [
-        {
-          "at": 1791548429678,
-          "ok": false,
-          "class": "server",
-          "status": 503
-        },
         {
           "at": 1791583417069,
           "ok": false,
@@ -648,23 +642,42 @@
           "ok": false,
           "class": "error",
           "status": 200
+        },
+        {
+          "at": 1792752466979,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 8636,
+          "usage": {
+            "promptTokenCount": 5427,
+            "candidatesTokenCount": 843,
+            "totalTokenCount": 6270,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5427
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 7122,
+      "lastLatencyMs": 8636,
       "lastUsage": {
-        "promptTokenCount": 5777,
-        "candidatesTokenCount": 875,
-        "totalTokenCount": 6652,
+        "promptTokenCount": 5427,
+        "candidatesTokenCount": 843,
+        "totalTokenCount": 6270,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 5777
+            "tokenCount": 5427
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 10,
-      "lastSuccessAt": "2026-10-21T02:31:59.618Z"
+      "successes": 11,
+      "lastSuccessAt": "2026-10-23T10:47:46.980Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -1016,5 +1029,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-22T21:03:13.096Z"
+  "updatedAt": "2026-10-23T10:47:48.756Z"
 }
