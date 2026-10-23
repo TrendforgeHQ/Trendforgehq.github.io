@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T21:55:16.668Z",
+  "updatedAt": "2026-10-23T05:18:41.705Z",
   "mode": "shadow",
   "policy": {
     "observationalOnly": true,
@@ -24,8 +24,8 @@
   },
   "changes": {
     "editorialScore": 0,
-    "claimConfidence": 6,
-    "evidencePassRate": 2
+    "claimConfidence": 0,
+    "evidencePassRate": 0
   },
   "providers": {
     "Cerebras": {
@@ -36,34 +36,26 @@
       "latestStatus": 402,
       "latestClass": "error"
     },
-    "Cloudflare": {
-      "successRate": 0,
-      "successes": 0,
-      "failures": 18,
-      "cooldownRuns": 0,
-      "latestStatus": 429,
-      "latestClass": "rate_limit"
-    },
     "Cohere": {
       "successRate": 12,
-      "successes": 1803,
-      "failures": 13483,
+      "successes": 1817,
+      "failures": 13592,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
     },
     "Gemini": {
       "successRate": 3,
-      "successes": 245,
-      "failures": 7542,
+      "successes": 255,
+      "failures": 7613,
       "cooldownRuns": 1,
       "latestStatus": 200,
       "latestClass": "error"
     },
     "Groq": {
       "successRate": 57,
-      "successes": 15978,
-      "failures": 12044,
+      "successes": 16228,
+      "failures": 12140,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
@@ -79,7 +71,7 @@
     "OpenRouter": {
       "successRate": 2,
       "successes": 240,
-      "failures": 10449,
+      "failures": 10541,
       "cooldownRuns": 0,
       "latestStatus": 504,
       "latestClass": "server"
@@ -141,14 +133,14 @@
       }
     },
     "Innovation": {
-      "topicSamples": 29,
+      "topicSamples": 30,
       "averageScore": 56,
       "averageConfidence": 59,
       "evidenceLevels": {
-        "none": 29
+        "none": 30
       },
       "decisions": {
-        "hold": 29
+        "hold": 30
       }
     },
     "Product Launches": {
@@ -166,16 +158,16 @@
       }
     },
     "Technology": {
-      "topicSamples": 135,
+      "topicSamples": 134,
       "averageScore": 65,
       "averageConfidence": 87,
       "evidenceLevels": {
-        "none": 49,
+        "none": 48,
         "single-source-verified": 47,
         "strong": 39
       },
       "decisions": {
-        "hold": 83,
+        "hold": 82,
         "review": 52
       }
     }
@@ -190,11 +182,6 @@
       "id": "provider-cerebras",
       "severity": "medium",
       "detail": "Provider Cerebras has low historical success or cooldown activity."
-    },
-    {
-      "id": "provider-cloudflare",
-      "severity": "medium",
-      "detail": "Provider Cloudflare has low historical success or cooldown activity."
     },
     {
       "id": "provider-gemini",
@@ -223,19 +210,19 @@
       "id": "claim-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Average claim confidence changed by +6 points versus the previous run."
+      "detail": "Average claim confidence changed by +0 points versus the previous run."
     },
     {
       "id": "evidence-trend",
       "type": "trend",
       "confidence": "medium",
-      "detail": "Evidence pass rate changed by +2 percentage points versus the previous run."
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run."
     },
     {
       "id": "current-bottlenecks",
       "type": "bottleneck",
       "confidence": "medium",
-      "detail": "6 operational bottleneck(s) observed; this is diagnostic only and does not change gates."
+      "detail": "5 operational bottleneck(s) observed; this is diagnostic only and does not change gates."
     }
   ],
   "experimentSummary": {
