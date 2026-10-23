@@ -1,0 +1,2153 @@
+{
+  "version": 18,
+  "generatedAt": "2026-10-23T16:13:02.086Z",
+  "articlePath": "content/articles/1password-enables-ai-agents-to-sign-in-without-exposing-passwords.md",
+  "articleTitle": "1Password Enables AI Agents to Sign In Without Exposing Passwords",
+  "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
+  "sourceCount": 4,
+  "usableSourceCount": 4,
+  "claimCount": 27,
+  "editorialCount": 0,
+  "verified": 18,
+  "partial": 8,
+  "unsupported": 1,
+  "sourceUnavailable": 0,
+  "averageConfidence": 74,
+  "pass": false,
+  "policy": {
+    "verifiedMin": 62,
+    "partialMin": 45,
+    "blockUnsupported": true,
+    "minimumAverageConfidence": 60,
+    "numericMismatchAlwaysBlocks": true,
+    "entitySupportRequired": true,
+    "sourceScopedEvidence": true,
+    "semanticNormalization": true,
+    "contextualSynthesis": true,
+    "multiPassageComposition": true,
+    "factMapSynthesis": true,
+    "synthesisRequiresTwoCoreFacts": true,
+    "synthesisProvenanceRequired": true,
+    "topicDriftDetection": true,
+    "contradictionDetection": true,
+    "directEvidencePack": true,
+    "authoritativePackCanonical": true,
+    "reextractPublisherPages": false,
+    "claimAudit": true,
+    "atomicClaimExtraction": true,
+    "editorialAnalysisExcluded": true,
+    "repairMayReplaceOnlyFailedSentences": true,
+    "partialClaimsNonBlocking": true,
+    "modifierEvidenceSufficiency": true,
+    "markdownAwareSegmentation": true,
+    "citationAwareSegmentation": true
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "domain": "finance.yahoo.com",
+      "passageCount": 15,
+      "articleBodyLength": 2134
+    },
+    {
+      "id": "S2",
+      "title": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "url": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "domain": "9to5mac.com",
+      "passageCount": 12,
+      "articleBodyLength": 1462
+    },
+    {
+      "id": "S3",
+      "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
+      "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+      "domain": "techcrunch.com",
+      "passageCount": 2,
+      "articleBodyLength": 653
+    },
+    {
+      "id": "S4",
+      "title": "1Password for Agents lets personal AI agents log in without ever seeing the password - SiliconANGLE",
+      "url": "https://siliconangle.com/2026/10/22/1password-for-agents-lets-personal-ai-agents-log-in-without-ever-seeing-the-password/",
+      "domain": "siliconangle.com",
+      "passageCount": 12,
+      "articleBodyLength": 1710
+    }
+  ],
+  "claims": [
+    {
+      "index": 1,
+      "claim": "1Password has introduced a tool that lets AI agents log into personal accounts without ever seeing the underlying passwords.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 73,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F26",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 62
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F26",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 62,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F28",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 58,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF26,S4-FF28",
+      "evidence": "Password manager 1Password on Thursday launched a new tool by which users can allow agents to log into their personal accounts on their behalf, without the agent ever having access to a user&#8217;s credentials. Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password.",
+      "bestPassage": "Password manager 1Password on Thursday launched a new tool by which users can allow agents to log into their personal accounts on their behalf, without the agent ever having access to a user&#8217;s credentials. Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "1password",
+        "tool",
+        "agent",
+        "log",
+        "personal",
+        "account",
+        "without",
+        "ever",
+        "see",
+        "the",
+        "password"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "1password",
+        "agent",
+        "log",
+        "without",
+        "see",
+        "password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": false,
+        "blocked": true
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 2,
+      "claim": "When an agent encounters a login form, it presents a unique digital key to 1Password; the vault then verifies the key, signs in the agent, and keeps the credential hidden from the model’s context.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 76,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F34",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 53
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F34",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 53,
+          "passageIndex": 5
+        },
+        {
+          "factId": "F9",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 50,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what. When an agent reaches a sign-in form, it uses a unique digital key to verify its identity to 1Password.",
+      "bestPassage": "A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what. When an agent reaches a sign-in form, it uses a unique digital key to verify its identity to 1Password.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "agent",
+        "login",
+        "form",
+        "unique",
+        "key",
+        "1password",
+        "the",
+        "vault",
+        "sign",
+        "and",
+        "keep",
+        "credential",
+        "models"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent",
+        "1password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 3,
+      "claim": "Once signed in, the agent performs its task while the password remains stored safely in the vault.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 77,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 63
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 63,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Once signed in, the agent continues the task while the password stays protected in 1Password.",
+      "bestPassage": "Once signed in, the agent continues the task while the password stays protected in 1Password.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P10"
+      ],
+      "sharedTerms": [
+        "once",
+        "sign",
+        "the",
+        "agent",
+        "its",
+        "task",
+        "password",
+        "vault"
+      ],
+      "entityShared": [
+        "once"
+      ],
+      "topicShared": [
+        "agent",
+        "password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 4,
+      "claim": "The system is designed for agents such as Anthropic’s Claude Duet, Meta’s Grok Bot, and OpenAI’s browser‑based assistants.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents lets personal AI agents log in without ever seeing the password - SiliconANGLE",
+      "bestUrl": "https://siliconangle.com/2026/10/22/1password-for-agents-lets-personal-ai-agents-log-in-without-ever-seeing-the-password/",
+      "bestDomain": "siliconangle.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F28",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 47
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F28",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 47,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F18",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 43,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F31",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 40,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password. The password, one-time code, and other secrets never enter Claude’s context, memory, or Anthropic’s systems. OpenAI has connected ChatGPT Work and its always-on Dots agents to 1Password, and Meta&#8217;s Muse requests logins from 1Password whenever the integration is switched on.",
+      "bestPassage": "Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password. The password, one-time code, and other secrets never enter Claude’s context, memory, or Anthropic’s systems. OpenAI has connected ChatGPT Work and its always-on Dots agents to 1Password, and Meta&#8217;s Muse requests logins from 1Password whenever the integration is switched on.",
+      "matchedPassages": [
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "for",
+        "agent",
+        "anthropic",
+        "duet",
+        "meta",
+        "grok",
+        "bot",
+        "and",
+        "openai",
+        "browser",
+        "bas"
+      ],
+      "entityShared": [
+        "anthropic",
+        "duet",
+        "meta",
+        "grok",
+        "bot",
+        "openai"
+      ],
+      "topicShared": [
+        "for",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 5,
+      "claim": "For Claude, the agent first asks the user for approval.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 65,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F21",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 33
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F21",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 33,
+          "passageIndex": 10
+        },
+        {
+          "factId": "F11",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 31,
+          "passageIndex": 15
+        },
+        {
+          "factId": "F13",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 31,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "1Password for Claude is available now to Mac users on business, family, and individual plans. \"Claude Duet asks before it signs in anywhere, and soon 1Password will complete the sign-in with the passwords people have already set up, so they don't have to start over. The 1Password integration gives Claude approved access when needed, so users can accomplish tasks without handing over their passwords.",
+      "bestPassage": "1Password for Claude is available now to Mac users on business, family, and individual plans. \"Claude Duet asks before it signs in anywhere, and soon 1Password will complete the sign-in with the passwords people have already set up, so they don't have to start over. The 1Password integration gives Claude approved access when needed, so users can accomplish tasks without handing over their passwords.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "for",
+        "claude",
+        "the",
+        "agent",
+        "first",
+        "user"
+      ],
+      "entityShared": [
+        "claude"
+      ],
+      "topicShared": [
+        "for",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 6,
+      "claim": "After consent, 1Password types the stored password into the page itself, so the agent never receives the credential.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 73,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents lets personal AI agents log in without ever seeing the password - SiliconANGLE",
+      "bestUrl": "https://siliconangle.com/2026/10/22/1password-for-agents-lets-personal-ai-agents-log-in-without-ever-seeing-the-password/",
+      "bestDomain": "siliconangle.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F35",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 59
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F35",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 59,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "Nothing goes ahead until the person approves it on their own device, at which point 1Password types the password into the page itself.",
+      "bestPassage": "Nothing goes ahead until the person approves it on their own device, at which point 1Password types the password into the page itself.",
+      "matchedPassages": [
+        "S4-BODY",
+        "S4-P8"
+      ],
+      "sharedTerms": [
+        "1password",
+        "typ",
+        "the",
+        "password",
+        "page",
+        "itself",
+        "agent",
+        "never"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "1password",
+        "password",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [
+        "never"
+      ],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "The integration also allows a single authorized credential to be used across multiple websites in one task, avoiding repeated logins.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 70,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F16",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 48
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F16",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 48,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "1Password can also broker access across multiple websites during the same task, allowing Claude to complete a multi-step workflow without stopping for a new login each time.",
+      "bestPassage": "1Password can also broker access across multiple websites during the same task, allowing Claude to complete a multi-step workflow without stopping for a new login each time.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P3"
+      ],
+      "sharedTerms": [
+        "the",
+        "integration",
+        "allow",
+        "credential",
+        "acros",
+        "multiple",
+        "websit",
+        "one",
+        "task",
+        "login"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 8,
+      "claim": "The core idea is that an agent should be able to do its job without permanent access to every account behind it.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 79,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 75
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 75,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "\"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "bestPassage": "\"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P2"
+      ],
+      "sharedTerms": [
+        "the",
+        "agent",
+        "should",
+        "able",
+        "its",
+        "job",
+        "without",
+        "permanent",
+        "acces",
+        "account",
+        "behind"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent",
+        "without"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": false,
+        "blocked": true
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "1Password supplies a trust layer that lets users delegate tasks while keeping sensitive data inside the vault.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 67,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F27",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 48
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F27",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 48,
+          "passageIndex": 5
+        },
+        {
+          "factId": "F5",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 38,
+          "passageIndex": 12
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "&#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221; That's why we're partnering with companies across the personal AI agent ecosystem, so people can use the agents they choose while keeping their passwords in one trusted 1Password vault.\"",
+      "bestPassage": "&#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221; That's why we're partnering with companies across the personal AI agent ecosystem, so people can use the agents they choose while keeping their passwords in one trusted 1Password vault.\"",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "1password",
+        "trust",
+        "layer",
+        "lets",
+        "user",
+        "task",
+        "keep",
+        "sensitive",
+        "the",
+        "vault"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "1password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 10,
+      "claim": "When an agent controls the browser, the 1Password extension locks the vault so only the credentials explicitly approved for the current task remain available.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 90,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F25",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 87
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F25",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 87,
+          "passageIndex": 7
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available.",
+      "bestPassage": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P12"
+      ],
+      "sharedTerms": [
+        "agent",
+        "control",
+        "the",
+        "browser",
+        "1password",
+        "extension",
+        "lock",
+        "vault",
+        "credential",
+        "explicitly",
+        "approv",
+        "for",
+        "current",
+        "task",
+        "remain",
+        "available"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent",
+        "1password",
+        "for"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "This mechanism prevents the agent from accessing or copying passwords beyond the approved scope.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 46,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 30
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 30,
+          "passageIndex": 3
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time.",
+      "bestPassage": "Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "agent",
+        "copy",
+        "password",
+        "approv"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent",
+        "password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 12,
+      "claim": "The approach allows users to delegate tasks while keeping sensitive data inside the vault.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 66,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
+      "bestUrl": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F27",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 49
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F27",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 49,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "&#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221;",
+      "bestPassage": "&#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221;",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P2"
+      ],
+      "sharedTerms": [
+        "the",
+        "allow",
+        "user",
+        "delegate",
+        "task",
+        "keep",
+        "sensitive"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 13,
+      "claim": "The password, any one‑time code, and other secrets never enter the agent’s memory or Anthropic’s systems, keeping them out of the model’s context.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F18",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 78
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F18",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 78,
+          "passageIndex": 3
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "The password, one-time code, and other secrets never enter Claude’s context, memory, or Anthropic’s systems.",
+      "bestPassage": "The password, one-time code, and other secrets never enter Claude’s context, memory, or Anthropic’s systems.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P5"
+      ],
+      "sharedTerms": [
+        "the",
+        "password",
+        "one",
+        "time",
+        "code",
+        "and",
+        "other",
+        "secret",
+        "never",
+        "enter",
+        "agent",
+        "memory",
+        "anthropic",
+        "system",
+        "context"
+      ],
+      "entityShared": [
+        "anthropic"
+      ],
+      "topicShared": [
+        "password",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 14,
+      "claim": "The vault remains the sole holder of the credentials, and the agent interacts with the account only through the verified key.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 70,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F25",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 47
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F25",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 47,
+          "passageIndex": 7
+        },
+        {
+          "factId": "F34",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 44,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-FF25,S4-FF34",
+      "evidence": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available. A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what.",
+      "bestPassage": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available. A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P12"
+      ],
+      "sharedTerms": [
+        "the",
+        "vault",
+        "remain",
+        "credential",
+        "and",
+        "agent",
+        "account",
+        "key"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 15,
+      "claim": "1Password has partnered with companies across the personal AI agent ecosystem so users can choose the agent they prefer while keeping all passwords in one trusted vault.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 82,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 79
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F5",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 79,
+          "passageIndex": 12
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "That's why we're partnering with companies across the personal AI agent ecosystem, so people can use the agents they choose while keeping their passwords in one trusted 1Password vault.\"",
+      "bestPassage": "That's why we're partnering with companies across the personal AI agent ecosystem, so people can use the agents they choose while keeping their passwords in one trusted 1Password vault.\"",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P5"
+      ],
+      "sharedTerms": [
+        "1password",
+        "partner",
+        "compani",
+        "acros",
+        "the",
+        "personal",
+        "agent",
+        "ecosystem",
+        "user",
+        "can",
+        "choose",
+        "keep",
+        "password",
+        "one",
+        "trust",
+        "vault"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "1password",
+        "agent",
+        "password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 16,
+      "claim": "The first partnership, announced in March, outlined that Claude would gain consent‑based access to vault items.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 13
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P7",
+      "evidence": "The Anthropic partnership was first outlined in March , when 1Password said Claude would gain consent-based access to vault items.",
+      "bestPassage": "The Anthropic partnership was first outlined in March , when 1Password said Claude would gain consent-based access to vault items.",
+      "matchedPassages": [
+        "S2-P7",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "first",
+        "partner",
+        "march",
+        "outlin",
+        "claude",
+        "gain",
+        "consent",
+        "bas",
+        "acces",
+        "vault",
+        "item"
+      ],
+      "entityShared": [
+        "march",
+        "claude"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 17,
+      "claim": "Since then, agents from Meta, OpenAI, SpaceXSI, Perplexity AI, and Browserbase have been connected to the system.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 97,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents lets personal AI agents log in without ever seeing the password - SiliconANGLE",
+      "bestUrl": "https://siliconangle.com/2026/10/22/1password-for-agents-lets-personal-ai-agents-log-in-without-ever-seeing-the-password/",
+      "bestDomain": "siliconangle.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F39",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 67
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F39",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 67,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F28",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 63,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-FF39,S4-FF28",
+      "evidence": "Perplexity AI Inc. and Browserbase Inc. are on that list, and their browser-based agents have been connected to 1Password since late 2025. Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password.",
+      "bestPassage": "Perplexity AI Inc. and Browserbase Inc. are on that list, and their browser-based agents have been connected to 1Password since late 2025. Agents from Meta Platforms Inc., Anthropic PBC, OpenAI Group PBC and Elon Musk&#8217;s SpaceXSI will be able to log in to people&#8217;s accounts through it without ever seeing the password.",
+      "matchedPassages": [
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "since",
+        "agent",
+        "meta",
+        "openai",
+        "spacexsi",
+        "perplexity",
+        "and",
+        "browserbase",
+        "connect",
+        "the"
+      ],
+      "entityShared": [
+        "meta",
+        "openai",
+        "spacexsi",
+        "perplexity",
+        "browserbase"
+      ],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 18,
+      "claim": "The feature is currently available to Mac users on business, family, and individual plans.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 85,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F21",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 80
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F21",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 80,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "1Password for Claude is available now to Mac users on business, family, and individual plans.",
+      "bestPassage": "1Password for Claude is available now to Mac users on business, family, and individual plans.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P8"
+      ],
+      "sharedTerms": [
+        "the",
+        "available",
+        "mac",
+        "user",
+        "busines",
+        "family",
+        "and",
+        "individual",
+        "plan"
+      ],
+      "entityShared": [
+        "mac"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 19,
+      "claim": "It requires the 1Password desktop app, browser extension, and the corresponding AI agent’s desktop and browser extensions.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 85,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F22",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 80
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F22",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 80,
+          "passageIndex": 11
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "It requires the 1Password desktop app and browser extension, along with the Claude desktop app and browser extension.",
+      "bestPassage": "It requires the 1Password desktop app and browser extension, along with the Claude desktop app and browser extension.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P9"
+      ],
+      "sharedTerms": [
+        "requir",
+        "the",
+        "1password",
+        "desktop",
+        "app",
+        "browser",
+        "extension",
+        "and",
+        "agent"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "1password",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 20,
+      "claim": "Agents that perform real‑world tasks—booking travel, managing online accounts, or automating workflows—use credentials.",
+      "status": "unsupported",
+      "classification": "unsupported",
+      "confidence": 71,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F19",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 44
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F19",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 44,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "This is useful for things like booking travel or managing online accounts.",
+      "bestPassage": "This is useful for things like booking travel or managing online accounts.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P6"
+      ],
+      "sharedTerms": [
+        "agent",
+        "task",
+        "book",
+        "travel",
+        "manag",
+        "online",
+        "account",
+        "workflow",
+        "credential"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 21,
+      "claim": "Handing a password directly to an agent risks exposing that credential to the model or storing it in an uncontrolled location.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 67,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 51
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 51,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F27",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 51,
+          "passageIndex": 5
+        },
+        {
+          "factId": "F12",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 44,
+          "passageIndex": 16
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF7,S3-FF27,S1-FF12",
+      "evidence": "Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time. &#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221; \"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\"",
+      "bestPassage": "Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time. &#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221; \"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\"",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P7"
+      ],
+      "sharedTerms": [
+        "hand",
+        "password",
+        "agent",
+        "expos",
+        "credential",
+        "the",
+        "models"
+      ],
+      "entityShared": [
+        "hand"
+      ],
+      "topicShared": [
+        "password",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 22,
+      "claim": "By keeping the password inside the vault and using a key‑based sign‑in, 1Password reduces the attack surface and preserves privacy.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 66,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 37
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 37,
+          "passageIndex": 15
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "\"Claude Duet asks before it signs in anywhere, and soon 1Password will complete the sign-in with the passwords people have already set up, so they don't have to start over.",
+      "bestPassage": "\"Claude Duet asks before it signs in anywhere, and soon 1Password will complete the sign-in with the passwords people have already set up, so they don't have to start over.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "keep",
+        "the",
+        "password",
+        "vault",
+        "and",
+        "key",
+        "sign",
+        "1password"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "password",
+        "1password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 23,
+      "claim": "The trust layer also encourages broader adoption of personal AI agents.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 66,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 55
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 55,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "\"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "bestPassage": "\"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P2"
+      ],
+      "sharedTerms": [
+        "the",
+        "trust",
+        "layer",
+        "personal",
+        "agent"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 24,
+      "claim": "With a secure way to delegate sensitive tasks, users may feel more comfortable letting an agent act on their behalf.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 70,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F12",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 54
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F12",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 54,
+          "passageIndex": 16
+        },
+        {
+          "factId": "F27",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 45,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF12,S3-FF27",
+      "evidence": "\"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\" &#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221;",
+      "bestPassage": "\"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\" &#8220;Handing over a password, secret, or credential is a common shortcut to an agent, but can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time,&#8221; the company said in a blog post . &#8220;1Password for Agents gives people a trusted way to delegate tasks to personal AI agents while keeping control of the passwords, secrets, and credentials those tasks require.&#8221;",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P12"
+      ],
+      "sharedTerms": [
+        "secure",
+        "way",
+        "delegate",
+        "sensitive",
+        "task",
+        "user",
+        "agent",
+        "behalf"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "way",
+        "agent",
+        "behalf"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 25,
+      "claim": "The current rollout is limited to Mac users and to a handful of agents.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 69,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F21",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 34
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F21",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 34,
+          "passageIndex": 10
+        },
+        {
+          "factId": "F26",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 27,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 25,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "1Password for Claude is available now to Mac users on business, family, and individual plans. Password manager 1Password on Thursday launched a new tool by which users can allow agents to log into their personal accounts on their behalf, without the agent ever having access to a user&#8217;s credentials. \"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "bestPassage": "1Password for Claude is available now to Mac users on business, family, and individual plans. Password manager 1Password on Thursday launched a new tool by which users can allow agents to log into their personal accounts on their behalf, without the agent ever having access to a user&#8217;s credentials. \"An agent should be able to do the job it's been asked to do without getting permanent access to everything behind the account, and 1Password provides the trust layer that makes this possible across personal agent experiences.\"",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "current",
+        "mac",
+        "user",
+        "and",
+        "agent"
+      ],
+      "entityShared": [
+        "mac"
+      ],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": false,
+        "blocked": true
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 26,
+      "claim": "The system relies on the agent’s ability to prompt for user approval and to use the browser extension.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 66,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+      "bestUrl": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "bestDomain": "9to5mac.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F25",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 40
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F25",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 40,
+          "passageIndex": 7
+        },
+        {
+          "factId": "F22",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 31,
+          "passageIndex": 11
+        },
+        {
+          "factId": "F34",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 28,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available. It requires the 1Password desktop app and browser extension, along with the Claude desktop app and browser extension. A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what.",
+      "bestPassage": "When a compatible AI agent takes control of the browser, the 1Password extension automatically locks down the vault so that only the credentials explicitly approved for that task remain available. It requires the 1Password desktop app and browser extension, along with the Claude desktop app and browser extension. A unique digital key identifies the agent to 1Password when it hits a login page, and the request that follows tells the person which account is wanted and for what.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "system",
+        "agent",
+        "prompt",
+        "for",
+        "user",
+        "and",
+        "browser",
+        "extension"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent",
+        "for"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 27,
+      "claim": "For now, 1Password’s agent integration provides a first concrete step toward letting AI assistants perform authenticated tasks without exposing passwords.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 55,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "1Password for Agents Launches as the Trust Layer for Personal AI Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/1password-agents-launches-trust-layer-130000662.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F12",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 35
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F12",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 35,
+          "passageIndex": 16
+        },
+        {
+          "factId": "F13",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 35,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F16",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 32,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF12,S1-FF13,S2-FF16",
+      "evidence": "\"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\" The 1Password integration gives Claude approved access when needed, so users can accomplish tasks without handing over their passwords. 1Password can also broker access across multiple websites during the same task, allowing Claude to complete a multi-step workflow without stopping for a new login each time.",
+      "bestPassage": "\"Our integration with 1Password gives agents a secure way to access accounts users already have saved in 1Password without exposing sensitive credentials to the model, so you can confidently put AI to work on their behalf.\" The 1Password integration gives Claude approved access when needed, so users can accomplish tasks without handing over their passwords. 1Password can also broker access across multiple websites during the same task, allowing Claude to complete a multi-step workflow without stopping for a new login each time.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P12",
+        "S1-P14"
+      ],
+      "sharedTerms": [
+        "for",
+        "1password",
+        "agent",
+        "integration",
+        "step",
+        "task",
+        "without",
+        "expos",
+        "password"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "for",
+        "1password",
+        "agent",
+        "without",
+        "password"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    }
+  ],
+  "editorial": []
+}
