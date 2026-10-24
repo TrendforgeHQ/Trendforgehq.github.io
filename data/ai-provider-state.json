@@ -7,28 +7,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 263,
-      "lastSuccessAt": "2026-10-23T16:13:01.711Z",
+      "successes": 264,
+      "lastSuccessAt": "2026-10-24T20:01:03.738Z",
       "history": [
-        {
-          "at": 1792549956657,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 14001,
-          "usage": {
-            "queue_time": 0.07506803,
-            "prompt_tokens": 3165,
-            "prompt_time": 0.194703436,
-            "completion_tokens": 959,
-            "completion_time": 1.079180411,
-            "total_tokens": 4124,
-            "total_time": 1.273883847,
-            "completion_tokens_details": {
-              "reasoning_tokens": 637
-            }
-          }
-        },
         {
           "at": 1792549987488,
           "ok": false,
@@ -376,19 +357,38 @@
               "reasoning_tokens": 292
             }
           }
+        },
+        {
+          "at": 1792872063738,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 1431,
+          "usage": {
+            "queue_time": 0.160253943,
+            "prompt_tokens": 2566,
+            "prompt_time": 0.153645457,
+            "completion_tokens": 906,
+            "completion_time": 1.013000364,
+            "total_tokens": 3472,
+            "total_time": 1.166645821,
+            "completion_tokens_details": {
+              "reasoning_tokens": 663
+            }
+          }
         }
       ],
-      "lastLatencyMs": 15638,
+      "lastLatencyMs": 1431,
       "lastUsage": {
-        "queue_time": 0.258722773,
-        "prompt_tokens": 1599,
-        "prompt_time": 0.126590069,
-        "completion_tokens": 365,
-        "completion_time": 0.391915667,
-        "total_tokens": 1964,
-        "total_time": 0.518505736,
+        "queue_time": 0.160253943,
+        "prompt_tokens": 2566,
+        "prompt_time": 0.153645457,
+        "completion_tokens": 906,
+        "completion_time": 1.013000364,
+        "total_tokens": 3472,
+        "total_time": 1.166645821,
         "completion_tokens_details": {
-          "reasoning_tokens": 292
+          "reasoning_tokens": 663
         }
       }
     },
@@ -399,12 +399,6 @@
       "lastError": null,
       "lastClass": "success",
       "history": [
-        {
-          "at": 1791583417069,
-          "ok": false,
-          "class": "error",
-          "status": 200
-        },
         {
           "at": 1791632238535,
           "ok": false,
@@ -661,23 +655,42 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1792872060416,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 5915,
+          "usage": {
+            "promptTokenCount": 5299,
+            "candidatesTokenCount": 770,
+            "totalTokenCount": 6069,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5299
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 8636,
+      "lastLatencyMs": 5915,
       "lastUsage": {
-        "promptTokenCount": 5427,
-        "candidatesTokenCount": 843,
-        "totalTokenCount": 6270,
+        "promptTokenCount": 5299,
+        "candidatesTokenCount": 770,
+        "totalTokenCount": 6069,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 5427
+            "tokenCount": 5299
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 11,
-      "lastSuccessAt": "2026-10-23T10:47:46.980Z"
+      "successes": 12,
+      "lastSuccessAt": "2026-10-24T20:01:00.416Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -1029,5 +1042,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-23T16:13:01.711Z"
+  "updatedAt": "2026-10-24T20:01:03.738Z"
 }
