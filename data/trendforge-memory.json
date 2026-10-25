@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T11:57:31.575Z",
+  "updatedAt": "2026-10-25T16:47:09.489Z",
   "policy": {
     "recordsOperationalHistory": true,
     "influencesDecisions": false,
@@ -10,106 +10,6 @@
     "maxArticles": 500
   },
   "runs": [
-    {
-      "recordedAt": "2026-09-20T21:02:05.201Z",
-      "workflowRun": "35537406637",
-      "workflowSha": "6c7ddc5385d4052f7b794b34b5d90a3a0859eaaa",
-      "decisions": {
-        "total": 230,
-        "publishCandidates": 0,
-        "review": 39,
-        "hold": 191,
-        "reject": 0,
-        "strongEvidenceReady": 17,
-        "singleSourceVerifiedReady": 77
-      },
-      "evidence": {
-        "candidates": 230,
-        "passed": 56,
-        "blocked": 19,
-        "strong": 13,
-        "singleSource": 43
-      },
-      "claims": {
-        "title": "Bitcoin ETFs Hold 6.29% of Supply – What a 10% Threshold Means",
-        "claimCount": 10,
-        "verified": 10,
-        "partial": 0,
-        "unsupported": 0,
-        "averageConfidence": 82,
-        "pass": true
-      },
-      "editorial": {
-        "status": "pass",
-        "articleCount": 20,
-        "averageScore": 74
-      },
-      "lifecycle": {
-        "articles": 20,
-        "refreshCandidates": 0,
-        "watch": 6,
-        "fresh": 14,
-        "stale": 0,
-        "duplicateClusters": 0
-      },
-      "growth": {
-        "totalArticles": 20,
-        "averageEditorialScore": 74,
-        "editorialReviewCount": 15,
-        "refreshCandidates": 0
-      },
-      "distribution": {
-        "articlesPlanned": 20,
-        "externalPostingPerformed": false
-      },
-      "monetization": {
-        "readyForAdSenseFoundation": false
-      },
-      "providers": {
-        "Groq": {
-          "failures": 46,
-          "successes": 36,
-          "lastStatus": 429,
-          "lastClass": "rate_limit",
-          "inCooldown": false
-        },
-        "Gemini": {
-          "failures": 33,
-          "successes": 0,
-          "lastStatus": 503,
-          "lastClass": "server",
-          "inCooldown": false
-        },
-        "OpenAI": {
-          "failures": 3,
-          "successes": 0,
-          "lastStatus": 429,
-          "lastClass": "quota",
-          "inCooldown": false
-        },
-        "Cerebras": {
-          "failures": 7,
-          "successes": 0,
-          "lastStatus": 402,
-          "lastClass": "error",
-          "inCooldown": false
-        },
-        "OpenRouter": {
-          "failures": 44,
-          "successes": 2,
-          "lastStatus": 200,
-          "lastClass": "transient",
-          "inCooldown": false
-        },
-        "Cohere": {
-          "failures": 53,
-          "successes": 12,
-          "lastStatus": 200,
-          "lastClass": "transient",
-          "inCooldown": false
-        }
-      }
-    },
     {
       "recordedAt": "2026-09-21T05:23:52.190Z",
       "workflowRun": "35564409892",
@@ -12009,349 +11909,109 @@
           "inCooldown": false
         }
       }
+    },
+    {
+      "recordedAt": "2026-10-25T16:47:09.489Z",
+      "workflowRun": "40213300383",
+      "workflowSha": "a4b53fc40cc384040985735279c1f9a1e8728b16",
+      "decisions": {
+        "total": 70,
+        "publishCandidates": 0,
+        "review": 1,
+        "hold": 69,
+        "reject": 0,
+        "strongEvidenceReady": 0,
+        "singleSourceVerifiedReady": 60
+      },
+      "evidence": {
+        "candidates": 70,
+        "passed": 4,
+        "blocked": 0,
+        "strong": 0,
+        "singleSource": 4
+      },
+      "claims": {
+        "title": "",
+        "claimCount": 0,
+        "verified": 0,
+        "partial": 0,
+        "unsupported": 0,
+        "averageConfidence": 0,
+        "pass": false
+      },
+      "editorial": {
+        "status": "pass",
+        "articleCount": 72,
+        "averageScore": 76
+      },
+      "lifecycle": {
+        "articles": 72,
+        "refreshCandidates": 48,
+        "watch": 17,
+        "fresh": 7,
+        "stale": 24,
+        "duplicateClusters": 0
+      },
+      "growth": {
+        "totalArticles": 72,
+        "averageEditorialScore": 76,
+        "editorialReviewCount": 58,
+        "refreshCandidates": 48
+      },
+      "distribution": {
+        "articlesPlanned": 20,
+        "externalPostingPerformed": false
+      },
+      "monetization": {
+        "readyForAdSenseFoundation": false
+      },
+      "providers": {
+        "Groq": {
+          "failures": 135,
+          "successes": 269,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        },
+        "Gemini": {
+          "failures": 88,
+          "successes": 12,
+          "lastStatus": 200,
+          "lastClass": "error",
+          "inCooldown": false
+        },
+        "OpenAI": {
+          "failures": 3,
+          "successes": 0,
+          "lastStatus": 429,
+          "lastClass": "quota",
+          "inCooldown": false
+        },
+        "Cerebras": {
+          "failures": 7,
+          "successes": 0,
+          "lastStatus": 402,
+          "lastClass": "error",
+          "inCooldown": false
+        },
+        "OpenRouter": {
+          "failures": 117,
+          "successes": 2,
+          "lastStatus": 504,
+          "lastClass": "server",
+          "inCooldown": false
+        },
+        "Cohere": {
+          "failures": 143,
+          "successes": 21,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        }
+      }
     }
   ],
   "topics": [
-    {
-      "key": "https://www.theverge.com/transportation/1012783/tesla-roadster-flying-stunt-production-reality-musk",
-      "title": "The incredible flying Tesla Roadster is just for show",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-16T21:39:03.180Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 82,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQNzdlc2JrdWVnZ3dtOGs5RENyNUhjZGpPTkRSTmowN0VhQVJxOVhZSEVGV2ZnNkZMWG9zdG8yUWkzbjdmYVhnQTVmVHhjdnVWcGhwYmJhMVJ2WGN1aE1wX19Uclo3cHZwZmJFcnYwaFhzcVdESHNWWFZMdW9Nc1Q5eXAzMFdqOHYzQmVJ?oc=5",
-      "title": "Apple Now Inviting Media to October 28 'Launch Experience' - MacRumors",
-      "category": "Product Launches",
-      "lastSeenAt": "2026-10-16T21:39:03.180Z",
-      "decision": "hold",
-      "score": 54,
-      "confidence": 63,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMU92d1ViQjB2aWplMWtWMW1GVHFVcVE0eUVjMXEzclR1OW5KRThjeE1xTFM2YjRtcGZJb2l4QWliSURJY0ZOdlpLcFVQaFF1QU14NFlOMi1SVTI2cXZrRmlmdTZWc1BjZFFmd3Q1cnNDcmlPRGx4a3FnbHZ2ankxUDBOTTZTeWIzN19FY1ZtLWdTSTdnbWlTOEdUSndRdWxhMW5LT0dQZnRyMWYxbkNFMVVMRDVRNDNMUkwzY0o3Nzd0a0ozVFlPbA?oc=5",
-      "title": "Electronics Major Arduino Opens Edge AI Invention Lab at IIT Delhi for Hands-On AI Learning - Analytics India Magazine",
-      "category": "Innovation",
-      "lastSeenAt": "2026-10-25T11:57:31.575Z",
-      "decision": "hold",
-      "score": 54,
-      "confidence": 58,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQkxhdi15T3hFNFNIcHQxbEx4TGZnNm5wakhGVE50UmlCRlBKRnZUcHdHRkZvQkZZZF9udjNVcXFkY0l2ZGsxaDVVTHNRbHc0MWhMbi1SQXNuTElhSFF4eG9jeHlaNF9xYk90Nl9YQzlhbmdOSzhoME03cHBad2pDSHMwS0Iza09OdW94cnVNbmloeERMRk5iSHdiNHlFaDNWSU9QMU5iWjc?oc=5",
-      "title": "OpenAI models hacked a crypto wallet and breached more websites - Ars Technica",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T20:54:14.851Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 87,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdlZmUVNrdllyNVN6LWh0bDVFbVRNUThaajVnMzZUaVM4aW5uOFBMMF9WNzY3ZjBPMVNQU2VyTk1sRW9mX0NpMXBNcUFUbU5IN29sbXQ0Z2hhYVZvSVdaSzZLa2RuMk9GMW9Oa0Rmb3JxTGdEYm1hai1SRERxbnZ5SXE3a0FpSFRNbXZNREVUWmNQUVdSdFJiVDlFMDlOZ1RrbXdpRkQyQVZ3UnJy?oc=5",
-      "title": "Brahma AI (Metaphysic): 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 90,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPa0NaamVxeXBQWERYeU5wYUZOQkpocHVmTmJJNlFSdzNzNTRtbUo2bHlsMG9HUnFqWDZ3QUpRR05TUWcyQURPRU43SEJGVEFvVi1CMU92V3M1TUNsWHNNOTZKLUlBVUpyRm5DQWtZSWVKMU4wM0ExQVliVEZOWWZQVlBkblZqcnM1MDVlelZPUUdUX0pmQldMSEdMWWJ6dW8?oc=5",
-      "title": "Weekly Wrap: Crypto Under Pressure As A.I. Trade Unwinds - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPN1N5TlRFVUo5b3RqUm1BZGJfRU5wdHUzaGRNZkRDc0xLZ2tfNnhfeTZjZ01lZXFQVVVXSGFSYVB4OFFzZGV0MWU2U2dJUFpOTl8zc3FKTEVlaXNEYUNLV19NcHFROHh6S1NmVkJQV1QwZzdYTmdrQlR4bkowMm1sMU1uOE1ZNUtvd09lMmpGY2VZaF90dlVvaS1QMXpBMUlWbUhMR3dqQ29ZUi1GQU5QckprRdIBuAFBVV95cUxOSWNIMGs5NjZWNVFfbWdmVVZOQ2lrRHg5dzlLcVFxOHRST3NDY2FkNFAzZ19VVFEtbHhTLTROTHkwNjBUajZlbnpWSjcyZUJPR2x6NmpIUFRpeXhxMnI0VVdnS2Fvd1BHb1lqdndkb2w4cnBrQjdINnhTSy1UWXRLN1R3ejRCdXlfTjRjVGZNaExMdE9MZG95dVBIY2pKbnByVVFBclhnUGpzZEoyaXVwT1NkZEhtRUJy?oc=5",
-      "title": "Suspect in FlyDubai incident was previously identified as security risk: Officials - ABC News - Breaking News, Latest News and Videos",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "review",
-      "score": 69,
-      "confidence": 89,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdGdiVHB6QnI3bUhoa0RLdWJVQVBvckFqek4xV1dqeEdzT0hFbmZ4NWxXZzJKWmpVYU42VWRuRHQxdVJtOXVKdFE5bDk3NnNoYkdSdG5FQnVleHdYUW55WE1tYTBXVDBWQWFiYk81aGE4ZTJjTXppQ3Z6bXhYRDhlYkF1YjlRQzltdm5MbW9EdUFWX0lPLThOamJrNS0zVGdmY3NNT01rWmtPLVU?oc=5",
-      "title": "Nowhere to hide: Tech selloff hits software and chip stocks alike - MarketWatch",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcUpfelZOR25aRUQxVVVvZjJDWjYxcGt3QkJqcGVMVTh2Sk5oUEVpNTdrVzBDNnZqZm95NElMTzNDUHM5dDBHVHZEakQzNVlqRkg4VmRMZHNndUJxaTI3dTBwckd0QmMzN3J1cVFvMUpEY3Bqc21fb3Z4MmNJTWpCS3J2aWNNRlFTbldKUThZYW93emo2aGJmeHdsWDlrY2VuRHJMenQzeTNZSXRwVmF1aw?oc=5",
-      "title": "Grass Valley & CBS Sports: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZzhVeWNpRFBzSS0tX3Z4U29ObDVSMm5TTnpJRmNuV05RUnItdkN3NEVmbEVUMTFWYUJBVk5acjhzUXVtc1BTWFpQM0FhZUZkSWhqQ29PemxDODhMZkpaLUFJZkJmeFp5MDRUNHlMbVd1WHhTQko1cGRueXVld013M2R5U3hjOTlxaWRuTG5Ua1FCTFlpczFOSmtYTWpsaTEwS0lTdDdqR3pCYmx5eVgwa3R3WlV0Qkxj?oc=5",
-      "title": "New UNT science and technology building on track to open in spring 2027 - Community Impact Newspaper",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxObkRpR2dLX3UtY21pRkdrS2RVX1VsNEd2QWVhS20xTkJBVG5XdDRXenN1X1Buc0tHdmlqbU5zaUdSXzFab3FzNGFhOUhiZU5hbGZ1bWRlTWU2R1RMcWppdjNFNUFFa3dpWW9jQ1dRSVpLZWx4WGd0Tkp2cHVwNUNaZHpXLXhrUnFQeUNKVmVjeG01eVJBYms3MmpweURPdw?oc=5",
-      "title": "SipRadius: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdHNpclBYZkJpN1VmTmRYWWZnRkx1ZjFCME9CdFU0a240SldkM3NTem4ybFVWYVQzRjVhbmxaTUlxOWxHMWVlMHU1TWRvNEgzdUZNSjZGajhJNzZBQUFnYUwyWmlaTXdHcjZWZWlYenkxSzJkbjBYMTlEMUZKWHpoUjAwY1lZRmUwdDZpMjNneG03eThZVm91NlJ2S2hNUXgyUVpMS1dsNA?oc=5",
-      "title": "Sony Corporation: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 85,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ2VNYmhfNXExSEtBcFhDbUJwZVBkYmpHNFV2TmdKdFY0TTQ1SDhmWDdZVm5JaFFZdWoxc1FuVWw5cnN0NnpkSVR2WDBVS1A4M0hrNkszdHRWU3ZhbTJ5dEhvOTEwQVpWZy1mMUdtQnFJRVBURWp3cXJxanh2UFlDZzB2Wmt6WWt3eXNGaUhfNzFadjNsajNXeGZoRUNldmd3YVZDUFEzTVQxU1U?oc=5",
-      "title": "Steampunk Media, LTD: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQSlVFSm84LXpIVGRiME9WVVpnVWRKUU9YUEpWbHhBcXQ3d0o0bHVFZWpRUFU1VnRWUU9WVThRcHZCcGQzN0pxcDFpYzRaWUo5Z3RBdDd4OThNbnZtX0ZZVnpRa1lkVGRIWmdlLVIzVTdrdjQtWFZGdWVNLVJydmpoWTBlY0ZsUlNHYk1hUVgwUWltZ3dua0RVMEFYSmFyREQxUFlHRVdWcWdTcldNZlpn?oc=5",
-      "title": "Telecast Fiber Systems: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 85,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOenlSaUFzVHdHb1RsbHZMWmVkdlV0Zjh3Unc4b0gybl9pYnhIaHAySjBVMUgyZkhqWk5Ja3NCUllVRzNaTmx6VnkxUUlYM3pDV2xsemlkSzAzUkN4VzZ4X2lYQ0g0dWZDdnREcjhCTEs4a3NnU0tvazFQNUduaHZ1MFpkclRYaGctSUUwUEJLS1U0T3pQNFlF?oc=5",
-      "title": "ATSC: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 84,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTVBkNWRYdnptZExWa0lQLUg4dlphYU9DOW5jeW1SVEVGMnZrZkpfdjNJVWZXeThzejJTTjN3bDVSN1ZXYVk0SHN0QzBPUVlkU0xna0p4cTZaUkdraXJMUnQwSEVSS3BxWUNPaEVKWDFzQ1BWWTVEOVdUbTczNDc2VVdHeThsMFRyclRDRVk4Y0ozcXNEV1dSaHFpZ1NIT1FZMGc?oc=5",
-      "title": "Wave Central: 2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 85,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUTdKRExmb2tFMTJJMTcxazVMaVZDbUNiTVdXOFVGZDlEOXZLeHF2djJ6eEducG5RVDdNdUFlSnRPMG9LOEJwcFRqLUM1TEp2bk9xLWd5M0hNeWgxaUd0TlRDbDBXMUZMVjlkbHdlMW85WmQ4dXhIRG90MWdyMUlWUUc1N18?oc=5",
-      "title": "State regulators reach $2.5M BSA/AML settlement with crypto kiosk operator - JD Supra",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
-      "title": "OpenAI models hacked a crypto wallet and breached more websites",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 92,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdmVvWEJLWFJLZmZjMkFPQl93U0hvQmgxZ1ZOSFk1SENNS0dKMDVBbmtvUWVfN3NrM3dpTnlEQWh1TlpjcmFrdUN4ZVdJYUdoeHYyY2U3WUx1TFNMU25IeHYxdi1fVWgycXk2RVZ4YzduLXFhVjhGUHRxdEdjVnRFdWRtNHJTSzZ6eHYzdUlrcVc?oc=5",
-      "title": "2026 Engineering, Science & Technology Emmy Awards - Television Academy",
-      "category": "Technology",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVV9YN2hNQmxwR0RiMTZ2WW44Q2t4VnVRd2VINGp5bjd4SlZaQ1BfT2FJYy10cEZMVVROZ2tiZjM3SVpXS2NaWjNtUVZ1VXhMMXVDUzRUeUZvckpyQjdZVnlpdGJPbWFHZHhON0RBY3NSZjNZUFNOSm1HMUNSQks1Yk55Q09WdjB3NDhqZlRobEZxS3pQVDJ3TA?oc=5",
-      "title": "Cantor's $112,000 Bitcoin Call Lifts Strategy Target to $208 - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 88,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQRDBBQ2h6QTViUTljVzl2N1VrTmFIN3ZwYXVScG5pdmc3dUZoOEN2NUFQWERBbjRPdjJoTzZ4UjFJOVNaU3FYaEtLbFNJMGJIZ2pNZ1dNMlV6SHU2YUsyU2NJZUE5NEd1MEtoZVh0Z3ZWMzBKNW9HVHppTldIMnhnU0RxQ2FaVm5RTHdqRXllRDdsZUE5LUVaczZXejdmQ1VHemxHSHotSFVoMGlqQl9WNkQteWl2aElNdmdoQnR2eW1TTW1wUmE2enlmMDVta0Jrd212b29HNGNjc1JCNmhj?oc=5",
-      "title": "‘Crypto King’ spent $16.3M of investor funds on cars, credit cards, jets, security, accountant testifies - CBC",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T04:56:37.564Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTFF1Y3NscnpKMlBtdk52SF9LOFE5Y2F3VjBMRGZFNVhOX2NTQkJEUGFENTdvZVQ0ajI0R012ZmNxeTBYaVZzaEJhc0J2YVM2Vy0xZVpqOTNKeno5TDZqMEJSWFU2b1BNb3FrOVZHU29ERXoxYzBKVW9lR1JyVzlIUmRYSXVLX28yNmtja3hDdWQ5QXI4SHBWLTlmNkQ5TTFwRVh6VXZB?oc=5",
-      "title": "NVIDIA RTX Spark PCs Available Today — A New Beginning for Windows PCs - NVIDIA Newsroom",
-      "category": "Product Launches",
-      "lastSeenAt": "2026-10-18T20:59:48.157Z",
-      "decision": "hold",
-      "score": 53,
-      "confidence": 67,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment",
-      "title": "Apple&#8217;s updated App Store rules go after &#8216;nudify&#8217; AI apps",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "review",
-      "score": 70,
-      "confidence": 85,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQU1lDR29iSGcyem5nUVJUSGMtMkdkTjRZTjJ4TmlFeXd0azVONDRLREJ4MWIxTS1zT3Y0RG9vaDNka0ZnRjJLUXl5eE5WVlAyeV9IMll2T3BuS0ItQ093NzF2ak9zVjVVeFphN2NESDZ0SVhCV3J0ZGg4ek9TTDhoTnBWNnExeldGUk5zQklpV2o5X0lfSUUzRDBZcEhVNmowYU5RTkprMTdLS2puTkpfWEdKTQ?oc=5",
-      "title": "Apple’s new App Store rules crack down on AI nudification and ‘bait-and-switch’ apps - 9to5Mac",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 83,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBHMlVoQnFiaHpnWnFMbVpCUUl3Y3ZOYm9wYU1HV1pMWHk0OUhIdUN0X3FRWWZzeU5XS2s5RklON3otVGFXN2FSM01Bem0zb1ZYTjBQTEV3ZFRnUXNjczZtbFVoN0djMzc3d0Y2N1VMUzRiVF9wVmI4QkZ5QWY?oc=5",
-      "title": "Bitcoin falls below $80k, Ledger changes sales, MSCI rules | Weekly recap - Crypto News",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T15:54:17.600Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 81,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWTRrRUZtOHFYZXpEcUNnVjAzc1NZRmtyV3F1akJUMjAzaklzS3ZQNjlNSkJhM05jd3RNc1FLWjlPVDdoRy1YSFlYNjE1MXpBS3JTbG9yRVdaclh5aDBvQkU2bi1VZUZRUTY3YWhyY1VWNk9WOVlNbXh3V2RaZjRHanlKam9VS0hsMDNJR2tGbWwzRl9RdFc0NWowWnNrWXlWRUdWNlNvVjUySmdYdGVvUmJQbmxVNDNiUUhxUzQybksyaFM50gHEAUFVX3lxTFBDWHBSU001aGdaLU5HSU9LRlJRMjFQa3l0VGVEUFhHSnU2ZWFOdlFhYk1RZzR1ZWNaOUdBZ2luODhubHhZV2g2aUg1MXpiSVNHZUcxZi1vdkd6c2xjaER5MVJTX3VnMEFyY2w4YUdzMEZ3cW9nLVlobzRmY2FHY3FnV2xYQm91VXVRQmZCVW5EUldkSWJUZHpsdDBTQkVCNDhVWktuc2xNN3F5U2xTOVRESUFvSU83SU9pNHNNY2ppZkJDRTU?oc=5",
-      "title": "Security fears in Norway as Chinese smart cars record sensitive military data - South China Morning Post",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPU19Tc2VIY3l4eTMyUHYzU1ZoTC03MjdGUnpJV245M2lwOUpJQUtsWE5FRTMySmZTSjlNOUthSVllRHBYS0FReXVjbnY5dDZaSERBMFNaTW5KT2s5a2JNaV9PRHowcjYtREp6cmpjRFBzT3c1bnFTbmNMYmJkdktBWWVfV2Z3anhkRWNKdGRTV18tT2JaaFpIcWU0YzFZNmJ4emROcU9CcGY?oc=5",
-      "title": "Bitcoin Bull Signals are Flashing Everywhere, Analysts Claim - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T15:54:17.600Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNcUtsWmEwUHZLemRtSGN1cTY2TmNaX281Q1ZUcDFDWm01UEtZQzVlM25sY2ZfYjZKcmpnRFY3SmJfbUVDc1R5Q1h3cnk1ODZBNmN6Q1FEWGo1NEVJNm9QM2kxVXJyV1Fyb0ZtQ0pfV00tMWNLSWFOSDJXbElJQTlucERfVDJDSVdTOU1FYjhBTHJyaVNjZHkzLVBNVjg3RWJ4ZTZUNW9kTjdHeEdNZVlweUl6d1psLTFnQ3ZnN1UzS2RFdVRlZVp5Y0pHc3FqTlZCdmhxMHNxbHlhNU1kdFlzSzRLMXM?oc=5",
-      "title": "Ukraine war briefing: Russia building non-negotiable ‘security zone’ inside Ukrainian border, Putin declares - The Guardian",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 92,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQjFaT1doRzdLTHJ0a29KcWZORDR3YTNxdTJOOGRHcDlHQmVxQktkU2pJVUdTLU5Gb0J1THByOUN5RGxuMDM1VGRRU19rYmpIYkhVcEtpaWRTM2kyYVYzM3A3bmNjMzhhU1hZV0h1bHJfSmpIN0JlT3JEWmtRYjVsLVJvZGU2YWdOM0VBYnZ2ajU3Q1I4c2QwcQ?oc=5",
-      "title": "Bitcoin price holds above $81,000 as ETF outflows weigh on sentiment - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 89,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMGVqR2pIVjlEc1JfdXBtYWZtbEVsX2J3b043V21HbUVCMWNOei1LWFFEeEI1WDE2SVdHMVJtZ3hZZ1FWeTEtTHVNQWNaYmtLdngxY3hJZlpfTGlOLVN1cHFhVk5mdVc0cU9MYTNzVnFMVUVfYS1ZNjdtbmN0ZnVkN3RDa0VYSzd0NmlNZFZEUzFibGQwbGZ3aHpGYmZHMFNwZDYzcHRCMGNLVjBhWFVSYlQtdExtRXp4MHlySlVTdVNEdjQxT0E?oc=5",
-      "title": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October. - 24/7 Wall St.",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T15:54:17.600Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 82,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWXlLNDJLeUpBUGtFb0tmeW1Cem9KZlpJWldfSWFFZzd5bjRKQjFTUUd2MU5QMjhqRGtZUVZvQ2lPUU5sbUhiTzJaZ2JTZnJkLWVxTDFKc3FXckxQQ05YMGFzQ1VhZE91WFBmZ1lFV0plRFpvM1BabktFUndGUkZBRkZCdzhScVExamY3WmhNY3lDUlJDc19kdFFDR2FrWG1mRTJzZDRhQTF0NFVJYnJzUkEwMDRIVVlzbkYtVXk4eS1GTHE0YzdPNHdB?oc=5",
-      "title": "MSCI Is Moving to Drop Strategy From Its Indexes. Could That Hit Bitcoin? - 24/7 Wall St.",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 85,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcEg3eWFpUGhPS0RzbDJBNlJhX2RGSG5zWUE3MGkxbXdEMWNYc0lqSDZCOEhaTFh3ajNUWkpvTXBnQTBYZ1RSQXc0SmhYQjFrLTN0ckFDMmlrU0h1NDhwTlZFUndncWhadkRzTUV2TnRBazk2S3EyVFlRdDZHbDFaZ3ByTTZYZEU?oc=5",
-      "title": "'Very special' delivery: Millbrook High staff help deliver security officer's baby at school - WRAL",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1EWmE4UHdZSGFHeVg4amE2REpBdWxHRHJHSUtTZDJ2ZVlUVnR2YWJPNDRMckltQi1WWGhqd3hoMml6VFZ3TkU4M0EzREwwTEMweW82SldQQ1dqMGVaLUpMT09oZFVIeFFNRkNPMFM2S3lYSnY2QjBkT09XS0I?oc=5",
-      "title": "Crypto “is buying off legislators”, with Ben McKenzie - Democracy for Sale | Peter Geoghegan",
-      "category": "Crypto",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://www.theverge.com/gadgets/1012962/apple-tv-4k-fourth-generation-fanttik-s1-pro-deal-sale",
-      "title": "The new Apple TV 4K just got its first (very small) discount",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-10-17T11:08:26.057Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
     {
       "key": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVWIxaTlZTXlIMGFESlBDbk9CYTF0eHNmOS1kSlhBRVNLMjBicVJxcV9JWTNKS05MUFEtWWhyLUpQLWYzMTFXTS1Dam1ncFFUWmVYYzMtWHZnczVkMThhVkd6bDh4N0xpUEtON0FOYXNZSE1BQ1NPVTVmVHN3WERKUHl5amphaXdMVC1wc0VWNkpuYi1lSG5wQk43RzBsUVBkdFp1Z0ZFZm1Lam0tcGFjbEJEZk3SAboBQVVfeXFMT0lYYkpLUjd0N0wxci01U2JtUW5YSmdYSHlyY1lwX19MMHlMM284RXJHcEd4RWVad2ZrREdJSTNrc3NmZ2NXSzZfUlVKTXlyU2FSbDZfeWF1b1JRM0QxSVB6YkN1Qk1sMHZFOVZnZnNWaktnMWtwU0M4RUh0M2hPMVhJd0VSS2RlckFiTUlPMlROQ3VXaDRGUDZGSW9CeTI5cnhlWmNmMTJXSXV0YmVNQkZkbU8yYWFnZUNR?oc=5",
       "title": "The chatbot murder guide: AI’s struggle between privacy, reporting violence - Al Jazeera",
@@ -14636,10 +14296,10 @@
       "key": "https://www.technologyreview.com/2026/10/21/1146053/editor-letter-we-can-do-impossible-things/",
       "title": "We can do impossible things",
       "category": "Technology",
-      "lastSeenAt": "2026-10-21T21:57:28.622Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 89,
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 71,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -15146,10 +14806,10 @@
       "key": "https://www.technologyreview.com/2026/10/22/1147591/permafrost-primer/",
       "title": "Three things you should know about permafrost",
       "category": "Technology",
-      "lastSeenAt": "2026-10-22T12:20:07.584Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 63,
-      "confidence": 93,
+      "score": 51,
+      "confidence": 71,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -15246,20 +14906,20 @@
       "key": "https://www.technologyreview.com/2026/10/22/1146812/making-the-case-for-context-aware-ai/",
       "title": "Making the case for context-aware AI",
       "category": "Technology",
-      "lastSeenAt": "2026-10-22T12:20:07.584Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 61,
-      "confidence": 91,
+      "score": 45,
+      "confidence": 68,
       "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://www.technologyreview.com/2026/10/22/1146948/ais-hidden-storage-bill-what-inference-leaves-behind/",
       "title": "AI&#8217;s hidden storage bill: What inference leaves behind",
       "category": "Technology",
-      "lastSeenAt": "2026-10-22T12:20:07.584Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 61,
-      "confidence": 91,
+      "score": 45,
+      "confidence": 68,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -15576,11 +15236,11 @@
       "key": "https://www.technologyreview.com/2026/10/22/1146103/the-foundations-of-scalable-ai/",
       "title": "The Foundations of Scalable AI",
       "category": "Technology",
-      "lastSeenAt": "2026-10-23T05:17:28.140Z",
-      "decision": "review",
-      "score": 69,
-      "confidence": 87,
-      "evidenceLevel": "strong"
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQX2R5dWxzNXNZUllxbFBYMElxXzlpZktfcUYyY2hXMXVjM3dlRFJvSXEtSXU3ZmU3clVjWnBiVS1SX2NkUUhmTktXN080a2dDYlNYdUVuVEZ4QTZobmhtZFA1Y1pHTDBTQVhwU0lNMlh1cXZ1bU5TR3NFTVJfcUZzdXZadUM2WnFKT3BaOG1OQndiZndYRWRoVEZDR0lqTklaZ1VveTNUeGRrMW85QnB3RmJtMllHZG9YLUJLbU1YSGR5UTVUNWdTUGpvLWNnelU?oc=5",
@@ -16426,11 +16086,11 @@
       "key": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
       "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
       "category": "AI",
-      "lastSeenAt": "2026-10-24T21:08:55.667Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 90,
-      "evidenceLevel": "strong"
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 57,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTkVqdDh3NWtQYk13WUhHd2Y1LW5mNmJ0SXpBaFlLMmhwd2YtanRoTGxPWmlHRXlyeTBPdTdGcHdqMEZMY0FQd09yakhaOFNYSmtVU0VlSThTZWY5bmJJMWFMMXgyOTF2bjJST3dQcUNtRVhPOHBWZ3R5WkhlRVpzMXRmdEFXc09sOWU0dExicHgxcTBKWDN0RE5xSXpoMnV0NF9oajh3?oc=5",
@@ -16456,10 +16116,10 @@
       "key": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
       "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
       "category": "AI",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 87,
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 74,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -16486,21 +16146,21 @@
       "key": "https://www.theverge.com/tech/1018169/what-to-expect-apple-pro-and-tell-event-touchscreen-macbook-pro",
       "title": "What to expect from Apple’s ‘Pro and tell’ event",
       "category": "Digital Life",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 61,
-      "confidence": 80,
-      "evidenceLevel": "strong"
+      "score": 52,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/",
       "title": "Here are the top AI agents that can live in your text messages",
       "category": "AI",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 63,
-      "confidence": 88,
-      "evidenceLevel": "strong"
+      "score": 55,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPODV6cXRHdGdtcVFLNmU1M2hIaWN5WmF5cjluR05lRUNwdV9SSW5NX2VxM1htTEZsTWdzQjE5UUQzaGEyMjVPSjlJcDcyNm1sVlBLTWNYWjlBaDNRZnFTcndHeWhtNWc3YTBwblJTVXNTbFpxTVFXSEl2OU1YNXNfdDRSVmV6RXFldEp2THRRSGFtWWFTYXlRTlcyVQ?oc=5",
@@ -16526,7 +16186,7 @@
       "key": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
       "title": "The AI graveyard: a running list of projects and startups that didn&#8217;t make it",
       "category": "AI",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
       "score": 61,
       "confidence": 87,
@@ -16536,10 +16196,10 @@
       "key": "https://www.theverge.com/report/1018131/apple-macbook-touchscreen-stylus-pencil-lenovo-laptop-analysis",
       "title": "I hope Apple’s touchscreen MacBook takes some lessons from this Lenovo laptop",
       "category": "Digital Life",
-      "lastSeenAt": "2026-10-25T11:57:31.575Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 61,
-      "confidence": 87,
+      "score": 54,
+      "confidence": 74,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -16646,10 +16306,10 @@
       "key": "https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/",
       "title": "PHP-ocalypse: How two critical web bugs almost broke the internet",
       "category": "AI",
-      "lastSeenAt": "2026-10-24T21:08:55.667Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 63,
-      "confidence": 93,
+      "score": 58,
+      "confidence": 83,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -16686,20 +16346,20 @@
       "key": "https://techcrunch.com/2026/10/24/starlink-seems-to-be-working-normally-again-in-ukraine/",
       "title": "Starlink seems to be working normally again in Ukraine",
       "category": "AI",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 93,
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 59,
+      "confidence": 83,
       "evidenceLevel": "single-source-verified"
     },
     {
       "key": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
       "title": "Blue Planet III is keeping the rough edges in the age of AI",
       "category": "Digital Life",
-      "lastSeenAt": "2026-10-25T05:13:46.422Z",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
       "decision": "hold",
-      "score": 63,
-      "confidence": 93,
+      "score": 58,
+      "confidence": 83,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -17011,6 +16671,346 @@
       "score": 72,
       "confidence": 92,
       "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+      "title": "r/opensource just banned AI, non-English speakers, and more",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 93,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+      "title": "Google’s AI search changes upended online publishing",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 90,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/",
+      "title": "The hottest AI wearables and gadgets you should know about",
+      "category": "AI",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "review",
+      "score": 69,
+      "confidence": 93,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+      "title": "Pennsylvania will require labels on AI-generated ads",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/",
+      "title": "NASA updates lander plans for Moon landings, finally solves long-festering Orion issue",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/10/safety-concerns-cloud-americas-flagship-nuclear-restart/",
+      "title": "The reactor meant to showcase nuclear’s comeback keeps hitting problems",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/health/2026/10/personalized-mrna-cancer-vaccine-cut-melanoma-death-recurrence-by-42/",
+      "title": "Moderna and Merck say their mRNA cancer vaccine cut death, recurrence by 42%",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/10/comcast-loses-more-customers-claims-other-isps-cheap-prices-are-irrational/",
+      "title": "Comcast loses more customers, claims other ISPs' cheap prices are \"irrational\"",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/10/23/1147610/biotech-you-can-see-everything-theranos-holmes/",
+      "title": "In the biotech world, you can’t see everything",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/",
+      "title": "Designing an AI serving harness built to last",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1017888/possible-love-lee-chang-dong-director-interview",
+      "title": "Lee Chang Dong ponders the ethics of the camera",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1017740/wildwood-stop-motion-interview-laika",
+      "title": "Laika has spent 20 years building up to Wildwood",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/science/2026/10/a-1000-mile-cloud-on-mars-may-reveal-physics-never-seen-in-nature/",
+      "title": "A 1,000-mile cloud on Mars may reveal physics never seen in nature",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/10/pentagon-memo-on-prediction-markets-says-insider-bets-put-troops-lives-at-risk/",
+      "title": "Hegseth warns prediction market bets warp military judgment, endanger troops",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/10/senior-commander-says-space-force-needs-new-spaceport-by-2030/",
+      "title": "Inside the Pentagon, the pressure is on to find a home for a new spaceport",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/culture/2026/10/review-crystal-lake-suffers-a-bit-from-its-obsession-with-pam-voorhees/",
+      "title": "Review: Crystal Lake suffers a bit from its obsession with Pam Voorhees",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/10/23/1147628/the-download-testing-tech-promises-science-blind-spots/",
+      "title": "The Download: testing six tech promises and biotech&#8217;s blind spots",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1017460/fielded-some-kind-of-animal-interview",
+      "title": "Fielded is obsessed with scammers and unhinged Japanese cyberpunk",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/gadgets/1017768/lg-c6-oled-tv-early-black-friday-2026-deal-sale",
+      "title": "LG’s brilliant C6 OLED TV is already $400 off ahead of Black Friday",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gaming/2026/10/switch-2-jailbreak-gives-hackers-new-ways-to-run-homebrew-and-mod-games/",
+      "title": "Switch 2 security takes a hit as hackers unlock homebrew access",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 49,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/10/ukraine-learns-to-fight-without-starlink-as-musk-plays-politics-with-satellites/",
+      "title": "Ukraine learns to fight without Starlink as Musk plays politics with satellites",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 49,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/10/21/1147573/the-download-introducing-impossible-issue/",
+      "title": "The Download: introducing the Impossible issue",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 71,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/science/2026/10/crows-can-evaluate-visual-info-twice-as-fast-as-mammals/",
+      "title": "Crows can evaluate visual info twice as fast as mammals",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+      "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 46,
+      "confidence": 72,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/10/knicks-sent-employees-fake-offer-of-championship-rings-in-phishing-test-report/",
+      "title": "Knicks sent employees fake offer of championship rings in phishing test: Report",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 46,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/10/rocket-report-spacex-says-no-thanks-to-military-launches-spanish-rocket-nearly-ready/",
+      "title": "Rocket Report: SpaceX says no thanks to military launches; Spanish rocket nearly ready",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 46,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/10/22/1147612/the-download-computing-next-leap-permafrost-climate-threat/",
+      "title": "The Download: computing’s next leap and permafrost’s climate threat",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 68,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/10/spotify-ramps-up-policy-enforcement-on-family-plans/",
+      "title": "Spotify ramps up policy enforcement on family plans",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+      "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/health/2026/10/rfk-jr-s-vaccine-injury-clinic-could-damage-nih-hospital-board-warns/",
+      "title": "RFK Jr.’s vaccine injury clinic could damage NIH hospital, board warns",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gaming/2026/10/everybody-panic-a-valve-developer-said-hlx-in-public/",
+      "title": "Everybody panic: A Valve developer said \"HLX\" in public",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/10/latest-estimate-for-starship-launches-required-to-support-a-moon-landing-22/",
+      "title": "Latest estimate for Starship launches required to support a Moon landing? 22.",
+      "category": "Technology",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/10/23/vcs-superhuman-mail-founder-share-red-flags-about-product-market-fit/",
+      "title": "VCs, Superhuman Mail founder share red flags about product-market fit",
+      "category": "AI",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://trends.google.com/trending/rss?geo=US",
+      "title": "jfk jr",
+      "category": "AI",
+      "lastSeenAt": "2026-10-25T16:47:09.489Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 80,
+      "evidenceLevel": "none"
     }
   ],
   "articles": [
@@ -17457,14 +17457,14 @@
     "World": 1
   },
   "sources": {
-    "evidenceCandidates": 230,
-    "passed": 43,
-    "blocked": 13,
-    "strong": 7,
-    "singleSource": 36
+    "evidenceCandidates": 70,
+    "passed": 4,
+    "blocked": 0,
+    "strong": 0,
+    "singleSource": 4
   },
   "decisionMemory": {
     "records": 200,
-    "updatedAt": "2026-10-25T10:25:11.956Z"
+    "updatedAt": "2026-10-25T15:19:50.447Z"
   }
 }
