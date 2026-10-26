@@ -1,19 +1,19 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-25T20:11:05.468Z",
-  "articlePath": "content/articles/ai-s-money-making-promise-stalls-outside-tech-apollo-economist-reports.md",
-  "articleTitle": "AI’s Money‑Making Promise Stalls Outside Tech, Apollo Economist Reports",
+  "generatedAt": "2026-10-26T11:55:37.207Z",
+  "articlePath": "content/articles/spacex-secures-40-b-debt-deal-to-fund-ai-chip-push.md",
+  "articleTitle": "SpaceX Secures $40 B Debt Deal to Fund AI Chip Push",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
   "sourceCount": 4,
   "usableSourceCount": 4,
-  "claimCount": 14,
-  "editorialCount": 5,
-  "verified": 11,
+  "claimCount": 17,
+  "editorialCount": 3,
+  "verified": 12,
   "partial": 3,
-  "unsupported": 0,
+  "unsupported": 2,
   "sourceUnavailable": 0,
-  "averageConfidence": 74,
-  "pass": true,
+  "averageConfidence": 69,
+  "pass": false,
   "policy": {
     "verifiedMin": 62,
     "partialMin": 45,
@@ -45,99 +45,197 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry - Yahoo Finance",
-      "url": "https://finance.yahoo.com/economy/articles/apollo-says-ai-delivered-zero-160208201.html",
+      "title": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
       "domain": "finance.yahoo.com",
-      "passageCount": 5,
-      "articleBodyLength": 743
+      "passageCount": 9,
+      "articleBodyLength": 1279
     },
     {
       "id": "S2",
-      "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
-      "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
-      "domain": "techcrunch.com",
-      "passageCount": 3,
-      "articleBodyLength": 677
+      "title": "SpaceX closes $40 billion debt deal for AI chips, Elon Musk says - CNBC",
+      "url": "https://www.cnbc.com/2026/10/26/spacex-closes-40-billion-debt-deal-for-ai-chips-elon-musk-.html",
+      "domain": "cnbc.com",
+      "passageCount": 4,
+      "articleBodyLength": 682
     },
     {
       "id": "S3",
-      "title": "Apollo economist says AI has delivered zero profit payoff outside Big Tech - Startup Fortune",
-      "url": "https://startupfortune.com/apollo-economist-says-ai-has-delivered-zero-profit-payoff-outside-big-tech/",
-      "domain": "startupfortune.com",
-      "passageCount": 2,
-      "articleBodyLength": 425
+      "title": "Elon Musk's SpaceX closes $40 billion debt deal to buy AI chips, warns of neocloud failures - Moneycontrol.com",
+      "url": "https://www.moneycontrol.com/world/elon-musk-s-spacex-closes-40-billion-debt-deal-to-buy-ai-chips-warns-of-neocloud-failures-article-14059627.html",
+      "domain": "moneycontrol.com",
+      "passageCount": 15,
+      "articleBodyLength": 2247
     },
     {
       "id": "S4",
-      "title": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "url": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "domain": "ppc.land",
-      "passageCount": 23,
-      "articleBodyLength": 3367
+      "title": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "url": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "domain": "thenextweb.com",
+      "passageCount": 15,
+      "articleBodyLength": 1744
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Apollo Global Management’s chief economist, Torsten Slok, released a note that casts doubt on the financial upside of artificial intelligence for most U.S. companies.",
+      "claim": "Elon Musk said SpaceX has closed a $40 billion debt financing package to purchase graphics processing units (GPUs) that will power the company’s artificial‑intelligence systems.The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment‑grade credit ratings, according to Bloomberg.",
+      "type": "synthesis",
       "status": "verified",
-      "classification": "supported",
-      "confidence": 86,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Apollo economist says AI has delivered zero profit payoff outside Big Tech - Startup Fortune",
-      "bestUrl": "https://startupfortune.com/apollo-economist-says-ai-has-delivered-zero-profit-payoff-outside-big-tech/",
-      "bestDomain": "startupfortune.com",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 83
-      },
-      "provenanceFactMatches": [
+      "classification": "supported_synthesis",
+      "confidence": 78,
+      "sourceId": "S2",
+      "sourceRole": "SYNTHESIS",
+      "coreFactMatch": null,
+      "synthesisFactMatches": [
         {
-          "factId": "F9",
+          "factId": "F10",
+          "sourceId": "S2",
+          "score": 72,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F14",
           "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 4
+          "score": 69,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F29",
+          "sourceId": "S4",
+          "score": 69,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "score": 65,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-P1",
-      "evidence": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500.",
-      "bestPassage": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500.",
+      "bestPassageId": "S2-P2,S3-P2,S4-P3,S1-P3",
+      "evidence": "Elon Musk said SpaceX has closed $40 billion in debt financing to purchase graphics processing units, or GPUs, used to power artificial intelligence systems. Elon Musk announced on Sunday that SpaceX had closed $40 billion in debt financing to purchase graphics processing units (GPUs), marking another major investment in artificial intelligence as technology companies race to expand their computing infrastructure. SpaceX has secured $40 billion in debt financing to buy graphics processing units (GPUs), the chips used to run AI systems, Elon Musk said in a post on X on Sunday. (Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
+      "bestPassage": "Elon Musk said SpaceX has closed $40 billion in debt financing to purchase graphics processing units, or GPUs, used to power artificial intelligence systems. Elon Musk announced on Sunday that SpaceX had closed $40 billion in debt financing to purchase graphics processing units (GPUs), marking another major investment in artificial intelligence as technology companies race to expand their computing infrastructure. SpaceX has secured $40 billion in debt financing to buy graphics processing units (GPUs), the chips used to run AI systems, Elon Musk said in a post on X on Sunday. (Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
       "matchedPassages": [
-        "S3-P1",
-        "S3-BODY"
+        "S2-P2",
+        "S3-P2",
+        "S4-P3",
+        "S1-P3"
       ],
       "sharedTerms": [
-        "apollo",
-        "global",
-        "management",
-        "chief",
-        "economist",
-        "torsten",
-        "slok",
-        "note",
+        "elon",
+        "musk",
+        "spacex",
+        "has",
+        "clos",
+        "billion",
+        "debt",
+        "financ",
+        "purchase",
+        "graphic",
+        "process",
+        "unit",
+        "gpus",
+        "power",
         "the",
-        "for",
-        "compani"
+        "system",
+        "its",
+        "invest",
+        "bloomberg"
       ],
       "entityShared": [
-        "apollo",
-        "global",
-        "management",
-        "torsten",
-        "slok"
+        "elon",
+        "musk",
+        "spacex",
+        "gpus",
+        "bloomberg"
       ],
       "topicShared": [
-        "apollo",
-        "economist",
-        "financial",
-        "compani"
+        "elon",
+        "musk",
+        "spacex",
+        "clos",
+        "billion",
+        "debt"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "matchingMode": "fact-map-multi-fact-source-passage-synthesis"
+    },
+    {
+      "index": 2,
+      "claim": "The financing package is structured with approximately $10 billion in bank loans and $30 billion in investment‑grade debt, according to a report that noted the deal would avoid a repeat of last year’s attempt by Musk’s other AI venture.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 79,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F41",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 58
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F41",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 58,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "The proposed deal would combine approximately $10 billion in bank loans with $30 billion in investment-grade debt.",
+      "bestPassage": "The proposed deal would combine approximately $10 billion in bank loans with $30 billion in investment-grade debt.",
+      "matchedPassages": [
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "financ",
+        "approximately",
+        "billion",
+        "bank",
+        "loan",
+        "and",
+        "invest",
+        "grade",
+        "debt",
+        "accord",
+        "report",
+        "not",
+        "deal",
+        "last",
+        "year",
+        "musk"
+      ],
+      "entityShared": [
+        "musk"
+      ],
+      "topicShared": [
+        "billion",
+        "debt",
+        "deal",
+        "musk"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -147,165 +245,82 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 2,
-      "claim": "He examined the S&P 500, excluding the seven dominant technology names—Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia, and Tesla—calling the remainder the S&P 493.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 88,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F17",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 74
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F7",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 85,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F17",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 74,
-          "passageIndex": 4
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF7,S4-FF17",
-      "evidence": "Apollo’s Torsten Slok focuses on what he calls the S&P 493 — the S&P 500, minus Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia and Tesla — finding that profit margins and revenue per worker appear to be flat, with no evidence that AI is improving productivity. The \"Mag 7\" - the seven largest US technology companies, usually counted as Apple, Microsoft, Alphabet, Amazon, Meta, Nvidia and Tesla - sit on one side.",
-      "bestPassage": "Apollo’s Torsten Slok focuses on what he calls the S&P 493 — the S&P 500, minus Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia and Tesla — finding that profit margins and revenue per worker appear to be flat, with no evidence that AI is improving productivity. The \"Mag 7\" - the seven largest US technology companies, usually counted as Apple, Microsoft, Alphabet, Amazon, Meta, Nvidia and Tesla - sit on one side.",
-      "matchedPassages": [
-        "S4-BODY",
-        "S4-P7"
-      ],
-      "sharedTerms": [
-        "the",
-        "500",
-        "seven",
-        "alphabet",
-        "amazon",
-        "apple",
-        "meta",
-        "microsoft",
-        "nvidia",
-        "and",
-        "tesla",
-        "call",
-        "493"
-      ],
-      "entityShared": [
-        "alphabet",
-        "amazon",
-        "apple",
-        "meta",
-        "microsoft",
-        "nvidia",
-        "tesla"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
     },
     {
       "index": 3,
-      "claim": "For that group, Slok found that profit margins and revenue per worker have been essentially unchanged in the era of large‑scale AI investment.",
+      "claim": "SpaceX’s chief executive also noted that the company has a strong revenue base from Starlink satellite‑internet services and rocket launches, which helped secure the debt.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 82,
+      "confidence": 79,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
       "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S3",
+        "factId": "F36",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 67
+        "score": 68
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
+          "factId": "F28",
           "sourceId": "S3",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 67,
-          "passageIndex": 4
+          "score": 73,
+          "passageIndex": 2
         },
         {
-          "factId": "F7",
-          "sourceId": "S2",
+          "factId": "F36",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 66,
-          "passageIndex": 2
+          "score": 68,
+          "passageIndex": 8
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500. Apollo’s Torsten Slok focuses on what he calls the S&P 493 — the S&P 500, minus Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia and Tesla — finding that profit margins and revenue per worker appear to be flat, with no evidence that AI is improving productivity.",
-      "bestPassage": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500. Apollo’s Torsten Slok focuses on what he calls the S&P 493 — the S&P 500, minus Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia and Tesla — finding that profit margins and revenue per worker appear to be flat, with no evidence that AI is improving productivity.",
+      "bestPassageId": "S3-FF28,S4-FF36",
+      "evidence": "In a post on X, Musk attributed the successful fundraising to SpaceX's investment-grade status and its established revenue streams from Starlink satellite internet services and rocket launches. Musk credited SpaceX’s investment-grade credit rating and revenue from Starlink and rocket launches with helping it secure the financing.",
+      "bestPassage": "In a post on X, Musk attributed the successful fundraising to SpaceX's investment-grade status and its established revenue streams from Starlink satellite internet services and rocket launches. Musk credited SpaceX’s investment-grade credit rating and revenue from Starlink and rocket launches with helping it secure the financing.",
       "matchedPassages": [
-        "S4-BODY"
+        "S4-BODY",
+        "S4-P8"
       ],
       "sharedTerms": [
-        "for",
-        "group",
-        "slok",
-        "found",
-        "profit",
-        "margin",
-        "and",
-        "revenue",
-        "per",
-        "worker",
+        "spacex",
         "the",
-        "large",
-        "invest"
+        "revenue",
+        "starlink",
+        "satellite",
+        "internet",
+        "servic",
+        "and",
+        "rocket",
+        "launch",
+        "help",
+        "secure"
       ],
       "entityShared": [
-        "slok"
+        "spacex",
+        "starlink"
       ],
-      "topicShared": [],
+      "topicShared": [
+        "spacex",
+        "debt"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -327,59 +342,39 @@
     },
     {
       "index": 4,
-      "claim": "The data show no evidence that AI has boosted productivity or profitability for these non‑tech firms.",
+      "claim": "The $40 billion raise underscores the enormous capital requirements driving the AI boom.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 66,
+      "confidence": 73,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
+      "bestSource": "SpaceX closes $40 billion debt deal for AI chips, Elon Musk says - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/10/26/spacex-closes-40-billion-debt-deal-for-ai-chips-elon-musk-.html",
+      "bestDomain": "cnbc.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F29",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 46
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F29",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 46,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F12",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 45,
-          "passageIndex": 31
-        }
-      ],
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "For now, the data shows the gains staying with the biggest tech firms, while spending on AI services sits with a small group of mostly venture-backed companies. Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
-      "bestPassage": "For now, the data shows the gains staying with the biggest tech firms, while spending on AI services sits with a small group of mostly venture-backed companies. Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Elon Musk said SpaceX has closed $40 billion in debt financing to purchase graphics processing units, or GPUs, used to power artificial intelligence systems. The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg. The financing underscores the enormous capital requirements of the AI boom, as technology companies pour billions of dollars into advanced chips and data centers to support increasingly powerful AI models. Musk also said that debt markets have largely shut off access to financing for companies without substantial revenue outside AI data centers.",
+      "bestPassage": "Elon Musk said SpaceX has closed $40 billion in debt financing to purchase graphics processing units, or GPUs, used to power artificial intelligence systems. The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg. The financing underscores the enormous capital requirements of the AI boom, as technology companies pour billions of dollars into advanced chips and data centers to support increasingly powerful AI models. Musk also said that debt markets have largely shut off access to financing for companies without substantial revenue outside AI data centers.",
       "matchedPassages": [
-        "S4-BODY",
-        "S4-P19",
-        "S4-P2"
+        "S2-BODY"
       ],
       "sharedTerms": [
         "the",
-        "data",
-        "show",
-        "has",
-        "productivity",
-        "for",
-        "firm"
+        "billion",
+        "underscor",
+        "enormou",
+        "capital",
+        "requirement",
+        "boom"
       ],
       "entityShared": [],
-      "topicShared": [],
+      "topicShared": [
+        "billion"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -387,78 +382,94 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 0,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "semantic-context-evidence-pack"
     },
     {
-      "index": 5,
-      "claim": "In contrast, the seven excluded technology firms have seen both revenue per worker and profit margins rise since the AI spending wave began.",
+      "index": 6,
+      "claim": "Musk’s post emphasized that debt markets have largely shut off access to financing for companies that do not have substantial revenue outside of AI data‑center operations.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 76,
+      "confidence": 86,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo economist says AI has delivered zero profit payoff outside Big Tech - Startup Fortune",
-      "bestUrl": "https://startupfortune.com/apollo-economist-says-ai-has-delivered-zero-profit-payoff-outside-big-tech/",
-      "bestDomain": "startupfortune.com",
-      "sourceId": "S3",
+      "bestSource": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S3",
+        "factId": "F6",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 73
+        "score": 75
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
-          "sourceId": "S3",
+          "factId": "F13",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 4
+          "score": 83,
+          "passageIndex": 10
         },
         {
-          "factId": "F12",
+          "factId": "F6",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 75,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F42",
           "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 61,
-          "passageIndex": 31
+          "score": 75,
+          "passageIndex": 12
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-FF9,S4-FF12",
-      "evidence": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500. Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
-      "bestPassage": "Torsten Slok, chief economist at Apollo Global Management, published a note on October 24 making a specific, checkable claim: revenue per worker and profit margins have climbed for the Magnificent Seven since the AI spending wave began, and have stayed essentially flat for the other 493 companies in the S&P 500. Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
+      "bestPassageId": "S2-FF13,S1-FF6,S4-FF42",
+      "evidence": "Musk also said that debt markets have largely shut off access to financing for companies without substantial revenue outside AI data centers. \"As of the past few weeks, debt markets have almost entirely shut off access to money for any company that doesn't have substantial revenue independent of AI data centers,\" Musk said in his post. “Debt markets have almost entirely shut off access to money” for companies without substantial revenue streams outside AI data centres, Musk wrote.",
+      "bestPassage": "Musk also said that debt markets have largely shut off access to financing for companies without substantial revenue outside AI data centers. \"As of the past few weeks, debt markets have almost entirely shut off access to money for any company that doesn't have substantial revenue independent of AI data centers,\" Musk said in his post. “Debt markets have almost entirely shut off access to money” for companies without substantial revenue streams outside AI data centres, Musk wrote.",
       "matchedPassages": [
-        "S3-P1",
-        "S3-BODY"
+        "S1-BODY",
+        "S1-P6"
       ],
       "sharedTerms": [
-        "the",
-        "seven",
-        "firm",
+        "musk",
+        "post",
+        "debt",
+        "market",
+        "largely",
+        "shut",
+        "off",
+        "acces",
+        "financ",
+        "for",
+        "compani",
+        "substantial",
         "revenue",
-        "per",
-        "worker",
-        "and",
-        "profit",
-        "margin",
-        "since",
-        "spend",
-        "wave",
-        "began"
+        "outside",
+        "data",
+        "center"
       ],
-      "entityShared": [],
-      "topicShared": [],
+      "entityShared": [
+        "musk"
+      ],
+      "topicShared": [
+        "musk",
+        "debt",
+        "for"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -466,13 +477,13 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
+      "factCoverage": 3,
       "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
@@ -480,57 +491,51 @@
     },
     {
       "index": 7,
-      "claim": "The note points out that AI spending is highly concentrated among a small cluster of companies that depend on fresh capital rather than operating profits.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 75,
+      "claim": "SpaceX’s diversified business model therefore positions it favorably to tap high‑yield credit.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 49,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
+      "bestSource": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F23",
-        "sourceId": "S4",
+        "factId": "F5",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 63
+        "score": 41
       },
       "provenanceFactMatches": [
         {
-          "factId": "F23",
-          "sourceId": "S4",
+          "factId": "F5",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 63,
-          "passageIndex": 19
+          "score": 41,
+          "passageIndex": 7
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "The implication is that a large share of measured AI demand comes from companies whose spending depends on fresh capital rather than on operating profits.",
-      "bestPassage": "The implication is that a large share of measured AI demand comes from companies whose spending depends on fresh capital rather than on operating profits.",
+      "bestPassageId": "S1-P5",
+      "evidence": "In noting SpaceX's diversified business, Musk sought to differentiate the company from so-called neoclouds that sell high-end computing power to technology companies.",
+      "bestPassage": "In noting SpaceX's diversified business, Musk sought to differentiate the company from so-called neoclouds that sell high-end computing power to technology companies.",
       "matchedPassages": [
-        "S4-BODY",
-        "S4-P13"
+        "S1-P5",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "note",
-        "spend",
-        "concentrat",
-        "small",
-        "compani",
-        "depend",
-        "fresh",
-        "capital",
-        "rather",
-        "operat",
-        "profit"
+        "spacex",
+        "diversifi",
+        "busines",
+        "high"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "spacex"
+      ],
       "topicShared": [
-        "compani"
+        "spacex"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -552,142 +557,69 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 9,
-      "claim": "The note stresses that despite massive investments and widespread hype, the technology has not translated into higher margins or revenue growth for the majority of companies.",
+      "index": 8,
+      "claim": "SpaceX plans to use the newly acquired GPUs in its AI projects.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 68,
+      "confidence": 65,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
-      "bestUrl": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S2",
+      "bestSource": "Elon Musk's SpaceX closes $40 billion debt deal to buy AI chips, warns of neocloud failures - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/elon-musk-s-spacex-closes-40-billion-debt-deal-to-buy-ai-chips-warns-of-neocloud-failures-article-14059627.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F6",
+        "factId": "F11",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 60
+        "score": 37
       },
       "provenanceFactMatches": [
         {
-          "factId": "F6",
+          "factId": "F11",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 60,
-          "passageIndex": 3
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "“Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech,” Slok said.",
-      "bestPassage": "“Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech,” Slok said.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P1"
-      ],
-      "sharedTerms": [
-        "the",
-        "note",
-        "despite",
-        "massive",
-        "investment",
-        "and",
-        "widespread",
-        "hype",
-        "has",
-        "margin",
-        "revenue"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "compani"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 10,
-      "claim": "Apollo’s analysis, which drew on Bloomberg, Macrobond, and internal data, indicates that the productivity gains seen by the tech giants are not yet reflected in the broader corporate landscape.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 85,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 49
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F15",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 49,
-          "passageIndex": 6
+          "score": 37,
+          "passageIndex": 5
         },
         {
-          "factId": "F27",
+          "factId": "F29",
           "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 44,
-          "passageIndex": 3
+          "score": 33,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 29,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "Apollo credits Bloomberg, Macrobond and its own chief economist's office for the data. A top economist at the investment firm Apollo looked at whether ordinary big US companies, not the tech giants, are making more money because of AI, and found no sign that they are.",
-      "bestPassage": "Apollo credits Bloomberg, Macrobond and its own chief economist's office for the data. A top economist at the investment firm Apollo looked at whether ordinary big US companies, not the tech giants, are making more money because of AI, and found no sign that they are.",
+      "bestPassageId": "S3-BODY",
+      "evidence": "The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg. SpaceX has secured $40 billion in debt financing to buy graphics processing units (GPUs), the chips used to run AI systems, Elon Musk said in a post on X on Sunday. (Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
+      "bestPassage": "The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg. SpaceX has secured $40 billion in debt financing to buy graphics processing units (GPUs), the chips used to run AI systems, Elon Musk said in a post on X on Sunday. (Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
       "matchedPassages": [
-        "S4-BODY"
+        "S3-BODY"
       ],
       "sharedTerms": [
-        "apollo",
-        "analysi",
-        "bloomberg",
-        "macrobond",
-        "and",
-        "data",
+        "spacex",
+        "plan",
         "the",
-        "productivity",
-        "rise",
-        "giant",
-        "are",
-        "not",
-        "reflect",
-        "corporate"
+        "acquire",
+        "gpus",
+        "its",
+        "project"
       ],
       "entityShared": [
-        "apollo",
-        "bloomberg",
-        "macrobond"
+        "spacex",
+        "gpus"
       ],
       "topicShared": [
-        "apollo"
+        "spacex"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -702,76 +634,74 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
+      "factCoverage": 3,
       "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 11,
-      "claim": "Apollo says some big companies are spending big on AI, but they may soon pull back.",
+      "index": 9,
+      "claim": "The company said the chips would arrive in the first and second quarters of the following year, but the financing would not significantly affect spending this quarter.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 94,
+      "confidence": 83,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/economy/articles/apollo-says-ai-delivered-zero-160208201.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
+        "factId": "F31",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 89
+        "score": 76
       },
       "provenanceFactMatches": [
         {
-          "factId": "F3",
-          "sourceId": "S1",
+          "factId": "F31",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 89,
-          "passageIndex": 2
+          "score": 76,
+          "passageIndex": 7
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Apollo says that though some big companies are spending big on AI, they may soon pull back.",
-      "bestPassage": "Apollo says that though some big companies are spending big on AI, they may soon pull back.",
+      "bestPassageId": "S4-BODY",
+      "evidence": "In a second post, he said the money would cover chips arriving in the first and second quarters of next year and would not significantly affect spending this quarter.",
+      "bestPassage": "In a second post, he said the money would cover chips arriving in the first and second quarters of next year and would not significantly affect spending this quarter.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
+        "S4-BODY",
+        "S4-P3"
       ],
       "sharedTerms": [
-        "apollo",
-        "says",
-        "big",
-        "compani",
-        "are",
-        "spend",
+        "the",
+        "chip",
+        "first",
+        "and",
+        "second",
+        "quarter",
+        "year",
         "but",
-        "may",
-        "soon",
-        "pull",
-        "back"
+        "financ",
+        "not",
+        "significantly",
+        "affect",
+        "spend"
       ],
-      "entityShared": [
-        "apollo"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "apollo",
-        "says",
-        "compani"
+        "chip"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": true,
         "certaintyEscalation": false,
@@ -785,68 +715,66 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 12,
-      "claim": "Apollo predicts that companies that have poured heavily into AI tools may soon pull back, as the financial benefits remain elusive.",
+      "index": 10,
+      "claim": "Musk also warned of a shakeout among neocloud operators—companies that rent out AI computing power.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 73,
+      "confidence": 85,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/economy/articles/apollo-says-ai-delivered-zero-160208201.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
+        "factId": "F43",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 50
+        "score": 66
       },
       "provenanceFactMatches": [
         {
-          "factId": "F3",
-          "sourceId": "S1",
+          "factId": "F43",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 50,
-          "passageIndex": 2
+          "score": 66,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Apollo says that though some big companies are spending big on AI, they may soon pull back.",
-      "bestPassage": "Apollo says that though some big companies are spending big on AI, they may soon pull back.",
+      "bestPassageId": "S4-BODY",
+      "evidence": "SpaceX’s chief executive also predicted a shakeout among neoclouds, the firms that rent out AI computing power.",
+      "bestPassage": "SpaceX’s chief executive also predicted a shakeout among neoclouds, the firms that rent out AI computing power.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
+        "S4-BODY",
+        "S4-P15"
       ],
       "sharedTerms": [
-        "apollo",
+        "musk",
+        "shakeout",
+        "among",
+        "neocloud",
         "compani",
-        "tool",
-        "may",
-        "soon",
-        "pull",
-        "back",
-        "the",
-        "financial"
+        "rent",
+        "out",
+        "comput",
+        "power"
       ],
       "entityShared": [
-        "apollo"
+        "musk"
       ],
       "topicShared": [
-        "apollo",
-        "compani",
-        "financial"
+        "musk"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -859,46 +787,220 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 13,
-      "claim": "The research warns that the promise of an “age of abundance”—where AI would reduce the need for human labor—may be overstated for most businesses.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 46,
+      "index": 11,
+      "claim": "He stated that SpaceX would not acquire any neoclouds, calling such a move “pointless.”",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 89,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/economy/articles/apollo-says-ai-delivered-zero-160208201.html",
+      "bestSource": "Elon Musk's SpaceX closes $40 billion debt deal to buy AI chips, warns of neocloud failures - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/elon-musk-s-spacex-closes-40-billion-debt-deal-to-buy-ai-chips-warns-of-neocloud-failures-article-14059627.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F26",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 58
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 60,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F26",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 58,
+          "passageIndex": 9
+        },
+        {
+          "factId": "F35",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 48,
+          "passageIndex": 13
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF7,S3-FF26,S4-FF35",
+      "evidence": "Some will make it through, but not many.\" He later said that SpaceX won't buy any neoclouds, calling it \"pointless.\" Musk also ruled out SpaceX acquiring neocloud businesses, describing such a move as “pointless.” Musk added that SpaceX would not acquire any of them.",
+      "bestPassage": "Some will make it through, but not many.\" He later said that SpaceX won't buy any neoclouds, calling it \"pointless.\" Musk also ruled out SpaceX acquiring neocloud businesses, describing such a move as “pointless.” Musk added that SpaceX would not acquire any of them.",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P13"
+      ],
+      "sharedTerms": [
+        "spacex",
+        "not",
+        "acquire",
+        "any",
+        "neocloud",
+        "call",
+        "such",
+        "move",
+        "pointles"
+      ],
+      "entityShared": [
+        "spacex"
+      ],
+      "topicShared": [
+        "spacex"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 12,
+      "claim": "While Musk announced that the deal is “closed,” it was not immediately clear from his post whether investors had agreed to pricing for the debt or the exact terms of the financing.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 84,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
       "bestDomain": "finance.yahoo.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
+        "factId": "F9",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 29
+        "score": 77
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
+          "factId": "F9",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 29,
-          "passageIndex": 11
+          "score": 77,
+          "passageIndex": 9
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Apollo's research portends a dark shadow over a US economy throwing massive amounts of dough toward AI tools and companies, whose leaders have promised that an \" age of abundance ,\" where people won't have to work as much, will soon be upon us.",
-      "bestPassage": "Apollo's research portends a dark shadow over a US economy throwing massive amounts of dough toward AI tools and companies, whose leaders have promised that an \" age of abundance ,\" where people won't have to work as much, will soon be upon us.",
+      "evidence": "It wasn't immediately clear from Musk's post on Sunday what he meant by the deal being \"closed\" or whether investors had agreed to pricing for the debt.",
+      "bestPassage": "It wasn't immediately clear from Musk's post on Sunday what he meant by the deal being \"closed\" or whether investors had agreed to pricing for the debt.",
       "matchedPassages": [
-        "S1-BODY"
+        "S1-BODY",
+        "S1-P9"
+      ],
+      "sharedTerms": [
+        "musk",
+        "the",
+        "deal",
+        "clos",
+        "not",
+        "immediately",
+        "clear",
+        "his",
+        "post",
+        "whether",
+        "invest",
+        "had",
+        "agre",
+        "pric",
+        "for",
+        "debt",
+        "financ"
+      ],
+      "entityShared": [
+        "musk"
+      ],
+      "topicShared": [
+        "musk",
+        "deal",
+        "clos",
+        "for",
+        "debt"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 13,
+      "claim": "The company has not published detailed financing terms, and the lenders remain unnamed.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 76,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F33",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 70
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F33",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-P5",
+      "evidence": "Musk did not name the lenders or disclose the interest rate, and SpaceX has not published the financing terms.",
+      "bestPassage": "Musk did not name the lenders or disclose the interest rate, and SpaceX has not published the financing terms.",
+      "matchedPassages": [
+        "S4-P5",
+        "S4-BODY"
       ],
       "sharedTerms": [
         "the",
-        "research",
-        "age",
-        "abundance",
-        "may"
+        "has",
+        "not",
+        "publish",
+        "financ",
+        "term",
+        "and",
+        "lender"
       ],
       "entityShared": [],
       "topicShared": [],
@@ -908,7 +1010,7 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -923,63 +1025,123 @@
     },
     {
       "index": 14,
-      "claim": "The analysis relies on plotted lines and approximations; Apollo did not publish the underlying values.",
+      "claim": "The deal’s use of a special purpose vehicle means that the debt does not appear on SpaceX’s balance sheet, but it does not eliminate the obligation.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 90,
+      "confidence": 70,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
+      "bestSource": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
-        "sourceId": "S4",
+        "factId": "F11",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 82
+        "score": 70
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
-          "sourceId": "S4",
+          "factId": "F11",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 7
+          "score": 70,
+          "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "These figures are approximations taken from the plotted lines; Apollo did not publish the underlying values in the note.",
-      "bestPassage": "These figures are approximations taken from the plotted lines; Apollo did not publish the underlying values in the note.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg.",
+      "bestPassage": "The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg.",
       "matchedPassages": [
-        "S4-BODY",
-        "S4-P4"
+        "S1-BODY"
       ],
       "sharedTerms": [
         "the",
-        "analysi",
-        "plott",
-        "lin",
-        "and",
-        "approximation",
-        "apollo",
-        "did",
+        "deal",
+        "debt",
+        "does",
         "not",
-        "publish",
-        "underly",
-        "valu"
+        "spacex",
+        "balance",
+        "sheet",
+        "but"
       ],
       "entityShared": [
-        "apollo"
+        "spacex"
       ],
       "topicShared": [
-        "apollo"
+        "deal",
+        "debt",
+        "spacex"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 15,
+      "claim": "Details on interest rates, maturities, and covenants have not been disclosed.",
+      "status": "unsupported",
+      "classification": "off_topic",
+      "confidence": 36,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Elon Musk says SpaceX has raised $40bn in debt to buy AI chips - The Next Web",
+      "bestUrl": "https://thenextweb.com/news/spacex-40bn-debt-ai-chips-musk",
+      "bestDomain": "thenextweb.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F33",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 27
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F33",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 27,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "Musk did not name the lenders or disclose the interest rate, and SpaceX has not published the financing terms.",
+      "bestPassage": "Musk did not name the lenders or disclose the interest rate, and SpaceX has not published the financing terms.",
+      "matchedPassages": [
+        "S4-BODY"
+      ],
+      "sharedTerms": [
+        "interest",
+        "rat",
+        "and",
+        "not"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": true,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
@@ -997,56 +1159,111 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 18,
-      "claim": "If the broader market begins to show productivity gains, the narrative may shift.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 46,
+      "index": 16,
+      "claim": "No timeline for GPU deployment has been disclosed.",
+      "status": "unsupported",
+      "classification": "unsupported",
+      "confidence": 22,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
+      "bestSource": "Musk Says SpaceX Closed $40 Billion Debt Deal, Blasts Neoclouds - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/musk-says-spacex-closed-40-212239596.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 23
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F12",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 23,
-          "passageIndex": 31
-        }
-      ],
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
-      "bestPassage": "Revenue per worker and profit margins have risen for the Magnificent 7 but stayed flat for the S&P 493, productivity growth shows no AI effect, the top 10% of firms account for 99.5% of model serving and inference spend in Ramp data, and 80.4% of the top 1% of AI spenders are venture-backed.",
-      "matchedPassages": [
-        "S4-BODY"
-      ],
+      "bestPassageId": "S1-P1",
+      "evidence": "(Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
+      "bestPassage": "(Bloomberg) -- Elon Musk said SpaceX ( SPCX ) has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions.",
+      "matchedPassages": [],
       "sharedTerms": [
-        "the",
-        "market",
-        "show",
-        "productivity",
-        "rise"
+        "for",
+        "has"
       ],
       "entityShared": [],
-      "topicShared": [],
+      "topicShared": [
+        "for"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 0,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "semantic-context-evidence-pack"
+    },
+    {
+      "index": 17,
+      "claim": "**Neocloud market dynamics** – Musk’s prediction of consolidation among AI‑computing‑rentals will play out as other firms either scale or exit.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 57,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Elon Musk's SpaceX closes $40 billion debt deal to buy AI chips, warns of neocloud failures - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/elon-musk-s-spacex-closes-40-billion-debt-deal-to-buy-ai-chips-warns-of-neocloud-failures-article-14059627.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F25",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 37
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F25",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 37,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "Musk predicted consolidation and potential failures among neocloud operators, which provide specialised computing infrastructure for AI workloads.",
+      "bestPassage": "Musk predicted consolidation and potential failures among neocloud operators, which provide specialised computing infrastructure for AI workloads.",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P12"
+      ],
+      "sharedTerms": [
+        "neocloud",
+        "market",
+        "musk",
+        "consolidation",
+        "among",
+        "comput",
+        "out",
+        "scale"
+      ],
+      "entityShared": [
+        "musk"
+      ],
+      "topicShared": [
+        "musk"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -1060,82 +1277,86 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 19,
-      "claim": "Until then, the evidence points to a scenario where AI’s financial impact is largely confined to the tech titans, leaving the rest of corporate America with no measurable payoff.",
+      "index": 18,
+      "claim": "**Impact on SpaceX’s credit rating** – The company’s investment‑grade status is a key factor in securing low‑cost debt; future debt issuances or default risk could influence market perception.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 57,
+      "confidence": 62,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Apollo finds zero AI payoff outside tech as S&P 493 margins stay near 10% - PPC Land",
-      "bestUrl": "https://ppc.land/apollo-finds-zero-ai-payoff-outside-tech-as-s-p-493-margins-stay-near-10/",
-      "bestDomain": "ppc.land",
-      "sourceId": "S4",
+      "bestSource": "Elon Musk's SpaceX closes $40 billion debt deal to buy AI chips, warns of neocloud failures - Moneycontrol.com",
+      "bestUrl": "https://www.moneycontrol.com/world/elon-musk-s-spacex-closes-40-billion-debt-deal-to-buy-ai-chips-warns-of-neocloud-failures-article-14059627.html",
+      "bestDomain": "moneycontrol.com",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F36",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 40
+        "score": 47
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 40,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F6",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 40,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F26",
+          "factId": "F36",
           "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 37,
-          "passageIndex": 1
+          "score": 47,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F28",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 44,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F11",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 41,
+          "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF2,S2-FF6,S4-FF26",
-      "evidence": "\"The technology has delivered zero financial payoff to corporate America outside of tech.\" “Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech,” Slok said. Can the rest of corporate America turn cheap tokens into higher margins?",
-      "bestPassage": "\"The technology has delivered zero financial payoff to corporate America outside of tech.\" “Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech,” Slok said. Can the rest of corporate America turn cheap tokens into higher margins?",
+      "bestPassageId": "S4-FF36,S3-FF28,S2-FF11",
+      "evidence": "Musk credited SpaceX’s investment-grade credit rating and revenue from Starlink and rocket launches with helping it secure the financing. In a post on X, Musk attributed the successful fundraising to SpaceX's investment-grade status and its established revenue streams from Starlink satellite internet services and rocket launches. The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg.",
+      "bestPassage": "Musk credited SpaceX’s investment-grade credit rating and revenue from Starlink and rocket launches with helping it secure the financing. In a post on X, Musk attributed the successful fundraising to SpaceX's investment-grade status and its established revenue streams from Starlink satellite internet services and rocket launches. The proposed financing would use a special purpose vehicle to keep the debt off SpaceX's balance sheet and preserve its investment-grade credit ratings, according to Bloomberg.",
       "matchedPassages": [
-        "S4-BODY",
-        "S4-P16"
+        "S3-BODY",
+        "S3-P15"
       ],
       "sharedTerms": [
+        "spacex",
+        "credit",
+        "rat",
         "the",
-        "financial",
-        "rest",
-        "corporate",
-        "america",
-        "payoff"
+        "invest",
+        "grade",
+        "statu",
+        "debt"
       ],
       "entityShared": [
-        "america"
+        "spacex"
       ],
       "topicShared": [
-        "financial",
-        "payoff"
+        "spacex",
+        "debt"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [],
+      "scopeWarnings": [
+        "could influence"
+      ],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
+        "evidenceUncertain": false,
+        "claimUncertain": true,
         "evidenceAttributed": true,
         "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": true,
-        "blocked": true
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
       },
       "factCoverage": 3,
       "multiFactSupported": true,
@@ -1146,32 +1367,20 @@
   ],
   "editorial": [
     {
-      "index": 6,
-      "claim": "Slok’s note highlights that the growth seen by the broader market is confined to these “Magnificent 7.” The top 10% of firms account for 99.5% of model‑serving and inference spend, and 80.4% of the highest‑spending companies are venture‑backed.",
+      "index": 5,
+      "claim": "Technology firms are investing billions in advanced chips and data centers to support increasingly powerful AI models, and SpaceX’s move signals that even aerospace‑heavyweight companies are allocating resources to AI hardware.",
       "type": "editorial-analysis",
       "status": "editorial-excluded"
     },
     {
-      "index": 8,
-      "claim": "Slok’s research suggests that, outside the tech sector, AI has delivered “zero payoff” to corporate America.",
+      "index": 19,
+      "claim": "SpaceX’s $40 billion debt deal illustrates how the company is expanding beyond launch services into the AI hardware arena.No statement about a broader trend has been made.",
       "type": "editorial-analysis",
       "status": "editorial-excluded"
     },
     {
-      "index": 15,
-      "claim": "Therefore, while the overall trend is clear—flat margins for the S&P 493—the precise magnitude of any marginal improvements remains uncertain.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 16,
-      "claim": "Additionally, the concentration of AI spend among venture‑backed firms suggests that the broader economy’s exposure to AI risk may be limited to a small, high‑growth sector.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 17,
-      "claim": "Investors and corporate leaders should monitor whether the flat margins for the S&P 493 hold as AI adoption matures.",
+      "index": 20,
+      "claim": "Observers should keep an eye on the forthcoming financing details and the company’s progress toward deploying the new GPUs.",
       "type": "editorial-recommendation",
       "status": "editorial-excluded"
     }
