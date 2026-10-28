@@ -7,28 +7,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 286,
-      "lastSuccessAt": "2026-10-28T17:43:31.249Z",
+      "successes": 287,
+      "lastSuccessAt": "2026-10-28T22:06:06.661Z",
       "history": [
-        {
-          "at": 1792923929647,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 14609,
-          "usage": {
-            "queue_time": 0.16330535,
-            "prompt_tokens": 2990,
-            "prompt_time": 0.195662246,
-            "completion_tokens": 816,
-            "completion_time": 1.011376762,
-            "total_tokens": 3806,
-            "total_time": 1.207039008,
-            "completion_tokens_details": {
-              "reasoning_tokens": 515
-            }
-          }
-        },
         {
           "at": 1792923944129,
           "ok": false,
@@ -376,19 +357,38 @@
               "reasoning_tokens": 224
             }
           }
+        },
+        {
+          "at": 1793225166661,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 762,
+          "usage": {
+            "queue_time": 0.045869502,
+            "prompt_tokens": 2009,
+            "prompt_time": 0.139888765,
+            "completion_tokens": 403,
+            "completion_time": 0.45705509,
+            "total_tokens": 2412,
+            "total_time": 0.596943855,
+            "completion_tokens_details": {
+              "reasoning_tokens": 281
+            }
+          }
         }
       ],
-      "lastLatencyMs": 4305,
+      "lastLatencyMs": 762,
       "lastUsage": {
-        "queue_time": 0.173311031,
-        "prompt_tokens": 1881,
-        "prompt_time": 0.094837956,
-        "completion_tokens": 318,
-        "completion_time": 0.403392883,
-        "total_tokens": 2199,
-        "total_time": 0.498230839,
+        "queue_time": 0.045869502,
+        "prompt_tokens": 2009,
+        "prompt_time": 0.139888765,
+        "completion_tokens": 403,
+        "completion_time": 0.45705509,
+        "total_tokens": 2412,
+        "total_time": 0.596943855,
         "completion_tokens_details": {
-          "reasoning_tokens": 224
+          "reasoning_tokens": 281
         }
       }
     },
@@ -399,12 +399,6 @@
       "lastError": null,
       "lastClass": "success",
       "history": [
-        {
-          "at": 1791719426116,
-          "ok": false,
-          "class": "server",
-          "status": 503
-        },
         {
           "at": 1791738213828,
           "ok": true,
@@ -661,23 +655,42 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1793225164309,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 17255,
+          "usage": {
+            "promptTokenCount": 4914,
+            "candidatesTokenCount": 747,
+            "totalTokenCount": 5661,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 4914
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 12210,
+      "lastLatencyMs": 17255,
       "lastUsage": {
-        "promptTokenCount": 5158,
-        "candidatesTokenCount": 913,
-        "totalTokenCount": 6071,
+        "promptTokenCount": 4914,
+        "candidatesTokenCount": 747,
+        "totalTokenCount": 5661,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 5158
+            "tokenCount": 4914
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 13,
-      "lastSuccessAt": "2026-10-26T22:09:37.101Z"
+      "successes": 14,
+      "lastSuccessAt": "2026-10-28T22:06:04.309Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -1089,5 +1102,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-28T17:43:31.249Z"
+  "updatedAt": "2026-10-28T22:06:06.661Z"
 }
