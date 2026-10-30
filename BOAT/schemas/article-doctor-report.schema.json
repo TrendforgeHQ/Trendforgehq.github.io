@@ -1,0 +1,388 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Article Doctor Report",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "reportId",
+    "generatedAt",
+    "mode",
+    "subject",
+    "summary",
+    "findings",
+    "provenance",
+    "checks",
+    "limitations",
+    "sourceCoverage"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "reportId": {
+      "type": "string",
+      "pattern": "^boat-article-doctor-[a-f0-9]{16}$"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "const": "read-only"
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "type",
+        "articlePath",
+        "title",
+        "revision",
+        "workflowRun"
+      ],
+      "properties": {
+        "type": {
+          "const": "article"
+        },
+        "articlePath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "workflowRun": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "status",
+        "findingCount",
+        "highSeverityCount",
+        "message"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "blocked",
+            "unknown",
+            "attention",
+            "clear"
+          ]
+        },
+        "findingCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "highSeverityCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "findingId",
+          "category",
+          "severity",
+          "status",
+          "title",
+          "description",
+          "affectedText",
+          "confidence",
+          "evidence",
+          "recommendation",
+          "requiresApproval",
+          "validationPlan"
+        ],
+        "properties": {
+          "findingId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "status": {
+            "const": "confirmed"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "affectedText": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "artifactPath",
+                "jsonPointer",
+                "workflowRun",
+                "detail",
+                "sourceUrl",
+                "sourceTitle",
+                "sourceId",
+                "sourceRole",
+                "passageIds",
+                "sourceExcerpt"
+              ],
+              "properties": {
+                "artifactPath": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "jsonPointer": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "workflowRun": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "sourceUrl": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceTitle": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "sourceRole": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "passageIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sourceExcerpt": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 500
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "recommendation": {
+            "type": "string"
+          },
+          "requiresApproval": {
+            "type": "boolean"
+          },
+          "validationPlan": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "artifactPath",
+          "sha256",
+          "workflowRun",
+          "workflowSha"
+        ],
+        "properties": {
+          "artifactPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "workflowRun": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "workflowSha": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "checkId",
+          "status",
+          "detail"
+        ],
+        "properties": {
+          "checkId": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown",
+              "not_run"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sourceCoverage": {
+      "type": "object",
+      "required": [
+        "status",
+        "claimCount",
+        "claimsWithUrl",
+        "claimsWithSourceId",
+        "claimsWithPassageIds",
+        "claimsWithExcerpt",
+        "claimsMissingAnyContext",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "measured",
+            "unknown"
+          ]
+        },
+        "claimCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "claimsWithUrl": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "claimsWithSourceId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "claimsWithPassageIds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "claimsWithExcerpt": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "claimsMissingAnyContext": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

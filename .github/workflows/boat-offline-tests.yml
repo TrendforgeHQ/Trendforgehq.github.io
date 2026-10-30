@@ -1,0 +1,81 @@
+name: BOAT Offline Tests
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/boat-offline-tests.yml"
+      - ".github/workflows/publish.yml"
+      - "BOAT/**"
+      - "scripts/boat-article-doctor.mjs"
+      - "scripts/test-boat-article-doctor.mjs"
+      - "scripts/boat-evidence-auditor.mjs"
+      - "scripts/boat-repair-engine.mjs"
+      - "scripts/boat-factual-repair-proposal.mjs"
+      - "scripts/test-boat-factual-repair-proposal.mjs"
+      - "scripts/boat-artifact-adapter.mjs"
+      - "scripts/test-boat-artifact-adapter.mjs"
+      - "scripts/boat-run-artifact-recovery.mjs"
+      - "scripts/test-boat-run-artifact-recovery.mjs"
+      - "scripts/boat-recovered-proposal-input.mjs"
+      - "scripts/test-boat-recovered-proposal-input.mjs"
+      - "scripts/boat-recovered-proposal-review-report.mjs"
+      - "scripts/boat-semantic-support-review-validator.mjs"
+      - "scripts/test-boat-semantic-support-review-validator.mjs"
+      - "scripts/test-boat-semantic-support-review.mjs"
+      - "scripts/boat-semantic-support-review-set.mjs"
+      - "scripts/boat-semantic-support-review-set-cli.mjs"
+      - "scripts/test-boat-semantic-support-review-set.mjs"
+      - "scripts/test-boat-semantic-support-review-set-golden.mjs"
+      - "scripts/test-boat-semantic-support-review-set-report-schema.mjs"
+      - "scripts/boat-published-catalogue-audit.mjs"
+      - "scripts/boat-audit-published-catalogue.mjs"
+      - "scripts/test-boat-audit-published-catalogue.mjs"
+      - "scripts/boat-published-review-queue.mjs"
+      - "scripts/boat-audit-published-review-queue.mjs"
+      - "scripts/test-boat-published-review-queue.mjs"
+      - "scripts/boat-published-claim-audit.mjs"
+      - "scripts/boat-audit-published-claims.mjs"
+      - "scripts/test-boat-published-claim-audit.mjs"
+      - "scripts/boat-root-claim-lineage-audit.mjs"
+      - "scripts/test-boat-root-claim-lineage-audit.mjs"
+      - "scripts/boat-numeric-claim-coverage-audit.mjs"
+      - "scripts/test-boat-numeric-claim-coverage-audit.mjs"
+      - "scripts/boat-bind-attempt-lineage.mjs"
+      - "scripts/test-boat-bind-attempt-lineage.mjs"
+      - "scripts/boat-published-catalogue-audit.d.mts"
+      - "scripts/test-boat-published-catalogue-audit.mjs"
+      - "scripts/boat-published-lineage-manifest.mjs"
+      - "scripts/test-boat-published-lineage-manifest.mjs"
+      - "scripts/write-boat-published-lineage-manifest.mjs"
+      - "scripts/test-boat-published-lineage-cli.mjs"
+      - "scripts/test-boat-published-lineage-workflow.mjs"
+      - "scripts/authoritative-evidence-pack.mjs"
+      - "app/control-center/page.tsx"
+      - "app/control-center/control-center.css"
+      - "scripts/test-control-center.mjs"
+      - "scripts/fixtures/boat-semantic-support-review-set-fixtures.mjs"
+      - "BOAT/schemas/factual-repair-proposal.schema.json"
+      - "scripts/test-boat-evidence-repair.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  boat-offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Run offline BOAT regression tests
+        run: node --test scripts/test-boat-*.mjs && node scripts/test-control-center.mjs
+      - name: Run read-only published root lineage audit
+        run: node scripts/boat-root-claim-lineage-audit.mjs
