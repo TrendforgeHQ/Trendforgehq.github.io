@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-30T03:32:24.978Z",
-  "articlePath": "content/articles/reddit-ceo-blames-google-s-ai-search-for-traffic-loss-and-plans-login-push.md",
-  "articleTitle": "Reddit CEO Blames Google’s AI Search for Traffic Loss and Plans Login Push",
+  "generatedAt": "2026-10-30T11:55:37.534Z",
+  "articlePath": "content/articles/data-leak-exposes-records-of-over-41-000-department-of-homeland-security-staff.md",
+  "articleTitle": "Data Leak Exposes Records of Over 41,000 Department of Homeland Security Staff",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
   "sourceCount": 4,
   "usableSourceCount": 4,
   "claimCount": 25,
-  "editorialCount": 2,
-  "verified": 20,
-  "partial": 5,
+  "editorialCount": 1,
+  "verified": 23,
+  "partial": 2,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 75,
+  "averageConfidence": 79,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,117 +45,473 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "domain": "finance.yahoo.com",
-      "passageCount": 8,
-      "articleBodyLength": 1265
+      "title": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "url": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "domain": "wired.com",
+      "passageCount": 5,
+      "articleBodyLength": 771
     },
     {
       "id": "S2",
-      "title": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "url": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "domain": "cnbc.com",
-      "passageCount": 12,
-      "articleBodyLength": 2330
+      "title": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "domain": "techcrunch.com",
+      "passageCount": 19,
+      "articleBodyLength": 2965
     },
     {
       "id": "S3",
-      "title": "Reddit Will Force Users To Log In As AI Is Killing Search Traffic - Engadget",
-      "url": "https://www.engadget.com/2301687/reddit-will-move-to-logged-in-only-as-ai-eats-search-traffic/",
-      "domain": "engadget.com",
+      "title": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "url": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "domain": "newscord.org",
       "passageCount": 9,
-      "articleBodyLength": 1218
+      "articleBodyLength": 1078
     },
     {
       "id": "S4",
-      "title": "Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’",
-      "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-      "domain": "theverge.com",
-      "passageCount": 6,
-      "articleBodyLength": 1224
+      "title": "Hackers leak names of 41,000 US Homeland Security employees, group claims",
+      "url": "https://gulfnews.com/world/americas/hackers-leak-names-of-41000-us-homeland-security-employees-group-claims-1.500728015",
+      "domain": "gulfnews.com",
+      "passageCount": 3,
+      "articleBodyLength": 538
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "During its third‑quarter earnings call, Reddit CEO Steve Huffman highlighted a significant drop in traffic that comes from Google Search.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 81,
+      "claim": "A cyber incident has exposed the personal information of more than 41,000 employees working for the U.S.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 61,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Hackers leak names of 41,000 US Homeland Security employees, group claims",
+      "bestUrl": "https://gulfnews.com/world/americas/hackers-leak-names-of-41000-us-homeland-security-employees-group-claims-1.500728015",
+      "bestDomain": "gulfnews.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
+        "factId": "F33",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 70
+        "score": 51
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
-          "sourceId": "S1",
+          "factId": "F33",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 70,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F9",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 69,
-          "passageIndex": 4
+          "score": 51,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF1,S2-FF9",
-      "evidence": "Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
-      "bestPassage": "Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
+      "bestPassageId": "S4-BODY",
+      "evidence": "Washington: A nonprofit news leak group said Wednesday it has published data on more than 41,000 employees of the US Department of Homeland Security, including those working on President Donald Trump's immigration enforcement efforts.",
+      "bestPassage": "Washington: A nonprofit news leak group said Wednesday it has published data on more than 41,000 employees of the US Department of Homeland Security, including those working on President Donald Trump's immigration enforcement efforts.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
+        "S4-BODY",
+        "S4-P1"
       ],
       "sharedTerms": [
-        "dur",
-        "its",
-        "quarter",
-        "reddit",
-        "ceo",
-        "steve",
-        "huffman",
-        "traffic",
-        "google",
-        "search"
+        "has",
+        "the",
+        "information",
+        "000",
+        "worker",
+        "work"
       ],
-      "entityShared": [
-        "reddit",
-        "ceo",
-        "steve",
-        "huffman",
-        "google",
-        "search"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "reddit",
-        "ceo",
-        "traffic",
-        "google"
+        "expos",
+        "the",
+        "000",
+        "worker"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "significant"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 2,
+      "claim": "Department of Homeland Security (DHS).",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 90,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 62
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F26",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 5
+        },
+        {
+          "factId": "F33",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 62,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF26,S4-FF33,S1-FF1",
+      "evidence": "Department of Homeland Security, exposing the identities and contact information of immigration officials, border patrol agents, and undercover investigators. Washington: A nonprofit news leak group said Wednesday it has published data on more than 41,000 employees of the US Department of Homeland Security, including those working on President Donald Trump's immigration enforcement efforts. “DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively,” a Homeland Security spokesperson tells WIRED.",
+      "bestPassage": "Department of Homeland Security, exposing the identities and contact information of immigration officials, border patrol agents, and undercover investigators. Washington: A nonprofit news leak group said Wednesday it has published data on more than 41,000 employees of the US Department of Homeland Security, including those working on President Donald Trump's immigration enforcement efforts. “DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively,” a Homeland Security spokesperson tells WIRED.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "department",
+        "homeland",
+        "security",
+        "dhs"
+      ],
+      "entityShared": [
+        "department",
+        "homeland",
+        "security",
+        "dhs"
+      ],
+      "topicShared": [
+        "homeland",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 3,
+      "claim": "The leak represents data equivalent to roughly one-fifth of the agency's total workforce, which consists of approximately 220,000 staff members.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 69,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F8",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 69
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F8",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 69,
+          "passageIndex": 11
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-FF8",
+      "evidence": "The number of leaked records is equivalent to about one-fifth of Homeland Security&#8217;s workforce, which totals around 220,000 staff .",
+      "bestPassage": "The number of leaked records is equivalent to about one-fifth of Homeland Security&#8217;s workforce, which totals around 220,000 staff .",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P3"
+      ],
+      "sharedTerms": [
+        "the",
+        "leak",
+        "equivalent",
+        "one",
+        "fifth",
+        "total",
+        "worker",
+        "220",
+        "000",
+        "staff"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the",
+        "leak",
+        "worker",
+        "000"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 4,
+      "claim": "The published database affects personnel across multiple critical divisions, including U.S.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 46,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "bestUrl": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "bestDomain": "newscord.org",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F29",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 30
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F29",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 30,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "bestPassage": "Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "matchedPassages": [
+        "S3-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "publish",
+        "database",
+        "personnel",
+        "includ"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 5,
+      "claim": "Customs and Border Protection (CBP) officers at ports of entry and airports, as well as Immigration and Customs Enforcement (ICE) personnel involved in federal enforcement actions.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 93,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F22",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 74
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F22",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 74,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Customs and Border Protection (CBP), who work at airports and other ports of entry.",
+      "bestPassage": "Customs and Border Protection (CBP), who work at airports and other ports of entry.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P17"
+      ],
+      "sharedTerms": [
+        "custom",
+        "and",
+        "border",
+        "protection",
+        "cbp",
+        "officer",
+        "port",
+        "entry",
+        "airport",
+        "well",
+        "immigration",
+        "ice",
+        "personnel",
+        "involv"
+      ],
+      "entityShared": [
+        "custom",
+        "border",
+        "protection",
+        "cbp",
+        "ice"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 6,
+      "claim": "The exposed records were part of a data breach.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 57,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 42
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 42,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F29",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 39,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-FF6,S3-FF29",
+      "evidence": "This is the latest data breach to hit the U.S. government in recent months, following earlier hacks involving the theft of thousands of FBI agents&#8217; personnel records and the personal information of millions of serving and former military service personnel from the Pentagon&#8217;s human resources unit . Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "bestPassage": "This is the latest data breach to hit the U.S. government in recent months, following earlier hacks involving the theft of thousands of FBI agents&#8217; personnel records and the personal information of millions of serving and former military service personnel from the Pentagon&#8217;s human resources unit . Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P1"
+      ],
+      "sharedTerms": [
+        "the",
+        "expos",
+        "record",
+        "data",
+        "breach"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "the",
+        "expos"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -168,591 +524,66 @@
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 2,
-      "claim": "Huffman said the shift to AI‑driven search and the new AI Overviews feature made referrals “choppy” and that traffic fell meaningfully this quarter.",
+      "index": 7,
+      "claim": "Furthermore, the breach impacts investigative roles; ICE accounts for roughly 10,000 of the exposed records, with about one-third of those coming from Homeland Security Investigations, the dedicated investigative wing of ICE.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 74,
+      "confidence": 76,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 74
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F9",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 74,
-          "passageIndex": 4
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P1",
-      "evidence": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
-      "bestPassage": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
-      "matchedPassages": [
-        "S2-P1"
-      ],
-      "sharedTerms": [
-        "huffman",
-        "the",
-        "shift",
-        "search",
-        "and",
-        "overview",
-        "referral",
-        "traffic",
-        "meaningfully",
-        "quarter"
-      ],
-      "entityShared": [
-        "huffman"
-      ],
-      "topicShared": [
-        "traffic"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 3,
-      "claim": "The company’s data shows more than one million fewer referrals on average per week in October.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 70,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’",
-      "bestUrl": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-      "bestDomain": "theverge.com",
-      "sourceId": "S4",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F30",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 70
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F30",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 70,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S4-P1",
-      "evidence": "As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
-      "bestPassage": "As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
-      "matchedPassages": [
-        "S4-P1",
-        "S4-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "million",
-        "referral",
-        "average",
-        "per",
-        "week",
-        "october"
-      ],
-      "entityShared": [
-        "october"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 4,
-      "claim": "Huffman compared Google’s classic “10 blue links” to the AI mode and noted that the latter has yet to create a comparable positive impact for publishers.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 82,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "bestUrl": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "bestDomain": "wired.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F7",
+        "factId": "F2",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
         "score": 76
       },
       "provenanceFactMatches": [
         {
-          "factId": "F7",
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
           "score": 76,
-          "passageIndex": 7
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Huffman contrasted Google's traditional \"10 blue links,\" which he said created significant value for users and publishers, with AI Overviews, which \"has yet to make a similar level of positive impact.\"",
-      "bestPassage": "Huffman contrasted Google's traditional \"10 blue links,\" which he said created significant value for users and publishers, with AI Overviews, which \"has yet to make a similar level of positive impact.\"",
+      "bestPassageId": "S1-FF2",
+      "evidence": "ICE accounts for about 10,000, roughly a third of them in Homeland Security Investigations, ICE’s investigative wing.",
+      "bestPassage": "ICE accounts for about 10,000, roughly a third of them in Homeland Security Investigations, ICE’s investigative wing.",
       "matchedPassages": [
         "S1-BODY",
-        "S1-P7"
+        "S1-P2"
       ],
       "sharedTerms": [
-        "huffman",
-        "google",
-        "blue",
-        "link",
-        "the",
-        "and",
-        "not",
-        "has",
-        "yet",
-        "positive",
-        "impact",
+        "investigative",
+        "ice",
+        "account",
         "for",
-        "publisher"
-      ],
-      "entityShared": [
-        "huffman",
-        "google"
-      ],
-      "topicShared": [
-        "google",
-        "mode",
-        "not"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 5,
-      "claim": "Reddit’s strategy is to grow users who access the site through its mobile or desktop app rather than via search.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 59,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 41
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 14
-        },
-        {
-          "factId": "F4",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 30,
-          "passageIndex": 12
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users. Reddit is focused on building a larger base of direct users rather than depending on search referrals.",
-      "bestPassage": "Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users. Reddit is focused on building a larger base of direct users rather than depending on search referrals.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P1",
-        "S1-P5"
-      ],
-      "sharedTerms": [
-        "reddit",
-        "user",
-        "the",
-        "its",
-        "app",
-        "rather",
-        "search"
-      ],
-      "entityShared": [
-        "reddit"
-      ],
-      "topicShared": [
-        "reddit"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 6,
-      "claim": "Huffman stated that direct app users are worth “multiples more” than search‑referral traffic.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 89,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 81
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 81,
-          "passageIndex": 14
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users.",
-      "bestPassage": "He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P5"
-      ],
-      "sharedTerms": [
-        "huffman",
-        "direct",
-        "app",
-        "user",
-        "are",
-        "worth",
-        "multipl",
-        "search",
-        "referral",
-        "traffic"
-      ],
-      "entityShared": [
-        "huffman"
-      ],
-      "topicShared": [
-        "traffic"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 7,
-      "claim": "The company’s plan is to improve onboarding, increase retention, and convert logged‑out web visitors into logged‑in app users.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 83,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 83
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 14
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-P5",
-      "evidence": "He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users.",
-      "bestPassage": "He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users.",
-      "matchedPassages": [
-        "S1-P5",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "onboard",
-        "rise",
-        "retention",
-        "and",
-        "convert",
-        "logg",
-        "out",
-        "web",
-        "visitor",
-        "app",
-        "user"
-      ],
-      "entityShared": [],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 8,
-      "claim": "The focus on logged‑in users is also driven by monetization benefits.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 50,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 35
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F9",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
-          "passageIndex": 4
-        },
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 32,
-          "passageIndex": 14
-        },
-        {
-          "factId": "F15",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 32,
-          "passageIndex": 6
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF9,S1-FF5,S2-FF15",
-      "evidence": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users. \"I think fundamentally that relationship between Google and the rest of the internet is evolving, and so for us, this means a continued focus on our core users that come to Reddit directly,\" Huffman said.",
-      "bestPassage": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. He said direct app users are \"worth multiples more than the search referral traffic,\" adding that Reddit's priorities include improving onboarding, increasing retention and converting more logged-out web visitors into logged-in app users. \"I think fundamentally that relationship between Google and the rest of the internet is evolving, and so for us, this means a continued focus on our core users that come to Reddit directly,\" Huffman said.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P1",
-        "S2-P7"
-      ],
-      "sharedTerms": [
-        "the",
-        "focu",
-        "logg",
-        "user"
-      ],
-      "entityShared": [],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 9,
-      "claim": "Advertisers can serve more targeted ads to registered users, and Reddit’s third‑quarter average revenue per user came in at $6.87, higher than the $6.50 analysts expected.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 89,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 75
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F18",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 75,
-          "passageIndex": 18
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Reddit's third-quarter average revenue per user, or ARPU, came in at $6.87, which was higher than the $6.50 that analysts were expecting.",
-      "bestPassage": "Reddit's third-quarter average revenue per user, or ARPU, came in at $6.87, which was higher than the $6.50 that analysts were expecting.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P10"
-      ],
-      "sharedTerms": [
-        "advertiser",
-        "target",
-        "ads",
-        "register",
-        "user",
-        "and",
-        "reddit",
+        "roughly",
+        "000",
         "third",
-        "quarter",
-        "average",
-        "revenue",
-        "per",
-        "came",
-        "higher",
-        "the",
-        "analyst",
-        "expect"
+        "homeland",
+        "security",
+        "investigation",
+        "wing"
       ],
       "entityShared": [
-        "reddit"
+        "ice",
+        "homeland",
+        "security",
+        "investigation"
       ],
       "topicShared": [
-        "reddit"
+        "the",
+        "000",
+        "expos",
+        "homeland",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -760,7 +591,7 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -774,65 +605,58 @@
       "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 10,
-      "claim": "To further encourage direct engagement, Reddit announced a test that will require users to log in before accessing the platform.The test will initially be tested in select markets outside the US.",
+      "index": 8,
+      "claim": "The leak also revealed information linked to undercover investigators and border security agents.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 73,
+      "confidence": 77,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit Will Force Users To Log In As AI Is Killing Search Traffic - Engadget",
-      "bestUrl": "https://www.engadget.com/2301687/reddit-will-move-to-logged-in-only-as-ai-eats-search-traffic/",
-      "bestDomain": "engadget.com",
+      "bestSource": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "bestUrl": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "bestDomain": "newscord.org",
       "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F22",
+        "factId": "F26",
         "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 51
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 62
       },
       "provenanceFactMatches": [
         {
-          "factId": "F22",
+          "factId": "F26",
           "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 51,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F1",
-          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 42,
-          "passageIndex": 3
+          "score": 62,
+          "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-FF22,S1-FF1",
-      "evidence": "The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly. Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading.",
-      "bestPassage": "The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly. Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading.",
+      "bestPassageId": "S3-BODY",
+      "evidence": "Department of Homeland Security, exposing the identities and contact information of immigration officials, border patrol agents, and undercover investigators.",
+      "bestPassage": "Department of Homeland Security, exposing the identities and contact information of immigration officials, border patrol agents, and undercover investigators.",
       "matchedPassages": [
         "S3-BODY",
         "S3-P2"
       ],
       "sharedTerms": [
-        "direct",
-        "engagement",
-        "reddit",
-        "test",
         "the",
-        "platform",
-        "initially",
-        "select",
-        "market",
-        "outside"
+        "leak",
+        "information",
+        "link",
+        "undercover",
+        "investigator",
+        "and",
+        "border",
+        "security",
+        "agent"
       ],
-      "entityShared": [
-        "reddit"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "reddit"
+        "the",
+        "leak",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -842,7 +666,166 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "The compromised material was shared with journalist maia arson crimew, who then provided it to DDoSecrets.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 85,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F17",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 80
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F17",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 80,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P12",
+      "evidence": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest.",
+      "bestPassage": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest.",
+      "matchedPassages": [
+        "S2-P12",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "was",
+        "shar",
+        "journalist",
+        "maia",
+        "arson",
+        "crimew",
+        "who",
+        "provid",
+        "ddosecret"
+      ],
+      "entityShared": [
+        "ddosecret"
+      ],
+      "topicShared": [
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "Distributed Denial of Secrets (DDoSecrets), a nonprofit organization that hosts leaked datasets in the public interest, published the information online.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 92,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "bestUrl": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "bestDomain": "newscord.org",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F29",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 64
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F17",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 10
+        },
+        {
+          "factId": "F29",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 64,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-FF17,S3-FF29",
+      "evidence": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest. Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "bestPassage": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest. Leak exposes data on more than 40,000 DHS employees, including ICE and CBP personnel Distributed Denial of Secrets published the dataset obtained via a hacktivist breach",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P5"
+      ],
+      "sharedTerms": [
+        "distribut",
+        "denial",
+        "secret",
+        "ddosecret",
+        "nonprofit",
+        "host",
+        "leak",
+        "dataset",
+        "the",
+        "public",
+        "interest",
+        "publish"
+      ],
+      "entityShared": [
+        "distribut",
+        "denial",
+        "secret",
+        "ddosecret"
+      ],
+      "topicShared": [
+        "leak",
+        "the"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -855,62 +838,63 @@
     },
     {
       "index": 11,
-      "claim": "While search traffic has declined sharply, the company remains a top search term on Google.",
+      "claim": "The collective stated that it received the stolen dataset from a hacktivist entity referring to itself as the Department of Peace or the Ministry of Peace.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 82,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’",
-      "bestUrl": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-      "bestDomain": "theverge.com",
-      "sourceId": "S4",
+      "bestSource": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "bestUrl": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "bestDomain": "newscord.org",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F30",
-        "sourceId": "S4",
+        "factId": "F32",
+        "sourceId": "S3",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 58
+        "score": 56
       },
       "provenanceFactMatches": [
         {
-          "factId": "F30",
-          "sourceId": "S4",
+          "factId": "F32",
+          "sourceId": "S3",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 58,
-          "passageIndex": 2
+          "score": 56,
+          "passageIndex": 4
         },
         {
-          "factId": "F22",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 56,
-          "passageIndex": 2
+          "factId": "F34",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 50,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S4-BODY",
-      "evidence": "As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience. The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly.",
-      "bestPassage": "As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience. The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly.",
+      "bestPassageId": "S3-BODY",
+      "evidence": "The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month. Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments.",
+      "bestPassage": "The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month. Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments.",
       "matchedPassages": [
-        "S4-BODY"
+        "S3-BODY"
       ],
       "sharedTerms": [
-        "search",
-        "traffic",
-        "has",
-        "fall",
         "the",
-        "top",
-        "term",
-        "google"
+        "dataset",
+        "hacktivist",
+        "entity",
+        "itself",
+        "department",
+        "peace",
+        "ministry"
       ],
       "entityShared": [
-        "google"
+        "department",
+        "peace",
+        "ministry"
       ],
       "topicShared": [
-        "traffic",
-        "google"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -933,153 +917,61 @@
     },
     {
       "index": 12,
-      "claim": "Huffman said the shift is a fundamental change in how the internet and Google operate, but it does not alter consumer demand for Reddit.",
+      "claim": "The group responsible created a specialized search tool called Icepick to allow users to perform detailed searches of employee names, offices, and work assignments.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 93,
+      "confidence": 78,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’",
-      "bestUrl": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-      "bestDomain": "theverge.com",
+      "bestSource": "Hackers leak names of 41,000 US Homeland Security employees, group claims",
+      "bestUrl": "https://gulfnews.com/world/americas/hackers-leak-names-of-41000-us-homeland-security-employees-group-claims-1.500728015",
+      "bestDomain": "gulfnews.com",
       "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S2",
+        "factId": "F34",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 56
+        "score": 75
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
-          "sourceId": "S2",
+          "factId": "F34",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 56,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F16",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 53,
-          "passageIndex": 20
-        },
-        {
-          "factId": "F9",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 50,
-          "passageIndex": 4
+          "score": 75,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S4-BODY",
-      "evidence": "\"I think fundamentally that relationship between Google and the rest of the internet is evolving, and so for us, this means a continued focus on our core users that come to Reddit directly,\" Huffman said. Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership. Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
-      "bestPassage": "\"I think fundamentally that relationship between Google and the rest of the internet is evolving, and so for us, this means a continued focus on our core users that come to Reddit directly,\" Huffman said. Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership. Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users.",
+      "evidence": "Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments.",
+      "bestPassage": "Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments.",
       "matchedPassages": [
-        "S4-BODY"
+        "S4-BODY",
+        "S4-P2"
       ],
       "sharedTerms": [
-        "huffman",
         "the",
-        "shift",
-        "fundamental",
-        "change",
-        "internet",
+        "group",
+        "creat",
+        "search",
+        "tool",
+        "icepick",
+        "detail",
+        "worker",
+        "nam",
+        "offic",
         "and",
-        "google",
-        "does",
-        "not",
-        "consumer",
-        "demand",
-        "for",
-        "reddit"
+        "work",
+        "assignment"
       ],
       "entityShared": [
-        "huffman",
-        "google",
-        "reddit"
+        "icepick"
       ],
       "topicShared": [
-        "google",
-        "does",
-        "not",
-        "reddit"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 13,
-      "claim": "Reddit’s data‑licensing relationships also remain important.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 80,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 51
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F16",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 51,
-          "passageIndex": 20
-        },
-        {
-          "factId": "F11",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 43,
-          "passageIndex": 19
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership. Reddit's two biggest data-licensing partners are OpenAI and Google.",
-      "bestPassage": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership. Reddit's two biggest data-licensing partners are OpenAI and Google.",
-      "matchedPassages": [
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "reddit",
-        "data",
-        "licens",
-        "relationship",
-        "remain"
-      ],
-      "entityShared": [
-        "reddit"
-      ],
-      "topicShared": [
-        "reddit"
+        "the",
+        "worker"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1094,62 +986,68 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 14,
-      "claim": "The company’s largest partners are OpenAI and Google.",
+      "index": 13,
+      "claim": "Before reaching DDoSecrets, the compromised DHS data was initially provided to journalist and hacker maia arson crimew.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 86,
+      "confidence": 88,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F11",
+        "factId": "F17",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 73
+        "score": 80
       },
       "provenanceFactMatches": [
         {
-          "factId": "F11",
+          "factId": "F17",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 19
+          "score": 80,
+          "passageIndex": 10
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Reddit's two biggest data-licensing partners are OpenAI and Google.",
-      "bestPassage": "Reddit's two biggest data-licensing partners are OpenAI and Google.",
+      "evidence": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest.",
+      "bestPassage": "The stolen Homeland Security data was provided to journalist and hacker maia arson crimew, who then shared a copy with DDoSecrets , a nonprofit collective that hosts leaked datasets in the public interest.",
       "matchedPassages": [
         "S2-BODY",
-        "S2-P3"
+        "S2-P12"
       ],
       "sharedTerms": [
+        "ddosecret",
         "the",
-        "partner",
-        "are",
-        "openai",
+        "dhs",
+        "data",
+        "was",
+        "provid",
+        "journalist",
         "and",
-        "google"
+        "hacker",
+        "maia",
+        "arson",
+        "crimew"
       ],
       "entityShared": [
-        "openai",
-        "google"
+        "ddosecret",
+        "dhs"
       ],
       "topicShared": [
-        "google"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1171,68 +1069,65 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 15,
-      "claim": "Huffman noted that Reddit is in negotiations with Google over its data‑licensing agreement and will only pursue a deal that makes sense for the company if it continues the partnership.",
+      "index": 14,
+      "claim": "Outside analysis and verification confirmed the validity of the dataset; independent reporting verified a portion of the published records as authentic by comparing the names of known DHS employees against an offline copy of the leaked file.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 96,
+      "confidence": 73,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
+        "factId": "F7",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 93
+        "score": 59
       },
       "provenanceFactMatches": [
         {
-          "factId": "F16",
+          "factId": "F7",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 93,
-          "passageIndex": 20
+          "score": 59,
+          "passageIndex": 11
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership.",
-      "bestPassage": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership.",
+      "evidence": "TechCrunch verified a portion of the data as authentic by matching the names of several known Homeland Security employees against an offline copy of the database.",
+      "bestPassage": "TechCrunch verified a portion of the data as authentic by matching the names of several known Homeland Security employees against an offline copy of the database.",
       "matchedPassages": [
         "S2-BODY",
-        "S2-P8"
+        "S2-P2"
       ],
       "sharedTerms": [
-        "huffman",
-        "reddit",
-        "negotiation",
-        "google",
-        "its",
-        "data",
-        "licens",
-        "agreement",
         "and",
-        "deal",
-        "mak",
-        "sense",
-        "for",
         "the",
-        "continu",
-        "partner"
+        "dataset",
+        "verifi",
+        "share",
+        "record",
+        "authentic",
+        "nam",
+        "known",
+        "dhs",
+        "worker",
+        "against",
+        "offline",
+        "copy",
+        "leak"
       ],
       "entityShared": [
-        "huffman",
-        "reddit",
-        "google"
+        "dhs"
       ],
       "topicShared": [
-        "not",
-        "reddit",
-        "google"
+        "the",
+        "worker",
+        "leak"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1241,8 +1136,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -1255,57 +1150,64 @@
     },
     {
       "index": 16,
-      "claim": "The earnings report beat on revenue and user metrics but provided weak guidance for the fourth quarter.",
+      "claim": "The compromised Okta records contained IT and log-in details connected to user accounts, specifically revealing information regarding internal applications and systems that individual employees were authorized to access.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 83,
+      "confidence": 76,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
+        "factId": "F13",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 67
+        "score": 66
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
+          "factId": "F13",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 67,
-          "passageIndex": 2
+          "score": 66,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "The company revealed the change Thursday as part of its third-quarter earnings, in which it beat on the top and bottom lines, but provided weak fourth-quarter sales guidance.",
-      "bestPassage": "The company revealed the change Thursday as part of its third-quarter earnings, in which it beat on the top and bottom lines, but provided weak fourth-quarter sales guidance.",
+      "evidence": "The Okta system also contains IT and log-in records associated with the employees&#8217; user account, including details about which systems and internal apps they are permitted to access.",
+      "bestPassage": "The Okta system also contains IT and log-in records associated with the employees&#8217; user account, including details about which systems and internal apps they are permitted to access.",
       "matchedPassages": [
         "S2-BODY",
-        "S2-P6"
+        "S2-P8"
       ],
       "sharedTerms": [
         "the",
-        "earning",
-        "beat",
-        "revenue",
+        "okta",
+        "record",
+        "contain",
         "and",
+        "log",
+        "detail",
         "user",
-        "but",
-        "provid",
-        "weak",
-        "guidance",
-        "for",
-        "fourth",
-        "quarter"
+        "account",
+        "specifically",
+        "information",
+        "internal",
+        "system",
+        "worker",
+        "acces"
       ],
-      "entityShared": [],
-      "topicShared": [],
+      "entityShared": [
+        "okta"
+      ],
+      "topicShared": [
+        "the",
+        "worker"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -1327,54 +1229,132 @@
     },
     {
       "index": 17,
-      "claim": "Daily active unique users rose 12% year‑over‑year to 130.3 million, slightly below Wall Street estimates.",
+      "claim": "In addition, references in the leak cite artificial intelligence tools used within federal workflows, including OpenAI’s ChatGPT, Google’s Gemini, and Microsoft’s Copilot.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 82,
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
+      "bestSource": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "bestUrl": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "bestDomain": "wired.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F17",
-        "sourceId": "S2",
+        "factId": "F3",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 82
+        "score": 84
       },
       "provenanceFactMatches": [
         {
-          "factId": "F17",
-          "sourceId": "S2",
+          "factId": "F3",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 10
+          "score": 84,
+          "passageIndex": 25
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-FF17",
-      "evidence": "Reddit said that daily active uniques, or DAUq, rose 12% year-over-year to 130.3 million in the third quarter, trailing Wall Street estimates of 133.7 million.",
-      "bestPassage": "Reddit said that daily active uniques, or DAUq, rose 12% year-over-year to 130.3 million in the third quarter, trailing Wall Street estimates of 133.7 million.",
+      "bestPassageId": "S1-P3",
+      "evidence": "Noem, McCord, Hegseth, and Krachenfels did not respond to a request for comment Other groups named in the leak reference AI tools, including OpenAI’s ChatGPT, Google’s Gemini, and Microsoft’s Copilot.",
+      "bestPassage": "Noem, McCord, Hegseth, and Krachenfels did not respond to a request for comment Other groups named in the leak reference AI tools, including OpenAI’s ChatGPT, Google’s Gemini, and Microsoft’s Copilot.",
+      "matchedPassages": [
+        "S1-P3",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "leak",
+        "tool",
+        "includ",
+        "openai",
+        "chatgpt",
+        "google",
+        "gemini",
+        "and",
+        "microsoft",
+        "copilot"
+      ],
+      "entityShared": [
+        "openai",
+        "chatgpt",
+        "google",
+        "gemini",
+        "microsoft",
+        "copilot"
+      ],
+      "topicShared": [
+        "the",
+        "leak"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 18,
+      "claim": "Records also mention Penlink, an entity that has held a vendor contract with ICE for years.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 74,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F14",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 64
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 64,
+          "passageIndex": 20
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Penlink has had a contract with ICE for years.",
+      "bestPassage": "Penlink has had a contract with ICE for years.",
       "matchedPassages": [
         "S2-BODY",
         "S2-P9"
       ],
       "sharedTerms": [
-        "daily",
-        "active",
-        "rise",
-        "year",
-        "130",
-        "million",
-        "wall",
-        "street",
-        "estimat"
+        "record",
+        "penlink",
+        "has",
+        "contract",
+        "ice",
+        "for",
+        "year"
       ],
       "entityShared": [
-        "wall",
-        "street"
+        "penlink",
+        "ice"
       ],
       "topicShared": [],
       "numericMismatch": false,
@@ -1384,74 +1364,6 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 18,
-      "claim": "Despite the traffic slump, the company’s top and bottom lines performed better than expected.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 76,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F14",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 51
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F14",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 51,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "The company revealed the change Thursday as part of its third-quarter earnings, in which it beat on the top and bottom lines, but provided weak fourth-quarter sales guidance.",
-      "bestPassage": "The company revealed the change Thursday as part of its third-quarter earnings, in which it beat on the top and bottom lines, but provided weak fourth-quarter sales guidance.",
-      "matchedPassages": [
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "traffic",
-        "top",
-        "and",
-        "bottom",
-        "lin",
-        "better",
-        "expect"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "traffic"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
@@ -1466,73 +1378,79 @@
     },
     {
       "index": 19,
-      "claim": "The shift to a login‑only model is part of Reddit’s broader effort to reduce reliance on search referrals, which have become less reliable as Google’s search experience evolves.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 77,
+      "claim": "In response to the incident, a spokesperson for Homeland Security confirmed that DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
+      "bestSource": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "bestUrl": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "bestDomain": "wired.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S2",
+        "factId": "F1",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 62
+        "score": 91
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
+          "factId": "F10",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 62,
-          "passageIndex": 4
+          "score": 94,
+          "passageIndex": 13
         },
         {
-          "factId": "F30",
-          "sourceId": "S4",
+          "factId": "F1",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 54,
-          "passageIndex": 2
+          "score": 91,
+          "passageIndex": 10
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-FF9,S4-FF30",
-      "evidence": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
-      "bestPassage": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
+      "bestPassageId": "S2-FF10,S1-FF1",
+      "evidence": "A spokesperson for Homeland Security told TechCrunch after publication: &#8220;DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively. “DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively,” a Homeland Security spokesperson tells WIRED.",
+      "bestPassage": "A spokesperson for Homeland Security told TechCrunch after publication: &#8220;DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively. “DHS is aware of a potential breach and is actively working to address the situation swiftly and effectively,” a Homeland Security spokesperson tells WIRED.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P1"
+        "S1-BODY",
+        "S1-P1"
       ],
       "sharedTerms": [
         "the",
-        "shift",
-        "part",
-        "reddit",
-        "effort",
-        "search",
-        "referral",
-        "become",
-        "google",
-        "experience"
+        "spokesperson",
+        "for",
+        "homeland",
+        "security",
+        "dhs",
+        "aware",
+        "potential",
+        "breach",
+        "and",
+        "actively",
+        "work",
+        "addres",
+        "situation",
+        "swiftly",
+        "effectively"
       ],
       "entityShared": [
-        "reddit",
-        "google"
+        "homeland",
+        "security",
+        "dhs"
       ],
       "topicShared": [
-        "reddit",
-        "google"
+        "the",
+        "homeland",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "only"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
@@ -1550,55 +1468,69 @@
     },
     {
       "index": 20,
-      "claim": "By concentrating on direct users, Reddit aims to strengthen its community focus and improve advertising revenue.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 58,
+      "claim": "Meanwhile, figures named in the leak, including Noem, McCord, Hegseth, and Krachenfels, did not respond to requests for comment, and the hacker responsible did not respond to inquiries regarding how the breach was executed.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 89,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
+      "bestSource": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "bestUrl": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "bestDomain": "wired.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F19",
-        "sourceId": "S2",
+        "factId": "F3",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 41
+        "score": 83
       },
       "provenanceFactMatches": [
         {
-          "factId": "F19",
-          "sourceId": "S2",
+          "factId": "F3",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 13
+          "score": 83,
+          "passageIndex": 25
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads.",
-      "bestPassage": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "Noem, McCord, Hegseth, and Krachenfels did not respond to a request for comment Other groups named in the leak reference AI tools, including OpenAI’s ChatGPT, Google’s Gemini, and Microsoft’s Copilot.",
+      "bestPassage": "Noem, McCord, Hegseth, and Krachenfels did not respond to a request for comment Other groups named in the leak reference AI tools, including OpenAI’s ChatGPT, Google’s Gemini, and Microsoft’s Copilot.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P11"
+        "S1-BODY",
+        "S1-P3"
       ],
       "sharedTerms": [
-        "user",
-        "reddit",
-        "its",
-        "community",
-        "focu",
+        "nam",
+        "the",
+        "leak",
+        "includ",
+        "noem",
+        "mccord",
+        "hegseth",
         "and",
-        "advertis",
-        "revenue"
+        "krachenfel",
+        "did",
+        "not",
+        "respond",
+        "request",
+        "for",
+        "comment",
+        "hacker",
+        "investigation",
+        "breach"
       ],
       "entityShared": [
-        "reddit"
+        "noem",
+        "mccord",
+        "hegseth",
+        "krachenfel"
       ],
       "topicShared": [
-        "reddit"
+        "the",
+        "leak"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1613,7 +1545,7 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
+      "factCoverage": 1,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -1621,147 +1553,65 @@
     },
     {
       "index": 21,
-      "claim": "For visitors who find Reddit through Google, the experience may change.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 72,
+      "claim": "This incident is described as the third-largest government data leak to make headlines within a single month, following other major security events impacting federal departments.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 67,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit Will Force Users To Log In As AI Is Killing Search Traffic - Engadget",
-      "bestUrl": "https://www.engadget.com/2301687/reddit-will-move-to-logged-in-only-as-ai-eats-search-traffic/",
-      "bestDomain": "engadget.com",
+      "bestSource": "Internet Peace Ministry Hack Exposes 41,000 U.S. Department of Homeland Security Employees - NewsCord",
+      "bestUrl": "https://newscord.org/article/hacker-behind-department-of-peace-posts-40000-dhs-employee-records-online--Story_20261028_Hackerstolepersonnel5c0360ef",
+      "bestDomain": "newscord.org",
       "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F24",
+        "factId": "F32",
         "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 51
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 61
       },
       "provenanceFactMatches": [
         {
-          "factId": "F24",
+          "factId": "F32",
           "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 51,
-          "passageIndex": 8
-        },
-        {
-          "factId": "F30",
-          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 51,
-          "passageIndex": 2
+          "score": 61,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S3-BODY",
-      "evidence": "Reddit's CEO, who has been clearly frustrated with the state of online search and Google's AI overviews for a while, was more explicit in his criticism. As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
-      "bestPassage": "Reddit's CEO, who has been clearly frustrated with the state of online search and Google's AI overviews for a while, was more explicit in his criticism. As part of its Q3 2026 earnings, Reddit revealed that search traffic in October has “dropped by more than 1 million referrals on average per week,” and he attributes part of the company’s struggles with Google traffic to how AI Mode and AI Overviews change the search experience.",
+      "evidence": "The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month.",
+      "bestPassage": "The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month.",
       "matchedPassages": [
-        "S3-BODY"
+        "S3-BODY",
+        "S3-P8"
       ],
       "sharedTerms": [
-        "for",
-        "who",
-        "find",
-        "reddit",
-        "google",
+        "describ",
         "the",
-        "experience",
-        "change"
-      ],
-      "entityShared": [
-        "reddit",
-        "google"
-      ],
-      "topicShared": [
-        "reddit",
-        "google"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 22,
-      "claim": "In markets where the login test is active, users will see a prompt to sign in before viewing content.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 50,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit Will Force Users To Log In As AI Is Killing Search Traffic - Engadget",
-      "bestUrl": "https://www.engadget.com/2301687/reddit-will-move-to-logged-in-only-as-ai-eats-search-traffic/",
-      "bestDomain": "engadget.com",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F19",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 21
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F19",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 21,
-          "passageIndex": 13
-        },
-        {
-          "factId": "F21",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 21,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F22",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 21,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF19,S3-FF21,S3-FF22",
-      "evidence": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads. Reddit will no longer allow logged out users or those without an account to view content on its platform, CEO Steve Huffman shared in an update . The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly.",
-      "bestPassage": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads. Reddit will no longer allow logged out users or those without an account to view content on its platform, CEO Steve Huffman shared in an update . The change, which the company said will initially be tested in \"select markets\" outside the US, comes as the company says that search traffic has declined significantly.",
-      "matchedPassages": [
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "market",
-        "the",
-        "test",
-        "active",
-        "user",
-        "view",
-        "content"
+        "third",
+        "largest",
+        "government",
+        "data",
+        "leak",
+        "headlin",
+        "month",
+        "security",
+        "department"
       ],
       "entityShared": [],
-      "topicShared": [],
+      "topicShared": [
+        "the",
+        "leak",
+        "security"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [],
+      "scopeWarnings": [
+        "major"
+      ],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
@@ -1771,56 +1621,152 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 24,
-      "claim": "For advertisers, a higher proportion of logged‑in users could translate into more effective targeting.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 57,
+      "index": 22,
+      "claim": "It comes on the heels of a breach by a hacking group known as ShinyHunters, which claimed to have stolen personal details belonging to nearly every FBI employee and their family members.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 80,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S2",
+      "bestSource": "Massive Leak Exposes 41,000 Homeland Security Workers—Including Undercover ICE Agents",
+      "bestUrl": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents/",
+      "bestDomain": "wired.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F19",
-        "sourceId": "S2",
+        "factId": "F4",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 33
+        "score": 80
       },
       "provenanceFactMatches": [
         {
-          "factId": "F19",
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 80,
+          "passageIndex": 7
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P4",
+      "evidence": "The leak follows a breach in which a group of hackers known as ShinyHunters claimed to have stolen personal information on nearly every FBI employee and their families.",
+      "bestPassage": "The leak follows a breach in which a group of hackers known as ShinyHunters claimed to have stolen personal information on nearly every FBI employee and their families.",
+      "matchedPassages": [
+        "S1-P4",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "breach",
+        "group",
+        "known",
+        "shinyhunter",
+        "claim",
+        "stolen",
+        "personal",
+        "nearly",
+        "every",
+        "fbi",
+        "worker",
+        "and"
+      ],
+      "entityShared": [
+        "shinyhunter",
+        "fbi"
+      ],
+      "topicShared": [
+        "the",
+        "worker"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 23,
+      "claim": "Recent months have also seen additional hacks involving thousands of FBI personnel files and personal information belonging to millions of active and former military service members sourced from a Pentagon human resources unit.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 88,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 83
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 33,
-          "passageIndex": 13
+          "score": 83,
+          "passageIndex": 8
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads.",
-      "bestPassage": "Reddit, which derives the bulk of its overall sales from online advertising, is able to monetize logged-ln users better than logged-out users , because those registered users are more active and valuable to advertisers itching to deliver more targeted ads.",
+      "evidence": "This is the latest data breach to hit the U.S. government in recent months, following earlier hacks involving the theft of thousands of FBI agents&#8217; personnel records and the personal information of millions of serving and former military service personnel from the Pentagon&#8217;s human resources unit .",
+      "bestPassage": "This is the latest data breach to hit the U.S. government in recent months, following earlier hacks involving the theft of thousands of FBI agents&#8217; personnel records and the personal information of millions of serving and former military service personnel from the Pentagon&#8217;s human resources unit .",
       "matchedPassages": [
-        "S2-BODY"
+        "S2-BODY",
+        "S2-P1"
       ],
       "sharedTerms": [
-        "for",
-        "advertiser",
-        "higher",
-        "logg",
-        "user",
-        "target"
+        "recent",
+        "month",
+        "seen",
+        "hack",
+        "involv",
+        "thousand",
+        "fbi",
+        "personnel",
+        "and",
+        "personal",
+        "information",
+        "million",
+        "active",
+        "former",
+        "military",
+        "service",
+        "pentagon",
+        "human",
+        "resourc",
+        "unit"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "fbi",
+        "pentagon"
+      ],
       "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
@@ -1828,14 +1774,159 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 24,
+      "claim": "Critics have called for investigations into tech companies that fund or provide tools used by ICE.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F9",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 92
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F9",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 92,
+          "passageIndex": 15
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Critics have called for investigations into tech companies that fund or provide their technology to ICE.",
+      "bestPassage": "Critics have called for investigations into tech companies that fund or provide their technology to ICE.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P4"
+      ],
+      "sharedTerms": [
+        "critic",
+        "call",
+        "for",
+        "investigation",
+        "compani",
+        "fund",
+        "provide",
+        "tool",
+        "ice"
+      ],
+      "entityShared": [
+        "critic",
+        "ice"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 25,
+      "claim": "Following the release of the employee records, critics have called for formal investigations into technology vendors that supply or fund tools used by ICE.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 80,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F9",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 52
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F9",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 52,
+          "passageIndex": 15
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Critics have called for investigations into tech companies that fund or provide their technology to ICE.",
+      "bestPassage": "Critics have called for investigations into tech companies that fund or provide their technology to ICE.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "follow",
+        "the",
+        "worker",
+        "record",
+        "critic",
+        "call",
+        "for",
+        "investigation",
+        "fund",
+        "tool",
+        "ice"
+      ],
+      "entityShared": [
+        "ice"
+      ],
+      "topicShared": [
+        "the",
+        "worker"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -1843,147 +1934,65 @@
     },
     {
       "index": 26,
-      "claim": "Reddit’s CEO has identified AI‑driven Google search as a key factor in declining referral traffic and is steering the platform toward a direct‑user model.",
+      "claim": "The stolen data was obtained by a hacktivist entity named the Department of Peace and disseminated publicly through DDoSecrets.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 83,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Reddit Stock Tumbles as CEO Says Google Search Referrals Were 'Choppy,' Pushes Users to Its App - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/stocks/articles/reddit-stock-tumbles-ceo-says-203015766.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 60
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F9",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 63,
-          "passageIndex": 4
-        },
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 60,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F24",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 53,
-          "passageIndex": 8
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF9,S1-FF1,S3-FF24",
-      "evidence": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. Reddit's CEO, who has been clearly frustrated with the state of online search and Google's AI overviews for a while, was more explicit in his criticism.",
-      "bestPassage": "Reddit CEO Steve Huffman told CNBC in an interview that the company's shrinking search-referral traffic from Google went \"down meaningfully in this quarter\" due to the \"shift to AI mode and AI overviews.\" The traffic decline played a big role in Reddit's planned efforts to require people to become logged-in users. Reddit Inc. is encouraging more direct engagement through its app instead of finding the platform through Alphabet Inc.'s Google Search after CEO Steve Huffman said search referrals turned \"choppy\" during the second quarter, sending shares tumbling in extended trading. Reddit's CEO, who has been clearly frustrated with the state of online search and Google's AI overviews for a while, was more explicit in his criticism.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
-      ],
-      "sharedTerms": [
-        "reddit",
-        "ceo",
-        "has",
-        "google",
-        "search",
-        "referral",
-        "traffic",
-        "and",
-        "the",
-        "platform",
-        "direct",
-        "user"
-      ],
-      "entityShared": [
-        "reddit",
-        "ceo",
-        "google"
-      ],
-      "topicShared": [
-        "reddit",
-        "ceo",
-        "google",
-        "traffic"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 27,
-      "claim": "The login‑only test, data‑licensing negotiations, and strong Q3 financials paint a picture of a company adapting to a changing search ecosystem while preparing for a more user‑centric future.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 53,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents - TechCrunch",
+      "bestUrl": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S2",
+        "factId": "F34",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 35
+        "score": 62
       },
       "provenanceFactMatches": [
         {
-          "factId": "F16",
-          "sourceId": "S2",
+          "factId": "F34",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
-          "passageIndex": 20
+          "score": 62,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F32",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 55,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership.",
-      "bestPassage": "Huffman said that Reddit remains \"in negotiations\" with Google over its data-licensing agreement, and said that it is \"only going to do a deal that makes sense for Reddit,\" if it chooses to continue the partnership.",
+      "bestPassageId": "S4-FF34,S3-FF32",
+      "evidence": "Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments. The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month.",
+      "bestPassage": "Distributed Denial of Secrets (DDOS) said it obtained the sensitive information from a \"hacktivist group\" known as the Department of Peace, which created a tool named Icepick that facilitates detailed searches of employee names, offices and assignments. The nonprofit site said it based the disclosure on information obtained by an entity calling itself the Ministry of Peace, and the leak was described as the third-largest government data leak to make headlines in the past month.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P8"
+        "S2-BODY"
       ],
       "sharedTerms": [
         "the",
         "data",
-        "licens",
-        "negotiation",
-        "and",
-        "search",
-        "ecosystem",
-        "for",
-        "user"
+        "was",
+        "obtain",
+        "hacktivist",
+        "entity",
+        "nam",
+        "department",
+        "peace",
+        "and"
       ],
-      "entityShared": [],
-      "topicShared": [],
+      "entityShared": [
+        "department",
+        "peace"
+      ],
+      "topicShared": [
+        "the"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -1997,23 +2006,17 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
-      "multiFactSupported": false,
+      "factCoverage": 2,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     }
   ],
   "editorial": [
     {
-      "index": 23,
-      "claim": "The company is still evaluating how this will affect overall traffic and engagement.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 25,
-      "claim": "However, the long‑term impact on traffic and revenue remains uncertain until the login test rolls out fully.",
+      "index": 15,
+      "claim": "The leak highlights vulnerabilities surrounding identity management and internal operational logging tools.",
       "type": "editorial-analysis",
       "status": "editorial-excluded"
     }
