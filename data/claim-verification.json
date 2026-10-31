@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-10-30T21:51:29.752Z",
-  "articlePath": "content/articles/sam-altman-criticizes-personal-pc-ram-usage-amid-supply-constraints.md",
-  "articleTitle": "Sam Altman Criticizes Personal PC RAM Usage Amid Supply Constraints",
+  "generatedAt": "2026-10-31T03:16:41.606Z",
+  "articlePath": "content/articles/nvidia-considers-cosigning-loans-for-nscale-s-west-virginia-ai-hub.md",
+  "articleTitle": "Nvidia Considers Cosigning Loans for Nscale’s West Virginia AI Hub",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 4,
-  "usableSourceCount": 4,
-  "claimCount": 18,
-  "editorialCount": 1,
-  "verified": 8,
-  "partial": 10,
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 15,
+  "editorialCount": 0,
+  "verified": 13,
+  "partial": 2,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 69,
+  "averageConfidence": 84,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,189 +45,87 @@
   "sources": [
     {
       "id": "S1",
-      "title": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "url": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "domain": "tomshardware.com",
-      "passageCount": 12,
-      "articleBodyLength": 4204
+      "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "domain": "techcrunch.com",
+      "passageCount": 15,
+      "articleBodyLength": 1981
     },
     {
       "id": "S2",
-      "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
-      "domain": "theverge.com",
-      "passageCount": 2,
-      "articleBodyLength": 393
-    },
-    {
-      "id": "S3",
-      "title": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "url": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "domain": "notebookcheck.net",
+      "title": "Nvidia Eyes Cosigning Nscale's West Virginia AI Data Center Loan",
+      "url": "https://www.techbuzz.ai/articles/nvidia-eyes-cosigning-nscale-s-west-virginia-ai-data-center-loan",
+      "domain": "techbuzz.ai",
       "passageCount": 6,
-      "articleBodyLength": 944
-    },
-    {
-      "id": "S4",
-      "title": "Sam Altman Wants Your Laptop’s RAM: Why the OpenAI CEO Says Personal Computers Are Hoarding a Scarce Resource. - Gadget Review",
-      "url": "https://www.gadgetreview.com/sam-altman-wants-your-laptops-ram-why-the-openai-ceo-says-personal-computers-are-hoarding-a-scarce-resource",
-      "domain": "gadgetreview.com",
-      "passageCount": 3,
-      "articleBodyLength": 405
+      "articleBodyLength": 865
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "In a recent interview over beers on the YouTube podcast Cheeky Pint, OpenAI CEO Sam Altman expressed strong criticism regarding how memory hardware is distributed between consumer devices and enterprise cloud infrastructure.",
+      "claim": "Nvidia is weighing an unprecedented move to co‑sign financing for Nscale’s AI data center project in West Virginia.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 75,
+      "confidence": 98,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
-      "sourceId": "S1",
+      "bestSource": "Nvidia Eyes Cosigning Nscale's West Virginia AI Data Center Loan",
+      "bestUrl": "https://www.techbuzz.ai/articles/nvidia-eyes-cosigning-nscale-s-west-virginia-ai-data-center-loan",
+      "bestDomain": "techbuzz.ai",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F16",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 61
+        "score": 98
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 61,
-          "passageIndex": 19
-        },
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 49,
-          "passageIndex": 19
-        },
-        {
-          "factId": "F13",
+          "factId": "F16",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 49,
+          "score": 98,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF2,S1-FF1,S2-FF13",
-      "evidence": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" OpenAI CEO Sam Altman has data centers full of memory, but seemingly it's the 32GB of RAM in your desktop that's the problem. Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it’s “terrible” to have RAM in personal PCs instead of data centers.",
-      "bestPassage": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" OpenAI CEO Sam Altman has data centers full of memory, but seemingly it's the 32GB of RAM in your desktop that's the problem. Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it’s “terrible” to have RAM in personal PCs instead of data centers.",
+      "bestPassageId": "S2-P1",
+      "evidence": "Nvidia is weighing an unprecedented move to cosign financing for Nscale's AI data center project in West Virginia, marking a dramatic shift in how chipmakers are supporting infrastructure buildout.",
+      "bestPassage": "Nvidia is weighing an unprecedented move to cosign financing for Nscale's AI data center project in West Virginia, marking a dramatic shift in how chipmakers are supporting infrastructure buildout.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
+        "S2-P1",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "interview",
-        "beer",
-        "the",
-        "youtube",
-        "cheeky",
-        "pint",
-        "openai",
-        "ceo",
-        "sam",
-        "altman",
-        "memory",
-        "and"
+        "nvidia",
+        "weigh",
+        "unprecedent",
+        "move",
+        "financ",
+        "for",
+        "nscale",
+        "data",
+        "center",
+        "project",
+        "west",
+        "virginia"
       ],
       "entityShared": [
-        "youtube",
-        "cheeky",
-        "pint",
-        "openai",
-        "ceo",
-        "sam",
-        "altman"
+        "nvidia",
+        "nscale",
+        "west",
+        "virginia"
       ],
       "topicShared": [
-        "sam",
-        "altman"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 2,
-      "claim": "Addressing the ongoing global memory supply shortages, Altman described the presence of DRAM inside personal computers as \"quite terrible\" from a global allocation perspective.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 78,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 68
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F15",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 68,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "bestPassage": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
-      ],
-      "sharedTerms": [
-        "the",
-        "global",
-        "memory",
-        "supply",
-        "altman",
-        "dram",
-        "computer",
-        "quite",
-        "terrible",
-        "allocation",
-        "perspective"
-      ],
-      "entityShared": [
-        "altman",
-        "dram"
-      ],
-      "topicShared": [
-        "altman"
+        "nvidia",
+        "weigh",
+        "for",
+        "nscale",
+        "data",
+        "center",
+        "west",
+        "virginia"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -237,6 +135,86 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 2,
+      "claim": "The proposal would see Nvidia act as a residual value guarantor, stepping in if Nscale defaulted on construction payments, taking temporary control of the facility and helping locate a buyer or new tenant.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 78,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 78
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 78,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P6",
+      "evidence": "Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
+      "bestPassage": "Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
+      "matchedPassages": [
+        "S1-P6",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "nvidia",
+        "residual",
+        "value",
+        "nscale",
+        "default",
+        "construction",
+        "payment",
+        "facility",
+        "and",
+        "help",
+        "buyer",
+        "new",
+        "tenant"
+      ],
+      "entityShared": [
+        "nvidia",
+        "nscale"
+      ],
+      "topicShared": [
+        "the",
+        "nvidia",
+        "nscale"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -250,136 +228,64 @@
     },
     {
       "index": 3,
-      "claim": "According to Altman, having individuals hold portions of the world's limited DRAM supply inside personal desktop computers and laptops leads to significant inefficiency.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 67,
+      "claim": "This arrangement represents a shift from Nvidia’s usual support of cloud providers, which has largely covered leases and chip purchases, not construction.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 79,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 53
+        "factId": "F14",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 79
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 53,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F2",
+          "factId": "F14",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 19
+          "score": 79,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-FF15,S1-FF2",
-      "evidence": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time. In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\"",
-      "bestPassage": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time. In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\"",
+      "bestPassageId": "S1-P14",
+      "evidence": "Nvidia’s earlier support for cloud providers has mostly covered leases and chip purchases, not construction.",
+      "bestPassage": "Nvidia’s earlier support for cloud providers has mostly covered leases and chip purchases, not construction.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
+        "S1-P14",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "altman",
-        "hav",
-        "the",
-        "world",
-        "limit",
-        "dram",
-        "supply",
-        "computer",
-        "and"
+        "nvidia",
+        "support",
+        "cloud",
+        "provider",
+        "has",
+        "cover",
+        "leas",
+        "and",
+        "chip",
+        "purchas",
+        "not",
+        "construction"
       ],
       "entityShared": [
-        "altman",
-        "dram"
+        "nvidia"
       ],
       "topicShared": [
-        "altman"
+        "nvidia"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "significant"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 4,
-      "claim": "He pointed out that memory in home computers often sits idle, being actively used only about 5% of the time.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 46,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 33
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F15",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 33,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "bestPassage": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
-      ],
-      "sharedTerms": [
-        "memory",
-        "computer",
-        "the",
-        "time"
-      ],
-      "entityShared": [],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "only"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
@@ -388,6 +294,85 @@
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 4,
+      "claim": "Nscale’s first building, a 460‑megawatt facility, is slated to use Nvidia’s next‑generation Vera Rubin chips.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 95,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 95
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 95,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF4",
+      "evidence": "Anthropic&#8217;s contract with Nscale covers the first 460-megawatt building at Nscale&#8217;s West Virginia campus, which is expected to use Nvidia&#8217;s next-generation Vera Rubin chips.",
+      "bestPassage": "Anthropic&#8217;s contract with Nscale covers the first 460-megawatt building at Nscale&#8217;s West Virginia campus, which is expected to use Nvidia&#8217;s next-generation Vera Rubin chips.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P4"
+      ],
+      "sharedTerms": [
+        "nscale",
+        "first",
+        "build",
+        "460",
+        "megawatt",
+        "use",
+        "nvidia",
+        "next",
+        "generation",
+        "vera",
+        "rubin",
+        "chip"
+      ],
+      "entityShared": [
+        "nscale",
+        "nvidia",
+        "vera",
+        "rubin"
+      ],
+      "topicShared": [
+        "nscale",
+        "nvidia"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": false,
+        "blocked": true
       },
       "factCoverage": 1,
       "multiFactSupported": false,
@@ -397,59 +382,52 @@
     },
     {
       "index": 5,
-      "claim": "In contrast, Altman argued that running workloads in the cloud allows for maximum utilization of hardware resources, which he frames as a necessity when navigating a supply-constrained market environment.",
+      "claim": "The contract for that building alone is worth $44.6 billion.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 73,
+      "confidence": 85,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 57
+        "factId": "F2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 72
       },
       "provenanceFactMatches": [
         {
-          "factId": "F16",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 57,
-          "passageIndex": 2
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 72,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "You want maximum utilization in the cloud if you’re trying to deal with this very supply-constrained environment, - Sam Altman .",
-      "bestPassage": "You want maximum utilization in the cloud if you’re trying to deal with this very supply-constrained environment, - Sam Altman .",
+      "bestPassageId": "S1-BODY",
+      "evidence": "Anthropic has signed a $44.6 billion contract for the project’s first building alone, according to Nscale’s IPO filing .",
+      "bestPassage": "Anthropic has signed a $44.6 billion contract for the project’s first building alone, according to Nscale’s IPO filing .",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P2"
+        "S1-BODY",
+        "S1-P2"
       ],
       "sharedTerms": [
-        "altman",
-        "workload",
         "the",
-        "cloud",
+        "contract",
         "for",
-        "maximum",
-        "utilization",
-        "hardware",
-        "supply",
-        "constrain",
-        "market",
-        "environment"
+        "build",
+        "alone",
+        "worth",
+        "billion"
       ],
-      "entityShared": [
-        "altman"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "altman",
+        "the",
         "for"
       ],
       "numericMismatch": false,
@@ -459,165 +437,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 6,
-      "claim": "Altman's comments focused heavily on the concept of local AI inference, suggesting that relying on local computer hardware rather than centralized systems represents an inefficient use of resources.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 67,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F4",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 43
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F4",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 43,
-          "passageIndex": 23
-        },
-        {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
-          "passageIndex": 19
-        },
-        {
-          "factId": "F22",
-          "sourceId": "S4",
-          "sourceRole": "CORROBORATION",
-          "score": 33,
-          "passageIndex": 3
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud. In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" Altman reportedly argued on the Cheeky Pint podcast that local AI inference creates a poor allocation of scarce DRAM .",
-      "bestPassage": "Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud. In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" Altman reportedly argued on the Cheeky Pint podcast that local AI inference creates a poor allocation of scarce DRAM .",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P4"
-      ],
-      "sharedTerms": [
-        "altman",
-        "focus",
-        "the",
-        "local",
-        "inference",
-        "suggest",
-        "computer",
-        "hardware",
-        "rather"
-      ],
-      "entityShared": [
-        "altman"
-      ],
-      "topicShared": [
-        "altman"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": true,
-        "blocked": true
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 8,
-      "claim": "Altman said that having DRAM in personal computers uses only about 5% of the time, which he views as inefficient.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 70,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F15",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 47
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F15",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 47,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "bestPassage": "From a global allocation perspective, actually, it’s quite terrible to have everybody have a bunch of the world’s limited supply of DRAM sitting in their own computer and being used 5% of the time.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
-      ],
-      "sharedTerms": [
-        "altman",
-        "dram",
-        "computer",
-        "the",
-        "time"
-      ],
-      "entityShared": [
-        "altman",
-        "dram"
-      ],
-      "topicShared": [
-        "altman"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "only"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -629,79 +450,64 @@
       "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 9,
-      "claim": "Consumer PCs require substantial RAM capacity to perform routine tasks, heavy multitasking, and gaming—demands that exist independently of local AI workloads.",
+      "index": 6,
+      "claim": "The companies are also discussing a second deal of roughly $45 billion for another building.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 61,
+      "confidence": 90,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F6",
+        "factId": "F5",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 28
+        "score": 90
       },
       "provenanceFactMatches": [
         {
-          "factId": "F6",
+          "factId": "F5",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 28,
-          "passageIndex": 23
-        },
-        {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 25,
+          "score": 90,
           "passageIndex": 5
-        },
-        {
-          "factId": "F3",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 21,
-          "passageIndex": 23
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "It also assumes that RAM being used in AI data centers 24/7 is more worthwhile than RAM that is used for spreadsheets, web browsing, gaming, and maybe even local AI occasionally. Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware. OpenAI isn't exactly threatened by some laptops and gaming rigs just yet, but local AI could mean people one day paying less for subscriptions to models like GPT-6 Luna if they have the power to run them at home.",
-      "bestPassage": "It also assumes that RAM being used in AI data centers 24/7 is more worthwhile than RAM that is used for spreadsheets, web browsing, gaming, and maybe even local AI occasionally. Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware. OpenAI isn't exactly threatened by some laptops and gaming rigs just yet, but local AI could mean people one day paying less for subscriptions to models like GPT-6 Luna if they have the power to run them at home.",
+      "bestPassageId": "S1-FF5",
+      "evidence": "The companies are also discussing a second deal worth roughly $45 billion for another building.",
+      "bestPassage": "The companies are also discussing a second deal worth roughly $45 billion for another building.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P6"
+        "S1-P5",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "consumer",
-        "pcs",
-        "ram",
-        "multitask",
-        "and",
-        "gam",
-        "demand",
-        "local",
-        "workload"
+        "the",
+        "compani",
+        "are",
+        "discuss",
+        "second",
+        "deal",
+        "roughly",
+        "billion",
+        "for",
+        "build"
       ],
-      "entityShared": [
-        "pcs",
-        "ram"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "ram"
+        "the",
+        "for"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
+        "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
@@ -709,315 +515,143 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 10,
-      "claim": "Observers have also pointed out OpenAI's direct financial stake in promoting cloud-based infrastructure, as the company benefits when users rely on cloud services rather than running models locally on their own machines.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 61,
+      "index": 7,
+      "claim": "Nscale has struggled to launch its projects; in August it ran about 25,000 advanced AI chips, far short of the nearly 500,000 it plans to deploy.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 86,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F21",
-        "sourceId": "S4",
-        "sourceRole": "CORROBORATION",
-        "score": 43
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F21",
-          "sourceId": "S4",
-          "sourceRole": "CORROBORATION",
-          "score": 43,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F4",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 41,
-          "passageIndex": 23
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S4-FF21,S1-FF4",
-      "evidence": "Altman&#8217;s claim that idle consumer RAM wastes a global resource draws scrutiny given OpenAI&#8217;s direct financial stake in cloud computing Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud.",
-      "bestPassage": "Altman&#8217;s claim that idle consumer RAM wastes a global resource draws scrutiny given OpenAI&#8217;s direct financial stake in cloud computing Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P4"
-      ],
-      "sharedTerms": [
-        "openai",
-        "direct",
-        "financial",
-        "stake",
-        "cloud",
-        "the",
-        "rather",
-        "own"
-      ],
-      "entityShared": [
-        "openai"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": false,
-        "blocked": true
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 11,
-      "claim": "Altman's vision assumes that massive data center expansion will continue unabated and relies on the premise that cloud-based execution is inherently superior to home hardware ownership.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 61,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F4",
+        "factId": "F8",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 48
+        "score": 68
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
+          "factId": "F8",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 48,
-          "passageIndex": 23
+          "score": 68,
+          "passageIndex": 6
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud.",
-      "bestPassage": "Altman's talk suggests that the company would prefer that more RAM go to OpenAI's data centers rather than home computers, which also sparks enthusiast fears of not being able to own your own hardware or software, but rather rent an agent and a computer in the cloud.",
+      "evidence": "The company had about 25,000 advanced AI chips running in August , a fraction of the nearly 500,000 it plans to deploy.",
+      "bestPassage": "The company had about 25,000 advanced AI chips running in August , a fraction of the nearly 500,000 it plans to deploy.",
       "matchedPassages": [
         "S1-BODY",
-        "S1-P4"
+        "S1-P8"
       ],
       "sharedTerms": [
-        "altman",
-        "assum",
-        "data",
-        "center",
-        "and",
+        "nscale",
+        "has",
+        "struggl",
+        "its",
+        "project",
+        "august",
+        "000",
+        "advanc",
+        "chip",
         "the",
-        "cloud",
-        "bas",
-        "home",
-        "hardware"
+        "nearly",
+        "500",
+        "plan",
+        "deploy"
       ],
       "entityShared": [
-        "altman"
+        "nscale",
+        "august"
       ],
       "topicShared": [
-        "altman",
-        "data",
-        "center"
+        "nscale",
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
+        "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
-        "certaintyEscalation": true,
+        "certaintyEscalation": false,
         "attributionDropped": false,
-        "blocked": true
+        "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 12,
-      "claim": "For tech enthusiasts and consumers, this stance highlights growing concerns over the future of computing ownership.Altman said that local inference is \"quite terrible\" and that memory would be better used in data centers.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 69,
+      "index": 8,
+      "claim": "Despite these hurdles, the project won state certification in September after months of negotiations.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 89,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F10",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 54
+        "score": 84
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F10",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 54,
-          "passageIndex": 19
-        },
-        {
-          "factId": "F19",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 44,
-          "passageIndex": 3
+          "score": 84,
+          "passageIndex": 6
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF2,S3-FF19",
-      "evidence": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" In other words, Altman believes memory would be put to better use in centralized data centers, where it could continuously serve multiple users and workloads.",
-      "bestPassage": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" In other words, Altman believes memory would be put to better use in centralized data centers, where it could continuously serve multiple users and workloads.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "In September, after months of negotiations , the project won state certification.",
+      "bestPassage": "In September, after months of negotiations , the project won state certification.",
       "matchedPassages": [
         "S1-BODY",
-        "S1-P2"
+        "S1-P10"
       ],
       "sharedTerms": [
-        "and",
+        "despite",
         "the",
-        "altman",
-        "local",
-        "inference",
-        "quite",
-        "terrible",
-        "memory",
-        "better",
-        "data",
-        "center"
+        "project",
+        "won",
+        "state",
+        "certification",
+        "september",
+        "month",
+        "negotiation"
       ],
       "entityShared": [
-        "altman"
+        "september"
       ],
       "topicShared": [
-        "for",
-        "altman",
-        "better",
-        "data",
-        "center"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": true,
-        "attributionDropped": false,
-        "blocked": true
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 13,
-      "claim": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 98,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 98
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 98,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-P4",
-      "evidence": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "bestPassage": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "matchedPassages": [
-        "S3-P4",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "memory",
-        "manufacturer",
-        "are",
-        "prioritiz",
-        "demand",
-        "data",
-        "center",
-        "putt",
-        "additional",
-        "pressure",
-        "the",
-        "consumer",
-        "market",
-        "and",
-        "contribut",
-        "higher",
-        "pric",
-        "for",
-        "pcs",
-        "other",
-        "hardware"
-      ],
-      "entityShared": [
-        "memory",
-        "pcs"
-      ],
-      "topicShared": [
-        "data",
-        "center",
-        "for"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1039,57 +673,472 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 14,
-      "claim": "Memory manufacturers are actively prioritizing supply orders from data centers over consumer channels.",
+      "index": 9,
+      "claim": "Investors grow increasingly nervous about the sustainability of AI spending, threatening to choke off capital for the very data centers that house Nvidia's chips.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 80,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
+      "bestSource": "Nvidia Eyes Cosigning Nscale's West Virginia AI Data Center Loan",
+      "bestUrl": "https://www.techbuzz.ai/articles/nvidia-eyes-cosigning-nscale-s-west-virginia-ai-data-center-loan",
+      "bestDomain": "techbuzz.ai",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 65
+        "factId": "F20",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 65,
-          "passageIndex": 5
+          "factId": "F20",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "bestPassage": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
+      "bestPassageId": "S2-P5",
+      "evidence": "The potential arrangement comes as investors grow increasingly nervous about the sustainability of AI spending, threatening to choke off capital for the very data centers that house Nvidia's chips.",
+      "bestPassage": "The potential arrangement comes as investors grow increasingly nervous about the sustainability of AI spending, threatening to choke off capital for the very data centers that house Nvidia's chips.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P4"
+        "S2-P5",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "memory",
-        "manufacturer",
-        "are",
-        "prioritiz",
-        "supply",
+        "invest",
+        "grow",
+        "increas",
+        "nervou",
+        "the",
+        "sustainability",
+        "spend",
+        "threaten",
+        "choke",
+        "off",
+        "capital",
+        "for",
         "data",
         "center",
-        "consumer"
+        "house",
+        "nvidia",
+        "chip"
       ],
       "entityShared": [
-        "memory"
+        "nvidia"
       ],
       "topicShared": [
+        "the",
+        "for",
+        "data",
+        "center",
+        "nvidia"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "Under the residual value guarantee, Nvidia would step in if Nscale defaulted, a sign of how hard the AI industry is working to keep its build‑out plans afloat as investors grow jittery about the amounts of money involved.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 93,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 70
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F6",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 64,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF3,S1-FF6",
+      "evidence": "In essence, the chipmaker would be co-signing a customer’s loans, a sign of how hard the AI industry is working to keep its buildout plans afloat as investors grow jittery about the amounts of money involved. Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
+      "bestPassage": "In essence, the chipmaker would be co-signing a customer’s loans, a sign of how hard the AI industry is working to keep its buildout plans afloat as investors grow jittery about the amounts of money involved. Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "residual",
+        "value",
+        "guarantee",
+        "nvidia",
+        "step",
+        "nscale",
+        "default",
+        "sign",
+        "hard",
+        "work",
+        "keep",
+        "its",
+        "plan",
+        "afloat",
+        "invest",
+        "grow",
+        "jittery",
+        "amount",
+        "money",
+        "involv"
+      ],
+      "entityShared": [
+        "nvidia",
+        "nscale"
+      ],
+      "topicShared": [
+        "the",
+        "nvidia",
+        "nscale"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 11,
+      "claim": "That includes $1 billion in convertible financing committed to Nscale in September.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 93,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F12",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 93
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F12",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 93,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF12",
+      "evidence": "That includes $1 billion in convertible financing committed to Nscale in September.",
+      "bestPassage": "That includes $1 billion in convertible financing committed to Nscale in September.",
+      "matchedPassages": [
+        "S1-P12",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "includ",
+        "billion",
+        "convertible",
+        "financ",
+        "committ",
+        "nscale",
+        "september"
+      ],
+      "entityShared": [
+        "nscale",
+        "september"
+      ],
+      "topicShared": [
+        "nscale"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 12,
+      "claim": "Nscale is seeking to go public at a valuation of up to $35 billion, but concerns about its ability to deliver on ambitious data‑center projects remain.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 87,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 87
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 87,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF11",
+      "evidence": "The stakes are high for Nscale, which is seeking to go public at a valuation of up to $35 billion despite growing concerns about its ability to deliver on ambitious data center projects.",
+      "bestPassage": "The stakes are high for Nscale, which is seeking to go public at a valuation of up to $35 billion despite growing concerns about its ability to deliver on ambitious data center projects.",
+      "matchedPassages": [
+        "S1-P11",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "nscale",
+        "seek",
+        "public",
+        "valuation",
+        "billion",
+        "fear",
+        "its",
+        "ability",
+        "deliver",
+        "ambitiou",
+        "data",
+        "center",
+        "project"
+      ],
+      "entityShared": [
+        "nscale"
+      ],
+      "topicShared": [
+        "nscale",
         "data",
         "center"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 13,
+      "claim": "The potential Nvidia cosign could be transformative for the cloud provider, providing the financial backing that has proven difficult to secure.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 62,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia Eyes Cosigning Nscale's West Virginia AI Data Center Loan",
+      "bestUrl": "https://www.techbuzz.ai/articles/nvidia-eyes-cosigning-nscale-s-west-virginia-ai-data-center-loan",
+      "bestDomain": "techbuzz.ai",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F14",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 42
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 42,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 41,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F20",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 33,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF14,S1-FF1,S2-FF20",
+      "evidence": "Nvidia’s earlier support for cloud providers has mostly covered leases and chip purchases, not construction. Nvidia is in talks to guarantee billions in debt financing for AI cloud provider Nscale’s planned Anthropic data center in West Virginia, The Information reported Thursday . The potential arrangement comes as investors grow increasingly nervous about the sustainability of AI spending, threatening to choke off capital for the very data centers that house Nvidia's chips.",
+      "bestPassage": "Nvidia’s earlier support for cloud providers has mostly covered leases and chip purchases, not construction. Nvidia is in talks to guarantee billions in debt financing for AI cloud provider Nscale’s planned Anthropic data center in West Virginia, The Information reported Thursday . The potential arrangement comes as investors grow increasingly nervous about the sustainability of AI spending, threatening to choke off capital for the very data centers that house Nvidia's chips.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "potential",
+        "nvidia",
+        "for",
+        "cloud",
+        "provider",
+        "support",
+        "has"
+      ],
+      "entityShared": [
+        "nvidia"
+      ],
+      "topicShared": [
+        "the",
+        "nvidia",
+        "for"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 14,
+      "claim": "The outcome of Nvidia’s cosigning talks will reveal how chipmakers are adapting to a tighter capital environment and whether such guarantees become a new norm for large‑scale AI infrastructure projects.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 61,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Nvidia Eyes Cosigning Nscale's West Virginia AI Data Center Loan",
+      "bestUrl": "https://www.techbuzz.ai/articles/nvidia-eyes-cosigning-nscale-s-west-virginia-ai-data-center-loan",
+      "bestDomain": "techbuzz.ai",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F16",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 42
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F16",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 42,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Nvidia is weighing an unprecedented move to cosign financing for Nscale's AI data center project in West Virginia, marking a dramatic shift in how chipmakers are supporting infrastructure buildout.",
+      "bestPassage": "Nvidia is weighing an unprecedented move to cosign financing for Nscale's AI data center project in West Virginia, marking a dramatic shift in how chipmakers are supporting infrastructure buildout.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P1"
+      ],
+      "sharedTerms": [
+        "the",
+        "nvidia",
+        "cosign",
+        "chipmaker",
+        "are",
+        "capital",
+        "and",
+        "for",
+        "infrastructure",
+        "project"
+      ],
+      "entityShared": [
+        "nvidia"
+      ],
+      "topicShared": [
+        "the",
+        "nvidia",
+        "for"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1112,389 +1161,77 @@
     },
     {
       "index": 15,
-      "claim": "This shift places substantial pressure on the retail market, driving up hardware prices and compounding supply shortages for individual buyers purchasing desktop PCs or laptops.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 59,
+      "claim": "The next steps will likely involve finalizing the terms of the residual value guarantee and assessing the impact on Nscale’s IPO timeline.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 75,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 51
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 51,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "bestPassage": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P4"
-      ],
-      "sharedTerms": [
-        "pressure",
-        "the",
-        "market",
-        "hardware",
-        "pric",
-        "and",
-        "supply",
-        "for",
-        "pcs"
-      ],
-      "entityShared": [
-        "pcs"
-      ],
-      "topicShared": [
-        "for"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 16,
-      "claim": "Beyond his remarks on memory allocation and local inference, Altman's wide-ranging interview on Cheeky Pint touched on several other technical topics.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 80,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
+      "bestSource": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "bestUrl": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F6",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 53
+        "score": 49
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F6",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 53,
-          "passageIndex": 19
-        },
-        {
-          "factId": "F22",
-          "sourceId": "S4",
-          "sourceRole": "CORROBORATION",
-          "score": 48,
-          "passageIndex": 3
+          "score": 49,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" Altman reportedly argued on the Cheeky Pint podcast that local AI inference creates a poor allocation of scarce DRAM .",
-      "bestPassage": "In an interview over beers with the YouTube channel Cheeky Pint, Altman said that local inference, and, by extension, people having DRAM in computers at home, is \"quite terrible.\" Altman reportedly argued on the Cheeky Pint podcast that local AI inference creates a poor allocation of scarce DRAM .",
+      "evidence": "Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
+      "bestPassage": "Under what&#8217;s known as a residual value guarantee, Nvidia would step in if Nscale defaulted on construction payments, temporarily take over the facility, and help find a buyer and new tenant, according to The Information .",
       "matchedPassages": [
         "S1-BODY"
       ],
       "sharedTerms": [
-        "his",
-        "memory",
+        "the",
+        "next",
+        "step",
+        "residual",
+        "value",
+        "guarantee",
         "and",
-        "local",
-        "inference",
-        "altman",
-        "wide",
-        "rang",
-        "interview",
-        "cheeky",
-        "pint",
-        "other"
+        "nscale",
+        "ipo"
       ],
       "entityShared": [
-        "altman",
-        "cheeky",
-        "pint"
+        "nscale",
+        "ipo"
       ],
       "topicShared": [
-        "altman"
+        "the",
+        "nscale"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
+        "evidenceUncertain": false,
+        "claimUncertain": true,
         "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
-        "attributionDropped": true,
-        "blocked": true
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 17,
-      "claim": "During the discussion, he addressed recent PHP security vulnerabilities, techniques for sandboxing artificial intelligence models during training phases, and OpenAI's ongoing research initiatives within mathematics.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 73,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 60
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F7",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 60,
-          "passageIndex": 23
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The rest of the wide-ranging interview includes talk of this week's PHP vulnerabilities, sandboxing models in training, and OpenAI's research in mathematics.",
-      "bestPassage": "The rest of the wide-ranging interview includes talk of this week's PHP vulnerabilities, sandboxing models in training, and OpenAI's research in mathematics.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P7"
-      ],
-      "sharedTerms": [
-        "the",
-        "discussion",
-        "php",
-        "vulnerabiliti",
-        "for",
-        "sandbox",
-        "models",
-        "train",
-        "and",
-        "openai",
-        "research",
-        "mathematic"
-      ],
-      "entityShared": [
-        "php",
-        "openai"
-      ],
-      "topicShared": [
-        "for"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
       "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 18,
-      "claim": "The discussion was reported by senior editor Andrew Freedman at Tom's Hardware, who specializes in coverage of laptops, gaming hardware, and desktop systems.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 82,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "OpenAI CEO says it's 'quite terrible' for your PC to have RAM — Sam Altman says data centers offer better utilization - Tom's Hardware",
-      "bestUrl": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
-      "bestDomain": "tomshardware.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F8",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 71
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F8",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 71,
-          "passageIndex": 26
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Freedman is a senior editor at Tom's Hardware focusing on laptops, desktops and gaming.",
-      "bestPassage": "Freedman is a senior editor at Tom's Hardware focusing on laptops, desktops and gaming.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P8"
-      ],
-      "sharedTerms": [
-        "the",
-        "discussion",
-        "senior",
-        "editor",
-        "freedman",
-        "tom",
-        "hardware",
-        "laptop",
-        "gam",
-        "and",
-        "desktop"
-      ],
-      "entityShared": [
-        "freedman",
-        "tom",
-        "hardware"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 19,
-      "claim": "As the demand for artificial intelligence infrastructure continues to clash with consumer hardware availability, the tension between cloud-first data center expansion and personal computing independence remains a critical debate across the technology industry.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 45,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "“Quite terrible”: Sam Altman says PCs waste the world’s limited DRAM supply - Notebookcheck",
-      "bestUrl": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
-      "bestDomain": "notebookcheck.net",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 40
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 40,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "bestPassage": "Memory manufacturers are prioritizing demand from data centers, putting additional pressure on the consumer market and contributing to higher prices for PCs and other hardware.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P4"
-      ],
-      "sharedTerms": [
-        "the",
-        "demand",
-        "for",
-        "infrastructure",
-        "consumer",
-        "hardware",
-        "cloud",
-        "data",
-        "center",
-        "and"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "for",
-        "data",
-        "center"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
     }
   ],
-  "editorial": [
-    {
-      "index": 7,
-      "claim": "His framing implies that memory hardware would deliver higher overall value if deployed 24/7 inside AI data centers rather than remaining in consumer rigs where it might only occasionally run local AI models, spreadsheets, web browsing, or video games.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    }
-  ]
+  "editorial": []
 }
