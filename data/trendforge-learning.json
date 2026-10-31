@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T06:14:12.197Z",
+  "updatedAt": "2026-10-31T13:00:28.046Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2075,
-      "failures": 15762,
+      "successes": 2085,
+      "failures": 15829,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 608,
-      "failures": 9041,
+      "successes": 626,
+      "failures": 9089,
       "successRate": 6,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +68,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 22495,
-      "failures": 14185,
+      "successes": 22737,
+      "failures": 14251,
       "successRate": 61,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 254,
-      "failures": 12393,
+      "successes": 255,
+      "failures": 12453,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -194,14 +194,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 2,
-      "evidenceBlockRate": -4,
-      "claimConfidence": 15,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-10-31T06:13:45.277Z",
-    "previousRunAt": "2026-10-30T22:37:46.387Z"
+    "latestRunAt": "2026-10-31T13:00:02.780Z",
+    "previousRunAt": "2026-10-31T06:13:45.277Z"
   },
   "signals": [
     {
@@ -213,7 +213,7 @@
       "sampleRuns": 120,
       "evidence": {
         "singleSource": 6929,
-        "strong": 2086
+        "strong": 2088
       }
     },
     {
@@ -242,22 +242,22 @@
       "id": "evidence-pass-rate-change",
       "type": "trend",
       "observation": false,
-      "detail": "Evidence pass rate changed by +2 percentage points versus the previous run.",
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 2
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by +15 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 15
+        "delta": 0
       }
     },
     {
@@ -273,7 +273,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-10-30T22:38:35.869Z",
+    "previousUpdatedAt": "2026-10-31T06:14:12.197Z",
     "previousVersion": 2
   }
 }
