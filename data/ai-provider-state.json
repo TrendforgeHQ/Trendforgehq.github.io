@@ -4,88 +4,12 @@
     "Groq": {
       "failures": 137,
       "quotaBlockedUntil": 0,
-      "lastStatus": 400,
-      "lastError": "400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n",
-      "lastClass": "request",
-      "successes": 303,
-      "lastSuccessAt": "2026-10-31T20:50:23.699Z",
+      "lastStatus": 200,
+      "lastError": null,
+      "lastClass": "success",
+      "successes": 307,
+      "lastSuccessAt": "2026-11-01T03:14:06.123Z",
       "history": [
-        {
-          "at": 1793209411249,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 4305,
-          "usage": {
-            "queue_time": 0.173311031,
-            "prompt_tokens": 1881,
-            "prompt_time": 0.094837956,
-            "completion_tokens": 318,
-            "completion_time": 0.403392883,
-            "total_tokens": 2199,
-            "total_time": 0.498230839,
-            "completion_tokens_details": {
-              "reasoning_tokens": 224
-            }
-          }
-        },
-        {
-          "at": 1793225166661,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 762,
-          "usage": {
-            "queue_time": 0.045869502,
-            "prompt_tokens": 2009,
-            "prompt_time": 0.139888765,
-            "completion_tokens": 403,
-            "completion_time": 0.45705509,
-            "total_tokens": 2412,
-            "total_time": 0.596943855,
-            "completion_tokens_details": {
-              "reasoning_tokens": 281
-            }
-          }
-        },
-        {
-          "at": 1793244752040,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1809,
-          "usage": {
-            "queue_time": 0.166281937,
-            "prompt_tokens": 5362,
-            "prompt_time": 0.363300053,
-            "completion_tokens": 835,
-            "completion_time": 1.080979367,
-            "total_tokens": 6197,
-            "total_time": 1.44427942,
-            "completion_tokens_details": {
-              "reasoning_tokens": 10
-            }
-          }
-        },
-        {
-          "at": 1793244753968,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 519,
-          "usage": {
-            "queue_time": 0.175042128,
-            "prompt_tokens": 1561,
-            "prompt_time": 0.109817867,
-            "completion_tokens": 103,
-            "completion_time": 0.108742454,
-            "total_tokens": 1664,
-            "total_time": 0.218560321,
-            "completion_tokens_details": {
-              "reasoning_tokens": 69
-            }
-          }
-        },
         {
           "at": 1793275407671,
           "ok": true,
@@ -363,19 +287,95 @@
           "ok": false,
           "class": "request",
           "status": 400
+        },
+        {
+          "at": 1793502796150,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 1817,
+          "usage": {
+            "queue_time": 0.199976043,
+            "prompt_tokens": 5692,
+            "prompt_time": 0.320800904,
+            "completion_tokens": 826,
+            "completion_time": 0.845001779,
+            "total_tokens": 6518,
+            "total_time": 1.165802683,
+            "completion_tokens_details": {
+              "reasoning_tokens": 33
+            }
+          }
+        },
+        {
+          "at": 1793502803148,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 5753,
+          "usage": {
+            "queue_time": 0.145141079,
+            "prompt_tokens": 2014,
+            "prompt_time": 0.110755207,
+            "completion_tokens": 604,
+            "completion_time": 0.631430416,
+            "total_tokens": 2618,
+            "total_time": 0.742185623,
+            "completion_tokens_details": {
+              "reasoning_tokens": 416
+            }
+          }
+        },
+        {
+          "at": 1793502826648,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 8492,
+          "usage": {
+            "queue_time": 0.081435441,
+            "prompt_tokens": 2053,
+            "prompt_time": 0.118902582,
+            "completion_tokens": 1053,
+            "completion_time": 1.063315251,
+            "total_tokens": 3106,
+            "total_time": 1.182217833,
+            "completion_tokens_details": {
+              "reasoning_tokens": 821
+            }
+          }
+        },
+        {
+          "at": 1793502846123,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 19342,
+          "usage": {
+            "queue_time": 0.081479271,
+            "prompt_tokens": 2014,
+            "prompt_time": 0.106664572,
+            "completion_tokens": 364,
+            "completion_time": 0.371278906,
+            "total_tokens": 2378,
+            "total_time": 0.477943478,
+            "completion_tokens_details": {
+              "reasoning_tokens": 171
+            }
+          }
         }
       ],
-      "lastLatencyMs": 1677,
+      "lastLatencyMs": 19342,
       "lastUsage": {
-        "queue_time": 0.178130495,
-        "prompt_tokens": 2491,
-        "prompt_time": 0.140400723,
-        "completion_tokens": 1004,
-        "completion_time": 1.084800363,
-        "total_tokens": 3495,
-        "total_time": 1.225201086,
+        "queue_time": 0.081479271,
+        "prompt_tokens": 2014,
+        "prompt_time": 0.106664572,
+        "completion_tokens": 364,
+        "completion_time": 0.371278906,
+        "total_tokens": 2378,
+        "total_time": 0.477943478,
         "completion_tokens_details": {
-          "reasoning_tokens": 731
+          "reasoning_tokens": 171
         }
       }
     },
@@ -1126,5 +1126,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-10-31T20:51:10.292Z"
+  "updatedAt": "2026-11-01T03:14:06.123Z"
 }
