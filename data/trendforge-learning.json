@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T22:21:39.084Z",
+  "updatedAt": "2026-11-02T06:45:25.566Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2129,
-      "failures": 16091,
+      "successes": 2140,
+      "failures": 16152,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 705,
-      "failures": 9282,
+      "successes": 726,
+      "failures": 9328,
       "successRate": 7,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +68,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 23722,
-      "failures": 14517,
+      "successes": 23969,
+      "failures": 14582,
       "successRate": 62,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 259,
-      "failures": 12690,
+      "successes": 260,
+      "failures": 12747,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -194,14 +194,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 5,
-      "evidenceBlockRate": 1,
-      "claimConfidence": 9,
-      "claimUnsupported": -1,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
+      "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-11-01T22:21:11.597Z",
-    "previousRunAt": "2026-11-01T18:04:12.162Z"
+    "latestRunAt": "2026-11-02T06:44:55.747Z",
+    "previousRunAt": "2026-11-01T22:21:11.597Z"
   },
   "signals": [
     {
@@ -212,8 +212,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6851,
-        "strong": 2090
+        "singleSource": 6847,
+        "strong": 2095
       }
     },
     {
@@ -241,39 +241,39 @@
     {
       "id": "evidence-pass-rate-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Evidence pass rate changed by +5 percentage points versus the previous run.",
+      "observation": false,
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 5
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by +9 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 9
+        "delta": 0
       }
     },
     {
       "id": "claim-unsupported-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Unsupported-claim count changed by -1 versus the previous run.",
+      "observation": false,
+      "detail": "Unsupported-claim count changed by +0 versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -1
+        "delta": 0
       }
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-11-01T18:04:38.300Z",
+    "previousUpdatedAt": "2026-11-01T22:21:39.084Z",
     "previousVersion": 2
   }
 }
