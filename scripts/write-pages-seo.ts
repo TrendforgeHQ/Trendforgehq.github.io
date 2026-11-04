@@ -69,13 +69,13 @@ if (new Set(urls).size !== urls.length) {
 if (urls.some((url) => !url.startsWith(`${siteUrl}/`))) {
   throw new Error('Sitemap contains a URL outside the canonical GitHub Pages site.');
 }
-if (urls.some((url) => /\\s/.test(url))) {
+if (urls.some((url) => /\s/.test(url))) {
   throw new Error('Sitemap contains a URL with whitespace.');
 }
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n${entries.map(xmlEntry).join('\\n')}\\n</urlset>\\n`;
-const textSitemap = `${urls.join('\\n')}\\n`;
-const robots = `User-agent: *\\nAllow: /\\n\\nSitemap: ${siteUrl}/sitemap.xml\\nSitemap: ${siteUrl}/sitemap.txt\\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(xmlEntry).join('\n')}\n</urlset>\n`;
+const textSitemap = `${urls.join('\n')}\n`;
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\nSitemap: ${siteUrl}/sitemap.txt\n`;
 
 await mkdir('out', { recursive: true });
 await writeFile('out/sitemap.xml', sitemap, 'utf8');
@@ -95,11 +95,11 @@ if (!writtenSitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sit
 if (!writtenSitemap.includes(`<loc>${siteUrl}/</loc>`)) {
   throw new Error('Generated sitemap is missing the canonical homepage.');
 }
-const writtenTextUrls = writtenTextSitemap.trim().split(/\\r?\\n/);
+const writtenTextUrls = writtenTextSitemap.trim().split(/\r?\n/);
 if (writtenTextUrls.length !== urls.length || writtenTextUrls.some((url, index) => url !== urls[index])) {
   throw new Error('Generated text sitemap does not exactly match the canonical URL list.');
 }
-if (writtenTextUrls.some((url) => !url.startsWith(`${siteUrl}/`) || /\\s/.test(url))) {
+if (writtenTextUrls.some((url) => !url.startsWith(`${siteUrl}/`) || /\s/.test(url))) {
   throw new Error('Generated text sitemap contains an invalid URL.');
 }
 if (!writtenRobots.includes(`Sitemap: ${siteUrl}/sitemap.xml`) ||
