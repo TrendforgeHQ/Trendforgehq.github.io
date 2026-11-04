@@ -99,6 +99,7 @@ jobs:
           test -f out/index.html
           test -f out/robots.txt
           test -f out/sitemap.xml
+          test -s out/sitemap.txt
           test -f out/search-index.json
           test -f out/control-center/index.html
           if [ -n "${ADSENSE_PUBLISHER_ID:-}" ]; then test -f out/ads.txt; fi
