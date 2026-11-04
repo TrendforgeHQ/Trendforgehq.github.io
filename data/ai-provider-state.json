@@ -396,15 +396,9 @@
       "failures": 92,
       "quotaBlockedUntil": 0,
       "lastStatus": 200,
-      "lastError": "Invalid repair structured output",
-      "lastClass": "error",
+      "lastError": null,
+      "lastClass": "success",
       "history": [
-        {
-          "at": 1792492881167,
-          "ok": false,
-          "class": "server",
-          "status": 503
-        },
         {
           "at": 1792493281031,
           "ok": true,
@@ -687,23 +681,42 @@
           "ok": false,
           "class": "error",
           "status": 200
+        },
+        {
+          "at": 1793818919142,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 8780,
+          "usage": {
+            "promptTokenCount": 5146,
+            "candidatesTokenCount": 515,
+            "totalTokenCount": 5661,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5146
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 4978,
+      "lastLatencyMs": 8780,
       "lastUsage": {
-        "promptTokenCount": 5526,
-        "candidatesTokenCount": 710,
-        "totalTokenCount": 6236,
+        "promptTokenCount": 5146,
+        "candidatesTokenCount": 515,
+        "totalTokenCount": 5661,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 5526
+            "tokenCount": 5146
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 21,
-      "lastSuccessAt": "2026-11-01T21:32:27.740Z"
+      "successes": 22,
+      "lastSuccessAt": "2026-11-04T19:01:59.142Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -1151,5 +1164,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-11-04T13:32:44.775Z"
+  "updatedAt": "2026-11-04T19:01:59.142Z"
 }
