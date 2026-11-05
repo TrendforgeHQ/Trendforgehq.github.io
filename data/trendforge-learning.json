@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:19:56.346Z",
+  "updatedAt": "2026-11-05T20:15:27.270Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -33,10 +33,10 @@
   },
   "claims": {
     "samples": 120,
-    "passRate": 56,
+    "passRate": 57,
     "averageConfidence": 73,
-    "averageUnsupported": 1,
-    "averageClaimsPerArticle": 15
+    "averageUnsupported": 0,
+    "averageClaimsPerArticle": 14
   },
   "providers": {
     "Cerebras": {
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2204,
-      "failures": 16504,
+      "successes": 2216,
+      "failures": 16558,
       "successRate": 12,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 854,
-      "failures": 9600,
+      "successes": 876,
+      "failures": 9644,
       "successRate": 8,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +68,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 25478,
-      "failures": 14958,
+      "successes": 25732,
+      "failures": 15019,
       "successRate": 63,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 266,
-      "failures": 13077,
+      "successes": 267,
+      "failures": 13129,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -194,14 +194,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 4,
-      "evidenceBlockRate": -6,
-      "claimConfidence": -19,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-11-05T07:19:15.940Z",
-    "previousRunAt": "2026-11-04T20:00:10.896Z"
+    "latestRunAt": "2026-11-05T20:14:47.360Z",
+    "previousRunAt": "2026-11-05T07:19:15.940Z"
   },
   "signals": [
     {
@@ -212,19 +212,19 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6901,
-        "strong": 2121
+        "singleSource": 6895,
+        "strong": 2123
       }
     },
     {
       "id": "claim-verification-pressure",
       "type": "claims",
-      "observation": true,
+      "observation": false,
       "detail": "Claim-verification history contains unsupported claims in at least some observed article runs.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "averageUnsupported": 1
+        "averageUnsupported": 0
       }
     },
     {
@@ -242,22 +242,22 @@
       "id": "evidence-pass-rate-change",
       "type": "trend",
       "observation": false,
-      "detail": "Evidence pass rate changed by +4 percentage points versus the previous run.",
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 4
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by -19 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -19
+        "delta": 0
       }
     },
     {
@@ -273,7 +273,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-11-04T20:00:54.533Z",
+    "previousUpdatedAt": "2026-11-05T07:19:56.346Z",
     "previousVersion": 2
   }
 }
