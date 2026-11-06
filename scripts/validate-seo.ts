@@ -28,7 +28,9 @@ for (const article of articles) {
   const title = seoTitle(article);
   const description = seoDescription(article);
   if (!article.title.trim()) fail(`${article.slug}: missing title.`);
-  if (title.length < 10 || title.length > 70) fail(`${article.slug}: generated SEO title is ${title.length} chars; expected 10–70.`);
+  if (title.length < 10 || title.length > 55) fail(`${article.slug}: article SEO title is ${title.length} chars; expected 10–55 before the site-name suffix.`);
+  const renderedTitleLength = title.length + ' | TrendForge'.length;
+  if (renderedTitleLength > 70) fail(`${article.slug}: rendered HTML title is ${renderedTitleLength} chars including the site-name suffix; expected <=70.`);
   if (!article.description.trim()) fail(`${article.slug}: missing source description.`);
   if (description.length < 50 || description.length > 170) fail(`${article.slug}: generated meta description is ${description.length} chars; expected 50–170.`);
   if (!article.category.trim()) fail(`${article.slug}: missing category.`);
