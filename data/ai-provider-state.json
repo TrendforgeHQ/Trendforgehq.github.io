@@ -4,50 +4,12 @@
     "Groq": {
       "failures": 139,
       "quotaBlockedUntil": 0,
-      "lastStatus": 400,
-      "lastError": "400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\\"title\\\":\\\"China Allegedly Recruited Megaspeed Executive to Spy on Nvidia CEO\\\",\\\"description\\\":\\\"A New York Times report claims a Chinese intelligence agency recruited a former Megaspeed executive, Alice Huang, to gather information on Nvidia CEO Jensen Huang. The story raises questions about ",
-      "lastClass": "request",
-      "successes": 334,
-      "lastSuccessAt": "2026-11-06T13:30:47.189Z",
+      "lastStatus": 200,
+      "lastError": null,
+      "lastClass": "success",
+      "successes": 336,
+      "lastSuccessAt": "2026-11-07T12:11:11.224Z",
       "history": [
-        {
-          "at": 1793664987456,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 22041,
-          "usage": {
-            "queue_time": 1.390259918,
-            "prompt_tokens": 2441,
-            "prompt_time": 0.14537647,
-            "completion_tokens": 765,
-            "completion_time": 0.852055817,
-            "total_tokens": 3206,
-            "total_time": 0.997432287,
-            "completion_tokens_details": {
-              "reasoning_tokens": 561
-            }
-          }
-        },
-        {
-          "at": 1793711893559,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1627,
-          "usage": {
-            "queue_time": 0.081900285,
-            "prompt_tokens": 5151,
-            "prompt_time": 0.259568003,
-            "completion_tokens": 842,
-            "completion_time": 1.121126067,
-            "total_tokens": 5993,
-            "total_time": 1.38069407,
-            "completion_tokens_details": {
-              "reasoning_tokens": 19
-            }
-          }
-        },
         {
           "at": 1793711896093,
           "ok": true,
@@ -363,19 +325,57 @@
           "ok": false,
           "class": "request",
           "status": 400
+        },
+        {
+          "at": 1794053470077,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 698,
+          "usage": {
+            "queue_time": 0.166267793,
+            "prompt_tokens": 1621,
+            "prompt_time": 0.090880231,
+            "completion_tokens": 332,
+            "completion_time": 0.347868875,
+            "total_tokens": 1953,
+            "total_time": 0.438749106,
+            "completion_tokens_details": {
+              "reasoning_tokens": 243
+            }
+          }
+        },
+        {
+          "at": 1794053471224,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 757,
+          "usage": {
+            "queue_time": 0.126304665,
+            "prompt_tokens": 1520,
+            "prompt_time": 0.396298051,
+            "completion_tokens": 144,
+            "completion_time": 0.151363328,
+            "total_tokens": 1664,
+            "total_time": 0.547661379,
+            "completion_tokens_details": {
+              "reasoning_tokens": 72
+            }
+          }
         }
       ],
-      "lastLatencyMs": 2163,
+      "lastLatencyMs": 757,
       "lastUsage": {
-        "queue_time": 0.761078573,
-        "prompt_tokens": 5145,
-        "prompt_time": 0.320529963,
-        "completion_tokens": 658,
-        "completion_time": 0.751890965,
-        "total_tokens": 5803,
-        "total_time": 1.072420928,
+        "queue_time": 0.126304665,
+        "prompt_tokens": 1520,
+        "prompt_time": 0.396298051,
+        "completion_tokens": 144,
+        "completion_time": 0.151363328,
+        "total_tokens": 1664,
+        "total_time": 0.547661379,
         "completion_tokens_details": {
-          "reasoning_tokens": 24
+          "reasoning_tokens": 72
         }
       }
     },
@@ -386,25 +386,6 @@
       "lastError": null,
       "lastClass": "success",
       "history": [
-        {
-          "at": 1792493281031,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 5628,
-          "usage": {
-            "promptTokenCount": 5044,
-            "candidatesTokenCount": 502,
-            "totalTokenCount": 5546,
-            "promptTokensDetails": [
-              {
-                "modality": "TEXT",
-                "tokenCount": 5044
-              }
-            ],
-            "serviceTier": "standard"
-          }
-        },
         {
           "at": 1792549919618,
           "ok": true,
@@ -687,23 +668,42 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1794053468600,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 5042,
+          "usage": {
+            "promptTokenCount": 5247,
+            "candidatesTokenCount": 706,
+            "totalTokenCount": 5953,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 5247
+              }
+            ],
+            "serviceTier": "standard"
+          }
         }
       ],
-      "lastLatencyMs": 8780,
+      "lastLatencyMs": 5042,
       "lastUsage": {
-        "promptTokenCount": 5146,
-        "candidatesTokenCount": 515,
-        "totalTokenCount": 5661,
+        "promptTokenCount": 5247,
+        "candidatesTokenCount": 706,
+        "totalTokenCount": 5953,
         "promptTokensDetails": [
           {
             "modality": "TEXT",
-            "tokenCount": 5146
+            "tokenCount": 5247
           }
         ],
         "serviceTier": "standard"
       },
-      "successes": 22,
-      "lastSuccessAt": "2026-11-04T19:01:59.142Z"
+      "successes": 23,
+      "lastSuccessAt": "2026-11-07T12:11:08.600Z"
     },
     "OpenAI": {
       "failures": 3,
@@ -1187,5 +1187,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-11-07T03:46:30.263Z"
+  "updatedAt": "2026-11-07T12:11:11.224Z"
 }
