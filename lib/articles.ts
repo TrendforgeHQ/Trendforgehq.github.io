@@ -2667,6 +2667,51 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "nvidia-investigates-ceo-jensen-huang-s-ties-to-chinese-spy",
+    "title": "Nvidia Investigates CEO Jensen Huang's Ties to Chinese Spy",
+    "description": "Nvidia's board launches an independent probe into CEO Jensen Huang's relationship with Alice Huang, a suspected Chinese spy, amid concerns over AI chip smuggling and potential national security risks.",
+    "category": "Digital Life",
+    "date": "2026-11-08",
+    "publishedAt": "2026-11-08T21:32:40.157Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## Nvidia's Investigation into CEO Jensen Huang's Relationship with Alice Huang",
+      "Nvidia's board of directors has announced an independent investigation into CEO Jensen Huang's relationship with Alice Huang, a suspected Chinese spy. This development follows reports that Huang had been targeted by a Chinese spy operation, with multiple sources alleging that Alice Huang, a top executive at a Singapore AI firm, was passing information to Beijing as a Chinese intelligence asset. The investigation also comes in the context of the intensifying AI race between the United States and China, where Nvidia's chips have been a major focus.",
+      "## The Spy Allegations and AI Chip Smuggling",
+      "Alice Huang, also known as Huang Le, was listed as the managing director of Singaporean AI firm Megaspeed, an Nvidia cloud partner. Megaspeed was accused of helping smuggle $2 billion worth of Nvidia chips last year, and the U.S. Commerce Department found Nvidia equipment still packed in boxes at the firm's Malaysia data center. The investigation into Megaspeed began when the Commerce Department visited this facility.",
+      "## Jensen Huang's Apology and Company Response",
+      "In response to the allegations, Jensen Huang issued an apology, stating, \"I owe my family and all of you an apology. To my colleagues at NVIDIA, including those I have worked alongside for decades, and to our board, partners, and shareholders around the world: you deserve better from me.\" Nvidia had previously defended the interactions between Jensen Huang and Alice Huang as \"not unusual\" and emphasized that the company does not share classified information with customers.",
+      "## Implications and Concerns",
+      "The investigation raises concerns about potential national security risks, especially as Jensen Huang has a close relationship with President Donald Trump, who has been a vocal supporter of the AI industry. While the board has no reason to believe that national security or company secrets were compromised, the inquiry will examine all available information. The investigation also highlights the challenges of balancing economic interests with national security in the context of the AI race between the U.S. and China.",
+      "## What the Evidence Shows",
+      "1. Nvidia's board has initiated an independent investigation into CEO Jensen Huang's relationship with Alice Huang, a suspected Chinese spy, following reports of a Chinese spy operation targeting the company.\n2. Alice Huang, a top executive at Megaspeed, was allegedly passing information to Beijing, and the firm was accused of smuggling Nvidia chips to China.\n3. Jensen Huang has apologized for his actions and acknowledged the need to uphold higher standards, while Nvidia has emphasized that it does not share classified information with customers."
+    ],
+    "sources": [
+      {
+        "title": "Nvidia says it’s investigating CEO Jensen Huang’s relationship with possible Chinese spy - TechCrunch",
+        "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/"
+      },
+      {
+        "title": "Nvidia CEO Jensen Huang may have been the target of a spy plot through 'Chinese intelligence asset,' report claims — exec from firm under investigation for smuggling banned AI chips to China accused of being a spy, was also feeding information to Beijing - Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/policy/nvidia-ceo-jensen-huang-may-have-been-the-target-of-a-spy-plot-through-chinese-intelligence-asset-report-claims-exec-from-firm-under-investigation-for-smuggling-banned-ai-chips-to-china-accused-of-being-a-spy-was-also-feeding-information-to-beijing"
+      },
+      {
+        "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy - Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-investigate-ceo-jensen-huang-210011206.html"
+      },
+      {
+        "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy"
+      }
+    ],
+    "image": "/images/articles/nvidia-investigates-ceo-jensen-huang-s-ties-to-chinese-spy.1024x576.png",
+    "imageAlt": "Editorial image for Nvidia Investigates CEO Jensen Huang's Ties to Chinese Spy",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "omani-co-pilot-previously-flagged-as-security-risk-says-authorities",
     "title": "Omani Co‑Pilot Previously Flagged as Security Risk, Says Authorities",
     "description": "Investigators say the FlyDubai first officer who attacked the captain was an Omani national suspended by Oman Air for security concerns. The case raises questions about crew vetting and international flight safety oversight.",
