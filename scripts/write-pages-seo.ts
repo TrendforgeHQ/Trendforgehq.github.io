@@ -74,18 +74,25 @@ if (urls.some((url) => /\s/.test(url))) {
 }
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(xmlEntry).join('\n')}\n</urlset>\n`;
+// Controlled filename experiment: publish byte-identical XML under an alternate URL.
+const alternateSitemapName = 'sitemap-trendforge.xml';
 const textSitemap = `${urls.join('\n')}\n`;
-const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\nSitemap: ${siteUrl}/sitemap.txt\n`;
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\nSitemap: ${siteUrl}/sitemap-trendforge.xml\nSitemap: ${siteUrl}/sitemap.txt\n`;
 
 await mkdir('out', { recursive: true });
 await writeFile('out/sitemap.xml', sitemap, 'utf8');
+await writeFile(`out/${alternateSitemapName}`, sitemap, 'utf8');
 await writeFile('out/sitemap.txt', textSitemap, 'utf8');
 await writeFile('out/robots.txt', robots, 'utf8');
 
 const writtenSitemap = await readFile('out/sitemap.xml', 'utf8');
+const writtenAlternateSitemap = await readFile(`out/${alternateSitemapName}`, 'utf8');
 const writtenTextSitemap = await readFile('out/sitemap.txt', 'utf8');
 const writtenRobots = await readFile('out/robots.txt', 'utf8');
 
+if (writtenAlternateSitemap !== writtenSitemap) {
+  throw new Error('Alternate sitemap must be byte-identical to sitemap.xml.');
+}
 if (!writtenSitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
   throw new Error('Generated sitemap is missing XML declaration.');
 }
@@ -103,8 +110,9 @@ if (writtenTextUrls.some((url) => !url.startsWith(`${siteUrl}/`) || /\s/.test(ur
   throw new Error('Generated text sitemap contains an invalid URL.');
 }
 if (!writtenRobots.includes(`Sitemap: ${siteUrl}/sitemap.xml`) ||
+    !writtenRobots.includes(`Sitemap: ${siteUrl}/sitemap-trendforge.xml`) ||
     !writtenRobots.includes(`Sitemap: ${siteUrl}/sitemap.txt`)) {
   throw new Error('robots.txt does not point to both canonical sitemap files.');
 }
 
-console.log(`GitHub Pages SEO artifacts written and validated: ${urls.length} URLs in sitemap.xml and sitemap.txt, plus robots.txt`);
+console.log(`GitHub Pages SEO artifacts written and validated: ${urls.length} URLs in sitemap.xml, sitemap-trendforge.xml (byte-identical), and sitemap.txt, plus robots.txt`);
