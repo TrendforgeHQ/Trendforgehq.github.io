@@ -11,3 +11,6 @@ The Phase 3 first wave is a browser-only calculator suite: SaaS Pricing, MRR, AR
 
 ## Scope
 These calculators deliberately use transparent formulas rather than pretending to forecast business outcomes. More advanced scenario modelling can be a later phase.
+
+## QA finding — MRR
+The MRR calculator was corrected to include Starting MRR. Ending MRR now equals starting MRR + new MRR + expansion MRR − contraction MRR − churned MRR. This prevents the calculator from incorrectly presenting net monthly movement as the actual MRR balance.

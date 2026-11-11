@@ -1,4 +1,4 @@
 import {pricing,mrr,arr,churn,ltv,cac,breakeven,forecast} from "../app/tools/saas/calculators";
 const ok=(x:boolean,msg:string)=>{if(!x)throw new Error(msg)};
 const p=pricing(100,20,25);ok(p.metrics[2].value==="$500.00","pricing");
-ok(mrr(1000,200,100,100).metrics[0].value==="$1000.00","mrr");ok(arr(10000).metrics[0].value==="$120000.00","arr");ok(churn(100,5).metrics[0].value==="5.00%","churn");ok(ltv(50,80,2).metrics[1].value==="$2000.00","ltv");ok(cac(5000,100).metrics[0].value==="$50.00","cac");ok(breakeven(10000,100,20).metrics[1].value==="125","breakeven");ok(forecast(10000,10,2).metrics[0].value==="$12100.00","forecast");console.log("SaaS tool tests passed");
+ok(mrr(5000,1000,200,100,100).metrics[0].value==="$6000.00","mrr ending value");ok(arr(10000).metrics[0].value==="$120000.00","arr");ok(churn(100,5).metrics[0].value==="5.00%","churn");ok(ltv(50,80,2).metrics[1].value==="$2000.00","ltv");ok(cac(5000,100).metrics[0].value==="$50.00","cac");ok(breakeven(10000,100,20).metrics[1].value==="125","breakeven");ok(forecast(10000,10,2).metrics[0].value==="$12100.00","forecast");console.log("SaaS tool tests passed");
