@@ -99,6 +99,8 @@ jobs:
           test -f out/index.html
           test -f out/robots.txt
           test -f out/sitemap.xml
+          test -f out/sitemap-trendforge.xml
+          cmp -s out/sitemap.xml out/sitemap-trendforge.xml
           test -s out/sitemap.txt
           test -f out/search-index.json
           test -f out/control-center/index.html
