@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "purpose": "Index of saved failed claim-verification artifacts for offline Article Doctor tests. These have not been replayed by a BOAT evaluator.",
+  "fixtures": [
+    {
+      "id": "AD-FX-001",
+      "category": "attribution",
+      "title": "Anthropic AI Model Submits False Murder Tip to Philadelphia Police",
+      "workflowRun": "38085367295",
+      "articlePath": "data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/article.md",
+      "reportPath": "data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/claim-verification.json",
+      "metadataPath": "data/article-attempts/20261010-205638-anthropic-ai-model-submits-false-murder-tip-to-philadelphia-police-claim-blocked/metadata.json",
+      "expectedSignals": ["pass=false", "unsupported claim", "attribution uncertainty blocked"],
+      "replayStatus": "indexed_not_replayed"
+    },
+    {
+      "id": "AD-FX-002",
+      "category": "unsupported_inference",
+      "title": "AI-Generated Code Blooms, But Software Shipments Stay Flat",
+      "workflowRun": "37996683799",
+      "articlePath": "data/article-attempts/20261009-220410-ai-generated-code-blooms-but-software-shipments-stay-flat-claim-blocked/article.md",
+      "reportPath": "data/article-attempts/20261009-220410-ai-generated-code-blooms-but-software-shipments-stay-flat-claim-blocked/claim-verification.json",
+      "metadataPath": "data/article-attempts/20261009-220410-ai-generated-code-blooms-but-software-shipments-stay-flat-claim-blocked/metadata.json",
+      "expectedSignals": ["pass=false", "unsupported claim", "partial claims counted separately"],
+      "replayStatus": "indexed_not_replayed"
+    },
+    {
+      "id": "AD-FX-003",
+      "category": "numeric_temporal_context",
+      "title": "10x Research Bitcoin Bottom Forecast Missed - What the Numbers Reveal",
+      "workflowRun": "37696062759",
+      "articlePath": "data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked/article.md",
+      "reportPath": "data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked/claim-verification.json",
+      "metadataPath": "data/article-attempts/20261007-223044-10x-research-bitcoin-bottom-forecast-missed-what-the-numbers-reveal-claim-blocked/metadata.json",
+      "expectedSignals": ["pass=false", "unsupported synthesized numeric claim", "scope warning may include never"],
+      "replayStatus": "indexed_not_replayed"
+    }
+  ],
+  "constraints": [
+    "Saved examples are regression seeds, not proof that a fix works.",
+    "No provider calls, external fetches, article edits, or publishing side effects.",
+    "Re-read referenced files at the same revision before claiming replay results."
+  ]
+}

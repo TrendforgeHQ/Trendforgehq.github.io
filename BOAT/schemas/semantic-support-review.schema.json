@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Human Semantic-Support Review Record",
+  "description": "A human-authored review record for one factual claim and one proposed replacement against one exact evidence bundle. This record does not alter the proposal engine's safety state or bypass existing gates.",
+  "type": "object",
+  "required": ["schemaVersion", "reviewId", "reviewStatus", "reviewer", "subject", "claim", "assessment", "decision", "safety"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "reviewId": { "type": "string", "pattern": "^SSR-[A-Z0-9-]{3,80}$" },
+    "reviewStatus": { "const": "completed" },
+    "reviewer": {
+      "type": "object",
+      "required": ["reviewerId", "role", "independenceDisclosure", "reviewedAt"],
+      "properties": {
+        "reviewerId": { "type": "string", "minLength": 1 },
+        "role": { "enum": ["editor", "fact_checker", "subject_matter_expert", "other"] },
+        "independenceDisclosure": { "type": "string", "minLength": 1 },
+        "reviewedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "subject": {
+      "type": "object",
+      "required": ["workflowRun", "workflowSha", "articleSha256", "claimReportSha256", "evidencePackSha256", "proposalId"],
+      "properties": {
+        "workflowRun": { "type": "string", "minLength": 1 },
+        "workflowSha": { "type": "string", "pattern": "^[a-fA-F0-9]{7,64}$" },
+        "articleSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "claimReportSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "evidencePackSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "proposalId": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": ["claimIndex", "exactClaimText", "proposedReplacement", "sourceId", "passageId", "sourceUrl", "passageText"],
+      "properties": {
+        "claimIndex": { "type": "integer", "minimum": 1 },
+        "exactClaimText": { "type": "string", "minLength": 1 },
+        "proposedReplacement": { "type": "string", "minLength": 1 },
+        "sourceId": { "type": "string", "minLength": 1 },
+        "passageId": { "type": "string", "pattern": "^S[0-9]+-P[0-9]+$" },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "passageText": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "assessment": {
+      "type": "object",
+      "required": ["verdict", "factualComponents", "scopeAlignment", "temporalAlignment", "attributionAlignment", "uncertaintyPreserved", "rationale"],
+      "properties": {
+        "verdict": { "enum": ["supported", "partially_supported", "unsupported", "unclear"] },
+        "factualComponents": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["component", "support", "passageQuote", "explanation"],
+            "properties": {
+              "component": { "type": "string", "minLength": 1 },
+              "support": { "enum": ["direct", "partial", "contradicted", "absent", "ambiguous"] },
+              "passageQuote": { "type": "string" },
+              "explanation": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "scopeAlignment": { "enum": ["exact", "narrower_than_claim", "broader_than_claim", "mismatch", "unclear"] },
+        "temporalAlignment": { "enum": ["aligned", "mismatch", "not_applicable", "unclear"] },
+        "attributionAlignment": { "enum": ["aligned", "mismatch", "not_applicable", "unclear"] },
+        "uncertaintyPreserved": { "type": "boolean" },
+        "rationale": { "type": "string", "minLength": 20 }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["recommendation", "riskFlags", "requiredFollowUp"],
+      "properties": {
+        "recommendation": { "enum": ["accept_for_existing_gates", "revise_proposal", "reject_proposal", "needs_second_review"] },
+        "riskFlags": { "type": "array", "items": { "enum": ["unsupported_detail", "overstated_certainty", "scope_drift", "date_or_quantity_mismatch", "attribution_error", "missing_context", "contradictory_evidence", "source_quality_concern", "other"] } },
+        "requiredFollowUp": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "safety": {
+      "type": "object",
+      "required": ["semanticSupport", "approvalRequired", "automaticApplication", "existingGatesStillRequired"],
+      "properties": {
+        "semanticSupport": { "const": "not_verified" },
+        "approvalRequired": { "const": true },
+        "automaticApplication": { "const": false },
+        "existingGatesStillRequired": { "const": true }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

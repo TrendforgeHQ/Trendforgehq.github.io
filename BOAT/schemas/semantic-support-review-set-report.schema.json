@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Semantic-Support Review-Set Audit Report",
+  "description": "Diagnostic-only review-set audit output. Source records and input-relative indices are preserved; no verdict is aggregated or automatically adjudicated.",
+  "type": "object",
+  "required": ["valid", "reviewSetStatus", "recordCount", "records", "findings", "subjectGroups"],
+  "properties": {
+    "valid": { "type": "boolean" },
+    "reviewSetStatus": {
+      "enum": ["invalid_input", "identity_or_record_errors", "conflicting_reviews_require_human_resolution", "audited_no_conflict_detected"]
+    },
+    "recordCount": { "type": "integer", "minimum": 0 },
+    "validRecordCount": { "type": "integer", "minimum": 0 },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["index", "reviewId", "reviewerId", "verdict", "errors", "eligible"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 0 },
+          "reviewId": { "type": ["string", "null"] },
+          "reviewerId": { "type": ["string", "null"] },
+          "verdict": { "type": ["string", "null"], "enum": ["supported", "partially_supported", "unsupported", "unclear", null] },
+          "errors": { "type": "array", "items": { "type": "string" } },
+          "eligible": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "message"],
+        "properties": {
+          "type": {
+            "enum": ["invalid_input", "duplicate_review_id_exact_copy", "duplicate_review_id_conflict", "same_reviewer_disagreement", "same_reviewer_repeat", "conflicting_independent_reviews", "independent_agreement", "invalid_review_record", "input_error"]
+          },
+          "severity": { "enum": ["blocking", "review_required", "human_resolution_required", "informational"] },
+          "reviewId": { "type": ["string", "null"] },
+          "reviewerId": { "type": ["string", "null"] },
+          "reviewerIds": { "type": "array", "items": { "type": "string" } },
+          "recordIndices": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+          "verdicts": { "type": "array", "items": { "enum": ["supported", "partially_supported", "unsupported", "unclear"] } },
+          "subjectFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "errors": { "type": "array", "items": { "type": "string" } },
+          "message": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "subjectGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subjectFingerprint", "recordIndices", "independentReviewCount", "verdicts", "allVerdicts", "status", "aggregateVerdict", "automaticAdjudication"],
+        "properties": {
+          "subjectFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "recordIndices": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+          "independentReviewCount": { "type": "integer", "minimum": 0 },
+          "verdicts": { "type": "array", "items": { "enum": ["supported", "partially_supported", "unsupported", "unclear"] } },
+          "allVerdicts": { "type": "array", "items": { "enum": ["supported", "partially_supported", "unsupported", "unclear"] } },
+          "status": { "enum": ["single_or_non_independent_review", "conflicting_independent_reviews", "independent_agreement"] },
+          "aggregateVerdict": { "const": null },
+          "automaticAdjudication": { "const": false }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
