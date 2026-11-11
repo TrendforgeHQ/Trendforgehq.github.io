@@ -14,12 +14,15 @@ export function categorySlug(category: string) {
   return category.toLowerCase().trim().replace(/\s+/g, '-');
 }
 
+// The root layout appends " | TrendForge" through its title template.
+// Keep the article-specific portion to 55 characters so the rendered HTML
+// title stays at or below 68 characters and avoids unnecessarily long titles.
 export function seoTitle(article: Article) {
   const title = article.title.trim();
-  if (title.length <= 70) return title;
+  if (title.length <= 55) return title;
   const beforeDash = title.split(/\s+[—–-]\s+/)[0]?.trim();
-  if (beforeDash && beforeDash.length >= 30 && beforeDash.length <= 70) return beforeDash;
-  return `${title.slice(0, 67).trimEnd()}…`;
+  if (beforeDash && beforeDash.length >= 30 && beforeDash.length <= 55) return beforeDash;
+  return `${title.slice(0, 52).trimEnd()}…`;
 }
 
 export function seoDescription(article: Article) {
