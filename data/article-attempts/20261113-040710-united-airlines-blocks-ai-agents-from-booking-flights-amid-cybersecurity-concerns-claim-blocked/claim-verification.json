@@ -1,0 +1,930 @@
+{
+  "version": 18,
+  "generatedAt": "2026-11-13T04:07:10.616Z",
+  "articlePath": "content/articles/united-airlines-blocks-ai-agents-from-booking-flights-amid-cybersecurity-concerns.md",
+  "articleTitle": "United Airlines Blocks AI Agents from Booking Flights Amid Cybersecurity Concerns",
+  "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
+  "sourceCount": 3,
+  "usableSourceCount": 3,
+  "claimCount": 11,
+  "editorialCount": 2,
+  "verified": 9,
+  "partial": 1,
+  "unsupported": 1,
+  "sourceUnavailable": 0,
+  "averageConfidence": 76,
+  "pass": false,
+  "policy": {
+    "verifiedMin": 62,
+    "partialMin": 45,
+    "blockUnsupported": true,
+    "minimumAverageConfidence": 60,
+    "numericMismatchAlwaysBlocks": true,
+    "entitySupportRequired": true,
+    "sourceScopedEvidence": true,
+    "semanticNormalization": true,
+    "contextualSynthesis": true,
+    "multiPassageComposition": true,
+    "factMapSynthesis": true,
+    "synthesisRequiresTwoCoreFacts": true,
+    "synthesisProvenanceRequired": true,
+    "topicDriftDetection": true,
+    "contradictionDetection": true,
+    "directEvidencePack": true,
+    "authoritativePackCanonical": true,
+    "reextractPublisherPages": false,
+    "claimAudit": true,
+    "atomicClaimExtraction": true,
+    "editorialAnalysisExcluded": true,
+    "repairMayReplaceOnlyFailedSentences": true,
+    "partialClaimsNonBlocking": true,
+    "modifierEvidenceSufficiency": true,
+    "markdownAwareSegmentation": true,
+    "citationAwareSegmentation": true
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
+      "url": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
+      "domain": "therecord.media",
+      "passageCount": 5,
+      "articleBodyLength": 963
+    },
+    {
+      "id": "S2",
+      "title": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "domain": "finance.yahoo.com",
+      "passageCount": 8,
+      "articleBodyLength": 892
+    },
+    {
+      "id": "S3",
+      "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+      "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+      "domain": "techcrunch.com",
+      "passageCount": 3,
+      "articleBodyLength": 540
+    }
+  ],
+  "claims": [
+    {
+      "index": 1,
+      "claim": "United Airlines announced it will no longer allow customers to use AI agents to book or manage flight reservations.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+      "bestUrl": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F14",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 66
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 66,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 56,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF14,S1-FF1",
+      "evidence": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations. United Airlines will block AI agents from managing customers’ reservations and flight purchases, warning of significant cybersecurity and privacy risks, as well as potential legal violations.",
+      "bestPassage": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations. United Airlines will block AI agents from managing customers’ reservations and flight purchases, warning of significant cybersecurity and privacy risks, as well as potential legal violations.",
+      "matchedPassages": [
+        "S3-P1"
+      ],
+      "sharedTerms": [
+        "unit",
+        "airlin",
+        "customer",
+        "agent",
+        "book",
+        "manage",
+        "flight",
+        "reservation"
+      ],
+      "entityShared": [
+        "unit",
+        "airlin"
+      ],
+      "topicShared": [
+        "unit",
+        "airlin",
+        "agent",
+        "book",
+        "flight"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 2,
+      "claim": "The airline’s press release stated that sharing account credentials with third‑party AI assistants can expose sensitive information and lead to unintended purchases or mileage usage.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 78,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
+      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
+      "bestDomain": "therecord.media",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 75
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 75,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "“Sharing account credentials with personal, third-party, AI assistants can expose sensitive information, and actions taken by these tools may result in unintended purchases, account changes, or use of MileagePlus miles,” United said in a Wednesday press release .",
+      "bestPassage": "“Sharing account credentials with personal, third-party, AI assistants can expose sensitive information, and actions taken by these tools may result in unintended purchases, account changes, or use of MileagePlus miles,” United said in a Wednesday press release .",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P3"
+      ],
+      "sharedTerms": [
+        "the",
+        "pres",
+        "release",
+        "shar",
+        "account",
+        "credential",
+        "third",
+        "party",
+        "assistant",
+        "can",
+        "expose",
+        "sensitive",
+        "information",
+        "and",
+        "unintend",
+        "purchas"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 3,
+      "claim": "United also warned that automated actions could violate Federal Aviation Administration and Department of Transportation rules, particularly the requirement for human acknowledgment that bags do not contain prohibited items.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 91,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
+      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
+      "bestDomain": "therecord.media",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 84
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F5",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 84,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Automated AI actions also could break Federal Aviation Administration and Department of Transportation rules, the release said, citing the fact that flight check-in requires “human acknowledgment that bags do not contain banned substances like explosives.”",
+      "bestPassage": "Automated AI actions also could break Federal Aviation Administration and Department of Transportation rules, the release said, citing the fact that flight check-in requires “human acknowledgment that bags do not contain banned substances like explosives.”",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P5"
+      ],
+      "sharedTerms": [
+        "unit",
+        "warn",
+        "automat",
+        "action",
+        "federal",
+        "aviation",
+        "administration",
+        "and",
+        "department",
+        "transportation",
+        "rul",
+        "the",
+        "for",
+        "human",
+        "acknowledgment",
+        "bags",
+        "not",
+        "contain"
+      ],
+      "entityShared": [
+        "unit",
+        "federal",
+        "aviation",
+        "administration",
+        "department",
+        "transportation"
+      ],
+      "topicShared": [
+        "unit"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 4,
+      "claim": "In a recent contract update, United explicitly barred AI agents from creating, changing, or servicing tickets, and from buying seats, upgrades, or other products.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 74
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 74,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "bestPassage": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P2"
+      ],
+      "sharedTerms": [
+        "contract",
+        "unit",
+        "agent",
+        "chang",
+        "servic",
+        "ticket",
+        "and",
+        "buy",
+        "seat",
+        "upgrad",
+        "other",
+        "product"
+      ],
+      "entityShared": [
+        "unit"
+      ],
+      "topicShared": [
+        "unit",
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 5,
+      "claim": "While AI tools may still search and display fares, the traveler must personally complete the booking.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 86,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 81
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 81,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "AI agents can search and display fares, but the traveler must personally complete the booking.",
+      "bestPassage": "AI agents can search and display fares, but the traveler must personally complete the booking.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P6"
+      ],
+      "sharedTerms": [
+        "tool",
+        "search",
+        "and",
+        "display",
+        "far",
+        "the",
+        "traveler",
+        "must",
+        "personally",
+        "complete",
+        "book"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "book"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 6,
+      "claim": "United noted that it would treat any booking made through an AI interface as an Expedia reservation and would retain the right to cancel reservations without notice.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 84,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 67
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 67,
+          "passageIndex": 5
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "United has the right to cancel such reservations without notice, and the ban reaches AI tools offered through travel agencies.",
+      "bestPassage": "United has the right to cancel such reservations without notice, and the ban reaches AI tools offered through travel agencies.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P5"
+      ],
+      "sharedTerms": [
+        "unit",
+        "not",
+        "book",
+        "expedia",
+        "reservation",
+        "and",
+        "the",
+        "right",
+        "cancel",
+        "without",
+        "notice"
+      ],
+      "entityShared": [
+        "unit",
+        "expedia"
+      ],
+      "topicShared": [
+        "unit",
+        "book"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "Each AI query also incurs a cost for the airline, a factor United cited as part of its decision.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 69,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F9",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 52
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F9",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 52,
+          "passageIndex": 3
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "But each query costs the airline money, and United doesn't want to pay for AI bot queries.",
+      "bestPassage": "But each query costs the airline money, and United doesn't want to pay for AI bot queries.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P4"
+      ],
+      "sharedTerms": [
+        "each",
+        "query",
+        "cost",
+        "for",
+        "the",
+        "airline",
+        "unit",
+        "its"
+      ],
+      "entityShared": [
+        "unit"
+      ],
+      "topicShared": [
+        "unit",
+        "cit"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 8,
+      "claim": "A fraud‑detection survey referenced by United found that 43 % of Americans would permit AI booking with final human approval, yet only 12 % would allow fully autonomous booking.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 78,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F13",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 78
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F13",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 78,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-FF13",
+      "evidence": "The airline has read the pulse of the people on this one: A fraud-detection survey found 43% of Americans would let AI book with final approval, but only 12% would allow fully autonomous booking.",
+      "bestPassage": "The airline has read the pulse of the people on this one: A fraud-detection survey found 43% of Americans would let AI book with final approval, but only 12% would allow fully autonomous booking.",
+      "matchedPassages": [
+        "S2-P8"
+      ],
+      "sharedTerms": [
+        "fraud",
+        "detection",
+        "survey",
+        "found",
+        "american",
+        "book",
+        "final",
+        "approval",
+        "allow",
+        "fully",
+        "autonomou"
+      ],
+      "entityShared": [
+        "american"
+      ],
+      "topicShared": [
+        "unit",
+        "book"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 9,
+      "claim": "United’s stance places it among a growing number of U.S. corporations restricting AI access to customer systems, reflecting heightened concerns about cybersecurity, privacy, and regulatory compliance.United said it will restrict access to AI agents seeking to book flights and manage reservations on their users’ behalf, citing a risk to cybersecurity and undermining federal regulations.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 75,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+      "bestUrl": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F14",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 71
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 71,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations.",
+      "bestPassage": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations.",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P1"
+      ],
+      "sharedTerms": [
+        "unit",
+        "restrict",
+        "acces",
+        "customer",
+        "system",
+        "cybersecurity",
+        "and",
+        "agent",
+        "seek",
+        "book",
+        "flight",
+        "manage",
+        "reservation",
+        "user",
+        "behalf",
+        "cit",
+        "risk",
+        "undermin",
+        "federal",
+        "regulation"
+      ],
+      "entityShared": [
+        "unit"
+      ],
+      "topicShared": [
+        "unit",
+        "cybersecurity",
+        "agent",
+        "book",
+        "flight",
+        "cit",
+        "risk"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "Developers of AI travel assistants must adjust their systems so that AI agents cannot make, change, or service tickets or purchase seats, upgrades, or other products.",
+      "status": "unsupported",
+      "classification": "unsupported",
+      "confidence": 64,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
+      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
+      "bestDomain": "finance.yahoo.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 50
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 50,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "bestPassage": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P2"
+      ],
+      "sharedTerms": [
+        "travel",
+        "must",
+        "agent",
+        "ticket",
+        "seat",
+        "upgrad",
+        "other",
+        "product"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "agent"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "Airlines and regulatory bodies may increasingly scrutinize AI tools that interact with aviation booking systems, potentially shaping future standards for digital identity verification and data sharing.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 51,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
+      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
+      "bestDomain": "therecord.media",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 22
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 22,
+          "passageIndex": 9
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "“Blocking agents or forcing more data sharing just delays the inevitable,” he said via text, arguing for wider use of verified identity tokens.",
+      "bestPassage": "“Blocking agents or forcing more data sharing just delays the inevitable,” he said via text, arguing for wider use of verified identity tokens.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "airlin",
+        "and",
+        "may",
+        "tool",
+        "aviation",
+        "for",
+        "identity",
+        "data",
+        "shar"
+      ],
+      "entityShared": [
+        "airlin"
+      ],
+      "topicShared": [
+        "airlin",
+        "book"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    }
+  ],
+  "editorial": [
+    {
+      "index": 12,
+      "claim": "The airline’s decision highlights the ongoing uncertainty surrounding AI integration in regulated sectors.",
+      "type": "editorial-analysis",
+      "status": "editorial-excluded"
+    },
+    {
+      "index": 13,
+      "claim": "Stakeholders should monitor United’s policy updates and any regulatory guidance that may emerge to clarify acceptable AI practices in travel booking.",
+      "type": "editorial-recommendation",
+      "status": "editorial-excluded"
+    }
+  ]
+}
