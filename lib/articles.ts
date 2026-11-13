@@ -2653,6 +2653,48 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "microsoft-outlook-and-365-services-recover-after-global-outage",
+    "title": "Microsoft Outlook and 365 services recover after global outage",
+    "description": "Microsoft’s outage that hit Outlook, Teams and Copilot disrupted millions of users worldwide. While core functions have returned, some features remain degraded and email flow is still catching up. The incident highlighted the scale of cloud dependencies and the challenges of rapid restoration.",
+    "category": "Digital Life",
+    "date": "2026-11-13",
+    "publishedAt": "2026-11-13T13:43:24.151Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## Outage scope\nOn Friday, a widespread Microsoft 365 outage brought Outlook, Microsoft Teams and the Copilot AI assistant offline for users around the world. The disruption affected core functions of Teams and Copilot, while Outlook experienced connectivity problems that prevented many users from sending or receiving mail.",
+      "## Recovery progress\nBy early Friday, Microsoft reported that the core functions of Teams and Copilot were back online. A later update from the company on X noted encouraging recovery progress, with service availability and email delivery improving across a growing portion of affected infrastructure.",
+      "## Impact on institutions\nSingapore warned its taxpayers that email capabilities had been disrupted, and courts in the Philippines and the European Court of Human Rights said the outage could cause delays in their work. Singapore warned its taxpayers that email capabilities had been disrupted. Courts in the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "## Prior incident\nThe outage followed a separate Teams incident earlier Thursday that had isolated users in North and South America. That earlier event was fully resolved before the larger outage began.",
+      "## Current status\nAlthough some apps and features remain in a degraded state, many people, including staff at The Verge, report restored access to their emails. However, Outlook mail flow may still be delayed as Microsoft works to fully fix the remaining issues.",
+      "## What to watch\nMicrosoft has not yet clarified the root cause of the outage or whether it is linked to the earlier Teams disruption. Users and administrators should monitor official status updates and consider using read‑only scans of Microsoft 365 or Google Workspace to verify data integrity while the service stabilizes.",
+      "## Bottom line\nThe global outage demonstrated how quickly core Microsoft 365 services can be affected and how recovery can be uneven across regions. Users who rely on Outlook for business communication should be aware that while connectivity may return, email delivery performance can lag for some time."
+    ],
+    "sources": [
+      {
+        "title": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+        "url": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html"
+      },
+      {
+        "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+      },
+      {
+        "title": "Major Microsoft Outlook Outage Leaves People With Email Jobs Unable to Email",
+        "url": "https://www.wired.com/story/major-microsoft-outlook-outage-hits-365-customers-north-america/"
+      },
+      {
+        "title": "Microsoft’s massive Outlook outage continues",
+        "url": "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage"
+      }
+    ],
+    "image": "/images/articles/microsoft-outlook-and-365-services-recover-after-global-outage.1024x576.png",
+    "imageAlt": "Editorial image for Microsoft Outlook and 365 services recover after global outage",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "microsoft-s-president-calls-for-emergency-brakes-on-ai-says-it-is-less-regulated-than-milk",
     "title": "Microsoft’s President Calls for ‘Emergency Brakes’ on AI, Says It Is Less Regulated than Milk",
     "description": "Microsoft’s Brad Smith warned that AI lacks the safety oversight enjoyed by everyday products like milk and washing machines, urging governments to adopt tighter controls and emergency‑stop mechanisms.",

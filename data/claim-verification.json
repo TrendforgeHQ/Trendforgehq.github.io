@@ -1,19 +1,19 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-13T04:07:10.616Z",
-  "articlePath": "content/articles/united-airlines-blocks-ai-agents-from-booking-flights-amid-cybersecurity-concerns.md",
-  "articleTitle": "United Airlines Blocks AI Agents from Booking Flights Amid Cybersecurity Concerns",
+  "generatedAt": "2026-11-13T13:43:25.975Z",
+  "articlePath": "content/articles/microsoft-outlook-and-365-services-recover-after-global-outage.md",
+  "articleTitle": "Microsoft Outlook and 365 services recover after global outage",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 3,
-  "usableSourceCount": 3,
-  "claimCount": 11,
-  "editorialCount": 2,
-  "verified": 9,
-  "partial": 1,
-  "unsupported": 1,
+  "sourceCount": 4,
+  "usableSourceCount": 4,
+  "claimCount": 14,
+  "editorialCount": 1,
+  "verified": 11,
+  "partial": 3,
+  "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 76,
-  "pass": false,
+  "averageConfidence": 83,
+  "pass": true,
   "policy": {
     "verifiedMin": 62,
     "partialMin": 45,
@@ -45,92 +45,105 @@
   "sources": [
     {
       "id": "S1",
-      "title": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
-      "url": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
-      "domain": "therecord.media",
-      "passageCount": 5,
-      "articleBodyLength": 963
+      "title": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+      "url": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+      "domain": "nytimes.com",
+      "passageCount": 4,
+      "articleBodyLength": 621
     },
     {
       "id": "S2",
-      "title": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "domain": "finance.yahoo.com",
-      "passageCount": 8,
-      "articleBodyLength": 892
+      "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "domain": "bleepingcomputer.com",
+      "passageCount": 12,
+      "articleBodyLength": 1638
     },
     {
       "id": "S3",
-      "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
-      "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
-      "domain": "techcrunch.com",
-      "passageCount": 3,
-      "articleBodyLength": 540
+      "title": "Major Microsoft Outlook Outage Leaves People With Email Jobs Unable to Email",
+      "url": "https://www.wired.com/story/major-microsoft-outlook-outage-hits-365-customers-north-america/",
+      "domain": "wired.com",
+      "passageCount": 4,
+      "articleBodyLength": 810
+    },
+    {
+      "id": "S4",
+      "title": "Microsoft’s massive Outlook outage continues",
+      "url": "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage",
+      "domain": "theverge.com",
+      "passageCount": 4,
+      "articleBodyLength": 765
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "United Airlines announced it will no longer allow customers to use AI agents to book or manage flight reservations.",
+      "claim": "On Friday, a widespread Microsoft 365 outage brought Outlook, Microsoft Teams and the Copilot AI assistant offline for users around the world.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 89,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
-      "bestUrl": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S3",
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
-        "sourceId": "S3",
+        "factId": "F6",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 66
+        "score": 77
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
-          "sourceId": "S3",
+          "factId": "F6",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 66,
-          "passageIndex": 1
+          "score": 77,
+          "passageIndex": 3
         },
         {
-          "factId": "F1",
-          "sourceId": "S1",
+          "factId": "F21",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 56,
+          "score": 67,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-FF14,S1-FF1",
-      "evidence": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations. United Airlines will block AI agents from managing customers’ reservations and flight purchases, warning of significant cybersecurity and privacy risks, as well as potential legal violations.",
-      "bestPassage": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations. United Airlines will block AI agents from managing customers’ reservations and flight purchases, warning of significant cybersecurity and privacy risks, as well as potential legal violations.",
+      "bestPassageId": "S2-FF6,S4-FF21",
+      "evidence": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. Service is gradually starting to recover for Microsoft Outlook and 365 after an almost two-day outage impacting millions of users around the world.",
+      "bestPassage": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. Service is gradually starting to recover for Microsoft Outlook and 365 after an almost two-day outage impacting millions of users around the world.",
       "matchedPassages": [
-        "S3-P1"
+        "S2-BODY",
+        "S2-P2"
       ],
       "sharedTerms": [
-        "unit",
-        "airlin",
-        "customer",
-        "agent",
-        "book",
-        "manage",
-        "flight",
-        "reservation"
+        "widespread",
+        "microsoft",
+        "365",
+        "outage",
+        "outlook",
+        "team",
+        "and",
+        "the",
+        "copilot",
+        "for",
+        "user",
+        "world"
       ],
       "entityShared": [
-        "unit",
-        "airlin"
+        "microsoft",
+        "outlook",
+        "team",
+        "copilot"
       ],
       "topicShared": [
-        "unit",
-        "airlin",
-        "agent",
-        "book",
-        "flight"
+        "microsoft",
+        "outage",
+        "outlook"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -139,8 +152,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -153,155 +166,154 @@
     },
     {
       "index": 2,
-      "claim": "The airline’s press release stated that sharing account credentials with third‑party AI assistants can expose sensitive information and lead to unintended purchases or mileage usage.",
+      "claim": "The disruption affected core functions of Teams and Copilot, while Outlook experienced connectivity problems that prevented many users from sending or receiving mail.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 78,
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
-      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
-      "bestDomain": "therecord.media",
-      "sourceId": "S1",
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
+        "factId": "F6",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 75
+        "score": 66
       },
       "provenanceFactMatches": [
         {
-          "factId": "F3",
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 66,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 75,
-          "passageIndex": 4
+          "score": 57,
+          "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "“Sharing account credentials with personal, third-party, AI assistants can expose sensitive information, and actions taken by these tools may result in unintended purchases, account changes, or use of MileagePlus miles,” United said in a Wednesday press release .",
-      "bestPassage": "“Sharing account credentials with personal, third-party, AI assistants can expose sensitive information, and actions taken by these tools may result in unintended purchases, account changes, or use of MileagePlus miles,” United said in a Wednesday press release .",
+      "bestPassageId": "S2-FF6,S1-FF2",
+      "evidence": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. By early Friday, Microsoft said that the core functions of Teams and Copilot were online.",
+      "bestPassage": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. By early Friday, Microsoft said that the core functions of Teams and Copilot were online.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
+        "S2-BODY",
+        "S2-P2"
       ],
       "sharedTerms": [
         "the",
-        "pres",
-        "release",
-        "shar",
-        "account",
-        "credential",
-        "third",
-        "party",
-        "assistant",
-        "can",
-        "expose",
-        "sensitive",
-        "information",
+        "affect",
+        "core",
+        "function",
+        "team",
         "and",
-        "unintend",
-        "purchas"
+        "copilot",
+        "outlook",
+        "connectivity",
+        "problem",
+        "user"
       ],
-      "entityShared": [],
-      "topicShared": [],
+      "entityShared": [
+        "team",
+        "copilot",
+        "outlook"
+      ],
+      "topicShared": [
+        "outlook"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
+      "factCoverage": 2,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
       "index": 3,
-      "claim": "United also warned that automated actions could violate Federal Aviation Administration and Department of Transportation rules, particularly the requirement for human acknowledgment that bags do not contain prohibited items.",
+      "claim": "By early Friday, Microsoft reported that the core functions of Teams and Copilot were back online.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 91,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
-      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
-      "bestDomain": "therecord.media",
+      "bestSource": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+      "bestUrl": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+      "bestDomain": "nytimes.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F5",
+        "factId": "F2",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 84
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F5",
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 84,
+          "score": 94,
           "passageIndex": 5
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Automated AI actions also could break Federal Aviation Administration and Department of Transportation rules, the release said, citing the fact that flight check-in requires “human acknowledgment that bags do not contain banned substances like explosives.”",
-      "bestPassage": "Automated AI actions also could break Federal Aviation Administration and Department of Transportation rules, the release said, citing the fact that flight check-in requires “human acknowledgment that bags do not contain banned substances like explosives.”",
+      "bestPassageId": "S1-P2",
+      "evidence": "By early Friday, Microsoft said that the core functions of Teams and Copilot were online.",
+      "bestPassage": "By early Friday, Microsoft said that the core functions of Teams and Copilot were online.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P5"
+        "S1-P2",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "unit",
-        "warn",
-        "automat",
-        "action",
-        "federal",
-        "aviation",
-        "administration",
-        "and",
-        "department",
-        "transportation",
-        "rul",
+        "early",
+        "friday",
+        "microsoft",
         "the",
-        "for",
-        "human",
-        "acknowledgment",
-        "bags",
-        "not",
-        "contain"
+        "core",
+        "function",
+        "team",
+        "and",
+        "copilot",
+        "were",
+        "online"
       ],
       "entityShared": [
-        "unit",
-        "federal",
-        "aviation",
-        "administration",
-        "department",
-        "transportation"
+        "friday",
+        "microsoft",
+        "team",
+        "copilot"
       ],
       "topicShared": [
-        "unit"
+        "microsoft"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -314,61 +326,60 @@
     },
     {
       "index": 4,
-      "claim": "In a recent contract update, United explicitly barred AI agents from creating, changing, or servicing tickets, and from buying seats, upgrades, or other products.",
+      "claim": "A later update from the company on X noted encouraging recovery progress, with service availability and email delivery improving across a growing portion of affected infrastructure.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F7",
+        "factId": "F10",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 74
+        "score": 81
       },
       "provenanceFactMatches": [
         {
-          "factId": "F7",
+          "factId": "F10",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 74,
-          "passageIndex": 4
+          "score": 81,
+          "passageIndex": 24
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
-      "bestPassage": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "evidence": "\"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
+      "bestPassage": "\"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
       "matchedPassages": [
         "S2-BODY",
-        "S2-P2"
+        "S2-P6"
       ],
       "sharedTerms": [
-        "contract",
-        "unit",
-        "agent",
-        "chang",
-        "servic",
-        "ticket",
+        "the",
+        "not",
+        "encourag",
+        "recovery",
+        "progres",
+        "service",
+        "availability",
         "and",
-        "buy",
-        "seat",
-        "upgrad",
-        "other",
-        "product"
+        "email",
+        "delivery",
+        "improv",
+        "acros",
+        "grow",
+        "share",
+        "affect",
+        "infrastructure"
       ],
-      "entityShared": [
-        "unit"
-      ],
-      "topicShared": [
-        "unit",
-        "agent"
-      ],
+      "entityShared": [],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -376,8 +387,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -390,56 +401,70 @@
     },
     {
       "index": 5,
-      "claim": "While AI tools may still search and display fares, the traveler must personally complete the booking.",
+      "claim": "Singapore warned its taxpayers that email capabilities had been disrupted, and courts in the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 86,
+      "confidence": 99,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S2",
+      "bestSource": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+      "bestUrl": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+      "bestDomain": "nytimes.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S2",
+        "factId": "F3",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 81
+        "score": 99
       },
       "provenanceFactMatches": [
         {
-          "factId": "F11",
-          "sourceId": "S2",
+          "factId": "F3",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 81,
-          "passageIndex": 5
+          "score": 99,
+          "passageIndex": 7
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "AI agents can search and display fares, but the traveler must personally complete the booking.",
-      "bestPassage": "AI agents can search and display fares, but the traveler must personally complete the booking.",
+      "bestPassageId": "S1-P3",
+      "evidence": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "bestPassage": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P6"
+        "S1-P3",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "tool",
-        "search",
+        "singapore",
+        "its",
+        "taxpayer",
+        "email",
+        "capabiliti",
+        "had",
+        "disrupt",
         "and",
-        "display",
-        "far",
+        "court",
         "the",
-        "traveler",
-        "must",
-        "personally",
-        "complete",
-        "book"
+        "philippin",
+        "european",
+        "human",
+        "right",
+        "outage",
+        "cause",
+        "delay",
+        "work"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "singapore",
+        "philippin",
+        "european",
+        "court",
+        "human",
+        "right"
+      ],
       "topicShared": [
-        "book"
+        "outage"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -448,8 +473,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": true,
         "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -462,69 +487,139 @@
     },
     {
       "index": 6,
-      "claim": "United noted that it would treat any booking made through an AI interface as an Expedia reservation and would retain the right to cancel reservations without notice.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 84,
+      "claim": "Singapore warned its taxpayers that email capabilities had been disrupted.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 83,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S2",
+      "bestSource": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+      "bestUrl": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+      "bestDomain": "nytimes.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S2",
+        "factId": "F3",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 67
+        "score": 80
       },
       "provenanceFactMatches": [
         {
-          "factId": "F10",
-          "sourceId": "S2",
+          "factId": "F3",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 67,
-          "passageIndex": 5
+          "score": 80,
+          "passageIndex": 7
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "United has the right to cancel such reservations without notice, and the ban reaches AI tools offered through travel agencies.",
-      "bestPassage": "United has the right to cancel such reservations without notice, and the ban reaches AI tools offered through travel agencies.",
+      "bestPassageId": "S1-P3",
+      "evidence": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "bestPassage": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P5"
+        "S1-P3",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "unit",
-        "not",
-        "book",
-        "expedia",
-        "reservation",
-        "and",
-        "the",
-        "right",
-        "cancel",
-        "without",
-        "notice"
+        "singapore",
+        "its",
+        "taxpayer",
+        "email",
+        "capabiliti",
+        "had",
+        "disrupt"
       ],
       "entityShared": [
-        "unit",
-        "expedia"
+        "singapore"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "Courts in the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Outlook, Teams and More Microsoft Programs Disrupted by Outage - The New York Times",
+      "bestUrl": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
+      "bestDomain": "nytimes.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 100
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 100,
+          "passageIndex": 7
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P3",
+      "evidence": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "bestPassage": "Singapore told its taxpayers email capabilities had been disrupted, and the Supreme Court of the Philippines and the European Court of Human Rights said the outage could cause delays in their work.",
+      "matchedPassages": [
+        "S1-P3",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "court",
+        "the",
+        "philippin",
+        "and",
+        "european",
+        "human",
+        "right",
+        "outage",
+        "cause",
+        "delay",
+        "work"
+      ],
+      "entityShared": [
+        "court",
+        "philippin",
+        "european",
+        "human",
+        "right"
       ],
       "topicShared": [
-        "unit",
-        "book"
+        "outage"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
         "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -537,57 +632,65 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 7,
-      "claim": "Each AI query also incurs a cost for the airline, a factor United cited as part of its decision.",
+      "index": 8,
+      "claim": "The outage followed a separate Teams incident earlier Thursday that had isolated users in North and South America.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 69,
+      "confidence": 95,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
+        "factId": "F12",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 52
+        "score": 95
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
+          "factId": "F12",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 52,
-          "passageIndex": 3
+          "score": 95,
+          "passageIndex": 12
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "But each query costs the airline money, and United doesn't want to pay for AI bot queries.",
-      "bestPassage": "But each query costs the airline money, and United doesn't want to pay for AI bot queries.",
+      "bestPassageId": "S2-P8",
+      "evidence": "The outage follows a separate Microsoft Teams incident earlier Thursday that caused an outage for users in North and South America.",
+      "bestPassage": "The outage follows a separate Microsoft Teams incident earlier Thursday that caused an outage for users in North and South America.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P4"
+        "S2-P8",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "each",
-        "query",
-        "cost",
-        "for",
         "the",
-        "airline",
-        "unit",
-        "its"
+        "outage",
+        "follow",
+        "separate",
+        "team",
+        "incident",
+        "earlier",
+        "thursday",
+        "user",
+        "north",
+        "and",
+        "south",
+        "america"
       ],
       "entityShared": [
-        "unit"
+        "team",
+        "thursday",
+        "north",
+        "south",
+        "america"
       ],
       "topicShared": [
-        "unit",
-        "cit"
+        "outage"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -609,148 +712,51 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 8,
-      "claim": "A fraud‑detection survey referenced by United found that 43 % of Americans would permit AI booking with final human approval, yet only 12 % would allow fully autonomous booking.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 78,
+      "index": 9,
+      "claim": "That earlier event was fully resolved before the larger outage began.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 51,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F13",
+        "factId": "F14",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 78
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F13",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 78,
-          "passageIndex": 6
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF13",
-      "evidence": "The airline has read the pulse of the people on this one: A fraud-detection survey found 43% of Americans would let AI book with final approval, but only 12% would allow fully autonomous booking.",
-      "bestPassage": "The airline has read the pulse of the people on this one: A fraud-detection survey found 43% of Americans would let AI book with final approval, but only 12% would allow fully autonomous booking.",
-      "matchedPassages": [
-        "S2-P8"
-      ],
-      "sharedTerms": [
-        "fraud",
-        "detection",
-        "survey",
-        "found",
-        "american",
-        "book",
-        "final",
-        "approval",
-        "allow",
-        "fully",
-        "autonomou"
-      ],
-      "entityShared": [
-        "american"
-      ],
-      "topicShared": [
-        "unit",
-        "book"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 9,
-      "claim": "United’s stance places it among a growing number of U.S. corporations restricting AI access to customer systems, reflecting heightened concerns about cybersecurity, privacy, and regulatory compliance.United said it will restrict access to AI agents seeking to book flights and manage reservations on their users’ behalf, citing a risk to cybersecurity and undermining federal regulations.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 75,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
-      "bestUrl": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F14",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 71
+        "score": 35
       },
       "provenanceFactMatches": [
         {
           "factId": "F14",
-          "sourceId": "S3",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 71,
-          "passageIndex": 1
+          "score": 35,
+          "passageIndex": 14
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations.",
-      "bestPassage": "United Airlines said it will restrict access to AI agents seeking to book flights and manage reservations on their users&#8217; behalf, citing a risk to cybersecurity and undermining federal regulations.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "The company says the earlier Teams incident has been fully resolved.",
+      "bestPassage": "The company says the earlier Teams incident has been fully resolved.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
+        "S2-BODY",
+        "S2-P10"
       ],
       "sharedTerms": [
-        "unit",
-        "restrict",
-        "acces",
-        "customer",
-        "system",
-        "cybersecurity",
-        "and",
-        "agent",
-        "seek",
-        "book",
-        "flight",
-        "manage",
-        "reservation",
-        "user",
-        "behalf",
-        "cit",
-        "risk",
-        "undermin",
-        "federal",
-        "regulation"
+        "earlier",
+        "fully",
+        "resolv",
+        "the",
+        "outage"
       ],
-      "entityShared": [
-        "unit"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "unit",
-        "cybersecurity",
-        "agent",
-        "book",
-        "flight",
-        "cit",
-        "risk"
+        "outage"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -760,12 +766,12 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": true,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
+      "factCoverage": 3,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -773,60 +779,64 @@
     },
     {
       "index": 10,
-      "claim": "Developers of AI travel assistants must adjust their systems so that AI agents cannot make, change, or service tickets or purchase seats, upgrades, or other products.",
-      "status": "unsupported",
-      "classification": "unsupported",
-      "confidence": 64,
+      "claim": "Although some apps and features remain in a degraded state, many people, including staff at The Verge, report restored access to their emails.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United Airlines Is Grounding AI Travel Agents - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/technology/ai/articles/united-airlines-grounding-ai-travel-195352625.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S2",
+      "bestSource": "Microsoft’s massive Outlook outage continues",
+      "bestUrl": "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage",
+      "bestDomain": "theverge.com",
+      "sourceId": "S4",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S2",
+        "factId": "F20",
+        "sourceId": "S4",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 50
+        "score": 81
       },
       "provenanceFactMatches": [
         {
-          "factId": "F7",
-          "sourceId": "S2",
+          "factId": "F20",
+          "sourceId": "S4",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 50,
-          "passageIndex": 4
+          "score": 81,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
-      "bestPassage": "The airline updated its contract to bar AI agents from making, changing, or servicing tickets and from buying seats, upgrades, or other products.",
+      "bestPassageId": "S4-P1",
+      "evidence": "While some apps and features are still running in a degradated state, some people (including Verge staffers) are reporting that access to their emails has been restored, though the flow of Outlook mail might be delayed while efforts to fully fix the outage continue.",
+      "bestPassage": "While some apps and features are still running in a degradated state, some people (including Verge staffers) are reporting that access to their emails has been restored, though the flow of Outlook mail might be delayed while efforts to fully fix the outage continue.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P2"
+        "S4-P1",
+        "S4-BODY"
       ],
       "sharedTerms": [
-        "travel",
-        "must",
-        "agent",
-        "ticket",
-        "seat",
-        "upgrad",
-        "other",
-        "product"
+        "apps",
+        "and",
+        "featur",
+        "state",
+        "people",
+        "includ",
+        "the",
+        "verge",
+        "report",
+        "restor",
+        "acces",
+        "email"
       ],
-      "entityShared": [],
-      "topicShared": [
-        "agent"
+      "entityShared": [
+        "verge"
       ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
+        "evidenceUncertain": true,
         "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
@@ -842,56 +852,221 @@
     },
     {
       "index": 11,
-      "claim": "Airlines and regulatory bodies may increasingly scrutinize AI tools that interact with aviation booking systems, potentially shaping future standards for digital identity verification and data sharing.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 51,
+      "claim": "However, Outlook mail flow may still be delayed as Microsoft works to fully fix the remaining issues.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 78,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "United to block customers from using AI agents, citing cyber threats - The Record from Recorded Future News",
-      "bestUrl": "https://therecord.media/united-airlines-to-block-customers-using-ai-agents",
-      "bestDomain": "therecord.media",
-      "sourceId": "S1",
+      "bestSource": "Microsoft’s massive Outlook outage continues",
+      "bestUrl": "https://www.theverge.com/tech/1032862/microsoft-outlook-down-outage",
+      "bestDomain": "theverge.com",
+      "sourceId": "S4",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S4",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 62
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S4",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 62,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S4-BODY",
+      "evidence": "While some apps and features are still running in a degradated state, some people (including Verge staffers) are reporting that access to their emails has been restored, though the flow of Outlook mail might be delayed while efforts to fully fix the outage continue.",
+      "bestPassage": "While some apps and features are still running in a degradated state, some people (including Verge staffers) are reporting that access to their emails has been restored, though the flow of Outlook mail might be delayed while efforts to fully fix the outage continue.",
+      "matchedPassages": [
+        "S4-BODY",
+        "S4-P1"
+      ],
+      "sharedTerms": [
+        "outlook",
+        "mail",
+        "flow",
+        "delay",
+        "microsoft",
+        "fully",
+        "fix",
+        "the"
+      ],
+      "entityShared": [
+        "outlook",
+        "microsoft"
+      ],
+      "topicShared": [
+        "outlook",
+        "microsoft"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 12,
+      "claim": "Microsoft has not yet clarified the root cause of the outage or whether it is linked to the earlier Teams disruption.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 91,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 91
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 91,
+          "passageIndex": 29
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P3",
+      "evidence": "Microsoft has not yet responded to BleepingComputer's questions about the root cause of the outage and whether it is related to Thursday's earlier Teams disruption.",
+      "bestPassage": "Microsoft has not yet responded to BleepingComputer's questions about the root cause of the outage and whether it is related to Thursday's earlier Teams disruption.",
+      "matchedPassages": [
+        "S2-P3",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "microsoft",
+        "has",
+        "not",
+        "yet",
+        "the",
+        "root",
+        "cause",
+        "outage",
+        "whether",
+        "earlier",
+        "team",
+        "disruption"
+      ],
+      "entityShared": [
+        "microsoft",
+        "team"
+      ],
+      "topicShared": [
+        "microsoft",
+        "outage"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 14,
+      "claim": "The global outage demonstrated how quickly core Microsoft 365 services can be affected and how recovery can be uneven across regions.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 72,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F4",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 22
+        "score": 46
       },
       "provenanceFactMatches": [
         {
           "factId": "F4",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 22,
-          "passageIndex": 9
+          "score": 46,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 46,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 43,
+          "passageIndex": 24
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "“Blocking agents or forcing more data sharing just delays the inevitable,” he said via text, arguing for wider use of verified identity tokens.",
-      "bestPassage": "“Blocking agents or forcing more data sharing just delays the inevitable,” he said via text, arguing for wider use of verified identity tokens.",
+      "bestPassageId": "S1-FF4,S2-FF6,S2-FF10",
+      "evidence": "The global outage affecting Microsoft services reverberated around the world on Friday, upending services relied upon by millions of people. Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. \"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
+      "bestPassage": "The global outage affecting Microsoft services reverberated around the world on Friday, upending services relied upon by millions of people. Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. \"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
       "matchedPassages": [
-        "S1-BODY"
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "airlin",
+        "the",
+        "global",
+        "outage",
+        "microsoft",
+        "365",
+        "servic",
+        "affect",
         "and",
-        "may",
-        "tool",
-        "aviation",
-        "for",
-        "identity",
-        "data",
-        "shar"
+        "recovery",
+        "acros"
       ],
       "entityShared": [
-        "airlin"
+        "microsoft"
       ],
       "topicShared": [
-        "airlin",
-        "book"
+        "outage",
+        "microsoft"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -906,7 +1081,78 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 15,
+      "claim": "Users who rely on Outlook for business communication should be aware that while connectivity may return, email delivery performance can lag for some time.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 60,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide - BleepingComputer",
+      "bestUrl": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "bestDomain": "bleepingcomputer.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 21
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 21,
+          "passageIndex": 24
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "\"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
+      "bestPassage": "\"We&rsquo;re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure,\" Microsoft said in its latest update on X.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "user",
+        "who",
+        "outlook",
+        "for",
+        "connectivity",
+        "may",
+        "email",
+        "delivery",
+        "performance"
+      ],
+      "entityShared": [
+        "outlook"
+      ],
+      "topicShared": [
+        "outlook"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -915,14 +1161,8 @@
   ],
   "editorial": [
     {
-      "index": 12,
-      "claim": "The airline’s decision highlights the ongoing uncertainty surrounding AI integration in regulated sectors.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
       "index": 13,
-      "claim": "Stakeholders should monitor United’s policy updates and any regulatory guidance that may emerge to clarify acceptable AI practices in travel booking.",
+      "claim": "Users and administrators should monitor official status updates and consider using read‑only scans of Microsoft 365 or Google Workspace to verify data integrity while the service stabilizes.",
       "type": "editorial-recommendation",
       "status": "editorial-excluded"
     }
