@@ -1,19 +1,19 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-15T22:19:24.853Z",
-  "articlePath": "content/articles/bitcoin-vs-spy-five-year-returns-show-index-fund-outpaces-crypto.md",
-  "articleTitle": "Bitcoin vs. SPY: Five‑Year Returns Show Index Fund Outpaces Crypto",
+  "generatedAt": "2026-11-16T03:50:05.449Z",
+  "articlePath": "content/articles/bitcoin-rebounds-after-forced-liquidations-while-ether-and-solana-struggle.md",
+  "articleTitle": "Bitcoin Rebounds After Forced Liquidations, While Ether and Solana Struggle",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
   "sourceCount": 2,
   "usableSourceCount": 2,
-  "claimCount": 13,
-  "editorialCount": 0,
-  "verified": 11,
-  "partial": 2,
-  "unsupported": 0,
+  "claimCount": 9,
+  "editorialCount": 1,
+  "verified": 8,
+  "partial": 0,
+  "unsupported": 1,
   "sourceUnavailable": 0,
-  "averageConfidence": 71,
-  "pass": true,
+  "averageConfidence": 79,
+  "pass": false,
   "policy": {
     "verifiedMin": 62,
     "partialMin": 45,
@@ -45,73 +45,76 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "domain": "finance.yahoo.com",
-      "passageCount": 27,
-      "articleBodyLength": 2828
+      "title": "Crypto news, November 13: bitcoin down 6%, over $1.3 billion liquidated",
+      "url": "https://cryptoticker.io/en/crypto-news-bitcoin-crash-liquidations-etf-outflows-november-13-2026/",
+      "domain": "cryptoticker.io",
+      "passageCount": 8,
+      "articleBodyLength": 1120
     },
     {
       "id": "S2",
-      "title": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - 24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/11/15/bitcoin-vs-stocks-is-crypto-really-the-best-investment-the-results-may-surprise-you/",
-      "domain": "247wallst.com",
-      "passageCount": 33,
-      "articleBodyLength": 3539
+      "title": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "url": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "domain": "eurasiabusinessnews.com",
+      "passageCount": 18,
+      "articleBodyLength": 2026
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Bitcoin’s price has risen 7% over the last five years, while the SPDR S&P 500 ETF (SPY) gained 61% on price alone.",
+      "claim": "The rally followed a sharp overnight decline and coincided with institutional withdrawals, forced liquidations, and expectations of higher U.S. interest rates.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 58,
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S1",
+        "factId": "F11",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 58
+        "score": 71
       },
       "provenanceFactMatches": [
         {
-          "factId": "F7",
-          "sourceId": "S1",
+          "factId": "F11",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 58,
+          "score": 71,
           "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF7",
-      "evidence": "SPY crushed Bitcoin over five years, gaining 61% on price alone while Bitcoin managed just 7%, turning $10,000 into $16,144 versus $10,740.",
-      "bestPassage": "SPY crushed Bitcoin over five years, gaining 61% on price alone while Bitcoin managed just 7%, turning $10,000 into $16,144 versus $10,740.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Bitcoin briefly traded near $62,000 before recovering toward $65,000, gaining +0.66% over the day, reflecting a volatile market shaped by institutional withdrawals, forced liquidations and expectations of higher U.S. interest rates.",
+      "bestPassage": "Bitcoin briefly traded near $62,000 before recovering toward $65,000, gaining +0.66% over the day, reflecting a volatile market shaped by institutional withdrawals, forced liquidations and expectations of higher U.S. interest rates.",
       "matchedPassages": [
-        "S1-P7"
+        "S2-BODY",
+        "S2-P3"
       ],
       "sharedTerms": [
-        "btc",
-        "price",
-        "five",
-        "year",
-        "spy",
-        "alone"
+        "the",
+        "follow",
+        "sharp",
+        "overnight",
+        "decline",
+        "and",
+        "institutional",
+        "withdrawal",
+        "forc",
+        "liquidation",
+        "expectation",
+        "higher",
+        "interest",
+        "rat"
       ],
-      "entityShared": [
-        "btc",
-        "spy"
-      ],
-      "topicShared": [
-        "btc",
-        "the"
-      ],
+      "entityShared": [],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -127,63 +130,64 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 2,
-      "claim": "That translates to a $10,000 investment growing to $10,740 in Bitcoin versus $16,144 in SPY.",
+      "claim": "The movement did not coincide with Sunday ETF redemptions but reflected preceding trading‑session flows.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S1",
+        "factId": "F18",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 68
+        "score": 73
       },
       "provenanceFactMatches": [
         {
-          "factId": "F7",
-          "sourceId": "S1",
+          "factId": "F18",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 2
+          "score": 73,
+          "passageIndex": 19
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "SPY crushed Bitcoin over five years, gaining 61% on price alone while Bitcoin managed just 7%, turning $10,000 into $16,144 versus $10,740.",
-      "bestPassage": "SPY crushed Bitcoin over five years, gaining 61% on price alone while Bitcoin managed just 7%, turning $10,000 into $16,144 versus $10,740.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "These are preceding trading-session flows, not Sunday ETF redemptions.",
+      "bestPassage": "These are preceding trading-session flows, not Sunday ETF redemptions.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P7"
+        "S2-BODY",
+        "S2-P10"
       ],
       "sharedTerms": [
-        "000",
-        "invest",
-        "740",
-        "btc",
-        "versu",
-        "144",
-        "spy"
+        "the",
+        "not",
+        "sunday",
+        "etf",
+        "redemption",
+        "but",
+        "reflect",
+        "preced",
+        "trad",
+        "session",
+        "flow"
       ],
       "entityShared": [
-        "btc",
-        "spy"
+        "sunday",
+        "etf"
       ],
-      "topicShared": [
-        "invest",
-        "btc"
-      ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -199,62 +203,58 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 3,
-      "claim": "The index fund’s higher return reflects a broader market rally that Bitcoin has not matched.",
+      "claim": "Solana and other major digital assets also failed to find stable footing.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 63,
+      "confidence": 66,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S1",
+        "factId": "F10",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 44
+        "score": 63
       },
       "provenanceFactMatches": [
         {
-          "factId": "F9",
-          "sourceId": "S1",
+          "factId": "F10",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 44,
-          "passageIndex": 6
+          "score": 63,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin.",
-      "bestPassage": "Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin.",
+      "bestPassageId": "S2-P2",
+      "evidence": "Cryptocurrency markets remained under pressure Sunday, November 15, as Bitcoin recovered from a sharp overnight decline while Ethereum, Solana and other major digital assets struggled to stabilize.",
+      "bestPassage": "Cryptocurrency markets remained under pressure Sunday, November 15, as Bitcoin recovered from a sharp overnight decline while Ethereum, Solana and other major digital assets struggled to stabilize.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P9"
+        "S2-P2",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "index",
-        "fund",
-        "return",
-        "btc",
-        "has",
-        "not",
-        "match"
+        "solana",
+        "and",
+        "other",
+        "major",
+        "asset"
       ],
       "entityShared": [
-        "btc"
+        "solana"
       ],
       "topicShared": [
-        "the",
-        "btc"
+        "solana"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -269,7 +269,7 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
+      "factCoverage": 1,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -277,138 +277,138 @@
     },
     {
       "index": 4,
-      "claim": "Bitcoin pays no dividends, so its total return relies entirely on price appreciation.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 84,
+      "claim": "More than $1.3 billion in crypto futures were liquidated within a 24‑hour period, with about $677 million of those liquidations occurring on Bitcoin.S. spot Bitcoin ETFs, a strong dollar, rising Treasury yields above 5 %, and thin order books, pushed the market into a period of extreme fear.",
+      "status": "unsupported",
+      "classification": "contradicted",
+      "confidence": 28,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Crypto news, November 13: bitcoin down 6%, over $1.3 billion liquidated",
+      "bestUrl": "https://cryptoticker.io/en/crypto-news-bitcoin-crash-liquidations-etf-outflows-november-13-2026/",
+      "bestDomain": "cryptoticker.io",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 68
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F12",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 10
-        },
-        {
-          "factId": "F46",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 5
-        }
-      ],
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Bitcoin pays no dividends, so its return depends entirely on what the next buyer will pay. Bitcoin pays no dividends, so its return depends entirely on what the next buyer will pay.",
-      "bestPassage": "Bitcoin pays no dividends, so its return depends entirely on what the next buyer will pay. Bitcoin pays no dividends, so its return depends entirely on what the next buyer will pay.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P12"
-      ],
+      "evidence": "At 07:30 UTC on November 13, 2026, bitcoin traded at about $69,000, down a little over 6% in 24 hours, after touching an intraday low of $67,922 according to CoinGecko. Based on CoinGlass data analysed by CoinDesk early Friday, more than $1.3 billion in crypto futures were liquidated within 24 hours, about $677 million of them on bitcoin. Per Cointelegraph, data from 10x Research show bitcoin fell 5.9% between November 5 and 12, while the 10-year Treasury yield climbed above 5%. Crypto news at a glance: bitcoin, ether, BNB and XRP this morning Losses run through the large caps, but not evenly. The Crypto Fear and Greed Index from alternative.me reads 20 on Friday, which is \"Extreme Fear\", down from 28 the day before. This crypto news roundup sets out what is driving the move: forced selling of leveraged positions, outflows from US spot bitcoin ETFs, a strong dollar with rising Treasury yields, and thin order books. If you are asking why is crypto down today, our running explainer tracks every sell-off of the year. For medium-term scenarios, see our bitcoin price prediction and ethereum price prediction.",
+      "bestPassage": "At 07:30 UTC on November 13, 2026, bitcoin traded at about $69,000, down a little over 6% in 24 hours, after touching an intraday low of $67,922 according to CoinGecko. Based on CoinGlass data analysed by CoinDesk early Friday, more than $1.3 billion in crypto futures were liquidated within 24 hours, about $677 million of them on bitcoin. Per Cointelegraph, data from 10x Research show bitcoin fell 5.9% between November 5 and 12, while the 10-year Treasury yield climbed above 5%. Crypto news at a glance: bitcoin, ether, BNB and XRP this morning Losses run through the large caps, but not evenly. The Crypto Fear and Greed Index from alternative.me reads 20 on Friday, which is \"Extreme Fear\", down from 28 the day before. This crypto news roundup sets out what is driving the move: forced selling of leveraged positions, outflows from US spot bitcoin ETFs, a strong dollar with rising Treasury yields, and thin order books. If you are asking why is crypto down today, our running explainer tracks every sell-off of the year. For medium-term scenarios, see our bitcoin price prediction and ethereum price prediction.",
+      "matchedPassages": [],
       "sharedTerms": [
+        "billion",
+        "crypto",
+        "futur",
+        "were",
+        "liquidat",
+        "within",
+        "hour",
+        "677",
+        "million",
         "btc",
-        "pays",
-        "dividend",
-        "its",
-        "total",
-        "return",
-        "entirely",
-        "price"
+        "spot",
+        "etfs",
+        "strong",
+        "dollar",
+        "rise",
+        "treasury",
+        "yield",
+        "above",
+        "and",
+        "thin",
+        "order",
+        "book",
+        "the",
+        "extreme",
+        "fear"
       ],
       "entityShared": [
-        "btc"
+        "etfs",
+        "treasury"
       ],
       "topicShared": [
-        "btc"
+        "crypto",
+        "btc",
+        "market"
       ],
       "numericMismatch": false,
-      "contradicted": false,
+      "contradicted": true,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 0,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "semantic-context-evidence-pack"
     },
     {
       "index": 5,
-      "claim": "SPY distributes dividends from its underlying companies, and when those dividends are reinvested, the five‑year total return reaches about 72.6%.",
+      "claim": "The Crypto Fear and Greed Index read 20 on Friday, labeled “Extreme Fear,” a drop from 28 the day before.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 84,
+      "confidence": 93,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
+      "bestSource": "Crypto news, November 13: bitcoin down 6%, over $1.3 billion liquidated",
+      "bestUrl": "https://cryptoticker.io/en/crypto-news-bitcoin-crash-liquidations-etf-outflows-november-13-2026/",
+      "bestDomain": "cryptoticker.io",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F14",
+        "factId": "F5",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 68
+        "score": 93
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
+          "factId": "F5",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 10
+          "score": 93,
+          "passageIndex": 32
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "With those dividends reinvested, SPY's five-year total return was about 72.6%, which would have grown $10,000 to roughly $17,260.",
-      "bestPassage": "With those dividends reinvested, SPY's five-year total return was about 72.6%, which would have grown $10,000 to roughly $17,260.",
+      "bestPassageId": "S1-FF5",
+      "evidence": "The Crypto Fear and Greed Index from alternative.me reads 20 on Friday, which is \"Extreme Fear\", down from 28 the day before.",
+      "bestPassage": "The Crypto Fear and Greed Index from alternative.me reads 20 on Friday, which is \"Extreme Fear\", down from 28 the day before.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P14"
+        "S1-P5",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "spy",
-        "dividend",
-        "its",
-        "underly",
-        "compani",
-        "and",
-        "those",
-        "reinvest",
         "the",
-        "five",
-        "year",
-        "total",
-        "return"
+        "crypto",
+        "fear",
+        "and",
+        "gre",
+        "index",
+        "read",
+        "friday",
+        "extreme",
+        "day"
       ],
       "entityShared": [
-        "spy"
+        "the",
+        "crypto",
+        "fear",
+        "gre",
+        "index",
+        "friday",
+        "extreme"
       ],
       "topicShared": [
-        "the"
+        "crypto"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -431,54 +431,71 @@
     },
     {
       "index": 6,
-      "claim": "That would turn a $10,000 stake into roughly $17,260, outperforming Bitcoin’s price‑only gain.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 33,
+      "claim": "Despite Bitcoin’s modest recovery, the Crypto Fear & Greed Index fell to 12 on November 15, still classified as extreme fear.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F14",
-        "sourceId": "S1",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 33
+        "score": 86
       },
       "provenanceFactMatches": [
         {
           "factId": "F14",
-          "sourceId": "S1",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 33,
-          "passageIndex": 10
+          "score": 86,
+          "passageIndex": 24
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF14",
-      "evidence": "With those dividends reinvested, SPY's five-year total return was about 72.6%, which would have grown $10,000 to roughly $17,260.",
-      "bestPassage": "With those dividends reinvested, SPY's five-year total return was about 72.6%, which would have grown $10,000 to roughly $17,260.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Meanwhile, the Crypto Fear & Greed Index fell to 12 on November 15 , classified as extreme fear.",
+      "bestPassage": "Meanwhile, the Crypto Fear & Greed Index fell to 12 on November 15 , classified as extreme fear.",
       "matchedPassages": [
-        "S1-P14"
+        "S2-BODY",
+        "S2-P6"
       ],
       "sharedTerms": [
-        "000",
-        "roughly",
-        "260"
+        "despite",
+        "btc",
+        "recovery",
+        "the",
+        "crypto",
+        "fear",
+        "gre",
+        "index",
+        "fall",
+        "november",
+        "classifi",
+        "extreme"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "btc",
+        "crypto",
+        "fear",
+        "gre",
+        "index",
+        "november"
+      ],
       "topicShared": [
-        "btc"
+        "btc",
+        "crypto",
+        "november"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "only"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
@@ -496,449 +513,231 @@
     },
     {
       "index": 7,
-      "claim": "Because Bitcoin’s price movements are steep, a loss can take many years to recover.",
+      "claim": "Expectations surrounding the Federal Reserve’s December policy meeting remain another source of uncertainty, as market participants weigh potential interest‑rate hikes against the backdrop of ongoing institutional withdrawals.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 50,
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F17",
-        "sourceId": "S1",
+        "factId": "F13",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 45
+        "score": 75
       },
       "provenanceFactMatches": [
         {
-          "factId": "F17",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 45,
-          "passageIndex": 11
-        },
-        {
-          "factId": "F50",
+          "factId": "F13",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 42,
-          "passageIndex": 6
+          "score": 75,
+          "passageIndex": 25
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF17,S2-FF50",
-      "evidence": "A loss on Bitcoin's scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here). A loss on Bitcoin&#8217;s scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here ).",
-      "bestPassage": "A loss on Bitcoin's scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here). A loss on Bitcoin&#8217;s scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here ).",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Expectations surrounding the Federal Reserve’s December policy meeting remain another source of uncertainty.",
+      "bestPassage": "Expectations surrounding the Federal Reserve’s December policy meeting remain another source of uncertainty.",
       "matchedPassages": [
-        "S1-P17"
+        "S2-BODY",
+        "S2-P5"
       ],
       "sharedTerms": [
-        "btc",
-        "lose",
-        "year",
-        "recover"
+        "expectation",
+        "surround",
+        "the",
+        "federal",
+        "reserve",
+        "december",
+        "policy",
+        "meet",
+        "remain",
+        "source",
+        "uncertainty",
+        "market",
+        "interest",
+        "institutional",
+        "withdrawal"
       ],
       "entityShared": [
-        "btc"
+        "expectation",
+        "federal",
+        "reserve",
+        "december"
       ],
       "topicShared": [
-        "btc"
+        "market"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 8,
-      "claim": "For retirees who need regular income, a cash payout from dividends can be critical.",
+      "claim": "Investors will observe whether Bitcoin’s rebound endures amid renewed selling pressure, whether ETF withdrawals moderate, and whether leveraged liquidations subside.Investors will watch whether Bitcoin’s rebound survives renewed selling, whether ETF withdrawals moderate and whether leveraged liquidations subside.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 81,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S1",
+        "factId": "F12",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 56
+        "score": 91
       },
       "provenanceFactMatches": [
         {
-          "factId": "F16",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 56,
-          "passageIndex": 10
-        },
-        {
-          "factId": "F49",
+          "factId": "F12",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 56,
-          "passageIndex": 5
+          "score": 91,
+          "passageIndex": 25
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "For retirees who draw income from their portfolios, a cash payout makes a real difference. For retirees who draw income from their portfolios, a cash payout makes a real difference.",
-      "bestPassage": "For retirees who draw income from their portfolios, a cash payout makes a real difference. For retirees who draw income from their portfolios, a cash payout makes a real difference.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Investors will watch whether Bitcoin’s rebound survives renewed selling, whether ETF withdrawals moderate and whether leveraged liquidations subside.",
+      "bestPassage": "Investors will watch whether Bitcoin’s rebound survives renewed selling, whether ETF withdrawals moderate and whether leveraged liquidations subside.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P16"
+        "S2-BODY",
+        "S2-P4"
       ],
       "sharedTerms": [
-        "for",
-        "retire",
-        "who",
-        "need",
-        "income",
-        "cash",
-        "payout",
-        "dividend",
-        "can"
+        "invest",
+        "whether",
+        "btc",
+        "rebound",
+        "renew",
+        "sell",
+        "pressure",
+        "etf",
+        "withdrawal",
+        "moderate",
+        "and",
+        "leverag",
+        "liquidation",
+        "subside",
+        "watch",
+        "surviv"
       ],
-      "entityShared": [],
-      "topicShared": [],
+      "entityShared": [
+        "invest",
+        "btc",
+        "etf"
+      ],
+      "topicShared": [
+        "btc",
+        "rebound"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
       "index": 9,
-      "claim": "A significant drawdown in Bitcoin could leave a retiree unable to replace lost gains, a risk that planners term sequence‑of‑returns risk.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 63,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F17",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 58
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F17",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 58,
-          "passageIndex": 11
-        },
-        {
-          "factId": "F50",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 58,
-          "passageIndex": 6
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF17,S2-FF50",
-      "evidence": "A loss on Bitcoin's scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here). A loss on Bitcoin&#8217;s scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here ).",
-      "bestPassage": "A loss on Bitcoin's scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here). A loss on Bitcoin&#8217;s scale takes years to recover from, and a retiree selling assets to cover living costs may never get those years (that early-withdrawal damage is exactly what planners call sequence-of-returns risk, and we walked through how to protect against it in a free guide here ).",
-      "matchedPassages": [
-        "S1-P17"
-      ],
-      "sharedTerms": [
-        "btc",
-        "retiree",
-        "lose",
-        "risk",
-        "planner",
-        "sequence",
-        "return"
-      ],
-      "entityShared": [
-        "btc"
-      ],
-      "topicShared": [
-        "btc"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "significant"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 10,
-      "claim": "While Bitcoin is often praised for its ability to generate wealth, the matched five‑year numbers favor a plain index fund by a wide margin.",
+      "claim": "The latest data show Bitcoin has regained a modest foothold after a week of liquidations and institutional withdrawals, but the broader market remains under pressure.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 82,
+      "confidence": 77,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F9",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 82
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F9",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F42",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF9,S2-FF42",
-      "evidence": "Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin. Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin.",
-      "bestPassage": "Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin. Bitcoin is known for making wealth, but the matched five-year numbers favor the plain index fund by a wide margin.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P9"
-      ],
-      "sharedTerms": [
-        "btc",
-        "for",
-        "wealth",
-        "the",
-        "match",
-        "five",
-        "year",
-        "number",
-        "favor",
-        "plain",
-        "index",
-        "fund",
-        "wide",
-        "margin"
-      ],
-      "entityShared": [
-        "btc"
-      ],
-      "topicShared": [
-        "btc",
-        "the"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 11,
-      "claim": "Over the same period, SPY’s price climbed from $467.27 on November 12, 2021 to $754.37 on November 13, 2026, a 61.44% gain.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 89,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 89
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F10",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 89,
-          "passageIndex": 8
-        },
-        {
-          "factId": "F43",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 89,
-          "passageIndex": 3
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF10,S2-FF43",
-      "evidence": "Over nearly the same window, SPY rose from $467.27 on November 12, 2021 to $754.37 on November 13, 2026, a price gain of 61.44%. Over nearly the same window, SPY rose from $467.27 on November 12, 2021 to $754.37 on November 13, 2026, a price gain of 61.44%.",
-      "bestPassage": "Over nearly the same window, SPY rose from $467.27 on November 12, 2021 to $754.37 on November 13, 2026, a price gain of 61.44%. Over nearly the same window, SPY rose from $467.27 on November 12, 2021 to $754.37 on November 13, 2026, a price gain of 61.44%.",
-      "matchedPassages": [
-        "S1-P10"
-      ],
-      "sharedTerms": [
-        "the",
-        "same",
-        "spy",
-        "price",
-        "467",
-        "november",
-        "2021",
-        "754",
-        "2026",
-        "gain"
-      ],
-      "entityShared": [
-        "spy",
-        "november"
-      ],
-      "topicShared": [
-        "the"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 12,
-      "claim": "Over ten years, SPY’s price gain reaches 245.6%.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 82,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You - Yahoo Finance",
-      "bestUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-stocks-crypto-really-170536928.html",
-      "bestDomain": "finance.yahoo.com",
-      "sourceId": "S1",
+      "bestSource": "Crypto Markets Today, November 15, 2026: Bitcoin Rebounds From $62,000 as Ethereum, Solana Slide - Eurasia Business News",
+      "bestUrl": "https://eurasiabusinessnews.com/2026/11/16/crypto-markets-today-november-15-2026-bitcoin-rebounds-from-62000-as-ethereum-solana-slide/",
+      "bestDomain": "eurasiabusinessnews.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F11",
-        "sourceId": "S1",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 82
+        "score": 47
       },
       "provenanceFactMatches": [
         {
           "factId": "F11",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 9
-        },
-        {
-          "factId": "F45",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 4
+          "score": 47,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 38,
+          "passageIndex": 2
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF11,S2-FF45",
-      "evidence": "Over ten years, SPY's price gain comes to 245.6%. Over ten years, SPY&#8217;s price gain comes to 245.6%.",
-      "bestPassage": "Over ten years, SPY's price gain comes to 245.6%. Over ten years, SPY&#8217;s price gain comes to 245.6%.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Bitcoin briefly traded near $62,000 before recovering toward $65,000, gaining +0.66% over the day, reflecting a volatile market shaped by institutional withdrawals, forced liquidations and expectations of higher U.S. interest rates. Cryptocurrency markets remained under pressure Sunday, November 15, as Bitcoin recovered from a sharp overnight decline while Ethereum, Solana and other major digital assets struggled to stabilize.",
+      "bestPassage": "Bitcoin briefly traded near $62,000 before recovering toward $65,000, gaining +0.66% over the day, reflecting a volatile market shaped by institutional withdrawals, forced liquidations and expectations of higher U.S. interest rates. Cryptocurrency markets remained under pressure Sunday, November 15, as Bitcoin recovered from a sharp overnight decline while Ethereum, Solana and other major digital assets struggled to stabilize.",
       "matchedPassages": [
-        "S1-P11"
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "ten",
-        "year",
-        "spy",
-        "price",
-        "gain",
-        "245"
+        "the",
+        "data",
+        "show",
+        "btc",
+        "week",
+        "liquidation",
+        "and",
+        "institutional",
+        "withdrawal",
+        "but",
+        "market",
+        "remain",
+        "pressure"
       ],
       "entityShared": [
-        "spy"
+        "btc"
       ],
-      "topicShared": [],
+      "topicShared": [
+        "btc",
+        "market"
+      ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -954,76 +753,17 @@
       },
       "factCoverage": 2,
       "multiFactSupported": true,
-      "directFactExact": true,
-      "directExact": true,
+      "directFactExact": false,
+      "directExact": false,
       "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 13,
-      "claim": "The evidence shows that a Bitcoin investment bought at $36,163.47 on November 16, 2023 increased by 79.37% up to the 2023-2024 recovery.The evidence indicates that a Bitcoin investment bought at $36,163.47 on November 16, 2023 increased by 79.37%.The evidence shows that a Bitcoin investment bought at $36,163.47 on November 16, 2023 increased by 79.37%.",
-      "type": "synthesis",
-      "status": "verified",
-      "classification": "supported_synthesis",
-      "confidence": 78,
-      "sourceId": "S1",
-      "sourceRole": "SYNTHESIS",
-      "coreFactMatch": null,
-      "synthesisFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "score": 78,
-          "passageIndex": 13
-        },
-        {
-          "factId": "F31",
-          "sourceId": "S2",
-          "score": 78,
-          "passageIndex": 8
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-P14,S2-P9",
-      "evidence": "Anyone who bought Bitcoin at $36,163.47 on November 16, 2023 is up 79.37%, thanks to the 2023 to 2024 recovery. Anyone who bought Bitcoin at $36,163.47 on November 16, 2023 is up 79.37%, thanks to the 2023 to 2024 recovery.",
-      "bestPassage": "Anyone who bought Bitcoin at $36,163.47 on November 16, 2023 is up 79.37%, thanks to the 2023 to 2024 recovery. Anyone who bought Bitcoin at $36,163.47 on November 16, 2023 is up 79.37%, thanks to the 2023 to 2024 recovery.",
-      "matchedPassages": [
-        "S1-P14",
-        "S2-P9"
-      ],
-      "sharedTerms": [
-        "the",
-        "btc",
-        "bought",
-        "163",
-        "november",
-        "2023",
-        "2024",
-        "recovery"
-      ],
-      "entityShared": [
-        "btc",
-        "november"
-      ],
-      "topicShared": [
-        "the",
-        "btc",
-        "invest"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "matchingMode": "fact-map-multi-fact-source-passage-synthesis"
     }
   ],
-  "editorial": []
+  "editorial": [
+    {
+      "index": 10,
+      "claim": "Investors should remain cautious, monitor liquidity flows, ETF activity, and Fed policy signals, and stay aware that the current sentiment remains in a zone of extreme fear.",
+      "type": "editorial-analysis",
+      "status": "editorial-excluded"
+    }
+  ]
 }
