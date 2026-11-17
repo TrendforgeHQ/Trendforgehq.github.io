@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-16T14:20:57.998Z",
-  "articlePath": "content/articles/senator-criticizes-commerce-secretary-over-nvidia-chip-flow-to-china.md",
-  "articleTitle": "Senator Criticizes Commerce Secretary Over Nvidia Chip Flow to China",
+  "generatedAt": "2026-11-17T01:21:07.720Z",
+  "articlePath": "content/articles/u-s-expands-export-controls-to-include-cloud-ai-compute.md",
+  "articleTitle": "U.S. Expands Export Controls to Include Cloud AI Compute",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 3,
-  "usableSourceCount": 3,
-  "claimCount": 16,
-  "editorialCount": 1,
-  "verified": 13,
-  "partial": 3,
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 11,
+  "editorialCount": 2,
+  "verified": 7,
+  "partial": 4,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 87,
+  "averageConfidence": 79,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,206 +45,89 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "url": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "domain": "cnbc.com",
-      "passageCount": 9,
-      "articleBodyLength": 1174
+      "title": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "domain": "tomshardware.com",
+      "passageCount": 16,
+      "articleBodyLength": 2304
     },
     {
       "id": "S2",
-      "title": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "url": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "domain": "theverge.com",
-      "passageCount": 5,
-      "articleBodyLength": 1402
-    },
-    {
-      "id": "S3",
-      "title": "Cantwell says Commerce let advanced AI chips flow to China-linked companies and presses Lutnick to enforce export controls - MLQ.ai",
-      "url": "https://mlq.ai/news/cantwell-says-commerce-let-advanced-ai-chips-flow-to-china-linked-companies-and-presses-lutnick-to-enforce-export-controls/",
-      "domain": "mlq.ai",
-      "passageCount": 17,
-      "articleBodyLength": 2250
+      "title": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
+      "url": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+      "domain": "techcrunch.com",
+      "passageCount": 4,
+      "articleBodyLength": 892
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "On a recent letter to Commerce Secretary Howard Lutnick, Senator Maria Cantwell, a leading Democrat on the Senate commerce committee, charged the Department of Commerce (DOC) with neglecting to enforce protections meant to keep Nvidia’s high‑end AI chips out of China.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 89,
+      "claim": "House has passed the Remote Access Security Act, which adds cloud computing to the list of export‑controlled activities involving powerful AI chips from AMD and Nvidia.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 80,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S2",
+        "factId": "F6",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 87
+        "score": 66
       },
       "provenanceFactMatches": [
         {
-          "factId": "F10",
-          "sourceId": "S2",
+          "factId": "F6",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 87,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Washington Senator Maria Cantwell, one of the top Democrats on the Senate commerce committee, has taken fire at the Department of Commerce (DOC) under Secretary Howard Lutnick for neglecting to enforce protections intended to keep Nvidia’s AI chips away from China.",
-      "bestPassage": "Washington Senator Maria Cantwell, one of the top Democrats on the Senate commerce committee, has taken fire at the Department of Commerce (DOC) under Secretary Howard Lutnick for neglecting to enforce protections intended to keep Nvidia’s AI chips away from China.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P1"
-      ],
-      "sharedTerms": [
-        "letter",
-        "commerce",
-        "secretary",
-        "howard",
-        "lutnick",
-        "senator",
-        "maria",
-        "cantwell",
-        "democrat",
-        "the",
-        "senate",
-        "committee",
-        "department",
-        "doc",
-        "neglect",
-        "enforce",
-        "protection",
-        "keep",
-        "nvidia",
-        "chip",
-        "china"
-      ],
-      "entityShared": [
-        "commerce",
-        "secretary",
-        "howard",
-        "lutnick",
-        "senator",
-        "maria",
-        "cantwell",
-        "democrat",
-        "senate",
-        "department",
-        "doc",
-        "nvidia",
-        "china"
-      ],
-      "topicShared": [
-        "commerce",
-        "secretary",
-        "senator",
-        "nvidia",
-        "chip",
-        "china"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 2,
-      "claim": "Cantwell’s letter also criticizes the DOC for allowing Alibaba and ByteDance to acquire Nvidia chips through overseas data centers and for extending a loophole that enabled restricted companies to obtain U.S. technology through subsidiaries.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 95,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F13",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 95
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F13",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 95,
-          "passageIndex": 4
+          "score": 66,
+          "passageIndex": 21
         },
         {
-          "factId": "F24",
-          "sourceId": "S3",
+          "factId": "F2",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 86,
-          "passageIndex": 4
+          "score": 55,
+          "passageIndex": 26
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-FF13,S3-FF24",
-      "evidence": "Cantwell also criticizes the DOC for allowing Alibaba and ByteDance to access Nvidia chips through overseas data centers, and extending a loophole that let restricted companies obtain American AI technology through subsidiaries. Cantwell also criticized Commerce for letting Alibaba and ByteDance use Nvidia chips through overseas data centers and for extending a loophole that let restricted companies obtain U.S.",
-      "bestPassage": "Cantwell also criticizes the DOC for allowing Alibaba and ByteDance to access Nvidia chips through overseas data centers, and extending a loophole that let restricted companies obtain American AI technology through subsidiaries. Cantwell also criticized Commerce for letting Alibaba and ByteDance use Nvidia chips through overseas data centers and for extending a loophole that let restricted companies obtain U.S.",
+      "bestPassageId": "S1-FF6,S1-FF2",
+      "evidence": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware. It's remote access to this hardware that the Remote Access Security Act aims to curb.",
+      "bestPassage": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware. It's remote access to this hardware that the Remote Access Security Act aims to curb.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P4"
+        "S1-BODY",
+        "S1-P6"
       ],
       "sharedTerms": [
-        "cantwell",
-        "criticiz",
         "the",
-        "doc",
-        "for",
-        "allow",
-        "alibaba",
-        "and",
-        "bytedance",
-        "nvidia",
+        "remote",
+        "acces",
+        "security",
+        "act",
+        "cloud",
+        "comput",
+        "export",
         "chip",
-        "oversea",
-        "data",
-        "center",
-        "extend",
-        "loophole",
-        "restrict",
-        "compani",
-        "obtain",
-        "subsidiari"
+        "amd",
+        "and",
+        "nvidia"
       ],
       "entityShared": [
-        "cantwell",
-        "doc",
-        "alibaba",
-        "bytedance",
+        "remote",
+        "acces",
+        "security",
+        "act",
+        "amd",
         "nvidia"
       ],
       "topicShared": [
-        "for",
-        "nvidia",
+        "export",
         "chip"
       ],
       "numericMismatch": false,
@@ -252,13 +135,13 @@
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
+        "evidenceUncertain": true,
         "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
-        "certaintyEscalation": false,
+        "certaintyEscalation": true,
         "attributionDropped": false,
-        "blocked": false
+        "blocked": true
       },
       "factCoverage": 2,
       "multiFactSupported": true,
@@ -267,160 +150,58 @@
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 3,
-      "claim": "The letter was sent just before a high‑profile meeting between President Trump and President Xi Jinping.",
+      "index": 2,
+      "claim": "The bill requires firms to obtain licenses when they may provide compute to China or other restricted countries, closing a loophole that companies in China have used to access hardware.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 88,
+      "confidence": 68,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Cantwell says Commerce let advanced AI chips flow to China-linked companies and presses Lutnick to enforce export controls - MLQ.ai",
-      "bestUrl": "https://mlq.ai/news/cantwell-says-commerce-let-advanced-ai-chips-flow-to-china-linked-companies-and-presses-lutnick-to-enforce-export-controls/",
-      "bestDomain": "mlq.ai",
-      "sourceId": "S3",
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S3",
+        "factId": "F6",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 73
+        "score": 57
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
-          "sourceId": "S2",
+          "factId": "F6",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F16",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 2
+          "score": 57,
+          "passageIndex": 21
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-FF14,S3-FF16",
-      "evidence": "The letter comes ahead of a meeting in China this Thursday between US President Donald Trump and Chinese President Xi Jinping. She sent the letter ahead of President Trump's meeting with Chinese President Xi Jinping in China on Thursday, Nov.",
-      "bestPassage": "The letter comes ahead of a meeting in China this Thursday between US President Donald Trump and Chinese President Xi Jinping. She sent the letter ahead of President Trump's meeting with Chinese President Xi Jinping in China on Thursday, Nov.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware.",
+      "bestPassage": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P2"
+        "S1-BODY",
+        "S1-P6"
       ],
       "sharedTerms": [
         "the",
-        "letter",
-        "sent",
-        "meet",
-        "president",
-        "trump",
-        "and",
-        "jinp"
+        "bill",
+        "compute",
+        "china",
+        "clos",
+        "loophole",
+        "compani",
+        "acces",
+        "hardware"
       ],
       "entityShared": [
-        "president",
-        "trump",
-        "jinp"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 4,
-      "claim": "Cantwell points to a conflict of interest: the financial services firm Cantor Fitzgerald, formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 98,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 98
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F11",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 98,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-FF11",
-      "evidence": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
-      "bestPassage": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
-      "matchedPassages": [
-        "S2-P2",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "cantwell",
-        "interest",
-        "the",
-        "financial",
-        "servic",
-        "firm",
-        "cantor",
-        "fitzgerald",
-        "formerly",
-        "led",
-        "lutnick",
-        "and",
-        "steer",
-        "his",
-        "sons",
-        "report",
-        "held",
-        "billion",
-        "nvidia",
-        "stock",
-        "time",
-        "nomination",
-        "for",
-        "commerce",
-        "secretary"
-      ],
-      "entityShared": [
-        "cantwell",
-        "cantor",
-        "fitzgerald",
-        "lutnick",
-        "nvidia",
-        "commerce",
-        "secretary"
+        "china"
       ],
       "topicShared": [
-        "nvidia",
-        "for",
-        "commerce",
-        "secretary"
+        "compute",
+        "compani"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -437,63 +218,66 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 5,
-      "claim": "The DOC has been accused of “putting business interests ahead of national security.”",
+      "index": 3,
+      "claim": "The legislation extends export controls on potent AI chips to cloud computing, a practice that has previously allowed Chinese companies to obtain the hardware indirectly.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 98,
+      "confidence": 70,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S2",
+        "factId": "F6",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 93
+        "score": 70
       },
       "provenanceFactMatches": [
         {
-          "factId": "F11",
-          "sourceId": "S2",
+          "factId": "F6",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 93,
-          "passageIndex": 5
+          "score": 70,
+          "passageIndex": 21
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
-      "bestPassage": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
+      "bestPassageId": "S1-P6",
+      "evidence": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware.",
+      "bestPassage": "The bill extends export controls on potent AI chips from the likes of AMD and Nvidia to cloud computing , a loophole that companies in China have allegedly used previously to access the hardware.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P2"
+        "S1-P6"
       ],
       "sharedTerms": [
         "the",
-        "doc",
-        "has",
-        "accus",
-        "putt",
-        "busines",
-        "interest",
-        "ahead",
-        "national",
-        "security"
+        "extend",
+        "export",
+        "control",
+        "potent",
+        "chip",
+        "cloud",
+        "comput",
+        "previously",
+        "compani",
+        "hardware"
       ],
-      "entityShared": [
-        "the",
-        "doc"
+      "entityShared": [],
+      "topicShared": [
+        "export",
+        "control",
+        "chip",
+        "chinese",
+        "compani"
       ],
-      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -514,171 +298,70 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 6,
-      "claim": "In response to questions about these allegations, Commerce spokeswoman Kristen Eichamer told CNBC that Lutnick had “no such conversation” in the Situation Room and that Lutnick had proactively agreed to appear voluntarily before the Banking Committee to address questions.",
+      "index": 4,
+      "claim": "The rule also imposes new licensing requirements for chip exports, reexports, or transfers to countries such as Malaysia, Singapore, Indonesia, Thailand, and Brazil.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 98,
+      "confidence": 97,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
+      "bestSource": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
+      "bestUrl": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
-        "sourceId": "S1",
+        "factId": "F20",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 83
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
-          "sourceId": "S1",
+          "factId": "F20",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 17
-        },
-        {
-          "factId": "F3",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 80,
-          "passageIndex": 5
+          "score": 94,
+          "passageIndex": 9
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF4,S1-FF3",
-      "evidence": "Eichamer, the Commerce spokeswoman, told CNBC on Friday that Lutnick \"has proactively agreed to appear voluntarily before the Banking Committee to address their questions.\" Commerce Department spokeswoman Kristen Eichamer on Wednesday told CNBC that Bessent and Lutnick had \"no such conversation\" in the Situation Room.",
-      "bestPassage": "Eichamer, the Commerce spokeswoman, told CNBC on Friday that Lutnick \"has proactively agreed to appear voluntarily before the Banking Committee to address their questions.\" Commerce Department spokeswoman Kristen Eichamer on Wednesday told CNBC that Bessent and Lutnick had \"no such conversation\" in the Situation Room.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "The rule also adds new licensing requirements for chip exports, reexports, or transfer of advanced semiconductors to Malaysia, Singapore, Indonesia, Thailand, and Brazil.",
+      "bestPassage": "The rule also adds new licensing requirements for chip exports, reexports, or transfer of advanced semiconductors to Malaysia, Singapore, Indonesia, Thailand, and Brazil.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P4",
-        "S1-P3"
-      ],
-      "sharedTerms": [
-        "question",
-        "commerce",
-        "spokeswoman",
-        "kristen",
-        "eichamer",
-        "told",
-        "cnbc",
-        "lutnick",
-        "had",
-        "such",
-        "conversation",
-        "the",
-        "situation",
-        "room",
-        "and",
-        "proactively",
-        "agre",
-        "appear",
-        "voluntarily",
-        "bank",
-        "committee",
-        "addres"
-      ],
-      "entityShared": [
-        "commerce",
-        "kristen",
-        "eichamer",
-        "cnbc",
-        "lutnick",
-        "situation",
-        "room",
-        "bank",
-        "committee"
-      ],
-      "topicShared": [
-        "commerce"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 7,
-      "claim": "The DOC did not respond to CNBC’s request for comment on Bessent’s remarks regarding chip leakage.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 95,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 87
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 87,
-          "passageIndex": 15
-        },
-        {
-          "factId": "F17",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 76,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The Commerce Department did not respond to CNBC's request for comment on Bessent's remarks. The Commerce Department did not immediately respond to CNBC's request for comment on Monday [1] .",
-      "bestPassage": "The Commerce Department did not respond to CNBC's request for comment on Bessent's remarks. The Commerce Department did not immediately respond to CNBC's request for comment on Monday [1] .",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P5"
+        "S2-BODY",
+        "S2-P4"
       ],
       "sharedTerms": [
         "the",
-        "did",
-        "not",
-        "respond",
-        "cnbc",
-        "request",
+        "rule",
+        "new",
+        "licens",
+        "requirement",
         "for",
-        "comment",
-        "bessent",
-        "remark",
         "chip",
-        "leakage"
+        "export",
+        "reexport",
+        "transfer",
+        "countri",
+        "malaysia",
+        "singapore",
+        "indonesia",
+        "thailand",
+        "and",
+        "brazil"
       ],
       "entityShared": [
-        "the",
-        "cnbc",
-        "bessent"
+        "malaysia",
+        "singapore",
+        "indonesia",
+        "thailand",
+        "brazil"
       ],
       "topicShared": [
-        "for",
-        "chip"
+        "chip",
+        "export"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -693,66 +376,55 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 8,
-      "claim": "Treasury Secretary Scott Bessent, in a separate interview, acknowledged that “there is a lot of leakage in the system” and that the Treasury is working to close it down.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 77,
+      "index": 5,
+      "claim": "This expansion aims to prevent remote access to controlled technology.",
+      "status": "partial",
+      "classification": "uncertain",
+      "confidence": 49,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
+        "factId": "F2",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 73
+        "score": 44
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 73,
-          "passageIndex": 12
+          "score": 44,
+          "passageIndex": 26
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Asked if he believes Nvidia's highest-level processors have made it to China using the Singapore-based Megaspeed as a pass-through, Bessent said, \"I think that there is a lot of leakage in the system, and we are constantly working to close that down.\"",
-      "bestPassage": "Asked if he believes Nvidia's highest-level processors have made it to China using the Singapore-based Megaspeed as a pass-through, Bessent said, \"I think that there is a lot of leakage in the system, and we are constantly working to close that down.\"",
+      "evidence": "It's remote access to this hardware that the Remote Access Security Act aims to curb.",
+      "bestPassage": "It's remote access to this hardware that the Remote Access Security Act aims to curb.",
       "matchedPassages": [
         "S1-BODY",
-        "S1-P1"
+        "S1-P2"
       ],
       "sharedTerms": [
-        "secretary",
-        "bessent",
-        "lot",
-        "leakage",
-        "the",
-        "system",
-        "and",
-        "work",
-        "close",
-        "down"
+        "aims",
+        "remote",
+        "acces"
       ],
-      "entityShared": [
-        "bessent"
-      ],
-      "topicShared": [
-        "secretary"
-      ],
+      "entityShared": [],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -760,8 +432,226 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 6,
+      "claim": "U.S. lawmakers argue that closing these loopholes will strengthen national security and protect American innovation.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 89,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 85
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F5",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 85,
+          "passageIndex": 26
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Closing these loopholes will strengthen U.S. national security and protect American innovation.”",
+      "bestPassage": "Closing these loopholes will strengthen U.S. national security and protect American innovation.”",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P5"
+      ],
+      "sharedTerms": [
+        "lawmaker",
+        "clos",
+        "loophol",
+        "strengthen",
+        "national",
+        "security",
+        "and",
+        "protect",
+        "american",
+        "innovation"
+      ],
+      "entityShared": [
+        "american"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "The bill follows reports that a Shanghai‑based startup rented servers in Indonesia to acquire more than 2,300 banned Nvidia GPUs.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 88,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 88
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 88,
+          "passageIndex": 23
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF11",
+      "evidence": "According to an investigation by the Wall Street Journal, INF Tech, a Shanghai-based startup , had allegedly gained access to 2,300 banned Nvidia AI GPUs by renting a server in Indonesia.",
+      "bestPassage": "According to an investigation by the Wall Street Journal, INF Tech, a Shanghai-based startup , had allegedly gained access to 2,300 banned Nvidia AI GPUs by renting a server in Indonesia.",
+      "matchedPassages": [
+        "S1-P11"
+      ],
+      "sharedTerms": [
+        "the",
+        "shanghai",
+        "bas",
+        "startup",
+        "rent",
+        "server",
+        "indonesia",
+        "300",
+        "bann",
+        "nvidia",
+        "gpus"
+      ],
+      "entityShared": [
+        "shanghai",
+        "indonesia",
+        "nvidia",
+        "gpus"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 8,
+      "claim": "The GPUs were allegedly purchased after the startup secured a Chinese client, raising concerns about how foreign firms may circumvent restrictions.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 76,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F13",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 55
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F13",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 55,
+          "passageIndex": 23
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Perhaps more concerning for U.S. lawmakers, the GPUs were allegedly bought after the company had secured the Chinese outfit as a customer.",
+      "bestPassage": "Perhaps more concerning for U.S. lawmakers, the GPUs were allegedly bought after the company had secured the Chinese outfit as a customer.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P13"
+      ],
+      "sharedTerms": [
+        "the",
+        "gpus",
+        "were",
+        "alleg",
+        "startup",
+        "secure",
+        "chinese",
+        "restriction"
+      ],
+      "entityShared": [
+        "the",
+        "gpus",
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -774,628 +664,134 @@
     },
     {
       "index": 9,
-      "claim": "He said the Megaspeed blacklisting has stalled because Commerce “has the pen.” Bessent also noted that the story has so far focused on Jensen Huang’s personal foibles.",
+      "claim": "The act also addresses a specific case involving the Chinese company Megaspeed, which has reportedly been buying thousands of Nvidia chips to provide compute to Chinese businesses.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 95,
+      "confidence": 90,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
+      "bestSource": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
+      "bestUrl": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F18",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 78
+        "score": 87
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
+          "factId": "F18",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 78,
-          "passageIndex": 13
-        },
-        {
-          "factId": "F23",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 78,
-          "passageIndex": 3
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF2,S3-FF23",
-      "evidence": "\"The story has been thus far on Jensen Huang's personal foibles,\" Bessent told CNBC. Treasury Secretary Scott Bessent said last week that the Megaspeed blacklisting stalled because Commerce \"has the pen\" .",
-      "bestPassage": "\"The story has been thus far on Jensen Huang's personal foibles,\" Bessent told CNBC. Treasury Secretary Scott Bessent said last week that the Megaspeed blacklisting stalled because Commerce \"has the pen\" .",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
-      ],
-      "sharedTerms": [
-        "the",
-        "megaspe",
-        "blacklist",
-        "has",
-        "stall",
-        "commerce",
-        "pen",
-        "bessent",
-        "far",
-        "jensen",
-        "huang",
-        "personal",
-        "foibl"
-      ],
-      "entityShared": [
-        "megaspe",
-        "commerce",
-        "bessent",
-        "jensen",
-        "huang"
-      ],
-      "topicShared": [
-        "commerce"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 10,
-      "claim": "Lawmakers in both parties are also moving toward tighter AI chip export rules.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 94,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Cantwell says Commerce let advanced AI chips flow to China-linked companies and presses Lutnick to enforce export controls - MLQ.ai",
-      "bestUrl": "https://mlq.ai/news/cantwell-says-commerce-let-advanced-ai-chips-flow-to-china-linked-companies-and-presses-lutnick-to-enforce-export-controls/",
-      "bestDomain": "mlq.ai",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F27",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 94
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F27",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
+          "score": 87,
           "passageIndex": 6
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-P13",
-      "evidence": "Lawmakers in both parties are also moving toward tighter AI chip export rules .",
-      "bestPassage": "Lawmakers in both parties are also moving toward tighter AI chip export rules .",
-      "matchedPassages": [
-        "S3-P13",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "lawmaker",
-        "both",
-        "parti",
-        "are",
-        "mov",
-        "toward",
-        "tighter",
-        "chip",
-        "export",
-        "rul"
-      ],
-      "entityShared": [
-        "lawmaker"
-      ],
-      "topicShared": [
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 11,
-      "claim": "House Foreign Affairs Chairman Brian Mast has asked Jeff Kessler, Commerce’s under‑secretary for industry and security, to appear before his committee on December 1.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 99,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Bessent blames Lutnick’s Commerce as he slams Nvidia chip ‘leakage’ to China - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 97
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F7",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 97,
-          "passageIndex": 20
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "House Foreign Affairs Chairman Brian Mast, R-Fla., separately asked Jeff Kessler, Commerce's under secretary for industry and security, to appear before his committee on Dec.",
-      "bestPassage": "House Foreign Affairs Chairman Brian Mast, R-Fla., separately asked Jeff Kessler, Commerce's under secretary for industry and security, to appear before his committee on Dec.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P7"
-      ],
-      "sharedTerms": [
-        "house",
-        "foreign",
-        "affair",
-        "chairman",
-        "brian",
-        "mast",
-        "has",
-        "ask",
-        "jeff",
-        "kessler",
-        "commerce",
-        "secretary",
-        "for",
-        "and",
-        "security",
-        "appear",
-        "his",
-        "committee"
-      ],
-      "entityShared": [
-        "house",
-        "foreign",
-        "affair",
-        "chairman",
-        "brian",
-        "mast",
-        "jeff",
-        "kessler",
-        "commerce"
-      ],
-      "topicShared": [
-        "commerce",
-        "secretary",
-        "for"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 12,
-      "claim": "Meanwhile, a new initiative is expected to designate Nvidia, OpenAI, Anthropic, Amazon, and Microsoft as AI “national champions,” granting them expedited export license approvals to help them compete with Chinese technology firms.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 97,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 97
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F12",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 97,
-          "passageIndex": 7
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P3",
-      "evidence": "While Congress is looking to bolster export restrictions around AI chips, The Wall Street Journal reports that Lutnick is instead expected to unveil a new initiative that will designate Nvidia — along with companies including OpenAI, Anthropic, Amazon, and Microsoft — as an AI “national champion.” The designation reportedly aims to help these companies expand overseas and compete with Chinese technology firms by granting them expedited export licence approvals.",
-      "bestPassage": "While Congress is looking to bolster export restrictions around AI chips, The Wall Street Journal reports that Lutnick is instead expected to unveil a new initiative that will designate Nvidia — along with companies including OpenAI, Anthropic, Amazon, and Microsoft — as an AI “national champion.” The designation reportedly aims to help these companies expand overseas and compete with Chinese technology firms by granting them expedited export licence approvals.",
-      "matchedPassages": [
-        "S2-P3",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "new",
-        "initiative",
-        "expect",
-        "designate",
-        "nvidia",
-        "openai",
-        "anthropic",
-        "amazon",
-        "and",
-        "microsoft",
-        "national",
-        "champion",
-        "grant",
-        "them",
-        "expedit",
-        "export",
-        "approval",
-        "help",
-        "compete",
-        "chinese",
-        "firm"
-      ],
-      "entityShared": [
-        "nvidia",
-        "openai",
-        "anthropic",
-        "amazon",
-        "microsoft",
-        "chinese"
-      ],
-      "topicShared": [
-        "nvidia"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 13,
-      "claim": "The allegations suggest that existing export control mechanisms may be insufficient to prevent advanced AI chips from reaching Chinese firms that are prohibited or restricted.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 71,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Cantwell says Commerce let advanced AI chips flow to China-linked companies and presses Lutnick to enforce export controls - MLQ.ai",
-      "bestUrl": "https://mlq.ai/news/cantwell-says-commerce-let-advanced-ai-chips-flow-to-china-linked-companies-and-presses-lutnick-to-enforce-export-controls/",
-      "bestDomain": "mlq.ai",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 38
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F12",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 38,
-          "passageIndex": 7
-        },
-        {
-          "factId": "F6",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 26,
-          "passageIndex": 11
-        },
-        {
-          "factId": "F15",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 26,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "While Congress is looking to bolster export restrictions around AI chips, The Wall Street Journal reports that Lutnick is instead expected to unveil a new initiative that will designate Nvidia — along with companies including OpenAI, Anthropic, Amazon, and Microsoft — as an AI “national champion.” The designation reportedly aims to help these companies expand overseas and compete with Chinese technology firms by granting them expedited export licence approvals. Huang had pushed the U.S. government to ease restrictions on the export of advanced AI chips to China. Cantwell called on Lutnick to use his authority under the Export Control Reform Act of 2018 to enforce export controls and stop the flow of AI chips to companies barred from receiving them [1] .",
-      "bestPassage": "While Congress is looking to bolster export restrictions around AI chips, The Wall Street Journal reports that Lutnick is instead expected to unveil a new initiative that will designate Nvidia — along with companies including OpenAI, Anthropic, Amazon, and Microsoft — as an AI “national champion.” The designation reportedly aims to help these companies expand overseas and compete with Chinese technology firms by granting them expedited export licence approvals. Huang had pushed the U.S. government to ease restrictions on the export of advanced AI chips to China. Cantwell called on Lutnick to use his authority under the Export Control Reform Act of 2018 to enforce export controls and stop the flow of AI chips to companies barred from receiving them [1] .",
-      "matchedPassages": [
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "export",
-        "control",
-        "prevent",
-        "chip",
-        "reach",
-        "chinese",
-        "firm",
-        "are",
-        "restrict"
-      ],
-      "entityShared": [
-        "chinese"
-      ],
-      "topicShared": [
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 14,
-      "claim": "The DOC’s handling of the Megaspeed blacklisting, the alleged loophole for subsidiaries, and the apparent lack of enforcement could allow U.S. technology to bolster China’s AI development.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 77,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F13",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 46
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F13",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 46,
-          "passageIndex": 4
-        },
-        {
-          "factId": "F10",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 36,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Cantwell also criticizes the DOC for allowing Alibaba and ByteDance to access Nvidia chips through overseas data centers, and extending a loophole that let restricted companies obtain American AI technology through subsidiaries. Washington Senator Maria Cantwell, one of the top Democrats on the Senate commerce committee, has taken fire at the Department of Commerce (DOC) under Secretary Howard Lutnick for neglecting to enforce protections intended to keep Nvidia’s AI chips away from China.",
-      "bestPassage": "Cantwell also criticizes the DOC for allowing Alibaba and ByteDance to access Nvidia chips through overseas data centers, and extending a loophole that let restricted companies obtain American AI technology through subsidiaries. Washington Senator Maria Cantwell, one of the top Democrats on the Senate commerce committee, has taken fire at the Department of Commerce (DOC) under Secretary Howard Lutnick for neglecting to enforce protections intended to keep Nvidia’s AI chips away from China.",
-      "matchedPassages": [
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "doc",
-        "loophole",
-        "for",
-        "subsidiari",
-        "and",
-        "allow",
-        "bolster",
-        "china"
-      ],
-      "entityShared": [
-        "the",
-        "doc",
-        "china"
-      ],
-      "topicShared": [
-        "for",
-        "china"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 16,
-      "claim": "The timing of the presidential meeting with Xi Jinping may also influence policy discussions.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 47,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Cantwell says Commerce let advanced AI chips flow to China-linked companies and presses Lutnick to enforce export controls - MLQ.ai",
-      "bestUrl": "https://mlq.ai/news/cantwell-says-commerce-let-advanced-ai-chips-flow-to-china-linked-companies-and-presses-lutnick-to-enforce-export-controls/",
-      "bestDomain": "mlq.ai",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F16",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 34
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F16",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 34,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "She sent the letter ahead of President Trump's meeting with Chinese President Xi Jinping in China on Thursday, Nov.",
-      "bestPassage": "She sent the letter ahead of President Trump's meeting with Chinese President Xi Jinping in China on Thursday, Nov.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P2"
-      ],
-      "sharedTerms": [
-        "the",
-        "meet",
-        "jinp",
-        "policy"
-      ],
-      "entityShared": [
-        "jinp"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 17,
-      "claim": "Observing how the DOC balances business interests with national security concerns will be crucial for understanding future trade and technology policy.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 68,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Senator slams Commerce Secretary for flow of Nvidia AI chips to China",
-      "bestUrl": "https://www.theverge.com/policy/1034047/nvidia-us-commerce-department-cantwell-lutnick",
-      "bestDomain": "theverge.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F11",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 60
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F11",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 60,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
-      "bestPassage": "The DOC is also accused of “putting business interests ahead of national security,” with Cantwell noting that Cantor Fitzgerald, the financial services firm formerly led by Lutnick and now steered by his sons, reportedly held $1.2 billion in Nvidia stock at the time of Lutnick’s nomination for Commerce Secretary.",
+      "evidence": "The U.S. government has reportedly been wanting to put that customer, Megaspeed, on a special entity list, as it believes the company has been buying thousands of Nvidia chips to provide compute to Chinese businesses to get past existing export-control restrictions.",
+      "bestPassage": "The U.S. government has reportedly been wanting to put that customer, Megaspeed, on a special entity list, as it believes the company has been buying thousands of Nvidia chips to provide compute to Chinese businesses to get past existing export-control restrictions.",
       "matchedPassages": [
         "S2-BODY",
         "S2-P2"
       ],
       "sharedTerms": [
         "the",
-        "doc",
-        "busines",
-        "interest",
-        "national",
-        "security",
-        "for",
-        "and"
+        "involv",
+        "chinese",
+        "megaspe",
+        "has",
+        "report",
+        "buy",
+        "thousand",
+        "nvidia",
+        "chip",
+        "provide",
+        "compute",
+        "business"
       ],
       "entityShared": [
-        "doc"
+        "chinese",
+        "megaspe",
+        "nvidia"
       ],
       "topicShared": [
-        "for"
+        "chinese",
+        "chip",
+        "compute"
       ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "The U.S. government has considered placing Megaspeed on a special entity list.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
+      "bestUrl": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F18",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 81
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F18",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 81,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P2",
+      "evidence": "The U.S. government has reportedly been wanting to put that customer, Megaspeed, on a special entity list, as it believes the company has been buying thousands of Nvidia chips to provide compute to Chinese businesses to get past existing export-control restrictions.",
+      "bestPassage": "The U.S. government has reportedly been wanting to put that customer, Megaspeed, on a special entity list, as it believes the company has been buying thousands of Nvidia chips to provide compute to Chinese businesses to get past existing export-control restrictions.",
+      "matchedPassages": [
+        "S2-P2",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "government",
+        "has",
+        "megaspe",
+        "special",
+        "entity",
+        "list"
+      ],
+      "entityShared": [
+        "the",
+        "megaspe"
+      ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -1414,12 +810,109 @@
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "While the bill approves the export of Nvidia H200 chips to approved customers, China must still approve H200 imports before Chinese giants such as Alibaba and ByteDance can use them.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 85,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole — Remote Access Security Act effectively extends export controls to the cloud - Tom's Hardware",
+      "bestUrl": "https://www.tomshardware.com/tech-industry/artificial-intelligence/u-s-house-passes-bill-to-stop-chinese-companies-from-accessing-export-controlled-american-ai-chips-using-offshore-rental-loophole-remote-access-security-access-act-effectively-extends-export-controls-to-the-cloud",
+      "bestDomain": "tomshardware.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 72
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 72,
+          "passageIndex": 25
+        },
+        {
+          "factId": "F8",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 62,
+          "passageIndex": 25
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF10,S1-FF8",
+      "evidence": "So, whilst H200 export approval could be a boon to Nvidia, China has dragged its feet a little and still needs to approve H200 imports before big companies like the aforementioned Alibaba and ByteDance get the green light. On the one hand, Washington continues to try to block Chinese access to its most potent AI hardware while also relaxing some restrictions, like allowing the sale of Nvidia H200 chips to approved customers .",
+      "bestPassage": "So, whilst H200 export approval could be a boon to Nvidia, China has dragged its feet a little and still needs to approve H200 imports before big companies like the aforementioned Alibaba and ByteDance get the green light. On the one hand, Washington continues to try to block Chinese access to its most potent AI hardware while also relaxing some restrictions, like allowing the sale of Nvidia H200 chips to approved customers .",
+      "matchedPassages": [
+        "S1-P10",
+        "S1-P8"
+      ],
+      "sharedTerms": [
+        "the",
+        "approv",
+        "export",
+        "nvidia",
+        "h200",
+        "chip",
+        "customer",
+        "china",
+        "approve",
+        "import",
+        "chinese",
+        "alibaba",
+        "and",
+        "bytedance"
+      ],
+      "entityShared": [
+        "nvidia",
+        "h200",
+        "china",
+        "chinese",
+        "alibaba",
+        "bytedance"
+      ],
+      "topicShared": [
+        "export",
+        "chip",
+        "chinese"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
     }
   ],
   "editorial": [
     {
-      "index": 15,
-      "claim": "Readers should monitor the outcomes of the upcoming committee hearings, the DOC’s actions regarding the Megaspeed blacklist, and any new legislation that could strengthen export controls.",
+      "index": 12,
+      "claim": "The legislation’s effectiveness will depend on enforcement of the new licensing requirements and on whether foreign firms continue to use offshore rental arrangements.",
+      "type": "editorial-analysis",
+      "status": "editorial-excluded"
+    },
+    {
+      "index": 13,
+      "claim": "Readers should watch for how the rule is implemented and whether additional countries are added to the list of restricted destinations.",
       "type": "editorial-recommendation",
       "status": "editorial-excluded"
     }
