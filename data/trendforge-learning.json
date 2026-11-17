@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T08:27:33.495Z",
+  "updatedAt": "2026-11-17T21:19:42.655Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -27,7 +27,7 @@
   "evidence": {
     "samples": 120,
     "passRate": 33,
-    "blockRate": 9,
+    "blockRate": 10,
     "strongRate": 8,
     "singleSourceRate": 24
   },
@@ -50,8 +50,8 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2588,
-      "failures": 17123,
+      "successes": 2602,
+      "failures": 17131,
       "successRate": 13,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 1514,
-      "failures": 10452,
+      "successes": 1540,
+      "failures": 10469,
       "successRate": 13,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,9 +68,9 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 31918,
-      "failures": 16081,
-      "successRate": 66,
+      "successes": 32155,
+      "failures": 16102,
+      "successRate": 67,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 293,
-      "failures": 13966,
+      "successes": 294,
+      "failures": 13982,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -110,16 +110,16 @@
       }
     },
     "Crypto": {
-      "topicSamples": 147,
+      "topicSamples": 146,
       "averageScore": 64,
       "averageConfidence": 86,
       "evidenceLevels": {
-        "single-source-verified": 29,
         "none": 70,
-        "strong": 48
+        "strong": 48,
+        "single-source-verified": 28
       },
       "decisions": {
-        "review": 61,
+        "review": 60,
         "hold": 86
       }
     },
@@ -150,14 +150,14 @@
       }
     },
     "Innovation": {
-      "topicSamples": 23,
+      "topicSamples": 25,
       "averageScore": 58,
       "averageConfidence": 60,
       "evidenceLevels": {
-        "none": 23
+        "none": 25
       },
       "decisions": {
-        "hold": 22,
+        "hold": 24,
         "review": 1
       }
     },
@@ -176,30 +176,30 @@
       }
     },
     "Technology": {
-      "topicSamples": 120,
+      "topicSamples": 119,
       "averageScore": 65,
       "averageConfidence": 84,
       "evidenceLevels": {
-        "none": 54,
         "strong": 42,
+        "none": 53,
         "single-source-verified": 24
       },
       "decisions": {
-        "review": 56,
-        "hold": 64
+        "hold": 64,
+        "review": 55
       }
     }
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": -6,
-      "evidenceBlockRate": 4,
-      "claimConfidence": -8,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-11-17T08:26:29.612Z",
-    "previousRunAt": "2026-11-16T22:29:19.330Z"
+    "latestRunAt": "2026-11-17T21:18:46.836Z",
+    "previousRunAt": "2026-11-17T08:26:29.612Z"
   },
   "signals": [
     {
@@ -210,7 +210,7 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6689,
+        "singleSource": 6666,
         "strong": 2243
       }
     },
@@ -239,23 +239,23 @@
     {
       "id": "evidence-pass-rate-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Evidence pass rate changed by -6 percentage points versus the previous run.",
+      "observation": false,
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -6
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by -8 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -8
+        "delta": 0
       }
     },
     {
@@ -271,7 +271,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-11-16T22:30:24.057Z",
+    "previousUpdatedAt": "2026-11-17T08:27:33.495Z",
     "previousVersion": 2
   }
 }
