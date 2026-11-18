@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-18T07:54:13.850Z",
+  "updatedAt": "2026-11-18T20:52:09.965Z",
   "policy": {
     "recordsOperationalHistory": true,
     "influencesDecisions": false,
@@ -10,106 +10,6 @@
     "maxArticles": 500
   },
   "runs": [
-    {
-      "recordedAt": "2026-10-08T14:00:39.366Z",
-      "workflowRun": "37788917850",
-      "workflowSha": "ff1f72a5a3436ae60286fac55cd627241868c364",
-      "decisions": {
-        "total": 230,
-        "publishCandidates": 0,
-        "review": 21,
-        "hold": 209,
-        "reject": 0,
-        "strongEvidenceReady": 16,
-        "singleSourceVerifiedReady": 74
-      },
-      "evidence": {
-        "candidates": 230,
-        "passed": 78,
-        "blocked": 22,
-        "strong": 12,
-        "singleSource": 66
-      },
-      "claims": {
-        "title": "Microsoft Expands Copilot’s Reach into Windows and Local Files",
-        "claimCount": 17,
-        "verified": 14,
-        "partial": 3,
-        "unsupported": 0,
-        "averageConfidence": 79,
-        "pass": true
-      },
-      "editorial": {
-        "status": "pass",
-        "articleCount": 43,
-        "averageScore": 76
-      },
-      "lifecycle": {
-        "articles": 43,
-        "refreshCandidates": 17,
-        "watch": 19,
-        "fresh": 7,
-        "stale": 0,
-        "duplicateClusters": 0
-      },
-      "growth": {
-        "totalArticles": 43,
-        "averageEditorialScore": 76,
-        "editorialReviewCount": 30,
-        "refreshCandidates": 17
-      },
-      "distribution": {
-        "articlesPlanned": 20,
-        "externalPostingPerformed": false
-      },
-      "monetization": {
-        "readyForAdSenseFoundation": false
-      },
-      "providers": {
-        "Groq": {
-          "failures": 121,
-          "successes": 153,
-          "lastStatus": 200,
-          "lastClass": "success",
-          "inCooldown": false
-        },
-        "Gemini": {
-          "failures": 76,
-          "successes": 0,
-          "lastStatus": 200,
-          "lastClass": "transient",
-          "inCooldown": false
-        },
-        "OpenAI": {
-          "failures": 3,
-          "successes": 0,
-          "lastStatus": 429,
-          "lastClass": "quota",
-          "inCooldown": false
-        },
-        "Cerebras": {
-          "failures": 7,
-          "successes": 0,
-          "lastStatus": 402,
-          "lastClass": "error",
-          "inCooldown": false
-        },
-        "OpenRouter": {
-          "failures": 105,
-          "successes": 2,
-          "lastStatus": 429,
-          "lastClass": "rate_limit",
-          "inCooldown": false
-        },
-        "Cohere": {
-          "failures": 137,
-          "successes": 16,
-          "lastStatus": 200,
-          "lastClass": "error",
-          "inCooldown": false
-        }
-      }
-    },
     {
       "recordedAt": "2026-10-08T23:32:18.665Z",
       "workflowRun": "37859968112",
@@ -12009,319 +11909,109 @@
           "inCooldown": false
         }
       }
+    },
+    {
+      "recordedAt": "2026-11-18T20:52:09.965Z",
+      "workflowRun": "44395367607",
+      "workflowSha": "ccae3f4e80b7373fc34087e9ed5d6a06eb6c8cef",
+      "decisions": {
+        "total": 230,
+        "publishCandidates": 0,
+        "review": 26,
+        "hold": 204,
+        "reject": 0,
+        "strongEvidenceReady": 51,
+        "singleSourceVerifiedReady": 67
+      },
+      "evidence": {
+        "candidates": 230,
+        "passed": 92,
+        "blocked": 20,
+        "strong": 36,
+        "singleSource": 56
+      },
+      "claims": {
+        "title": "China’s Army Seeks Nvidia’s Advanced Chips, U.S. Commission Reports",
+        "claimCount": 8,
+        "verified": 7,
+        "partial": 1,
+        "unsupported": 0,
+        "averageConfidence": 87,
+        "pass": true
+      },
+      "editorial": {
+        "status": "pass",
+        "articleCount": 112,
+        "averageScore": 77
+      },
+      "lifecycle": {
+        "articles": 112,
+        "refreshCandidates": 50,
+        "watch": 18,
+        "fresh": 5,
+        "stale": 64,
+        "duplicateClusters": 0
+      },
+      "growth": {
+        "totalArticles": 112,
+        "averageEditorialScore": 77,
+        "editorialReviewCount": 88,
+        "refreshCandidates": 50
+      },
+      "distribution": {
+        "articlesPlanned": 20,
+        "externalPostingPerformed": false
+      },
+      "monetization": {
+        "readyForAdSenseFoundation": false
+      },
+      "providers": {
+        "Groq": {
+          "failures": 139,
+          "successes": 392,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        },
+        "Gemini": {
+          "failures": 93,
+          "successes": 26,
+          "lastStatus": 503,
+          "lastClass": "server",
+          "inCooldown": false
+        },
+        "OpenAI": {
+          "failures": 3,
+          "successes": 0,
+          "lastStatus": 429,
+          "lastClass": "quota",
+          "inCooldown": false
+        },
+        "Cerebras": {
+          "failures": 7,
+          "successes": 0,
+          "lastStatus": 402,
+          "lastClass": "error",
+          "inCooldown": false
+        },
+        "OpenRouter": {
+          "failures": 120,
+          "successes": 3,
+          "lastStatus": 404,
+          "lastClass": "request",
+          "inCooldown": false
+        },
+        "Cohere": {
+          "failures": 143,
+          "successes": 30,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        }
+      }
     }
   ],
   "topics": [
-    {
-      "key": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTUhJTjZjVzc4WmQwNVdPVzR0TWxxTlRIZWdnSHgtM3dfeUNfYVFrYzVnbDVYYm1DY19GVWg2NEtJa0c1UkpDUE8yVEl4TXZJRXk0OVlRUXB2OGE2YThQZ2pDd3p0UEppbXRwZmlFTkVsSG82Z3V6eWNKLXZub3hYVDhxQ0RlU29hQ0VJTXFSenNkdXNWcmlYMUxSbHZXWi1iU2Rla19PVm9PbjNzT3Qwd1N6Xy0?oc=5",
-      "title": "Paul Peterson makes birdie on No. 18 at World Wide Technology - PGA Tour",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcExma3E2eHBEdlNBcUZaaTNTQzZyaGV2WE9lSHpnRHBKcElKc25CejR6MTdlaExBd19mcGRvcnI2THpkT2ZWVzdsdGpEMWtqMlBGMmw4YkFKWVd1OF9HcUpZcy1GYjE5aUlsN3NQN3hHZ1FwTzFwaDlvRVRyYzBiS1ZBYjVrZ2c5aFVmNjcwbkxmZkphdnNmYlRVeVozNV9SYWRCakxNbGwybHZHVmJn?oc=5",
-      "title": "PGA Tour highlights: 2026 World Wide Technology Championship, Round 3 - Golf Channel",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 85,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNOExPaVEtYW5NcUN4SllZajBNNHNjMlE5ckNfaXBpa1ZHQk1BVjcyOWZEcW11SXVtbVdwMXUzaklBSWhvbjZXc0FwYkd4NW56UmQ3cWtjaW5HS3R0aFI0b1EyQmw5UWYxdElSWFd3b1VsVWt3VlZ4MEx2VGp1Y1NSQ294RXlvRG9vMnhvWE5zYTB1U2RRRl9XZWo2WWRPaUFQREk0WjVNRlVpVHZKQjlnUjNtbmowR1ZXNTAxV1FhVQ?oc=5",
-      "title": "Zachary Bauchou taps in for birdie on No. 18 at World Wide Technology - PGA Tour",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUW5RWWZkWDZlTEJFMXRLcFhTNm9LaHY4M0RGWHpLSF9tSEtRNEZSdk1hemZYeVQteEh5X2EtUXNFbXJ4MUlaVGlZaG1NZTlPdlVoWDZGZm5WV0dmdzFyQUNoVnQ1RDI2cVhmZ3NRUTlUelcyVUJySmVWUHBIaGNMeEQwQTdCQ1pCTjdOZV9nZXJFd3RHbDJBaS1ZeDN6X2JrdVVTVGlTajBnUk1NcnhETzk5bzUxTWItQ3pZUjBxeDNGRy1BR3dV?oc=5",
-      "title": "Sudarshan Yellamaraju taps in for birdie on No. 18 at World Wide Technology - PGA Tour",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUHR0d0dqQ3pLTUxvM21MQWNhQWpFZ09RR0IxQkxEclFrTkxKLW5XdmstbU1aU3RSX1pRcmdlTGR1WUNVdllZSXU1SzB5UFo0b3hJVElTLWNQV0VXS0RscGUwOVAzNXNlT0pTVnhOdk10NzF1QVVDSWFCcU5GcWNGWEpzcF9MRzF1RW9lV3BKYkVhOG5E?oc=5",
-      "title": "Men's Swimming Takes Second at NYU Fall Invite - Stevens Institute of Technology Athletics",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQ1N0SUFaeEc4TnJSYlZMRTh1WkdkSUE5QlhWTmFlMThNQm1uMVVYbUFWdnpiajVVX1RVdExpMFFCQTNKMXlTMmlPT016M3Y2NGlBbzdRcEZUMWoxdTRkT1ZwcTMwNmJTRUJpbVRPZTR1RzF0ZVlaLU5NWXZDbS1iTlJRYmdVRjNhRWMyWUdqenZBMl9tcXFFTk93Q3FLWTFfc2NIR1RfTQ?oc=5",
-      "title": "Core Scientific Is Quitting Bitcoin Mining as It Now Makes About 92% of Its Revenue Renting to AI Customers - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 89,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSFpkZkN5aGpBeW9PVlpXVDhnR3VRbXVXQ25PV3ZEV1NBZk1Qa0tfUVdvbnBZZ2M3aU9wdndPTHI0MkJucFNDNmJUZmotTjAwZGRGdEVCUGVLVnJOR292UXUwd0pkc2tWNmtOajZqYWk0RXhPZ2VQb2JsR1h5M2NLaUNac2ZLRlhFVDJUNEFUWEdWSjZENDQzdW1GSzJoWVdK?oc=5",
-      "title": "NASA Awards Moon Base Transportation, Technology, Science Projects - NASA (.gov)",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZ0Q0djdlbk82N21sUlVUblozUnFtaDNYeGpyZnZwRjh5RjFDM3UtWFU0Q2l3QWp6VGVRUUFUMWxsYXVpTHVlTDBtUC1Rd2p1Mld4aDBLOVJTX3otdnZUTVNUQzg5QmRhMjNKeWtvUWpYVEsxbFVIRU1jMloxYW5Zd0JzN3h2Q243VmZGODNjSUFUbGM4X3dQSXp4Rk1QRUlp?oc=5",
-      "title": "Transportation Leader Advice on School Bus Technology at TSD Conference - School Transportation News",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOUk0ckl3Mk81SHRfb0JNY3NGc1FCcWdud0hnUUtWdnkzRTBWWk1XaHctZDJrZlBUdHlZYTBFcWh4S2JTd09odzVOdjZLdXVaN2JadmpmSkhLaVU1elctaXh5VGxnY2t1ajFBM2oyZHZVUUJHUHE1YUkzUUZieXlNVE0xeFBiRFZldldSUDY0TFhSUnZlYlFNYUgtT2ltdw?oc=5",
-      "title": "Crypto to Buy for 2030: BTC $250K, ETH $10K Targets [2026] - https://tech-insider.org/",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T06:39:04.387Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSXZaNk5jd1dFOEdvaWlpeXI1VXphdm1wTjhJbzFPZThxXzg1a09CM3ZFTFlYSWlRLW5nVjA0X0ZyZUp2dmI1ekNKWXFUMFBCOXlja1E5M1FkaWFkVjBXNXQ5eU8xUThseGpvOU41S2c0RmZaTDZWYlVWbmlNSXRHZ1ZyazZTX0tXb1JjeUJWQTFBZENNQUlwdjRiMll2VzBpR0tVc2hVS3Zaa1FSYk9zNU1QX2l5ZTNhVThEUUpuSmhpdw?oc=5",
-      "title": "Digital scouting apps help farmers monitor crop health - Farmer's Weekly SA",
-      "category": "How-To",
-      "lastSeenAt": "2026-11-09T07:07:11.377Z",
-      "decision": "hold",
-      "score": 60,
-      "confidence": 74,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxNQ2Y2QzFWRDZFazE3Zm9pdF8yUkxQUW42WVJlczVUaDdZeWJvRlZpYi1Xa0ZONWN5RlNEeTVVUVJyVF9WVjJCclpvSFNYU0dSY2dXMjBFMkZ1UU9KQXY1R3MyRVc1S1EycUF1cVhjeC1NY1A3d2o0R213WWprMkJGWUlMQUc4aXFHUm1QQXlpLWJOUk1UT3FxMVQ5X1FJQQ?oc=5",
-      "title": "Crypto Wallet Revenue Falls $700M to $400M in H1 2026 - Bitcoin Foundation",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZFNoNVUwVHF2QVBHTW51c1MySXlrR2ZjNk1panpUcFJhSzg2VzJkYVRjM1djOWptQThzZGFpdVJOcTJxdTRvUEI4RVhaMF9uemY5ckcxc0hrTmFWRjkzU2VYQTZRUklXUEpoenYwZzk0OUIzY0stRXVTNFlpQmNGcHl1aUxoRHdmbVE?oc=5",
-      "title": "Got $5,000? 2 Growth Stocks Building the Software Backbone of Artificial Intelligence (AI). - Yahoo Finance",
-      "category": "AI",
-      "lastSeenAt": "2026-11-08T22:26:18.304Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 87,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdEtBdW52aHhWZnFyQkxNdjFjQXl1MlltV2dXZEp2QXIzU3o1UllzNVB4SHM0VUdQWlNWX2ZSV25OTGdGb2tZblR5a1k3aTBSSTFwTWJEX18tbTdrMThpS1M0ZlRZeUp0MmozNnhDVzZFdjBMalRfNXl2Nk94Smp3RlhkMmxpR1R4dXZyMGc0c1hueVkxbkJIaQ?oc=5",
-      "title": "A Top Silicon Valley Investor Predicts a Bitcoin Crash to $57,000 Within the Next 12 Months. Here's Why He's Wrong. - The Motley Fool",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPV1hlM0Z6eWZzbGd3Z2lmZzBCcTZ1VVFtUlA2WTdZRS0waGdaWk9HdGE5cGRCWG13dm8zMmIwdU92UUI5MkNaU2Nob3dOMVpYQklEaUxvOWllaDJTMlFPRDVPUnZsOVRJdkZqWHFPU0ZIT0RZSFpZY3ZYbE1XUm5MdWtXSWgwYVRULUNvU0lVV0xmdWdBbURxUFpyV3V6b3NVMFE?oc=5",
-      "title": "Pfeiffer Vacuum Technology (XTRA:PFV) Stock Looks Above Fair Value As 23% Return Builds - Yahoo Finance",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 90,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWF96TUtjYnVnRXpMQ0NoanM2b3Z0UHNFMlJNdWJGVWRRdDN1Y2F1Y2duQ1NmTUVZMzlsZXlPSHl6TE1yMjhBM3ZQTzlPbU9lQzlYUTdBQ0dWQkhuVy1KLURHMmNTU3B5c1lIVkRQc25QejBEeGlMWG85bTlmN0RSdVZva2U0VXEwSlFPUkJreTNtRHBxME1EdQ?oc=5",
-      "title": "Got $5,000? 2 Growth Stocks Building the Software Backbone of Artificial Intelligence (AI). - The Motley Fool",
-      "category": "AI",
-      "lastSeenAt": "2026-11-09T07:07:11.377Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 90,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNS0xqcW92MUxoTGswc1JCTlM5V1loSzNkbDYzUUM3NmRMOUJuVHhoLUxOaklyd0x3SEFzUzk2Z1M3UFlDbFpFdTNINWswbkxmcnVaM3BPSnFYSXZkUTQ3UzV4V2xZSFRyTFhxbnNhcE9lLWRndWZYZlpEWDZNbW5mYzlpd0xBQnkzSzYwLUQ5Zw?oc=5",
-      "title": "Mercado Bitcoin Hack: Reopens Nov 9 in View-Only Mode [2026] - https://tech-insider.org/",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdW1fQ2ZuVWVTa3dZb0dISlBGMk4yNXJTWjk5RFkteGpCdmllSk9DTkNSVldVSTYtT1llMkFTUmZHeW1iN0Y2YjlOWHN6TFZlWi05b2d3VXhaR2JqZk80NGNfRDBMdXdHRG9fdjJlelRSZ1JveHgzVWJINU9xRnBMMzBBVXFYaEtDTUE5bzBBZnljUUgwU2pZN3Z1cXZsWlh3VWNV?oc=5",
-      "title": "Mercado Bitcoin $48.5M Outflow: Reopening Status [2026] - shattered.io",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUVpSYUViVjNUYjJIME1SZzY4dEk0VkllYk9WQVNmSzZVRXFhcmFVbXF1ZmVNQ0N4bTFBcUNQR2FMMW05c20tUVVGdkYxeU1IanpoSVNVSk1QQklObEdXeC1QY3RIaXp0ZGp4THU1OG9Ebm5jZFBBN2lEYzZWOEdoTVZYblVONDJzSUVSUEJ6czBuRTNDV0U3TXFsNVRCdzZFN0RlNWY3UQ?oc=5",
-      "title": "Bitcoin Mining Difficulty Below Record for Over a Year - Bitcoin Foundation",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUjZGbk1sT3g1V1Bpc0hOUDJWT19zUXk5Vk04WWhiWTc3dGl4QW5kVTZDNndXS3VPS2tjYV9oakNoRXdzaUZkcGdrdHp0MmhYNThsb2drdVVDQldzVzRSQnR0LWRwVHBEU2ZGRzhHbWoyaDRNYjN0R2p5bF91ODF3RmlMM1FteDZPYjRqN0ZTYURhaEZFQU1ENFFWdEowX0F0bEE5Y2xYRXZOeXFLb2d4TnF4SkpsNzV3TVBJOHV3?oc=5",
-      "title": "Can Technology Ease Caregiver Burnout Without Losing The Human Touch? - Forbes",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMU16UTdka2Npc3UxLTdHaC1oTEs0R1Q5dTdGem5GeHlNcFE1MjJ2MVBqSURrNDBxRndVelJ6Zk1wTW5JS1pucGlWa1FyU01yRkFYYzgxVU9tTGJ5RllUZ2pyeTJhOXM2Szd0RXZ3WGlNNi10QXZabFRjWlFSc0RZdHpuYU5MdDFxeGRsRVhxaTFMN0pDbEZjeTUzUmZQR253MWJUYQ?oc=5",
-      "title": "Bitcoin Doesn't Need a Bank, Yet MicroStrategy Wants to Become One - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 88,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPeFZMN0dsM2JJT003SV9KSVF6Wk9pNHBFXzJ4T09fbDV3NnlmT3dZVVRTdzJRaXBBdzdaZk4wZ1U5TFZpMUcyNDl1Umpjajk2Q0htRURTV3FhNG4wemtaSXYzN0ZiWHhDRk5Dal9jV2VYUEdJaDZQWUdWdGRqX1lPNzhDT2Jleks1Ny1ycElLYXlmc2kzaU82bmZER1BXNXAwVnVQS1Ywb3c1SHo4aVhkaUI3aFlEeHpYRTVZellKcFhUbkpWM0RMeVJPT0JHbGdGVkFMeQ?oc=5",
-      "title": "Tom Gauld on prompts for a cartoon about artificial intelligence and writing – cartoon - The Guardian",
-      "category": "AI",
-      "lastSeenAt": "2026-11-08T22:26:18.304Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 87,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxORzZWNlIxdzZIdzJibzk3dHBhalE3b1VRU0p4aGZOTDA4eHA3RzlVMlAxM3QxQTlSSzN1ZFNhelZHWk5sMHU4d3R1RjhZUUxPZzRsNzg5YTNFX0VKT29ZaGdjLXd5T1pqVzZMYTdCMU16Y3RpbFVPbkxnQWxNZ0xMSWh1TFYxT0g4TC00NlROaW5rNTNIZGNhb2JMS1BJdGFVQ1E3d2tSUXhHZDdoeUFvaWVKRVo5TWZNczhrVE5MTldCU1RSNG5USTdVclZ4SFEt?oc=5",
-      "title": "Bitcoin holds below $76K as Binance EU closures add to crypto market pressure - Investing.com",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 78,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTFBwTkUtcW81dkFUdlhNQUIyODFJNzViR3BubzhpNG53TlJvdHNFZllMMlZJczVmN1ZpSG45dWUwdG5PUlU0c1hpTXJBYkJUYmhuRFduXzlWTVoyLUtmSWFHVU44eC1ocUE5dWlybzBDbnAtYWhtV2VZNFZpcEN2Q1RkVDBDdGUwVEpNbWgyNDVZWnpiQjRLOE1NMnYxYk8zb1ZHdDVqMTBBdDNN?oc=5",
-      "title": "BTC price on Nov 8, 2026 at 7am EST Crypto Prediction Market - Robinhood",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 82,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQUg1VTRSN2ZQWWlrQmEzRktOUUM3YkhQWUowa3hkZ2ZfaHN0STBjOW94UFZkR19nTGtjSzMwSzRqSGtfbTJubkZIZmg4WGd2c0JnLThEdmxocXRQd2lIRmZ2ZHJybEpNdkZfUVVBRWlnc195TC0taC1tVWpBRDJLaVhvckZEdkdfSVhZNHBCQVBrRWdWYjVVWFQwa3l2T1p4T2hZVEVHUzcxQ19YTHpkT3ZObHA?oc=5",
-      "title": "ETH price range on Nov 8, 2026 at 8am EST Crypto Prediction Market - Robinhood",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 82,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaFFqdzZSbTEyRXBGcC10VWkzajRjN2Z3Z3ZyeDQ4NVhXUlIzUGZWd0wzSHZPMmh4T2k2VjdfZHA4dzd5eEZYMUlxcFJMZERYaHBIcUhDX0JjZ3JZdFpwZ05pcWlCYlBzSmw5WjZVUldSb24zcEdHYUoxWFpDcHRUb091b1puRTdHbUE?oc=5",
-      "title": "Deer hunting, Wisconsin traditions and the technology shaping the outdoors - WTMJ",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOT0pqcXhKc0ItWVNZdS0wek1vLWZOOXY3eF95TVNZal9YZW80a0ZfTDl2MVZCNERPbmxtLTdzTndUYjJLT0dtWExxSDdSc2Q2TDY5ODZlcG1VSWxYbU9ZY3E2MnRvN3p4M29jMzlIeFRIRGktQ3k0NmViQzVyaVI1cE5wWVdjLXBJT0VTb2pUQ3FVTlJIZ3pIMWU4VFMtZHhzVmtfVTVBb1lucHBtWmpCa3o4NDJyWW1XYXJIV1JkdjBnX29raDZIWWNJSmN4RmN6?oc=5",
-      "title": "Ben James gets up-and-down from 42 yards for birdie on No. 18 at World Wide Technology - PGA Tour",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 81,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU3MyQ0lQVjlkeVRUOXI0Vlh2OUxveWxTbGU5bE1oY0xGRzlDRWRMV2NTR2p2LXlkU0wxeklSNVZIRHljRkc5ZFVJYVFCSHh2ZnREaVE0YTdMNk5oSEY0VjN0TUlFQThHQkJPRTlXQU9ZLWJtU2dtWnR4b182MFZfdElpZnUtQ0wwQVA4MmJJelVvbjkwM3Vvdm52VlVIV0lQWjdB?oc=5",
-      "title": "GigaCloud Technology (GCT) Gains Fresh Momentum As Growth Fuels An Undervalued Narrative - Yahoo Finance",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 86,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTm5mRGZwVVMtUUkxczVrcTBMRmt6eVk3N0VBM0NRZWV0Q1VLZjdvUmtCYVM4bG9ic285SHlDdFRsMnRfV19sdFF0N0ZiS1NObEJMZmpuSkhySXdqcWVuOE9lSEpjdmdlQWJrYXVsNmc4MWNqUWRoU29UU0d0bW4xaE9mT2hDeEZMV0YweExQRnlBRHdqcS03SFRDcTRKX1dYV0JIQmFmUFJabXU3M2x4N3o5TDNETmVJWS04a0xjWmQ?oc=5",
-      "title": "3 Artificial Intelligence (AI) Stocks I’d Buy Without Hesitation in a Market Crash - The Motley Fool",
-      "category": "AI",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVHBhRGw4UEZoVTRTUXdqS04xbTFDb1MyLXh5aGdXby1jU3lhdlFVc3FscllKSWxQMmloNmc4eGhWX05sVTZ2QWFrUy1qLTJfVWluX2pibkY5YV9UdnkzRlZSN3FsRXNvdjVvdnpvR24xOUtiUk9LRDRySHNCcDUtVXZaVDdUcl9xRlZKNmFvNmREYTNQLTVIVko2Mml0c0xENGxjcXNpNUtCLUFRRVJ1d1hfWE1DOWN0TllNSDg5ZFNUVkhH?oc=5",
-      "title": "2026 World Wide Technology Championship: Round 3 tee times, groupings and how to watch - Golf Channel",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 60,
-      "confidence": 81,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdE9ONjNmWkZGbUNqUzZFS1VvcUlTd2Y1YjdQUGVSc051cGlUaXU3RlhGZWxhMm1DQjA2Tmx2VWUyWlNtUWhXaGxmNHVoRUFjVHIwUVhHRy1fczlmYjJjVDZ5aHlxTWYyblNfVW1YMjhqNEVrV0FwcWsxSU1tQ3Q0TW5pSmY0MU1xdk9pSW9tek5PR0dkRzdYRWNaOGdRWndDY3lVdW9oRENIVVZxMXZuV2dxekl1dnM?oc=5",
-      "title": "Jesper Svensson makes birdie on No. 18 at World Wide Technology - PGA Tour",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-08T18:03:50.150Z",
-      "decision": "hold",
-      "score": 60,
-      "confidence": 80,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxONjlUN25OeGR5Y3ZBZGFzYU5ZR3ExemVBSENRSzRwcUdDUXlIV3JTZEZUcHpMaGZtaktka3p1WUQxNGU3WTZmV1VuS3R3RUFyWW8xZGRhaTZxQTB5N2F1VnRPS1ljSHJrQl9QeWRzVjhuckZrMTlLQm91YjI5S2ZPb1E1TTl3ZzNGbHFrX091ODBjVWlSNkphb3dmMHZrRDRLRGxmZXlQNEQ2RDJjUVVXQlJjVGVNOW90cVpWZHhhNTB2azJKLXdtRFdjdENrSVB3Sk8xcXRBTUM3V3B2WEcxY2M4clZZRlV2T2ljVlhtY0NNWkVCR0prbGR0NmpCUTRrZGw1Smx4eWhDUEJya3ozR1p4b2Y4bjN6MThQTGNUYjdPY25qUE5ubUNrSjQ1TDhseXpMSjluVEZ2Vkc0NjdWcnBVUGFZQnVxVXpzMlhhbExNOVc2SDFXV0VEeDJ0LTQwOWdBQXBYcHFqMUE?oc=5",
-      "title": "Two Chinese companies cleared to buy banned Nvidia AI chips have empty offices and unknown addresses — investigation reveals businesses have ties to sanctioned Chinese military suppliers - Tom's Hardware",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-09T07:07:11.377Z",
-      "decision": "review",
-      "score": 74,
-      "confidence": 86,
-      "evidenceLevel": "single-source-verified"
-    },
     {
       "key": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeFZQSXFQX3d5a1p3WkE4RHI2cmFLNUdqNmMtcEhqcUlITkg4SzhkNVVBQWNXckNXbTFYa3JJMXdHeERZanJ4T1hCMW9rS0NzMnIzRmJSdWxoaFZHMXoxa1JnV1BoQWpENl9pNFd1ckUwODBiT25VRmpGOGM3Z2ROMzFES1IyMERrQlRtaUdNX2NiREthb0ZQMHk4NGRCM1lXYnZBSF9ybGhtVW5nSzhlbE5Jemg1Umc?oc=5",
       "title": "Binance hack clouds Singapore crypto push for tokenized stocks - Nikkei Asia",
@@ -12816,7 +12506,7 @@
       "key": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWVFhMXhFakdveUE2blFYbUxZbFR0aWlQU2VfcGdKVk5Cc0pic2RsTVJ5Z1liQ0p0OEZkd2l5RXZYUXFCT3I1VzhvckZXdk1ac0Q5TWFfamxLU0J0ek42VVdjQUhrb2MzdlpuWm41VW91SDJvTVR4TjlxbEtudER6ZVQ1dE9jdlpDbkhxU2hRSHFtT0dXMXpiR1BGV0I3eFNmakN2NjduUEduUDZzOEE?oc=5",
       "title": "Quantum Breakthrough: New Invention Keeps Qubits of Light Stable at Room Temperature - SciTechDaily",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 55,
       "confidence": 58,
@@ -13876,7 +13566,7 @@
       "key": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSWdDRFd6NWVJVjAxc1lmdVprVEdBWjlsUThWSGZuTzFVOVdvckptMlBKdjRlRVlfUzlxLV92ZzgyeFo5NFNRczh5LUtBVmFBTE1TcHFnemR0dXNoYVMySWRlVTBPSnpQbEdsQWExcFR4UW1fODFvV1hiUi1Nc21HVTZXVUFzODMwaHZpbG1ERFJyUFZYYlA0YWxDNA?oc=5",
       "title": "The End of Invention? Research Examines Cost, Value of Innovation - Utah State University",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 60,
       "confidence": 58,
@@ -14136,7 +13826,7 @@
       "key": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hVW9UV0F3REJZWlF5eHI1WVZ3a3B0c0FmWndFMVFPcmZqbUxRYW5kcnhyeDZEMW14Vzktd2R4QnZoU3dnbUg1eFJOU2R2T0xlVHc2Z0dadnF2eXVCendGd2tsaUZNbUVUTTNHRmlVOWNRQQ?oc=5",
       "title": "UMSL’s Mike Seper looks to spark creativity, invention with inaugural Missouri Innovation Week - UMSL Blogs",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 58,
       "confidence": 58,
@@ -14936,7 +14626,7 @@
       "key": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9Md1hpdHlSTjdfcTM3NFJzV0JaV3laVmJEYlg2aXRnN21yVC1LcVZvTXdMR2JmTk5UUi1SWmpkQ1JwR2pZM1JJLU1tVUlqR0dQX2tCalZhbEJMSk93TGc?oc=5",
       "title": "Exploring invention and innovation at NAU - Northern Arizona University",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -14946,7 +14636,7 @@
       "key": "https://news.google.com/rss/articles/CBMib0FVX3lxTE00cnZianZBSzVUNlg2Ni1TbHB3NV91bnBMeV9MSV90SWhCZmNtLVFqTFVsSy0zMUl3a25Ib09oVmlWWGNsNmxkcGp4M0d5V0pGY0FCQjhleFRXRVI1dEpfN001VzlHcHduNkRmRm16QQ?oc=5",
       "title": "Advancements, Invention and Discovery Recognized at Morgan’s Fifth Annual Innovation of the Year Awards - Morgan State University",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 59,
       "confidence": 56,
@@ -14976,7 +14666,7 @@
       "key": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNTk1QUXMxREMyNnV4LVJ2eTJfMTlJMHVmRF84T0NmOWc4aWR0NFY3NzFZWXJDd05BQXRveGtZeE5fZWVITGVJWFZZMEZQblU5WWR0NmZ3U2VmY3R1alBnZHJhV3NtYnI5NWp4dGlnN1ZBYXN0NHVMLS1Vd0YyZ1VMYU1KcU5PNERGdUZoeENDYnRuTl9OVFY0MlY5S3hiTzFJYzJpdkc5SUc0QTVDczhZb183dVh2ZmJmbFBTSFVPek04UlNzcUJ3?oc=5",
       "title": "Pentagon Exhibit Highlights Efforts to Speed Innovation, Invention - U.S. Department of War (.gov)",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 57,
       "confidence": 57,
@@ -14986,7 +14676,7 @@
       "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLVBhczFUNmNSRTRnSzlPcGhNMEhXV2hnZmFxQ25ScGVWaFZlbWhRRzVJYXc5bThvLWVxTm5aSlVva0FNbGVnQTF5V3RIVkVZa0tUMDBsTC1LV3dRNjRBTV9wZjVSZUxad1NIemkyR3RIYUxuTjdCQWkzdFcyVGJfSjlYSWtRM2NEQ3Z6djYzR0NnMzM4NGQ3NmRmeWRWQQ?oc=5",
       "title": "News - USMC Innovation: How One Sergeant Changed the Game with His Invention - DVIDS",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 57,
       "confidence": 58,
@@ -14996,7 +14686,7 @@
       "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxOR2JKdTBncW1wazhDOGVmVlVqSjVRMEMtd05BVDFURkJ0cTJlUWhld25tMjdtaWgtTXptREE1VXZKbVZYR3hvTUFzRnhCRTR4LVBxa3kxYlVNeWNxUjhiMm1iZTNPckduUGx1SW9XRy1hRjZXNGdGXzlSWWszX2w1OXdzZmZvdUVXSXpiSnZYRmFmLS1LV2Z4UDRuRjRNZw?oc=5",
       "title": "Morgan Ingenuity and Invention Celebrated at Annual Innovation Awards - Morgan State University",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-17T21:18:46.836Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 57,
       "confidence": 58,
@@ -15006,7 +14696,7 @@
       "key": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfMl9KTXo5T3llMWZDUU5NMUlLdmd4dHBERWt5eElhdnlaR0ZRQUh5TUJGYWwtZnVZaTFzbjc1b2lDVUMwQjAwQlpPVmFsS3hKN2pYOGlEUEp4VHNzdFlWaQ?oc=5",
       "title": "A hub of invention - UC Irvine News",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-17T21:18:46.836Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 57,
       "confidence": 60,
@@ -15016,7 +14706,7 @@
       "key": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDl6ZkxSRUF2eWVrUDAtZ0VzODNFVnZRdU1rcnhaWm5FRHVFUVdVUzRKMEpZVXJkOGwzWEw3anoyNnhMYURKak1BaWZFOXhNQ3lPZklydldjcXFwOWlKNUtOdk9KME56VE1fQUFHNUd3Rzl4QndoTWZWLWpNMUhveHBVMzdadw?oc=5",
       "title": "IDRs are key measure of innovation - Idaho National Laboratory (.gov)",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 55,
       "confidence": 60,
@@ -15036,7 +14726,7 @@
       "key": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1VVTRvTUFCYkdJYll3b203T1ozakRLVzNfZTVjR21vYjFFT1lZYklSeTR2ekFxVlpSdV9LdDdtNFNHYjFWOTRINEFpX2pWckt4eURVR0J2VExVZTNWZnR6aG02bEZFNGg2VWc?oc=5",
       "title": "The Invention of the Internet - Inventor, Timeline & Facts - History.com",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 53,
       "confidence": 58,
@@ -15056,9 +14746,9 @@
       "key": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNM3J5aklTSHpHOUg5WXJPTFl6Y1RTYTNtaFJza3preHBQRjRFdFVuZ2lWelU4eUlGNVJXQVlaclRRdXV3VEg4NzhEeW9jVTNnUFNtcDFudGxDTFU0eTdGUXg4Y2VYbnJiUDJXMXJyRGpfa1gzRzBqaV9pMnFXOEZNeFlzQjVlS0QydXpmbVdR?oc=5",
       "title": "The Gilded Age: Technology & Invention - Library of Congress (.gov)",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
-      "score": 52,
+      "score": 53,
       "confidence": 57,
       "evidenceLevel": "none"
     },
@@ -15066,7 +14756,7 @@
       "key": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNR05UQ0NyR1g3Z0FreDNTVUJmSzBLMWFYREVDRk1LVlZNSlB4amxPZWxCdjhXNmVhbUg4ejB1V1JlUWRJeldzQlFPRUFkdUV3NDhYMzFpbklQU1JxU3pnNjJHdTVZcGZCRnJfZkJfTWtleHdGckdNLUR5R3h3NnNXa0p4M240bENPd1VkRkdNN3BwNnRuVlhCOFVDWQ?oc=5",
       "title": "This is the change we need for the future of innovation - World Economic Forum",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 52,
       "confidence": 57,
@@ -15126,7 +14816,7 @@
       "key": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB6VFF0Q29ieUFndUVpMTZZUlFvNkNWVEVwd0JMWGdlcVdKNDROamsyWWFXWkRkZm5rc3dxQ0gzNXdabHdISmQta2hzWGc?oc=5",
       "title": "Dean Kamen Says Inventing Is Easy, but Innovating Is Hard - IEEE Spectrum",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-17T21:18:46.836Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 50,
       "confidence": 58,
@@ -15436,7 +15126,7 @@
       "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQVVNzbDZ0MFJxOE5lM2RGaVI2YVNabjAtTHpXQjBqbllLQXFnUWt2NTNKVV8taDY0ajh0bVR5aG1Mb2lBSEFhRFhtNmh5MDEyX09RY01LakRwQXk2WnVtdEltZ1lMSTlTQlBSXzR2ZWt1MjRDQk9jVXFkM2dyNGNGWVFfa3lLRWIwazJIbFhKX2Vjd29qc1lsSA?oc=5",
       "title": "Innovation, Invention and Impact: NJIT Undergrads Present Summer Research - NJIT News",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 62,
       "confidence": 60,
@@ -15446,7 +15136,7 @@
       "key": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZ2RFUmVmRTktYzJ2U1JfSDZkbUlrWGZINklMTFFreWRBeGRXcndDRjlIeUg1QmE0RTFlRWpEVnp4ZlgtN0gtLVNxUjU3aFc5Ung1d19XcHB6dUJ5SlRBcEt2UTgzWGo1bkpYRmFKV1VvTzlKS0ItQTVCMUhabkpYOXlQa2xydkEzWnBQS2ZpajA?oc=5",
       "title": "A History of Invention and Innovation - Boston University",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -15456,7 +15146,7 @@
       "key": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQUM4WGNTX0syZ01wenpzWmZCRmVtckdYSV9ZTk1PVnNTZE5seUFKSHJTNEFPR09GY2dyU3hZUmxBdjVQZTd0ZjhRZ2JYbXB4c2FvQlQtdnEtQlYzY20tVVV1Z0NhOVROdlQySHNIbGlLZlNkOFFCODhGeVVmeFppUm5JcHl0T2dKZ3Zv?oc=5",
       "title": "Opinion: Why Canada’s health Innovation bottleneck is adoption, not invention - University of Waterloo",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -16666,7 +16356,7 @@
       "key": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOUJEcmNOLWxKckVhUF9qamFvcURuTVBtNlF1WG0tb212VHlzOWpNcWYxVDgwX0trODc4MUJzMVNMMy11SUY2WkRDeUlCY0pJS2NjdFdpbDZGaFNfMHVNd3NQRU5KU3EtN2o2aUpwMmVtM19OOFM4Y1lZVTU1cjFrM0I1OHZUem9fY0VCTzBORU5jNW43SmNmdA?oc=5",
       "title": "Kenneth Morse: “Innovation is invention plus commercialization” - BBVA",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 60,
       "confidence": 60,
@@ -16676,7 +16366,7 @@
       "key": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS2tDYXRvZXdLNWJxQS1rMWkza2w4cy1nejRRQUJLd3hqcEdOOGdqUnlndW8xUmxMWFh0Z3F2SUhoSFBHRHM3Rm1iQk54alFXOTZJeDJ3UUlJR3lFQmxCUUxKMDRvVzlHRDVXOEdJY1VZUXh2MGpXaEhnYUZ4SjNuelVtMnVrWm_SAYwBQVVfeXFMT1U5ZExvNktKNldMSXAwOFE5Uk13RFJkTFZ3M0dnWlZHLVhZMEVDcWJKYUN3d28yYWJSRktGYkpySXlocUxtbTNTdGFETzFIWnpGYkd1TnptZDJKV2tERXFZc1NZTW9IX0lkNXRxNVdhQzlnWDg0N2ZGRTNvNnBlcmJsREwydHNZc0xhdWg?oc=5",
       "title": "Military Invention Day highlights innovation - Army.mil",
       "category": "Innovation",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
       "decision": "hold",
       "score": 57,
       "confidence": 57,
@@ -17011,6 +16701,316 @@
       "score": 66,
       "confidence": 91,
       "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQS3o2UkZHWXJNbmpfeDdzMWdmMnpJZS0xMFZGS2E4cDV2LTcxYldOUEx3dW9VaGNIR1l0M0puZS1qTzdtc1NqLXAyQ1ZDelRiWXZ2WHZiM0l1TU5WbHhzaHFMYnItU0ptNUtITkxWX2JCYXZ3eWlEbXVKdmUtRjM0MGVjVXAxWnV1N2hsQThwWEtvVWV6aWRKNHNvVjhiVEZIMG9POENUVWhVTG5zU0xaeGdkSEdYWXBnM1JTc0l6aFNKZlFLY0tLbDZTSllxbks5b3E3OHJCYnl5OEU?oc=5",
+      "title": "Patenting invention: Clean energy innovation trends and priorities for the Trump administration and Congress - Brookings",
+      "category": "Innovation",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 56,
+      "confidence": 56,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxObHRielZrRXFaVk0tTlV6M1pmQVlhMWhacjJSeW5uLUd6cHllNGhTMTNpak9jblZlY3h4eXQzY1ZRMWtkZ29valdKakY1Nk9hM2lyOVlXV1FXRWpWVGE1R254UWFJYTJ2azNIMHpVTWNyeVo5ZmEzVTd1TXlnM0lER1FQMFJ3YkVqUFpqeGR6d3JwTnFnTHU0UUZXejA2TzFZYXB5eE40Y0ttbFA1TmljVTZUeWFLUE1IWkRBeWVYOHpIQ1ZoX3AwSm5faHFSaWNwN09pcw?oc=5",
+      "title": "Bitcoin miner MARA raises $185 million in debt after selling $1 billion BTC to repay loans - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 68,
+      "confidence": 85,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSm9HdEtWSkw3MWdlcXFoQXlpWkwzRmp3d0lQMldNQkxsQlE5SDhZdmNfYnlUVjdUWm1EcFp4V2dYM1JkNm5aTnE3dm85MlU2bDA1bDBXQUJLdXlvZGUxVVJKYmljdzdMaHFlaXU3c0ZjdDRlLTVrRWdsTzM2WHVTWjJZNjNPU19uWDJXM2Q3RmRjY2o1VFJ1ZUtJLThEVVp3?oc=5",
+      "title": "Not Micron. Not Broadcom. This Artificial Intelligence (AI) Stock Will Skyrocket in December After the Latest Sell-Off - Yahoo Finance",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 72,
+      "confidence": 92,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNHBoUzBUUGs2WnpJQ1VrLXFMaXpyNzV5VjMwVDlnUDZhcE16MXhBTlFvZE5aTGdtR2FzR2N1cjJtdGdZeVBqbzltUmZjdW9lVGg2U2FnbFJLVVBJQm1acUE2QnZnUUNkM0IzQ3ZldUhJNmtGX2dKNlRCRFVZTC0xOHliTEVxbjZqWE13XzM3U2FDRXc4ZU9MR3IzNWdnS0swTFVpbnpTam1IcmVWVFo5VTI2Znlud1F0a3pmN2dGVGR2XzdEVGdJNUhkc3FidzE1cHhzXw?oc=5",
+      "title": "MDOC says new software to classify prisoners doesn't use AI - Detroit Free Press",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 69,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9Ja2VaTk5QRWV4SHJrUnlBVTV4UExVb2tYZ0pMbDB6d3hILVFNdVlOWFhlLVpkUGpHUUxLbHFCWGo4TjZ4d19vTm1ESmxtY2xrV0Q4ak90RFlFRExxbk96ZWJWbHBNd2JVcmFNa0g5U1JsR2RqUkc4RndHWQ?oc=5",
+      "title": "Best Crypto Casinos Canada 2026: Top Bitcoin Sites - Bitcoin Foundation",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 82,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTzdTTkZ2VlJjWjhRRHE0aGFVbE1WUzlUSVJpQnB2N3lRZmxaTVQtMk0yRWJWMWJXcWFCR0F5WHFfWDRLV2RlS0tWLW5CeXR1WVRJU3hDeG9iXzFIM1k0dDRldW5UNEY2d1lhaUVMUFBNVlR0XzUybFo3Zk5uWVIyLVhHM1BTWHhYd2gwTEJyS0NOb2xiSmRuOXV2cUV6eGpRdzJmN0tsRW0?oc=5",
+      "title": "Prediction: This Cryptocurrency Will Outperform Bitcoin in 2027 - The Motley Fool",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 90,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQR1JRUnBpbkVvbnQ2WTcxbHI3dloxazRwd0FYT25wWkF1Z0ZFNmNpbU9nTlJ4NjlaTGcySE1SeVk4ZTBoTmc4VmltTU9hQ0ZjLU4zVThMaW1jdW96bHdYWGh4ZVZSZkFEWUVqVlV4WVYwYXJDOERaMmc0dFMtS3pXOUU5VVkyVVB2V2VnMEw4OEVLbkxIWHAwdG9YdHYwTTB3cDhxMGVyeUkweVM0a09NaTBJeVh0ZGZTODdvYy1MY0c5QQ?oc=5",
+      "title": "Bitcoin-to-gold ratio flashes bullish signal as BTC price outperforms the precious metal - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPLWxMY2I3MW5RRWZIYkdBU1RVTlc3aC1IcHRmb2F0cmtGcFo1eUd3NFoxdlFCelJxU3huVG56dDVCZWxRSEJUR1JPM3RvYjRXMWlKc2hxb3pLM0NtVlVreUdqNlhkbmo5TVZxeFR6aDRpTHZlZldTLWtja3Zkb3VpOFdELXNmU3RFbVZYVmxiZkVRTGU1LU5UUmZUbkJJRGlLNHZnVTJGSnViTjFSNjRCOHdpRGlvOG5QTHoxamFZMFZ3V3FUNWRBWGJJZEtYZw?oc=5",
+      "title": "Blaming Anthropic’s IPO for bitcoin’s slide is 'easy to believe,' but flawed, analysts say - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMif0FVX3lxTE02QnBLYjh6NmdaOFk2MVpaZ3dZeDRhRmxqUnFuVjRPekhEQ2hBTmxuLXlWRUs2RWlsN2Q2Ui1RVDNtUHl5S2tfbVlHR1N6ZFF5QUM3VmplbFNoeE0tOWhrT0M4YjRoSlNCaGV0bjVXUTBteHEwdEVsTnF5Ymc3SUU?oc=5",
+      "title": "Two brothers acquitted over $25 million crypto heist - ICLG",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 89,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNel8yQnNSM1dzYUJKc09mRUZwV1dXNTFUMi1qOHNGMFNrZm1aZGE0Sy1vUnpDSEJsQmczdk1WbndvMFptZjZ5MENCWGtQNlBEWGVUX19USHhXTHBDbzc3TTE1c1ZZMTRlS2Q4SW1kRmJSLWNpSDFyYlRYMzVnczhiQldQUmM1aXNES1ZDcE56a01hcTZSLXpsUlpyVjBoYk5KQkl2WE1pLUhHRjYy?oc=5",
+      "title": "BankThink Banks are missing an opportunity on crypto-based lending - American Banker",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 87,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZlNxOHJWbE9MR084TDUtUHB3UDJ5WE14eERlVUl0RnFSLVJXRWI1M3g2UHlaV3FsMzU0Snc1ak9KMmRWb1RLYUttUFpsV1d5eVR5Uzg0SFY5WmZZSUlyNnJVV1FlMURMNnpJa2F4cVpNcDRfSHlyb1o0YzR3WFY5YkdVRjFYOFpRZlV5WlVoZWFtSHhxQ19kcEc0cGd1Tm82SlBpOURHeW1RVUhPSFNZdWhlUjhKUUYybzFfQ29vYWo?oc=5",
+      "title": "Bitcoin's (BTC) 12% slide through the 200-week average has a bullish past - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 84,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcVg4SHRzNFBGSVlldndQYzdlR0U5cGdnOWgtQmJrRGRpUVVnS1F2ODRkNWNieUVXTDdqMFR4akFwdjA2NV84dzJqelJhbGtIQmIzMnh0ak5iRTd6NTBQRC05NldNZUlRUXItelFCS1pXVTlmT05wdHpiZ0ltR0tUNFI4WjJzckRZMjFyR3Ytb2thMnQ3WXdsaExMMFNMR05KNEZCU0MyZ3lPN20wVUVPdHNQUUx3bVBEQXRITXZSLWRuUGJfamZaaA?oc=5",
+      "title": "U.S. judge says Ethereum has ‘no terms of use,’ clears MIT brothers of $25 million fraud - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 84,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/",
+      "title": "Nvidia says it doesn&#8217;t plan to reappoint Jensen Huang as CEO",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 82,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPaGxfbVNISi0xMTEwRHN3UGxoTFhOOHZwQzliVEZxWXF3MVhUSEdyRl9aTW1iTjUyREQtczB2ZnpOdm5ILTIxX0JOQ1Y2NTlHU0xzSTZvbUh5cUFRS0VMY2JMaDJQcUdvN0w3WFNBeVl2dmhRTVdOaHc1QVR5SjNvcXotMEpoYTZwaGJxX0w1SE5YdkQzd2J6eVJfNHc2anktbXNpLVdMVmlDZW9oTllnWHhoWGhpQ1BXQkJ4ZTRMZ0JQZkVqemVtNXBESTVnQU93TmhxaXpuTGY4LWN5ajZLWg?oc=5",
+      "title": "The Technology Behind AI Video Generation: How Artificial Intelligence Is Changing Digital Content Production - Technology Org",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOaXB0RzlROVJESzZob0J0dHVVZnVmZ0pZNVd0ek45UW5menpua0t5RkNTRFU5aWdaYTNjNXVyR0dDTEI2NW5LRmV6VGpZUk9RUDFXVHVCcDRITE9BcFBIbEREZDRhWmRMWDVBeFVUc3l2dGREdk1PTVhwTXcyc3dNQW5MamFILUI4M3JjV3I4ZUY2aS1BYjk0aWE5LTVVeWtzc1hpVXJqcjExazNrV3Q3RE93NHlOZkNQbTU4ZzdLLXl2Ylc2UzhhVjBQOXhsUTg?oc=5",
+      "title": "Got $500? Buy This Top Artificial Intelligence (AI) Chip Stock Following the Latest Sell-Off - The Motley Fool",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://www.theverge.com/games/1035801/grand-theft-auto-6-review",
+      "title": "Grand Theft Auto VI does something impossible — it lives up to the hype",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 67,
+      "confidence": 91,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNU1packRoM1c4R2NWdXB1dzdaWHpRVjJmU2QtMXM0dWQtT1dDTXNlalpJOXZ3R3B6WXk3S0JRU3NURkhJbUNzTmRBaEV6dERqb240d2ZZbzlrRmRScEtkc0FiUFpzcV9mRDAydE5xWkRubU5XLUNpMU1ZQXlhQV9ENDhtT3dpeDFhS2FIWmw5RkdOWG9INm14UnkyMVkycXdFNEtRNl9ScHB3V3hEOVR6TEpwMGY0ZU8t?oc=5",
+      "title": "Bitcoin (BTC) price drops as basis trade dries up and Fed minutes loom - CoinDesk",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 82,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE43Vk1vSWRsdV9MQk1kaVVSRTNxb2pfMnhGUXFXdUVLNFdWTjlOdEgyWFVIN19MUXdwdmJLV0tnelBTZ3NlNUU1UF9aZGNsX0RjY0tFYmswXzNYU25LZmhZLWJPcE5Qb2wx?oc=5",
+      "title": "Current price of Ethereum for November 18, 2026 - Fortune",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRE9iT3hvZTJMVS01WEMxWkpXRFFDN1JGRnhQZ3h3SU1qOTVPYVVGX0tkeVd0LUdyNHJUZ003eEZ2ZVozRlNXNGpod2F1T0lSQ0VhYkNWS01sSVp3VF9VeXdFdFRuU3E2OTI3SUp4Wi0zS2djSWdpbDZMUm9Hbi1xYlVRWnhsYXNtaXYxV29WVzVKUm5SM3RubmVKUkJqSnVHYlFpcmpZZTZWWTFwa2YtQnZZUFNGeUh4SVEya2pVWkdrVjB4UktxSWhSTHdYQm9WX3Jv?oc=5",
+      "title": "UAT-12643: Suspected North Korea-aligned actor blends blockchain resilience with targeted infostealing - Cisco Talos Blog",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdGVJd04yYnJqVHFiTTZUckFGMGNUcXE2TEpsWEp4aXVMYVhfb281OFVxUEhuV055R1ZmMmtfdE93N1lRNnZmRlgxbnpVcWF2MU9mMWlIeGYzbV96M0MxT3Z6ODJOSXZaOUhMbDkxZW94VFJXZWdjM0ZBcmZKNVk2cmUzNWVWd1Fya1Rxd0RqVWJZN3I5T0pmN2V0ZHFHNU85TGJneHduTGZrU1o1aXVpOHVqRQ?oc=5",
+      "title": "Anthropic Crypto Bets Imply $1.7 Trillion Value Despite AI Rout - Bloomberg.com",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZF9LMkJwcDBHNlhOZkU3TUQxdkk0S2lmR05Fc2xINGFBSEpzdHZfVXkyWHJvSmFCZ3M1Q3JiSzIyUFhRMkxhNEotdHVCNU1SSmRaUVJHSkZybnFzc2ZUcjJLUDlUdGFFXzd5MklqYmd0X19YWVR1TGFqUVU5NFA3T0h3NDBSZFpfVmhiQ1ZncG5QSlJSVHZlRkFxLWRoSnhORlkyQXVIQnd0bXdSWEYyNHpjRG4zVjJ4bWVpbTd3?oc=5",
+      "title": "Hiding beyond the visible: How artificial intelligence is enhancing multispectral camouflage - AIP.ORG",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPYl9zYTgxbk5MMHVYeTA0VnFvUVM0bWJpZjZYRlFTX0dQbUlGUjRTWlRuSl9QQzVDNlRyTl9SVUlsZWt0V2NzY2FYMWFDdm9yQnFVcnpnTzRxdzE4ZTJoZWJsdU1lV1dGVGZYZ3hCVVFhMExwcjdQYjNVYmR6QVlIMHl2UmlXMk94TjRwaDI1YlJNYlZqWFI0VG02X3A1eFVkWVQ2MXpmNFFOYXNuS3FZM0pYZk4zdUFhay1TNmVNQXlhcEpOem5UR2l3cEU4dkZWeWp5YWJQQUN4M1hLT0RXX2FR?oc=5",
+      "title": "BigBear.ai vs. SoundHound AI: Which Artificial Intelligence Stock Is a Better Buy Going into 2027? - The Motley Fool",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 89,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/",
+      "title": "Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSmxsSmlwajI0VElUbEFtdjYzR1F6Z3FsazZTNDN6cmhOb1JWbEVQTi1xUXl2M2FkWWRhZ0ZXSXF5UndRSlJ1WUEwbE1hejFOWFQ2eW1yQmxOejAzaERyRnQyRExzcG1vVll6NGRJQlNUNGxLcWgzbU9qbnlsR1B1TkJ3dTR0cUxpdndPb3JYZ21aTkpPU2RPR3FSaVFtOUZJNkp4R29HZ2cwb1ZoNTZHTHc4TQ?oc=5",
+      "title": "Java hit by major security flaw — here's what we know about Java4Shell so far - TechRadar",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9IeTRLcERtQTNwRllJZGJLdzlWaVpMcnJYVW5JVHgxT2VoSFc0OXFpajZJbWgzRzVMVmE2YkRwWkphZzlSVDdnNGRORU5KVGIwSkY2M3QxeXl5N1JWNWZIRm8tYUFaV0RkZEpKYl9MSzJueHJ5bFhiYQ?oc=5",
+      "title": "Java4Shell: Critical OpenJDK Flaw Allows Unauthenticated Remote Code Execution - SECURITY.COM",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 93,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1035847/grand-theft-auto-6-launch-review-news",
+      "title": "Grand Theft Auto VI has arrived",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 66,
+      "confidence": 90,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BeUI5Y19hOG1KTjJTbVpVRFVMOHJESmpkT2tYNUJVQnJRZmw1NGhFeFBqM3F0UjRRZGo3dnoyeFZHV0JQQlJCS1NHUGZtNktYSzVwY1NsT3JlckpEYUtuZVlkTnV2eEU?oc=5",
+      "title": "Current price of Bitcoin for Nov. 18, 2026 - Fortune",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 82,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObjVDZnN0eU4wT3hZNUEycDIwbnA1OVNad3dreDZaMmFYZXppSU5WSlhGcGRqRndpaElmbnVwS3pubmV2TWhzUEVEX1ZuY1dpbnl3YnRKckhfUXhhZDNMNzB6X0R4bGh5NWc3THlLbFR6bnF2eTFMRHU0RXc3TFBEMGxRRjR6LXJQaXM1STBod0VfY0s2SXc4VVcyNjR4eVhxM193cDBDdzdmMGdiQWM4?oc=5",
+      "title": "Bitcoin Erases Bessent Rally as Leverage and Liquidity Fade - Bloomberg.com",
+      "category": "Crypto",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 84,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/",
+      "title": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 65,
+      "confidence": 83,
+      "evidenceLevel": "strong"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMitwJBVV95cUxNM2d0cHhtcnY5MUxTQUFwLTJIOUZUelphU1pFSXN6TjFCUXJYb2d6UWRVUWh3Y05UZUdwS05hNjdfaWpabWxCcUZXd2k3LUpWa3RhM1Fsb0UwMExWaW9OT3NJZWExdkVWWDliSDM1RnRuQ1d4UEZNMGU2cUZVMExZOUxzem9qbEpiV1dSdm5vYTZKUGFCNGRrbF9xWUo3SUczLUhiNjRxdERtZkxSSmV3TVNqaFpmMTZlYjk1Nk1yZGlLVFV1TVY2ZlZHVnBWVmsxTnVOR25nQzV0OEZCRjdqa1dZZnVheHBKbVotWXlNaXVzYkxQLXM1ZFprczhkcmJHWlB2Q1JTNjlLLU9TNjdzeDJUR3Mza3ZUcEpia2lDZ2xmNWFhbzRmMERQdkNRbWFMQnFyYWtobw?oc=5",
+      "title": "Knowledge, Attitudes, and Practices Regarding Artificial Intelligence Among Healthcare Professionals at a North Indian Tertiary Care Teaching Hospital: A Cross-Sectional Survey - Cureus",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 65,
+      "confidence": 85,
+      "evidenceLevel": "none"
+    },
+    {
+      "key": "https://news.google.com/rss/articles/CBMitAJBVV95cUxOWDVNYzhyQU81Z1FQaXYxNm45dkEtQTlCeGwtXzZvMFZwVjJvWnMyZ2dCUllrSDJXeEtEUUR2WVdDelVYX1FHTk5WMGdNSzMweG8zSmlXT3Atb1pFVUJwSXMtbFFsaDNjVXZvMGxtcTJVS0RqVFlIR1gtSUE0OHc2RGF6MmF3X3VhMXBGdFpQWlJfeFBzR0thQmpmSm9WeHdlcXVRN3JHXzE1RGVuQWFXTUptQ0lyWVl6Vko2aTFVWjJzb2lLWk0xdU1KTDl1R0xmN011Q3BrRmdNWjRZMlNZck5RcHBRUWNwVnVKcnJYOWVtbDJhYnNjSDJBck12c09xUlFBQW9ScnNqLUJ0eG9kN0dFdE84YktBOUc1RldnVS0waG54ay1yd1RCQmJaOFppVmRvRw?oc=5",
+      "title": "Comparison of Diagnostic Accuracy of Artificial Intelligence With That of Conventional Diagnostic Methods for Root Fracture Detection: A Systematic Review and Meta-Analysis - Cureus",
+      "category": "AI",
+      "lastSeenAt": "2026-11-18T20:52:09.965Z",
+      "decision": "review",
+      "score": 65,
+      "confidence": 85,
+      "evidenceLevel": "none"
     }
   ],
   "articles": [
@@ -17217,6 +17217,12 @@
       "title": "CFTC Sends Crypto Rule Draft to White House for Review",
       "category": "Crypto",
       "publishedAt": "2026-09-19T05:13:39.960Z"
+    },
+    {
+      "file": "china-s-army-seeks-nvidia-s-advanced-chips-u-s-commission-reports.md",
+      "title": "China’s Army Seeks Nvidia’s Advanced Chips, U.S. Commission Reports",
+      "category": "Technology",
+      "publishedAt": "2026-11-18T14:53:36.581Z"
     },
     {
       "file": "china-s-ministry-of-state-security-comes-under-scrutiny-after-nvidia-ceo-investigation.md",
@@ -17682,7 +17688,7 @@
     }
   ],
   "categories": {
-    "Technology": 18,
+    "Technology": 19,
     "Digital Life": 32,
     "Crypto": 18,
     "AI": 32,
@@ -17692,13 +17698,13 @@
   },
   "sources": {
     "evidenceCandidates": 230,
-    "passed": 91,
-    "blocked": 25,
-    "strong": 38,
-    "singleSource": 53
+    "passed": 92,
+    "blocked": 20,
+    "strong": 36,
+    "singleSource": 56
   },
   "decisionMemory": {
     "records": 200,
-    "updatedAt": "2026-11-18T00:17:19.734Z"
+    "updatedAt": "2026-11-18T14:53:34.729Z"
   }
 }
