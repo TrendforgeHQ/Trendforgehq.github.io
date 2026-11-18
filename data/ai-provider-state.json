@@ -7,66 +7,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 388,
-      "lastSuccessAt": "2026-11-17T01:21:07.081Z",
+      "successes": 391,
+      "lastSuccessAt": "2026-11-18T00:19:43.104Z",
       "history": [
-        {
-          "at": 1794611218988,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 30605,
-          "usage": {
-            "queue_time": 0.169133059,
-            "prompt_tokens": 2452,
-            "prompt_time": 0.123643526,
-            "completion_tokens": 840,
-            "completion_time": 0.885666801,
-            "total_tokens": 3292,
-            "total_time": 1.009310327,
-            "completion_tokens_details": {
-              "reasoning_tokens": 536
-            }
-          }
-        },
-        {
-          "at": 1794629059841,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1671,
-          "usage": {
-            "queue_time": 0.075392099,
-            "prompt_tokens": 5884,
-            "prompt_time": 0.32199603,
-            "completion_tokens": 1011,
-            "completion_time": 1.064296001,
-            "total_tokens": 6895,
-            "total_time": 1.386292031,
-            "completion_tokens_details": {
-              "reasoning_tokens": 19
-            }
-          }
-        },
-        {
-          "at": 1794629078009,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 16233,
-          "usage": {
-            "queue_time": 0.242767068,
-            "prompt_tokens": 3006,
-            "prompt_time": 0.199806344,
-            "completion_tokens": 952,
-            "completion_time": 1.021726836,
-            "total_tokens": 3958,
-            "total_time": 1.22153318,
-            "completion_tokens_details": {
-              "reasoning_tokens": 684
-            }
-          }
-        },
         {
           "at": 1794629110845,
           "ok": true,
@@ -389,48 +332,86 @@
               "reasoning_tokens": 24
             }
           }
+        },
+        {
+          "at": 1794961164170,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 1743,
+          "usage": {
+            "queue_time": 0.166463759,
+            "prompt_tokens": 5407,
+            "prompt_time": 0.372453661,
+            "completion_tokens": 902,
+            "completion_time": 0.966476482,
+            "total_tokens": 6309,
+            "total_time": 1.338930143,
+            "completion_tokens_details": {
+              "reasoning_tokens": 13
+            }
+          }
+        },
+        {
+          "at": 1794961170395,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 4612,
+          "usage": {
+            "queue_time": 0.114246965,
+            "prompt_tokens": 1550,
+            "prompt_time": 0.078012601,
+            "completion_tokens": 167,
+            "completion_time": 0.178398676,
+            "total_tokens": 1717,
+            "total_time": 0.256411277,
+            "completion_tokens_details": {
+              "reasoning_tokens": 106
+            }
+          }
+        },
+        {
+          "at": 1794961183104,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 11937,
+          "usage": {
+            "queue_time": 0.052199732,
+            "prompt_tokens": 1538,
+            "prompt_time": 0.09933507,
+            "completion_tokens": 90,
+            "completion_time": 0.094285986,
+            "total_tokens": 1628,
+            "total_time": 0.193621056,
+            "completion_tokens_details": {
+              "reasoning_tokens": 51
+            }
+          }
         }
       ],
-      "lastLatencyMs": 1452,
+      "lastLatencyMs": 11937,
       "lastUsage": {
-        "queue_time": 0.285651716,
-        "prompt_tokens": 4519,
-        "prompt_time": 0.386007131,
-        "completion_tokens": 454,
-        "completion_time": 0.488194395,
-        "total_tokens": 4973,
-        "total_time": 0.874201526,
+        "queue_time": 0.052199732,
+        "prompt_tokens": 1538,
+        "prompt_time": 0.09933507,
+        "completion_tokens": 90,
+        "completion_time": 0.094285986,
+        "total_tokens": 1628,
+        "total_time": 0.193621056,
         "completion_tokens_details": {
-          "reasoning_tokens": 24
+          "reasoning_tokens": 51
         }
       }
     },
     "Gemini": {
-      "failures": 92,
-      "quotaBlockedUntil": 0,
-      "lastStatus": 200,
-      "lastError": null,
-      "lastClass": "success",
+      "failures": 93,
+      "quotaBlockedUntil": 1794961241944,
+      "lastStatus": 503,
+      "lastError": "503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "lastClass": "server",
       "history": [
-        {
-          "at": 1792872060416,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 5915,
-          "usage": {
-            "promptTokenCount": 5299,
-            "candidatesTokenCount": 770,
-            "totalTokenCount": 6069,
-            "promptTokensDetails": [
-              {
-                "modality": "TEXT",
-                "tokenCount": 5299
-              }
-            ],
-            "serviceTier": "standard"
-          }
-        },
         {
           "at": 1792923946025,
           "ok": false,
@@ -726,6 +707,12 @@
             ],
             "serviceTier": "standard"
           }
+        },
+        {
+          "at": 1794961121944,
+          "ok": false,
+          "class": "server",
+          "status": 503
         }
       ],
       "lastLatencyMs": 9152,
@@ -759,26 +746,14 @@
       "lastClass": "error"
     },
     "OpenRouter": {
-      "failures": 118,
+      "failures": 120,
       "quotaBlockedUntil": 0,
-      "lastStatus": 200,
-      "lastError": null,
-      "lastClass": "success",
+      "lastStatus": 404,
+      "lastError": "404: {\"error\":{\"message\":\"liquid/lfm-2.5-2.6b:free is no longer available on OpenRouter: no provider serves this model anymore. See available models at https://openrouter.ai/models\",\"code\":404},\"user_id\":\"user_3JMLXasaSz6nyI4cn1uM6VTlW3j\"}",
+      "lastClass": "request",
       "successes": 3,
       "lastSuccessAt": "2026-10-26T18:01:53.331Z",
       "history": [
-        {
-          "at": 1791412199905,
-          "ok": false,
-          "class": "rate_limit",
-          "status": 429
-        },
-        {
-          "at": 1791412208290,
-          "ok": false,
-          "class": "rate_limit",
-          "status": 429
-        },
         {
           "at": 1791412216627,
           "ok": false,
@@ -910,6 +885,18 @@
               "audio_tokens": 0
             }
           }
+        },
+        {
+          "at": 1794961122729,
+          "ok": false,
+          "class": "request",
+          "status": 404
+        },
+        {
+          "at": 1794961161818,
+          "ok": false,
+          "class": "request",
+          "status": 404
         }
       ],
       "lastLatencyMs": 11010,
@@ -1250,5 +1237,5 @@
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-11-17T01:21:07.081Z"
+  "updatedAt": "2026-11-18T00:19:43.104Z"
 }
