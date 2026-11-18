@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-18T14:53:37.452Z",
-  "articlePath": "content/articles/china-s-army-seeks-nvidia-s-advanced-chips-u-s-commission-reports.md",
-  "articleTitle": "China’s Army Seeks Nvidia’s Advanced Chips, U.S. Commission Reports",
+  "generatedAt": "2026-11-18T23:46:00.876Z",
+  "articlePath": "content/articles/windows-server-2028-preview-microsoft-s-new-security-first-approach.md",
+  "articleTitle": "Windows Server 2028 Preview: Microsoft's New Security-First Approach",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 4,
-  "usableSourceCount": 4,
-  "claimCount": 8,
-  "editorialCount": 2,
-  "verified": 7,
-  "partial": 1,
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 13,
+  "editorialCount": 0,
+  "verified": 8,
+  "partial": 5,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 87,
+  "averageConfidence": 81,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,107 +45,165 @@
   "sources": [
     {
       "id": "S1",
-      "title": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
-      "url": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html",
-      "domain": "cnbc.com",
-      "passageCount": 5,
-      "articleBodyLength": 1281
+      "title": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "domain": "arstechnica.com",
+      "passageCount": 11,
+      "articleBodyLength": 1252
     },
     {
       "id": "S2",
-      "title": "US commission says China’s military is seeking Nvidia’s most advanced chips - The Next Web",
-      "url": "https://thenextweb.com/news/us-commission-says-chinas-military-is-seeking-nvidias-most-advanced-chips",
-      "domain": "thenextweb.com",
-      "passageCount": 10,
-      "articleBodyLength": 1053
-    },
-    {
-      "id": "S3",
-      "title": "US Commission Says China Seeks Nvidia Chips for Military AI - UA.NEWS",
-      "url": "https://ua.news/en/dovkolo-svitu/komisiia-ssha-kitai-shukaie-chipi-nvidia-dlia-viiskovogo-shi-cnbc",
+      "title": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "url": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
       "domain": "ua.news",
-      "passageCount": 6,
-      "articleBodyLength": 1162
-    },
-    {
-      "id": "S4",
-      "title": "U.S.-China Commission Says China’s Military Seeks Nvidia AI Chips - www.tokenpost.com",
-      "url": "https://www.tokenpost.com/news/regulation/60330",
-      "domain": "tokenpost.com",
-      "passageCount": 3,
-      "articleBodyLength": 531
+      "passageCount": 11,
+      "articleBodyLength": 1323
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "A U.S. commission report says the People’s Liberation Army has been \"actively soliciting\" Nvidia’s most advanced semiconductor chips to develop artificial‑intelligence‑enabled military capabilities.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 99,
+      "claim": "Microsoft has unveiled a significant shift in its approach to server security with the Windows Server 2028 Public Preview.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 95,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 96
+        "score": 87
       },
       "provenanceFactMatches": [
         {
           "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 96,
+          "score": 87,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F12",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 87,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "China 's People's Liberation Army has been \"actively soliciting\" Nvidia 's most advanced semiconductor chips to develop its artificial intelligence-enabled military capabilities, a congressional commission said in a report released Wednesday.",
-      "bestPassage": "China 's People's Liberation Army has been \"actively soliciting\" Nvidia 's most advanced semiconductor chips to develop its artificial intelligence-enabled military capabilities, a congressional commission said in a report released Wednesday.",
+      "bestPassageId": "S1-FF1,S2-FF12",
+      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
+      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
       "matchedPassages": [
         "S1-BODY",
         "S1-P1"
       ],
       "sharedTerms": [
-        "commission",
-        "report",
-        "the",
-        "people",
-        "liberation",
-        "army",
+        "microsoft",
         "has",
-        "actively",
-        "solicit",
-        "nvidia",
-        "advanc",
-        "semiconductor",
-        "chip",
-        "develop",
-        "enabl",
-        "military",
-        "capabiliti"
+        "reveal",
+        "its",
+        "approach",
+        "server",
+        "security",
+        "the",
+        "window",
+        "2028",
+        "public",
+        "preview"
       ],
       "entityShared": [
-        "people",
-        "liberation",
-        "army",
-        "nvidia"
+        "microsoft",
+        "window",
+        "server",
+        "public",
+        "preview"
       ],
       "topicShared": [
-        "commission",
-        "says",
-        "nvidia",
-        "advanc",
-        "chip",
-        "military",
-        "capabiliti"
+        "approach",
+        "server",
+        "security",
+        "window",
+        "2028",
+        "public",
+        "preview"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [
+        "significant"
+      ],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 2,
+      "claim": "The update introduces a new security-by-default stance, aiming to address a longstanding concern for system administrators.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 74,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 48
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 48,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core .",
+      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core .",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "new",
+        "security",
+        "default",
+        "stance",
+        "fear",
+        "for",
+        "system",
+        "administrator"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -154,8 +212,8 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -167,85 +225,62 @@
       "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 2,
-      "claim": "The report notes that China is doing so because domestic firms such as Huawei and Cambricon still lag behind U.S. makers like Nvidia and Advanced Micro Devices.",
+      "index": 3,
+      "claim": "The key feature of this update is Hardened Server Core, a set of security settings that align with strengthened U.S.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 93,
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "US Commission Says China Seeks Nvidia Chips for Military AI - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/komisiia-ssha-kitai-shukaie-chipi-nvidia-dlia-viiskovogo-shi-cnbc",
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
       "bestDomain": "ua.news",
-      "sourceId": "S3",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F18",
-        "sourceId": "S3",
+        "factId": "F13",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 85
+        "score": 88
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 85,
-          "passageIndex": 4
-        },
-        {
-          "factId": "F18",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 85,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F10",
+          "factId": "F13",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 76,
-          "passageIndex": 3
+          "score": 88,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF2,S3-FF18,S2-FF10",
-      "evidence": "China is making that move as it faces a quality gap between chips produced by Chinese companies, including Huawei and Cambricon , and the more advanced ones produced by Nvidia and other U.S. companies, such as Advanced Micro Devices , the report noted. The report’s authors noted that Chinese manufacturers, including Huawei and Cambricon, lag behind Nvidia and other US companies, including Advanced Micro Devices, in producing advanced chips. The report says chips from Chinese firms such as Huawei and Cambricon still lag those from Nvidia and AMD.",
-      "bestPassage": "China is making that move as it faces a quality gap between chips produced by Chinese companies, including Huawei and Cambricon , and the more advanced ones produced by Nvidia and other U.S. companies, such as Advanced Micro Devices , the report noted. The report’s authors noted that Chinese manufacturers, including Huawei and Cambricon, lag behind Nvidia and other US companies, including Advanced Micro Devices, in producing advanced chips. The report says chips from Chinese firms such as Huawei and Cambricon still lag those from Nvidia and AMD.",
+      "bestPassageId": "S2-BODY",
+      "evidence": "As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
+      "bestPassage": "As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P3"
+        "S2-BODY",
+        "S2-P2"
       ],
       "sharedTerms": [
         "the",
-        "report",
-        "not",
-        "china",
-        "firm",
-        "such",
-        "huawei",
-        "and",
-        "cambricon",
-        "lag",
-        "behind",
-        "nvidia",
-        "advanc",
-        "micro",
-        "devic"
+        "key",
+        "feature",
+        "harden",
+        "server",
+        "core",
+        "set",
+        "security",
+        "setting",
+        "align",
+        "strengthen"
       ],
       "entityShared": [
-        "china",
-        "huawei",
-        "cambricon",
-        "nvidia",
-        "advanc",
-        "micro",
-        "devic"
+        "harden",
+        "server",
+        "core"
       ],
       "topicShared": [
-        "china",
-        "nvidia",
-        "advanc"
+        "server",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -255,96 +290,522 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": true,
+        "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 3,
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 4,
+      "claim": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
+      "bestDomain": "ua.news",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F14",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 100
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 100,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P3",
+      "evidence": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
+      "bestPassage": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
+      "matchedPassages": [
+        "S2-P3",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "department",
+        "defense",
+        "guidelin",
+        "includ",
+        "the",
+        "disa",
+        "security",
+        "technical",
+        "implementation",
+        "recommendation"
+      ],
+      "entityShared": [
+        "department",
+        "defense",
+        "disa",
+        "security",
+        "technical",
+        "implementation"
+      ],
+      "topicShared": [
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 5,
+      "claim": "This approach ensures that the secure configuration is the starting state, eliminating the need for administrators to manually harden servers after deployment.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 76,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F5",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 38
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F5",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 38,
+          "passageIndex": 3
+        },
+        {
+          "factId": "F7",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 34,
+          "passageIndex": 3
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "In the past, Windows Server admins were left to start from a blank canvas and then implement hardening configurations for operations. Microsoft says that concern is now managed: “The s ecure configuration is the starting state, not a project you run after setup.",
+      "bestPassage": "In the past, Windows Server admins were left to start from a blank canvas and then implement hardening configurations for operations. Microsoft says that concern is now managed: “The s ecure configuration is the starting state, not a project you run after setup.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "secure",
+        "configuration",
+        "start",
+        "state",
+        "eliminat",
+        "need",
+        "for",
+        "administrator",
+        "harden",
+        "server"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "approach",
+        "server"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
       "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 3,
-      "claim": "The commission explained that China has made some progress toward its goals but has not closed the hardest chokepoints, including advanced logic fabrication, memory, semiconductor manufacturing equipment, and Nvidia’s CUDA software.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 98,
+      "index": 6,
+      "claim": "The update also brings technical improvements, such as eliminating NVMe translation through a SCSI stack, which enhances speeds and reduces overhead.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 84,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html",
-      "bestDomain": "cnbc.com",
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
+        "factId": "F2",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 94
+        "score": 81
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
+          "score": 81,
           "passageIndex": 6
-        },
-        {
-          "factId": "F19",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF4,S3-FF19",
-      "evidence": "\"Although China has made some progress in achieving its goals, it has not yet closed the hardest chokepoints — including the most advanced capabilities in logic fabrication, memory, and semiconductor manufacturing equipment, as well as the Nvidia Compute Unified Device Architecture (CUDA) software moat — and likely will not for some time,\" the report said. According to the commission, China has made some progress but has still not eliminated critical constraints in the production of logic chips and memory chips, semiconductor manufacturing equipment, and Nvidia’s CUDA software ecosystem.",
-      "bestPassage": "\"Although China has made some progress in achieving its goals, it has not yet closed the hardest chokepoints — including the most advanced capabilities in logic fabrication, memory, and semiconductor manufacturing equipment, as well as the Nvidia Compute Unified Device Architecture (CUDA) software moat — and likely will not for some time,\" the report said. According to the commission, China has made some progress but has still not eliminated critical constraints in the production of logic chips and memory chips, semiconductor manufacturing equipment, and Nvidia’s CUDA software ecosystem.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "The update eliminated NVMe translation through a SCSI stack while improving speeds and reducing overhead.",
+      "bestPassage": "The update eliminated NVMe translation through a SCSI stack while improving speeds and reducing overhead.",
       "matchedPassages": [
         "S1-BODY",
-        "S1-P4"
+        "S1-P2"
       ],
       "sharedTerms": [
         "the",
-        "commission",
-        "china",
-        "has",
-        "progres",
-        "its",
-        "goal",
-        "but",
-        "not",
-        "clos",
-        "hardest",
-        "chokepoint",
-        "includ",
-        "advanc",
-        "logic",
-        "fabrication",
-        "memory",
-        "semiconductor",
-        "manufactur",
-        "equipment",
+        "technical",
+        "eliminat",
+        "nvme",
+        "translation",
+        "scsi",
+        "stack",
+        "speed",
         "and",
-        "nvidia",
-        "cuda",
-        "software"
+        "reduc",
+        "overhead"
       ],
       "entityShared": [
-        "china",
-        "nvidia",
-        "cuda"
+        "nvme",
+        "scsi"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "However, it's important to note that these changes are only available for Server Core installations, and Windows Server Desktop Experience installs do not include the new security stance.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 92,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 75
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 75,
+          "passageIndex": 4
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Windows Server Desktop Experience installs do not include the changed stance.",
+      "bestPassage": "Windows Server Desktop Experience installs do not include the changed stance.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P3"
+      ],
+      "sharedTerms": [
+        "important",
+        "chang",
+        "available",
+        "for",
+        "server",
+        "core",
+        "and",
+        "window",
+        "desktop",
+        "experience",
+        "install",
+        "not",
+        "include",
+        "the",
+        "new",
+        "security",
+        "stance"
+      ],
+      "entityShared": [
+        "server",
+        "core",
+        "window",
+        "desktop",
+        "experience"
       ],
       "topicShared": [
-        "commission",
-        "china",
-        "advanc",
-        "nvidia"
+        "server",
+        "window",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [
+        "only"
+      ],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 8,
+      "claim": "Microsoft encourages users to test the build and provide feedback on which settings may interfere with applications.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 82,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
+      "bestDomain": "ua.news",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 70
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 7
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "The company urged users to test the build and report which specific settings interfere with applications.",
+      "bestPassage": "The company urged users to test the build and report which specific settings interfere with applications.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P9"
+      ],
+      "sharedTerms": [
+        "microsoft",
+        "user",
+        "test",
+        "the",
+        "build",
+        "and",
+        "setting",
+        "may",
+        "interfere",
+        "application"
+      ],
+      "entityShared": [
+        "microsoft"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "The company also plans to introduce hardware-supported security mechanisms, like Secure Boot and DMA requirements, in later preview builds.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 96,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
+      "bestDomain": "ua.news",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F22",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 89
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F22",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 89,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
+      "bestPassage": "Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P11"
+      ],
+      "sharedTerms": [
+        "the",
+        "introduce",
+        "hardware",
+        "support",
+        "security",
+        "mechanism",
+        "secure",
+        "boot",
+        "and",
+        "dma",
+        "requirement",
+        "later",
+        "preview",
+        "build"
+      ],
+      "entityShared": [
+        "secure",
+        "boot",
+        "dma"
+      ],
+      "topicShared": [
+        "security",
+        "preview"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "This iterative approach ensures that the final release will be thoroughly tested and optimized for security and performance.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 57,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
+      "bestDomain": "ua.news",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default. As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S. Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations. It was already added to Windows Server 2025 in an update, but administrators had to activate the feature manually at the time. The new stack eliminates NVMe translation through SCSI and, according to Microsoft, is expected to reduce overhead and improve performance. The release notes list a known issue with the implementation of TLS hybrid key exchange: if hybrid groups are negotiated by a TLS server, the LSASS service may crash. Until the bug is fixed, Microsoft recommends disabling such key exchange groups. The hardened settings will be available only for Server Core installations. The company urged users to test the build and report which specific settings interfere with applications. Microsoft will also strengthen requirements for authentication through Remote Desktop and PowerShell script block logging. Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
+      "bestPassage": "Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default. As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S. Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations. It was already added to Windows Server 2025 in an update, but administrators had to activate the feature manually at the time. The new stack eliminates NVMe translation through SCSI and, according to Microsoft, is expected to reduce overhead and improve performance. The release notes list a known issue with the implementation of TLS hybrid key exchange: if hybrid groups are negotiated by a TLS server, the LSASS service may crash. Until the bug is fixed, Microsoft recommends disabling such key exchange groups. The hardened settings will be available only for Server Core installations. The company urged users to test the build and report which specific settings interfere with applications. Microsoft will also strengthen requirements for authentication through Remote Desktop and PowerShell script block logging. Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "approach",
+        "the",
+        "release",
+        "test",
+        "and",
+        "for",
+        "security",
+        "performance"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "approach",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -359,152 +820,227 @@
         "attributionDropped": true,
         "blocked": true
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 4,
-      "claim": "It also warned that the quality gap fuels concerns that advanced Nvidia chips may have reached Chinese users, prompting escalating investigations by Congress and regulators.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 91,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 83
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F3",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 5
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The report's findings could fuel concerns about advanced Nvidia chips having found their way to Chinese users amid escalating investigations from Congress and state and federal regulators.",
-      "bestPassage": "The report's findings could fuel concerns about advanced Nvidia chips having found their way to Chinese users amid escalating investigations from Congress and state and federal regulators.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
-      ],
-      "sharedTerms": [
-        "the",
-        "quality",
-        "gap",
-        "fuel",
-        "fear",
-        "advanc",
-        "nvidia",
-        "chip",
-        "chinese",
-        "user",
-        "escalat",
-        "investigation",
-        "congres",
-        "and",
-        "regulatory"
-      ],
-      "entityShared": [
-        "nvidia",
-        "chinese",
-        "congres"
-      ],
-      "topicShared": [
-        "advanc",
-        "nvidia",
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
+      "factCoverage": 0,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "semantic-context-evidence-pack"
     },
     {
-      "index": 5,
-      "claim": "This week the Commerce Department issued rules to close a loophole that had allowed Chinese entities to acquire Nvidia processors through third‑country data centers.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 83,
+      "index": 11,
+      "claim": "Microsoft's Windows Server 2028 Public Preview represents a significant step towards a more secure server environment.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 71,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "US commission says China’s military is seeking Nvidia’s most advanced chips - The Next Web",
-      "bestUrl": "https://thenextweb.com/news/us-commission-says-chinas-military-is-seeking-nvidias-most-advanced-chips",
-      "bestDomain": "thenextweb.com",
-      "sourceId": "S2",
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S2",
+        "factId": "F1",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
         "score": 68
       },
       "provenanceFactMatches": [
         {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 68,
+          "passageIndex": 2
+        },
+        {
           "factId": "F12",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 5
+          "score": 63,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF1,S2-FF12",
+      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
+      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P1"
+      ],
+      "sharedTerms": [
+        "microsoft",
+        "window",
+        "server",
+        "2028",
+        "public",
+        "preview"
+      ],
+      "entityShared": [
+        "microsoft",
+        "window",
+        "server",
+        "public",
+        "preview"
+      ],
+      "topicShared": [
+        "window",
+        "server",
+        "2028",
+        "public",
+        "preview"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [
+        "significant"
+      ],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 12,
+      "claim": "By making Hardened Server Core the default, the company is addressing a critical security gap, ensuring that servers are protected from the moment they are deployed.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 69,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
+      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
+      "bestDomain": "arstechnica.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 55
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 55,
+          "passageIndex": 2
+        },
+        {
+          "factId": "F13",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 43,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
+      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P1"
+      ],
+      "sharedTerms": [
+        "harden",
+        "server",
+        "core",
+        "the",
+        "default",
+        "security",
+        "deploy"
+      ],
+      "entityShared": [
+        "harden",
+        "server",
+        "core"
+      ],
+      "topicShared": [
+        "server",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 13,
+      "claim": "This proactive approach aligns with industry best practices and is a welcome development for system administrators and security-conscious users.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 57,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
+      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
+      "bestDomain": "ua.news",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 31
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 31,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "This week, the Commerce Department issued rules to close that loophole .",
-      "bestPassage": "This week, the Commerce Department issued rules to close that loophole .",
+      "evidence": "STIGs work by providing a standard security framework for system administrators to follow recommended guidance.",
+      "bestPassage": "STIGs work by providing a standard security framework for system administrators to follow recommended guidance.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P7"
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "week",
-        "the",
-        "commerce",
-        "department",
-        "issu",
-        "rul",
-        "close",
-        "loophole",
-        "chinese",
-        "nvidia",
-        "third",
-        "data"
+        "approach",
+        "align",
+        "and",
+        "for",
+        "system",
+        "administrator",
+        "security",
+        "user"
       ],
-      "entityShared": [
-        "commerce",
-        "department",
-        "chinese",
-        "nvidia"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "nvidia"
+        "approach",
+        "security"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -524,271 +1060,7 @@
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 6,
-      "claim": "Nvidia sold $2.4 billion of its Hopper data‑center chips to China in the third quarter, a figure that underscores the scale of the market for high‑end chips.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 77,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "US commission says China’s military is seeking Nvidia’s most advanced chips - The Next Web",
-      "bestUrl": "https://thenextweb.com/news/us-commission-says-chinas-military-is-seeking-nvidias-most-advanced-chips",
-      "bestDomain": "thenextweb.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F8",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 48
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F8",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 48,
-          "passageIndex": 6
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Nvidia sold $2.4bn of them there in the third quarter.",
-      "bestPassage": "Nvidia sold $2.4bn of them there in the third quarter.",
-      "matchedPassages": [
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "nvidia",
-        "sold",
-        "its",
-        "hopper",
-        "data",
-        "chip",
-        "china",
-        "the",
-        "third",
-        "quarter"
-      ],
-      "entityShared": [
-        "nvidia",
-        "hopper",
-        "china"
-      ],
-      "topicShared": [
-        "nvidia",
-        "chip",
-        "china",
-        "for"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 7,
-      "claim": "The commission’s findings come as Congress continues to monitor the national‑security implications of U.S.–China trade, a mandate established in 2000.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 84,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
-      "bestUrl": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html",
-      "bestDomain": "cnbc.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 84
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 84,
-          "passageIndex": 11
-        },
-        {
-          "factId": "F17",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 78,
-          "passageIndex": 7
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF5,S3-FF17",
-      "evidence": "The U.S.-China Economic and Security Review Commission was created by Congress in 2000 with a mandate to monitor and report to Congress the national security implications of the trade and economic relationship between the U.S. and China. Congress created the US-China Economic and Security Review Commission in 2000 to monitor the implications of the two countries’ trade and economic relations for US national security.",
-      "bestPassage": "The U.S.-China Economic and Security Review Commission was created by Congress in 2000 with a mandate to monitor and report to Congress the national security implications of the trade and economic relationship between the U.S. and China. Congress created the US-China Economic and Security Review Commission in 2000 to monitor the implications of the two countries’ trade and economic relations for US national security.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P5"
-      ],
-      "sharedTerms": [
-        "the",
-        "commission",
-        "congres",
-        "monitor",
-        "national",
-        "security",
-        "implication",
-        "china",
-        "trade",
-        "mandate",
-        "2000"
-      ],
-      "entityShared": [
-        "congres",
-        "china"
-      ],
-      "topicShared": [
-        "commission",
-        "china"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 9,
-      "claim": "Watch for further U.S. regulatory actions that tighten export controls and for any evidence that China’s military has acquired or is close to acquiring Nvidia chips.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 72,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "US Commission Says China Seeks Nvidia Chips for Military AI - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/komisiia-ssha-kitai-shukaie-chipi-nvidia-dlia-viiskovogo-shi-cnbc",
-      "bestDomain": "ua.news",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F22",
-        "sourceId": "S4",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 53
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F22",
-          "sourceId": "S4",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 53,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F16",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 48,
-          "passageIndex": 7
-        },
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 42,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S4-FF22,S3-FF16,S1-FF1",
-      "evidence": "The U.S.-China Economic and Security Review Commission said Wednesday the People’s Liberation Army (PLA) is “actively soliciting” Nvidia’s most advanced processors for military AI as China seeks to evade U.S. export controls. This move followed criticism from US Treasury Secretary Scott Bessent and members of Congress, who said that the Department of Commerce was not doing enough to counter the diversion of advanced Nvidia chips to China in violation of export controls. China 's People's Liberation Army has been \"actively soliciting\" Nvidia 's most advanced semiconductor chips to develop its artificial intelligence-enabled military capabilities, a congressional commission said in a report released Wednesday.",
-      "bestPassage": "The U.S.-China Economic and Security Review Commission said Wednesday the People’s Liberation Army (PLA) is “actively soliciting” Nvidia’s most advanced processors for military AI as China seeks to evade U.S. export controls. This move followed criticism from US Treasury Secretary Scott Bessent and members of Congress, who said that the Department of Commerce was not doing enough to counter the diversion of advanced Nvidia chips to China in violation of export controls. China 's People's Liberation Army has been \"actively soliciting\" Nvidia 's most advanced semiconductor chips to develop its artificial intelligence-enabled military capabilities, a congressional commission said in a report released Wednesday.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
-      ],
-      "sharedTerms": [
-        "for",
-        "export",
-        "control",
-        "and",
-        "china",
-        "military",
-        "has",
-        "nvidia",
-        "chip"
-      ],
-      "entityShared": [
-        "china",
-        "nvidia"
-      ],
-      "topicShared": [
-        "for",
-        "china",
-        "military",
-        "nvidia",
-        "chip"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
     }
   ],
-  "editorial": [
-    {
-      "index": 8,
-      "claim": "The report highlights that China still trails the U.S. in computing power largely because of export controls on advanced chips, and it warns that China’s military will likely not close the remaining bottlenecks for some time.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 10,
-      "claim": "The commission’s report suggests that any new breakthroughs in Chinese chipmaking could shift the balance of military computing power in the near future.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    }
-  ]
+  "editorial": []
 }
