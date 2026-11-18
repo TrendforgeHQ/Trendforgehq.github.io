@@ -1276,6 +1276,46 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "china-s-army-seeks-nvidia-s-advanced-chips-u-s-commission-reports",
+    "title": "China’s Army Seeks Nvidia’s Advanced Chips, U.S. Commission Reports",
+    "description": "A congressional commission revealed the People’s Liberation Army is actively pursuing Nvidia’s top‑tier semiconductors to boost AI‑driven military tech, highlighting a persistent quality gap between U.S. and Chinese chipmakers and the ongoing U.S. export‑control enforcement.",
+    "category": "Technology",
+    "date": "2026-11-18",
+    "publishedAt": "2026-11-18T14:53:36.581Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## China’s military is actively pursuing Nvidia’s top chips\nA U.S. commission report says the People’s Liberation Army has been \"actively soliciting\" Nvidia’s most advanced semiconductor chips to develop artificial‑intelligence‑enabled military capabilities. The report notes that China is doing so because domestic firms such as Huawei and Cambricon still lag behind U.S. makers like Nvidia and Advanced Micro Devices.",
+      "## Export controls and the remaining gaps\nThe commission explained that China has made some progress toward its goals but has not closed the hardest chokepoints, including advanced logic fabrication, memory, semiconductor manufacturing equipment, and Nvidia’s CUDA software. It also warned that the quality gap fuels concerns that advanced Nvidia chips may have reached Chinese users, prompting escalating investigations by Congress and regulators.",
+      "## Recent enforcement actions and sales data\nThis week the Commerce Department issued rules to close a loophole that had allowed Chinese entities to acquire Nvidia processors through third‑country data centers. Nvidia sold $2.4 billion of its Hopper data‑center chips to China in the third quarter, a figure that underscores the scale of the market for high‑end chips.",
+      "## Implications for U.S. national security\nThe commission’s findings come as Congress continues to monitor the national‑security implications of U.S.–China trade, a mandate established in 2000. The report highlights that China still trails the U.S. in computing power largely because of export controls on advanced chips, and it warns that China’s military will likely not close the remaining bottlenecks for some time.",
+      "## What to watch\nWatch for further U.S. regulatory actions that tighten export controls and for any evidence that China’s military has acquired or is close to acquiring Nvidia chips. The commission’s report suggests that any new breakthroughs in Chinese chipmaking could shift the balance of military computing power in the near future."
+    ],
+    "sources": [
+      {
+        "title": "China’s military seeks Nvidia’s advanced chips for AI capabilities, commission says - CNBC",
+        "url": "https://www.cnbc.com/2026/11/18/nvidia-chips-china-military-ai.html"
+      },
+      {
+        "title": "US commission says China’s military is seeking Nvidia’s most advanced chips - The Next Web",
+        "url": "https://thenextweb.com/news/us-commission-says-chinas-military-is-seeking-nvidias-most-advanced-chips"
+      },
+      {
+        "title": "US Commission Says China Seeks Nvidia Chips for Military AI - UA.NEWS",
+        "url": "https://ua.news/en/dovkolo-svitu/komisiia-ssha-kitai-shukaie-chipi-nvidia-dlia-viiskovogo-shi-cnbc"
+      },
+      {
+        "title": "U.S.-China Commission Says China’s Military Seeks Nvidia AI Chips - www.tokenpost.com",
+        "url": "https://www.tokenpost.com/news/regulation/60330"
+      }
+    ],
+    "image": "/images/articles/china-s-army-seeks-nvidia-s-advanced-chips-u-s-commission-reports.1024x576.png",
+    "imageAlt": "Editorial image for China’s Army Seeks Nvidia’s Advanced Chips, U.S. Commission Reports",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "china-s-ministry-of-state-security-comes-under-scrutiny-after-nvidia-ceo-investigation",
     "title": "China’s Ministry of State Security Comes Under Scrutiny After Nvidia CEO Investigation",
     "description": "An inquiry into Nvidia’s chief executive has highlighted potential ties between a Chinese intelligence agency and U.S. tech leadership, raising questions about succession plans and corporate governance in a sector critical to national security.",
