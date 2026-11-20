@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-20T07:42:29.114Z",
+  "updatedAt": "2026-11-20T20:41:39.523Z",
   "policy": {
     "recordsOperationalHistory": true,
     "influencesDecisions": false,
@@ -10,106 +10,6 @@
     "maxArticles": 500
   },
   "runs": [
-    {
-      "recordedAt": "2026-10-09T22:51:47.959Z",
-      "workflowRun": "38001448156",
-      "workflowSha": "9ed641105bd885210f6a32165e1e3b05bfd6ebae",
-      "decisions": {
-        "total": 230,
-        "publishCandidates": 0,
-        "review": 22,
-        "hold": 208,
-        "reject": 0,
-        "strongEvidenceReady": 30,
-        "singleSourceVerifiedReady": 67
-      },
-      "evidence": {
-        "candidates": 230,
-        "passed": 79,
-        "blocked": 23,
-        "strong": 18,
-        "singleSource": 61
-      },
-      "claims": {
-        "title": "AI‑Generated Code Blooms, But Software Shipments Stay Flat",
-        "claimCount": 18,
-        "verified": 13,
-        "partial": 4,
-        "unsupported": 1,
-        "averageConfidence": 67,
-        "pass": false
-      },
-      "editorial": {
-        "status": "pass",
-        "articleCount": 45,
-        "averageScore": 76
-      },
-      "lifecycle": {
-        "articles": 45,
-        "refreshCandidates": 19,
-        "watch": 18,
-        "fresh": 8,
-        "stale": 0,
-        "duplicateClusters": 0
-      },
-      "growth": {
-        "totalArticles": 45,
-        "averageEditorialScore": 76,
-        "editorialReviewCount": 32,
-        "refreshCandidates": 19
-      },
-      "distribution": {
-        "articlesPlanned": 20,
-        "externalPostingPerformed": false
-      },
-      "monetization": {
-        "readyForAdSenseFoundation": false
-      },
-      "providers": {
-        "Groq": {
-          "failures": 126,
-          "successes": 161,
-          "lastStatus": 200,
-          "lastClass": "success",
-          "inCooldown": false
-        },
-        "Gemini": {
-          "failures": 79,
-          "successes": 0,
-          "lastStatus": 200,
-          "lastClass": "error",
-          "inCooldown": false
-        },
-        "OpenAI": {
-          "failures": 3,
-          "successes": 0,
-          "lastStatus": 429,
-          "lastClass": "quota",
-          "inCooldown": false
-        },
-        "Cerebras": {
-          "failures": 7,
-          "successes": 0,
-          "lastStatus": 402,
-          "lastClass": "error",
-          "inCooldown": false
-        },
-        "OpenRouter": {
-          "failures": 111,
-          "successes": 2,
-          "lastStatus": 429,
-          "lastClass": "rate_limit",
-          "inCooldown": false
-        },
-        "Cohere": {
-          "failures": 141,
-          "successes": 16,
-          "lastStatus": 200,
-          "lastClass": "error",
-          "inCooldown": false
-        }
-      }
-    },
     {
       "recordedAt": "2026-10-10T06:20:21.005Z",
       "workflowRun": "38030567840",
@@ -12009,489 +11909,109 @@
           "inCooldown": false
         }
       }
+    },
+    {
+      "recordedAt": "2026-11-20T20:41:39.523Z",
+      "workflowRun": "44813536326",
+      "workflowSha": "a38e22a9416ce42987427cd0a1f1e02818493b7c",
+      "decisions": {
+        "total": 70,
+        "publishCandidates": 0,
+        "review": 1,
+        "hold": 69,
+        "reject": 0,
+        "strongEvidenceReady": 0,
+        "singleSourceVerifiedReady": 60
+      },
+      "evidence": {
+        "candidates": 70,
+        "passed": 23,
+        "blocked": 0,
+        "strong": 0,
+        "singleSource": 23
+      },
+      "claims": {
+        "title": "",
+        "claimCount": 0,
+        "verified": 0,
+        "partial": 0,
+        "unsupported": 0,
+        "averageConfidence": 0,
+        "pass": false
+      },
+      "editorial": {
+        "status": "pass",
+        "articleCount": 115,
+        "averageScore": 77
+      },
+      "lifecycle": {
+        "articles": 115,
+        "refreshCandidates": 50,
+        "watch": 16,
+        "fresh": 6,
+        "stale": 65,
+        "duplicateClusters": 0
+      },
+      "growth": {
+        "totalArticles": 115,
+        "averageEditorialScore": 77,
+        "editorialReviewCount": 92,
+        "refreshCandidates": 50
+      },
+      "distribution": {
+        "articlesPlanned": 20,
+        "externalPostingPerformed": false
+      },
+      "monetization": {
+        "readyForAdSenseFoundation": false
+      },
+      "providers": {
+        "Groq": {
+          "failures": 139,
+          "successes": 396,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        },
+        "Gemini": {
+          "failures": 93,
+          "successes": 26,
+          "lastStatus": 503,
+          "lastClass": "server",
+          "inCooldown": false
+        },
+        "OpenAI": {
+          "failures": 3,
+          "successes": 0,
+          "lastStatus": 429,
+          "lastClass": "quota",
+          "inCooldown": false
+        },
+        "Cerebras": {
+          "failures": 7,
+          "successes": 0,
+          "lastStatus": 402,
+          "lastClass": "error",
+          "inCooldown": false
+        },
+        "OpenRouter": {
+          "failures": 120,
+          "successes": 3,
+          "lastStatus": 404,
+          "lastClass": "request",
+          "inCooldown": false
+        },
+        "Cohere": {
+          "failures": 143,
+          "successes": 31,
+          "lastStatus": 200,
+          "lastClass": "success",
+          "inCooldown": false
+        }
+      }
     }
   ],
   "topics": [
-    {
-      "key": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWm1DVnZDWlVCRjE2NkVqaFdnZEhsNE9UWHZLZVB2UzJHTFR6c3RwbGFfSWRKZjZ5ZW03OWFqSFcwN2dWd2VldTJTT05NeDRTeHExVXJVc094VFItNk8yZHZTOGNvV1ZraDVpRGdkSElTVVFmWU5oazdHZzRwX2hreHhleVViSmpWcFhSakl4dk9RNmhXSnZiY0pnMmszQndXY0ZNX0UwZHdoLUlWODRBZHhmQ2s2b2RYTTNsYWIwVUtRbHNOWXZ6eTRraF81VVdlZEFGRk5R?oc=5",
-      "title": "Elon Musk Confirms ‘Global Bankruptcy’ Fears As Tesla And SpaceX Explore Bitcoin Price Game-Changer - Forbes",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVC13VWxkMjA5LXU0WFBMWUplaXo3ZDR2MGN0T3N1ZTVCaU1xOVZ2V0hhWHFsNXJCUkxPQ1E5THlMWjJzd1FabDVHQXZoT25mdmp4QXdwY29RbHRqaGtwRXU1eXZvc1lXbmtBdFF6Y05VNDd2QUJvRUM1RDdPcmRpRzhFSFdEaFZhVmZJclFVZFN5Tkcw?oc=5",
-      "title": "MARA Books $632M Q3 Profit, Sells 13,597 Bitcoin to Pay Down Debt - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTWNTSUtmSWRyMWJoVDcxX3pBYmdyTFlONS1KSVRqSjBYTDc4dlItSkNzelljU1ZadXF6bE84RXExS1lFS011QlVpODlKTU03UDdsbEVhbVdFa0gtWlNPTEhTd2RzX2JQYzlla1hPV0FmajM1NmsyZkQwaW5yZDRYZlVIZkJqSzlO?oc=5",
-      "title": "Nvidia’s spy scandal hands Hill hawks fresh ammo on China chips - Politico",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 79,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPd3I1WGxHazNEeGdYc1VaNnZPbWZwN2xOQjVRZFhEbHBXVU9iYUNxQzRpZ0wtaktjcjV5NHFBNDgyWTN5OEkyRlcwMFhEbFRSZTc3ZUhjbm5nRkFrRmNQQnlIWk5WeE5RYWNPbDZlLWFWdkhuY1puVDNqaFVySUN6WWRoUWxOaDJYNGtPRVZncGh6cENyNjU5NkVSU3VnTFM3d29iOE9LZGp5TTlKclhiVUtfUzZKMWwwdnVOZ2Y2SF9PaEUt?oc=5",
-      "title": "Nvidia spy allegations likely to spur laws to tighten China's access to AI chips - Reuters",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 83,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZVNEeFpkbjRXWUFQbU1mVEtKYk5PSWNlYm9qM0U4aGtUcVd1NzA4Yzl2QzczcWJFdFAtS2lQeENFdUVpUGtzRl9UMjdkMFFXUWJ5X19BWTA5SFpCcS1rRzZCX2JLWU1WTHN1dDZFSmZZaVZnVm5rNnV3UmpFNFVSOTI1aEtNZEJ5al9kcXdSMFlaaDkzVWRPRzZvLUtEdw?oc=5",
-      "title": "Bitcoin and Ethereum Just Hit Their Lowest Prices Since August After $1 Billion in Liquidations. Where Do Analysts Say They Bottom? - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 84,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdzFnSUNIbHhzRmJlRDc3SlRRMUMtX1YyY1hxVGFTajRzTjFxcTFkdlVWNC10dGxwdF9aUlM4R3kyRVE1dFpsQUE0RDE2bGd0QnN1dW5NTmZlLXdfUGwtOXZzR0NhMVhjcHEyeDktSk1hbVFTNHJCMUFXVGdxVlhEYlpOOTRVNVViS2JzQnR5bHhDdWNxMHZyMTdGb0lIbDg?oc=5",
-      "title": "Strategy’s Bitcoin Holdings Top 850,000 Tokens - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 86,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMie0FVX3lxTE94NlRCWW9OSGFMcGVaM1F6SGxoYmNHTWRRUmg5N3VHRXRabVZWdk55NkpTWFp0b0dOUEFOUlpEbkhhaTA0anJ4dG8yTTdGTnp6QnFLeHZGMGNsSXNLX1BXQkpoTm5VN3NDTEhSTjU1TjRKRG1WTTBJYzMwaw?oc=5",
-      "title": "Watch S&P 500 Erases Midterm Losses, Bitcoin Bounce - Bloomberg.com",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 64,
-      "confidence": 90,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
-      "title": "Everything we know so far about the Nvidia spy scandal targeting CEO Jensen Huang",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMjJzVjhjdnpkdF8ydktfVHhubldWNmg2UFNndmp3SlpJelJfN2p5VDQxOTN1c2Z6WWdmNEhVdGhHWkF3VU1mel9TQm94SV9yenYybGFyWHRNLWkzODhGZXAzeGY4cjYtZGJXMkpsbzBZMDdUdDJDS3RiejdMdzhRcXpHaGxjdnNwMTJHaFlaRi1leUJQbEdqMVViWVo4VnJoR0VF?oc=5",
-      "title": "Hotel giant Wyndham exposed customer data after app security lapse - TechCrunch",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPYXZjV19MRkwzeW52WWhRb1lxNnJEQjVhQi1VZ2kxSFlId1Q0T3BFZGFVSTNydTZYdWF6OTIwRnpjWnJlakMtMjBoeGs5djBGSjFESl9hTThPVE5mLWFXandROEhjRU53THNLQWRLZTc0XzdhTHVMcDhUOFh2eXE5Z3R5V3RHSC1Hb3dLT0FzR1g5V09wS0hOUTVLdmw4djA?oc=5",
-      "title": "Prediction: This Will Be the Price of Bitcoin by the End of 2030 - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 88,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQXl1cDJpOVR3UTctNmhNLUsza2lHZ3l5OXlqUTVJQmh3SVdsOFFZdmxLc2FpalRZTTBWVkdQc0FycjFxWjhTdkhUSG0xV2RLM19jZTR1N3BOSVpzb0pycVc1UTVIQ3NrMUZSaFlNbmZ4emhmeGNtOXFWWEZCd1JmaDdWWDR3YWxJbkZla1RNdTk1ZUhNM2otd3NVVXk?oc=5",
-      "title": "AI Price Prediction: Is Bitcoin a Buy at $74,000? We Asked ChatGPT, Claude and Grok - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://arstechnica.com/tech-policy/2026/11/ceo-jensen-huang-admits-affair-as-nvidia-probes-possible-chinese-espionage/",
-      "title": "Nvidia CEO's affair becomes a national security problem",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQczRIbDJxRG9nRFgtLXpBcy1rV19mRzNyZkxCRGJLS2d5cjNHWFdVZ1RKT3VkVE81bU0ySTBjWUFyRkdLYlUzMlJ2YXc1NnZ0Wjd4UGtacGItVHJqVUdIRmRhNXc1ajF1RzZuUWpQcFhuMFFSM2FVWEZ5bWJKb3lXaGNvTURObXA4QXNBRE43Ui1oeHRibHlPNWx3Xy16VTdBRTQwVEQzbkFKOUZjSzhFeXFkMEJBeDFPczNBRFl2ZEh1YUtt?oc=5",
-      "title": "Surveillance audit ordered by Seattle mayor calls for more ‘guardrails’ for technology - KUOW",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://arstechnica.com/culture/2026/11/dcu-shake-up-james-gunn-and-peter-safran-out-post-merger/",
-      "title": "DCU shake-up: James Gunn and Peter Safran out post-merger",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 93,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://arstechnica.com/tech-policy/2026/11/man-who-lost-308000-on-sports-bets-sues-kalshi-for-offering-illegal-gambling/",
-      "title": "Man who lost $308,000 on sports bets sues Kalshi for offering illegal gambling",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 93,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPT20yWElkZ1RNa2NPSzVacmpwbW1PZEt3WnNkRnJmNllfQVNaWW9IYVR6YnVYbUVMaHJubDc3MGhTckphNEh3dXc4Z2RFZnhidndmcmpiRklnSjhDWnNKQWpaRF9mb044R09kSm1MNTgyX3RIcXZzMC1tbGFrbkotamdwQU00RjF0cmNDS3pEOENLUmcxc2d4dU5uN3FkNXBrcFFaYVBEYVBBQnBFVGpsSkFTS3NzQ2JZMEY0RXJ0dlBSc2wtdE93ZHcyRmR6WUE2bGQyN1BOdw?oc=5",
-      "title": "New survey finds enterprises trapped between legacy software and AI modernization - Google Cloud",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 81,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1DTnBhU0NSY3BBLXY1dWVjY1A4UUVsOXJMUk1YcEN2bE92ZnBZbU5RNEdVbFplSW5fdFdfOEl4SlpEQS00a2dEcnNqRHUyeVM5QlJEUkNKeUNsb3doODBXZzd3OTg5SzFpa0VyZ01Ya2JrM2M?oc=5",
-      "title": "Crypto Miners Shifted to AI. A Regulatory Maze Could Threaten the Boom. - Barron's",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQWlBfZTYxamhHa2k0V3F3Vkkzby1VdE1DQ3JCV3NJVmFfd0FpUTJ2dnJRMHdONUk5TDVtV3c0UkMtSzlNMVc2ZmlxMkNueTlCNG4wWDF4bE01RmFhQ2x2Vmp3c2dybXJmZEFLSlROMkZVc2k3X1JCNjkxSHNiQzdVZGNvUFh5YU05ZVZnX0xFb09neGM?oc=5",
-      "title": "VIA unveils new technology for improved customer experience - VIA Metropolitan Transit",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQ1Y2VHNaNU9XcUdzdXlJbnVxLUtLMzQzTnpuR1BxdmpWX2ZnenlGeFd2aVQ2SlZBS0FzbXA5Z2R3aURRWjNfQ3lTalZPdW55ZVVodHpWX2I4U0Z0MXA0c2wzeWx0OVZ4STJ0TXZUamNDcGtJLUl4b3RGOU5jbDVzQmJpSFpTZElNMGdrZHJtVmY0YW1mNHBQazdrRmFOOTZSRWNick5EYnc0TVpQTTBCSQ?oc=5",
-      "title": "The next breakthrough is software built on the battlefield by agentic bots - Breaking Defense",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNRjdNV09IbGo1LUplMTc2VjZEbVdzc0NMSlNpWWF6U0FHTzhBSzNKUE1DczljX081aUFWbUNqN2d6ejdPdXdrZV83eHExdlluVTRzb0xWeUowREx2T25yNllPdXBlNFRjbVVOZXpzMWlrUE85N09Ea1BmNHJRbldrbV8xb1FaeklZUWw1RmlYNkxlQQ?oc=5",
-      "title": "In First, Two CCAs Fly Air Combat Maneuvers Using Autonomy Software - Air & Space Forces Magazine",
-      "category": "Technology",
-      "lastSeenAt": "2026-11-10T07:42:44.836Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBsRFg4eDVzcDZINnE0U05TRXl4UkhzUnotRnlFNnotazJFbXlsLTg3S05rU2F2SFlJbHlKbms4NW42YWY2U29wamhaSkFMdENtSktRRlpYVW53SEhUOGJtSUtB0gFnQVVfeXFMUE9EakxMaXpEOGpDNFJOeXBFblZnTHBqX2tjVk1SdDh5MUxjRWM0S044S0JNeU5LWmtBYkx6ek9KSXNzSW1FYl8xaGVyQ0dzbl9jXzdZU3B1dzdKZVBfLXU5R3pNNldwVQ?oc=5",
-      "title": "11 HIPAA Compliance Software: The 2026 Buyer’s Verdict Guide - GBHackers News",
-      "category": "How-To",
-      "lastSeenAt": "2026-11-13T07:12:43.125Z",
-      "decision": "hold",
-      "score": 57,
-      "confidence": 67,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9QbkdwX2x2R25lcXcxRnVrSkhkakQ5T0E3YmlQVFZYa2JzZWlDa3gtS2R0dzBJY1gxc215X0RvWmhSQlVxTjNYN0hVOW80X2lvb1cwTmI0bDZfVm1RV0ZRS9IBZkFVX3lxTE0tb3laQVpmUGo4anB4WWc0N1htNjl2Y2RPZ0lxRVN2b1NRTWNMR2I5Zzg3TEtFei1WS1dhTlhhZDJCMFRKM1pZdWc1dU8zWkp2WHFRbjFTMDRxZktSOEZndTl6V2hfUQ?oc=5",
-      "title": "11 GDPR Compliance Software: The 2026 Buyer’s Verdict Guide - GBHackers News",
-      "category": "How-To",
-      "lastSeenAt": "2026-11-13T07:12:43.125Z",
-      "decision": "hold",
-      "score": 57,
-      "confidence": 67,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdUVrNzBsMlFCNl9PRU0yWnRZMjNDM0lFbDRmRTFWejlBaGJuR2ljRUVhVGJVUnBlSWJiM1ZFd01pYjNsclh5cmJUanBiVGFiNjRpeTE1YWlva21LY25sTzJaVVoyWHphdWhVeEE1RE40RGZJMkhtd0RGUWl3dXBQMzVLbHg0R1Z5am1SRVF5SmRrYVRVdnJoS09Wd1FoZE9WcVpCajB3dXJPQTdKdXFDelZiZ0JOUVIxaFloU3FMVEJYMjg?oc=5",
-      "title": "Rep. Jim Himes, D-Conn., on the national security implications of the Nvidia scandal - NPR",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 76,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://www.theverge.com/tech/1030282/amazon-ring-robotics-rover-cam-4k-security-business",
-      "title": "Amazon turned its Alexa robot into a Ring security patrol bot",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 74,
-      "confidence": 93,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot/",
-      "title": "Ring, known for its doorbell cameras, launches a home security drone and an enterprise security robot",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 72,
-      "confidence": 90,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVThXcE9QdlR0V2hZdXl0VE9Db25PWmVrT25IblduYlJsdUhMNlNDM3RGcTdqOXBEVlhoMDJWLXdXNnQyX0hmNEdTTVpJbEpuSW05WE5TWUthcE5LVnZ5d2ZLUEFheXQ5MXJIRkFLSUZYUVhCVHhBaThYV2k4RWNrbk9ROEg3dnFhcDBSV3ZWcmRNNlU3YllnaGVVcFU?oc=5",
-      "title": "BlackRock Bitcoin ETF Sees $213M Outflow as CPI Report Tests Crypto Markets - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 90,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObHBTMF85dkh3NGdOdFBmRTdZLXgtdnkyWVY5YkNKOVZ4MWZwbkZJOXJmTXYydDNJZGJLeE8zWnU2Y0pvVy1CdDVmZFhDRWZGM1BfT3hmMVp6NlpxcU8xcU1mdXhMOEJyQkg1TE5XblhvNXRxZnplVUtGSFFrSDNMQU5PbGNMemw5eXB0V0czNDRrMDZfSFFmU2xB?oc=5",
-      "title": "Bitcoin Sits Out Equity Fund Rush as Fed Hike Odds Reach 84% - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 93,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5qdFh3U0hRSG94d05zeVBjNS13dzNJbWZ1Mml3TTFnd1NfbHBmdWY1UjV3V3ZKbUhudzBKMmxXM0hmZ29qLTFNSmlORER4d2dKVW1HTGhXZXV5MWFfRjRiaGt3c3ZFOEJCbTh0UUhieWJ3MzZ2Z1E?oc=5",
-      "title": "Amazon's Astro home robot has fans but looks destined for the 'trash heap.' Why it's trying again - CNBC",
-      "category": "Product Launches",
-      "lastSeenAt": "2026-11-11T07:02:20.658Z",
-      "decision": "hold",
-      "score": 54,
-      "confidence": 75,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
-      "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 71,
-      "confidence": 86,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdGRxQk1qZGtFRnBVRDNiWVZVUEFiSUJBRlJybGhEY0hxUHR6dU9SdTl3MTI0a0Y3UVdzanM0dFFtRkNwdDlfTDJPN2xOMXBHNDI5YXI3ZzBIeW1VYmNLVlhCN3pEUHpjalhSYW5BSlpOT3dJUnpWdmVKd1NEdk5DRkFwdmlYVHBMUWllRWVJemx2YWlPVDlDWmRxR0ZtUQ?oc=5",
-      "title": "Bitcoin Holders Split in Two as Retail Leaves and Smart Money Keeps Buying - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNDc4NHI3ZDM2WE1IWU5GZWxoZWR5MjUwS0k3Rzd3QUh3WVMzSFlNM3piSXJiRzlCbmpRMDMzaVRsOVA3SVo0dFpVMzNGNHN5VW8yWTlMVkN0aktLQTg4UTJxM1BSWksyeDZOczJJak1vZUN1SzRsU09hMWxEem5kaFVsODRhMW81bVNCbV9R?oc=5",
-      "title": "BTC USD Holds $74,000 Through a Third Day of ETF Outflows: Is the Bottom In For Bitcoin? - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 91,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWmZ1TVpQUUhJVElmUjZ3Ul9BSllfNXdJMTIwSHVlb0J6aXAzSDhPX1I0cnNQamd0cTBBY2VnVFVEVEo5VHNtT0l1RDV2OUNhelRWRV9ibXdhU1hyaW91SEtfVDZIbWRpWWg1R1RJeGpNWWJWOFI3d2RZbUREZkEzbkpUZzdfeUsyTWZUVTZQZEphbGhEY2NzaUd1R3VIMWZ1ekFjMTJFSXg?oc=5",
-      "title": "How Jensen Huang’s Affair Spiraled Into a National Security Nightmare - WSJ",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 70,
-      "confidence": 78,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYUNGeTZzR0JTUjFjc3FxVENCUUpCTDM1Z19fX0tFejdLMno0aFN1SS04SEh0bG9IN3F0cWpBMUpYTEYwWDNjUG56c2NLclNncTFjYmRIMGg5M3QxcTd2Y2U5Y3p2UmJoNnJyOUZ1cXRtQTc0SFdTU2RSZG92a1dyRDJHY3h3WXR3c0xFNWNqaW02ejVOYkg5VllvUmo1dUVvS2xNNUxtYjI?oc=5",
-      "title": "Bitcoin (BTC) price slips as ETF outflows mount ahead of U.S. CPI data: Crypto Markets Today - CoinDesk",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 83,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago/",
-      "title": "Jensen Huang reportedly engaged a PR firm with a history of handling  high-profile sex scandals a year ago",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 69,
-      "confidence": 87,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://techcrunch.com/2026/11/09/jensen-huangs-alleged-honeypot-scandal-has-inspired-some-top-notch-memes/",
-      "title": "Jensen Huang&#8217;s alleged honeypot scandal has inspired some top-notch memes",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 85,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSl9ueC1TTXdJdUZyVEhWQlJtNmRMZjJGYWJNUzRjOG1hWERtN0QxTVFKZlgyanhJd2RaMjU3Y3RDZUR2RWxMbG8tZU9YUk83SkdzUEt1ajd3eGpmY0xJM1hRS0NFMXV6UHJUUTNUM3A0VGhBSUJGcDlMQ09vVi1EYzJPVC14T3ZCRk9Gb2c5YzQ2eks4d3kzREIyc0t6NkRDV1R1enJNZXRYZ1JZdlpyQXdaclZ5LVVzakN3UTJVQmJYb19sUW4zbmowdw?oc=5",
-      "title": "Nature, Peace, and Security Gains Momentum at COP17, but its Definition is Still Up for Grabs - New Security Beat",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 68,
-      "confidence": 85,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdXJZYXJqVkQwTm5rb2QzUGVMQjJIMDVGRE1RdnRuTmxKS2t2QTUxSUFJa1ZxVFNQZ3RVM3hFMmJoSVFTaXlpVFY3c2xZZnRBb2dVSkpfSVNtTksyTFE2cVVJNmpscHpiNElybGRKRUIwSHRaOHhzQXREZWZlR1RfbUlSWmFvM09sbm45dGt0SDg3aDBBNzBwRG41Ulc3UQ?oc=5",
-      "title": "Bitcoin to $2M? Investment Firm Backs Huge Target but Warns of $30K Crash First - Yahoo Finance",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 88,
-      "evidenceLevel": "single-source-verified"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPMHlJQURuQm9SWUJLYlJMMVFGcWRKZ2UzZVBnUFotS1RqcWdNOTNZd3BPdlRWRHZtWVNlMFRETmpUNUFEdS1hZkZZc1VGYUIzT3lkNWpfazlBSUhSUHpmRnB0d0o1OHRBbk16MWlEaDZHeWx0X3VMaUt2QUF2eVU2ZG5zOHN5RHJhVkZ2dUI1TnZxNmZJRC1OUmx0UFB3Q0JIV2tqd24wcGZzS1Rfd1g0UHpqS1NreVNCdlE?oc=5",
-      "title": "The crypto wallet that grew up inside Telegram is striking out on its own - CoinDesk",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 63,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNMzlwb3ZOVUNJUWg3c0RVSkpfVVI5YjVpeFhBTWgtV0x1bkJ5X0UwLVk4ajNTb3NtSnhHdlhXME1WUE1MSmREbHF2YkxSNlUwSEZfYmpXck8yYzJ3eU0wYmY0dlZxRlBBZE5mdDlnQW9UYW94cDI1ZFhlczVsd0tLMVpxdERFZm1yMzNYem9hbmE0cXNySVN1Y0dFZFRCSlRndHdTMzdDMDYyZmxMMkpDLXRMWFpSQk9Hdkc2b2dRc1lkdnhXa185RjhQWnJWQVVGNTJn?oc=5",
-      "title": "Nvidia espionage allegations spark bipartisan scrutiny, raising national security concerns - ABC7 Bay Area",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 67,
-      "confidence": 81,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNzc4R3R1MGRYNW9BMkFIWlN4YjlEdHdDSnlJMjdnMlB0NmFxLTJCWXBaQ1R3ZS1WZEJrOFh2Q3hFcGRhZUJpNTZaZ3Nxb21Sa3VyWnY3MHEzaG9KMkNsd05XMTdDQjJUMi1sS3NjdXN5M3VpTmJsVWxLN2FKMkhiQ19TYkg0SFBsM284YkNuQ05EUG5PWGlIaG5RM1FnbTVGMms1ZFd6YmhmOTJqX0x3NkxkQVRTV0k0QWR1SlF5RlY?oc=5",
-      "title": "Bitcoin (BTC) price falls as Fed rate-hike bets build ahead of U.S. CPI report - CoinDesk",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 82,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5pdjdsNTdZVnZ6NWU0MkpYeDNJd1U4aUZNbFBOb1diOFh2Sk9NT29ZMjRPcUlHWjQtcm1UZjk5NWU5d2dCQ05Vdmo1S2lySzRNUUx6cnJ4c3NZNjRxVzFGRzY5bFhpWWZz?oc=5",
-      "title": "Current price of Ethereum for Nov. 10, 2026 - Fortune",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOem1ydVlYVUJoT2MzZGNWUFU1S3lscXJrQzFFUnpvZWRSdDg2ZFJvT1BNNlNONjQxeTJaMElDeGpWS2xwTldnQkNTYnpSUXJxOEhRN19Gd3h1UExEMjFKY2JqUUE2bHZZdUJ1bTh3a1dXOElWNGVtS0pLcC0yMlVBdGo0a2VIekxsaHNWT3BBTjdNeTFVZEY0Szh2WThpSkdUaXc?oc=5",
-      "title": "Virtual fruit fly brains can play Doom and trade bitcoin - Scientific American",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 62,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal/",
-      "title": "A short seller flagged Nvidia CEO&#8217;s ties to a suspected Chinese spy six months before the scandal",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 83,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://www.theverge.com/tech/1030446/trump-jensen-huang-press-conference",
-      "title": "Here’s what Trump said he knew about Jensen Huang",
-      "category": "Digital Life",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 81,
-      "evidenceLevel": "strong"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSjEtOVVMN01zbFdXdmVOT1F1bDV6SUFYam5XcFhRUjdDdlFCWVR0S3NxaGVqdnJUNktVUkpIMGYyS1VlSmJnN2txZnRKdm5sZ2pZYV9tSUxVUUsyNFhxa3JNb2htVDZlYzlhamJFTnItc01JYW1PbV85WmRsRU5VVC01NGpCTkdjdHN3?oc=5",
-      "title": "AI Fraud and Risk Intelligence to Protect Revenue and Conversion - Emerj Artificial Intelligence Research",
-      "category": "AI",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "review",
-      "score": 66,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9KczZuNFZ6RzY5ZW1NYXBwaHVYdnVnUzY1XzdFcmhZY1p5VGJrN1FYZ01nVHl5bmdZbDRTMWRfZk1pdHlWTWRMNDdPY3BycDBRdFNsa1ZJdzZqLUM3NjBDdnRjM0ZBYU0?oc=5",
-      "title": "Current price of Bitcoin for Nov. 10, 2026 - Fortune",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 82,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPT1pKNVlUTmNsZHR2MGt6MnBjTVYyaEVBLTVRczdyR0IxNmlCYnNtUl9EVG9QejNOa0xQRFl3cTdGSFJhMDA3Qi1pRjZ2d1ozUUFONkhleFdKMDl4NHF4Ykgtcmc3NmZqM3VQbV9XaS0tYV9GRDdXQkVvdXVQcWRLNVl3bW1OcDNUYV9kR0FGT3A3SjQxVVQyVGxyTWRZb0tHaWRKVVlyRzFEUQ?oc=5",
-      "title": "Trump's crypto profits raise alarms for transparency advocates - NPR",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
-    {
-      "key": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXI2anFfRklISW4zdmpKdHFoWHF2aUY1cWpta1g3bGRLbnBPcnp4RXBIM0RMdzhJRWJXYVUzZnpfOUtzeXQwVWlwbDloNTVqWFNySzU2NnZWS3JVWS1GeWlrWEF2b2RnTWpyc3h2N3k4ZUVoRWZHMjNwU1NtN2JtamNkUUpfNWVRbXRwcVlXVzFWbG1PTi0wTkdyVQ?oc=5",
-      "title": "Can Bitcoin Bounce Back To $125,000? - Trefis",
-      "category": "Crypto",
-      "lastSeenAt": "2026-11-10T19:58:49.537Z",
-      "decision": "hold",
-      "score": 61,
-      "confidence": 84,
-      "evidenceLevel": "none"
-    },
     {
       "key": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOTW9Kai1jSnhka3dBUWxaUG1seURfbzFKeHVmUzFRRjlZc0U1UVlYNnlHbmRZdXBYOFpxTFltTDdaMDladzVDMkR2ZGVWejRDRGY3elBpUTZTaW5RN18wa3RGM3J0eV9GUkJVOUlrWS03a05YU0JOaDNPYXZza2M2SDI1YUNwUlJHNFdfdTl4RFpacEpXWGpVOG1NSVJkTW1PU2MtZG9XZWhQbTExOHZ1SzNjMDFZVHl6OG9UTHBHR0x6TE5hSlQ1WA?oc=5",
       "title": "Bitcoin miner MARA sold 13,597 BTC for $1.1 billion in six weeks, plans to sell more - CoinDesk",
@@ -15706,10 +15226,10 @@
       "key": "https://www.technologyreview.com/2026/11/17/1148049/roundtables-inside-the-quest-for-cognitive-immortality/",
       "title": "Roundtables: Inside the Quest for Cognitive Immortality",
       "category": "Technology",
-      "lastSeenAt": "2026-11-18T07:54:13.850Z",
-      "decision": "review",
-      "score": 65,
-      "confidence": 93,
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 71,
       "evidenceLevel": "single-source-verified"
     },
     {
@@ -16396,9 +15916,9 @@
       "key": "https://www.theverge.com/gadgets/1028991/black-friday-best-early-deals-2026",
       "title": "The best early Black Friday deals you can already shop",
       "category": "Digital Life",
-      "lastSeenAt": "2026-11-19T20:56:56.141Z",
-      "decision": "hold",
-      "score": 64,
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "review",
+      "score": 65,
       "confidence": 93,
       "evidenceLevel": "single-source-verified"
     },
@@ -17010,6 +16530,486 @@
       "decision": "hold",
       "score": 63,
       "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/",
+      "title": "SpaceX lenders don’t want Elon Musk launching their collateral into space",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/11/rocket-report-a-weekend-of-ups-and-downs-stoke-celebrates-engine-milestone/",
+      "title": "Rocket Report: A weekend of ups and downs; Stoke celebrates engine milestone",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+      "title": "The most misunderstood graph in AI just got a major update",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 90,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/gadgets/1035460/best-early-black-friday-apple-deals-2026",
+      "title": "Here are the Apple deals actually worth picking up ahead of Black Friday",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 89,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/gadgets/1037933/eufy-omni-c28-robot-vacuum-deal-sale",
+      "title": "Eufy’s Omni C28 is 53 percent off ahead of Black Friday",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 90,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/tech/1038834/google-assistant-smart-speakers-nest-app-killed-shut-down",
+      "title": "Google says it’s going to shut off Google Assistant on smart speakers next year",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/tech/1038692/teenage-engineering-ep-bc-1-cd-compact-disc-player-broadcast-series-bluetooth",
+      "title": "Teenage Engineering’s first CD player puts the spinning disc on display",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+      "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1038444/boys-noize-7llvsion-interview",
+      "title": "Boys Noize turns to the club (and an obscure Italian synth) for inspiration on 7LLVSION",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/entertainment/1038410/andrey-zvyagintsev-minotaur-interview-director",
+      "title": "Andrey Zvyagintsev believes filmmakers know what the audience wants — not executives",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/20/1149371/the-download-quest-to-make-minds-immortal/",
+      "title": "The Download: inside the quest to make our minds immortal",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 56,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/11/trump-admin-still-wont-let-wi-fi-giant-tp-link-sell-its-latest-routers-in-us/",
+      "title": "Trump admin still won&#039;t let Wi-Fi giant TP-Link sell its latest routers in US",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/security/2026/11/man-charged-with-spying-on-silicon-valley-tech-and-defense-company-for-russia/",
+      "title": "Man hired by Russia spied on Silicon Valley tech and defense company, feds say",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/science/2026/11/outrage-questions-swirl-as-army-delays-blowing-up-stockpile-of-toxic-lead-azide/",
+      "title": "Outrage, questions swirl as Army delays blowing up stockpile of toxic lead azide",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 55,
+      "confidence": 85,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/gadgets/1037749/microsd-express-card-nintendo-switch-2-black-friday-2026-deal-sale",
+      "title": "Multiplying your Switch 2’s storage costs less than usual right now",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 59,
+      "confidence": 89,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gaming/2026/11/valve-says-it-might-have-to-raise-the-price-of-supply-limited-steam-machines/",
+      "title": "Valve says it might have to raise the price of supply-limited Steam Machines",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 54,
+      "confidence": 84,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/11/google-will-launch-android-app-verification-requirement-globally-in-january-2027/",
+      "title": "Google will launch Android app verification requirement globally in January 2027",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 53,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/11/google-turns-to-blue-origin-for-a-rocket-but-its-long-term-problem-remains/",
+      "title": "Google turns to Blue Origin for a rocket, but its long-term problem remains",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 53,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/20/bending-spoons-buys-mailchimp-for-3-68-billion/",
+      "title": "Bending Spoons buys Mailchimp for $3.68B",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 64,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+      "category": "Digital Life",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 57,
+      "confidence": 87,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/18/1148845/the-download-ai-learns-to-smell-hydropower-struggles/",
+      "title": "The Download: AI learns to smell and hydropower struggles",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 52,
+      "confidence": 76,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+      "title": "Apple may be developing its own AI agent that runs your Mac",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 86,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
+      "title": "These tech outages are giving Y2K, AI agent style",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 63,
+      "confidence": 87,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/19/1148979/the-download-liver-kept-alive-sila-battery-deal-ai-hype/",
+      "title": "The Download: a living liver, a billion-dollar battery deal, and AI hype",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 51,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/11/seminole-tribe-tries-to-stop-draftkings-illegal-gambling-in-florida/",
+      "title": "Only the Seminole Tribe can offer online gambling in Florida—and they&#039;re furious at DraftKings",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 51,
+      "confidence": 81,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/health/2026/11/maha-pac-spent-more-on-steak-luxury-club-than-candidates-report-shows/",
+      "title": "MAHA PAC spent more on steak, luxury club than candidates, report shows",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 51,
+      "confidence": 81,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/",
+      "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 51,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+      "title": "Six AI-powered gadgets that could make your home office smarter",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 89,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/19/want-to-see-your-live-ai-usage-on-your-macs-icons-this-clever-new-app-lets-you/",
+      "title": "Want to see your live AI usage on your Mac&#8217;s icons? This clever new app lets you",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 62,
+      "confidence": 87,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/11/how-faa-can-modernize-us-national-airspace-system-without-emergency-ground-stops/",
+      "title": "US will soon announce root cause behind FAA nationwide ground stop",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/11/ted-cruz-led-committee-approves-trump-fcc-nominee-15-0-as-democrats-boycott-vote/",
+      "title": "Ted Cruz-led committee approves Trump FCC nominee 15-0 as Democrats boycott vote",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/gadgets/2026/11/ukraine-blew-up-putins-bridge-using-relay-drones-to-bypass-starlink-limits/",
+      "title": "Ukraine blew up Putin’s bridge using relay drones to bypass Starlink limits",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record/",
+      "title": "A human liver has been kept alive outside the body for a record seven weeks",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/18/1148650/ai-hype-index-ai-is-everywhere/",
+      "title": "The AI Hype Index: AI is everywhere",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/staff/2026/11/science-has-a-home-here-at-ars-please-help-keep-it-that-way/",
+      "title": "Science has a home here at Ars—please help keep it that way",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 50,
+      "confidence": 80,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/19/elon-musk-says-spacex-has-a-plan-to-eliminate-cell-phone-dead-zones/",
+      "title": "Elon Musk says SpaceX has a plan to eliminate cell phone dead zones",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 87,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/20/a-transcription-firm-used-by-police-prosecutors-and-tech-giants-exposed-customer-data-online/",
+      "title": "A transcription firm used by police, prosecutors, and tech giants exposed customer data online",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 61,
+      "confidence": 91,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/",
+      "title": "This smell startup says its AI nose is as good as a human’s",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 49,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/tech-policy/2026/11/amazon-takes-its-fight-against-nyc-delivery-bill-to-shoppers-with-in-app-pop-up/",
+      "title": "Amazon fights the Delivery Protection Act with homepage banner, in-app popup",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 49,
+      "confidence": 79,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
+      "title": "Chips can survive the space environment — can their financing?",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 60,
+      "confidence": 90,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/19/1148922/sila-panasonic-battery-deal/",
+      "title": "What a billion-dollar deal says about the US battery market",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 71,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/science/2026/11/watching-mouse-fight-club-teaches-the-critters-how-to-fight/",
+      "title": "Mouse fight club might explain why we like to watch violent things",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 72,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://www.technologyreview.com/2026/11/17/1148742/hydropower-drought-colorado-river/",
+      "title": "Hydropower hit record lows in the US Southwest this summer",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 48,
+      "confidence": 71,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/20/super-hot-rock-geothermal-could-end-data-center-energy-woes/",
+      "title": "Super-hot rock geothermal could end data center energy woes",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 59,
+      "confidence": 88,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "title": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "category": "AI",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 57,
+      "confidence": 84,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/science/2026/11/llms-will-provide-accurate-climate-info-except-when-they-wont/",
+      "title": "\"You’re right\"—LLMs will get climate info wrong if you ask",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 73,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/space/2026/11/to-make-moon-landings-easier-nasa-is-making-life-harder-for-orion/",
+      "title": "NASA&#039;s new Moon plans have a problem: Orion wasn&#039;t designed to fly this way",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 74,
+      "evidenceLevel": "single-source-verified"
+    },
+    {
+      "key": "https://arstechnica.com/security/2026/11/how-to-tell-a-cyberattack-from-a-plain-old-outage/",
+      "title": "How to tell a cyberattack from a plain old outage",
+      "category": "Technology",
+      "lastSeenAt": "2026-11-20T20:41:39.523Z",
+      "decision": "hold",
+      "score": 45,
+      "confidence": 73,
       "evidenceLevel": "single-source-verified"
     }
   ],
@@ -17715,14 +17715,14 @@
     "World": 1
   },
   "sources": {
-    "evidenceCandidates": 230,
-    "passed": 81,
-    "blocked": 19,
-    "strong": 30,
-    "singleSource": 51
+    "evidenceCandidates": 70,
+    "passed": 23,
+    "blocked": 0,
+    "strong": 0,
+    "singleSource": 23
   },
   "decisionMemory": {
     "records": 200,
-    "updatedAt": "2026-11-20T06:27:17.856Z"
+    "updatedAt": "2026-11-20T19:34:48.748Z"
   }
 }
