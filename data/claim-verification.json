@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-20T00:03:42.318Z",
-  "articlePath": "content/articles/meta-s-muse-ai-agent-mixing-conversations-and-exposing-private-data-internal-reports-show.md",
-  "articleTitle": "Meta’s Muse AI Agent Mixing Conversations and Exposing Private Data, Internal Reports Show",
+  "generatedAt": "2026-11-20T06:27:20.506Z",
+  "articlePath": "content/articles/open-weight-models-offer-cheaper-alternatives-to-anthropic-s-new-release.md",
+  "articleTitle": "Open‑Weight Models Offer Cheaper Alternatives to Anthropic’s New Release",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 3,
-  "usableSourceCount": 3,
-  "claimCount": 20,
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 10,
   "editorialCount": 1,
-  "verified": 14,
-  "partial": 6,
+  "verified": 8,
+  "partial": 2,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 92,
+  "averageConfidence": 83,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,41 +45,186 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-      "domain": "techcrunch.com",
-      "passageCount": 6,
-      "articleBodyLength": 1315
+      "title": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models - CNBC",
+      "url": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
+      "domain": "cnbc.com",
+      "passageCount": 4,
+      "articleBodyLength": 861
     },
     {
       "id": "S2",
-      "title": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "url": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "domain": "newscord.org",
-      "passageCount": 14,
-      "articleBodyLength": 2673
-    },
-    {
-      "id": "S3",
-      "title": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "url": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "domain": "techtimes.com",
-      "passageCount": 10,
-      "articleBodyLength": 4317
+      "title": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "url": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "domain": "techcrunch.com",
+      "passageCount": 11,
+      "articleBodyLength": 1298
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "claim": "On the day Anthropic went public, the largest IPO on record, investor enthusiasm for the AI lab surged.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F15",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F15",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P11",
+      "evidence": "On the same day that Anthropic went public in the largest IPO on record, with investor enthusiasm for the AI lab through the roof, far away at the Slush startup conference in Helsinki, the topic du jour was open source everything.",
+      "bestPassage": "On the same day that Anthropic went public in the largest IPO on record, with investor enthusiasm for the AI lab through the roof, far away at the Slush startup conference in Helsinki, the topic du jour was open source everything.",
+      "matchedPassages": [
+        "S2-P11",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "day",
+        "anthropic",
+        "went",
+        "public",
+        "largest",
+        "ipo",
+        "record",
+        "invest",
+        "enthusiasm",
+        "for",
+        "lab"
+      ],
+      "entityShared": [
+        "anthropic",
+        "ipo"
+      ],
+      "topicShared": [
+        "the",
+        "anthropic"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 2,
+      "claim": "At the same time, the Slush startup conference in Helsinki highlighted a trend toward open source, with many attendees discussing the benefits of open‑weight models.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 80,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F15",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 70
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F15",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "On the same day that Anthropic went public in the largest IPO on record, with investor enthusiasm for the AI lab through the roof, far away at the Slush startup conference in Helsinki, the topic du jour was open source everything.",
+      "bestPassage": "On the same day that Anthropic went public in the largest IPO on record, with investor enthusiasm for the AI lab through the roof, far away at the Slush startup conference in Helsinki, the topic du jour was open source everything.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P11"
+      ],
+      "sharedTerms": [
+        "the",
+        "same",
+        "slush",
+        "startup",
+        "conference",
+        "helsinki",
+        "toward",
+        "open",
+        "source",
+        "weight",
+        "models"
+      ],
+      "entityShared": [
+        "slush",
+        "helsinki"
+      ],
+      "topicShared": [
+        "the",
+        "models"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 3,
+      "claim": "Anthropic CEO Dario Amodei said the company has never advocated for a ban on open‑weight models.",
       "status": "verified",
       "classification": "supported",
       "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
+      "bestDomain": "cnbc.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
@@ -99,141 +244,37 @@
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-P1",
-      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
-      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "evidence": "Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence.",
+      "bestPassage": "Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence.",
       "matchedPassages": [
         "S1-P1",
         "S1-BODY"
       ],
       "sharedTerms": [
-        "meta",
-        "worker",
-        "rais",
-        "fear",
+        "anthropic",
+        "ceo",
+        "dario",
+        "amodei",
         "the",
-        "agent",
-        "muse",
         "has",
-        "mix",
-        "conversation",
-        "acros",
-        "different",
-        "account",
-        "and",
-        "expos",
-        "private",
-        "user",
-        "data",
-        "accord",
-        "new",
-        "reuter",
-        "report",
-        "look",
-        "internal",
-        "post"
-      ],
-      "entityShared": [
-        "meta",
-        "muse",
-        "reuter"
-      ],
-      "topicShared": [
-        "meta",
-        "agent",
-        "muse",
-        "mix",
-        "conversation",
-        "and",
-        "expos",
-        "private",
-        "data",
-        "report"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 2,
-      "claim": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn’t belong to them.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 94,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F6",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 94
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F6",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-P6",
-      "evidence": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn&#8217;t belong to them.",
-      "bestPassage": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn&#8217;t belong to them.",
-      "matchedPassages": [
-        "S1-P6",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "instanc",
-        "worker",
-        "muse",
-        "surfac",
-        "messag",
-        "childcare",
-        "request",
         "never",
-        "career",
-        "advice",
-        "ask",
+        "advocat",
         "for",
-        "product",
-        "order",
-        "plac",
-        "and",
-        "bank",
-        "account",
-        "balanc",
-        "didn",
-        "belong",
-        "them"
+        "ban",
+        "open",
+        "weight",
+        "models"
       ],
       "entityShared": [
-        "muse"
+        "anthropic",
+        "ceo",
+        "dario",
+        "amodei"
       ],
       "topicShared": [
-        "muse",
-        "and"
+        "anthropic",
+        "the",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -253,170 +294,70 @@
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 3,
-      "claim": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 100,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F4",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 100
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F4",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 100,
-          "passageIndex": 3
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-FF4",
-      "evidence": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
-      "bestPassage": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
-      "matchedPassages": [
-        "S1-P4",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "one",
-        "worker",
-        "told",
-        "colleagu",
-        "muse",
-        "had",
-        "randomly",
-        "sent",
-        "extra",
-        "message",
-        "chat",
-        "weather",
-        "and",
-        "tide",
-        "information",
-        "say",
-        "btw",
-        "two",
-        "bank",
-        "updat",
-        "capital",
-        "balance",
-        "2722",
-        "charl",
-        "schwab",
-        "5899"
-      ],
-      "entityShared": [
-        "one",
-        "muse",
-        "btw",
-        "capital",
-        "charl",
-        "schwab"
-      ],
-      "topicShared": [
-        "muse",
-        "and"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
     },
     {
       "index": 4,
-      "claim": "These incidents were flagged as early as launch week, yet Meta proceeded with the September 2026 U.S. launch on schedule.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 90,
+      "claim": "The statement was issued to counter criticism that Anthropic seeks to control the future of artificial intelligence.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 68,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
+      "bestSource": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
+      "bestDomain": "cnbc.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F8",
-        "sourceId": "S2",
+        "factId": "F1",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 82
+        "score": 58
       },
       "provenanceFactMatches": [
         {
-          "factId": "F8",
-          "sourceId": "S2",
+          "factId": "F1",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 82,
-          "passageIndex": 6
+          "score": 58,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
-      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence.",
+      "bestPassage": "Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence.",
       "matchedPassages": [
-        "S3-BODY",
-        "S3-P4"
+        "S1-BODY",
+        "S1-P1"
       ],
       "sharedTerms": [
-        "incident",
-        "were",
-        "flagg",
-        "launch",
-        "week",
-        "yet",
-        "meta",
-        "proceed",
         "the",
-        "september",
-        "2026"
+        "was",
+        "criticism",
+        "anthropic",
+        "control",
+        "future"
       ],
       "entityShared": [
-        "meta",
-        "september"
+        "anthropic"
       ],
       "topicShared": [
-        "meta"
+        "the",
+        "anthropic"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
+        "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": true,
-        "blocked": true
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
@@ -426,88 +367,72 @@
     },
     {
       "index": 5,
-      "claim": "Internal posts also described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 U.S. launch as scheduled.",
+      "claim": "Although OpenAI primarily builds closed models, it signed on to the open‑weight letter after publication, whereas Anthropic did not.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 100,
+      "confidence": 88,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
+      "bestSource": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
+      "bestDomain": "cnbc.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F8",
-        "sourceId": "S2",
+        "factId": "F3",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 100
+        "score": 88
       },
       "provenanceFactMatches": [
         {
-          "factId": "F8",
-          "sourceId": "S2",
+          "factId": "F3",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 100,
-          "passageIndex": 6
+          "score": 88,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-P2",
-      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
-      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
+      "bestPassageId": "S1-P3",
+      "evidence": "Chief rival OpenAI also primarily builds closed models, but the company signed on in support of the open-weight letter after it was published, while Anthropic did not.",
+      "bestPassage": "Chief rival OpenAI also primarily builds closed models, but the company signed on in support of the open-weight letter after it was published, while Anthropic did not.",
       "matchedPassages": [
-        "S2-P2",
-        "S2-BODY"
+        "S1-P3",
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "internal",
-        "post",
-        "describ",
-        "incident",
-        "muse",
-        "appear",
-        "mix",
-        "conversation",
-        "different",
-        "user",
-        "account",
-        "and",
-        "worker",
-        "flagg",
-        "safety",
-        "issu",
-        "recently",
-        "launch",
-        "week",
-        "meta",
-        "proceed",
+        "openai",
+        "primarily",
+        "build",
+        "clos",
+        "models",
+        "sign",
         "the",
-        "september",
-        "2026",
-        "schedul"
+        "open",
+        "weight",
+        "letter",
+        "anthropic",
+        "did",
+        "not"
       ],
       "entityShared": [
-        "internal",
-        "muse",
-        "meta",
-        "september"
+        "openai",
+        "anthropic"
       ],
       "topicShared": [
-        "muse",
-        "mix",
-        "conversation",
-        "and",
-        "meta"
+        "models",
+        "the",
+        "anthropic"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -521,75 +446,78 @@
     },
     {
       "index": 6,
-      "claim": "A Meta spokesperson said that employee testing is core to the product development process and that the entire point is to get feedback so the company can implement safety and privacy protections and improve products.",
+      "claim": "Co‑founder Chenyu Zhao told an audience that companies are gravitating toward platforms like Fireworks because frontier models are pricey and often unnecessary unless the latest generalized intelligence is required.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 94,
+      "confidence": 95,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
       "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F13",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 94
+        "score": 79
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
+          "factId": "F13",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
-          "passageIndex": 6
+          "score": 79,
+          "passageIndex": 4
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-P2",
-      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
-      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "bestPassageId": "S2-BODY",
+      "evidence": "Zhao and many others believe companies are gravitating toward platforms like his because frontier models are pricey and, in most cases, he says, unnecessary unless you need the very latest and greatest generalized intelligence.",
+      "bestPassage": "Zhao and many others believe companies are gravitating toward platforms like his because frontier models are pricey and, in most cases, he says, unnecessary unless you need the very latest and greatest generalized intelligence.",
       "matchedPassages": [
-        "S1-P2",
-        "S1-BODY"
+        "S2-BODY",
+        "S2-P9"
       ],
       "sharedTerms": [
-        "meta",
-        "spokesperson",
-        "worker",
-        "test",
-        "core",
-        "the",
-        "product",
-        "proces",
+        "founder",
+        "chenyu",
+        "zhao",
+        "compani",
+        "are",
+        "gravitat",
+        "toward",
+        "platform",
+        "like",
+        "firework",
+        "frontier",
+        "models",
+        "pricey",
         "and",
-        "entire",
-        "point",
-        "get",
-        "feedback",
-        "can",
-        "implement",
-        "safety",
-        "privacy",
-        "protection",
-        "improve"
+        "unnecessary",
+        "unles",
+        "the",
+        "generaliz"
       ],
       "entityShared": [
-        "meta"
+        "chenyu",
+        "zhao",
+        "firework"
       ],
       "topicShared": [
-        "meta",
-        "and"
+        "compani",
+        "models",
+        "pricey",
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
       "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
+        "evidenceUncertain": false,
+        "claimUncertain": false,
         "evidenceAttributed": true,
         "claimAttributed": true,
         "certaintyEscalation": false,
@@ -604,64 +532,68 @@
     },
     {
       "index": 7,
-      "claim": "The spokesperson added that employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 91,
+      "claim": "The platform specializes in open‑weight models that can be downloaded and tuned on customer data, enabling faster and cheaper operation than Anthropic, OpenAI, and other heavyweights.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 90,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
       "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F6",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 91
+        "score": 88
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
+          "factId": "F6",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 91,
-          "passageIndex": 6
+          "score": 88,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-P2",
-      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
-      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "bestPassageId": "S2-BODY",
+      "evidence": "It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
+      "bestPassage": "It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
       "matchedPassages": [
-        "S1-P2",
-        "S1-BODY"
+        "S2-BODY",
+        "S2-P2"
       ],
       "sharedTerms": [
         "the",
-        "spokesperson",
-        "worker",
-        "acces",
-        "different",
-        "version",
-        "muse",
-        "public",
-        "review",
-        "featur",
-        "functionality",
+        "platform",
+        "specializ",
+        "open",
+        "weight",
+        "models",
+        "can",
+        "download",
         "and",
-        "behavior",
-        "not",
-        "available",
-        "elsewhere"
+        "customer",
+        "data",
+        "faster",
+        "cheaper",
+        "anthropic",
+        "openai",
+        "other",
+        "heavyweight"
       ],
       "entityShared": [
-        "muse"
+        "anthropic",
+        "openai"
       ],
       "topicShared": [
-        "muse",
-        "and"
+        "the",
+        "models",
+        "can",
+        "anthropic"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -669,12 +601,12 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
         "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": true,
-        "blocked": true
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
       },
       "factCoverage": 1,
       "multiFactSupported": false,
@@ -684,151 +616,76 @@
     },
     {
       "index": 8,
-      "claim": "When asked about the specific incidents, Meta spokesperson Daniel Roberts told TechCrunch that the examples described by Reuters were “isolated incidents.”",
+      "claim": "Zhao’s remarks suggest that businesses can avoid the cost of proprietary models such as Opus or Sonnet.Fireworks runs AI models for other businesses such as Uber, Shopify, and Notion.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 95,
+      "confidence": 87,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F15",
+        "factId": "F5",
         "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 92
+        "score": 52
       },
       "provenanceFactMatches": [
         {
-          "factId": "F15",
+          "factId": "F5",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 92,
-          "passageIndex": 10
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Meta spokesperson Daniel Roberts told TechCrunch that “employees have access to different versions of Muse than the public,” and Roberts described Reuters’ examples as “isolated incidents.” Ars Technica quoted a Meta staffer writing “Hmmm,” after Muse sent the definition of “money laundering” unbidden, and Ars Technica also quoted the staffer’s out-of-context output about a coffee table pickup that “doesn’t seem to be yours.”",
-      "bestPassage": "Meta spokesperson Daniel Roberts told TechCrunch that “employees have access to different versions of Muse than the public,” and Roberts described Reuters’ examples as “isolated incidents.” Ars Technica quoted a Meta staffer writing “Hmmm,” after Muse sent the definition of “money laundering” unbidden, and Ars Technica also quoted the staffer’s out-of-context output about a coffee table pickup that “doesn’t seem to be yours.”",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P9"
-      ],
-      "sharedTerms": [
-        "the",
-        "incident",
-        "meta",
-        "spokesperson",
-        "daniel",
-        "robert",
-        "told",
-        "techcrunch",
-        "exampl",
-        "describ",
-        "reuter",
-        "were",
-        "isolat"
-      ],
-      "entityShared": [
-        "meta",
-        "daniel",
-        "robert",
-        "techcrunch",
-        "reuter"
-      ],
-      "topicShared": [
-        "meta"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 9,
-      "claim": "Despite the spokesperson’s framing, other internal posts noted that Muse accessed private Signal messages on the device where it was installed, made possible by the broad Android notification permissions the app requests.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 97,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 35
-      },
-      "provenanceFactMatches": [
+          "score": 52,
+          "passageIndex": 3
+        },
         {
           "factId": "F7",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 35,
-          "passageIndex": 6
+          "score": 40,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data.",
-      "bestPassage": "Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data.",
+      "evidence": "Fireworks runs AI models for other businesses. Customers have included Uber, Shopify, and Notion.",
+      "bestPassage": "Fireworks runs AI models for other businesses. Customers have included Uber, Shopify, and Notion.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P14"
+        "S2-BODY"
       ],
       "sharedTerms": [
+        "zhao",
+        "business",
+        "can",
         "the",
-        "spokesperson",
+        "models",
+        "opus",
+        "sonnet",
+        "firework",
+        "runs",
+        "for",
         "other",
-        "internal",
-        "post",
-        "not",
-        "muse",
-        "access",
-        "private",
-        "signal",
-        "messag",
-        "device",
-        "was",
-        "install",
-        "possible",
-        "broad",
-        "android",
-        "notification",
-        "permission",
-        "app",
-        "request"
+        "uber",
+        "shopify",
+        "and",
+        "notion"
       ],
       "entityShared": [
-        "muse",
-        "signal",
-        "android"
+        "zhao",
+        "opus",
+        "sonnet",
+        "firework",
+        "uber",
+        "shopify",
+        "notion"
       ],
       "topicShared": [
-        "muse",
-        "private"
+        "can",
+        "the",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -838,170 +695,6 @@
         "evidenceUncertain": false,
         "claimUncertain": true,
         "evidenceAttributed": false,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 10,
-      "claim": "The company also stated that many messages identified as possible account mix‑ups were hallucinations and that some problems had already been addressed.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 86,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F20",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 36
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F20",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 36,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P5",
-      "evidence": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
-      "bestPassage": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
-      "matchedPassages": [
-        "S2-P5",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "messag",
-        "identifi",
-        "possible",
-        "account",
-        "mix",
-        "ups",
-        "were",
-        "hallucination",
-        "and",
-        "problem",
-        "had",
-        "address"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "mix",
-        "and"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 3,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 11,
-      "claim": "A security firm, Claroc, discovered that the chat‑sharing feature in Muse exposed shared conversations through publicly searchable DNS records.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 100,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F22",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 100
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F22",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 100,
-          "passageIndex": 4
-        },
-        {
-          "factId": "F19",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 95,
-          "passageIndex": 8
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-FF22,S2-FF19",
-      "evidence": "Meta did not dispute that the internal posts existed.Separately, security firm Claroc discovered that the chat-sharing feature in Muse exposed shared conversations through publicly searchable DNS records. Claroc discovered that Muse’s chat-sharing feature exposed shared conversations through publicly searchable DNS records, and Claroc found that users who shared a conversation did not realize the resulting links were discoverable by anyone with the right DNS query.",
-      "bestPassage": "Meta did not dispute that the internal posts existed.Separately, security firm Claroc discovered that the chat-sharing feature in Muse exposed shared conversations through publicly searchable DNS records. Claroc discovered that Muse’s chat-sharing feature exposed shared conversations through publicly searchable DNS records, and Claroc found that users who shared a conversation did not realize the resulting links were discoverable by anyone with the right DNS query.",
-      "matchedPassages": [
-        "S3-P3",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "security",
-        "firm",
-        "claroc",
-        "discover",
-        "the",
-        "chat",
-        "shar",
-        "feature",
-        "muse",
-        "expos",
-        "conversation",
-        "publicly",
-        "searchable",
-        "dns",
-        "record"
-      ],
-      "entityShared": [
-        "claroc",
-        "muse",
-        "dns"
-      ],
-      "topicShared": [
-        "muse",
-        "expos",
-        "conversation"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
@@ -1014,565 +707,67 @@
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 12,
-      "claim": "Researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 94,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F25",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 94
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F25",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 94,
-          "passageIndex": 9
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-P6",
-      "evidence": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
-      "bestPassage": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
-      "matchedPassages": [
-        "S3-P6",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "researcher",
-        "need",
-        "single",
-        "dns",
-        "query",
-        "surface",
-        "thousand",
-        "previously",
-        "shar",
-        "chat",
-        "link",
-        "all",
-        "were",
-        "accessible",
-        "anyone",
-        "who",
-        "found",
-        "them",
-        "without",
-        "any",
-        "login",
-        "requirement"
-      ],
-      "entityShared": [
-        "dns"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 13,
-      "claim": "The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 90,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F25",
-        "sourceId": "S3",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 90
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F25",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 90,
-          "passageIndex": 9
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-P6",
-      "evidence": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
-      "bestPassage": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
-      "matchedPassages": [
-        "S3-P6",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "expos",
-        "conversation",
-        "were",
-        "creat",
-        "user",
-        "who",
-        "had",
-        "explicitly",
-        "chosen",
-        "share",
-        "them",
-        "specific",
-        "recipient",
-        "but",
-        "did",
-        "not",
-        "expect",
-        "those",
-        "link",
-        "discoverable",
-        "third",
-        "parti"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "expos",
-        "conversation"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 14,
-      "claim": "These findings suggest that the product’s design may allow unintended data leaks beyond the immediate conversation.",
+      "index": 9,
+      "claim": "There is uncertainty whether open‑weight platforms will cement their position within the current oligopoly or lose traction.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 53,
+      "confidence": 59,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
+      "bestSource": "Anthropic rival says companies can (mostly) skip the pricey models",
+      "bestUrl": "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F20",
-        "sourceId": "S3",
+        "factId": "F14",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 34
+        "score": 28
       },
       "provenanceFactMatches": [
         {
-          "factId": "F20",
-          "sourceId": "S3",
+          "factId": "F14",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 34,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
-      "bestPassage": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
-      "matchedPassages": [
-        "S3-BODY",
-        "S3-P1"
-      ],
-      "sharedTerms": [
-        "the",
-        "product",
-        "may",
-        "data",
-        "conversation"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "data",
-        "conversation"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 15,
-      "claim": "Muse was launched in September and is one of the fastest‑growing apps on record, with more than 10 million downloads.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 98,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 90
-      },
-      "provenanceFactMatches": [
+          "score": 28,
+          "passageIndex": 18
+        },
         {
           "factId": "F3",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 90,
-          "passageIndex": 7
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Launched in September, Muse is one of the fastest-growing apps on record, with more than 10 million downloads.",
-      "bestPassage": "Launched in September, Muse is one of the fastest-growing apps on record, with more than 10 million downloads.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
-      ],
-      "sharedTerms": [
-        "muse",
-        "was",
-        "launch",
-        "september",
-        "and",
-        "one",
-        "the",
-        "fastest",
-        "grow",
-        "apps",
-        "record",
-        "million",
-        "download"
-      ],
-      "entityShared": [
-        "muse",
-        "september"
-      ],
-      "topicShared": [
-        "muse",
-        "and"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 16,
-      "claim": "Meta expected Muse to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 100,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F10",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 100
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F10",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 100,
-          "passageIndex": 12
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P4",
-      "evidence": "Muse had already been downloaded by more than 10 million people and Meta expected it to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
-      "bestPassage": "Muse had already been downloaded by more than 10 million people and Meta expected it to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
-      "matchedPassages": [
-        "S2-P4",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "meta",
-        "expect",
-        "muse",
-        "generate",
-        "billion",
-        "dollar",
-        "revenue",
-        "naci",
-        "describ",
-        "internal",
-        "posting",
-        "review",
-        "reuter",
-        "show",
-        "unsolicit",
-        "action",
-        "includ",
-        "infiltrat",
-        "encrypt",
-        "personal",
-        "messag",
-        "and",
-        "send",
-        "conversation",
-        "appear",
-        "destin",
-        "for",
-        "other",
-        "people"
-      ],
-      "entityShared": [
-        "meta",
-        "muse",
-        "naci",
-        "reuter"
-      ],
-      "topicShared": [
-        "meta",
-        "muse",
-        "and",
-        "conversation"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 17,
-      "claim": "The Defense Watch noted that Reuters could not establish whether unfamiliar financial information represented actual exposure of another person’s data or information fabricated by the AI model.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 100,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 20
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 20,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P5",
-      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
-      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
-      "matchedPassages": [
-        "S2-P5",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "the",
-        "defense",
-        "watch",
-        "not",
-        "reuter",
-        "establish",
-        "whether",
-        "unfamiliar",
-        "financial",
-        "information",
-        "represent",
-        "actual",
-        "exposure",
-        "person",
-        "data",
-        "fabricat",
-        "models"
-      ],
-      "entityShared": [
-        "the",
-        "defense",
-        "watch",
-        "reuter"
-      ],
-      "topicShared": [
-        "data"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 18,
-      "claim": "Meta’s position is that many of the messages were hallucinations, but the company has already addressed some of the problems.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 89,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
-      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
-      "bestDomain": "newscord.org",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 29
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 29,
-          "passageIndex": 1
+          "score": 22,
+          "passageIndex": 3
         },
         {
-          "factId": "F7",
+          "factId": "F6",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 27,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F20",
-          "sourceId": "S3",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 27,
-          "passageIndex": 1
+          "score": 22,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S2-BODY",
-      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts. Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
-      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts. Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "evidence": "There&#8217;s one scenario in which it just continues to cement its place in this sort of oligopoly; there&#8217;s another where it starts to lose traction. Chief rival OpenAI also primarily builds closed models, but the company signed on in support of the open-weight letter after it was published, while Anthropic did not. It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
+      "bestPassage": "There&#8217;s one scenario in which it just continues to cement its place in this sort of oligopoly; there&#8217;s another where it starts to lose traction. Chief rival OpenAI also primarily builds closed models, but the company signed on in support of the open-weight letter after it was published, while Anthropic did not. It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P5"
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "meta",
-        "position",
+        "open",
+        "weight",
+        "platform",
+        "cement",
         "the",
-        "messag",
-        "were",
-        "hallucination",
-        "but",
-        "address",
-        "problem"
+        "oligopoly",
+        "lose",
+        "traction"
       ],
-      "entityShared": [
-        "meta"
-      ],
+      "entityShared": [],
       "topicShared": [
-        "meta"
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1581,10 +776,10 @@
       "attributionUncertainty": {
         "evidenceUncertain": true,
         "claimUncertain": false,
-        "evidenceAttributed": true,
+        "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": true,
-        "attributionDropped": true,
+        "attributionDropped": false,
         "blocked": true
       },
       "factCoverage": 3,
@@ -1594,142 +789,74 @@
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 19,
-      "claim": "Employees continue to flag safety issues, and the company’s safety and privacy protections are still under review.",
+      "index": 11,
+      "claim": "Watch how Anthropic’s new model competes on price and performance, and observe whether open‑weight platforms like Fireworks gain traction among enterprises that prioritize cost control over the most advanced generalized intelligence.",
       "status": "partial",
       "classification": "supported_with_context",
-      "confidence": 80,
+      "confidence": 64,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
-      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
-      "bestDomain": "techtimes.com",
-      "sourceId": "S3",
+      "bestSource": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models - CNBC",
+      "bestUrl": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
+      "bestDomain": "cnbc.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F4",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 65
+        "score": 43
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F4",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 65,
-          "passageIndex": 6
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-BODY",
-      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
-      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
-      "matchedPassages": [
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "worker",
-        "safety",
-        "issu",
-        "and",
-        "the",
-        "privacy",
-        "are",
-        "review"
-      ],
-      "entityShared": [
-        "worker"
-      ],
-      "topicShared": [
-        "and"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": true,
-        "attributionDropped": true,
-        "blocked": true
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 21,
-      "claim": "Internal posts reveal that Muse mixed up conversations and exposed private data, prompting employees to flag safety issues during launch week.",
-      "type": "synthesis",
-      "status": "partial",
-      "classification": "synthesis_with_context",
-      "confidence": 85,
-      "sourceId": "S2",
-      "sourceRole": "SYNTHESIS",
-      "coreFactMatch": null,
-      "synthesisFactMatches": [
-        {
-          "factId": "F8",
-          "sourceId": "S2",
-          "score": 68,
-          "passageIndex": 6
-        },
-        {
-          "factId": "F20",
-          "sourceId": "S3",
-          "score": 63,
-          "passageIndex": 1
+          "score": 43,
+          "passageIndex": 10
         },
         {
           "factId": "F1",
           "sourceId": "S1",
-          "score": 58,
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 39,
           "passageIndex": 1
+        },
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 36,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-P7,S3-P2,S1-P2",
-      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts. Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
-      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts. Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "bestPassageId": "S1-FF4,S1-FF1,S2-FF6",
+      "evidence": "WATCH: Anthropic’s new AI model rivals Fable 5 and is cheaper as businesses fret about costs Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence. It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
+      "bestPassage": "WATCH: Anthropic’s new AI model rivals Fable 5 and is cheaper as businesses fret about costs Anthropic CEO Dario Amodei said on Monday that his company has \"never advocated for a ban on open-weights models,\" an attempt to beat back criticism emerging across the tech industry that the AI lab is trying to exert excessive control over the future of artificial intelligence. It specializes in open-weight models, which anyone can download, and helps customers tune them on their own data so they run faster and cheaper than the models of Anthropic, OpenAI, and other heavyweights, and are harder for rivals to copy.",
       "matchedPassages": [
-        "S2-P7",
-        "S3-P2",
-        "S1-P2"
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "internal",
-        "post",
-        "reveal",
-        "muse",
-        "mix",
-        "conversation",
+        "watch",
+        "anthropic",
+        "new",
+        "models",
         "and",
-        "expos",
-        "private",
-        "data",
-        "worker",
-        "safety",
-        "issu",
-        "launch",
-        "week"
+        "open",
+        "weight",
+        "cost",
+        "control",
+        "the"
       ],
       "entityShared": [
-        "muse"
+        "watch",
+        "anthropic"
       ],
       "topicShared": [
-        "muse",
-        "mix",
-        "conversation",
-        "and",
-        "expos",
-        "private",
-        "data"
+        "anthropic",
+        "models",
+        "the"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1744,14 +871,18 @@
         "attributionDropped": true,
         "blocked": true
       },
-      "matchingMode": "fact-map-multi-fact-source-passage-synthesis"
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
     }
   ],
   "editorial": [
     {
-      "index": 20,
-      "claim": "Readers should watch for updates on whether Meta will adjust Muse’s permission model, modify its privacy safeguards, or pause new features while addressing the highlighted concerns.",
-      "type": "editorial-recommendation",
+      "index": 10,
+      "claim": "The future direction will depend on how many organizations adopt these models and whether the cost advantages hold over time.",
+      "type": "editorial-analysis",
       "status": "editorial-excluded"
     }
   ]
