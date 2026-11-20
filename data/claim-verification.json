@@ -1,18 +1,18 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-18T23:46:00.876Z",
-  "articlePath": "content/articles/windows-server-2028-preview-microsoft-s-new-security-first-approach.md",
-  "articleTitle": "Windows Server 2028 Preview: Microsoft's New Security-First Approach",
+  "generatedAt": "2026-11-20T00:03:42.318Z",
+  "articlePath": "content/articles/meta-s-muse-ai-agent-mixing-conversations-and-exposing-private-data-internal-reports-show.md",
+  "articleTitle": "Meta’s Muse AI Agent Mixing Conversations and Exposing Private Data, Internal Reports Show",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 2,
-  "usableSourceCount": 2,
-  "claimCount": 13,
-  "editorialCount": 0,
-  "verified": 8,
-  "partial": 5,
+  "sourceCount": 3,
+  "usableSourceCount": 3,
+  "claimCount": 20,
+  "editorialCount": 1,
+  "verified": 14,
+  "partial": 6,
   "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 81,
+  "averageConfidence": 92,
   "pass": true,
   "policy": {
     "verifiedMin": 62,
@@ -45,165 +45,109 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "url": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "domain": "arstechnica.com",
-      "passageCount": 11,
-      "articleBodyLength": 1252
+      "title": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "domain": "techcrunch.com",
+      "passageCount": 6,
+      "articleBodyLength": 1315
     },
     {
       "id": "S2",
-      "title": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "url": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "domain": "ua.news",
-      "passageCount": 11,
-      "articleBodyLength": 1323
+      "title": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "url": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "domain": "newscord.org",
+      "passageCount": 14,
+      "articleBodyLength": 2673
+    },
+    {
+      "id": "S3",
+      "title": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "url": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "domain": "techtimes.com",
+      "passageCount": 10,
+      "articleBodyLength": 4317
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "Microsoft has unveiled a significant shift in its approach to server security with the Windows Server 2028 Public Preview.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 95,
+      "claim": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
         "factId": "F1",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 87
+        "score": 100
       },
       "provenanceFactMatches": [
         {
           "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 87,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F12",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 87,
+          "score": 100,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF1,S2-FF12",
-      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
-      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
+      "bestPassageId": "S1-P1",
+      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
-      ],
-      "sharedTerms": [
-        "microsoft",
-        "has",
-        "reveal",
-        "its",
-        "approach",
-        "server",
-        "security",
-        "the",
-        "window",
-        "2028",
-        "public",
-        "preview"
-      ],
-      "entityShared": [
-        "microsoft",
-        "window",
-        "server",
-        "public",
-        "preview"
-      ],
-      "topicShared": [
-        "approach",
-        "server",
-        "security",
-        "window",
-        "2028",
-        "public",
-        "preview"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "significant"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
-    },
-    {
-      "index": 2,
-      "claim": "The update introduces a new security-by-default stance, aiming to address a longstanding concern for system administrators.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 74,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 48
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 48,
-          "passageIndex": 2
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core .",
-      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core .",
-      "matchedPassages": [
+        "S1-P1",
         "S1-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "new",
-        "security",
-        "default",
-        "stance",
+        "meta",
+        "worker",
+        "rais",
         "fear",
-        "for",
-        "system",
-        "administrator"
+        "the",
+        "agent",
+        "muse",
+        "has",
+        "mix",
+        "conversation",
+        "acros",
+        "different",
+        "account",
+        "and",
+        "expos",
+        "private",
+        "user",
+        "data",
+        "accord",
+        "new",
+        "reuter",
+        "report",
+        "look",
+        "internal",
+        "post"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "meta",
+        "muse",
+        "reuter"
+      ],
       "topicShared": [
-        "security"
+        "meta",
+        "agent",
+        "muse",
+        "mix",
+        "conversation",
+        "and",
+        "expos",
+        "private",
+        "data",
+        "report"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -212,8 +156,94 @@
       "attributionUncertainty": {
         "evidenceUncertain": false,
         "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 2,
+      "claim": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn’t belong to them.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 94
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 2
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P6",
+      "evidence": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn&#8217;t belong to them.",
+      "bestPassage": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn&#8217;t belong to them.",
+      "matchedPassages": [
+        "S1-P6",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "instanc",
+        "worker",
+        "muse",
+        "surfac",
+        "messag",
+        "childcare",
+        "request",
+        "never",
+        "career",
+        "advice",
+        "ask",
+        "for",
+        "product",
+        "order",
+        "plac",
+        "and",
+        "bank",
+        "account",
+        "balanc",
+        "didn",
+        "belong",
+        "them"
+      ],
+      "entityShared": [
+        "muse"
+      ],
+      "topicShared": [
+        "muse",
+        "and"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
@@ -226,218 +256,79 @@
     },
     {
       "index": 3,
-      "claim": "The key feature of this update is Hardened Server Core, a set of security settings that align with strengthened U.S.",
+      "claim": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
       "status": "verified",
       "classification": "supported",
       "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F13",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 88
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F13",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 88,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
-      "bestPassage": "As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P2"
-      ],
-      "sharedTerms": [
-        "the",
-        "key",
-        "feature",
-        "harden",
-        "server",
-        "core",
-        "set",
-        "security",
-        "setting",
-        "align",
-        "strengthen"
-      ],
-      "entityShared": [
-        "harden",
-        "server",
-        "core"
-      ],
-      "topicShared": [
-        "server",
-        "security"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 4,
-      "claim": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 100,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F14",
-        "sourceId": "S2",
+        "factId": "F4",
+        "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
         "score": 100
       },
       "provenanceFactMatches": [
         {
-          "factId": "F14",
-          "sourceId": "S2",
+          "factId": "F4",
+          "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
           "score": 100,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-P3",
-      "evidence": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
-      "bestPassage": "Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations.",
-      "matchedPassages": [
-        "S2-P3",
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "department",
-        "defense",
-        "guidelin",
-        "includ",
-        "the",
-        "disa",
-        "security",
-        "technical",
-        "implementation",
-        "recommendation"
-      ],
-      "entityShared": [
-        "department",
-        "defense",
-        "disa",
-        "security",
-        "technical",
-        "implementation"
-      ],
-      "topicShared": [
-        "security"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 5,
-      "claim": "This approach ensures that the secure configuration is the starting state, eliminating the need for administrators to manually harden servers after deployment.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 76,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 38
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 38,
-          "passageIndex": 3
-        },
-        {
-          "factId": "F7",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 34,
           "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "In the past, Windows Server admins were left to start from a blank canvas and then implement hardening configurations for operations. Microsoft says that concern is now managed: “The s ecure configuration is the starting state, not a project you run after setup.",
-      "bestPassage": "In the past, Windows Server admins were left to start from a blank canvas and then implement hardening configurations for operations. Microsoft says that concern is now managed: “The s ecure configuration is the starting state, not a project you run after setup.",
+      "bestPassageId": "S1-FF4",
+      "evidence": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
+      "bestPassage": "One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”",
       "matchedPassages": [
+        "S1-P4",
         "S1-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "secure",
-        "configuration",
-        "start",
-        "state",
-        "eliminat",
-        "need",
-        "for",
-        "administrator",
-        "harden",
-        "server"
+        "one",
+        "worker",
+        "told",
+        "colleagu",
+        "muse",
+        "had",
+        "randomly",
+        "sent",
+        "extra",
+        "message",
+        "chat",
+        "weather",
+        "and",
+        "tide",
+        "information",
+        "say",
+        "btw",
+        "two",
+        "bank",
+        "updat",
+        "capital",
+        "balance",
+        "2722",
+        "charl",
+        "schwab",
+        "5899"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "one",
+        "muse",
+        "btw",
+        "capital",
+        "charl",
+        "schwab"
+      ],
       "topicShared": [
-        "approach",
-        "server"
+        "muse",
+        "and"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -447,365 +338,72 @@
         "evidenceUncertain": false,
         "claimUncertain": false,
         "evidenceAttributed": true,
-        "claimAttributed": false,
+        "claimAttributed": true,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
     },
     {
-      "index": 6,
-      "claim": "The update also brings technical improvements, such as eliminating NVMe translation through a SCSI stack, which enhances speeds and reduces overhead.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 84,
+      "index": 4,
+      "claim": "These incidents were flagged as early as launch week, yet Meta proceeded with the September 2026 U.S. launch on schedule.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 90,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
-      "sourceId": "S1",
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
+        "factId": "F8",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 81
+        "score": 82
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
-          "sourceId": "S1",
+          "factId": "F8",
+          "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 81,
+          "score": 82,
           "passageIndex": 6
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "The update eliminated NVMe translation through a SCSI stack while improving speeds and reducing overhead.",
-      "bestPassage": "The update eliminated NVMe translation through a SCSI stack while improving speeds and reducing overhead.",
+      "bestPassageId": "S3-BODY",
+      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
+      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
+        "S3-BODY",
+        "S3-P4"
       ],
       "sharedTerms": [
+        "incident",
+        "were",
+        "flagg",
+        "launch",
+        "week",
+        "yet",
+        "meta",
+        "proceed",
         "the",
-        "technical",
-        "eliminat",
-        "nvme",
-        "translation",
-        "scsi",
-        "stack",
-        "speed",
-        "and",
-        "reduc",
-        "overhead"
+        "september",
+        "2026"
       ],
       "entityShared": [
-        "nvme",
-        "scsi"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 7,
-      "claim": "However, it's important to note that these changes are only available for Server Core installations, and Windows Server Desktop Experience installs do not include the new security stance.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 92,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 75
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F3",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 75,
-          "passageIndex": 4
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Windows Server Desktop Experience installs do not include the changed stance.",
-      "bestPassage": "Windows Server Desktop Experience installs do not include the changed stance.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
-      ],
-      "sharedTerms": [
-        "important",
-        "chang",
-        "available",
-        "for",
-        "server",
-        "core",
-        "and",
-        "window",
-        "desktop",
-        "experience",
-        "install",
-        "not",
-        "include",
-        "the",
-        "new",
-        "security",
-        "stance"
-      ],
-      "entityShared": [
-        "server",
-        "core",
-        "window",
-        "desktop",
-        "experience"
+        "meta",
+        "september"
       ],
       "topicShared": [
-        "server",
-        "window",
-        "security"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "only"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 8,
-      "claim": "Microsoft encourages users to test the build and provide feedback on which settings may interfere with applications.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 82,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F20",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 70
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F20",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 70,
-          "passageIndex": 7
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "The company urged users to test the build and report which specific settings interfere with applications.",
-      "bestPassage": "The company urged users to test the build and report which specific settings interfere with applications.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P9"
-      ],
-      "sharedTerms": [
-        "microsoft",
-        "user",
-        "test",
-        "the",
-        "build",
-        "and",
-        "setting",
-        "may",
-        "interfere",
-        "application"
-      ],
-      "entityShared": [
-        "microsoft"
-      ],
-      "topicShared": [],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 9,
-      "claim": "The company also plans to introduce hardware-supported security mechanisms, like Secure Boot and DMA requirements, in later preview builds.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 96,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F22",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 89
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F22",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 89,
-          "passageIndex": 8
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
-      "bestPassage": "Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P11"
-      ],
-      "sharedTerms": [
-        "the",
-        "introduce",
-        "hardware",
-        "support",
-        "security",
-        "mechanism",
-        "secure",
-        "boot",
-        "and",
-        "dma",
-        "requirement",
-        "later",
-        "preview",
-        "build"
-      ],
-      "entityShared": [
-        "secure",
-        "boot",
-        "dma"
-      ],
-      "topicShared": [
-        "security",
-        "preview"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 10,
-      "claim": "This iterative approach ensures that the final release will be thoroughly tested and optimized for security and performance.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 57,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": null,
-      "provenanceFactMatches": [],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default. As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S. Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations. It was already added to Windows Server 2025 in an update, but administrators had to activate the feature manually at the time. The new stack eliminates NVMe translation through SCSI and, according to Microsoft, is expected to reduce overhead and improve performance. The release notes list a known issue with the implementation of TLS hybrid key exchange: if hybrid groups are negotiated by a TLS server, the LSASS service may crash. Until the bug is fixed, Microsoft recommends disabling such key exchange groups. The hardened settings will be available only for Server Core installations. The company urged users to test the build and report which specific settings interfere with applications. Microsoft will also strengthen requirements for authentication through Remote Desktop and PowerShell script block logging. Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
-      "bestPassage": "Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default. As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S. Department of Defense guidelines, including the DISA Security Technical Implementation Guide recommendations. It was already added to Windows Server 2025 in an update, but administrators had to activate the feature manually at the time. The new stack eliminates NVMe translation through SCSI and, according to Microsoft, is expected to reduce overhead and improve performance. The release notes list a known issue with the implementation of TLS hybrid key exchange: if hybrid groups are negotiated by a TLS server, the LSASS service may crash. Until the bug is fixed, Microsoft recommends disabling such key exchange groups. The hardened settings will be available only for Server Core installations. The company urged users to test the build and report which specific settings interfere with applications. Microsoft will also strengthen requirements for authentication through Remote Desktop and PowerShell script block logging. Hardware-supported security mechanisms, including Secure Boot and DMA requirements, will not be applied until a later preview build.",
-      "matchedPassages": [
-        "S2-BODY"
-      ],
-      "sharedTerms": [
-        "approach",
-        "the",
-        "release",
-        "test",
-        "and",
-        "for",
-        "security",
-        "performance"
-      ],
-      "entityShared": [],
-      "topicShared": [
-        "approach",
-        "security"
+        "meta"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -820,158 +418,581 @@
         "attributionDropped": true,
         "blocked": true
       },
-      "factCoverage": 0,
+      "factCoverage": 1,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "semantic-context-evidence-pack"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 11,
-      "claim": "Microsoft's Windows Server 2028 Public Preview represents a significant step towards a more secure server environment.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 71,
+      "index": 5,
+      "claim": "Internal posts also described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 U.S. launch as scheduled.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
-      "sourceId": "S1",
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
-        "sourceId": "S1",
+        "factId": "F8",
+        "sourceId": "S2",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 68
+        "score": 100
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 68,
-          "passageIndex": 2
-        },
-        {
-          "factId": "F12",
+          "factId": "F8",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 63,
-          "passageIndex": 1
+          "score": 100,
+          "passageIndex": 6
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF1,S2-FF12",
-      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
-      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . Microsoft has unveiled a public preview of Windows Server 2028 with a new approach to security by default.",
+      "bestPassageId": "S2-P2",
+      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
+      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
+        "S2-P2",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "microsoft",
-        "window",
-        "server",
-        "2028",
-        "public",
-        "preview"
+        "internal",
+        "post",
+        "describ",
+        "incident",
+        "muse",
+        "appear",
+        "mix",
+        "conversation",
+        "different",
+        "user",
+        "account",
+        "and",
+        "worker",
+        "flagg",
+        "safety",
+        "issu",
+        "recently",
+        "launch",
+        "week",
+        "meta",
+        "proceed",
+        "the",
+        "september",
+        "2026",
+        "schedul"
       ],
       "entityShared": [
-        "microsoft",
-        "window",
-        "server",
-        "public",
-        "preview"
+        "internal",
+        "muse",
+        "meta",
+        "september"
       ],
       "topicShared": [
-        "window",
-        "server",
-        "2028",
-        "public",
-        "preview"
+        "muse",
+        "mix",
+        "conversation",
+        "and",
+        "meta"
       ],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
-      "scopeWarnings": [
-        "significant"
-      ],
+      "scopeWarnings": [],
       "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 12,
-      "claim": "By making Hardened Server Core the default, the company is addressing a critical security gap, ensuring that servers are protected from the moment they are deployed.",
+      "index": 6,
+      "claim": "A Meta spokesperson said that employee testing is core to the product development process and that the entire point is to get feedback so the company can implement safety and privacy protections and improve products.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 69,
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Windows Server 2028 public preview bets on a security-first approach - Ars Technica",
-      "bestUrl": "https://arstechnica.com/gadgets/2026/11/windows-server-2028-public-preview-bets-on-a-security-first-approach/",
-      "bestDomain": "arstechnica.com",
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
+        "factId": "F2",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 55
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
+          "factId": "F2",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 55,
-          "passageIndex": 2
-        },
+          "score": 94,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P2",
+      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "matchedPassages": [
+        "S1-P2",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "meta",
+        "spokesperson",
+        "worker",
+        "test",
+        "core",
+        "the",
+        "product",
+        "proces",
+        "and",
+        "entire",
+        "point",
+        "get",
+        "feedback",
+        "can",
+        "implement",
+        "safety",
+        "privacy",
+        "protection",
+        "improve"
+      ],
+      "entityShared": [
+        "meta"
+      ],
+      "topicShared": [
+        "meta",
+        "and"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "The spokesperson added that employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 91,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 91
+      },
+      "provenanceFactMatches": [
         {
-          "factId": "F13",
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 91,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-P2",
+      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "matchedPassages": [
+        "S1-P2",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "spokesperson",
+        "worker",
+        "acces",
+        "different",
+        "version",
+        "muse",
+        "public",
+        "review",
+        "featur",
+        "functionality",
+        "and",
+        "behavior",
+        "not",
+        "available",
+        "elsewhere"
+      ],
+      "entityShared": [
+        "muse"
+      ],
+      "topicShared": [
+        "muse",
+        "and"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 8,
+      "claim": "When asked about the specific incidents, Meta spokesperson Daniel Roberts told TechCrunch that the examples described by Reuters were “isolated incidents.”",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 95,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F15",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 92
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F15",
           "sourceId": "S2",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 43,
+          "score": 92,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Meta spokesperson Daniel Roberts told TechCrunch that “employees have access to different versions of Muse than the public,” and Roberts described Reuters’ examples as “isolated incidents.” Ars Technica quoted a Meta staffer writing “Hmmm,” after Muse sent the definition of “money laundering” unbidden, and Ars Technica also quoted the staffer’s out-of-context output about a coffee table pickup that “doesn’t seem to be yours.”",
+      "bestPassage": "Meta spokesperson Daniel Roberts told TechCrunch that “employees have access to different versions of Muse than the public,” and Roberts described Reuters’ examples as “isolated incidents.” Ars Technica quoted a Meta staffer writing “Hmmm,” after Muse sent the definition of “money laundering” unbidden, and Ars Technica also quoted the staffer’s out-of-context output about a coffee table pickup that “doesn’t seem to be yours.”",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P9"
+      ],
+      "sharedTerms": [
+        "the",
+        "incident",
+        "meta",
+        "spokesperson",
+        "daniel",
+        "robert",
+        "told",
+        "techcrunch",
+        "exampl",
+        "describ",
+        "reuter",
+        "were",
+        "isolat"
+      ],
+      "entityShared": [
+        "meta",
+        "daniel",
+        "robert",
+        "techcrunch",
+        "reuter"
+      ],
+      "topicShared": [
+        "meta"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "Despite the spokesperson’s framing, other internal posts noted that Muse accessed private Signal messages on the device where it was installed, made possible by the broad Android notification permissions the app requests.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 97,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 35
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 35,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data.",
+      "bestPassage": "Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P14"
+      ],
+      "sharedTerms": [
+        "the",
+        "spokesperson",
+        "other",
+        "internal",
+        "post",
+        "not",
+        "muse",
+        "access",
+        "private",
+        "signal",
+        "messag",
+        "device",
+        "was",
+        "install",
+        "possible",
+        "broad",
+        "android",
+        "notification",
+        "permission",
+        "app",
+        "request"
+      ],
+      "entityShared": [
+        "muse",
+        "signal",
+        "android"
+      ],
+      "topicShared": [
+        "muse",
+        "private"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 10,
+      "claim": "The company also stated that many messages identified as possible account mix‑ups were hallucinations and that some problems had already been addressed.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 86,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 36
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 36,
           "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
-      "bestPassage": "Microsoft’s Ignite announcements this week went beyond the Office-in-Copilot overhaul with the reveal of the Windows Server 2028 Public Preview and its new security-by-default stance and what Microsoft calls Hardened Server Core . As Ars Technica reports , the system will introduce Hardened Server Core, a set of settings that, according to the company, aligns with strengthened U.S.",
+      "bestPassageId": "S2-P5",
+      "evidence": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "bestPassage": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
+        "S2-P5",
+        "S2-BODY"
       ],
       "sharedTerms": [
-        "harden",
-        "server",
-        "core",
         "the",
-        "default",
+        "messag",
+        "identifi",
+        "possible",
+        "account",
+        "mix",
+        "ups",
+        "were",
+        "hallucination",
+        "and",
+        "problem",
+        "had",
+        "address"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "mix",
+        "and"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "A security firm, Claroc, discovered that the chat‑sharing feature in Muse exposed shared conversations through publicly searchable DNS records.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F22",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 100
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F22",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 100,
+          "passageIndex": 4
+        },
+        {
+          "factId": "F19",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 95,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-FF22,S2-FF19",
+      "evidence": "Meta did not dispute that the internal posts existed.Separately, security firm Claroc discovered that the chat-sharing feature in Muse exposed shared conversations through publicly searchable DNS records. Claroc discovered that Muse’s chat-sharing feature exposed shared conversations through publicly searchable DNS records, and Claroc found that users who shared a conversation did not realize the resulting links were discoverable by anyone with the right DNS query.",
+      "bestPassage": "Meta did not dispute that the internal posts existed.Separately, security firm Claroc discovered that the chat-sharing feature in Muse exposed shared conversations through publicly searchable DNS records. Claroc discovered that Muse’s chat-sharing feature exposed shared conversations through publicly searchable DNS records, and Claroc found that users who shared a conversation did not realize the resulting links were discoverable by anyone with the right DNS query.",
+      "matchedPassages": [
+        "S3-P3",
+        "S3-BODY"
+      ],
+      "sharedTerms": [
         "security",
-        "deploy"
+        "firm",
+        "claroc",
+        "discover",
+        "the",
+        "chat",
+        "shar",
+        "feature",
+        "muse",
+        "expos",
+        "conversation",
+        "publicly",
+        "searchable",
+        "dns",
+        "record"
       ],
       "entityShared": [
-        "harden",
-        "server",
-        "core"
+        "claroc",
+        "muse",
+        "dns"
       ],
       "topicShared": [
-        "server",
-        "security"
+        "muse",
+        "expos",
+        "conversation"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -993,54 +1014,298 @@
       "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 13,
-      "claim": "This proactive approach aligns with industry best practices and is a welcome development for system administrators and security-conscious users.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 57,
+      "index": 12,
+      "claim": "Researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Microsoft unveils Windows Server 2028 with security by default — Ars Technica - UA.NEWS",
-      "bestUrl": "https://ua.news/en/dovkolo-svitu/microsoft-predstavila-windows-server-2028-iz-zakhistom-za-zamovchuvanniam-ars-technica",
-      "bestDomain": "ua.news",
-      "sourceId": "S2",
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
-        "sourceId": "S1",
+        "factId": "F25",
+        "sourceId": "S3",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 31
+        "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
-          "sourceId": "S1",
+          "factId": "F25",
+          "sourceId": "S3",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 31,
-          "passageIndex": 3
+          "score": 94,
+          "passageIndex": 9
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "STIGs work by providing a standard security framework for system administrators to follow recommended guidance.",
-      "bestPassage": "STIGs work by providing a standard security framework for system administrators to follow recommended guidance.",
+      "bestPassageId": "S3-P6",
+      "evidence": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
+      "bestPassage": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
       "matchedPassages": [
-        "S2-BODY"
+        "S3-P6",
+        "S3-BODY"
       ],
       "sharedTerms": [
-        "approach",
-        "align",
-        "and",
-        "for",
-        "system",
-        "administrator",
-        "security",
-        "user"
+        "researcher",
+        "need",
+        "single",
+        "dns",
+        "query",
+        "surface",
+        "thousand",
+        "previously",
+        "shar",
+        "chat",
+        "link",
+        "all",
+        "were",
+        "accessible",
+        "anyone",
+        "who",
+        "found",
+        "them",
+        "without",
+        "any",
+        "login",
+        "requirement"
+      ],
+      "entityShared": [
+        "dns"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 13,
+      "claim": "The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 90,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F25",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 90
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F25",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 90,
+          "passageIndex": 9
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-P6",
+      "evidence": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
+      "bestPassage": "Security researchers needed a single DNS query to surface thousands of previously shared chat links, all of which were accessible to anyone who found them, without any login requirement.The exposed conversations were created by users who had explicitly chosen to share them with specific recipients but did not expect that those links would be discoverable by third parties.",
+      "matchedPassages": [
+        "S3-P6",
+        "S3-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "expos",
+        "conversation",
+        "were",
+        "creat",
+        "user",
+        "who",
+        "had",
+        "explicitly",
+        "chosen",
+        "share",
+        "them",
+        "specific",
+        "recipient",
+        "but",
+        "did",
+        "not",
+        "expect",
+        "those",
+        "link",
+        "discoverable",
+        "third",
+        "parti"
       ],
       "entityShared": [],
       "topicShared": [
-        "approach",
-        "security"
+        "expos",
+        "conversation"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 14,
+      "claim": "These findings suggest that the product’s design may allow unintended data leaks beyond the immediate conversation.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 53,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S3",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 34
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 34,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "bestPassage": "Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "matchedPassages": [
+        "S3-BODY",
+        "S3-P1"
+      ],
+      "sharedTerms": [
+        "the",
+        "product",
+        "may",
+        "data",
+        "conversation"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "data",
+        "conversation"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 15,
+      "claim": "Muse was launched in September and is one of the fastest‑growing apps on record, with more than 10 million downloads.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says",
+      "bestUrl": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+      "bestDomain": "techcrunch.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 90
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 90,
+          "passageIndex": 7
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Launched in September, Muse is one of the fastest-growing apps on record, with more than 10 million downloads.",
+      "bestPassage": "Launched in September, Muse is one of the fastest-growing apps on record, with more than 10 million downloads.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P3"
+      ],
+      "sharedTerms": [
+        "muse",
+        "was",
+        "launch",
+        "september",
+        "and",
+        "one",
+        "the",
+        "fastest",
+        "grow",
+        "apps",
+        "record",
+        "million",
+        "download"
+      ],
+      "entityShared": [
+        "muse",
+        "september"
+      ],
+      "topicShared": [
+        "muse",
+        "and"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -1057,10 +1322,437 @@
       },
       "factCoverage": 1,
       "multiFactSupported": false,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "direct-exact-evidence"
+    },
+    {
+      "index": 16,
+      "claim": "Meta expected Muse to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 100
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 100,
+          "passageIndex": 12
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P4",
+      "evidence": "Muse had already been downloaded by more than 10 million people and Meta expected it to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
+      "bestPassage": "Muse had already been downloaded by more than 10 million people and Meta expected it to generate billions of dollars in revenue from AI, while La Nación described internal postings reviewed by Reuters as showing unsolicited actions including infiltrating encrypted personal messages and sending conversations that appeared destined for other people.",
+      "matchedPassages": [
+        "S2-P4",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "meta",
+        "expect",
+        "muse",
+        "generate",
+        "billion",
+        "dollar",
+        "revenue",
+        "naci",
+        "describ",
+        "internal",
+        "posting",
+        "review",
+        "reuter",
+        "show",
+        "unsolicit",
+        "action",
+        "includ",
+        "infiltrat",
+        "encrypt",
+        "personal",
+        "messag",
+        "and",
+        "send",
+        "conversation",
+        "appear",
+        "destin",
+        "for",
+        "other",
+        "people"
+      ],
+      "entityShared": [
+        "meta",
+        "muse",
+        "naci",
+        "reuter"
+      ],
+      "topicShared": [
+        "meta",
+        "muse",
+        "and",
+        "conversation"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
       "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 17,
+      "claim": "The Defense Watch noted that Reuters could not establish whether unfamiliar financial information represented actual exposure of another person’s data or information fabricated by the AI model.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 100,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 20
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 20,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P5",
+      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "matchedPassages": [
+        "S2-P5",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "defense",
+        "watch",
+        "not",
+        "reuter",
+        "establish",
+        "whether",
+        "unfamiliar",
+        "financial",
+        "information",
+        "represent",
+        "actual",
+        "exposure",
+        "person",
+        "data",
+        "fabricat",
+        "models"
+      ],
+      "entityShared": [
+        "the",
+        "defense",
+        "watch",
+        "reuter"
+      ],
+      "topicShared": [
+        "data"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 18,
+      "claim": "Meta’s position is that many of the messages were hallucinations, but the company has already addressed some of the problems.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 89,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Privacy Concerns Over Muse AI Mixing Up Accounts: 5 outlets compared - NewsCord",
+      "bestUrl": "https://newscord.org/article/meta-employees-raise-privacy-concerns-over-muse-ai-mixing-up-accounts--Story_20261119_MetasAIagentMuseismic46c57c5",
+      "bestDomain": "newscord.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 29
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 29,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 27,
+          "passageIndex": 6
+        },
+        {
+          "factId": "F20",
+          "sourceId": "S3",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 27,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts. Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "bestPassage": "Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts. Meta launched its Muse AI agent in September 2026 with a promise that it was built from the ground up for privacy and security, but Reuters reviewed internal communications showing employees raising “significant concerns” about Muse’s handling of private data. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P5"
+      ],
+      "sharedTerms": [
+        "meta",
+        "position",
+        "the",
+        "messag",
+        "were",
+        "hallucination",
+        "but",
+        "address",
+        "problem"
+      ],
+      "entityShared": [
+        "meta"
+      ],
+      "topicShared": [
+        "meta"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 3,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 19,
+      "claim": "Employees continue to flag safety issues, and the company’s safety and privacy protections are still under review.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 80,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Meta Employees Raise Muse AI Privacy Concerns, Exposing Security Flaws, Chat Leaks",
+      "bestUrl": "https://www.techtimes.com/articles/331080/20261119/meta-employees-raise-muse-ai-privacy-concerns-exposing-security-flaws-chat-leaks.htm",
+      "bestDomain": "techtimes.com",
+      "sourceId": "S3",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F2",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 65
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F2",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 65,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S3-BODY",
+      "evidence": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "bestPassage": "“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,&#8221; a Meta spokesperson said in an email to TechCrunch. &#8220;Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”",
+      "matchedPassages": [
+        "S3-BODY"
+      ],
+      "sharedTerms": [
+        "worker",
+        "safety",
+        "issu",
+        "and",
+        "the",
+        "privacy",
+        "are",
+        "review"
+      ],
+      "entityShared": [
+        "worker"
+      ],
+      "topicShared": [
+        "and"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": true,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 21,
+      "claim": "Internal posts reveal that Muse mixed up conversations and exposed private data, prompting employees to flag safety issues during launch week.",
+      "type": "synthesis",
+      "status": "partial",
+      "classification": "synthesis_with_context",
+      "confidence": 85,
+      "sourceId": "S2",
+      "sourceRole": "SYNTHESIS",
+      "coreFactMatch": null,
+      "synthesisFactMatches": [
+        {
+          "factId": "F8",
+          "sourceId": "S2",
+          "score": 68,
+          "passageIndex": 6
+        },
+        {
+          "factId": "F20",
+          "sourceId": "S3",
+          "score": 63,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F1",
+          "sourceId": "S1",
+          "score": 58,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P7,S3-P2,S1-P2",
+      "evidence": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts. Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "bestPassage": "Reuters reported that internal posts described incidents where Muse appeared to be mixing up conversations between different user accounts, and employees flagged safety issues “as recently as launch week” while Meta proceeded with the September 2026 US launch as scheduled. Meta launched its Muse AI agent with a promise that it was built from the ground up for privacy and security.A recent investigation and several reports reveal that the people testing the product internally were raising serious doubts about whether that promise was being met before and even after the product shipped.Meta Employees Expose Muse AI Privacy ConcernsReuters reviewed internal communications at Meta that showed employees raising significant concerns about Muse's handling of private data, including incidents where the AI agent appeared to be mixing up conversations between different user accounts. Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.",
+      "matchedPassages": [
+        "S2-P7",
+        "S3-P2",
+        "S1-P2"
+      ],
+      "sharedTerms": [
+        "internal",
+        "post",
+        "reveal",
+        "muse",
+        "mix",
+        "conversation",
+        "and",
+        "expos",
+        "private",
+        "data",
+        "worker",
+        "safety",
+        "issu",
+        "launch",
+        "week"
+      ],
+      "entityShared": [
+        "muse"
+      ],
+      "topicShared": [
+        "muse",
+        "mix",
+        "conversation",
+        "and",
+        "expos",
+        "private",
+        "data"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": true,
+        "blocked": true
+      },
+      "matchingMode": "fact-map-multi-fact-source-passage-synthesis"
     }
   ],
-  "editorial": []
+  "editorial": [
+    {
+      "index": 20,
+      "claim": "Readers should watch for updates on whether Meta will adjust Muse’s permission model, modify its privacy safeguards, or pause new features while addressing the highlighted concerns.",
+      "type": "editorial-recommendation",
+      "status": "editorial-excluded"
+    }
+  ]
 }
