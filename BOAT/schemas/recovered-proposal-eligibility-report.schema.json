@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BOAT Recovered Proposal Eligibility Report",
+  "type": "object",
+  "required": ["schemaVersion", "engine", "mode", "generatedAt", "summary", "runs", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "engine": { "const": "BOAT Recovered Proposal Eligibility Report" },
+    "mode": { "const": "offline-read-only" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "summary": {
+      "type": "object",
+      "required": ["runs", "claims", "eligible", "blocked", "unknown", "countsReconciled", "recoveryHashesRecordedAtGeneration", "semanticSupport", "automaticApplication", "proposalEngineHandoffAllowed"],
+      "properties": {
+        "runs": { "type": "integer", "minimum": 0 },
+        "claims": { "type": "integer", "minimum": 0 },
+        "eligible": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 },
+        "unknown": { "type": "integer", "minimum": 0 },
+        "countsReconciled": { "const": true },
+        "recoveryHashesRecordedAtGeneration": { "const": false },
+        "semanticSupport": { "const": "not_verified" },
+        "automaticApplication": { "const": false },
+        "proposalEngineHandoffAllowed": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["runId", "artifactId", "artifactName", "recoveryStatus", "bundleStatus", "totalClaims", "eligible", "blocked", "unknown", "hashProvenance", "recordedAtGeneration", "countsReconciled", "claims", "findings", "approvalRequired", "automaticApplication", "semanticSupport", "proposalEngineHandoffAllowed"],
+        "properties": {
+          "runId": { "type": "string", "pattern": "^[0-9]+$" },
+          "artifactId": { "type": "string", "pattern": "^[0-9]+$" },
+          "artifactName": { "type": "string", "minLength": 1 },
+          "recoveryStatus": { "type": "string" },
+          "bundleStatus": { "type": "string" },
+          "totalClaims": { "type": "integer", "minimum": 0 },
+          "eligible": { "type": "integer", "minimum": 0 },
+          "blocked": { "type": "integer", "minimum": 0 },
+          "unknown": { "type": "integer", "minimum": 0 },
+          "hashProvenance": { "const": "recovery-time-computed-checksums" },
+          "recordedAtGeneration": { "const": false },
+          "countsReconciled": { "const": true },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["claimIndex", "status", "sourceId", "passageId", "reasonCodes"],
+              "properties": {
+                "claimIndex": { "type": ["integer", "null"] },
+                "status": { "enum": ["ready_for_human_proposal", "blocked", "unknown"] },
+                "sourceId": { "type": ["string", "null"] },
+                "passageId": { "type": ["string", "null"] },
+                "reasonCodes": { "type": "array", "items": { "type": "string" } }
+              },
+              "additionalProperties": false
+            }
+          },
+          "findings": { "type": "array", "items": { "type": "object" } },
+          "approvalRequired": { "const": true },
+          "automaticApplication": { "const": false },
+          "semanticSupport": { "const": "not_verified" },
+          "proposalEngineHandoffAllowed": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
