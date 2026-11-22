@@ -1,19 +1,19 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-21T22:37:51.600Z",
-  "articlePath": "content/articles/text-based-ai-agents-are-now-officially-supported-on-apple-s-business-messaging-platform.md",
-  "articleTitle": "Text‑Based AI Agents Are Now Officially Supported on Apple’s Business Messaging Platform",
+  "generatedAt": "2026-11-22T04:02:07.370Z",
+  "articlePath": "content/articles/u-s-chip-powered-data-centers-fuel-chinese-ai-models-undermining-trump-s-tech-strategy.md",
+  "articleTitle": "U.S. Chip‑Powered Data Centers Fuel Chinese AI Models, Undermining Trump’s Tech Strategy",
   "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
-  "sourceCount": 3,
-  "usableSourceCount": 3,
-  "claimCount": 9,
-  "editorialCount": 3,
-  "verified": 5,
-  "partial": 3,
-  "unsupported": 1,
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 16,
+  "editorialCount": 0,
+  "verified": 11,
+  "partial": 5,
+  "unsupported": 0,
   "sourceUnavailable": 0,
-  "averageConfidence": 81,
-  "pass": false,
+  "averageConfidence": 77,
+  "pass": true,
   "policy": {
     "verifiedMin": 62,
     "partialMin": 45,
@@ -45,90 +45,82 @@
   "sources": [
     {
       "id": "S1",
-      "title": "Here are the top AI agents that can live in your text messages",
-      "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "domain": "techcrunch.com",
-      "passageCount": 4,
-      "articleBodyLength": 502
+      "title": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "url": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "domain": "ca.finance.yahoo.com",
+      "passageCount": 20,
+      "articleBodyLength": 2282
     },
     {
       "id": "S2",
-      "title": "Why live chat agents can read your messages before you hit “Send” - Kaspersky",
-      "url": "https://www.kaspersky.com/blog/why-chat-operator-sees-your-messages/56181/",
-      "domain": "kaspersky.com",
-      "passageCount": 7,
-      "articleBodyLength": 953
-    },
-    {
-      "id": "S3",
-      "title": "The 6 best AI agents to streamline your work in 2025",
-      "url": "https://mashable.com/article/best-ai-agents-work",
-      "domain": "mashable.com",
-      "passageCount": 4,
-      "articleBodyLength": 500
+      "title": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Fortune",
+      "url": "https://fortune.com/2026/11/21/data-centers-us-chips-serve-chinese-models/",
+      "domain": "fortune.com",
+      "passageCount": 21,
+      "articleBodyLength": 2445
     }
   ],
   "claims": [
     {
       "index": 1,
-      "claim": "In June 2026, Apple granted approval to Poke, making it the first AI agent to run directly inside Apple Messages for Business.",
+      "claim": "The Commerce Department has recently issued a rule to close a loophole that allowed foreign entities to use U.S. chips for AI inference.",
       "status": "verified",
       "classification": "supported",
-      "confidence": 86,
+      "confidence": 79,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F2",
+        "factId": "F12",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 83
+        "score": 49
       },
       "provenanceFactMatches": [
         {
-          "factId": "F2",
+          "factId": "F12",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 83,
-          "passageIndex": 26
+          "score": 49,
+          "passageIndex": 1
+        },
+        {
+          "factId": "F32",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 49,
+          "passageIndex": 1
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "Poke became particularly notable in June 2026 when Apple approved Poke as the first AI agent on the Apple Messages for Business platform.",
-      "bestPassage": "Poke became particularly notable in June 2026 when Apple approved Poke as the first AI agent on the Apple Messages for Business platform.",
+      "evidence": "Commerce Department issued a rule closing this loophole. Commerce Department issued a rule closing this loophole.",
+      "bestPassage": "Commerce Department issued a rule closing this loophole. Commerce Department issued a rule closing this loophole.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "june",
-        "2026",
-        "apple",
-        "poke",
-        "mak",
         "the",
-        "first",
-        "agent",
-        "messag",
+        "commerce",
+        "department",
+        "issu",
+        "rule",
+        "loophole",
+        "chip",
         "for",
-        "busines"
+        "inference"
       ],
       "entityShared": [
-        "june",
-        "apple",
-        "poke",
-        "messag",
-        "busines"
+        "the",
+        "commerce",
+        "department"
       ],
       "topicShared": [
-        "the",
-        "agent",
-        "messag"
+        "chip"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -143,65 +135,59 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
+      "factCoverage": 2,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
       "index": 2,
-      "claim": "The service can be accessed both through a dedicated app and via ordinary text messages.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 77,
+      "claim": "Despite this move, many Chinese language models continue to run on U.S.‑designed processors.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 53,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F1",
+        "factId": "F3",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
-        "score": 55
+        "score": 26
       },
       "provenanceFactMatches": [
         {
-          "factId": "F1",
+          "factId": "F3",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 55,
-          "passageIndex": 12
+          "score": 26,
+          "passageIndex": 10
         }
       ],
       "contextOnlySource": false,
       "bestPassageId": "S1-BODY",
-      "evidence": "The service is designed to work across both an app and text messages.",
-      "bestPassage": "The service is designed to work across both an app and text messages.",
+      "evidence": "U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips.",
+      "bestPassage": "U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P1"
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "the",
-        "service",
-        "can",
-        "both",
-        "app",
-        "and",
-        "ordinary",
-        "text",
-        "messag"
+        "chinese",
+        "models",
+        "run",
+        "design"
       ],
-      "entityShared": [],
+      "entityShared": [
+        "chinese"
+      ],
       "topicShared": [
-        "the",
-        "can",
-        "text",
-        "messag"
+        "chinese",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -209,14 +195,14 @@
       "scopeWarnings": [],
       "attributionUncertainty": {
         "evidenceUncertain": false,
-        "claimUncertain": true,
+        "claimUncertain": false,
         "evidenceAttributed": false,
         "claimAttributed": false,
         "certaintyEscalation": false,
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
+      "factCoverage": 3,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
@@ -224,144 +210,421 @@
     },
     {
       "index": 3,
-      "claim": "Users can send text, voice notes, photos, or forwarded emails, and the assistant can act on their behalf by making calls, sending emails and managing follow‑ups.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 91,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F3",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 91
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F3",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 91,
-          "passageIndex": 30
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-P3",
-      "evidence": "Users can send text messages, voice notes, photos, or forwarded emails, and the assistant takes action on their behalf, including making calls, sending emails, and managing follow-ups.",
-      "bestPassage": "Users can send text messages, voice notes, photos, or forwarded emails, and the assistant takes action on their behalf, including making calls, sending emails, and managing follow-ups.",
-      "matchedPassages": [
-        "S1-P3",
-        "S1-BODY"
-      ],
-      "sharedTerms": [
-        "user",
-        "can",
-        "send",
-        "text",
-        "voice",
-        "not",
-        "photo",
-        "forward",
-        "email",
-        "and",
-        "the",
-        "assistant",
-        "behalf",
-        "mak",
-        "call",
-        "manag",
-        "follow",
-        "ups"
-      ],
-      "entityShared": [
-        "user"
-      ],
-      "topicShared": [
-        "can",
-        "text",
-        "the"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": true,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 4,
-      "claim": "Rather than downloading another app, a growing number of agents can simply be texted like an ordinary person.",
+      "claim": "The evidence shows that chips from companies like Nvidia are increasingly deployed in data centers across Latin America, the Middle East, and Southeast Asia.",
       "status": "verified",
       "classification": "supported",
       "confidence": 94,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F4",
+        "factId": "F6",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
         "score": 94
       },
       "provenanceFactMatches": [
         {
-          "factId": "F4",
+          "factId": "F6",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
           "score": 94,
-          "passageIndex": 1
+          "passageIndex": 3
+        },
+        {
+          "factId": "F26",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 94,
+          "passageIndex": 3
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-P4",
-      "evidence": "Rather than downloading another app, a growing number of agents can simply be texted like an ordinary person.",
-      "bestPassage": "Rather than downloading another app, a growing number of agents can simply be texted like an ordinary person.",
+      "bestPassageId": "S1-FF6,S2-FF26",
+      "evidence": "Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia. Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia.",
+      "bestPassage": "Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia. Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia.",
       "matchedPassages": [
-        "S1-P4",
+        "S1-P6",
         "S1-BODY"
       ],
       "sharedTerms": [
-        "rather",
-        "download",
-        "app",
-        "grow",
-        "number",
-        "agent",
-        "can",
-        "simply",
-        "text",
+        "the",
+        "chip",
+        "compani",
         "like",
-        "ordinary",
-        "person"
+        "nvidia",
+        "are",
+        "increas",
+        "deploy",
+        "data",
+        "center",
+        "latin",
+        "america",
+        "middle",
+        "east",
+        "and",
+        "southeast",
+        "asia"
       ],
       "entityShared": [
-        "rather"
+        "nvidia",
+        "latin",
+        "america",
+        "middle",
+        "east",
+        "southeast",
+        "asia"
       ],
       "topicShared": [
-        "agent",
+        "chip",
+        "are",
+        "data",
+        "center"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 4,
+      "claim": "These facilities are often operated by U.S. cloud providers such as Amazon, Microsoft, and Google, which together control more than half of the global cloud market.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 96,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F11",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 83
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F11",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 83,
+          "passageIndex": 9
+        },
+        {
+          "factId": "F31",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 83,
+          "passageIndex": 9
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S. In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S.",
+      "bestPassage": "In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S. In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P11"
+      ],
+      "sharedTerms": [
+        "are",
+        "cloud",
+        "provider",
+        "such",
+        "amazon",
+        "microsoft",
+        "and",
+        "google",
+        "together",
+        "control",
+        "half",
+        "the",
+        "global",
+        "market"
+      ],
+      "entityShared": [
+        "amazon",
+        "microsoft",
+        "google"
+      ],
+      "topicShared": [
+        "are"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 5,
+      "claim": "When people hear that Chinese models are gaining users, they often assume those models run on Chinese chips.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 89,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 89
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 89,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F40",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 89,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF20,S2-FF40",
+      "evidence": "When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
+      "bestPassage": "When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P20"
+      ],
+      "sharedTerms": [
+        "people",
+        "hear",
+        "chinese",
+        "models",
+        "are",
+        "gain",
+        "user",
+        "assume",
+        "those",
+        "chip"
+      ],
+      "entityShared": [
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese",
+        "models",
+        "are",
+        "chip"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 6,
+      "claim": "In reality, the latest DeepSeek model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 95,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F4",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 95
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F4",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 95,
+          "passageIndex": 10
+        },
+        {
+          "factId": "F24",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 95,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF4,S2-FF24",
+      "evidence": "For example, DeepSeek's latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock . For example, DeepSeek’s latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock .",
+      "bestPassage": "For example, DeepSeek's latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock . For example, DeepSeek’s latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock .",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P4"
+      ],
+      "sharedTerms": [
+        "deepseek",
+        "models",
+        "offer",
+        "least",
+        "inference",
+        "provider",
+        "base",
+        "outside",
+        "china",
+        "includ",
+        "amazon",
+        "bedrock"
+      ],
+      "entityShared": [
+        "deepseek",
+        "china",
+        "amazon",
+        "bedrock"
+      ],
+      "topicShared": [
+        "models"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": true,
+      "directExact": true,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 7,
+      "claim": "This demonstrates that Chinese open‑weight large‑language models can be hosted on U.S. infrastructure, even though the models themselves are developed elsewhere.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 71,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F16",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 36
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F16",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 36,
+          "passageIndex": 13
+        },
+        {
+          "factId": "F36",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 36,
+          "passageIndex": 13
+        },
+        {
+          "factId": "F13",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 28,
+          "passageIndex": 13
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. Today, who benefits from U.S. computing infrastructure depends on whether it serves proprietary or open-weight models.",
+      "bestPassage": "On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. Today, who benefits from U.S. computing infrastructure depends on whether it serves proprietary or open-weight models.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "chinese",
+        "open",
+        "weight",
+        "models",
         "can",
-        "text"
+        "infrastructure",
+        "the",
+        "are",
+        "develop"
+      ],
+      "entityShared": [
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese",
+        "models",
+        "are"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -376,87 +639,596 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
-      "multiFactSupported": false,
+      "factCoverage": 3,
+      "multiFactSupported": true,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "fact-map-multi-fact-anchored"
     },
     {
-      "index": 5,
-      "claim": "When a user sends a prompt, the agent processes it and returns an answer or initiates an action.The service is designed to work across both an app and text messages, allowing users to send text messages, voice notes, photos, or forwarded emails and have the assistant take actions such as making calls, sending emails, and managing follow‑ups.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 76,
+      "index": 8,
+      "claim": "On the other side of the spectrum are proprietary LLMs such as Anthropic’s Claude or OpenAI’s GPT.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 98,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
       "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
       "coreFactMatch": {
-        "factId": "F3",
+        "factId": "F14",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 89
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F14",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 89,
+          "passageIndex": 13
+        },
+        {
+          "factId": "F34",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 89,
+          "passageIndex": 13
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "On one side are proprietary LLMs such as Anthropic's Claude or OpenAI's GPT. On one side are proprietary LLMs such as Anthropic’s Claude or OpenAI’s GPT.",
+      "bestPassage": "On one side are proprietary LLMs such as Anthropic's Claude or OpenAI's GPT. On one side are proprietary LLMs such as Anthropic’s Claude or OpenAI’s GPT.",
+      "matchedPassages": [
+        "S1-BODY",
+        "S1-P14"
+      ],
+      "sharedTerms": [
+        "the",
+        "other",
+        "side",
+        "are",
+        "proprietary",
+        "llms",
+        "such",
+        "anthropic",
+        "claude",
+        "openai",
+        "gpt"
+      ],
+      "entityShared": [
+        "llms",
+        "anthropic",
+        "claude",
+        "openai",
+        "gpt"
+      ],
+      "topicShared": [
+        "are"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 9,
+      "claim": "Open‑weight models, like those from DeepSeek, can be customized for specialized tasks and run locally on user‑owned hardware.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 88,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F16",
         "sourceId": "S1",
         "sourceRole": "DIRECT_REPORTING",
         "score": 66
       },
       "provenanceFactMatches": [
         {
-          "factId": "F3",
+          "factId": "F16",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
           "score": 66,
-          "passageIndex": 30
+          "passageIndex": 13
         },
+        {
+          "factId": "F36",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 66,
+          "passageIndex": 13
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally.",
+      "bestPassage": "On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "open",
+        "weight",
+        "models",
+        "like",
+        "those",
+        "deepseek",
+        "can",
+        "for",
+        "specializ",
+        "task",
+        "and",
+        "run",
+        "locally",
+        "user",
+        "hardware"
+      ],
+      "entityShared": [
+        "deepseek"
+      ],
+      "topicShared": [
+        "models"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 10,
+      "claim": "The distinction matters because U.S. policy aims to secure dominance in both the chip supply chain and the models that run on those chips.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 66,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F1",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 34
+      },
+      "provenanceFactMatches": [
         {
           "factId": "F1",
           "sourceId": "S1",
           "sourceRole": "DIRECT_REPORTING",
-          "score": 54,
-          "passageIndex": 12
+          "score": 34,
+          "passageIndex": 10
         }
       ],
       "contextOnlySource": false,
-      "bestPassageId": "S1-FF3,S1-FF1",
-      "evidence": "Users can send text messages, voice notes, photos, or forwarded emails, and the assistant takes action on their behalf, including making calls, sending emails, and managing follow-ups. The service is designed to work across both an app and text messages.",
-      "bestPassage": "Users can send text messages, voice notes, photos, or forwarded emails, and the assistant takes action on their behalf, including making calls, sending emails, and managing follow-ups. The service is designed to work across both an app and text messages.",
+      "bestPassageId": "S1-BODY",
+      "evidence": "Yet the same infrastructure that secures America's advantage in chips and cloud services gives Chinese AI models a platform to spread.",
+      "bestPassage": "Yet the same infrastructure that secures America's advantage in chips and cloud services gives Chinese AI models a platform to spread.",
       "matchedPassages": [
-        "S1-BODY",
-        "S1-P3"
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "user",
-        "send",
         "the",
-        "and",
-        "action",
-        "service",
-        "design",
-        "work",
-        "acros",
+        "secure",
         "both",
-        "app",
-        "text",
-        "messag",
-        "voice",
-        "not",
-        "photo",
-        "forward",
-        "email",
-        "assistant",
-        "mak",
-        "call",
-        "manag",
-        "follow",
-        "ups"
+        "chip",
+        "and",
+        "models",
+        "run",
+        "those"
       ],
       "entityShared": [],
       "topicShared": [
+        "chip",
+        "models"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 3,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 11,
+      "claim": "AI preeminence will require global consumers and enterprises to choose U.S.‑developed LLMs over Chinese ones.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 93,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F8",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 93
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F8",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 93,
+          "passageIndex": 6
+        },
+        {
+          "factId": "F28",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 93,
+          "passageIndex": 6
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-FF8,S2-FF28",
+      "evidence": "AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones. AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones.",
+      "bestPassage": "AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones. AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones.",
+      "matchedPassages": [
+        "S1-P8",
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "preeminence",
+        "global",
+        "consumer",
+        "and",
+        "enterpris",
+        "choose",
+        "develop",
+        "llms",
+        "chinese",
+        "ones"
+      ],
+      "entityShared": [
+        "llms",
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 12,
+      "claim": "The fact that Chinese models are already running on U.S. hardware challenges that goal.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 72,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F20",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 50
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F20",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 50,
+          "passageIndex": 8
+        },
+        {
+          "factId": "F40",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 50,
+          "passageIndex": 8
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
+      "bestPassage": "When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
         "the",
-        "agent",
-        "text",
-        "messag"
+        "chinese",
+        "models",
+        "are",
+        "runn",
+        "hardware"
+      ],
+      "entityShared": [
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese",
+        "models",
+        "are"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": true,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-multi-fact-anchored"
+    },
+    {
+      "index": 13,
+      "claim": "The Commerce Department’s new rule is a step toward tightening controls, but the underlying infrastructure remains widely accessible.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 56,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F12",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 28
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F12",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 28,
+          "passageIndex": 1
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "Commerce Department issued a rule closing this loophole.",
+      "bestPassage": "Commerce Department issued a rule closing this loophole.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "commerce",
+        "department",
+        "rule",
+        "control",
+        "but",
+        "infrastructure"
+      ],
+      "entityShared": [
+        "the",
+        "commerce",
+        "department"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 14,
+      "claim": "The next weeks will reveal whether the rule effectively limits foreign access to U.S. chips for AI inference.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 61,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F3",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 21
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F3",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 21,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips.",
+      "bestPassage": "U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "the",
+        "whether",
+        "rule",
+        "limit",
+        "chip",
+        "for",
+        "inference"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "chip"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 15,
+      "claim": "Analysts will also monitor how cloud providers adjust their offerings and whether Chinese model developers shift toward alternative hardware.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 63,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F19",
+        "sourceId": "S1",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 38
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F19",
+          "sourceId": "S1",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 38,
+          "passageIndex": 15
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S1-BODY",
+      "evidence": "That shift could limit both the revenue Chinese developers earn from overseas deployments and the soft power China gains from its models' global reach.",
+      "bestPassage": "That shift could limit both the revenue Chinese developers earn from overseas deployments and the soft power China gains from its models' global reach.",
+      "matchedPassages": [
+        "S1-BODY"
+      ],
+      "sharedTerms": [
+        "cloud",
+        "provider",
+        "and",
+        "whether",
+        "chinese",
+        "models",
+        "developer",
+        "shift",
+        "hardware"
+      ],
+      "entityShared": [
+        "chinese"
+      ],
+      "topicShared": [
+        "chinese",
+        "models"
       ],
       "numericMismatch": false,
       "contradicted": false,
@@ -471,71 +1243,43 @@
         "attributionDropped": false,
         "blocked": true
       },
-      "factCoverage": 2,
-      "multiFactSupported": true,
+      "factCoverage": 3,
+      "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-multi-fact-anchored"
+      "matchingMode": "fact-map-anchored-source-passage"
     },
     {
-      "index": 6,
-      "claim": "Live chat agents on websites can see everything, including messages that have not yet been sent, because of the live typing preview feature.",
-      "status": "unsupported",
-      "classification": "unsupported",
-      "confidence": 80,
+      "index": 16,
+      "claim": "The outcome will shape whether U.S. tech policy can maintain its intended advantage in the AI race.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 57,
       "temporalWarning": null,
       "eventDate": null,
-      "bestSource": "Why live chat agents can read your messages before you hit “Send” - Kaspersky",
-      "bestUrl": "https://www.kaspersky.com/blog/why-chat-operator-sees-your-messages/56181/",
-      "bestDomain": "kaspersky.com",
-      "sourceId": "S2",
+      "bestSource": "Data centers full of U.S. chips are serving Chinese AI models–undermining Trump’s tech ambitions - Yahoo! Finance Canada",
+      "bestUrl": "https://ca.finance.yahoo.com/news/data-centers-full-u-chips-100000917.html",
+      "bestDomain": "ca.finance.yahoo.com",
+      "sourceId": "S1",
       "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F5",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 67
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F5",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 67,
-          "passageIndex": 4
-        }
-      ],
+      "coreFactMatch": null,
+      "provenanceFactMatches": [],
       "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Did you know that live chat agents on websites can see everything — even messages you never actually sent?",
-      "bestPassage": "Did you know that live chat agents on websites can see everything — even messages you never actually sent?",
+      "bestPassageId": "S1-BODY",
+      "evidence": "Yet the same infrastructure that secures America's advantage in chips and cloud services gives Chinese AI models a platform to spread. Nvidia itself provides resources to help companies deploy open models—including several Chinese models—on its hardware. U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips. For example, DeepSeek's latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock . The Trump administration wants the U.S. to dominate AI from chips to models. Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia. AI infrastructure build-out is counterintuitively helping Chinese model developers compete. AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones. Meanwhile, America's grip on AI infrastructure is formidable. U.S. companies—Nvidia, Google, AMD , and Amazon—design nearly all deployed data-center AI chips. In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S. Commerce Department issued a rule closing this loophole. Today, who benefits from U.S. computing infrastructure depends on whether it serves proprietary or open-weight models. On one side are proprietary LLMs such as Anthropic's Claude or OpenAI's GPT. Infrastructure serving proprietary models almost exclusively benefits American developers, because they make the best ones. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. Doing so would incur too high a cost—unjustifiably hindering companies in the United States and allied countries seeking to adopt AI—while failing to deliver sufficient national security benefits. But while this long-overdue action can help U.S. That shift could limit both the revenue Chinese developers earn from overseas deployments and the soft power China gains from its models' global reach. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
+      "bestPassage": "Yet the same infrastructure that secures America's advantage in chips and cloud services gives Chinese AI models a platform to spread. Nvidia itself provides resources to help companies deploy open models—including several Chinese models—on its hardware. U.S.-based model inference providers such as Together AI , Baseten , and Fireworks serve Chinese models to users on infrastructure powered by U.S. chips. For example, DeepSeek's latest model is being offered by at least 16 inference providers headquartered outside China, including Amazon Bedrock . The Trump administration wants the U.S. to dominate AI from chips to models. Increasingly, these chips—designed by companies like Nvidia—are being deployed in data centers in Latin America, the Middle East, and Southeast Asia. AI infrastructure build-out is counterintuitively helping Chinese model developers compete. AI preeminence, which will need global consumers and enterprises to choose U.S.-developed LLMs over Chinese ones. Meanwhile, America's grip on AI infrastructure is formidable. U.S. companies—Nvidia, Google, AMD , and Amazon—design nearly all deployed data-center AI chips. In cloud services, Amazon, Microsoft , and Google together control more than half of the market, with a growing cohort of U.S. Commerce Department issued a rule closing this loophole. Today, who benefits from U.S. computing infrastructure depends on whether it serves proprietary or open-weight models. On one side are proprietary LLMs such as Anthropic's Claude or OpenAI's GPT. Infrastructure serving proprietary models almost exclusively benefits American developers, because they make the best ones. On the other side are open-weight LLMs, which companies can customize for specialized tasks and run locally. Doing so would incur too high a cost—unjustifiably hindering companies in the United States and allied countries seeking to adopt AI—while failing to deliver sufficient national security benefits. But while this long-overdue action can help U.S. That shift could limit both the revenue Chinese developers earn from overseas deployments and the soft power China gains from its models' global reach. When people hear that Chinese models are gaining users, they generally assume that those models are running on Chinese chips.",
       "matchedPassages": [
-        "S2-BODY",
-        "S2-P1"
+        "S1-BODY"
       ],
       "sharedTerms": [
-        "live",
-        "chat",
-        "agent",
-        "websit",
-        "can",
-        "see",
-        "everyth",
-        "messag",
-        "sent",
         "the",
-        "typ",
-        "preview",
-        "feature"
+        "whether",
+        "can",
+        "its",
+        "advantage"
       ],
       "entityShared": [],
-      "topicShared": [
-        "live",
-        "agent",
-        "can",
-        "messag",
-        "the"
-      ],
+      "topicShared": [],
       "numericMismatch": false,
       "contradicted": false,
       "offTopic": false,
@@ -549,285 +1293,12 @@
         "attributionDropped": false,
         "blocked": false
       },
-      "factCoverage": 1,
+      "factCoverage": 0,
       "multiFactSupported": false,
       "directFactExact": false,
       "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
-    },
-    {
-      "index": 7,
-      "claim": "A feature known as live‑typing preview or real‑time typing view allows customer‑service agents to see what users are typing before they hit “Send.” The LiveAgent system, used by more than 40 000 companies, states that this preview lets agents anticipate questions and deliver faster responses.",
-      "status": "verified",
-      "classification": "supported",
-      "confidence": 85,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Why live chat agents can read your messages before you hit “Send” - Kaspersky",
-      "bestUrl": "https://www.kaspersky.com/blog/why-chat-operator-sees-your-messages/56181/",
-      "bestDomain": "kaspersky.com",
-      "sourceId": "S2",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F7",
-        "sourceId": "S2",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 71
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F7",
-          "sourceId": "S2",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 71,
-          "passageIndex": 7
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S2-BODY",
-      "evidence": "Here’s how the developer of LiveAgent, a customer support system used by more than 40 000 companies, describes it in its blog: “This live chat typing preview allows agents to anticipate questions and deliver faster responses.",
-      "bestPassage": "Here’s how the developer of LiveAgent, a customer support system used by more than 40 000 companies, describes it in its blog: “This live chat typing preview allows agents to anticipate questions and deliver faster responses.",
-      "matchedPassages": [
-        "S2-BODY",
-        "S2-P3"
-      ],
-      "sharedTerms": [
-        "feature",
-        "known",
-        "live",
-        "typ",
-        "preview",
-        "real",
-        "time",
-        "view",
-        "allow",
-        "customer",
-        "agent",
-        "see",
-        "user",
-        "are",
-        "the",
-        "liveagent",
-        "system",
-        "000",
-        "compani",
-        "anticipate",
-        "question",
-        "and",
-        "deliver",
-        "faster",
-        "respons"
-      ],
-      "entityShared": [
-        "liveagent"
-      ],
-      "topicShared": [
-        "live",
-        "agent",
-        "are",
-        "the"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 9,
-      "claim": "Google announced an “agentic era” for its Gemini line in spring 2025, and other major players such as Microsoft, OpenAI and Anthropic have also released their own agents.",
-      "status": "partial",
-      "classification": "supported_with_context",
-      "confidence": 92,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "The 6 best AI agents to streamline your work in 2025",
-      "bestUrl": "https://mashable.com/article/best-ai-agents-work",
-      "bestDomain": "mashable.com",
-      "sourceId": "S3",
-      "sourceRole": "CORROBORATION",
-      "coreFactMatch": {
-        "factId": "F12",
-        "sourceId": "S3",
-        "sourceRole": "CORROBORATION",
-        "score": 92
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F12",
-          "sourceId": "S3",
-          "sourceRole": "CORROBORATION",
-          "score": 92,
-          "passageIndex": 1
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S3-FF12",
-      "evidence": "Google announced its &ldquo;agentic era&rdquo; for Google Gemini back in spring 2025, while Microsoft, OpenAI, Anthropic, and the other big players in the AI space have each announced their own AI agents.",
-      "bestPassage": "Google announced its &ldquo;agentic era&rdquo; for Google Gemini back in spring 2025, while Microsoft, OpenAI, Anthropic, and the other big players in the AI space have each announced their own AI agents.",
-      "matchedPassages": [
-        "S3-P1",
-        "S3-BODY"
-      ],
-      "sharedTerms": [
-        "google",
-        "announce",
-        "agentic",
-        "era",
-        "for",
-        "its",
-        "gemini",
-        "spr",
-        "2025",
-        "and",
-        "other",
-        "player",
-        "microsoft",
-        "openai",
-        "anthropic",
-        "own",
-        "agent"
-      ],
-      "entityShared": [
-        "google",
-        "gemini",
-        "microsoft",
-        "openai",
-        "anthropic"
-      ],
-      "topicShared": [
-        "agent"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "major"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": false,
-        "evidenceAttributed": true,
-        "claimAttributed": true,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": true,
-      "directExact": true,
-      "matchingMode": "direct-exact-evidence"
-    },
-    {
-      "index": 11,
-      "claim": "Apple’s endorsement of Poke demonstrates that AI agents can now operate seamlessly within standard text‑messaging environments, expanding the range of tasks they can perform.",
-      "status": "partial",
-      "classification": "uncertain",
-      "confidence": 48,
-      "temporalWarning": null,
-      "eventDate": null,
-      "bestSource": "Here are the top AI agents that can live in your text messages",
-      "bestUrl": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-      "bestDomain": "techcrunch.com",
-      "sourceId": "S1",
-      "sourceRole": "DIRECT_REPORTING",
-      "coreFactMatch": {
-        "factId": "F2",
-        "sourceId": "S1",
-        "sourceRole": "DIRECT_REPORTING",
-        "score": 39
-      },
-      "provenanceFactMatches": [
-        {
-          "factId": "F2",
-          "sourceId": "S1",
-          "sourceRole": "DIRECT_REPORTING",
-          "score": 39,
-          "passageIndex": 26
-        }
-      ],
-      "contextOnlySource": false,
-      "bestPassageId": "S1-BODY",
-      "evidence": "Poke became particularly notable in June 2026 when Apple approved Poke as the first AI agent on the Apple Messages for Business platform.",
-      "bestPassage": "Poke became particularly notable in June 2026 when Apple approved Poke as the first AI agent on the Apple Messages for Business platform.",
-      "matchedPassages": [
-        "S1-BODY",
-        "S1-P2"
-      ],
-      "sharedTerms": [
-        "apple",
-        "poke",
-        "agent",
-        "can",
-        "text",
-        "messag",
-        "the"
-      ],
-      "entityShared": [
-        "apple",
-        "poke"
-      ],
-      "topicShared": [
-        "agent",
-        "can",
-        "text",
-        "messag",
-        "the"
-      ],
-      "numericMismatch": false,
-      "contradicted": false,
-      "offTopic": false,
-      "scopeWarnings": [
-        "seamlessly"
-      ],
-      "attributionUncertainty": {
-        "evidenceUncertain": false,
-        "claimUncertain": true,
-        "evidenceAttributed": false,
-        "claimAttributed": false,
-        "certaintyEscalation": false,
-        "attributionDropped": false,
-        "blocked": false
-      },
-      "factCoverage": 1,
-      "multiFactSupported": false,
-      "directFactExact": false,
-      "directExact": false,
-      "matchingMode": "fact-map-anchored-source-passage"
+      "matchingMode": "semantic-context-evidence-pack"
     }
   ],
-  "editorial": [
-    {
-      "index": 8,
-      "claim": "Because agents can read messages before they are sent, users should avoid typing personal information into chat boxes, even on secure devices.",
-      "type": "editorial-recommendation",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 10,
-      "claim": "Apple’s approval of Poke signals that the trend toward integrated AI assistants is moving beyond research and into mainstream commercial use.",
-      "type": "editorial-analysis",
-      "status": "editorial-excluded"
-    },
-    {
-      "index": 12,
-      "claim": "At the same time, the prevalence of live‑typing previews on web chat widgets highlights a privacy concern that users should be aware of.",
-      "type": "editorial-recommendation",
-      "status": "editorial-excluded"
-    }
-  ]
+  "editorial": []
 }
