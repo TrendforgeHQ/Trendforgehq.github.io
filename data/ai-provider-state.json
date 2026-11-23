@@ -7,66 +7,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 403,
-      "lastSuccessAt": "2026-11-22T23:01:00.269Z",
+      "successes": 406,
+      "lastSuccessAt": "2026-11-23T04:46:08.731Z",
       "history": [
-        {
-          "at": 1794800983472,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 3707,
-          "usage": {
-            "queue_time": 0.168911952,
-            "prompt_tokens": 2224,
-            "prompt_time": 0.138965062,
-            "completion_tokens": 707,
-            "completion_time": 0.761525266,
-            "total_tokens": 2931,
-            "total_time": 0.900490328,
-            "completion_tokens_details": {
-              "reasoning_tokens": 438
-            }
-          }
-        },
-        {
-          "at": 1794801005198,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 21579,
-          "usage": {
-            "queue_time": 0.00349323,
-            "prompt_tokens": 2185,
-            "prompt_time": 0.168974114,
-            "completion_tokens": 612,
-            "completion_time": 0.662155672,
-            "total_tokens": 2797,
-            "total_time": 0.831129786,
-            "completion_tokens_details": {
-              "reasoning_tokens": 327
-            }
-          }
-        },
-        {
-          "at": 1794838852467,
-          "ok": true,
-          "class": "success",
-          "status": 200,
-          "latencyMs": 1521,
-          "usage": {
-            "queue_time": 0.114845673,
-            "prompt_tokens": 5238,
-            "prompt_time": 0.361295043,
-            "completion_tokens": 810,
-            "completion_time": 0.9157059,
-            "total_tokens": 6048,
-            "total_time": 1.277000943,
-            "completion_tokens_details": {
-              "reasoning_tokens": 25
-            }
-          }
-        },
         {
           "at": 1794838857751,
           "ok": true,
@@ -389,19 +332,76 @@
               "reasoning_tokens": 176
             }
           }
+        },
+        {
+          "at": 1795409152239,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 980,
+          "usage": {
+            "queue_time": 0.11368715,
+            "prompt_tokens": 1984,
+            "prompt_time": 0.106025294,
+            "completion_tokens": 640,
+            "completion_time": 0.660787658,
+            "total_tokens": 2624,
+            "total_time": 0.766812952,
+            "completion_tokens_details": {
+              "reasoning_tokens": 443
+            }
+          }
+        },
+        {
+          "at": 1795409152994,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 514,
+          "usage": {
+            "queue_time": 0.16640067,
+            "prompt_tokens": 1200,
+            "prompt_time": 0.064770793,
+            "completion_tokens": 189,
+            "completion_time": 0.198770928,
+            "total_tokens": 1389,
+            "total_time": 0.263541721,
+            "completion_tokens_details": {
+              "reasoning_tokens": 106
+            }
+          }
+        },
+        {
+          "at": 1795409168731,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 728,
+          "usage": {
+            "queue_time": 0.178671181,
+            "prompt_tokens": 1239,
+            "prompt_time": 0.064831825,
+            "completion_tokens": 179,
+            "completion_time": 0.179670408,
+            "total_tokens": 1418,
+            "total_time": 0.244502233,
+            "completion_tokens_details": {
+              "reasoning_tokens": 104
+            }
+          }
         }
       ],
-      "lastLatencyMs": 629,
+      "lastLatencyMs": 728,
       "lastUsage": {
-        "queue_time": 0.11392488,
-        "prompt_tokens": 1312,
-        "prompt_time": 0.080343618,
-        "completion_tokens": 239,
-        "completion_time": 0.24459051,
-        "total_tokens": 1551,
-        "total_time": 0.324934128,
+        "queue_time": 0.178671181,
+        "prompt_tokens": 1239,
+        "prompt_time": 0.064831825,
+        "completion_tokens": 179,
+        "completion_time": 0.179670408,
+        "total_tokens": 1418,
+        "total_time": 0.244502233,
         "completion_tokens_details": {
-          "reasoning_tokens": 176
+          "reasoning_tokens": 104
         }
       }
     },
@@ -956,15 +956,9 @@
       "lastStatus": 200,
       "lastError": null,
       "lastClass": "success",
-      "successes": 31,
-      "lastSuccessAt": "2026-11-18T23:46:00.315Z",
+      "successes": 32,
+      "lastSuccessAt": "2026-11-23T04:45:50.361Z",
       "history": [
-        {
-          "at": 1791517209839,
-          "ok": false,
-          "class": "transient",
-          "status": 200
-        },
         {
           "at": 1791548420616,
           "ok": false,
@@ -1258,22 +1252,40 @@
             },
             "cached_tokens": 144
           }
+        },
+        {
+          "at": 1795409150361,
+          "ok": true,
+          "class": "success",
+          "status": 200,
+          "latencyMs": 20604,
+          "usage": {
+            "billed_units": {
+              "input_tokens": 4735,
+              "output_tokens": 458
+            },
+            "tokens": {
+              "input_tokens": 4905,
+              "output_tokens": 459
+            },
+            "cached_tokens": 1520
+          }
         }
       ],
-      "lastLatencyMs": 21043,
+      "lastLatencyMs": 20604,
       "lastUsage": {
         "billed_units": {
-          "input_tokens": 4857,
-          "output_tokens": 453
+          "input_tokens": 4735,
+          "output_tokens": 458
         },
         "tokens": {
-          "input_tokens": 5027,
-          "output_tokens": 454
+          "input_tokens": 4905,
+          "output_tokens": 459
         },
-        "cached_tokens": 144
+        "cached_tokens": 1520
       }
     }
   },
   "rotationCursor": 0,
-  "updatedAt": "2026-11-22T23:01:00.269Z"
+  "updatedAt": "2026-11-23T04:46:08.731Z"
 }
