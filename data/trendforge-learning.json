@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T10:24:00.243Z",
+  "updatedAt": "2026-11-24T22:46:23.752Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -33,7 +33,7 @@
   },
   "claims": {
     "samples": 120,
-    "passRate": 63,
+    "passRate": 62,
     "averageConfidence": 73,
     "averageUnsupported": 0,
     "averageClaimsPerArticle": 15
@@ -50,7 +50,7 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2795,
+      "successes": 2810,
       "failures": 17160,
       "successRate": 14,
       "cooldownRuns": 0,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 1879,
-      "failures": 10654,
+      "successes": 1904,
+      "failures": 10666,
       "successRate": 15,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,9 +68,9 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 35219,
-      "failures": 16266,
-      "successRate": 68,
+      "successes": 35451,
+      "failures": 16275,
+      "successRate": 69,
       "cooldownRuns": 0,
       "latestStatus": 200,
       "latestClass": "success"
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 307,
-      "failures": 14103,
+      "successes": 308,
+      "failures": 14109,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 404,
@@ -194,13 +194,13 @@
   "trends": {
     "latestVsPrevious": {
       "evidencePassRate": 0,
-      "evidenceBlockRate": 1,
-      "claimConfidence": 64,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-11-24T10:22:38.659Z",
-    "previousRunAt": "2026-11-24T00:18:03.965Z"
+    "latestRunAt": "2026-11-24T22:45:02.547Z",
+    "previousRunAt": "2026-11-24T10:22:38.659Z"
   },
   "signals": [
     {
@@ -212,7 +212,7 @@
       "sampleRuns": 120,
       "evidence": {
         "singleSource": 6551,
-        "strong": 2317
+        "strong": 2331
       }
     },
     {
@@ -251,12 +251,12 @@
     {
       "id": "claim-confidence-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Average claim confidence changed by +64 points versus the previous run.",
+      "observation": false,
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 64
+        "delta": 0
       }
     },
     {
@@ -272,7 +272,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-11-24T00:19:07.656Z",
+    "previousUpdatedAt": "2026-11-24T10:24:00.243Z",
     "previousVersion": 2
   }
 }
