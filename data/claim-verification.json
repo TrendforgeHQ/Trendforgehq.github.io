@@ -1,17 +1,667 @@
 {
   "version": 18,
-  "generatedAt": "2026-11-23T16:55:28.210Z",
-  "articlePath": "",
-  "articleTitle": "",
-  "claimCount": 0,
+  "generatedAt": "2026-11-24T03:41:24.468Z",
+  "articlePath": "content/articles/nvidia-s-return-of-jensen-huang-raises-national-security-questions.md",
+  "articleTitle": "Nvidia’s Return of Jensen Huang Raises National‑Security Questions",
+  "verificationMode": "authoritative-evidence-pack-v20-fact-map-synthesis",
+  "sourceCount": 2,
+  "usableSourceCount": 2,
+  "claimCount": 9,
   "editorialCount": 0,
-  "verified": 0,
-  "partial": 0,
+  "verified": 5,
+  "partial": 3,
   "unsupported": 1,
   "sourceUnavailable": 0,
-  "averageConfidence": 0,
+  "averageConfidence": 64,
   "pass": false,
-  "reason": "Generated article does not match the current brief (state=mismatch).",
-  "claims": [],
+  "policy": {
+    "verifiedMin": 62,
+    "partialMin": 45,
+    "blockUnsupported": true,
+    "minimumAverageConfidence": 60,
+    "numericMismatchAlwaysBlocks": true,
+    "entitySupportRequired": true,
+    "sourceScopedEvidence": true,
+    "semanticNormalization": true,
+    "contextualSynthesis": true,
+    "multiPassageComposition": true,
+    "factMapSynthesis": true,
+    "synthesisRequiresTwoCoreFacts": true,
+    "synthesisProvenanceRequired": true,
+    "topicDriftDetection": true,
+    "contradictionDetection": true,
+    "directEvidencePack": true,
+    "authoritativePackCanonical": true,
+    "reextractPublisherPages": false,
+    "claimAudit": true,
+    "atomicClaimExtraction": true,
+    "editorialAnalysisExcluded": true,
+    "repairMayReplaceOnlyFailedSentences": true,
+    "partialClaimsNonBlocking": true,
+    "modifierEvidenceSufficiency": true,
+    "markdownAwareSegmentation": true,
+    "citationAwareSegmentation": true
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Major national security concerns persist as Nvidia reinstates Jensen Huang, expert says - CBS News",
+      "url": "https://www.cbsnews.com/video/major-national-security-concerns-persist-after-nvidia-reinstates-jensen-huang-expert-says/",
+      "domain": "cbsnews.com",
+      "passageCount": 4,
+      "articleBodyLength": 1282
+    },
+    {
+      "id": "S2",
+      "title": "Experts weigh national security implications of Huang's return to Nvidia",
+      "url": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "domain": "pbs.org",
+      "passageCount": 6,
+      "articleBodyLength": 1115
+    }
+  ],
+  "claims": [
+    {
+      "index": 1,
+      "claim": "Nvidia’s board reinstated founder Jensen Huang after he was briefly ousted.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 57,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 37
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 37,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs.",
+      "bestPassage": "Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P3"
+      ],
+      "sharedTerms": [
+        "nvidia",
+        "board",
+        "huang",
+        "was",
+        "oust"
+      ],
+      "entityShared": [
+        "nvidia",
+        "huang"
+      ],
+      "topicShared": [
+        "nvidia",
+        "huang"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 2,
+      "claim": "The move followed revelations about Huang’s personal affairs, prompting the board to act quickly, as reported by Amna Nawaz.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 83,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F7",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 72
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F7",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 72,
+          "passageIndex": 10
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs.",
+      "bestPassage": "Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P3"
+      ],
+      "sharedTerms": [
+        "the",
+        "revelation",
+        "huang",
+        "affair",
+        "board",
+        "act",
+        "report",
+        "amna",
+        "nawaz"
+      ],
+      "entityShared": [
+        "huang",
+        "amna",
+        "nawaz"
+      ],
+      "topicShared": [
+        "huang"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 3,
+      "claim": "The board said it received assurances from senior government officials, and the president also offered support, according to Dmitri Alperovitch’s interview.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 81,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 70
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 70,
+          "passageIndex": 30
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "bestPassage": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P2"
+      ],
+      "sharedTerms": [
+        "the",
+        "board",
+        "assuranc",
+        "senior",
+        "government",
+        "official",
+        "and",
+        "president",
+        "dmitri",
+        "alperovitch"
+      ],
+      "entityShared": [
+        "dmitri",
+        "alperovitch"
+      ],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": true,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 4,
+      "claim": "Those assurances were offered even though investigations into the extent of any national‑security risk are still unfolding.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 56,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 48
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 48,
+          "passageIndex": 30
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "bestPassage": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P2"
+      ],
+      "sharedTerms": [
+        "assuranc",
+        "investigation",
+        "the",
+        "national",
+        "security",
+        "risk",
+        "unfold"
+      ],
+      "entityShared": [],
+      "topicShared": [
+        "national",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": false,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 5,
+      "claim": "It is unknown whether Huang may have passed any sensitive information to the U.S. government or the Chinese Ministry of State Security.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 91,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 67
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 67,
+          "passageIndex": 33
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA.",
+      "bestPassage": "And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA.",
+      "matchedPassages": [
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "whether",
+        "huang",
+        "may",
+        "pass",
+        "information",
+        "the",
+        "government",
+        "chinese",
+        "ministry",
+        "state",
+        "security"
+      ],
+      "entityShared": [
+        "huang",
+        "chinese",
+        "ministry",
+        "state",
+        "security"
+      ],
+      "topicShared": [
+        "huang",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 6,
+      "claim": "A recent New York Times story alleged that a close associate of Huang, referred to as Alice Huang, had an ongoing relationship with the Chinese security agency, the Chinese equivalent of the CIA.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 88,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F10",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 86
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F10",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 86,
+          "passageIndex": 33
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA.",
+      "bestPassage": "And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P6"
+      ],
+      "sharedTerms": [
+        "new",
+        "york",
+        "tim",
+        "alleg",
+        "huang",
+        "referr",
+        "alice",
+        "had",
+        "ongo",
+        "relationship",
+        "the",
+        "chinese",
+        "security",
+        "cia"
+      ],
+      "entityShared": [
+        "new",
+        "york",
+        "tim",
+        "huang",
+        "alice",
+        "chinese",
+        "cia"
+      ],
+      "topicShared": [
+        "huang",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 7,
+      "claim": "We do not know what information he may have passed.We do not know what information he may have passed.",
+      "status": "verified",
+      "classification": "supported",
+      "confidence": 67,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F8",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 67
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F8",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 67,
+          "passageIndex": 36
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-P4",
+      "evidence": "So we don't know what information he may have passed, either about Nvidia, maybe about U.S. government policy here, whether he was knowingly involved in the smuggling of these chips that she was involved in.",
+      "bestPassage": "So we don't know what information he may have passed, either about Nvidia, maybe about U.S. government policy here, whether he was knowingly involved in the smuggling of these chips that she was involved in.",
+      "matchedPassages": [
+        "S2-P4",
+        "S2-BODY"
+      ],
+      "sharedTerms": [
+        "know",
+        "information",
+        "may",
+        "pass"
+      ],
+      "entityShared": [],
+      "topicShared": [],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": true,
+        "claimUncertain": true,
+        "evidenceAttributed": false,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 1,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 8,
+      "claim": "Observers will likely continue to monitor Nvidia’s internal controls and the progress of the investigation.S. policy discussions about semiconductor security.",
+      "status": "partial",
+      "classification": "supported_with_context",
+      "confidence": 53,
+      "temporalWarning": null,
+      "eventDate": null,
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "sourceId": "S2",
+      "sourceRole": "DIRECT_REPORTING",
+      "coreFactMatch": {
+        "factId": "F6",
+        "sourceId": "S2",
+        "sourceRole": "DIRECT_REPORTING",
+        "score": 41
+      },
+      "provenanceFactMatches": [
+        {
+          "factId": "F6",
+          "sourceId": "S2",
+          "sourceRole": "DIRECT_REPORTING",
+          "score": 41,
+          "passageIndex": 30
+        }
+      ],
+      "contextOnlySource": false,
+      "bestPassageId": "S2-BODY",
+      "evidence": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "bestPassage": "Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "matchedPassages": [
+        "S2-BODY",
+        "S2-P2"
+      ],
+      "sharedTerms": [
+        "continue",
+        "nvidia",
+        "and",
+        "the",
+        "investigation",
+        "policy",
+        "security"
+      ],
+      "entityShared": [
+        "nvidia"
+      ],
+      "topicShared": [
+        "nvidia",
+        "security"
+      ],
+      "numericMismatch": false,
+      "contradicted": false,
+      "offTopic": false,
+      "scopeWarnings": [],
+      "attributionUncertainty": {
+        "evidenceUncertain": false,
+        "claimUncertain": true,
+        "evidenceAttributed": true,
+        "claimAttributed": false,
+        "certaintyEscalation": false,
+        "attributionDropped": false,
+        "blocked": false
+      },
+      "factCoverage": 2,
+      "multiFactSupported": false,
+      "directFactExact": false,
+      "directExact": false,
+      "matchingMode": "fact-map-anchored-source-passage"
+    },
+    {
+      "index": 9,
+      "claim": "Nvidia reinstated Jensen Huang after a brief ouster; the board cited senior‑government assurances amid ongoing investigations.",
+      "type": "synthesis",
+      "status": "unsupported",
+      "classification": "unsupported_synthesis",
+      "confidence": 0,
+      "sourceId": "S2",
+      "sourceRole": "SYNTHESIS",
+      "bestSource": "Experts weigh national security implications of Huang's return to Nvidia",
+      "bestUrl": "https://www.pbs.org/newshour/show/experts-weigh-national-security-implications-of-huangs-return-to-nvidia",
+      "bestDomain": "pbs.org",
+      "coreFactMatch": null,
+      "synthesisFactMatches": [],
+      "contextOnlySource": false,
+      "evidence": "Amna Nawaz: Well, for a closer look now at Huang's return to Nvidia and the national security implications, I'm joined by Dmitri Alperovitch. Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose. Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs. So we don't know what information he may have passed, either about Nvidia, maybe about U.S. government policy here, whether he was knowingly involved in the smuggling of these chips that she was involved in. Geoff Bennett: Jim, you heard the president Liz's reporting there referred to Huang as a genius. And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA. Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "bestPassage": "Amna Nawaz: Well, for a closer look now at Huang's return to Nvidia and the national security implications, I'm joined by Dmitri Alperovitch. Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose. Amna Nawaz: Dmitri, less than two weeks ago when we spoke after Huang was ousted, you said the board had to act immediately after revelations of his affairs. So we don't know what information he may have passed, either about Nvidia, maybe about U.S. government policy here, whether he was knowingly involved in the smuggling of these chips that she was involved in. Geoff Bennett: Jim, you heard the president Liz's reporting there referred to Huang as a genius. And even just last night there was a New York Times story alleging that Alice Huang, as mistress, had ongoing relationship with the Chinese Ministry of State Security, essentially the Chinese version of CIA. Dmitri, we heard, as Liz reported, that the Nvidia board said they had assurances of some kind from senior government officials, the president also then saying that he gave them assurances, even as investigations continue to unfold here about exactly what kind of national security risk this does pose.",
+      "matchedPassages": [],
+      "matchingMode": "fact-map-synthesis-insufficient"
+    }
+  ],
   "editorial": []
 }
