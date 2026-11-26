@@ -3882,6 +3882,38 @@ export const articles: Article[] = [
     "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
   },
   {
+    "slug": "switzerland-expands-crypto-tax-data-exchange-to-57-partner-countries",
+    "title": "Switzerland Expands Crypto Tax Data Exchange to 57 Partner Countries",
+    "description": "The Swiss Federal Council has approved 57 jurisdictions for automatic crypto tax data sharing, set to launch in 2028, expanding cross‑border visibility for Swiss tax authorities and impacting multinational crypto users.",
+    "category": "Crypto",
+    "date": "2026-11-26",
+    "publishedAt": "2026-11-26T16:03:57.046Z",
+    "author": "Tejendra Pal Singh",
+    "readTime": "2 min read",
+    "content": [
+      "## Scope of the New Agreement\nThe Swiss Federal Council has authorized 57 potential partner jurisdictions for the automatic exchange of information on crypto assets, with implementation beginning in 2028. The move broadens the reach of Swiss tax authorities when probing cross‑border crypto activity. The decision is part of Switzerland’s ongoing effort to embed crypto reporting into its established financial transparency framework.",
+      "## How It Works and What It Adds\nThe approval builds on a foundation already in place for automatic exchange of general financial account data. It increases the number of locations where Swiss tax data could potentially be reflected or acted upon, depending on each jurisdiction’s willingness to participate and its ability to meet confidentiality and data‑security standards. Service providers that handle crypto assets may begin collecting relevant customer data as of January under the revised plan, aligning with the Organisation for Economic Co‑operation and Development’s Crypto‑Asset Reporting Framework. The new rules aim to close transparency gaps that traditional financial reporting mechanisms may not capture.",
+      "## Implications for Investors and Businesses\nFor investors and companies operating across borders, the practical effect is that more jurisdictions become possible recipients of Swiss crypto‑related tax data. The expansion is not a standalone initiative; it signals Switzerland’s intention to integrate crypto reporting into a broader transparency architecture rather than treating it as a one‑off measure.",
+      "## Conditions and Limitations\nSwitzerland will only share information with jurisdictions that formally express interest and meet international standards for confidentiality and data security. The timing of the implementation—starting in 2028—reflects a delay from an original 2026 target, attributed to uncertainty over partner jurisdictions.",
+      "## What to Watch\nStakeholders should monitor which of the 57 jurisdictions formalize participation and how the new reporting rules interact with existing local tax regimes.The expansion will begin in 2028."
+    ],
+    "sources": [
+      {
+        "title": "Switzerland Approves Crypto Tax Data Sharing With 57 Jurisdictions - KuCoin",
+        "url": "https://www.kucoin.com/news/flash/switzerland-approves-crypto-tax-data-sharing-with-57-jurisdictions"
+      },
+      {
+        "title": "Switzerland Approves 57 Jurisdictions for Crypto Assets Tax Information Exchange - Crypto Economy",
+        "url": "https://crypto-economy.com/switzerland-crypto-assets-tax-exchange/"
+      }
+    ],
+    "image": "/images/articles/switzerland-expands-crypto-tax-data-exchange-to-57-partner-countries.1024x576.png",
+    "imageAlt": "Editorial image for Switzerland Expands Crypto Tax Data Exchange to 57 Partner Countries",
+    "imageSource": "Cloudflare Workers AI — FLUX.1 Schnell",
+    "imageLicense": "Model-generated",
+    "imageGeneratedBy": "Cloudflare FLUX.1 Schnell"
+  },
+  {
     "slug": "taiwan-s-new-law-could-make-smuggling-nvidia-chips-a-crime",
     "title": "Taiwan’s New Law Could Make Smuggling Nvidia Chips a Crime",
     "description": "Taiwan is set to criminalize AI‑chip shipments to China, tightening a gap that has allowed major semiconductor firms to avoid sanctions.",
