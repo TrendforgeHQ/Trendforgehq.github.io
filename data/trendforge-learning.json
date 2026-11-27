@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:01:52.741Z",
+  "updatedAt": "2026-11-27T21:38:06.780Z",
   "mode": "shadow",
   "policy": {
     "advisoryOnly": true,
@@ -26,7 +26,7 @@
   },
   "evidence": {
     "samples": 120,
-    "passRate": 33,
+    "passRate": 32,
     "blockRate": 10,
     "strongRate": 9,
     "singleSourceRate": 24
@@ -50,7 +50,7 @@
     },
     "Cohere": {
       "samples": 120,
-      "successes": 2885,
+      "successes": 2899,
       "failures": 17160,
       "successRate": 14,
       "cooldownRuns": 0,
@@ -59,8 +59,8 @@
     },
     "Gemini": {
       "samples": 120,
-      "successes": 2029,
-      "failures": 10716,
+      "successes": 2054,
+      "failures": 10725,
       "successRate": 16,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -68,8 +68,8 @@
     },
     "Groq": {
       "samples": 120,
-      "successes": 36582,
-      "failures": 16320,
+      "successes": 36806,
+      "failures": 16328,
       "successRate": 69,
       "cooldownRuns": 0,
       "latestStatus": 200,
@@ -86,8 +86,8 @@
     },
     "OpenRouter": {
       "samples": 120,
-      "successes": 313,
-      "failures": 14129,
+      "successes": 314,
+      "failures": 14133,
       "successRate": 2,
       "cooldownRuns": 0,
       "latestStatus": 404,
@@ -192,14 +192,14 @@
   },
   "trends": {
     "latestVsPrevious": {
-      "evidencePassRate": 5,
-      "evidenceBlockRate": -6,
-      "claimConfidence": -2,
+      "evidencePassRate": 0,
+      "evidenceBlockRate": 0,
+      "claimConfidence": 0,
       "claimUnsupported": 0,
       "editorialAverage": 0
     },
-    "latestRunAt": "2026-11-27T09:00:48.014Z",
-    "previousRunAt": "2026-11-26T21:54:13.307Z"
+    "latestRunAt": "2026-11-27T21:36:51.965Z",
+    "previousRunAt": "2026-11-27T09:00:48.014Z"
   },
   "signals": [
     {
@@ -210,8 +210,8 @@
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "singleSource": 6516,
-        "strong": 2332
+        "singleSource": 6481,
+        "strong": 2340
       }
     },
     {
@@ -239,23 +239,23 @@
     {
       "id": "evidence-pass-rate-change",
       "type": "trend",
-      "observation": true,
-      "detail": "Evidence pass rate changed by +5 percentage points versus the previous run.",
+      "observation": false,
+      "detail": "Evidence pass rate changed by +0 percentage points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": 5
+        "delta": 0
       }
     },
     {
       "id": "claim-confidence-change",
       "type": "trend",
       "observation": false,
-      "detail": "Average claim confidence changed by -2 points versus the previous run.",
+      "detail": "Average claim confidence changed by +0 points versus the previous run.",
       "confidence": "medium",
       "sampleRuns": 120,
       "evidence": {
-        "delta": -2
+        "delta": 0
       }
     },
     {
@@ -271,7 +271,7 @@
     }
   ],
   "history": {
-    "previousUpdatedAt": "2026-11-26T21:55:26.078Z",
+    "previousUpdatedAt": "2026-11-27T09:01:52.741Z",
     "previousVersion": 2
   }
 }
